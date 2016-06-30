@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* Copyright (c) 2015 ptt.cc */
+/* Licensed under The MIT License. */
+
+/* Desktop */
+@media screen and (min-width: 800px) {
+    .bbs-screen, #topbar, #navigation, .action-bar, #article-polling {
+        min-width: 600px;
+        max-width: 1200px;
+    }
+
+    .bbs-content, #article-polling {
+        font-size: 24px;
+    }
+
+    .r-ent > * {
+        font-size: 20px;
+    }
+
+    .action-bar {
+        text-align: left;
+    }
+    .btn-group-paging {
+        float: right;
+    }
+    .btn {
+        padding: 0 2ex;
+        font-size: initial;
+    }
+    .btn.wide {
+        padding: 0 3ex;
+    }
+
+    div.over18-notice {
+        padding-top: 20px;
+        margin-left: 150px;
+    }
+    img.over18-notice {
+        float: left;
+        width: 120px;
+        height: auto;
+    }
+    .over18-button-container {
+        display: inline-block;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 799px) {
+    .btn-group-dir {
+        width: 33%;
+    }
+    .btn-group-paging {
+        width: 66%;
+    }
+    .btn-group-dir > .btn {
+        width: 50%;
+    }
+    .btn-group-paging > .btn {
+        width: 25%;
+    }
+
+    div.over18-notice {
+        padding: 0 1ex;
+    }
+    img.over18-notice {
+        float: left;
+        margin: 2ex;
+        width: 60px;
+        height: auto;
+    }
+    .over18-button-container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1ex;
+    }
+    .over18-button-container button {
+        width: 80%;
+    }
+}

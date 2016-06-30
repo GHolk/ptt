@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+mv index.html index_old.html
+head -n 15 index_old.html >index.html
+#sed -i '/^<body>$/,$d ;  $i<body>' index.html
+ls -t *.html |\
+	sed '/^index.*html$/d' |\
+	xargs -d "\n" perl genpttmeta.pl >>index.html
