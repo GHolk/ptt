@@ -28,7 +28,7 @@ sub start
 
 		elsif ($attr->{property} eq 'og:title')
 		{
-			$meta{title} = $attr->{content};
+			$meta{metatitle} = $attr->{content};
 		}
 
 	}
@@ -41,6 +41,11 @@ sub start
 	elsif ($attr->{class} eq 'article-meta-value')
 	{
 		$class{value} = 1;
+	}
+
+	elsif ($tagname eq 'title')
+	{
+		$meta{title} = 1;
 	}
 
 }
@@ -59,6 +64,10 @@ sub text
 		$meta{ $class{name} } = $text ;
 		($class{name} , $class{value}) = (0,0);
 	}
+	elsif ($title == 1)
+	{
+		$meta{title} = $text; 
+	}
 }
 
 
@@ -67,6 +76,7 @@ foreach my $file (@ARGV)
 
 	my $flag_title = 0;
 	local %meta, %class;
+	$meta{title} = 0;
 
 	$p->parse_file($file);
 
@@ -75,6 +85,9 @@ foreach my $file (@ARGV)
 		$meta{$key} = encode_entities($meta{$key}, "\046\074\076\042");
 		# encode `"&<>` 4 char
 	}
+
+	$meta{title} = $meta{metatitle} if defined $meta{metatitle} ;
+	$meta{title} = $file if ($meta{title} eq '1');
 
 	print <<SECT;
 
