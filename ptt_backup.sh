@@ -16,7 +16,7 @@ fi
 
 if [ "$1" == "-p" ]
 then
-	push="./index_ptt.sh"
+	push="index -p"
 	shift
 fi
 
