@@ -10,9 +10,10 @@ ls -t *.html |\
 if [ "$1" == "-p" ]
 then
 
-	exec 1>&6
+	#exec 1>&6
+	exec 1>&2
 
-	if git add . && git commit && git push
+	if git add . && git commit -m '[new] auto push' && git push
 	then exit 0
 	else 
 		echo "can not push to github! " >&2
