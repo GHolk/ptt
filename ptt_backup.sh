@@ -51,7 +51,7 @@ curl -b 'over18=1' "$url" |
 if [ -s "$file" ]
 then
 	echo "http://gholk.github.io/ptt/$file"
-	$push
+	eval $push
 	exit 
 else
 	echo "file do not created! " >&2
