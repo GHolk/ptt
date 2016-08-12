@@ -16,7 +16,7 @@ fi
 
 if [ "$1" == "-p" ]
 then
-	push="index -p"
+	push="./index.sh -p >index.html"
 	shift
 fi
 
