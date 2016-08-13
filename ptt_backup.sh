@@ -44,8 +44,8 @@ fi
 
 
 curl -b 'over18=1' "$url" |
-	sed -r 's#href="/([^/])#href="//www.ptt.cc/\1#g ;
-		s#"//images\.ptt\.cc/v2\.17/(.*\.css)"#"\1"#g' >"$file"
+	sed -r 's#href="/([^/])#href="http://www.ptt.cc/\1#g ;
+		s#"//images\.ptt\.cc/v.\.../(.*\.css)"#"\1"#g' >"$file"
 
 
 if [ -s "$file" ]
