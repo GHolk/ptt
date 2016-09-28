@@ -3,6 +3,10 @@
 #head -n 15 index_old.html
 #sed -i '/^<body>$/,$d ;  $i<body>' index.html
 
+if [ -s index.html ] ; then
+    mv index.html index_old.html
+fi
+
 file_list="`ls -t *.html | sed '/^index.*html$/d'`"
 file_list="${file_list}
 `sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html`"
@@ -12,7 +16,7 @@ echo "$file_list" |\
     uniq -u |\
     xargs -d "\n" perl genpttmeta.pl >index_new.html
 
-sed '/^<body>$/ r index_new.html' index_old.html >index.html
+sed '/^<body>$/ r index_new.html' index_old.html
 
 if [ "$1" == "-p" ]
 then
