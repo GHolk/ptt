@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問題] ubuntu核心 vs 一般核心 - 看板 Linux - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="
+Linux kernel (torvalds) 的 https://github.com/torvalds/linux
+Debian 的 https://wiki.debian.org/DebianKernel
+Ubuntu 的 https://wiki.ubuntu.com/Kernel/SourceCode
+
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問題] ubuntu核心 vs 一般核心">
+<meta property="og:description" content="
+Linux kernel (torvalds) 的 https://github.com/torvalds/linux
+Debian 的 https://wiki.debian.org/DebianKernel
+Ubuntu 的 https://wiki.ubuntu.com/Kernel/SourceCode
+
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Linux/M.1474517014.A.381.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+<script src="jquery.min.js"></script>
+<script src="bbs.js"></script>
+
+
+		
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32365737-1']);
+  _gaq.push(['_setDomainName', 'ptt.cc']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Linux/index.html"><span class="board-label">看板 </span>Linux</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Linux/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Linux/M.1474517014.A.381.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">fourdollars (四元)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Linux</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問題] ubuntu核心 vs 一般核心</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Sep 22 12:03:23 2016</span></div>
+Linux kernel (torvalds) 的 <a href="https://github.com/torvalds/linux" target="_blank" rel="nofollow">https://github.com/torvalds/linux</a>
+Debian 的 <a href="https://wiki.debian.org/DebianKernel" target="_blank" rel="nofollow">https://wiki.debian.org/DebianKernel</a>
+Ubuntu 的 <a href="https://wiki.ubuntu.com/Kernel/SourceCode" target="_blank" rel="nofollow">https://wiki.ubuntu.com/Kernel/SourceCode</a>
+
+Linux Mint 如果沒弄錯的話，應該是直接用 Debian 或是 Ubuntu 維護的 Linux kernel
+並沒有在自己維護 Linux kernel
+
+Debian 跟 Ubuntu 都是自己從上游的 <a href="https://github.com/torvalds/linux" target="_blank" rel="nofollow">https://github.com/torvalds/linux</a> fork 出來
+
+                         /--&gt; Debian
+Linux kernel (torvalds) ----&gt; Ubuntu
+                         \--&gt; openSUSE, SUSE Linux, ...
+                          \-&gt; Fedora, Redhat, ...
+                           ...
+
+基本上是這樣的感覺，不過現實上會更複雜。
+因為可能還有 Linux kernel (KH Greg) 的 stable 跟 long term 要再插在其中。
+
+Linux kernel (torvalds) --&gt; Linux kernel (Debian, Ubuntu, ...)
+                         \      ^
+                          \     |
+                           \--&gt; Linux kernel (KH Greg)
+
+另外 Debian 跟 Ubuntu 的 Linux kernel 跟一般的 Linux kernel 編譯使用方式不同
+<span class="f6 hl">必須要加入 Debian packaging 維護使用的觀念</span>，才能編譯出給 Debian/Ubuntu 系統使用
+
+不過 Debian 跟 Ubuntu 的 Linux kernel 的 Debian package 基本上互相相容
+但是一般來說不會交叉使用，也就是說 Debian 用 Debian 維護的 Linux kernel
+而 Ubuntu 使用 Ubuntu 維護的 Linux kernel
+
+<span class="f2">※ 引述《BIGGGY (逼機)》之銘言：
+</span><span class="f6">: 想請問一個問題
+</span><span class="f6">: 最近在學習核心的編譯  看到這篇文章
+</span><span class="f6">: <a href="https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=104652" target="_blank" rel="nofollow">https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=104652</a>
+</span><span class="f6">: 最上面的 Debian sid / Ubuntu xenial  這個教學好像是去 <a href="https://www.kernel.org" target="_blank" rel="nofollow">https://www.kernel.org</a>
+</span><span class="f6">: 下載一般的核心 不是ubuntu官方的核心
+</span><span class="f6">: 然後最下面 Linux Mint 18 (Ubuntu xenial) 這個部分的教學
+</span><span class="f6">: 則是在一般核心的基礎上  在加上ubuntu的patch下去編譯
+</span><span class="f6">: 想請問的就是  一般的核心跟ubuntu的核心差在哪裡?
+</span><span class="f6">: 在ubuntu只用一般的核心會有功能不完全的情況嗎?  那個patch主要是加了哪些功能?
+</span><span class="f6">: ubuntu 官方版  跟 mint 的核心都是相同的嗎?  還是說mint還有做一些修改?
+</span><span class="f6">: 我的問題大概是這樣
+</span><span class="f6">: 感謝~~~~
+</span>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 36.226.95.220
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Linux/M.1474517014.A.381.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Linux/M.1474517014.A.381.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kenwufederer</span><span class="f3 push-content">: 其實Mint有提到</span><span class="push-ipdatetime"> 09/22 12:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kenwufederer</span><span class="f3 push-content">: <a href="https://www.linuxmint.com/rel_sarah_cinnamon_wha" target="_blank" rel="nofollow">https://www.linuxmint.com/rel_sarah_cinnamon_wha</a></span><span class="push-ipdatetime"> 09/22 12:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kenwufederer</span><span class="f3 push-content">: tsnew.php</span><span class="push-ipdatetime"> 09/22 12:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 根本沒有到 fork ，Debian 這種好孩子會把 patch 丟回</span><span class="push-ipdatetime"> 09/23 15:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: upstream ，真正的 patch 只有 <a href="https://goo.gl/2hcDHq" target="_blank" rel="nofollow">https://goo.gl/2hcDHq</a></span><span class="push-ipdatetime"> 09/23 15:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: Debian 一直都是直貢獻 code 給 kernel 的，才不像某 U</span><span class="push-ipdatetime"> 09/23 15:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 社那樣，喜歡自已 fork ，然後很少 upstream</span><span class="push-ipdatetime"> 09/23 15:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">:                ^直接</span><span class="push-ipdatetime"> 09/23 15:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 雖然某 U 社應該也沒無聊到去 fork kernel</span><span class="push-ipdatetime"> 09/23 15:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Vdragon</span><span class="f3 push-content">: 樓上是指 C 社吧w</span><span class="push-ipdatetime"> 09/24 08:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: Debian 跟 Ubuntu 的 kernel 都有 C 社的人維護...</span><span class="push-ipdatetime"> 09/24 19:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 還有 C 社的人會跟一些廠商像是 Intel 合作幫忙測試</span><span class="push-ipdatetime"> 09/24 19:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 可是 commit 裡面完全沒有提到 C 社幫忙的部份...</span><span class="push-ipdatetime"> 09/24 19:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: HamalAri 似乎完全不懂 Debian 跟 Ubuntu 的實際情況</span><span class="push-ipdatetime"> 09/24 19:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Debian</span><span class="f3 push-content">: 推薦本文章。</span><span class="push-ipdatetime"> 09/24 20:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: debian sid 的核心本來就很 vanilla ，如果硬要扯其它</span><span class="push-ipdatetime"> 09/25 22:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: EOL 自行維護的版本有什麼意義？ 有誰在開發會影響到最</span><span class="push-ipdatetime"> 09/25 22:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 終使用者拿到的核心嗎？ 自已 diff 一下 sid 的核心源碼</span><span class="push-ipdatetime"> 09/25 22:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 就知道根本沒差多少，嘴這些根本就信仰大會而已</span><span class="push-ipdatetime"> 09/25 22:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 聽多了啦，各家都有人把自家包的核心吹的跟什麼一樣</span><span class="push-ipdatetime"> 09/25 22:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">louisman</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/26 09:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 我的意思是不管是 Debian 還是 Ubuntu 的 Linux</span><span class="push-ipdatetime"> 09/26 18:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: kernel 都有 C 社的人在維護的，然後在許多的 commit</span><span class="push-ipdatetime"> 09/26 18:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 背後都有 C 社努力的部份，但是在 commit 上面看不出</span><span class="push-ipdatetime"> 09/26 18:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 來。</span><span class="push-ipdatetime"> 09/26 18:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 也許 C 社沒有直接 upstream 那些 patch 但是光用</span><span class="push-ipdatetime"> 09/26 18:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 看到的 commit 來評斷 C 社都沒有在貢獻有失偏頗。</span><span class="push-ipdatetime"> 09/26 18:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 另外硬體廠商不會輕易將硬體文件給其它合作廠商看，</span><span class="push-ipdatetime"> 09/26 18:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 常常遇到想要幫忙解問題生 patch 但是沒有文件的情況</span><span class="push-ipdatetime"> 09/26 18:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: <a href="https://goo.gl/K8ZNhk" target="_blank" rel="nofollow">https://goo.gl/K8ZNhk</a> AceLan 跟 Alex 都是C社員工</span><span class="push-ipdatetime"> 09/26 18:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: HamalAri C 社也有在貢獻到 Linux kernel 的，只是在</span><span class="push-ipdatetime"> 09/26 18:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 你平時不會看到的地方而已。</span><span class="push-ipdatetime"> 09/26 18:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 另外 Ubuntu 的 Linux kernel 是真的對硬體支援必較</span><span class="push-ipdatetime"> 09/26 18:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 好，因為 C 社都一直在跟 Dell, HP, Lenovo, ASUS...</span><span class="push-ipdatetime"> 09/26 18:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 合作將硬體支援做好，是大量用實際的硬體在做事的。</span><span class="push-ipdatetime"> 09/26 18:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: s/必/比/</span><span class="push-ipdatetime"> 09/26 18:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 當然你不一定要用 Ubuntu 不可，每個人都有自己選擇</span><span class="push-ipdatetime"> 09/26 18:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 的自由，但是也不需要自己喜歡用什麼，就去攻擊別人</span><span class="push-ipdatetime"> 09/26 18:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 用的系統。</span><span class="push-ipdatetime"> 09/26 18:28
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 那只能噓了，核心就核心，還扯系統幹麻</span><span class="push-ipdatetime"> 09/27 01:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 你講的這些又沒人說你錯，但就牛頭不對馬嘴。 事實就是</span><span class="push-ipdatetime"> 09/27 01:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: Debian sid 的核心和 vanilla 沒差多少。</span><span class="push-ipdatetime"> 09/27 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 然後什麼硬體支援就更沒必要提了 non GPL 又非 mainline</span><span class="push-ipdatetime"> 09/27 01:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 的東西當然只有U社會有；而且拿 U 社來和 Debian 混談也</span><span class="push-ipdatetime"> 09/27 01:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 實在論點薄弱。這些驅動 Debain 又沒包進核心。</span><span class="push-ipdatetime"> 09/27 01:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 我再說一次，Debian sid 的核心和去 kernel.org 上抓最</span><span class="push-ipdatetime"> 09/27 02:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 新的根本沒差多少。就那幾個 patch 。</span><span class="push-ipdatetime"> 09/27 02:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 還什麼攻擊別人勒，既然大家都用一樣的核心，就沒有誰比</span><span class="push-ipdatetime"> 09/27 02:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 較差。 也沒有誰比較好。</span><span class="push-ipdatetime"> 09/27 02:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 然後我從頭到尾連我自已用什麼 Distro 都沒提，可以這樣</span><span class="push-ipdatetime"> 09/27 02:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 腦補也是很神奇</span><span class="push-ipdatetime"> 09/27 02:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: Debian sid 當然是跟著最新的 Linux kernel 走啊...</span><span class="push-ipdatetime"> 09/29 18:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 問題是 Debian 不是只有 sid 而已啊... 你有事嗎？？</span><span class="push-ipdatetime"> 09/29 18:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: <a href="http://bit.ly/2dcTxP3" target="_blank" rel="nofollow">http://bit.ly/2dcTxP3</a> Debian 上面的狀態</span><span class="push-ipdatetime"> 09/29 18:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: HamalAri 真的不懂 Debian 與 Ubuntu 的運作方式...</span><span class="push-ipdatetime"> 09/29 18:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 補充一下 Debian sid 底下所有套件都是跟著最新走的</span><span class="push-ipdatetime"> 09/29 18:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fourdollars</span><span class="f3 push-content">: 因為設計上就是要跟著走，拿它來跟上游比是狀況外。</span><span class="push-ipdatetime"> 09/29 19:01
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 為什麼只講 sid ? 廢話, 非最新的 stable 都 EOL 了, 也</span><span class="push-ipdatetime"> 09/30 17:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 沒人在用了, 也就沒有所謂的 &#34;一般核心&#34; 是要比個屁</span><span class="push-ipdatetime"> 09/30 17:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 不然你證明一下非 sid 然後版本和 kernel.org 上 lts 的</span><span class="push-ipdatetime"> 09/30 17:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 核心差很多好了, 後者也做不到好嗎, 根本只有 EOL 的核</span><span class="push-ipdatetime"> 09/30 17:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HamalAri</span><span class="f3 push-content">: 心才會有差</span><span class="push-ipdatetime"> 09/30 17:59
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Linux/M.1474517014.A.381.html?cacheKey=2051-1811909660&offset=8398&offset-sig=eb9800267a90bc17ad6212fee8716d3cff4162d7" data-longpollurl="/v1/longpoll?id=6a5450ff0156cd7a9e27dc96d5539fe8b09d3c0b" data-offset="8398"></div>
+    
+
+    
+</div>
+
+    </body>
+</html>
