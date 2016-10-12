@@ -11,8 +11,6 @@ file_list="`ls -t *.html | sed '/^index.*html$/d'`"
 file_list="${file_list}
 `sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html`"
 
-echo "$file_list" >file_list
-
 echo "$file_list" |\
     sort |\
     uniq -u |\
