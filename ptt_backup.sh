@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 
 # error code: 
 # 1: no input url by argument and stdin. 
@@ -6,15 +6,14 @@
 # 3: file do not created. 
 # 6: can not cd `~/web/ptt/` . 
 
-if cd ~/web/ptt/
-then : 
-else
-    echo 'can not cd `~/web/ptt/`! ' >&2
-    exit 6
-fi
+error() {
+    echo "$1" >&2
+    [ $2 ] && exit $2
+}
 
+cd ~/web/ptt/ || error 'can not cd `~/web/ptt/`! ' 6
 
-if [ "$1" == "-p" ]
+if [ "$1" = "-p" ]
 then
     push="./index.sh -p >index.html"
     shift
@@ -27,20 +26,12 @@ else url="$1"
 fi
 
 
-if [ -z "$url" ]
-then
-    echo "you need input http url! " >&2
-    exit 1
-fi
+[ -z "$url" ] && error "you need input http url! " 1
 
 
-file="${url##*/}"
+file="$( echo $url | sed 's#.*/##' )"
 
-if [ -s "$file" ]
-then
-    echo "file alread exist! please rename existed one. " >&2
-    exit 2
-fi
+[ -s "$file" ] && error "file alread exist! please rename existed one. " 2
 
 
 curl -b 'over18=1' "$url" |
@@ -49,16 +40,12 @@ curl -b 'over18=1' "$url" |
         s#="//images\.ptt\.cc/[^/]+/#="#
         s#="//ajax\.googleapis\.com/ajax/libs/jquery/[^/]+/#="#
         s#src="//#src="http://#g
-        ' >"$file"
+    ' >"$file"
 
 
-if [ -s "$file" ]
-then
-    echo "http://gholk.github.io/ptt/$file"
-    eval $push
-    exit 
-else
-    echo "file do not created! " >&2
-    exit 3
-fi
+[ -s "$file" ] || error "file do not created! " 3
+
+echo "http://gholk.github.io/ptt/$file"
+$push
+exit 
 

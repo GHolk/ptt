@@ -1,15 +1,13 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 
 #head -n 15 index_old.html
 #sed -i '/^<body>$/,$d ;  $i<body>' index.html
 
-if [ -s index.html ] ; then
-    mv index.html index_old.html
-fi
+[ -s index.html ] && mv index.html index_old.html
 
-file_list="`ls -t *.html | sed '/^index.*html$/d'`"
+file_list="$(ls -t *.html | sed '/^index.*html$/d')"
 file_list="${file_list}
-`sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html`"
+$(sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html)"
 
 echo "$file_list" |\
     sort |\
@@ -18,7 +16,7 @@ echo "$file_list" |\
 
 sed '/^<body>$/ r index_new.html' index_old.html
 
-if [ "$1" == "-p" ]
+if [ "$1" = "-p" ]
 then
 
     #exec 1>&6
