@@ -70,6 +70,6 @@ else
 fi
 
 
-$push
+eval $push
 exit
 
