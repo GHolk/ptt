@@ -16,15 +16,17 @@ curl_sed() {
     url="$1"
     file="$(echo $url | sed 's#.*/##')"
 
+    overwrite="$2"
+
     if [ -z "$url" ] || [ -z "$file" ]
     then
         error 'invalid url!'
         return 1
     fi
 
-    if [ -s "$file" ] 
+    if [ -s "$file" ] && [ "$overwrite" != 1 ]
     then
-        error "file alread exist! please rename existed one. "
+        error "file already exist! please rename existed one. "
         return 2
     fi
 
@@ -52,20 +54,21 @@ curl_sed() {
 
 cd ~/web/ptt/ || error 'can not cd `~/web/ptt/`!' 6
 
-if [ "$1" = "-p" ]
+if expr "$1" : '^-' >/dev/null
 then
-    push="./index.sh -p >index.html"
+    expr "$1" : '.*p' >/dev/null && push="./index.sh -p >index.html"
+    expr "$1" : '.*f' >/dev/null && overwrite=1
     shift
 fi
 
 
 if [ -n "$1" ]
 then
-    curl_sed "$1"
+    curl_sed "$1" "$overwrite"
 else
     while read url
     do
-        curl_sed "$url"
+        curl_sed "$url" "$overwrite"
     done
 fi
 
