@@ -52,7 +52,7 @@ curl_sed() {
     fi
 }
 
-cd ~/web/ptt/ || error 'can not cd `~/web/ptt/`!' 6
+cd ${HOME}/web/ptt/ || error 'can not cd `~/web/ptt/`!' 6
 
 if expr "$1" : '^-' >/dev/null
 then
