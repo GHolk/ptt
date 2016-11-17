@@ -6,6 +6,10 @@
 # 3: file do not created. 
 # 6: can not cd `~/web/ptt/` . 
 
+queue="ptt_backup_queue.txt"
+queue_old="ptt_backup_queue_old.txt"
+date="`date -Iseconds`"
+
 error() {
     echo "$1" >&2
     [ -n "$2" ] && exit $2
@@ -13,15 +17,13 @@ error() {
 
 preserve_url() {
     url="$1"
-    echo "$url" >>preserve_list.txt
+    echo "$url" "$date" >>"$queue"
 }
 
 curl_sed() {
 
     url="$1"
     file="$(echo $url | sed 's#.*/##')"
-
-    overwrite="$2"
 
     if [ -z "$url" ] || [ -z "$file" ]
     then
@@ -59,12 +61,28 @@ curl_sed() {
 
 cd ${HOME}/web/ptt/ || error 'can not cd `~/web/ptt/`!' 6
 
-if expr "$1" : '^-' >/dev/null
+
+exec 6>&1 1>/dev/null # disable expr output. 
+if expr "$1" : '^-'
 then
-    expr "$1" : '.*p' >/dev/null && push="./index.sh -p >index.html"
-    expr "$1" : '.*f' >/dev/null && overwrite=1
-    expr "$1" : '.*n' >/dev/null && preserve=1
+    expr "$1" : '.*p' && push="./index.sh -p >index.html"
+    expr "$1" : '.*f' && overwrite=1
+    expr "$1" : '.*q' && preserve=1
+    expr "$1" : '.*c' && clean=1 overwrite=1
     shift
+fi
+exec 1>&6 6>&- # restore output
+
+
+if [ "$clean" = 1 ] 
+then
+    exec 5<&0 <"$queue"
+    tee -a "$queue_old" | cut -d ' ' -f 1 | while read url
+    do
+        curl_sed "$url"
+    done
+    exec 0<&5 5<&-
+    rm "$queue"
 fi
 
 
@@ -77,14 +95,22 @@ fi
 
 if [ -n "$1" ]
 then
-    $mydo "$1" "$overwrite"
+    $mydo "$1"
 else
-    while read url
-    do
-        $mydo "$url" "$overwrite"
-    done
+    if [ "$clean" != 1 ]
+    then
+        while read url
+        do
+            $mydo "$url"
+        done
+    fi
 fi
 
+if [ "$clean" != 1 ] && [ "$preserve" != 1 ] && [ -s "$queue" ]
+then
+    echo "## url in queue: #######################"
+    tail "$queue"
+fi
 
 eval $push
 exit
