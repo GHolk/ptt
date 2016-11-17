@@ -68,7 +68,7 @@ then
 fi
 
 
-if [ "$presevre" = 1 ]
+if [ "$preserve" = 1 ]
 then
     mydo=preserve_url
 else
