@@ -11,6 +11,11 @@ error() {
     [ -n "$2" ] && exit $2
 }
 
+preserve_url() {
+    url="$1"
+    echo "$url" >>preserve_list.txt
+}
+
 curl_sed() {
 
     url="$1"
@@ -58,17 +63,25 @@ if expr "$1" : '^-' >/dev/null
 then
     expr "$1" : '.*p' >/dev/null && push="./index.sh -p >index.html"
     expr "$1" : '.*f' >/dev/null && overwrite=1
+    expr "$1" : '.*n' >/dev/null && preserve=1
     shift
 fi
 
 
+if [ "$presevre" = 1 ]
+then
+    mydo=preserve_url
+else
+    mydo=curl_sed
+fi
+
 if [ -n "$1" ]
 then
-    curl_sed "$1" "$overwrite"
+    $mydo "$1" "$overwrite"
 else
     while read url
     do
-        curl_sed "$url" "$overwrite"
+        $mydo "$url" "$overwrite"
     done
 fi
 
