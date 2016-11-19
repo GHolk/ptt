@@ -77,12 +77,20 @@ exec 1>&6 6>&- # restore output
 if [ "$clean" = 1 ] 
 then
     exec 5<&0 <"$queue"
-    tee -a "$queue_old" | cut -d ' ' -f 1 | while read url
+    first_line=10
+    if expr "$1" : '^[0-9]\+$' >/dev/null 
+    then
+        first_line="$1"
+        shift
+    fi
+
+    head -n "$first_line" | tee -a "$queue_old" | cut -d ' ' -f 1 |\
+    while read url
     do
         curl_sed "$url"
     done
     exec 0<&5 5<&-
-    rm "$queue"
+    sed -i "1,$first_line d" "$queue"
 fi
 
 
@@ -106,7 +114,7 @@ else
     fi
 fi
 
-if [ "$clean" != 1 ] && [ "$preserve" != 1 ] && [ -s "$queue" ]
+if [ -s "$queue" ]
 then
     echo "## url in queue: #######################"
     tail "$queue"
