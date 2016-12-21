@@ -5,14 +5,15 @@
 
 [ -s index.html ] && mv index.html index_old.html
 
-file_list="$(ls -t *.html | sed '/^index.*html$/d')"
-file_list="${file_list}
-$(sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html)"
+temp=`mktemp`
+ls -t *.html | sed '/^index.*html$/d' >$temp
+sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html >>$temp
 
-echo "$file_list" |\
-    sort |\
+    sort $temp |\
     uniq -u |\
     xargs -d "\n" perl genpttmeta.pl >index_new.html
+
+#rm $temp
 
 sed '/^<body>$/ r index_new.html' index_old.html
 
