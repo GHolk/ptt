@@ -13,7 +13,7 @@ sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html >>$temp
     uniq -u |\
     xargs -d "\n" perl genpttmeta.pl >index_new.html
 
-#rm $temp
+rm $temp
 
 sed '/^<body>$/ r index_new.html' index_old.html
 
