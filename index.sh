@@ -5,17 +5,9 @@
 
 [ -s index.html ] && mv index.html index_old.html
 
-temp=`mktemp`
-ls -t *.html | sed '/^index.*html$/d' >$temp
-sed -n '/<a href/ { s/.*<a href="\(.*\)".*/\1/ ; p }' index_old.html >>$temp
-
-    sort $temp |\
-    uniq -u |\
-    xargs -d "\n" perl genpttmeta.pl >index_new.html
-
-rm $temp
-
 sed '/^<body>$/ r index_new.html' index_old.html
+
+rm index_new.html
 
 if [ "$1" = "-p" ]
 then
@@ -31,3 +23,4 @@ then
     fi
 
 fi
+

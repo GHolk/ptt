@@ -9,6 +9,7 @@
 queue="ptt_backup_queue.txt"
 queue_old="ptt_backup_queue_old.txt"
 date="`date -Iseconds`"
+ptt_dir="$HOME/web/ptt"
 
 error() {
     echo "$1" >&2
@@ -18,6 +19,11 @@ error() {
 preserve_url() {
     url="$1"
     echo "$url" "$date" >>"$queue"
+}
+
+add_meta() {
+    file="$1"
+    perl genpttmeta.pl "$file" >>index_new.html
 }
 
 curl_sed() {
@@ -57,9 +63,11 @@ curl_sed() {
         error "file do not created! "
         return 3
     fi
+
+    add_meta "$file"
 }
 
-cd ${HOME}/web/ptt/ || error 'can not cd `~/web/ptt/`!' 6
+cd $ptt_dir || error 'can not cd `~/web/ptt/`!' 6
 
 
 exec 6>&1 1>/dev/null # disable expr output. 
