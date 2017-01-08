@@ -64,7 +64,9 @@ curl_sed() {
         return 3
     fi
 
-    add_meta "$file"
+    if [ "$overwrite" != 1 ]
+    then add_meta "$file"
+    fi
 }
 
 cd $ptt_dir || error 'can not cd `~/web/ptt/`!' 6
