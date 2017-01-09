@@ -23,7 +23,7 @@ preserve_url() {
 
 add_meta() {
     file="$1"
-    perl genpttmeta.pl "$file" >>index_new.html
+    ./genpttmeta.pl "$file" >>index_new.html
 }
 
 curl_sed() {
@@ -64,9 +64,7 @@ curl_sed() {
         return 3
     fi
 
-    if [ "$overwrite" != 1 ]
-    then add_meta "$file"
-    fi
+    add_meta "$file"
 }
 
 cd $ptt_dir || error 'can not cd `~/web/ptt/`!' 6
