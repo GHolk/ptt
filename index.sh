@@ -7,8 +7,6 @@
 
 sed '/^<body>$/ r index_new.html' index_old.html >index.html
 
-rm index_new.html
-
 if [ "$1" = "-p" ]
 then
 
@@ -16,7 +14,9 @@ then
     exec 1>&2
 
     if git add . && git commit -m '[new] auto push' && git push
-    then exit 0
+    then
+        rm index_new.html
+        exit 0
     else 
         echo "can not push to github! " >&2
         exit 5
