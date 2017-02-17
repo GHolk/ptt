@@ -73,7 +73,7 @@ cd $ptt_dir || error 'can not cd `~/web/ptt/`!' 6
 exec 6>&1 1>/dev/null # disable expr output. 
 if expr "$1" : '^-'
 then
-    expr "$1" : '.*p' && push="./index.sh -p >index.html"
+    expr "$1" : '.*p' && push="./index.sh -p"
     expr "$1" : '.*f' && overwrite=1
     expr "$1" : '.*q' && preserve=1
     expr "$1" : '.*c' && clean=1 overwrite=1
