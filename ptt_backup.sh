@@ -47,7 +47,7 @@ curl_sed() {
     then
         sed -i -r '
             s#="/([^/])#href="http://www.ptt.cc/\1#
-            s#="//images\.ptt\.cc/[^/]+/#="#
+            s#="//images\.ptt\.cc/.*/#="#
             s#="//ajax\.googleapis\.com/ajax/libs/jquery/[^/]+/#="#
             s#src="//#src="http://#g
         ' "$file"
