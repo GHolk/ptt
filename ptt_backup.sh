@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # error code: 
 # 1: invalid url.

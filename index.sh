@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 #head -n 15 index_old.html
 #sed -i '/^<body>$/,$d ;  $i<body>' index.html
