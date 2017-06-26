@@ -39,11 +39,10 @@ PttArticle.prototype.description = ''
 PttArticle.prototype.date = new Date('')
 PttArticle.prototype.node = null
 
-PttArticle.prototype.hide = function() {
-    this.node.className = 'hide-article'
-}
-PttArticle.prototype.show = function() {
-    this.node.className = 'show-article'
+PttArticle.prototype.show = function(toShow) {
+    if (toShow === true) this.node.className = 'show-article'
+    else if (toShow == false) this.node.className = 'hide-article'
+    else return this.node.className != 'hide-article'
 }
 
 var divs = document.getElementsByTagName('div')
@@ -52,7 +51,7 @@ for (var i=0; i<divs.length; i++) {
     articleList.push(new PttArticle(divs[i]))
 }
 
-var currentList = articleList.slice()
+var currentList = articleList
 
 var queryForm = document.getElementById('query-form')
 
@@ -61,8 +60,8 @@ queryForm.onsubmit = function(evt) {
     var evalStatement = this.elements['eval-condition'].value
 
     document.body.className = 'hide-article'
-    currentList.forEach(function(article) { article.hide() })
-    currentList = articleList.filter(function(article, i, list) {
+    currentList.forEach(function(article) { article.show(false) })
+    currentList = currentList.filter(function(article, i, list) {
         var raw = article.raw
         var reply = article.reply 
         var category = article.category 
@@ -75,7 +74,15 @@ queryForm.onsubmit = function(evt) {
         var node = article.node 
         return eval(evalStatement)
     })
-    currentList.forEach(function(article) { article.show() })
+    currentList.forEach(function(article) { article.show(true) })
     this.elements['match-number'].value = currentList.length
     document.body.className = 'show-article'
+}
+
+queryForm.elements['show-all'].onclick = function(evt) {
+    evt.preventDefault()
+
+    currentList = articleList
+    currentList.forEach(function(article) { article.show(true) })
+    this.form.elements['match-number'].value = currentList.length
 }
