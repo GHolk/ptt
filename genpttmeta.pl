@@ -90,7 +90,7 @@ foreach my $file (@ARGV)
 	$meta{title} = $file if ($meta{title} eq '1');
 
 	print <<SECT;
-
+<div>
 <h2>
 <a href="$file">
 $meta{title}
@@ -107,8 +107,7 @@ $meta{'時間'}
 <pre>
 $meta{description}
 </pre>
-
-<hr>
+</div>
 
 SECT
 
