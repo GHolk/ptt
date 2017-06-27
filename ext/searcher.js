@@ -111,7 +111,7 @@ function queryStatementToFunction(queryStatement) {
         var date = article.date 
         var node = article.node 
 
-        return eval(queryStatement)
+        return Boolean(eval(queryStatement))
     }
 }
 
