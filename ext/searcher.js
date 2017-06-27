@@ -3,8 +3,8 @@ function PttArticle(articleNode) {
     this.url = articleNode.getElementsByTagName('a')[0].href
 
     var titleText = articleNode.getElementsByTagName('h2')[0].textContent
-    var matchTitle = titleText.match(/^\s*(Re:)?\s*(\[.*?\])?\s*(.*)/)
-    if (matchTitle[1]) this.reply = true
+    var matchTitle = titleText.match(/^\s*(.{1,5}:)?\s*(\[.*?\])?\s*(.*)/)
+    if (matchTitle[1]) this.reply = matchTitle[1].slice(0,-1)
     if (matchTitle[2]) this.category = matchTitle[2].slice(1,-1)
     if (matchTitle[3]) this.title = matchTitle[3]
 
@@ -51,17 +51,55 @@ for (var i=0; i<divs.length; i++) {
     articleList.push(new PttArticle(divs[i]))
 }
 
-var currentList = articleList
-
 var queryForm = document.getElementById('query-form')
 
 queryForm.onsubmit = function(evt) {
     evt.preventDefault()
-    var evalStatement = this.elements['eval-condition'].value
+    evalQueryAndPushState(this.elements['eval-condition'].value)
+}
 
-    document.body.className = 'hide-article'
-    currentList.forEach(function(article) { article.show(false) })
-    currentList = currentList.filter(function(article, i, list) {
+function evalQueryAndPushState(queryStatement) {
+    var list = evalQuery(queryStatement)
+    showWithIndexList(list)
+    pushQueryState(queryStatement, list)
+}
+
+function evalQuery(queryStatement) {
+    var queryFunction = queryStatementToFunction(queryStatement)
+
+    var showNoError
+    return articleList.map(
+    function mapTest(article, i, list){
+        try {
+            return queryFunction(article, i, list)
+        }
+        catch (evalError) {
+            if (!showNoError) showNoError = confirm(
+                'eval query error:\n\t' +
+                evalError + '\n' +
+                'skip all errors?'
+            )
+            console.log(evalError)
+            return false
+        }
+    })
+}
+
+function pushQueryState(queryStatement, list) {
+    history.pushState(
+        list,
+        'eval ' + queryStatement,
+        '?query-statement=' + encodeURIComponent(queryStatement)
+    )
+}
+
+window.onpopstate = function whenPopState(evt) {
+    var state = evt.state
+    if (Array.isArray(state)) showWithIndexList(state)
+}
+
+function queryStatementToFunction(queryStatement) {
+    return function evalQuery(article, i, list) {
         var raw = article.raw
         var reply = article.reply 
         var category = article.category 
@@ -72,17 +110,39 @@ queryForm.onsubmit = function(evt) {
         var description = article.description 
         var date = article.date 
         var node = article.node 
-        return eval(evalStatement)
-    })
-    currentList.forEach(function(article) { article.show(true) })
-    this.elements['match-number'].value = currentList.length
+
+        return eval(queryStatement)
+    }
+}
+
+
+var matchCountNode = queryForm.elements['match-number']
+
+function showWithIndexList(indexList) {
+    document.body.className = 'hide-article'
+
+    var matchCount = 0
+    for (var i=0, l=indexList.length; i<l; i++) {
+        if (indexList[i]) {
+            articleList[i].show(true)
+            matchCount++
+        }
+        else {
+            articleList[i].show(false)
+        }
+    }
+
+    matchCountNode.value = matchCount
     document.body.className = 'show-article'
 }
 
-queryForm.elements['show-all'].onclick = function(evt) {
-    evt.preventDefault()
-
-    currentList = articleList
-    currentList.forEach(function(article) { article.show(true) })
-    this.form.elements['match-number'].value = currentList.length
+// init query
+if (location.search.match(/^\?query-statement/)) {
+    evalQueryAndPushState(decodeURIComponent(location.search.slice(17)))
+}
+else {
+    history.pushState(
+        articleList.map(function(){return true}),
+        null, ''
+    )
 }
