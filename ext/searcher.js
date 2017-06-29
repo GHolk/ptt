@@ -55,10 +55,8 @@ var queryForm = document.getElementById('query-form')
 
 queryForm.onsubmit = function(evt) {
     evt.preventDefault()
-    evalQueryAndPushState(this.elements['eval-condition'].value)
-}
 
-function evalQueryAndPushState(queryStatement) {
+    var queryStatement = this.elements['eval-condition'].value
     var list = evalQuery(queryStatement)
     showWithIndexList(list)
     pushQueryState(queryStatement, list)
@@ -138,11 +136,20 @@ function showWithIndexList(indexList) {
 
 // init query
 if (location.search.match(/^\?query-statement/)) {
-    evalQueryAndPushState(decodeURIComponent(location.search.slice(17)))
+    var queryStatement = decodeURIComponent(location.search.slice(17))
+    var list = evalQuery(queryStatement)
+    showWithIndexList(list)
+    history.replaceState(
+        list,
+        'eval ' + queryStatement,
+        ''
+    )
+    list = null
 }
 else {
-    history.pushState(
-        articleList.map(function(){return true}),
-        null, ''
+    history.replaceState(
+        (new Array(articleList.length)).fill(true),
+        null,
+        ''
     )
 }
