@@ -1,0 +1,57 @@
+#help-window {
+    display: none;
+    position: fixed;
+    left: 8em;
+    top: 2em;
+    width: 50em;
+    height: 25em;
+    background-color: white;
+    border: solid 1px;
+    overflow: auto;
+    padding: 1em;
+}
+#help-window:target {
+    display: block;
+}
+#help-window > div {
+    float: right;
+    width: 40%;
+}
+#help-window th {
+    border: solid 1px;
+}
+#help-window td {
+    border: solid 1px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+#help-window table {
+    text-align: left;
+    border: solid 1px;
+    width: 40%;
+}
+.show-article { display: block; }
+.hide-article { display: none; }
+label { display: block; }
+#article-list div {
+    border: solid 1px;
+    margin: 1em;
+    padding: 1em;
+}
+textarea {
+    width: 40em;
+    height: 5em;
+    display: block;
+}
+form {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 1em;
+    border: solid 1px;
+}
+pre {
+    white-space: pre-wrap;
+}

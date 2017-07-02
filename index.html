@@ -9,31 +9,13 @@
 <meta name="generator" content="vim, perl">
 <meta name="keywords" content="ptt, index, list, backup, ">
 <meta name="discription" content="list genrated by perl script which grep out metadata. ">
+<link rel="stylesheet" href="ext/ptt-list.css">
 <title> 文章索引 </title>
-<style>
-.show-article { display: block; }
-.hide-article { display: none; }
-label { display: block; }
-div {
-    border: solid 1px;
-    margin: 1em;
-    padding: 1em;
-}
-textarea {
-    width: 40em;
-    height: 5em;
-}
-form {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    padding: 1em;
-    border: solid 1px;
-}
-</style>
 </head>
 <body>
+
+<div id="article-list">
+
 <div>
 <h2>
 <a href="M.1492665505.A.7CB.html">
@@ -60760,13 +60742,78 @@ Sat Jun 13 01:46:00 2015
 </pre>
 
 </div>
+</div>
 
 <form id="query-form">
 <h2>query statement</h2>
-<textarea name="eval-condition"></textarea>
-<input type="submit">
+<textarea name="eval-condition">
+( username.match(/5566/) || nickname.match(/56/) ) &amp;&amp;
+board == 'Gossiping' &amp;&amp;
+category == '問卦' &amp;&amp;
+( reply != 'Re' &amp;&amp; reply != 'Fw' ) &amp;&amp;
+title.match(/[？。！]$/)
+</textarea>
 <label>match number: <output name="match-number"></output></label>
+<a href="#help-window">help</a>
+<input type="submit">
 </form>
+
+<div id="help-window">
+<div>
+<h2>
+<a href="M.1456655390.A.F48.html">
+Fw: [爆卦] KMT與馬英九 對228的&quot;歷年努力&quot;一覽表
+</a></h2>
+<small>
+<u>jetalpha (月迷風影)</u>
+@
+PublicIssue
+@
+Sun Feb 28 18:29:48 2016
+</small>
+<pre>
+心得：
+    KMT還蠻努力的，努力淡化二二八這個事件，然後假裝不會有人去注意
+
+這件事……感謝  ZMittermeyer大整理出這些事件。
+</pre>
+</div>
+<a href="#">close</a>
+<table>
+<tr><th>變數 <th>值
+<tr><th>list <td>[article, article, ... ]
+<tr><th>i <td>200
+<tr><th>article <td> {url, reply, category, title, username, nickname, board, date, description, raw, node}
+<tr><th>url <td><script> document.write(location.href.replace(/[^\/]*$/,'') +
+'M.1456655390.A.F48.html')
+</script>
+<tr><th>reply <td> Fw
+<tr><th>category <td> 爆卦
+<tr><th>title <td> KMT與馬英九 對228的&quot;歷年努力&quot;一覽表
+<tr><th>username <td> jetalpha
+<tr><th>nickname <td> 月迷風影
+<tr><th>board <td> PublicIssue
+<tr><th>date <td> new Date('2016-02-28T18:29:48')
+<tr><th>description <td> 心得：
+    KMT還蠻努力的，努力淡化二二八這個事件，然後假裝不會有人去注意
+
+這件事……感謝  ZMittermeyer大整理出這些事件。'
+<tr><th>raw <td> Fw: [爆卦] KMT與馬英九 對228的"歷年努力"一覽表
+
+jetalpha (月迷風影)
+@
+PublicIssue
+@
+Sun Feb 28 18:29:48 2016
+
+心得：
+    KMT還蠻努力的，努力淡化二二八這個事件，然後假裝不會有人去注意
+
+    這件事……感謝  ZMittermeyer大整理出這些事件。
+
+<tr><th>node <td> &lt;div&gt;...&lt;/div&gt;
+</table>
+</div>
 
 </body>
 <script src="ext/searcher.js"></script>

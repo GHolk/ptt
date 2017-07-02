@@ -45,10 +45,12 @@ PttArticle.prototype.show = function(toShow) {
     else return this.node.className != 'hide-article'
 }
 
-var divs = document.getElementsByTagName('div')
+var listNode = document.getElementById('article-list')
+var articleNodes = listNode.getElementsByTagName('div')
 var articleList = []
-for (var i=0; i<divs.length; i++) {
-    articleList.push(new PttArticle(divs[i]))
+
+for (var i=0 l=articleNodes.length; i<l; i++) {
+    articleList.push(new PttArticle(articleNodes[i]))
 }
 
 var queryForm = document.getElementById('query-form')
@@ -117,7 +119,7 @@ function queryStatementToFunction(queryStatement) {
 var matchCountNode = queryForm.elements['match-number']
 
 function showWithIndexList(indexList) {
-    document.body.className = 'hide-article'
+    listNode.className = 'hide-article'
 
     var matchCount = 0
     for (var i=0, l=indexList.length; i<l; i++) {
@@ -131,7 +133,7 @@ function showWithIndexList(indexList) {
     }
 
     matchCountNode.value = matchCount
-    document.body.className = 'show-article'
+    listNode.className = 'show-article'
 }
 
 // init query

@@ -4,7 +4,7 @@
 #sed -i '/^<body>$/,$d ;  $i<body>' index.html
 
 [ -s index.html ] && mv index.html index_old.html
-sed '/^<body>$/ r index_new.html' index_old.html >index.html
+sed '/^<div id="article-list">$/ r index_new.html' index_old.html >index.html
 rm index_new.html
 
 if [ "$1" = "-p" ]
