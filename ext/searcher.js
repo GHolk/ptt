@@ -49,7 +49,7 @@ var listNode = document.getElementById('article-list')
 var articleNodes = listNode.getElementsByTagName('div')
 var articleList = []
 
-for (var i=0 l=articleNodes.length; i<l; i++) {
+for (var i=0, l=articleNodes.length; i<l; i++) {
     articleList.push(new PttArticle(articleNodes[i]))
 }
 
