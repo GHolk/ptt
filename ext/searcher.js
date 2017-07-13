@@ -25,7 +25,7 @@ function PttArticle(articleNode) {
 
     this.description =
         articleNode.getElementsByTagName('pre')[0].textContent
-    this.raw = articleNode.textContent
+    this.raw = articleNode.outerHTML
     this.node = articleNode
 }
 

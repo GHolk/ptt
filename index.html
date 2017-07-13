@@ -63039,7 +63039,7 @@ title.match(/[？。！]$/)
 </form>
 
 <div id="help-window">
-<div>
+<blockquote>
 <h2>
 <a href="M.1456655390.A.F48.html">
 Fw: [爆卦] KMT與馬英九 對228的&quot;歷年努力&quot;一覽表
@@ -63057,41 +63057,56 @@ Sun Feb 28 18:29:48 2016
 
 這件事……感謝  ZMittermeyer大整理出這些事件。
 </pre>
-</div>
-<a href="#">close</a>
+</blockquote>
 <table>
-<tr><th>變數 <th>值
-<tr><th>list <td>[article, article, ... ]
-<tr><th>i <td>200
-<tr><th>article <td> {url, reply, category, title, username, nickname, board, date, description, raw, node}
-<tr><th>url <td><script> document.write(location.href.replace(/[^\/]*$/,'') +
+<tr><th>變數 <th>說明 <th>值
+<tr><td>list <td>所有文章組成的陣列 <td>[article, article, ... ]
+<tr><td>i <td>該文章的索引 <td>200
+<tr><td>article <td>文章的物件本身 <td> {url, reply, category, title, username, nickname, board, date, description, raw, node}
+<tr><td>url <td>該文章網址 <td><script> document.write(location.href.replace(/[^\/]*$/,'') +
 'M.1456655390.A.F48.html')
 </script>
-<tr><th>reply <td> Fw
-<tr><th>category <td> 爆卦
-<tr><th>title <td> KMT與馬英九 對228的&quot;歷年努力&quot;一覽表
-<tr><th>username <td> jetalpha
-<tr><th>nickname <td> 月迷風影
-<tr><th>board <td> PublicIssue
-<tr><th>date <td> new Date('2016-02-28T18:29:48')
-<tr><th>description <td> 心得：
+<tr><td>reply <td>種類，有 Re 、 Fw 、空字串 <td> Fw
+<tr><td>category <td>分類，不含 [] <td> 爆卦
+<tr><td>title <td>標題（不含 reply 和 category ） <td> KMT與馬英九 對228的&quot;歷年努力&quot;一覽表
+<tr><td>username <td>作者 id <td> jetalpha
+<tr><td>nickname <td>作者暱稱 <td> 月迷風影
+<tr><td>board <td>看板名 <td> PublicIssue
+<tr><td>date <td>發文日期 <td> new Date('2016-02-28T18:29:48') // JS 的日期物件
+<tr><td>description <td>摘要 <td> 心得：
     KMT還蠻努力的，努力淡化二二八這個事件，然後假裝不會有人去注意
 
 這件事……感謝  ZMittermeyer大整理出這些事件。'
-<tr><th>raw <td> Fw: [爆卦] KMT與馬英九 對228的"歷年努力"一覽表
+<tr><td>raw <td>HTML 原始碼 <td>
+&lt;div&gt;
 
-jetalpha (月迷風影)
+
+&lt;h2&gt;
+&lt;a href="M.1456655390.A.F48.html"&gt;
+Fw: [爆卦] KMT與馬英九 對228的&amp;quot;歷年努力&amp;quot;一覽表
+&lt;/a&gt;&lt;/h2&gt;
+
+&lt;small&gt;
+&lt;u&gt;jetalpha (月迷風影)&lt;/u&gt;
 @
 PublicIssue
 @
 Sun Feb 28 18:29:48 2016
+&lt;/small&gt;
+
+&lt;pre&gt;
 
 心得：
     KMT還蠻努力的，努力淡化二二八這個事件，然後假裝不會有人去注意
 
-    這件事……感謝  ZMittermeyer大整理出這些事件。
+這件事……感謝  ZMittermeyer大整理出這些事件。
 
-<tr><th>node <td> &lt;div&gt;...&lt;/div&gt;
+&lt;/pre&gt;
+
+&lt;/div&gt;
+
+
+<tr><td>node <td>html 節點物件 <td> &lt;div&gt;...&lt;/div&gt;
 </table>
 </div>
 

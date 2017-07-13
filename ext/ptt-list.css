@@ -1,19 +1,8 @@
 #help-window {
-    display: none;
-    position: fixed;
-    left: 8em;
-    top: 2em;
-    width: 50em;
-    height: 25em;
-    background-color: white;
     border: solid 1px;
-    overflow: auto;
     padding: 1em;
 }
-#help-window:target {
-    display: block;
-}
-#help-window > div {
+#help-window > blockquote {
     float: right;
     width: 40%;
 }
@@ -29,7 +18,7 @@
 #help-window table {
     text-align: left;
     border: solid 1px;
-    width: 40%;
+    width: 50%;
 }
 .show-article { display: block; }
 .hide-article { display: none; }
