@@ -63627,7 +63627,7 @@ Sat Jun 13 01:46:00 2015
 <form id="query-form">
 <h2>query statement</h2>
 <textarea name="eval-condition">
-( username.match(/5566/) || nickname.match(/56/) ) &amp;&amp;
+return ( username.match(/5566/) || nickname.match(/56/) ) &amp;&amp;
 board == 'Gossiping' &amp;&amp;
 category == '問卦' &amp;&amp;
 ( reply != 'Re' &amp;&amp; reply != 'Fw' ) &amp;&amp;
@@ -63661,7 +63661,7 @@ Sun Feb 28 18:29:48 2016
 <table>
 <tr><th>變數 <th>說明 <th>值
 <tr><td>list <td>所有文章組成的陣列 <td>[article, article, ... ]
-<tr><td>i <td>該文章的索引 <td>200
+<tr><td>index <td>該文章的索引 <td>200
 <tr><td>article <td>文章的物件本身 <td> {url, reply, category, title, username, nickname, board, date, description, raw, node}
 <tr><td>url <td>該文章網址 <td><script> document.write(location.href.replace(/[^\/]*$/,'') +
 'M.1456655390.A.F48.html')

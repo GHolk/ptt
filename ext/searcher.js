@@ -98,20 +98,44 @@ window.onpopstate = function whenPopState(evt) {
     if (Array.isArray(state)) showWithIndexList(state)
 }
 
-function queryStatementToFunction(queryStatement) {
-    return function evalQuery(article, i, list) {
-        var raw = article.raw
-        var reply = article.reply 
-        var category = article.category 
-        var title = article.title 
-        var username = article.username 
-        var nickname = article.nickname 
-        var board = article.board 
-        var description = article.description 
-        var date = article.date 
-        var node = article.node 
+var keyList = [
+    'raw',
+    'reply',
+    'category',
+    'title',
+    'username',
+    'nickname',
+    'board',
+    'description',
+    'date',
+    'node'
+]
 
-        return Boolean(eval(queryStatement))
+var queryCaller = {}
+
+function queryStatementToFunction(queryStatement) {
+    if (! queryStatement.match('return')) {
+        queryStatement = 'return (' + queryStatement + ')'
+    }
+    var argumentNames = keyList.slice(0)
+    argumentNames.push('index')
+    argumentNames.push('list')
+
+    try {
+        var trueFunction = new Function(argumentNames, queryStatement)
+    }
+    catch (functionConstructError) {
+        alert(functionConstructError + '\nplease check syntax of query')
+        throw functionConstructError
+    }
+
+    return function proxyForQuery(article, index, list) {
+        var argumentValues = keyList.map(function keyToValue(key) {
+            return article[key]
+        })
+        argumentValues.push(index)
+        argumentValues.push(list)
+        return Boolean(trueFunction.apply(queryCaller, argumentValues))
     }
 }
 
