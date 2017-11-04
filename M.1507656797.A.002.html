@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問卦] ptt是用什麼搜尋演算法 - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="TL;DR (太長，講結論):
+    文章標題使用: DBCS_strcasestr
+    時間複雜度: O(n ^ 2)
+※ 引述《shiburin (&gt;\\\&lt;)》之銘言：
+: 肥宅我發現
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問卦] ptt是用什麼搜尋演算法">
+<meta property="og:description" content="TL;DR (太長，講結論):
+    文章標題使用: DBCS_strcasestr
+    時間複雜度: O(n ^ 2)
+※ 引述《shiburin (&gt;\\\&lt;)》之銘言：
+: 肥宅我發現
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1507656797.A.002.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Gossiping/M.1507656797.A.002.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">grapherd (NULL)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問卦] ptt是用什麼搜尋演算法</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Wed Oct 11 01:33:04 2017</span></div>
+TL;DR (太長，講結論):
+
+    文章標題使用: DBCS_strcasestr
+    時間複雜度: O(n ^ 2)
+
+
+<span class="f2">※ 引述《shiburin (&gt;\\\&lt;)》之銘言：
+</span><span class="f6">: 肥宅我發現
+</span><span class="f6">: 如果把搜尋的字串加長
+</span><span class="f6">: 搜尋時間就會明顯變長
+</span><span class="f6">: 所以ptt的搜尋是用什麼演算法呢
+</span><span class="f6">: 該不會是linear search吧
+</span><span class="f6">: 跑超久的
+</span><span class="f6">: 有沒有卦？
+</span>
+ptt source code: <a href="https://github.com/ptt/pttbbs" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs</a>
+
+追下去
+ |-&gt; 有關文章的程式碼:
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c</a>
+ |
+ |-&gt; 有關按鍵按下去的觸發 (Ctrl+X, r, y, ...etc):
+ |
+ |    static int i_read_key(const onekey_t *rcmdlist, keeploc_t *locmem,
+ |                          int bid, int bottom_line, int pending_darws)
+ |
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L874" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L874</a>
+ |
+ |-&gt; 有關 z (搜尋) 按下去的程式碼:
+ |       ...
+ |       case &#39;/&#39;:
+ |       case &#39;?&#39;:
+ |           mode = select_read(locmem, RS_KEYWORD);
+ |           break;
+ |
+ |       case &#39;S:
+ |       ...
+ |
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L979" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L979</a>
+ |
+ |-&gt; 先建立出下面那排問你要搜尋啥的輸入欄:
+ |
+ |    static int
+ |    ask_filter_predicate(filter_predicate_t *pred, int prev_modes, int sr_mode,
+ |                         const fileheader_t *fh, int *success)
+ |        ...
+ |        } else if (sr_mode &amp; RS_KEYWORD) {
+ |            if(!getdata(b_lines, 0,
+ |                        currmode &amp; MODE_SELECT ? &#34;增加條件 標題: &#34;:&#34;搜尋標題: &#34;,
+ |                        keyword, TTLEN, DOECHO) || trim_blank(keyword))
+ |                return READ_REDRAW;
+ |
+ |            LOG_IF(LOG_CONF_KEYWORD, log_filef(&#34;keyword_search_log&#34;, LOG_CREAT,
+ |                                               &#34;%s:%s\n&#34;, currboard, keyword));
+ |
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L593" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L593</a>
+ |
+ |-&gt; 然後再來搜尋:
+ |
+ |    if (select_read_should_build(newdirect, bid, &amp;resume_from, &amp;count) &amp;&amp;
+ |        (count = select_read_build(currdirect, newdirect, !first_select,
+ |                                   force_full_build ? 0 : resume_from, count,
+ |                                   match_filter_predicate, &amp;predicate)) &lt; 0) {
+ |
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L855" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L855</a>
+ |
+ |-&gt; 如果沒有被 shortcut, 就會去執行後面的 select_read_build:
+ |
+ |    static int
+ |    select_read_build(const char *src_direct, const char *dst_direct,
+ |                      int src_direct_has_reference, time4_t resume_from, int count,
+ |                      int (*match)(const fileheader_t *fh, void *arg), void *arg)
+ |
+ |    這邊的 match 是個函式指標，用來搜尋用的。前面傳入的是 match_filter_predicate，
+ |    因此可以得知是使用這個函式來搜尋。
+ |
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L691" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L691</a>
+ |
+ |-&gt; 執行 match (match_filter_predicate)
+ |
+ |    if (!match(&amp;fhs[i], arg))
+ |        continue;
+ |
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L731" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L731</a>
+ |
+ |-&gt; 在 pool 中比對
+ |
+ |    ...
+ |    else if (sr_mode &amp; RS_KEYWORD)
+ |        return DBCS_strcasestr(fh-&gt;title, keyword) != NULL;
+ |    ...
+ |
+ |   DBCS: Double-byte Character Sets 雙位元組字元集。
+ |         這東西應該是 ptt 內部的字串編碼方式。
+ |   man strcasestr: strstr, strcasestr, strnstr -- locate a substring in a string
+ |         94 搜尋的本體啦。
+ |         ref: <a href="https://linux.die.net/man/3/strcasestr" target="_blank" rel="nofollow">https://linux.die.net/man/3/strcasestr</a>
+ |
+ |   fh: fileheader_t, 位於 include/pttstruct.h 的一個結構，
+ |       裡面包含了許多 post information。例如說 fh-&gt;title // 你應該看得懂吧
+ |   <a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L663" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/read.c#L663</a>
+ |
+ |-&gt; DBCS_strcasestr
+ |
+ |    char *
+ |    DBCS_strcasestr(const char *pool, const char *ptr)
+ |
+ |    // 簡化版
+ |    int szpool = strlen(pool);
+ |    int szptr = strlen(ptr);
+ |    for (int i = 0; i &lt; szpool - szptr; ++i) {
+ |        found = 1;
+ |        // compare szpool[i..szptr] with ptr
+ |        for (int j = 0; j &lt; szptr; ++j) {
+ |            if (non_ascii(pool[i + j])) {
+ |                // non-ascii compare miss 就 break
+ |                if (ptr[j] != pool[i + j] ||
+ |                    ptr[j + 1] != pool[i + j + 1]) {
+ |                    found = 0;
+ |                    break;
+ |                }
+ |            } else {
+ |                // ascii compare miss 就 break
+ |            }
+ |        }
+ |        if (found)
+ |            return (char *) pool + i;
+ |        if (next_iter)
+ |            i++;
+ |    }
+ |    return NULL;
+ |------------------------------------------------------------
+
+
+ 結論:
+
+ 文章的 title 比對上使用 DBCS_strcasestr，就是很單純的比對，
+ 時間複雜度為 O(n ^ 2)。
+
+ 全資料夾文章的搜尋應該是在 select_read_build 裡面做掉的，
+ 一個一個搜過去。
+
+ 所以很 linear，沒什麼特殊的就是。
+
+
+ 附註：
+
+ ptt 能夠活下來真的是奇蹟。裡面程式碼亂成一團還能維護，
+ tab / space 混用，沒有統一的程式碼風格，沒有統一的 comment 風格。
+
+ 不過 docs 還有註解很有用，太感恩了Ｑ＿Ｑ
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 122.118.6.13
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1507656797.A.002.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1507656797.A.002.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hankdai</span><span class="f3 push-content">: 推一個</span><span class="push-ipdatetime"> 10/11 01:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Yukari000</span><span class="f3 push-content">: 嗯</span><span class="push-ipdatetime"> 10/11 01:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Qoo20811</span><span class="f3 push-content">: 恩 我也這麼覺得</span><span class="push-ipdatetime"> 10/11 01:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">formatted</span><span class="f3 push-content">: 大推</span><span class="push-ipdatetime"> 10/11 01:34
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">BoBoooM</span><span class="f3 push-content">: 看不懂啦幹</span><span class="push-ipdatetime"> 10/11 01:35
+</span></div><span class="f2">※ 編輯: grapherd (122.118.6.13), 10/11/2017 01:36:25
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">thanksmr</span><span class="f3 push-content">: 嗯 跟我想得很接近了</span><span class="push-ipdatetime"> 10/11 01:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chien20145</span><span class="f3 push-content">: 專業</span><span class="push-ipdatetime"> 10/11 01:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zxasqw0246</span><span class="f3 push-content">: 嗯 跟我猜的一樣</span><span class="push-ipdatetime"> 10/11 01:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a3831038</span><span class="f3 push-content">: 搞不好沒在維護</span><span class="push-ipdatetime"> 10/11 01:37
+</span></div>
+有啦，最後一個 commit 是六天前：
+
+    @robertabcd  robertabcd wsproxy: support continuation frame.
+    Latest commit 8bacd2e  6 days ago
+
+現在主機的版本：
+
+    編譯時間: Fri Aug 25 11:18:49 CST 2017
+    編譯版本: <a href="https://github.com/ptt/pttbbs.git" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs.git</a> c2743307 1d5cadd1
+
+主要不會去攪動這些 code 的原因很簡單啊：
+
+    這些 code 已經好好的運行了 12 年了，也沒有什麼大的 bug
+    附載這些八卦肥宅的搜尋也恰到好處，既然如此，就沒什麼必要
+    負擔更改 source code 的危險，來改善這些部分。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">karta1897830</span><span class="f3 push-content">: 跟我剛剛說的差不多</span><span class="push-ipdatetime"> 10/11 01:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">starfishkira</span><span class="f3 push-content">: 嗯嗯 我要說的差不多就這樣</span><span class="push-ipdatetime"> 10/11 01:37
+</span></div><span class="f2">※ 編輯: grapherd (122.118.6.13), 10/11/2017 01:41:45
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wasijohn</span><span class="f3 push-content">: 這是很早期的BBS現在看來當然有很多可以改的地方，不過</span><span class="push-ipdatetime"> 10/11 01:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wasijohn</span><span class="f3 push-content">: 你很用心分析給推</span><span class="push-ipdatetime"> 10/11 01:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">z1976</span><span class="f3 push-content">: 有trace有推</span><span class="push-ipdatetime"> 10/11 01:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BECHI</span><span class="f3 push-content">: 快推 不然人家以為我們看不懂</span><span class="push-ipdatetime"> 10/11 01:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">karta1897830</span><span class="f3 push-content">: 嗯</span><span class="push-ipdatetime"> 10/11 01:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MiLuDaiBoom</span><span class="f3 push-content">: 跟我想的一樣呢</span><span class="push-ipdatetime"> 10/11 01:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeffery95099</span><span class="f3 push-content">: 原來是這樣 我早就想到了</span><span class="push-ipdatetime"> 10/11 01:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tim9527</span><span class="f3 push-content">: 看懂給推</span><span class="push-ipdatetime"> 10/11 01:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GTO106</span><span class="f3 push-content">: 差不多就這樣</span><span class="push-ipdatetime"> 10/11 01:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jhjhs33504</span><span class="f3 push-content">: 原來是主機威能...</span><span class="push-ipdatetime"> 10/11 01:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mhtvpz</span><span class="f3 push-content">: 好強R</span><span class="push-ipdatetime"> 10/11 01:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gagalala</span><span class="f3 push-content">: 竟然是linear太神啦</span><span class="push-ipdatetime"> 10/11 01:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">reexamor</span><span class="f3 push-content">: 文組看不懂給推 請問理組的大家都看得懂嗎？</span><span class="push-ipdatetime"> 10/11 01:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CobeBryant</span><span class="f3 push-content">: 結果真的是linear</span><span class="push-ipdatetime"> 10/11 02:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shenguan</span><span class="f3 push-content">: 你演算法系？</span><span class="push-ipdatetime"> 10/11 02:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ap954212</span><span class="f3 push-content">: 嗯嗯跟我想的一樣</span><span class="push-ipdatetime"> 10/11 02:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sz</span><span class="f3 push-content">: 才不是O(n^2)</span><span class="push-ipdatetime"> 10/11 02:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sz</span><span class="f3 push-content">: 字串長度要看做有上限 算常數</span><span class="push-ipdatetime"> 10/11 02:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g5637128</span><span class="f3 push-content">: 看不懂給推</span><span class="push-ipdatetime"> 10/11 02:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bomda</span><span class="f3 push-content">: 嗯嗯完全看不懂</span><span class="push-ipdatetime"> 10/11 02:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andyillusion</span><span class="f3 push-content">: 這證明style都是虛的</span><span class="push-ipdatetime"> 10/11 02:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">balcony5566</span><span class="f3 push-content">: 恩恩 跟我想得差不多</span><span class="push-ipdatetime"> 10/11 02:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zzzz8931</span><span class="f3 push-content">: 樓下開發 O(lgn) 版本</span><span class="push-ipdatetime"> 10/11 02:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">imren1214</span><span class="f3 push-content">: 好猛的主機</span><span class="push-ipdatetime"> 10/11 02:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gump2015</span><span class="f3 push-content">: 資管看不懂 正常嗎</span><span class="push-ipdatetime"> 10/11 02:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mixzero</span><span class="f3 push-content">: 現在看八卦版還要懂程式了？</span><span class="push-ipdatetime"> 10/11 02:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MADAOTW</span><span class="f3 push-content">: 程式能跑就是王道…</span><span class="push-ipdatetime"> 10/11 02:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tkufc</span><span class="f3 push-content">: 跟我想得很接近</span><span class="push-ipdatetime"> 10/11 02:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pepro</span><span class="f3 push-content">: 要改善就把文章標題加上index吧 把她弄成儲存各字元所對應</span><span class="push-ipdatetime"> 10/11 02:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pepro</span><span class="f3 push-content">: 的數字 再儲存所在位置，然後照大小排序。</span><span class="push-ipdatetime"> 10/11 02:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pepro</span><span class="f3 push-content">: 比對的時候就直接比大小 可以使用binarySearch，有找到並且</span><span class="push-ipdatetime"> 10/11 02:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pepro</span><span class="f3 push-content">: 是連續就繼續搜尋</span><span class="push-ipdatetime"> 10/11 02:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pepro</span><span class="f3 push-content">: 這樣可以使比對字串時間變成logn</span><span class="push-ipdatetime"> 10/11 02:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tw2000</span><span class="f3 push-content">: 上底+下底X高÷2 啦</span><span class="push-ipdatetime"> 10/11 02:57
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">wayneh1556</span><span class="f3 push-content">: 文組怒噓</span><span class="push-ipdatetime"> 10/11 03:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cy4v</span><span class="f3 push-content">: 主機超神的</span><span class="push-ipdatetime"> 10/11 03:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cowardlyman</span><span class="f3 push-content">: 恩恩@@</span><span class="push-ipdatetime"> 10/11 03:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">positMIT</span><span class="f3 push-content">: 你幹嘛呢</span><span class="push-ipdatetime"> 10/11 03:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BusterWu</span><span class="f3 push-content">: 可以...講中文嗎</span><span class="push-ipdatetime"> 10/11 06:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kipi91718</span><span class="f3 push-content">: 哇靠 人家隨便問問 你trace code這麼認真</span><span class="push-ipdatetime"> 10/11 07:23
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">dick8752</span><span class="f3 push-content">: 文組看不懂啦！幹</span><span class="push-ipdatetime"> 10/11 07:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s4552752</span><span class="f3 push-content">: 講中文好嗎 謝謝</span><span class="push-ipdatetime"> 10/11 08:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xt4873</span><span class="f3 push-content">: 吊的到ptt本人回文，樓下表演榨汁</span><span class="push-ipdatetime"> 10/11 08:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Comebuy</span><span class="f3 push-content">: 嗯嗯嗯嗯</span><span class="push-ipdatetime"> 10/11 08:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">charlly</span><span class="f3 push-content">: 嗚嗚</span><span class="push-ipdatetime"> 10/11 09:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nova06091</span><span class="f3 push-content">: O(n)</span><span class="push-ipdatetime"> 10/11 09:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Amushroom</span><span class="f3 push-content">: 嗯嗯，完全看不懂</span><span class="push-ipdatetime"> 10/11 10:56
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">harrishu</span><span class="f3 push-content">: 講中文喇</span><span class="push-ipdatetime"> 10/11 11:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iamten</span><span class="f3 push-content">: 跟我一樣</span><span class="push-ipdatetime"> 10/11 11:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">holishing</span><span class="f3 push-content">: 程式碼亂是從 MapleBBS 甚至更早就已經留下來的啊</span><span class="push-ipdatetime"> 10/12 15:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">holishing</span><span class="f3 push-content">: 族譜可以參考: <a hrefhref="http://www.ptt.cc/bbs/Programming/M.1201739707.A.078.html" target="_blank" rel="nofollow">#17eHUx1u (Programming)</a></span><span class="push-ipdatetime"> 10/12 15:30
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Gossiping/M.1507656797.A.002.html?cacheKey=2148-35575966&offset=11846&offset-sig=6782fc51a8a293545f0308a908e4ebb2eea8b0cb" data-longpollurl="/v1/longpoll?id=32bf1de45fb6cb64fbcb0d018b7f54b9b165b7f0" data-offset="11846"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
