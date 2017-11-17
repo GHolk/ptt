@@ -9,7 +9,7 @@
 queue="ptt_backup_queue.txt"
 queue_old="ptt_backup_queue_old.txt"
 date="`date -Iseconds`"
-ptt_dir="$HOME/web/ptt"
+ptt_dir="$HOME/web/ptt/backup"
 
 error() {
     echo "$1" >&2
