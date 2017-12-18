@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問卦] C語言沒人用goto? - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="八卦是，ptt 的程式碼裡面也有使用 goto.
+在 c99 spec 裡面，goto 是定義在 6.8.6 Jump Statements
+其中的 6.8.6.1 The goto statement. 作用就是提供一個無條件
+跳躍的功能. Spec 裡面給的範例是這個:
+    /* ... */
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問卦] C語言沒人用goto?">
+<meta property="og:description" content="八卦是，ptt 的程式碼裡面也有使用 goto.
+在 c99 spec 裡面，goto 是定義在 6.8.6 Jump Statements
+其中的 6.8.6.1 The goto statement. 作用就是提供一個無條件
+跳躍的功能. Spec 裡面給的範例是這個:
+    /* ... */
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1507762611.A.C80.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Gossiping/M.1507762611.A.C80.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">grapherd (NULL)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問卦] C語言沒人用goto?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Oct 12 06:56:41 2017</span></div>
+<span class="f2">※ 引述《bencert (根本ㄏㄏ)》之銘言：
+</span><span class="f6">: 小弟我剛剛想起來
+</span><span class="f6">: C語言有種用法是goto
+</span><span class="f6">: 但是上程式設計的課老師也跳過不教
+</span><span class="f6">: 我看也沒人用過goto
+</span><span class="f6">: 有沒有C語言GOTO的八卦?
+</span><span class="f6">: -----
+</span><span class="f6">: Sent from JPTT on my Samsung SM-G930F.
+</span>
+八卦是，ptt 的程式碼裡面也有使用 goto.
+
+在 c99 spec 裡面，goto 是定義在 6.8.6 Jump Statements
+其中的 6.8.6.1 The goto statement. 作用就是提供一個無條件
+跳躍的功能. Spec 裡面給的範例是這個:
+
+    /* ... */
+    goto first_time;
+    for (;;) {
+        // determine next operation
+        /* ... */
+        if (need to reinitialize) {
+            // reinitialize-only code
+            /* ... */
+        first_time:
+            // general initialization code
+            continue;
+        }
+        // handle other operations
+        /* ... */
+    }
+
+基本上這樣的形式，還是能夠做簡化的，只要把 first_time label
+下面的 initialization code 做成一個 function 去 call，就不用
+用到 goto label 了。
+
+至於會使用到 goto 的一些理由，在要求結構化程式碼，以及編譯器
+優化隨著技術進步的關係，也越來越站不住腳了。
+
+至於為什麼台灣都有種無腦不使用 goto 的教條呢？因為當老師的
+只會舉一些鳥蛋的例子啊：
+
+    int main() {
+        int i = 0;
+
+    loop:
+        printf(&#34;%d\n&#34;, i++);
+        if (i &lt; 10)
+            goto loop;
+    }
+
+然後就沒了。
+
+  然後就沒了。
+
+    然後就沒了。
+
+
+
+目前比較大的 C 語言專案中用到 goto，幾乎都是在做 exception handling 的部分，
+因為 C 語言的特性，出錯了的時候，很多動態配置的記憶體會需要回收掉，
+要不然會造成 memory leak。這時候 goto 就變得很方便。例如說 CPython
+的這段程式碼：
+
+    static void
+    TaskObj_finalize(TaskObj *task)
+    {
+        /* ... */
+        if (task-&gt;task_state != STATE_PENDING ||
+            !task-&gt;task_log_destroy_pending) {
+            goto done;
+        }
+
+        /* ... */
+        context = PyDict_New();
+        if (context == NULL) {
+            goto finally;
+        }
+
+        message = PyUnicode_FromString(&#34;Task was destroyed...&#34;);
+        if (message == NULL) {
+            goto finally;
+        }
+
+        /* ... */
+    finally:
+        Py_XDECREF(context);
+        Py_XDECREF(message);
+
+        /* Restore the saved exception. */
+        PyErr_Restore(error_type, error_value, error_traceback);
+
+    done:
+        FutureObj_finalize((FutureObj*)task);
+    }
+
+    <a href="https://github.com/python/cpython/blob/master/Modules/_asynciomodule.c#L1711" target="_blank" rel="nofollow">https://github.com/python/cpython/blob/master/Modules/_asynciomodule.c#L1711</a>
+
+這邊就能很明顯看出 goto 的作用啦，第一個 `goto done`，因為還沒有
+allocate context 或是 message，所以不需要去做善後的工作，如果這時候
+觸發這個 goto 的話，就直接到底就好。
+
+但是如果遇到 context 或是 message allocate 失敗的話，因為已經有
+allocate 一些資源，就必須要跳到 finally 去把這些資源給清空以及還原。
+
+在 Linux kernel 裡面也有許多需要做 exception handling 的部分，
+因此也大量的使用了 goto, 但不太會有教科書上那種錯誤範例的使用方式
+在裡面就是了。
+
+
+
+最後，pttbbs 本身也有用啊 XDDD
+
+<a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/brc.c#L689" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/brc.c#L689</a>
+<a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/brc.c#L704" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/brc.c#L704</a>
+<a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/edit.c#L2250" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/edit.c#L2250</a>
+<a href="https://github.com/ptt/pttbbs/blob/master/mbbsd/edit.c#L1848" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/blob/master/mbbsd/edit.c#L1848</a>
+<a href="https://github.com/ptt/pttbbs/search?q=goto" target="_blank" rel="nofollow">https://github.com/ptt/pttbbs/search?q=goto</a>
+
+更多 goto，請參考 wikipedia:
+
+<a href="https://en.wikipedia.org/wiki/Goto#Common_usage_patterns_of_Goto" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Goto#Common_usage_patterns_of_Goto</a>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.113.63.78
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1507762611.A.C80.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1507762611.A.C80.html</a>
+</span><span class="f2">※ 編輯: grapherd (140.113.63.78), 10/12/2017 06:58:05
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sppmg</span><span class="f3 push-content">: 認真文給推</span><span class="push-ipdatetime"> 10/12 07:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pzyc79</span><span class="f3 push-content">: 語義不明 就不要怪人們亂用</span><span class="push-ipdatetime"> 10/12 07:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amethystboy</span><span class="f3 push-content">: 認真給推 我都goto 來goto去 只有自己懂</span><span class="push-ipdatetime"> 10/12 07:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">soga0806</span><span class="f3 push-content">: 認真給推</span><span class="push-ipdatetime"> 10/12 07:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">knetlalala</span><span class="f3 push-content">: push</span><span class="push-ipdatetime"> 10/12 07:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">FlyinwindX</span><span class="f3 push-content">: 認真給推!</span><span class="push-ipdatetime"> 10/12 07:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PONANZA</span><span class="f3 push-content">: 快推 不然人家會以為我看不懂</span><span class="push-ipdatetime"> 10/12 07:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">moonshade</span><span class="f3 push-content">: 通常是用在early exit 之類的，但是因為有很多亂用的</span><span class="push-ipdatetime"> 10/12 07:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">moonshade</span><span class="f3 push-content">: 人所以教學上會先教不要用，你如果看過一些光怪陸離</span><span class="push-ipdatetime"> 10/12 07:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">moonshade</span><span class="f3 push-content">: C/C++ 使用方法就會覺得教不要用是對的</span><span class="push-ipdatetime"> 10/12 07:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bab7171</span><span class="f3 push-content">: linux kernel用超多</span><span class="push-ipdatetime"> 10/12 07:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jodojeda</span><span class="f3 push-content">: 我不用goto這種爛指令 我都用comefrom</span><span class="push-ipdatetime"> 10/12 08:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">louiseeg</span><span class="f3 push-content">: 應該要有一本書叫 the art of goto</span><span class="push-ipdatetime"> 10/12 08:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">anshley</span><span class="f3 push-content">: 宅氣衝天</span><span class="push-ipdatetime"> 10/12 08:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WWWSENTYOU</span><span class="f3 push-content">: 快推 不然人家會以為我看不懂</span><span class="push-ipdatetime"> 10/12 08:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wanzi0601</span><span class="f3 push-content">: 我認為goto解讀會變差..不太用</span><span class="push-ipdatetime"> 10/12 08:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asd97190</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 08:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lpoijk</span><span class="f3 push-content">: 不用goto是哪些人...？</span><span class="push-ipdatetime"> 10/12 08:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Chiustin</span><span class="f3 push-content">: 深入淺出goto</span><span class="push-ipdatetime"> 10/12 08:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">assassinzero</span><span class="f3 push-content">: 113不簡單</span><span class="push-ipdatetime"> 10/12 08:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">weareworld</span><span class="f3 push-content">: 把exception包成函式不就好了？</span><span class="push-ipdatetime"> 10/12 08:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OGC218</span><span class="f3 push-content">: 文組如我…看不懂</span><span class="push-ipdatetime"> 10/12 08:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">greed3819</span><span class="f3 push-content">: 我們老師跟我說這樣會破壞程式結構叫我們不要使用，就</span><span class="push-ipdatetime"> 10/12 08:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">greed3819</span><span class="f3 push-content">: 連課本裡也寫不建議使用？</span><span class="push-ipdatetime"> 10/12 08:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xhung</span><span class="f3 push-content">: 推 認真文 goto在err_handling真的方便XD</span><span class="push-ipdatetime"> 10/12 09:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a2470abc</span><span class="f3 push-content">: 優文推 goto實務好像都拿來做例外的處理</span><span class="push-ipdatetime"> 10/12 09:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mikapauli</span><span class="f3 push-content">: 因為例外處理本身就是一件破壞程式結構的事情</span><span class="push-ipdatetime"> 10/12 09:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">loloman</span><span class="f3 push-content">: 就科技廠的機台可以處理run time error hang up狀況</span><span class="push-ipdatetime"> 10/12 09:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a5245242003</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 09:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Huffman</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 09:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cy4v</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 09:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">musie</span><span class="f3 push-content">: 沒有delimited continuation的低階語言才會要用goto</span><span class="push-ipdatetime"> 10/12 09:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">buffalobill</span><span class="f3 push-content">: 動態配製那邊通常會用do{}while(0);加上break;吧</span><span class="push-ipdatetime"> 10/12 09:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dou0228</span><span class="f3 push-content">: 不是，通常是最後要回收 memory 或其他 resource</span><span class="push-ipdatetime"> 10/12 09:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dou0228</span><span class="f3 push-content">: goo.gl/p3v23T</span><span class="push-ipdatetime"> 10/12 10:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cks908147</span><span class="f3 push-content">: 快推，不然人家以為我不懂</span><span class="push-ipdatetime"> 10/12 10:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">casd82</span><span class="f3 push-content">: 長知識推</span><span class="push-ipdatetime"> 10/12 10:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lozupomelo</span><span class="f3 push-content">: U文</span><span class="push-ipdatetime"> 10/12 10:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">thomaschion</span><span class="f3 push-content">: 我知道goto Hawaii</span><span class="push-ipdatetime"> 10/12 11:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aadsl</span><span class="f3 push-content">: 完全看不懂 哀 難怪我只能領低薪</span><span class="push-ipdatetime"> 10/12 11:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">george40516</span><span class="f3 push-content">: 我用goto只會把自己搞混 看來是功力不足@@</span><span class="push-ipdatetime"> 10/12 12:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kersihi</span><span class="f3 push-content">: 完全看不懂 哀 難怪我只能領低薪</span><span class="push-ipdatetime"> 10/12 12:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AirLee</span><span class="f3 push-content">: 樓上我也是</span><span class="push-ipdatetime"> 10/12 13:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zzzz8931</span><span class="f3 push-content">: 問高納德教授啦</span><span class="push-ipdatetime"> 10/12 13:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">greg870601</span><span class="f3 push-content">: 沒辦法R C++比較強，goto基本上沒用了</span><span class="push-ipdatetime"> 10/12 13:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dou0228</span><span class="f3 push-content">: C++ 能比 goto 難懂的東西多得是</span><span class="push-ipdatetime"> 10/12 14:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vvrr</span><span class="f3 push-content">: 用do{}while(0)+break，跳出do之後還是要跑過接下來的每一行</span><span class="push-ipdatetime"> 10/12 15:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vvrr</span><span class="f3 push-content">: goto可以根據不同的錯誤，跳過某些行。當然也可以在break</span><span class="push-ipdatetime"> 10/12 15:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vvrr</span><span class="f3 push-content">: 前設好錯誤碼，再根據錯誤碼寫if/else，但這樣反而很亂..</span><span class="push-ipdatetime"> 10/12 15:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hinajian</span><span class="f3 push-content">: 嗯，同意</span><span class="push-ipdatetime"> 10/12 15:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iamten</span><span class="f3 push-content">: ms c++有支援try catch finally當然不用</span><span class="push-ipdatetime"> 10/15 22:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">iamten</span><span class="f3 push-content">: 說c不用goto百分百外行</span><span class="push-ipdatetime"> 10/15 22:36
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Gossiping/M.1507762611.A.C80.html?cacheKey=2116-35584003&offset=8749&offset-sig=801483c3d5010233d48d7dfe9176d1ea585bed27" data-longpollurl="/v1/longpoll?id=1055e7a86e444875aa747583f27411cd33cda774" data-offset="8749"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
