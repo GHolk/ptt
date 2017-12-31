@@ -4,6 +4,8 @@ use HTML::Parser() ;
 use feature "switch";
 use HTML::Entities;
 
+my $base_url = 'http://gholk.github.io/ptt';
+
 my $p = HTML::Parser->new
 ( 
 	api_version => 3,
@@ -88,26 +90,26 @@ foreach my $file (@ARGV)
 
 	$meta{title} = $meta{metatitle} if defined $meta{metatitle} ;
 	$meta{title} = $file if ($meta{title} eq '1');
+        $meta{'作者'} =~ m/^(\w*) (.*)$/;
+        $meta{username} = $1;
+        $meta{nickname} = substr $2, 1, -1;
+        $meta{email} = "$meta{username}.bbs\@ptt.cc";
 
 	print <<SECT;
-<div>
-<h2>
-<a href="$file">
-$meta{title}
-</a></h2>
+<entry>
+<id>$base_url/$file</id>
+<title>$meta{title}</title>
+<link rel="alternate" href="$base_url/$file" />
+<published>$meta{'時間'}</published>
+<category term="$meta{'看板'}" />
 
-<small>
-<u>$meta{'作者'}</u>
-@
-$meta{'看板'}
-@
-$meta{'時間'}
-</small>
+<author>
+<name>$meta{'nickname'}</name>
+<email>$meta{'email'}</email>
+</author>
 
-<pre>
-$meta{description}
-</pre>
-</div>
+<summary>$meta{description}</summary>
+</entry>
 
 SECT
 
