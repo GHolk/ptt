@@ -3,9 +3,9 @@
 #head -n 15 index_old.html
 #sed -i '/^<body>$/,$d ;  $i<body>' index.html
 
-[ -s index.html ] && mv index.html index_old.html
-sed '/<generator/ r index_new.html' index_old.html >index.html
-rm index_new.html
+[ -s atom.xml ] && mv atom.xml atom_old.xml
+sed '/<generator/ r atom_new.xml' atom_old.xml >atom.xml
+rm atom_new.xml
 
 if [ "$1" = "-p" ]
 then
