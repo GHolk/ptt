@@ -29,6 +29,12 @@
       pre {
         white-space: pre-wrap;
       }
+      .author .nickname:after {
+        content: ")";
+      }
+      .author .nickname:before {
+        content: "(";
+      }
     </style>
   </head>
   <body>
@@ -38,7 +44,10 @@
       <article>
         <h2><a></a></h2>
         <small class="date"></small>
-        <u class="author"><a></a></u>
+        <div class="author">
+          <a class="username"></a>
+          <u class="nickname"></u>
+        </div>
         <small class="board"></small>
         <pre class="summary"></pre>
       </article>
@@ -62,8 +71,11 @@
         const node = template.cloneNode(deep)
         node[q]('h2 a')[t] = this.title
         node[q]('h2 a').href = this.url
-        node[q]('u a').href = 'mailto:' + this.email
-        node[q]('u a')[t] = this.nickname || this.email.match(/^\w+/)[0]
+        const email = this.email
+        const username = email.match(/^\w+/)[0]
+        node[q]('.author a').href = 'mailto:' + email
+        node[q]('.author a')[t] = username
+        node[q]('.author .nickname')[t] = this.nickname
         node[q]('.date')[t] = this.date.toJSON()
         node[q]('.summary')[t] = this.description
         node[q]('.board')[t] = this.tags[0]
