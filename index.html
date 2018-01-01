@@ -74,7 +74,8 @@
         node[q]('h2 a')[t] = this.title
         node[q]('h2 a').href = this.url
         const email = this.email
-        const username = String(email.match(/^\w+/))[0]
+        const scanUsername = email.match(/^\w+/)
+        const username = scanUsername ? scanUsername[0] : null
         node[q]('.author a').href = 'mailto:' + email
         node[q]('.author a')[t] = username
         node[q]('.author .nickname')[t] = this.nickname
