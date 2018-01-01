@@ -69,6 +69,7 @@ sub text
 	elsif ($title == 1)
 	{
 		$meta{title} = $text; 
+                $title = 0;
 	}
 }
 
