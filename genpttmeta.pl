@@ -90,9 +90,9 @@ foreach my $file (@ARGV)
 
 	$meta{title} = $meta{metatitle} if defined $meta{metatitle} ;
 	$meta{title} = $file if ($meta{title} eq '1');
-        $meta{'作者'} =~ m/^(\w*) (.*)$/;
+        $meta{'作者'} =~ m/^(\w*) \((.*)\)$/;
         $meta{username} = $1;
-        $meta{nickname} = substr $2, 1, -1;
+        $meta{nickname} = $2;
         $meta{email} = "$meta{username}.bbs\@ptt.cc";
 
 	print <<SECT;

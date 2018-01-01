@@ -39,7 +39,9 @@
   </head>
   <body>
     <h1>gholk 精選 U 文</h1>
-    <main></main>
+    <main>
+      <p>一些我覺得不錯，備份下來的文章。</p>
+    </main>
     <template id="article-template">
       <article>
         <h2><a></a></h2>
@@ -72,7 +74,7 @@
         node[q]('h2 a')[t] = this.title
         node[q]('h2 a').href = this.url
         const email = this.email
-        const username = email.match(/^\w+/)[0]
+        const username = String(email.match(/^\w+/))[0]
         node[q]('.author a').href = 'mailto:' + email
         node[q]('.author a')[t] = username
         node[q]('.author .nickname')[t] = this.nickname
