@@ -1,8 +1,0 @@
-M.1514057422.A.3EB.html
-TypeError: Cannot read property '1' of null
-    at Object.$.each (/home/gholk/web/ptt/backup/genpttmeta.js:32:37)
-    at initialize.exports.each (/usr/lib/node_modules/cheerio/lib/api/traversing.js:300:24)
-    at parseMeta (/home/gholk/web/ptt/backup/genpttmeta.js:25:28)
-M.1514856045.A.84F.html
-TypeError: Cannot read property 'match' of undefined
-    at parseMeta (/home/gholk/web/ptt/backup/genpttmeta.js:21:54)
