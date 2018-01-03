@@ -23,7 +23,7 @@ preserve_url() {
 
 add_meta() {
     file="$1"
-    ./genpttmeta.pl "$file" >>atom_new.xml
+    node genpttmeta.js "$file" >>atom_new.xml
 }
 
 curl_sed() {
