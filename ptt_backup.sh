@@ -43,7 +43,7 @@ curl_sed() {
         return 2
     fi
 
-    if curl -Ob 'over18=1' "$url"
+    if curl --remote-name --fail --cookie 'over18=1' "$url"
     then
         sed -i -r '
             s#="/([^/])#href="http://www.ptt.cc/\1#
@@ -52,7 +52,7 @@ curl_sed() {
             s#src="//#src="http://#g
         ' "$file"
     else
-        error 'invalid url!'
+        error 'error url or file no exist'
         return 1
     fi
 
