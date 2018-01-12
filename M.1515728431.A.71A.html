@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>區塊鏈筆記3 - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="連續第三天的分享。
+有版友在推文裡建議我去專版po，但我的想法是增加一般人對區塊鏈的常識，
+所以還是選擇在這裡繼續寫作，讓大家在瀏覽各種爆料新聞之餘，可以多一個
+茶餘飯後的話題。
+言歸正傳，前兩篇已經就區塊鏈與加密貨幣的區別說明清楚:
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="區塊鏈筆記3">
+<meta property="og:description" content="連續第三天的分享。
+有版友在推文裡建議我去專版po，但我的想法是增加一般人對區塊鏈的常識，
+所以還是選擇在這裡繼續寫作，讓大家在瀏覽各種爆料新聞之餘，可以多一個
+茶餘飯後的話題。
+言歸正傳，前兩篇已經就區塊鏈與加密貨幣的區別說明清楚:
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1515728431.A.71A.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Gossiping/M.1515728431.A.71A.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">agamonnon (星8g潮男)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">區塊鏈筆記3</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Jan 12 11:40:27 2018</span></div>
+連續第三天的分享。
+
+有版友在推文裡建議我去專版po，但我的想法是增加一般人對區塊鏈的常識，
+
+所以還是選擇在這裡繼續寫作，讓大家在瀏覽各種爆料新聞之餘，可以多一個
+
+茶餘飯後的話題。
+
+言歸正傳，前兩篇已經就區塊鏈與加密貨幣的區別說明清楚:
+
+區塊鏈是一個去中心化帳簿紀錄與驗證方式，而加密貨幣是
+
+節點們(礦工)驗證帳簿內容所花費電力的報酬。
+
+下一步，可以拿放大鏡來看一下到底這些chain所串起來的block裡面，紀錄了什麼東西?
+
+每一個block裡面都包含header(標題)跟body(正文)。
+
+body裡紀載了交易紀錄:誰給誰多少錢，他們的帳戶裡又產生了什麼變化，等等，
+
+總共會有超過500筆，利用類似二元樹的Merkle tree的方式來記錄。
+
+紀錄不是問題，問題是如何讓這些資料可以加密，並且礦工可以撈出來驗證呢呢?
+
+<a href="http://passwordsgenerator.net/sha256-hash-generator/" target="_blank" rel="nofollow">http://passwordsgenerator.net/sha256-hash-generator/</a>
+
+這是SHA256 hash generator，大家可以試玩看看。這個加密的特性是:
+
+任意長度字串產生固定長度密碼
+
+單向，無法回推
+
+稍微改字串裡的一點點東西，產生的密碼也是大相逕庭
+
+一對一(理論上)
+
+所以每一筆交易紀錄在利用hash function產生一筆一筆的hash碼以後
+
+利用Merkle Tree的資料結構紀錄，就組成了blockchain裡的block的身體(body)。
+
+至於Merkle Tree，跟二元樹又是什麼呢?為什麼要用這種方法紀載呢?
+
+以後再介紹。現在大家只要知道，用這種方法紀錄可以較有效率的從500多筆資料裡
+
+撈出想找的資料。
+
+這篇的最後就是block的頭(header)了
+
+剛剛的Merkle Tree有葉子(各個交易紀錄)，枝子，樹根。
+
+header裡就記錄了樹根的hash，時間，軟體版本，難度，前一個block header的hash
+
+等等。前一個block header的hash就是把一個一個block串成chain的方法。
+
+到這裡，我們已經把blocjchain的block變成透明的，看到它裡面裝的禮物是什麼。
+
+下一篇會繼續介紹其他細節。
+
+
+
+
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 111.241.56.153
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1515728431.A.71A.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1515728431.A.71A.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zxc2331189</span><span class="f3 push-content">: 有沒有分類筆記</span><span class="push-ipdatetime">01/12 11:40
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">wen12305</span><span class="f3 push-content">: 分類筆記</span><span class="push-ipdatetime">01/12 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">chun821543</span><span class="f3 push-content">: ㄈㄣㄌㄟ</span><span class="push-ipdatetime">01/12 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">A0091127</span><span class="f3 push-content">: 分類</span><span class="push-ipdatetime">01/12 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wwf0322</span><span class="f3 push-content">: 分類喇</span><span class="push-ipdatetime">01/12 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">zzzz8931</span><span class="f3 push-content">: 88</span><span class="push-ipdatetime">01/12 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">canblow</span><span class="f3 push-content">: 個版??版規先去看zz</span><span class="push-ipdatetime">01/12 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leon82guy</span><span class="f3 push-content">: 分類筆記</span><span class="push-ipdatetime"> 01/12 11:42
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">agh386690</span><span class="f3 push-content">: 分</span><span class="push-ipdatetime">01/12 11:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zxasqw0246</span><span class="f3 push-content">: 分類啦</span><span class="push-ipdatetime">01/12 11:44
+</span></div><span class="f2">※ 編輯: agamonnon (49.215.246.144), 01/12/2018 11:47:05
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a10s07</span><span class="f3 push-content">: 八卦是遊戲規則最後還是由一個人定</span><span class="push-ipdatetime"> 01/12 11:48
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">Huffman</span><span class="f3 push-content">: 無聊</span><span class="push-ipdatetime"> 01/12 11:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">giorno78</span><span class="f3 push-content">: 可不可以講深一點  這些誰都知道的事  一直吊胃口</span><span class="push-ipdatetime"> 01/12 12:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">what00512</span><span class="f3 push-content">: 只要沒分類就噓好慘</span><span class="push-ipdatetime"> 01/12 12:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hihjk</span><span class="f3 push-content">: 重點是算力 破解能力 還真的以為記帳就有錢領喔</span><span class="push-ipdatetime"> 01/12 12:17
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Gossiping/M.1515728431.A.71A.html?cacheKey=2116-10862544&offset=3352&offset-sig=cd94ff609a04f3d6d65847bd5c152c6a2f9ece40" data-longpollurl="/v1/longpoll?id=c9d8bd0e56fb372fe487b361055133928faafee3" data-offset="3352"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
