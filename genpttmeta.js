@@ -21,7 +21,8 @@ function parseMeta($) {
     meta.file = $('link[rel=canonical]').attr('href').match(/[^\/]*$/)[0]
     meta.title = $('meta[property="og:title"]').attr('content')
     meta.description = $('meta[property="og:description"]').attr('content')
-    meta.content = $('#main-content').html()
+    // meta.content = $('#main-content').html()
+    meta.content = $('#main-content').text()
     $('.article-meta-tag').each((i, el) => {
         const $tag = $(el)
         const $value = $tag.next()
@@ -47,6 +48,8 @@ function parseMeta($) {
 function printMeta(meta) {
     const m = {}
     for (const key in meta) m[key] = escape(meta[key])
+    m.content = meta.content
+        .replace(/^(作者.*)(看板.*)(標題.*)(時間.*)/, '$1\n$2\n$3\n$4\n\n')
     const url = baseUrl + m.file
     console.log('%s', `<entry>
 <id>${url}</id>
@@ -61,7 +64,7 @@ function printMeta(meta) {
 </author>
 
 <summary>${m.description}</summary>
-<content type="html">${m.content}</content>
+<content>${m.content}</content>
 </entry>`)
 }
             
