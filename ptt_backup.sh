@@ -125,7 +125,7 @@ fi
 if [ -s "$queue" ]
 then
     echo "## url in queue: #######################"
-    tail "$queue"
+    cat "$queue"
 fi
 
 eval $push
