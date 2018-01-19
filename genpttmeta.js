@@ -50,11 +50,11 @@ function printMeta(meta) {
     for (const key in meta) m[key] = escape(meta[key])
     m.content = meta.content
         .replace(/^(作者.*)(看板.*)(標題.*)(時間.*)/, '$1\n$2\n$3\n$4\n\n')
-    const url = baseUrl + m.file
+    const url = baseUrl + '/' + m.file
     console.log('%s', `<entry>
 <id>${url}</id>
 <title>${m.title}</title>
-<link rel="alternate" href="${baseUrl}/${m.file}" />
+<link rel="alternate" href="${url}" />
 <published>${m.date}</published>
 <category term="${m.board}" />
 
