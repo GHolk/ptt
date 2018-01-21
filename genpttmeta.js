@@ -64,7 +64,7 @@ function printMeta(meta) {
 </author>
 
 <summary>${m.description}</summary>
-<content>${m.content}</content>
+<content type="text">${m.content}</content>
 </entry>`)
 }
             
