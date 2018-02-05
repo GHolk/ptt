@@ -17,6 +17,177 @@
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
 <entry>
+<id>http://gholk.github.io/ptt/M.1517726262.A.7AC.html</id>
+<title>[問卦] 修電腦的會偷看別人的東西嗎？！</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517726262.A.7AC.html" />
+<published>Sun Feb  4 14:37:40 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>姜西拿</name>
+<email>cena0605.bbs@ptt.cc</email>
+</author>
+
+<summary>我剛剛幫我朋友拿電腦去修
+修理的是一個很帥的工程師
+我就在想這種工程師會偷偷看別人的電腦裡面有什麼東西嗎
+還是會秉持道德乖乖修好就好
+我就曾經留一手想看有沒有故意看我的檔案
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1517598790.A.CA6.html</id>
+<title>Re: [問題] Centos7 firewalld GUI設定問題</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517598790.A.CA6.html" />
+<published>Sat Feb  3 03:13:06 2018</published>
+<category term="Linux" />
+
+<author>
+<name>小州</name>
+<email>kenduest.bbs@ptt.cc</email>
+</author>
+
+<summary>  這邊直接回文，原本推文內容我好像說錯，所以這邊重新回應一篇，不好意思
+  firewalld 本身底層還是使用 iptables，所以結合 iptables 的 chain 概念，
+  所以可能要先瞭解底層怎麼產生的。下面敘述前面省略 iptables 這個命令:
+        -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+        -A INPUT -i lo -j ACCEPT
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1506092304.A.01E.html</id>
+<title>[問卦] 為什麼幽助跟桑原的制服不一樣</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1506092304.A.01E.html" />
+<published>Fri Sep 22 22:58:19 2017</published>
+<category term="Gossiping" />
+
+<author>
+<name>野心家</name>
+<email>Dcwei.bbs@ptt.cc</email>
+</author>
+
+<summary>一個穿綠的 一個穿藍的
+那就算了 全校就只有他們兩個有自己的制服
+其他人都穿一樣的
+從第一集開始就這樣了
+點解?
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1494090912.A.712.html</id>
+<title>[問卦] 桑原是不是被劇組踢出魔界統一篇</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1494090912.A.712.html" />
+<published>Sun May  7 01:15:08 2017</published>
+<category term="Gossiping" />
+
+<author>
+<name>大清烏先生</name>
+<email>FL5566.bbs@ptt.cc</email>
+</author>
+
+<summary>如題
+桑原
+長的醜 又愛搶鏡頭 又愛硬演自己的內心戲 拖台錢
+戰鬥又難看 永遠就那招靈劍 後面給他次元刀也不會用
+感覺就是很難笑的藝人
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1517718622.A.753.html</id>
+<title>[問卦] 恐龍有沒有可能其實沒滅絕啊？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517718622.A.753.html" />
+<published>Sun Feb  4 12:30:19 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>本草綱目科屬種</name>
+<email>plusonezero.bbs@ptt.cc</email>
+</author>
+
+<summary>餓死抬頭，
+恐龍有沒有可能其實並沒有滅絕，而且還發展出高度文明，
+最後有權有勢的恐龍在6500萬年前，飛離太陽系，剩下的屁民恐龍才死在地球，
+有這個可能嗎？卦？
+--
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1517626144.A.A04.html</id>
+<title>Re: [問卦] 員警可以公然洩漏個資嗎?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517626144.A.A04.html" />
+<published>Sat Feb  3 10:48:59 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>純真打不贏奸巧</name>
+<email>hjgx.bbs@ptt.cc</email>
+</author>
+
+<summary>亂七八糟  一堆外行人
+1.不處理面對？
+  被檢舉人只是沒接電話而已  任何人在任何時候都有權不接電話
+  機關應採送達
+2.貼在門口就是剛好？
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1517618455.A.C79.html</id>
+<title>Re: [問卦] 員警可以公然洩漏個資嗎?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517618455.A.C79.html" />
+<published>Sat Feb  3 08:40:52 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>大雞巴</name>
+<email>gg28cm.bbs@ptt.cc</email>
+</author>
+
+<summary>警察這樣子做沒什麼問題呀～
+警察也打了很多通電話給你 是你自己沒接
+可能也有到你家找你 你又都不在家
+你回撥電話沒找到警察 那就跟沒打電話一樣啊
+今天是你做錯事被檢舉欸～
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1517608245.A.874.html</id>
+<title>[問卦] 員警可以公然洩漏個資嗎?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517608245.A.874.html" />
+<published>Sat Feb  3 05:50:41 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>謙卑</name>
+<email>dora1028.bbs@ptt.cc</email>
+</author>
+
+<summary>事情是這樣的
+小弟我兩年前 買了一間公寓
+跟老母親兩個人居住
+大約一年前 樓下鄰居反映我們有漏水
+要我們改善  他請了水電工 來勘查後說埋在地板下的熱水管漏水
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1517620757.A.484.html</id>
+<title>Re: [問卦] 員警可以公然洩漏個資嗎?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1517620757.A.484.html" />
+<published>Sat Feb  3 09:19:14 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>()</name>
+<email>Beowolves.bbs@ptt.cc</email>
+</author>
+
+<summary>個資貼門口是警察處理不當　有改進的地方
+不過R 你的描述實在避重就輕
+一般人不是生活被打擾一個地步　不會找警察處理的
+漏水沒改善　陽台澆花　你也沒否認 所以可能有　可能沒有
+至於半夜搬東西很吵
+</summary>
+</entry>
+<entry>
 <id>http://gholk.github.io/ptt/M.1517054115.A.A0F.html</id>
 <title>[少年] fate S/N (一)</title>
 <link rel="alternate" href="http://gholk.github.io/ptt/M.1517054115.A.A0F.html" />
