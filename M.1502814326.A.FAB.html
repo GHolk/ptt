@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[分享] 翻譯 Durov談論Telegram的端到端加密 - 看板 Instant_Mess - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="昨天Durov在Telegraph( https://goo.gl/BRhpkW )發表了這篇文章：
+Why Isn’t Telegram End-to-End Encrypted by Default?
+內容談論到關於Telegram的迷思以及diss WhatsApp(O)
+他是不是討厭WhatsApp啊www
+以下內文與翻譯( By me，翻譯：https://goo.gl/F7ikHv )：
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[分享] 翻譯 Durov談論Telegram的端到端加密">
+<meta property="og:description" content="昨天Durov在Telegraph( https://goo.gl/BRhpkW )發表了這篇文章：
+Why Isn’t Telegram End-to-End Encrypted by Default?
+內容談論到關於Telegram的迷思以及diss WhatsApp(O)
+他是不是討厭WhatsApp啊www
+以下內文與翻譯( By me，翻譯：https://goo.gl/F7ikHv )：
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Instant_Mess/M.1502814326.A.FAB.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Instant_Mess/index.html"><span class="board-label">看板 </span>Instant_Mess</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Instant_Mess/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Instant_Mess/M.1502814326.A.FAB.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">GTR12534 (卡拉蘇)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Instant_Mess</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[分享] 翻譯 Durov談論Telegram的端到端加密</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Wed Aug 16 00:25:21 2017</span></div>
+昨天Durov在Telegraph( <a href="https://goo.gl/BRhpkW" target="_blank" rel="nofollow">https://goo.gl/BRhpkW</a> )發表了這篇文章：
+
+Why Isn’t Telegram End-to-End Encrypted by Default?
+內容談論到關於Telegram的迷思以及diss WhatsApp(O)
+他是不是討厭WhatsApp啊www
+
+以下內文與翻譯( By me，翻譯：<a href="https://goo.gl/F7ikHv" target="_blank" rel="nofollow">https://goo.gl/F7ikHv</a> )：
+
+在今年，我收到越來越多有關這類的問題。其實這個問題是基於一個錯誤的假設，也就是
+其他知名的通訊軟體，像是WhatsApp，都預設使用端到端加密，但Telegram沒有。這篇文
+章的目的是想要破解這個已經被Facebook/WhatsApp的市場行銷策略給仔細地塑造的迷思
+。讓我們先從基礎層面開始吧。
+I&#39;ve been getting this question more often this year. It&#39;s based on the wrong
+assumption that some other popular messaging apps such as WhatsApp are
+&#34;end-to-end encrypted by default&#34;, while Telegram is not. This post is
+intended to disprove this myth that has been so carefully crafted by
+Facebook/WhatsApp marketing efforts. Let’s start from the basics.
+
+主流通訊軟體如何對待備份
+主流通訊軟體如何對待備份
+How Popular Messaging Apps Handle Backups
+
+每個知名的通訊軟體都會提供一些方法使得他們的用戶可以備份自己的訊息以防止資料流
+失。那些忽略備份的通訊軟體(像是Wickr/Signal/Confide)從來不會達到一百萬每日活躍
+用戶，只能保持小眾。我會在文章稍後的部分詳細說明他們的作法。
+Every popular messaging app offers its users some way to back up their
+messages to prevent data loss. Messaging apps that ignore backups (such as
+Wickr/Signal/Confide) never reach 1M DAU and remain niche. I’ll describe
+their approach in detail later in this post.
+
+至於那些主流的軟體，像是WhatsApp、Viber、Line，它們依賴Apple iCloud和Google
+Drive去儲存它們用戶的歷史紀錄和避免資料的流失以免它們的用戶弄丟手機。這些備份
+並沒有端到端加密，而是每當用戶買了新手機且復原他們在WhatsApp/Viber/Line上的歷
+史紀錄時就會解密。雖然它似乎讓你，做為一個使用者，有選擇不備份的自由，但事實上
+並沒有什麼選擇的空間：就算你選擇不參與其中(這是不尋常的，有時甚至有點微妙)，跟
+你對話的對象大部分還是有使用的。
+As for popular apps such as WhatsApp, Viber and Line, they rely on Apple
+iCloud and Google Drive to store their users&#39; message history and prevent
+data loss in case their users lose their smartphones. These backups are not
+e2e-encrypted and get decrypted whenever the user buys a new phone and
+restores their WhatsApp/Viber/Line message history. While it may seem that
+you, as a user, have the freedom to opt out of these backups, in reality there
+you, as a user, have the freedom to opt out of these backups, in reality there
+’s little room for choice: even if you opt out (which is unusual and
+sometimes tricky), people you chat with most likely won’t.
+
+這導致一個甚至你都沒有意識到的情況：你傳送和收到的訊息，在雲端的部分其實都不是
+端到端加密的。你完全不了解哪些內容實際上會被加密，又有那些被備份了。你依賴端到
+端加密且確信「沒有第三方有權限存取我的訊息」的話術，但你的私人資料實際上對駭客
+和那些可以藉由雲端儲存系統得到權限的政府來說，都是很脆弱的。如果你覺得這不是大
+威脅，再想想：根據WhatsApp在去年Google IO分享的統計數據，在WhatsApp上大部分所
+謂「端到端加密」的聊天紀錄事實上都被備份且儲存在雲端上了，而不是端到端加密的。
+This creates a situation when messages you send and receive end up not
+e2e-encrypted in the cloud without you even realizing it. You have zero
+transparency on what is really e2e-encrypted and what is backed up. You rely
+on e2e encryption and trust the “no third party can access my messages”
+mantra, but your private data is in fact vulnerable to hackers and
+governments that can get access to it via the cloud storage. If you think
+this is a minor threat, think again: according to stats WhatsApp shared
+during Google IO last year, most of the “e2e-encrypted” chats on WhatsApp
+eventually get backed up and stored in the cloud, not e2e-encrypted.
+
+WhatsApp的策略還有其他會使得99%的私人對話的端到端加密無效的架構上的缺陷，但在
+這篇文章裡，為了簡單起見，我會盡量把焦點放在備份上。
+WhatsApp&#39;s approach has other architectural drawbacks that invalidate
+WhatsApp&#39;s approach has other architectural drawbacks that invalidate
+end-to-end encryption for 99% of private conversations, but in this post I’
+ll focus mainly on backups for simplicity.
+
+小眾通訊軟體如何對待備份
+How Niche Messaging Apps Handle Backups
+
+由於聊天紀錄不會被備份，Signal/Wickr/Confide的策略是更安全的。這有點巧妙，但當
+你用這樣的方法限制你的用戶時，會產生兩個問題：
+The Signal/Wickr/Confide approach is more secure as chats never get backed
+up. This looks neat, but two problems arise when you restrict your users this
+way:
+
+1)在弄丟/更換手機的時候，用戶不想要失去它們整個聊天紀錄，所以這些應用程式永遠
+不會變成主流。你可以看看Wickr/Signal/Confide在AppStore上的評價，再拿去跟
+Telegram/Viber/WhatsApp比較。很明顯的，還有其他原因使得這些小眾應用程式停留在
+小眾，但對於一個普通用戶來說，如果這個功能在她使用的主流應用程式已經有了(像是
+Telegram的Secret Chats，或是同樣也提供端到端加密且不會被備份的，在Viber、
+Facebook Messenger的山寨版)，她不太可能去下載另外一個不同的應用程式。
+1) Users don’t want to lose their entire message history when they
+lose/change their phones so apps of this kind never become massively popular.
+You might want to take a look at the AppStore rankings of
+Wickr/Signal/Confide and compare them with Telegram/Viber/WhatsApp.
+Wickr/Signal/Confide and compare them with Telegram/Viber/WhatsApp.
+Obviously, there are also other reasons at play why niche apps remain niche,
+but an average user is unlikely to download a separate app if the same
+functionality already exists in a mainstream app she&#39;s using (such as Secret
+Chats in Telegram or their copycat versions in Viber or Facebook Messenger,
+which also provide e2ee and don’t get backed up).
+
+2) (1)的後果－使用這些應用程式的人可能會被政府認為是有東西需要隱瞞的。基於這些
+應用程式有限的銷量，政府可以辨別出以及追蹤這些手機連到相應的IP位址的個體用戶。
+這對有些工具，像是Tor，或者在某種程度上的通訊軟體，是正在發生的事。Yasha
+Levine公布了一項有關它的出色調查。
+2) Consequence of (1) – people using these apps can be targeted by
+governments as those who have something to hide. Due to the limited
+distribution of such apps, the government can identify and track individuals
+whose phones connect to the corresponding IP addresses. This is something
+that is already happening in case of tools like Tor, and, to a lesser extent,
+of some messaging apps. Yasha Levine is publishing a brilliant investigation
+about it.
+
+Telegram的作法
+The Telegram Way
+
+時間回到2013年，我們發布Telegram的那一年，在當時我們仔細考慮過了兩種做法。我們
+時間回到2013年，我們發布Telegram的那一年，在當時我們仔細考慮過了兩種做法。我們
+了解到我們不想要藉由轉移他們的資料給第三方去備份的責任而侵犯我們用戶的隱私，就
+像WhatsApp跟Viber所做的。但我們也不想要剝奪我們用戶在其他應用程式享受到的功能
+，這會使得Telegram陷在非主流。
+Back in 2013, when we were launching Telegram, we carefully considered both
+approaches. We knew we didn’t want to violate our users’ privacy by
+shifting the responsibility for their data to third-party backups like
+WhatsApp or Viber do. Neither did we want to deprive our users of
+functionality that they enjoyed in other apps and doom Telegram to join the
+ranks of niche apps.
+
+所以，再經過研究之後，我們決定採用兩種對話方式－Secret chats和Cloud chats。
+So after some research we decided to introduce 2 kinds of chats – Secret
+chats and Cloud chats.
+
+Secret Chats採用端到端加密，在任何情況下都不會被備份。Cloud chats也使用同樣的
+加密方式，但同時會有一個內建的雲端備份。Cloud chats是被設計給大多數的使用者的
+－那些依靠比較不安全的第三方備份的應用程式，像是WhatsApp，的使用者。不像在非主
+流應用程式裡，cloud chat的用戶跟secret chat的用戶之間的交流是混和在一起的。(加
+密方法是一樣的，但在cloud chats裡，我們的伺服器擁有存取加密金鑰的權限)，所以個
+體用戶不會因為他們使用secret chats或是有東西要藏而被鎖定。
+Secret chats are e2e-encrypted chats that never under any circumstances get
+backed up. Cloud chats are encrypted in the same way, but also have a
+backed up. Cloud chats are encrypted in the same way, but also have a
+built-in cloud backup. Cloud chats are designed for the majority of users –
+the majority that in another app like WhatsApp would rely on less secure
+third-party backup storage. Unlike what you have in niche apps, the traffic
+between cloud chat users and secret chat users on Telegram is mixed (the
+encryption is the same in both cases, but in cloud chats our servers do have
+access to the encryption key), so individuals can not be singled out and
+targeted based on the fact that they use secret chats and thus have something
+to hide.
+
+為什麼Telegram的做法更有意義的四個理由
+4 Reasons Why The Telegram Way Makes More Sense
+
+為什麼我們決定使用兩種對話方式，而不是像那些只有一種的老應用程式，像是WhatsApp
+呢？有四個理由：
+There are four main reasons why we decided to use two types of chats as
+opposed to having one type of chats like older apps such as WhatsApp:
+
+1)不像WhatsApp，我們不會藉由備份把我們用戶的資料給第三方。作為代替，我們依靠我
+們自己的分散式跨管轄權加密雲端儲存系統，我們相信這比大公司，像是Google和Apple
+，所能提供的更有保障。給你一個關於這個差異的想法：當Telegram還沒有從雲端洩漏任
+何的私人資料給第三方的時候，光是在今年，Apple就已經滿足了80%中國(!)的要求(更打
+算在中國建造一個iCloud的私人資料中心)。
+算在中國建造一個iCloud的私人資料中心)。
+1) Unlike WhatsApp, we don’t give out our users’ data to third parties via
+backups. Instead, we rely on our own distributed cross-jurisdictional
+encrypted cloud storage which we believe is much more protected than what
+megacorporations like Google and Apple can offer. To give you an idea about
+this difference: while Telegram has disclosed no private data to
+third-parties from its cloud so far, this year alone Apple satisfied 80% of
+data requests from the Chinese (!) government (and is even building a
+data-center for private iCloud data in China).
+
+2)不像WhatsApp，由於我們內建的即時雲端同步系統，我們允許我們的用戶使用數個裝置
+同時存取Telegram。因此我們可以在macs、PCs、iPads，甚至是lunux伺服器上提供簡單
+且一貫的使用者體驗。
+2) Unlike WhatsApp, we can allow our users to access Telegram from several
+devices at once thanks to our built-in instant cloud sync. Thus we can
+provide easy and consistent UX on macs, PCs, iPads and even linux servers.
+
+3)不像WhatsApp，在Telegram上面你不需要總是在手機上儲存你整個聊天紀錄－你可以在
+你需要的時候，隨時下載比較舊的訊息與媒體，完全按照你的想法。這節省了很多的硬體
+空間及記憶體，對我們在發展中市場的用戶尤其重要。在Telegram上面，內建儲存空間的
+短缺從來不會造成資料的遺失。
+3) Unlike on WhatsApp, on Telegram you don’t have to store your entire
+message history on your phone all the time – you can always download older
+message history on your phone all the time – you can always download older
+messages and media on demand when you need them. This saves a lot of disk
+space and memory, which is particularly important for our users in the
+developing markets. On Telegram, shortage of local storage never leads to
+data loss.
+
+4)不像WhatsApp，Telegram可以提供它的用戶一些進階的功能，像是不間斷的群組聊天，
+最高可以到達10000名成員，或者是沒有大小上限的頻道。這些技術都不是所謂的「端到
+端加密+第三方備份」可以做到的。我們的布局充滿了各種不可能在過時的架構上實現的
+功能，這些功能需要我們內建的雲端即時存取系統，而不是WhatsApp所依賴的第三方備份
+。
+4) Unlike WhatsApp, Telegram is able to provide its users with advanced
+functionality, such as persistent group chats with up to 10,000 members or
+channels with no limit on max size. These technologies can not be implemented
+within the “e2ee+third-party backups” paradigm. Our roadmap is filled with
+features that are impossible to build on a obsolete architecture like
+WhatsApp&#39;s that has to rely on third-party backups instead of relying on its
+own built-in cloud accessible in real-time.
+
+這就是為什麼我們在最終選擇了提供「兩種對話方式」的原因，它更安全(Telegram的雲
+端比Apple/Goolge更有保障)、更透明(你真的可以看到哪些端到端加密的訊息被備份在雲
+端上，哪些沒有)，功能更豐富(在未來，我們會實現我在上面有提到跟沒有提到的功能)
+。我們相信我們「兩種對話方式」的作法在長期上會更有意義，也就是為什麼會被
+。我們相信我們「兩種對話方式」的作法在長期上會更有意義，也就是為什麼會被
+Kakao(2014)、Line(2015)、還有去年的Google Allo和Facebook Messenger複製的原因。
+這些公司確實都做了自己的研究，證明了Telegram的做法是比較有拓展性、且更安全更透
+明的。
+These are the reasons why we, ultimately, decided to go with the “two kinds
+of chats” approach, which is more secure (Telegram cloud is better protected
+than Apple/Google storage), more transparent (you can actually see which of
+your e2e-encrypted messages go to the cloud and which don’t) and more
+feature-rich (we can implement features that I mentioned above and many more
+in the future). We believe our “two kinds of chats” approach makes more
+sense in the long run, which is why it has since been copied by Kakao (2014),
+Line (2015), and last year by Google Allo and Facebook Messenger. These
+companies did their own research that proved that the Telegram way is more
+scalable, secure and transparent.
+
+所以為什麼大家會問這個問題？
+So Why Do People Ask This Question?
+
+我覺得這個「Telegram比WhatsApp還不安全」的迷思來自於一篇誤導性的2016年的文章，
+作者是Gizmodo(「為什麼你不該使用Telegram」)，裏頭有很多不正確的事情。在我們的
+團隊裡，有一位成員寫了一篇廣泛的評論，內容提到了很多我在這篇文章講過的一些誤解
+的事實。
+I think the myth about Telegram being less secure than WhatsApp originated in
+I think the myth about Telegram being less secure than WhatsApp originated in
+a misleading 2016 article by Gizmodo (“Why you should never use Telegram”)
+which claimed a lot of things that are not true. A member of our team wrote
+an extensive review of that article exposing some of the misconceptions that I
+’ve also described in this post.
+
+每年，Facebook－也就是擁有WhatsApp的公司－花好幾百萬在市場行銷、有影響力的記者
+及部落客上。相比之下，Telegram到從2013年開始到現在都沒花任何一毛錢在行銷上。雖
+然如此，每天還是有最起碼五十萬以上的新用戶註冊Telegram，Telegram的有效年成長率
+也超過了50%。我們要把這個歸功於你們－我們的用戶還有Telegram社群。
+Every year Facebook – the company that owns WhatsApp – spends millions of
+dollars on marketing, influencing journalists and bloggers. By contrast,
+Telegram has spent zero dollars on marketing since we started in 2013.
+Nevertheless, every day at least half a million new users sign up for
+Telegram, and Telegram&#39;s organic annual growth rate exceeds 50%. We owe this
+growth only to you – our users and the Telegram community.
+
+我希望這篇文章能夠給你一個想法，一個關於Telegram如何運作，以及為什麼我們相信我
+們的架構比那些老的應用程式更有意義的想法。
+I hope this post gives an idea about how Telegram works and why we believe
+our architecture makes more sense than that of the older apps.
+
+原文有些地方有參考資料的連結，我就不附上了，有需要的自己點進去看吧
+原文有些地方有參考資料的連結，我就不附上了，有需要的自己點進去看吧
+我不是專業的翻譯，只是很喜歡Telegram順便拿來練英文河河河
+有錯請指正~
+過往翻譯集中：<a href="http://telegra.ph/Translated-by-Karasu-09-04" target="_blank" rel="nofollow">http://telegra.ph/Translated-by-Karasu-09-04</a>
+--
+嗨你好我是卡拉蘇，歡迎來看我的實況
+
+安提骷髏馬 Anti-Kuruma ManiCs
+→一個歡樂為主的實況團隊！
+
+我的Twitch: <a href="https://www.twitch.tv/karasu54088" target="_blank" rel="nofollow">https://www.twitch.tv/karasu54088</a> (看我的名片有更詳細資訊)
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 103.234.231.15
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Instant_Mess/M.1502814326.A.FAB.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Instant_Mess/M.1502814326.A.FAB.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chestersun  </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">08/16 15:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gogoworm    </span><span class="f3 push-content">: 有輕微誤譯或句意混沌，但可以感覺到你的用心，推</span><span class="push-ipdatetime">08/17 00:29
+</span></div>不介意的話可以說說看啊~倒是有幾句咀嚼很久都不知道怎麼呈現
+<span class="f2">※ 編輯: GTR12534 (103.234.231.15), 08/17/2017 03:08:29
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RTrecidivist</span><span class="f3 push-content">: 推推，我自己是懶得翻譯文章的說XD</span><span class="push-ipdatetime">08/18 18:05
+</span></div>我有看到你發的文~地方的電報需要推廣XD
+<span class="f2">※ 編輯: GTR12534 (103.234.231.15), 08/19/2017 15:18:43
+</span><span class="f2">※ 編輯: GTR12534 (103.234.231.15), 09/04/2017 23:49:56
+</span></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Instant_Mess/M.1502814326.A.FAB.html?cacheKey=2132-341845250&offset=15879&offset-sig=55b8fb341a24487b79bb93ff829b04ffe4307ac6" data-longpollurl="/v1/longpoll?id=36942850336bd423ec91610372bfbfdea2bb93a3" data-offset="15879"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
