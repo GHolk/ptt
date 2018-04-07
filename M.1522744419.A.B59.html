@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[請益] 為什麼 Go 會紅？ - 看板 Soft_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="八卦板可能太芭樂了，認真問，真的有板友的公司是用 Go 作為主要語言的嗎？
+※ [本文轉錄自 Gossiping 看板 #1Qmo_r_J ]
+作者: changyuheng (Henry) 看板: Gossiping
+標題: Re: [問卦] C語言學到什麼程度才可以說自己會寫C
+時間: Tue Apr  3 15:40:34 2018
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[請益] 為什麼 Go 會紅？">
+<meta property="og:description" content="八卦板可能太芭樂了，認真問，真的有板友的公司是用 Go 作為主要語言的嗎？
+※ [本文轉錄自 Gossiping 看板 #1Qmo_r_J ]
+作者: changyuheng (Henry) 看板: Gossiping
+標題: Re: [問卦] C語言學到什麼程度才可以說自己會寫C
+時間: Tue Apr  3 15:40:34 2018
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Soft_Job/M.1522744419.A.B59.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Soft_Job/index.html"><span class="board-label">看板 </span>Soft_Job</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Soft_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Soft_Job/M.1522744419.A.B59.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">changyuheng (Henry)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Soft_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[請益] 為什麼 Go 會紅？</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Apr  3 16:33:38 2018</span></div>
+
+八卦板可能太芭樂了，認真問，真的有板友的公司是用 Go 作為主要語言的嗎？
+
+<span class="f2">※ [本文轉錄自 <a hrefhref="http://www.ptt.cc/bbs/Gossiping/M.1522741237.A.FD3.html" target="_blank" rel="nofollow">Gossiping 看板 #1Qmo_r_J</a> ]
+</span>
+作者: changyuheng (Henry) 看板: Gossiping
+標題: Re: [問卦] C語言學到什麼程度才可以說自己會寫C
+時間: Tue Apr  3 15:40:34 2018
+
+借大神的文章發問：
+
+Go 的效能很好、GC 超越 Java、static typing、syntax 也簡潔
+容易寫出多核心 CPU 利用度高的程式。
+
+但是它沒有
+exception handling syntax、
+null safety、
+function/operator overloading、
+inheritance，
+加上 standard library 不夠廣泛，
+套件管理不優，
+也就算了，
+居然沒有 generic types，
+請問這樣要怎麼寫，為什麼還那麼紅，有掛嗎？
+
+<span class="f2">※ 引述《jserv (松鼠)》之銘言：
+</span><span class="f6">: ※ 引述《orz77586 (成大harden)》之銘言：
+</span><span class="f6">: : 需要強到像Jserv一樣可以邊演講邊用開外掛的速度打扣
+</span><span class="f6">: : 還是學到什麼程度就可以說算是會寫C了
+</span><span class="f6">: : 版上大大們有沒有什麼看法
+</span><span class="f6">: 板上先進比比皆是，但是大多忙碌，最近剛好在研究社交網路的我代替大大們回覆。
+</span><span class="f6">: 身為中學摸 C 語言、大學摸 C 罩杯的大叔，我只想說「均衡發展」遠比鑽牛角尖
+</span><span class="f6">: 重要。
+</span><span class="f6">: 解釋之前，前美國總統甘迺迪 (John F. Kennedy) 曾說：
+</span><span class="f6">: &gt; I believe that this nation should commit itself to achieving the goal,
+</span><span class="f6">: &gt; before this decade is out, of landing a man on the Moon and returning
+</span><span class="f6">: &gt; him safely to the Earth.
+</span><span class="f6">: (我相信美國在 1960 年代結束前，將全力以赴地實現一個目標，那就是讓人類
+</span><span class="f6">: 登陸月球，並確保安全返回) [0]
+</span><span class="f6">: 這句話非常明確：在美蘇冷戰時期，讓所有參與太空國防的上萬名人員，乃至於
+</span><span class="f6">: 當時的聯邦人民都知道，枝幹該把怎樣的養份送到主幹，更明確來說，機構的專家
+</span><span class="f6">: 會去研究夠耐用的船體、天文物理的專家會去研究重力對路線的影響、電子通訊的
+</span><span class="f6">: 工程人員構思一系列有效的傳輸方式，而投身教育者則是從國會議員到普羅大眾都
+</span><span class="f6">: 涵蓋，確保資金和人才供給不斷絕。最終，阿波羅 11 號 (Apollo 11) 作為 NASA
+</span><span class="f6">: 阿波羅計畫中的第 5 次載人任務，實現人類第一次登月 (並且成功返回地球的)
+</span><span class="f6">: 任務 (當然第一次人類登月任務始於神州大陸的嫦娥，中國人帶著逃離中國的基因
+</span><span class="f6">: 可見一班)，繞行月球 30 周。
+</span><span class="f6">: 等等，上面的故事和 C 語言有何關係？「你 484 來混 P 幣呢？」且慢，讓我
+</span><span class="f6">: 繼續說下去。
+</span><span class="f6">: 阿波羅計畫的規模之大，即便是今天回顧，也難用簡單幾句帶過，遑論 1950 年代
+</span><span class="f6">: 末期總是被蘇聯太空技術 [1] 壓著打的美國政府，上面甘迺迪那席話就在 1961 年
+</span><span class="f6">: ，啟動阿波羅計畫之際。而 1960 年代中期啟動 Project MAC (與阿波羅登月計畫
+</span><span class="f6">: 平行，由 DARPA 贊助的大型計畫) 的 Multics 專案，定位開發多人分時多工作業
+</span><span class="f6">: 系統，並且運作於多核的硬體環境 (multi-processor!)，更有意思的是，Project
+</span><span class="f6">: MAC 這麼龐大的計畫卻由麻省理工學院 (MIT) 領軍開發關鍵技術，並由 GE (美國
+</span><span class="f6">: 通用電氣) 提供硬體及 AT&amp;T 旗下的 Bell Laboratories 開發軟體和技術支持 (受
+</span><span class="f6">: 到反壟斷條款的處分，AT&amp;T 不得涉及硬體銷售，但研發專利技術並授權他人不在
+</span><span class="f6">: 此限)，今日我們熟知的 C 語言開創者 -- 已故的 Dennis M. Ritchie (縮寫 dmr)
+</span><span class="f6">: [4] 和今年 75 歲卻供職於 Google Inc. 並帶領一群高手投入 Go 程式語言開發的
+</span><span class="f6">: Kenneth Thompson (縮寫 ken) -- 即服務於 Bell Labs。
+</span><span class="f6">: 以商業的角度來說，Multics 是個失敗的作業系統，但 ken 和 dmr 卻汲取其中的
+</span><span class="f6">: 養分，帶著戲謔的口吻，開發出名為 UNICS 的作業系統，&#34;uni-&#34; 和 &#34;multi-&#34; 是
+</span><span class="f6">: 對比的前綴，後來 UNICS 被正名為 UNIX，自此為世人熟知，並且影響你我生活的
+</span><span class="f6">: 個別面向。UNIX 第一版用組合語言開發，提供了檔案系統的服務，後來用 C 語言
+</span><span class="f6">: 重寫，其中 Research UNIX version 6 (UNIXv6) 是大量被學校和公司行號採用的
+</span><span class="f6">: 作業系統 (在 AT&amp;T 的律師團收取天價授權費之前)。
+</span><span class="f6">: 但是，你若把 C 語言當作「只是另一個程式語言」來看待，那就大錯特錯了。
+</span><span class="f6">: 在資訊科技領域，部分工程師和甚至是企業家跟編譯器發展有關，比方說 Eric
+</span><span class="f6">: Schmidt (Novell 前執行長、Google 前執行長) 在 Bell Labs 服務時，重寫了
+</span><span class="f6">: lex 工具程式 [2]，dmr 在發展 Unix 作業系統和 C 語言之前，參與 Multics
+</span><span class="f6">: 專案的編譯器開發工作，他們得以熟悉程式語言理論 (Programming Language
+</span><span class="f6">: Theory, 縮寫 PLT) [3] 和電腦硬體的特性，進而到其上的作業系統和各式應用
+</span><span class="f6">: 程式。
+</span><span class="f6">: dmr 有次被人問及：
+</span><span class="f6">: &gt; 「一個人從新手到精通 C 語言的電腦程式開發者，並得以寫出卓越不凡的
+</span><span class="f6">: &gt;   程式碼，根據你的經驗，需要多長時間呢？」
+</span><span class="f6">: 這位帶有幽默感的曠世奇才回覆道：
+</span><span class="f6">: 「不知道，我不需要學 C」
+</span><span class="f6">: 回到最初的提問「學到什麼程度就可以說算是會寫 C？」，那終極回覆大概就如
+</span><span class="f6">: dmr 這樣簡單的答覆：實際解決複雜且影響深遠的問題，過程中萃取出 UNIX 哲學
+</span><span class="f6">: [5] 和 C 語言這樣的人類文化資產出來，塑造今日我們所見的一切。
+</span><span class="f6">: 引用中正大學吳昇教授日前的話： [6]
+</span><span class="f6">: &gt; 以武俠世界的武功來比喻，一些拳法、招數學好很重要，但是內功心法也很重要。
+</span><span class="f6">: &gt; 在金庸射鵰英雄傳小說裡馬鈺道長到塞外教郭靖兩年內功心法，奠下了郭靖武學的
+</span><span class="f6">: &gt; 雄厚根基後來成為大俠。
+</span><span class="f6">: 我相信學習 C 語言絕對不是把玩拳法、熟記招數，而是打通經脈，深植雄厚根基，
+</span><span class="f6">: 著眼於開發高品質的軟體、關注清晰且一致的 coding style、時時關注高可讀性、
+</span><span class="f6">: 勤勞地調整出清晰漂亮的結構，更不忘在高效能、好維護、具延展性、強韌性、安全
+</span><span class="f6">: 性等議題持續精進。
+</span><span class="f6">: 做到這樣的話，已可算是「開始學習 C 語言」了。歡迎各位和我同事宅色夫一起
+</span><span class="f6">: 學習和交流 C 語言:
+</span><span class="f6">: * 線上教材: <a href="http://hackfoldr.org/dykc" target="_blank" rel="nofollow">http://hackfoldr.org/dykc</a>
+</span><span class="f6">: * (偽) 網紅頻道: <a href="https://www.youtube.com/c/guts4tech" target="_blank" rel="nofollow">https://www.youtube.com/c/guts4tech</a> (請幫忙按讚)
+</span><span class="f6">: 身為 C 語言初學者，我不以進展遲緩為恥，相反的，我樂見自己的創作能夠用在
+</span><span class="f6">: 我家人和身邊朋友每天用的 Android 手機、中文輸入法、嵌入式裝置，甚至包含
+</span><span class="f6">: 大眾交通設施 (先賣關子 :P)。人類的歷史中，還有什麼時期能夠憑藉雙手，對這
+</span><span class="f6">: 世界帶來持續廣泛的影響呢？我只是單純地追隨 dmr 和 ken 等前輩的步伐。
+</span><span class="f6">: 同場加映：
+</span><span class="f6">: 2001 年，J. T. S. Moore 以自由軟體和開放原始碼軟體發展為主題，導演了相當
+</span><span class="f6">: 可貴的紀錄片《Revolution OS》，訪談了若干先鋒者，是理解駭客 (hacker)、
+</span><span class="f6">: GNU 計畫、自由軟體基金會 (FSF)、Linux 核心 (kernel)、開放原始碼 (open
+</span><span class="f6">: source) 和自由軟體 (free software) 基於不同理念各自發展、Netscape 宣佈
+</span><span class="f6">: Mozilla 開放原始碼專案、基於 Apache 和一系列開放原始碼技術的公司、在
+</span><span class="f6">: NASDAQ 上市等等歷程的第一手資訊。隨後新竹交通大學資訊工程系「自由開源
+</span><span class="f6">: 軟體與專案協作」課程師生更新了紀錄片諸多細節和增添註釋。對理解 C 語言前世
+</span><span class="f6">: 今生乃至於當今的資訊工業發展，應有一定程度的助益:
+</span><span class="f6">: <a href="https://hackmd.io/s/r1dUx8ltg" target="_blank" rel="nofollow">https://hackmd.io/s/r1dUx8ltg</a>
+</span><span class="f6">: [0] 阿波羅計畫可參照 Discovery 拍攝的紀錄片〈登月機具：導航系統〉，我學生
+</span><span class="f6">: 幫忙翻譯了中文字幕:
+</span><span class="f6">: <a href="https://amara.org/en/videos/oJHtDEuqZfVK/info/navigation-computer/" target="_blank" rel="nofollow">https://amara.org/en/videos/oJHtDEuqZfVK/info/navigation-computer/</a>
+</span><span class="f6">: [1] 蘇聯於 1957 年 10 月 4 日發射 Sputnik I，後者是第一顆進入行星軌道的
+</span><span class="f6">: 人造衛星，隨即震撼了整個西方，在美國境內引發了一連串事件，如史普尼克
+</span><span class="f6">: 危機、華爾街發生小股災。開始了美蘇兩國之間的太空競賽
+</span><span class="f6">: [2] lex 的中文解說可見:
+</span><span class="f6">: <a href="https://mropengate.blogspot.tw/2015/05/parser-lex-yacc-1.html" target="_blank" rel="nofollow">https://mropengate.blogspot.tw/2015/05/parser-lex-yacc-1.html</a>
+</span><span class="f6">: [3] PLT 的極佳資料彙整可見:
+</span><span class="f6">: <a href="https://github.com/steshaw/plt" target="_blank" rel="nofollow">https://github.com/steshaw/plt</a>
+</span><span class="f6">: [4] 追憶 Dennis M. Ritchie 的文章:
+</span><span class="f6">: <a href="http://www.ituring.com.cn/article/14315" target="_blank" rel="nofollow">http://www.ituring.com.cn/article/14315</a>
+</span><span class="f6">: [5] 由於 AT&amp;T 和 University of California, Berkeley (UCB) 曠日費時的官司，
+</span><span class="f6">: 今天我們說的 &#34;UNIX&#34; 或 UNIX-clone (如 Linux, FreeBSD, macOS 等等) 裡頭
+</span><span class="f6">: 的原始程式碼已經和最初 AT&amp;T UNIX 的版本相差甚遠。但 UNIX 帶來的精神和
+</span><span class="f6">: 哲學思維至今長存，在資訊科技的許多地方可及。詳情可見:
+</span><span class="f6">: <a href="https://en.wikipedia.org/wiki/Unix_philosophy" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Unix_philosophy</a>
+</span><span class="f6">: [6] 出處: <a href="https://www.facebook.com/sunwu2011/posts/1619624211457570" target="_blank" rel="nofollow">https://www.facebook.com/sunwu2011/posts/1619624211457570</a>
+</span>
+-----
+Sent from JPTT on my iPhone
+
+--
+一本紅塵心中陳，夜夜頁頁念佳人。 - 珩 2018
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 173.239.198.128
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1522741237.A.FD3.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1522741237.A.FD3.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cattgirl</span><span class="f3 push-content">: 不如摸C罩杯</span><span class="push-ipdatetime"> 04/03 15:41
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">VIGUTA</span><span class="f3 push-content">: 糞語滾</span><span class="push-ipdatetime"> 04/03 15:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vonannes</span><span class="f3 push-content">: ro支拿賤畜跟支拿賤畜都盜用source code再說是自己寫的</span><span class="push-ipdatetime"> 04/03 15:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lucifiel1618</span><span class="f3 push-content">: 真假這樣還會有人用?</span><span class="push-ipdatetime"> 04/03 15:42
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">dklash</span><span class="f3 push-content">: 因為大部分的人沒在屌哪些的</span><span class="push-ipdatetime"> 04/03 15:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jybest</span><span class="f3 push-content">: 因為很多東西還是只能用C寫</span><span class="push-ipdatetime"> 04/03 15:57
+</span></div>
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc)
+</span><span class="f2">※ 轉錄者: changyuheng (173.239.198.107), 04/03/2018 16:33:38
+</span><span class="f2">※ 編輯: changyuheng (173.239.198.107), 04/03/2018 16:35:17
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 因為討厭MS, Oracle, 又覺得php很糞，python效能差，C/C++</span><span class="push-ipdatetime"> 04/03 16:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 開發慢又難，js只是玩具，然後go是清流谷歌推的，來試試看</span><span class="push-ipdatetime"> 04/03 16:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hizuki</span><span class="f3 push-content">: go算script language？python怎麼和它比阿</span><span class="push-ipdatetime"> 04/03 16:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">senjor</span><span class="f3 push-content">: 何不用dotnetcore (ry</span><span class="push-ipdatetime"> 04/03 17:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">johnny94</span><span class="f3 push-content">: .NET Core 不是語言阿</span><span class="push-ipdatetime"> 04/03 17:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">curtis327</span><span class="f3 push-content">: python效能差轉go＋1 對強類型的語言還需要花時間適應</span><span class="push-ipdatetime"> 04/03 17:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Sunal</span><span class="f3 push-content">: 來玩rust吧</span><span class="push-ipdatetime"> 04/03 17:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">senjor</span><span class="f3 push-content">: dotnetcore: 我就是C#!</span><span class="push-ipdatetime"> 04/03 17:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Argos</span><span class="f3 push-content">: 快加入我大swift神教 號稱負評最少的語言 嘻嘻</span><span class="push-ipdatetime"> 04/03 17:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">: if err != nil 就是潮</span><span class="push-ipdatetime"> 04/03 17:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: c也沒有throw error、面板、這些有的沒有的 也是紅啊</span><span class="push-ipdatetime"> 04/03 17:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yyc1217</span><span class="f3 push-content">: 因為很多人都不會 所以我會我很潮</span><span class="push-ipdatetime"> 04/03 17:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: 這些語言語法糖造成的心智包袱 反而造就糟糕的程式</span><span class="push-ipdatetime"> 04/03 17:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: go把這些都捨棄，不是很好嗎？</span><span class="push-ipdatetime"> 04/03 17:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: 有c底子(非c++)去學go很快</span><span class="push-ipdatetime"> 04/03 17:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rayway30419</span><span class="f3 push-content">: 那swift把各種syntax sugar都撿走得算什麼?</span><span class="push-ipdatetime"> 04/03 17:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: 那只是和go選擇不同而已，swift很好，只是go選擇跟c一</span><span class="push-ipdatetime"> 04/03 18:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: 樣，結構與記憶體操作更貼近os本來的狀況。這讓它們在</span><span class="push-ipdatetime"> 04/03 18:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Darkautism</span><span class="f3 push-content">: 撰寫更貼近底層，需要精確計算memory量的程式表現更好</span><span class="push-ipdatetime"> 04/03 18:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ybite</span><span class="f3 push-content">: Go的記憶體管理是走Garbage Collection喔……</span><span class="push-ipdatetime"> 04/03 18:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ybite</span><span class="f3 push-content">: 我覺得Go提供了一個很好的中間選擇，有類似腳本語言的</span><span class="push-ipdatetime"> 04/03 18:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ybite</span><span class="f3 push-content">: 語法卻擁有編譯語言的速度。</span><span class="push-ipdatetime"> 04/03 18:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CaptainTeemo</span><span class="f3 push-content">: 寫 backend  還行吧，不然你也可以用 rust 啊</span><span class="push-ipdatetime"> 04/03 18:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">elements</span><span class="f3 push-content">: go是很有c味，所以討厭c讓我也討厭go，而且還沒辦法像c</span><span class="push-ipdatetime"> 04/03 18:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">elements</span><span class="f3 push-content">: 那樣掌握所有memory de/allocation</span><span class="push-ipdatetime"> 04/03 18:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">littleshan</span><span class="f3 push-content">: go 有一個重要特色是 non-block IO + goroutine</span><span class="push-ipdatetime"> 04/03 18:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">littleshan</span><span class="f3 push-content">: 非常適合放在 backend 這種有大量 IO 的情況</span><span class="push-ipdatetime"> 04/03 18:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">felixgugu</span><span class="f3 push-content">: 所以結論是不如回來寫Java</span><span class="push-ipdatetime"> 04/03 18:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kckckckc</span><span class="f3 push-content">: 因為有需求吧？</span><span class="push-ipdatetime"> 04/03 19:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">: 其實最重要的還是把 non-blocking 的東西封裝成 bloc</span><span class="push-ipdatetime"> 04/03 19:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">: king 易寫的型式，當然 C/C++ 有辦法找到類似的 libr</span><span class="push-ipdatetime"> 04/03 19:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">: ary，但 goroutine 還是優雅簡單了點。</span><span class="push-ipdatetime"> 04/03 19:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">: 不過其實鳥的地方也不少，像是各種 err，還有不支援</span><span class="push-ipdatetime"> 04/03 19:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">:  generic，以及一些過於潔癖強硬的 rule。套件管理惡</span><span class="push-ipdatetime"> 04/03 19:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinuxKernel</span><span class="f3 push-content">: 夢更不用說了。</span><span class="push-ipdatetime"> 04/03 19:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">youngce</span><span class="f3 push-content">: 渣渣語言</span><span class="push-ipdatetime"> 04/03 19:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">johnny94</span><span class="f3 push-content">: 我在網路上看到很多關於 go 套件管理的問題，</span><span class="push-ipdatetime"> 04/03 19:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">johnny94</span><span class="f3 push-content">: 有人可以說明一下問題是在哪嗎？例如跟 npm 之類的比較</span><span class="push-ipdatetime"> 04/03 19:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">longlongint</span><span class="f3 push-content">: 在 Google 倒掉或是收掉 Go 之前可以拿來用的語言</span><span class="push-ipdatetime"> 04/03 19:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">darthv</span><span class="f3 push-content">: k&amp;r你可以質疑？</span><span class="push-ipdatetime"> 04/03 20:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dreamnook</span><span class="f3 push-content">: 簡單來說裝起來非常麻煩</span><span class="push-ipdatetime"> 04/03 21:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">VisualStudio</span><span class="f3 push-content">: 這個GoUsers清單好像有列 <a href="https://goo.gl/HfRAdb" target="_blank" rel="nofollow">https://goo.gl/HfRAdb</a></span><span class="push-ipdatetime"> 04/03 22:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">VisualStudio</span><span class="f3 push-content">: 清單頁面最底下有 See also Success Stories</span><span class="push-ipdatetime"> 04/03 23:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GoalBased</span><span class="f3 push-content">: 光是google出的框架就不想用了，看看android ng1</span><span class="push-ipdatetime"> 04/03 23:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">obamina48</span><span class="f3 push-content">: 推 rust</span><span class="push-ipdatetime"> 04/04 08:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chia7712</span><span class="f3 push-content">: 因為是google大神</span><span class="push-ipdatetime"> 04/05 00:03
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Soft_Job/M.1522744419.A.B59.html?cacheKey=2133-1013743144&offset=12345&offset-sig=9bf5acd5933f268315079e680f34ad8b0107e087" data-longpollurl="/v1/longpoll?id=a82a252f2e6d7acb6ebb9c0dac5cf6f78b290efd" data-offset="12345"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
