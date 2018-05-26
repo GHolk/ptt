@@ -3,8 +3,13 @@
 #head -n 15 index_old.html
 #sed -i '/^<body>$/,$d ;  $i<body>' index.html
 
-[ -s atom.xml ] && mv atom.xml atom_old.xml
-sed '/<generator/ r atom_new.xml' atom_old.xml >atom.xml
+ex atom.xml <<EOF
+0/<updated>/
+s/>.*</>$(date -Is)</
+0/<generator/
+r atom_new.xml
+wq
+EOF
 rm atom_new.xml
 
 if [ "$1" = "-p" ]
