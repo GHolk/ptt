@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-06-10T01:24:25+08:00</updated>
+  <updated>2018-06-10T10:32:54+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,177 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528292002.A.430.html</id>
+<title>Re: [問卦] flac是否已經統一無損音樂壓縮格式？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528292002.A.430.html" />
+<published>Wed Jun  6 21:33:19 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>天生散人</name>
+<email>protoss.bbs@ptt.cc</email>
+</author>
+
+<summary>:
+: ※ 引述《ILike58 (小菊花)》之銘言：
+: : ※ 引述《ispv7 ()》之銘言：
+: : : ※ 引述《arrenwu (Colors Guardian)》之銘言：
+: : : : 拜mp3問世所賜，在撥接的年代大家就可以傳輸好聽的音樂，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528278953.A.C47.html</id>
+<title>Re: [問卦] flac是否已經統一無損音樂壓縮格式？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528278953.A.C47.html" />
+<published>Wed Jun  6 17:55:50 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>討厭從後面來</name>
+<email>HateAnus.bbs@ptt.cc</email>
+</author>
+
+<summary>WAV應該還是大宗
+以前隨身聽和錄音筆基本上都只支援WAV的無損檔
+蘋果用戶應該是用AIFF
+FLAC私心覺得是迷版最愛
+搞不好有些還是128kbps mp3轉上來騙你的
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528278570.A.DC2.html</id>
+<title>Re: [問卦] flac是否已經統一無損音樂壓縮格式？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528278570.A.DC2.html" />
+<published>Wed Jun  6 17:49:28 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>小菊花</name>
+<email>ILike58.bbs@ptt.cc</email>
+</author>
+
+<summary>    不過推文說的radio其實就規格來說應該是最不好的，但是他的內容跟純聽音樂不同，就有人在裡頭用著富磁性的嗓音喇一下賽然後播一下歌插幾條廣告，光那內容就大勝了。
+    至於我剛講的CD也有一部份跟載體有關，只能說串流的興起，這些因載體而生的轉盤就變眼淚了，串流應該會成趨勢，不管就使用上或是重播上，這方面我記得一堆廠家也都跟串流業者合作了，這是好事，畢竟過去是自己要去買CD回來轉出WAV，但每個人用的機器和設定不同也會造成資料有差，統一由廠商提供就沒這方面的問題了，Tidal我印像中有提供無損的音訊，Spotify就比較雷，還聽說有mp
+3的，總之越來越多廠家跳進來合作，不然賺不到錢，畢竟盜版傳播都是件容易的事，有機會去音響展看看吧，我記得門票很便宜，看看頂級音響的性能到哪，就不會懷疑自己是木耳還是設備不好，如果是就聽音樂的角度看，十幾萬的設備性能就很夠了，聽個20年絕對沒問題。
+-----
+Sent from JPTT on my Google Pixel 2.
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528275836.A.DD5.html</id>
+<title>Re: [問卦] flac是否已經統一無損音樂壓縮格式？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528275836.A.DD5.html" />
+<published>Wed Jun  6 17:03:54 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>小菊花</name>
+<email>ILike58.bbs@ptt.cc</email>
+</author>
+
+<summary>    怎麼我覺得你才是鬼扯，他在問音訊壓縮格式，你在扯音訊媒體的優劣。
+    事實上這種壓縮格式推廣真的是看廠商啦，說要一統其實也很拼，畢竟背後支持的廠商都很強大的話，就是到時都共存，就像藍芽的a2dp使用的codec，安卓就是要推APT-X，蘋果就是要推AAC，即便不去管操作細節，身為裹粉我是認為AAC的選擇比較合理，至於這種無損壓縮那就更沒有討論的餘地了，選哪種其實品質是沒差的，頂多就壓縮率和解壓效率，但現在的電腦手機處理器又是比暴力的，這點解壓效率的差異其實很難影響播放品質了。
+回到剛剛提的音質問題，其實音質跟你播放線路設計比較有關，電路訊號乾不乾淨對聆聽者覺得音質好不好比較有直接的關係，PCM升不升頻關係到產生訊號的設計哲學，都有人做也都有他的好處，但前題他們的電路雜訊都非常的低，低到你覺得背景非常的黑，至於一堆有的沒的CD其實規格就44.1khz/16bit，有強調製作精良的HRCD，有強調材質可降低讀取jitter的HQCD/SHM-CD，族繁不及備載，都是為了CD這看似過去這不好的規格去做的加強，但你要是有時間可以花個幾百塊去聽一下音響展，你會有不同的想法，基本上我覺的PCM差不多已經到頂了，把母帶轉成PCM其實就是ꐊ@種down grade，但他不好嗎？不，其實他非常好，以重播的品質適用的各場合跟傳遞的效率，我認為根本沒對手，你說DSD？聽說是重播的品質贏PCM，但如果就頂級玩家的說法，vinyl &amp;gt; dsd &amp;gt; pcm，但相對的dsd的檔案大小多很多，而且市面上量產性的DAC都不是原生解dsd，能買得起原生解dsd的DAC玩家選擇vinyl的機會更大，去聽聽看就知道為什麼我認為PCM是種down grade了，但就大量複製傳播卻是種好方法。
+-----
+Sent from JPTT on my Google Pixel 2.
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528270616.A.C79.html</id>
+<title>[問卦] flac是否已經統一無損音樂壓縮格式？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528270616.A.C79.html" />
+<published>Wed Jun  6 15:36:53 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>Colors Guardian</name>
+<email>arrenwu.bbs@ptt.cc</email>
+</author>
+
+<summary>拜mp3問世所賜，在撥接的年代大家就可以傳輸好聽的音樂，
+寬頻普及之後，更是輕鬆抓。
+不過後來寬頻的速度越來越快，有些人慢慢可以接受大很多的無損壓縮格式
+一時之間， ape wv tta flac 等格式相互競爭，
+不過現在好像幾乎就都是flac，偶爾看到ape
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528255071.A.C29.html</id>
+<title>Re: [問卦] 家裡出了個覺青小妹怎辦</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528255071.A.C29.html" />
+<published>Wed Jun  6 11:17:02 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>我才痛苦啦</name>
+<email>kimgordon.bbs@ptt.cc</email>
+</author>
+
+<summary>這我知道
+我建議原PO 不要為了這種無聊事跟妹妹破壞感情
+每個人都有自己的政治傾向 即便你不認同 也是要尊重
+再來每個人都會變 今天她是覺青 也可能十年後是9.2 事情很難說的
+此外 也建議原PO打開自己衣櫃裡的防潮箱
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528277253.A.070.html</id>
+<title>Re: [ＦＢ] 老包：走人是因為不願放棄支持柯文哲</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528277253.A.070.html" />
+<published>Wed Jun  6 17:27:27 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>高級工讀生</name>
+<email>binshin.bbs@ptt.cc</email>
+</author>
+
+<summary>看到這篇新聞
+心底有很多感觸
+第一、老包的歷史
+https://www.facebook.com/profile.php?id=100008219342251
+講到老包，要先講一下新臺灣新聞週刊
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528216231.A.66C.html</id>
+<title>[ＦＢ] 老包：走人是因為不願放棄支持柯文哲</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528216231.A.66C.html" />
+<published>Wed Jun  6 00:30:28 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>Hustler</name>
+<email>EvilisGood.bbs@ptt.cc</email>
+</author>
+
+<summary>綠色和平電台主持人「老包」詹錫奎解釋，
+「老包說故事」廣播節目之所以劃下句點，
+嚴格說起來不是被逼的，
+而是不願在電台施壓之下放棄支持柯文哲。
+詹錫奎
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528225628.A.144.html</id>
+<title>Re: [ＦＢ] 老包：走人是因為不願放棄支持柯文哲</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528225628.A.144.html" />
+<published>Wed Jun  6 03:07:06 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>堂腦病患者</name>
+<email>echociel.bbs@ptt.cc</email>
+</author>
+
+<summary>這篇在八卦板風向不對應該會被噓死不過我真的很疑惑。
+就算丟掉工作也要堅持支持某個人的精神是很了不起沒錯，
+民進黨很多事情也真的幹得很爛沒錯，
+可是老實說我實在看不懂這件事有什麼好撻伐民進黨的。
+請問這個電台是今天開始有立場的嗎？
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1260692032.A.856.html</id>
 <title>[吐槽] 龍族</title>
