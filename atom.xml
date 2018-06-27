@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-06-26T15:11:20+08:00</updated>
+  <updated>2018-06-27T15:17:00+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,44 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1529716072.A.7C3.html</id>
+<title>[閒聊] 討厭同人創作灰色地帶硬要分黑白的話...</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1529716072.A.7C3.html" />
+<published>Sat Jun 23 09:07:48 2018</published>
+<category term="C_Chat" />
+
+<author>
+<name>大家都有病</name>
+<email>n99lu.bbs@ptt.cc</email>
+</author>
+
+<summary>最近同人創作限制又在推特吵得很兇
+原因是賽馬娘的官方限制引起了一堆創作者的討論。
+https://twitter.com/fujiwarayu
+https://i.imgur.com/2gn2jA0.jpg
+輕小說作家藤原祐的想像:
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1529851359.A.2EE.html</id>
+<title>[kuso] 外國車站加上台灣元素一秒變身</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1529851359.A.2EE.html" />
+<published>Sun Jun 24 22:42:35 2018</published>
+<category term="joke" />
+
+<author>
+<name>== 鴉片玫瑰 ==</name>
+<email>enzo50.bbs@ptt.cc</email>
+</author>
+
+<summary>更新:
+原作者來信表示,
+創作初衷是為了點出中華民國的審美觀,
+及交通規範有很多值得醒思的地方,
+故部分名稱改為中華民國。
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1442822972.A.D5E.html</id>
 <title>[偷可] 妖精打架的典故~~</title>
