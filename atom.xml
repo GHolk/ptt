@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-09-03T12:03:30+08:00</updated>
+  <updated>2018-09-03T21:48:23+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,44 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1535958128.A.69D.html</id>
+<title>[黑特] gold holk 你要證明你是 plamhuang 本人</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1535958128.A.69D.html" />
+<published>Mon Sep  3 15:02:05 2018</published>
+<category term="Hate" />
+
+<author>
+<name></name>
+<email>plamhuang.bbs@ptt.cc</email>
+</author>
+
+<summary>gold holk
+我在黑特來證明我是本人
+這樣能嗎?
+那個PTT網頁轉載敢他X還跟別人要證明
+你還要什麼證明?
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1530084005.A.05F.html</id>
+<title>[討論] 姚文再次被唐鳳打臉</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1530084005.A.05F.html" />
+<published>Wed Jun 27 15:19:57 2018</published>
+<category term="HatePolitics" />
+
+<author>
+<name>     </name>
+<email>Fant1408.bbs@ptt.cc</email>
+</author>
+
+<summary>https://tw.appledaily.com/new/realtime/20180627/1380684/
+姚文智在會中表示，唐鳳長期協助政府在網路上的政策以及回應，盼能在台北市長選舉有
+更多交流和切磋，似乎有意請唐鳳擔任競選要職，但唐鳳歪了頭說「謝謝。」
+———
+實在是太丟臉了
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1532590346.A.125.html</id>
 <title>[問卦] 有沒有和歌山毒咖哩事件的八卦</title>
