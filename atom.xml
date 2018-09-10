@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-09-10T10:03:37+08:00</updated>
+  <updated>2018-09-10T21:25:40+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,25 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1536477596.A.010.html</id>
+<title>[新聞] 火燒貴賓犬遭肉搜 舅怒吼「牠撕咬小孩</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1536477596.A.010.html" />
+<published>Sun Sep  9 15:19:54 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>dannyzzz</name>
+<email>dannyzzz.bbs@ptt.cc</email>
+</author>
+
+<summary>火燒貴賓犬遭肉搜！舅崩潰怒吼「牠撕咬小孩耶」　網求情：放過狗吧
+大陸中心／綜合報導
+「大家看看我這是何種殺法？」黑龍江哈爾濱一李姓男子7日發現家中飼養1年的貴賓狗
+，把親外甥右手給咬傷了，他抓過來教訓手還反被抓傷，腦中理智瞬間斷線，拿出烤槍
+火燒狗頭，還一直叫囂說著「咬我啊，再咬啊！」殺狗影片曝光被網友痛批殘忍，讓他
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1536308039.A.926.html</id>
 <title>Re: [新聞] 0206期貨大屠殺慘賠40億　百人闖期交所與警爆</title>
