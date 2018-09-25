@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-09-24T21:40:35+08:00</updated>
+  <updated>2018-09-25T12:52:23+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,82 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537767765.A.D51.html</id>
+<title>Re: [新聞] 王仁甫：5566成員是硬湊的　孫協志證實</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537767765.A.D51.html" />
+<published>Mon Sep 24 13:42:41 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>G.S.M.W</name>
+<email>T3T.bbs@ptt.cc</email>
+</author>
+
+<summary>確實是硬湊的啊
+但    硬湊的很成功
+五人當中   最先出道的當然是孫協志
+當完兵後    人氣急遽下降
+剛好那時  孫德榮有意組一個團體
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537796160.A.839.html</id>
+<title>[問卦] 數學研究都被物理學家收割了？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537796160.A.839.html" />
+<published>Mon Sep 24 21:35:58 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>亭</name>
+<email>mystage.bbs@ptt.cc</email>
+</author>
+
+<summary>我們知道數學家大概是人類文明的最前端，
+常常研究出一個算法或理論，
+過幾十年才被物理學家拿去應用。
+當然也有些是物理學家自己數學很好，
+遇到問題時自己&amp;#34;發現&amp;#34;算法去應用。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537801019.A.1B9.html</id>
+<title>[問卦] 有工地水鬼撈鑽頭的詳細內容嗎 ?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537801019.A.1B9.html" />
+<published>Mon Sep 24 22:56:56 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>壓力測試</name>
+<email>z501233.bbs@ptt.cc</email>
+</author>
+
+<summary>常常在大陸影片看到
+在泥漿井下去
+影片簡介都是上的來3萬都有 上不來200萬
+https://imgur.com/a/UJN6QBP
+通常設備都感覺很簡陋
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537804103.A.B97.html</id>
+<title>[新聞] 交大、陽明確定併校！ 改名陽明交通大學</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537804103.A.B97.html" />
+<published>Mon Sep 24 23:48:18 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>天氣真好</name>
+<email>coolgtr.bbs@ptt.cc</email>
+</author>
+
+<summary>TVBS新聞 2018年9月24日 下午11:35
+國立交通大學和陽明大學併校研議了17年，在24日確定正式合校，改名為國立陽明交通大
+學，並且在現任校長任內正式推動。
+https://goo.gl/PxAjnL
+陽交? 明通? 交明? 陽通?
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1537707278.A.A1D.html</id>
 <title>[ＦＢ] 心戰軍官事件後續</title>
