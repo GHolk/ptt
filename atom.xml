@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-09-25T12:52:23+08:00</updated>
+  <updated>2018-09-26T13:41:55+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,101 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1528651065.A.010.html</id>
+<title>[新聞] 天兵！退伍前一週偷藏一顆子彈 被依侵占</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1528651065.A.010.html" />
+<published>Mon Jun 11 01:17:42 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>rpg</name>
+<email>rpg.bbs@ptt.cc</email>
+</author>
+
+<summary>自由
+天兵！退伍前一週偷藏一顆子彈 被依侵占軍用彈藥罪起訴
+http://news.ltn.com.tw/news/society/breakingnews/2453981
+天兵！
+陸軍徐姓士兵在退伍前一星期部隊打靶時，一時手癢，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537850211.A.9F6.html</id>
+<title>[爆卦] 台中唯一的obike停在台中交通局裡？!</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537850211.A.9F6.html" />
+<published>Tue Sep 25 12:36:48 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>香蕉園的黑螞蟻</name>
+<email>alittesmall.bbs@ptt.cc</email>
+</author>
+
+<summary>obike當時來台灣
+台中交通局長王義川直接怒嗆不歡迎，來一台拖一台
+http://news.ltn.com.tw/news/life/breakingnews/2130641
+去年我就發現台中(應該是)唯一一台obike居然在台中市政府
+https://i.imgur.com/8lAhGXB.jpg
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537820307.A.3EC.html</id>
+<title>Re: [新聞] 天兵！退伍前一週偷藏一顆子彈 被依侵占</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537820307.A.3EC.html" />
+<published>Tue Sep 25 04:18:24 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>妖孽!!</name>
+<email>ECZEMA.bbs@ptt.cc</email>
+</author>
+
+<summary>恩 65k2 口徑 5.56mm
+子彈一顆 美國買的話 平常不特價 應該是 30-50 cent
+就一顆十塊台幣左右吧! 醬至少坐3年牢… 北七告午春
+我開始相信教主講的，一群智障在那邊講智力測驗有過沒過
+0rz
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1516726501.A.7CF.html</id>
+<title>[新聞] 全台首宗三校合併「國立高雄科技大學」2</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1516726501.A.7CF.html" />
+<published>Wed Jan 24 00:54:58 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>陽台五六</name>
+<email>balcony5566.bbs@ptt.cc</email>
+</author>
+
+<summary>全台首宗三校合併「國立高雄科技大學」2月1日揭牌
+大紀元 記者李怡欣／高雄報導 2018年01月23日
+第一科大、高應大與海科大正式合併「國立高雄科技大學」，首任校長現任高應大楊慶
+煜出線，2月1日將在原高應大的「建工校區」舉行揭牌儀式暨校長就職典禮。教育部期許
+，高科大協助南部產業轉型升級，高應大也指出，合併後教職員權益受保障，不會有異動
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1537936981.A.C3E.html</id>
+<title>[問卦] 瓜仔肉飯是不是長期被滷肉飯霸凌??</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1537936981.A.C3E.html" />
+<published>Wed Sep 26 12:42:58 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>我很窮</name>
+<email>VVizZ.bbs@ptt.cc</email>
+</author>
+
+<summary>大家好
+提到台灣庶民小吃
+滷肉飯跟臭豆腐必然前二
+那第三可能是蚵仔煎
+怎麼算都不會算到瓜仔肉飯
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1537767765.A.D51.html</id>
 <title>Re: [新聞] 王仁甫：5566成員是硬湊的　孫協志證實</title>
