@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-10-04T18:31:13+08:00</updated>
+  <updated>2018-10-04T23:33:07+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,63 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1536136734.A.906.html</id>
+<title>[心得]1050效能相當於PS4怎麼會不夠玩大作???</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1536136734.A.906.html" />
+<published>Wed Sep  5 16:38:52 2018</published>
+<category term="PC_Shopping" />
+
+<author>
+<name> </name>
+<email>Tosca.bbs@ptt.cc</email>
+</author>
+
+<summary>說真的魯蛇我很納悶的就是
+PS4的效能其實跟1050是差不多的
+但跨平台大作
+我的PS4跑起來還是順暢無比
+魔物獵人 BF1 星際大戰 FIFA18 等等
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1493899675.A.15A.html</id>
+<title>Re: [情報] Komica 重大故障通知</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1493899675.A.15A.html" />
+<published>Thu May  4 20:07:52 2017</published>
+<category term="C_Chat" />
+
+<author>
+<name>守序邪惡的雨颯</name>
+<email>rainnawind.bbs@ptt.cc</email>
+</author>
+
+<summary>回文能見度比較高
+komicawiki是中文圈ACG梗彙整的最大集散地，萌娘百科至今還望塵莫及的程度
+本島怎樣死了還能重建
+K島百科死掉絕對是中文ACG圈的一項重大文化損失
+關站公告提到，只留有舊資料的備份
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1493906670.A.78F.html</id>
+<title>Re: [情報] Komica 重大故障通知</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1493906670.A.78F.html" />
+<published>Thu May  4 22:04:27 2017</published>
+<category term="C_Chat" />
+
+<author>
+<name>小信)(由基拉)(油雞</name>
+<email>yogira.bbs@ptt.cc</email>
+</author>
+
+<summary>  ==============================================================
+  2017-05-16 update：
+  KomicaWiki 本日已恢復，檔案回至 2017-04-26 14:24。
+  事件已解除。
+  ==============================================================
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1432561940.A.728.html</id>
 <title>[抱怨] 求救，小早餐店設計，友好關係大變調</title>
