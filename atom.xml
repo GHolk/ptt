@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-10-20T18:56:45+08:00</updated>
+  <updated>2018-10-22T21:48:46+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,82 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1419542936.A.B8A.html</id>
+<title>[心得] 警告！不要再用Raid 5了！</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1419542936.A.B8A.html" />
+<published>Fri Dec 26 05:28:53 2014</published>
+<category term="Storage_Zone" />
+
+<author>
+<name>Litfal</name>
+<email>Litfal.bbs@ptt.cc</email>
+</author>
+
+<summary>一、前言
+我不是什麼危言聳聽，也不是什麼RAID排斥，也不是我爆了RAID5的悲憤警世文
+完完全全只是數學問題。
+有心有空看數學流程的，請繼續看下去。沒空的也請相信我。
+不管你用的是主機板的RAID、還是用NAS的、抑或是高階陣列卡，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1390439237.A.06C.html</id>
+<title>Fw: [情報] 近五年先後購入各廠兩萬顆硬碟的存活率</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1390439237.A.06C.html" />
+<published>Thu Jan 23 09:07:16 2014</published>
+<category term="Storage_Zone" />
+
+<author>
+<name>mowd.tw</name>
+<email>Mowd.bbs@ptt.cc</email>
+</author>
+
+<summary>作者: hotdogee (hotdog) 看板: PC_Shopping
+標題: [情報] 近五年先後購入各廠兩萬顆硬碟的存活率
+時間: Wed Jan 22 09:52:58 2014
+原文：http://blog.backblaze.com/2014/01/21/what-hard-drive-should-i-buy/
+Backblaze (http://www.backblaze.com/zh_TW/) 今天放出了一筆有趣的資料，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1540031331.A.A13.html</id>
+<title>[問卦] 牛豆頁牌沙茶醬的八卦？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1540031331.A.A13.html" />
+<published>Sat Oct 20 18:28:48 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>CuteGirl5566</name>
+<email>IamCuteGirl.bbs@ptt.cc</email>
+</author>
+
+<summary>過年中秋元宵清明除夕
+不管到哪
+都會看到這品牌 配一顆蛋黃 沾肉片
+啊嘶，好吃
+但，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1540211281.A.28E.html</id>
+<title>Re: [問卦] 現代年輕人該&amp;#34;專精&amp;#34;還是&amp;#34;廣博&amp;#34;？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1540211281.A.28E.html" />
+<published>Mon Oct 22 20:27:40 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>秋風孤劍李鴻章</name>
+<email>Pellaeon.bbs@ptt.cc</email>
+</author>
+
+<summary>原文恕刪
+看到這篇 有感而發
+其實專精跟廣博是一體兩面
+專精也可以說是在一個領域裡廣博地發展
+但是熱忱 確實是最重要的
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1539751551.A.BC9.html</id>
 <title>Re: [爆卦] 新莊某藥局人潮爆滿 疑似拿不到貨</title>

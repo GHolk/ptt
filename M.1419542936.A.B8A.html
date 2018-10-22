@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[心得] 警告！不要再用Raid 5了！ - 看板 Storage_Zone - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="一、前言
+我不是什麼危言聳聽，也不是什麼RAID排斥，也不是我爆了RAID5的悲憤警世文
+完完全全只是數學問題。
+有心有空看數學流程的，請繼續看下去。沒空的也請相信我。
+不管你用的是主機板的RAID、還是用NAS的、抑或是高階陣列卡，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[心得] 警告！不要再用Raid 5了！">
+<meta property="og:description" content="一、前言
+我不是什麼危言聳聽，也不是什麼RAID排斥，也不是我爆了RAID5的悲憤警世文
+完完全全只是數學問題。
+有心有空看數學流程的，請繼續看下去。沒空的也請相信我。
+不管你用的是主機板的RAID、還是用NAS的、抑或是高階陣列卡，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Storage_Zone/M.1419542936.A.B8A.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Storage_Zone/index.html"><span class="board-label">看板 </span>Storage_Zone</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Storage_Zone/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Storage_Zone/M.1419542936.A.B8A.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">Litfal (Litfal)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Storage_Zone</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[心得] 警告！不要再用Raid 5了！</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Dec 26 05:28:53 2014</span></div>
+<span class="f6 hl">一、前言</span>
+
+我不是什麼危言聳聽，也不是什麼RAID排斥，也不是我爆了RAID5的悲憤警世文
+完完全全只是數學問題。
+
+有心有空看數學流程的，請繼續看下去。沒空的也請相信我。
+
+不管你用的是主機板的RAID、還是用NAS的、抑或是高階陣列卡，
+是Software-based RAID、Hardware-based RAID、抑或是Driver-based，
+只要你用的是消費級的硬碟，且容量上TB等級，
+
+      <span class="f1 hl">不要再用RAID 5了</span>
+      <span class="f1 hl">不要再用RAID 5了</span>
+      <span class="f1 hl">不要再用RAID 5了</span>
+
+現在還再用RAID5的請趕快升級成RAID6。
+就算你有10顆Hot Spare也一樣。
+因為
+    當你遇到問題時
+                  你完全成功重建的機率
+                                      比你想像中的
+                         <span class="f3 hl">低</span>
+
+接下來開始解釋為什麼，會有硬碟規格和數學，
+有心有空看數學流程的，請繼續看下去。沒空或看到數學就頭痛的，
+也請聽進我一席話。
+
+<span class="f6 hl">二、URE</span>
+
+硬碟有個參數，叫 <span class="f3 hl">uncorrectable read error</span>，
+更詳細一點的說叫 Non-recoverable read errors per bits read
+簡稱<span class="f3 hl">ure</span>，其中文為<span class="f3 hl">每位元讀取發生無法復原的讀取錯誤</span>
+一般消費級硬碟(包括消費級NAS碟)，這個參數官方通常是給
+<span class="f3 hl">1/10E14</span>
+(讀做10分之1的14次方，或10的負14次方，或零點零零零零零零零零零零零零零一)
+是個看起來很小的值。
+什麼意思呢？
+平均每讀取100,000,000,000,000位元，就會讀到1位元壞掉、且無法修復的資料。
+或是
+平均每讀取12.5TB，就會讀到1位元壞掉、且無法修復的資料。
+挖靠！這樣看起來更小了。
+這個數值大家就先記在心裡。
+企業級的硬碟，ure通常是1/10E15甚至1/10E16。
+
+<span class="f6 hl">三、RAID 5</span>
+
+再來提提RAID 5。
+RAID 5是啥，我就不細說了，不知道的你也不應該組RAID 5...
+RAID 5成員其中之一離線後，狀態會變為降級(degraded)，
+此時，若有備援、或是手動換一顆加入，則會進入重建狀態(rebuild)，
+重建時，會讀取<span class="f2 hl">所有資料</span>，算出離線成員的資料，並寫入備援碟。
+<span class="f2 hl">所有資料</span> = RAID 5可用容量，若你拿2TBx3組，就是4TB。
+重建是否成功、能否保全資料，就看能否<span class="hl">正確的</span>讀取<span class="f2 hl">所有資料</span>了。
+
+PS. 一般RAID與檔案系統無關，控制器不會知道你的硬碟哪裡有、放了多少資料。
+    所以，重建時是對整組RAID、所有磁區去做。
+    例外是一些軟體層的RAID，本身即是檔案系統、或位於檔案系統之下，
+    在檔案系統的層級加入RAID概念，是可能只針對有資料的部分做重建的。
+    如ZFS、ReFS。
+
+
+<span class="f6 hl">四、完美重建成功機率</span>
+
+接下來，就是高中數學了，
+我們有
+單次事件發生機率 ure
+事件次數 = 可用容量
+那，我們就能算多次事件下，發生(或不發生)的機率了：
+完全不發生ure(不出錯)的機率(完全成功重建)
+     = (1 - 單次機率) ^ (次數)
+     = (1 - ure) ^ (容量)
+帶入
+ure = 1/10E14
+可用容量 = 4TB(32x10E12位元)
+
+完全不發生ure的重建機率 = (1-1/10E14)^(32x10E12)
+喔數字都好大，怎麼算？ 你可以用高級計算機、Excel或是取Log搭配一般計算機。
+反正我直接告訴你答案：
+
+使用消費級硬碟組成4TB可用容量的RAID 5，一個位元都不壞的成功重建機率 =
+
+                             <span class="f1 hl">72.6%</span>
+
+順便再多給幾個資料點
+4TB  = 72.6%
+6TB  = 61.9%
+8TB  = 52.8%
+
+我不知道你對這個機率是否滿意。
+我個人是很不滿意啦。
+若考慮容錯的真義，4TB的狀況對我來說尚可接受。
+但在現在單顆4TB性價比如此高，誰會組個4TB的RAID5阿！
+
+當然你可以用企業級、URE較低的硬碟，那是可以把機率提升到90%以上。
+但也沒十分高，下面會附上表格。
+
+<span class="f6 hl">五、發生read error時</span>
+
+重要：read error和上述的URE不盡相同，但這邊提一下讓大家參考
+
+發生Read error時，根據硬碟與陣列控制卡的行為與設定，會有幾種狀況，
+實際的情況比較複雜，我簡單列幾個出來：
+
+1. 硬碟根本沒發現read error！但是讀出來的資料是錯的。
+   結果：你的資料壞了1bit(通常不止)，而且不會主動發現！
+   嚴重性：看你的資料價值。
+
+2. 硬碟發現Read error，可能是Checksum failed，並開始硬碟內的ERC。
+2.a. 修復成功，嚴格說來這樣就不算URE。
+2.b. 花過多時間修復，被RAID踢掉。
+     結果：這顆就離線了，如果你正在重建，恭喜你！<span class="f1">RAID Failed</span>！
+           如果你的RAID無法手動調整RAID組態...那狀況是有點嚴重。
+2.c. 因TLER設定而及時放棄修復：
+     結果：RAID控制器收到錯誤訊息並記錄；
+           如果有容錯，則會嘗試用其他顆硬碟資料，重建這個位元。
+           如果容錯失效(如RAID5重建中)，則會通常控制器跳過這個位元。
+
+<span class="f6 hl">六、RAID 5 完美重建機率</span>
+
+        <span class="b2">容量                                                  </span>
+<span class="b1">URE     </span><span class="b2">4TB     6TB     8TB     10TB    12TB    14TB    16TB  </span>
+<span class="b1">1E-14   </span>72.63%  61.90%  52.76%  44.96%  38.32%  32.66%  27.83%
+<span class="b1">1E-15   </span>96.85%  95.32%  93.81%  92.32%  90.85%  89.41%  87.99%
+<span class="b1">1E-16   </span>99.65%  99.47%  99.29%  99.12%  98.94%  98.76%  98.59%
+
+<span class="f6 hl">七、後記</span>
+
+這篇的原稿我是在2013/1/16完成的，
+當時我用的是消費級2TBx8，猶豫要上RAID 5還是RAID 6，
+於是就查規格、動手算，果斷RAID 6。
+有空再分享RAID 6的計算部分。
+
+現在呢？
+那些2TB都賣光了XD
+
+今天，因為單身的聖誕節很無聊，
+把兩年前的文章整理出來，當作給大家遲來的聖誕禮物吧。
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 220.135.179.10
+</span><span class="f2">※ 文章網址: <a href="http://www.ptt.cc/bbs/Storage_Zone/M.1419542936.A.B8A.html" target="_blank" rel="nofollow">http://www.ptt.cc/bbs/Storage_Zone/M.1419542936.A.B8A.html</a>
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 05:30:26
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 05:42:55
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 06:04:24
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tn00210585  </span><span class="f3 push-content">: 1分之10的14次方? 10分之1的14次方?    都幾?</span><span class="push-ipdatetime"> 12/26 06:32
+</span></div>欸，我真的寫反了XD，感謝
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tn00210585  </span><span class="f3 push-content">: 推分享</span><span class="push-ipdatetime"> 12/26 06:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">user1120    </span><span class="f3 push-content">: 推。小疑問，如果rebuild的範圍一定是完整的硬碟容</span><span class="push-ipdatetime"> 12/26 07:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">user1120    </span><span class="f3 push-content">: 量，也不見得每次rebuild的時候，都剛好把整個硬碟</span><span class="push-ipdatetime"> 12/26 07:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">user1120    </span><span class="f3 push-content">: 用滿，理應成功率會再高一點吧？</span><span class="push-ipdatetime"> 12/26 07:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tn00210585  </span><span class="f3 push-content">: 樓上 你要考慮當檔案極其重要時 你要把最差的可能情</span><span class="push-ipdatetime"> 12/26 07:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tn00210585  </span><span class="f3 push-content">: 況來做為基礎</span><span class="push-ipdatetime"> 12/26 07:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">assemblies  </span><span class="f3 push-content">: 誰告訴你硬碟一次讀1個位元的 你讀給我看看</span><span class="push-ipdatetime"> 12/26 07:58
+</span></div>沒有說硬碟一次只讀一個bit，但機率就是這樣算的，不需要把問題搞複雜
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SRNOB       </span><span class="f3 push-content">: =推 很認真分享也有用的文章 要是我大概打150字</span><span class="push-ipdatetime"> 12/26 08:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wkwtb       </span><span class="f3 push-content">: 我不用完美重建，只要大部分資料救得回來</span><span class="push-ipdatetime"> 12/26 08:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 跟這裡算出來的不一樣? <a href="http://ppt.cc/pULH" target="_blank" rel="nofollow">http://ppt.cc/pULH</a></span><span class="push-ipdatetime"> 12/26 08:42
+</span></div>我是覺得他算錯了，他的NxS = 總容量，但RAID 5的有效容量應該是(N-1)xS
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">grief3      </span><span class="f3 push-content">: 只看結果 你應該是算錯了 跟其他論文算出來都不一樣</span><span class="push-ipdatetime"> 12/26 09:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">grief3      </span><span class="f3 push-content">: 要真像你寫的這樣 RAID5早就淘汰了</span><span class="push-ipdatetime"> 12/26 09:57
+</span></div>我是覺得RAID5應該淘汰了，另外能請您提供論文嗎？
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KinoniK     </span><span class="f3 push-content">: 我們公司機房raid5做了超久 都沒事</span><span class="push-ipdatetime"> 12/26 10:07
+</span></div>真的衷心的希望能一直持續下去。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 是說...重建成功機率這麼低的話</span><span class="push-ipdatetime"> 12/26 10:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 那這篇文章 <a hrefhref="http://www.ptt.cc/bbs/Storage_Zone/M.1390355585.A.0FD.html" target="_blank" rel="nofollow">#1ItoI13z</a> 這間公司是傻子?</span><span class="push-ipdatetime"> 12/26 10:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 貼錯 這篇才對 <a hrefhref="http://www.ptt.cc/bbs/Storage_Zone/M.1390439237.A.06C.html" target="_blank" rel="nofollow">#1Iu6j51i</a></span><span class="push-ipdatetime"> 12/26 10:27
+</span></div>發生URE不代表重建會失敗...
+仔細看了一下該文網站上的建置文章，他用的是RAID 1，
+搭配SIL3124，用RAID 1、很合理。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">filiaslayers</span><span class="f3 push-content">: 樓上你貼那篇跟RAID5的關系是?</span><span class="push-ipdatetime"> 12/26 10:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard65    </span><span class="f3 push-content">: 高級Raid Controller都有Patrol read/scrubbing機制</span><span class="push-ipdatetime"> 12/26 10:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard65    </span><span class="f3 push-content">: 不會讓你嚴重到已經一顆offline要重建才發現</span><span class="push-ipdatetime"> 12/26 10:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard65    </span><span class="f3 push-content">: 某些bit是壞掉的狀況....</span><span class="push-ipdatetime"> 12/26 10:58
+</span></div>還是會有一些狀況讓整顆硬失效，然後就offline。
+這篇就是討論當RAID 5 degraded，rebuild時會遇到URE的機率。
+另外管理RAID，定期做check consistency是必須的，不過我不想模糊焦點
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zyxyz       </span><span class="f3 push-content">: 樓上, 那如果不是甚麼高級Raid Card呢...</span><span class="push-ipdatetime"> 12/26 11:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">assemblies  </span><span class="f3 push-content">: 英文後面有per bits read才對 不然亂翻沒人看得懂</span><span class="push-ipdatetime"> 12/26 11:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">assemblies  </span><span class="f3 push-content">: 沒死換一顆新的也是整顆要重建 有差嗎</span><span class="push-ipdatetime"> 12/26 11:17
+</span></div>感謝！的確忘了這部分。習慣了URE自以為理所當然大家都能懂...
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vincehuang  </span><span class="f3 push-content">: 鬼扯一通,譁眾取寵</span><span class="push-ipdatetime"> 12/26 11:40
+</span></div>感謝指教，如果能指點一下我錯在哪就更讓人高興了。
+然後我覺得在這個版喧嘩取眾一點意義也沒有。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard65    </span><span class="f3 push-content">: software-raid也有(manual)consistency checking...</span><span class="push-ipdatetime"> 12/26 11:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 網路儲存公司買了2萬顆硬碟沒可能不RAID的吧?</span><span class="push-ipdatetime"> 12/26 11:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 如果URE對RAID重建事關重大還會買一堆消費級的用嗎?</span><span class="push-ipdatetime"> 12/26 11:59
+</span></div>這篇專指RAID 5，不包含RAID 10、RAID 50、RAID 60。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">y3k         </span><span class="f3 push-content">: 不太可能像你這個這麼低 低於99.9%就已經很嚴重了</span><span class="push-ipdatetime"> 12/26 12:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">y3k         </span><span class="f3 push-content">: 另外連1bit都不能錯的標準也不能運用在消費級上</span><span class="push-ipdatetime"> 12/26 12:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">y3k         </span><span class="f3 push-content">: 只錯1bit或許連謎片的一個frame的一個像素都沒影響</span><span class="push-ipdatetime"> 12/26 12:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">y3k         </span><span class="f3 push-content">: 啊XD</span><span class="push-ipdatetime"> 12/26 12:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">int5566     </span><span class="f3 push-content">: 閣下算出來的那個機率是讀寫4T發生一個bit都不會讀</span><span class="push-ipdatetime"> 12/26 12:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">int5566     </span><span class="f3 push-content">: 錯的機率吧......</span><span class="push-ipdatetime"> 12/26 12:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sai25       </span><span class="f3 push-content">: 實務上r5掛掉的狀況真的不少 所以我公司跟家裡都改R</span><span class="push-ipdatetime"> 12/26 12:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sai25       </span><span class="f3 push-content">: 6了</span><span class="push-ipdatetime"> 12/26 12:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ArthurDX    </span><span class="f3 push-content">: 你好像完全算錯了，同int5566講的，你算的應該是</span><span class="push-ipdatetime"> 12/26 13:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ArthurDX    </span><span class="f3 push-content">: 讀寫4TB而一個bit都不會出錯的機率，但RAID5有校驗</span><span class="push-ipdatetime"> 12/26 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ArthurDX    </span><span class="f3 push-content">: 資訊，會計算還原資料，而你的算式完全沒有考慮進去</span><span class="push-ipdatetime"> 12/26 13:22
+</span></div>是阿，所以我強調是 &#34;完全成功重建&#34;。
+至於發生URE時，嚴重程度可大可小，請看五
+
+而ArthurDX說的RAID 5計算還原資料，
+當降級狀態，又發生read error，是沒有更多的亢餘能算出資料它到底是什麼的。
+但RAID 6或其他有兩顆以上的亢餘數據，在一顆丟失時，
+仍還保留足夠的亢餘來算出原始數據。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kamichu     </span><span class="f3 push-content">: 就1bit出錯，看用在何等級的資料囉，記憶體也會...</span><span class="push-ipdatetime"> 12/26 13:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">filiaslayers</span><span class="f3 push-content">: 所以一間買兩萬顆硬碟的公司只會用RAID5?</span><span class="push-ipdatetime"> 12/26 14:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">filiaslayers</span><span class="f3 push-content">: 講話沒邏輯不要讓人見笑了</span><span class="push-ipdatetime"> 12/26 14:21
+</span></div><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 16:02:28
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 16:30:23
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 只要是RAID 哪種不會被URE影響? 是不是用RAID5重要?</span><span class="push-ipdatetime"> 12/26 16:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: URE是機率性的 處裡大小越大就用高的機率遇上</span><span class="push-ipdatetime"> 12/26 16:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: RAID6也只是把這個機率降低而已</span><span class="push-ipdatetime"> 12/26 16:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">filiaslayers</span><span class="f3 push-content">: 原po也只說不要用raid5，你要無限上綱是你家的事</span><span class="push-ipdatetime"> 12/26 16:32
+</span></div><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 16:36:10
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 我的意思只是想說 那種大型數據中心也使用消費級的</span><span class="push-ipdatetime"> 12/26 16:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: URE&lt;1x10^14的消費級硬碟 而未使用更高的^15或16</span><span class="push-ipdatetime"> 12/26 16:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ruo01332000 </span><span class="f3 push-content">: 可見這個問題的嚴重性並沒有這麼大</span><span class="push-ipdatetime"> 12/26 16:34
+</span></div>請看我上面的回應，我也有提供表格，算出企業級硬碟在RAID 5下的一些機率數據。
+另外我不覺得大型數據中心仍在使用RAID 5，尤其是有可用性保證的數據中心。
+甚至不覺得他們仍在使用單純的RAID，
+很可能改用Storage Pool的概念來簡化管理與保證可用性了。
+
+<span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 16:37:01
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 16:44:19
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 統計數學什麼的我是不懂啦，但是「成功重建」的定義</span><span class="push-ipdatetime"> 12/26 16:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 應該不是把整個4TB的資料從頭到尾讀過一遍吧？</span><span class="push-ipdatetime"> 12/26 16:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 或許這種算法應該說成clone成功的機率？</span><span class="push-ipdatetime"> 12/26 16:43
+</span></div>You got it! 而且是低階clone。
+只是在沒有亢餘保護的RAID環境下，發生URE引起的後續效應，可能會比單顆嚴重的多。
+
+<span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 16:52:14
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 因為在實務經驗上，我相信IT人員應該多少都碰過或</span><span class="push-ipdatetime"> 12/26 17:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 聽說過Raid5重建失敗的案例，但是那種案例大部分都</span><span class="push-ipdatetime"> 12/26 17:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 是在rebuild的時候，又發生第二顆硬碟故障的情況</span><span class="push-ipdatetime"> 12/26 17:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 而不是單純的資料復原失敗。</span><span class="push-ipdatetime"> 12/26 17:02
+</span></div><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 17:18:11
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 17:30:07
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Clarkliu    </span><span class="f3 push-content">: 等一下 raid5不是有1/3的容量用來儲存校驗碼？</span><span class="push-ipdatetime"> 12/26 19:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tn00210585  </span><span class="f3 push-content">: 不是1/3...</span><span class="push-ipdatetime"> 12/26 19:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: RAID5 的確很危險, 但是這個數據計算方向完全錯誤</span><span class="push-ipdatetime"> 12/26 19:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: 實務上最常發生的是相同型號相同批號的硬碟</span><span class="push-ipdatetime"> 12/26 19:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: 存在運作一段時間以後有兩顆以上同時壞軌的機率</span><span class="push-ipdatetime"> 12/26 19:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: 可以對照 backblaze 的實測結果, 但是一般 RAID box</span><span class="push-ipdatetime"> 12/26 19:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: 使用硬碟的方式會更操 折損率也不會只有 2~4%</span><span class="push-ipdatetime"> 12/26 19:43
+</span></div>只是關注點不同罷了。
+不同原因導致同樣的重建失敗或資料損失的結果，累積機率只會更高而不會更低。
+<span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 19:53:25
+</span><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/26/2014 19:54:17
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zh2013      </span><span class="f3 push-content">: 硬碟在有重啟次數時就得更換硬碟了</span><span class="push-ipdatetime"> 12/26 20:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GJME        </span><span class="f3 push-content">: 總覺得原po應該少算什麼 企業運算環境可靠度99.9%</span><span class="push-ipdatetime"> 12/26 20:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">GJME        </span><span class="f3 push-content">: 都算非常嚴重了</span><span class="push-ipdatetime"> 12/26 20:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">GJME        </span><span class="f3 push-content">: RAID 5 在實務上沒那麼慘的說</span><span class="push-ipdatetime"> 12/26 20:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GJME        </span><span class="f3 push-content">: 不過這裡我講的純粹是結果論啦 況且硬碟本身的糾錯</span><span class="push-ipdatetime"> 12/26 21:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">GJME        </span><span class="f3 push-content">: 搭上RAID冗餘計算 應該算可靠了 再者 硬體故障的機</span><span class="push-ipdatetime"> 12/26 21:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">GJME        </span><span class="f3 push-content">: 率還比較高</span><span class="push-ipdatetime"> 12/26 21:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: RAID5會在資料中心用? 別笑了好嗎</span><span class="push-ipdatetime"> 12/26 21:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 對了 上面那個貼計算機的</span><span class="push-ipdatetime"> 12/26 21:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: <a href="http://www.raidtips.com/raid5-ure.aspx" target="_blank" rel="nofollow">http://www.raidtips.com/raid5-ure.aspx</a></span><span class="push-ipdatetime"> 12/26 21:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 這是他自己說的 他的算法有爭議性</span><span class="push-ipdatetime"> 12/26 21:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 這是他提供的另一個說法</span><span class="push-ipdatetime"> 12/26 21:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 至於到底是不是真的這麼危險也說不準</span><span class="push-ipdatetime"> 12/26 21:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: RAID5當然可以用在資料中心 用法是：把一組RAID5當</span><span class="push-ipdatetime"> 12/26 21:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 做一個基本單位 然後每兩個基本單位做一組RAID1</span><span class="push-ipdatetime"> 12/26 21:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 所以RAID5重建不起來就不是大問題 大不了整個單位拔</span><span class="push-ipdatetime"> 12/26 21:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 下來 重做RAID1就是了</span><span class="push-ipdatetime"> 12/26 21:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 回主題 RAID5本身就是效率與費用的妥協 米不夠多就</span><span class="push-ipdatetime"> 12/26 21:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 所以你知道這已經不RAID 5了嗎</span><span class="push-ipdatetime"> 12/26 21:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 不然我是不是該說RAID 10/01叫RAID 0了?</span><span class="push-ipdatetime"> 12/26 21:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 認命吧 乖乖用RAID5 不然就是認份用排程做冷備份</span><span class="push-ipdatetime"> 12/26 21:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: 總之資料真的重要 比起RAID 多複製一分以上才實際</span><span class="push-ipdatetime"> 12/26 21:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 這個做法在現有的RAID定義中沒有定義 但是其實很常</span><span class="push-ipdatetime"> 12/26 21:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 見 高階一點的Storage都有 如果覺得不應該算RAID5應</span><span class="push-ipdatetime"> 12/26 21:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dabochi     </span><span class="f3 push-content">: 用 那就叫RAID51吧</span><span class="push-ipdatetime"> 12/26 21:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: 現在的顯學是分散式儲存, 某一台整台掛掉都沒有影響</span><span class="push-ipdatetime"> 12/26 23:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590    </span><span class="f3 push-content">: 只壞一兩顆硬碟當然更沒影響</span><span class="push-ipdatetime"> 12/26 23:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kamichu     </span><span class="f3 push-content">: 還是同樣一句話看資料重要性，重要就raid1加異地</span><span class="push-ipdatetime"> 12/26 23:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kamichu     </span><span class="f3 push-content">: 不重要就raid幾隨便自己爽就好，包括記憶體也會出錯</span><span class="push-ipdatetime"> 12/26 23:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kamichu     </span><span class="f3 push-content">: 至於資料中心，每個檔案都有兩份三份</span><span class="push-ipdatetime"> 12/26 23:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kamichu     </span><span class="f3 push-content">: btrfs的raid5有人用過嗎？</span><span class="push-ipdatetime"> 12/26 23:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: btrfs 一直都還在「體驗」階段 不敢在重要機器上面</span><span class="push-ipdatetime"> 12/27 00:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chang0206   </span><span class="f3 push-content">: 實際拿來應用</span><span class="push-ipdatetime"> 12/27 00:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace  </span><span class="f3 push-content">: R幾沒差～重要會異地備份 公司只是陽春R5+hotspare</span><span class="push-ipdatetime"> 12/27 01:43
+</span></div><span class="f2">※ 編輯: Litfal (220.135.179.10), 12/27/2014 01:46:39
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace  </span><span class="f3 push-content">: 法日美各有一份完整備份 各據點要自己保留15天備份</span><span class="push-ipdatetime"> 12/27 01:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">FLJX        </span><span class="f3 push-content">: 查了一下 國外2007就有人討論 2010 2013繼續延燒</span><span class="push-ipdatetime"> 12/27 02:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">FLJX        </span><span class="f3 push-content">: <a href="http://www.pizzaandcode.com/posts/780" target="_blank" rel="nofollow">http://www.pizzaandcode.com/posts/780</a></span><span class="push-ipdatetime"> 12/27 02:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">FLJX        </span><span class="f3 push-content">: 加上電腦還有其他層的容錯機制 其實還在可以接受的</span><span class="push-ipdatetime"> 12/27 02:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">FLJX        </span><span class="f3 push-content">: 範圍。反之如果是真的重要一個bit都不能錯</span><span class="push-ipdatetime"> 12/27 02:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">FLJX        </span><span class="f3 push-content">: 那就raid6或raid51吧</span><span class="push-ipdatetime"> 12/27 02:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lsc36       </span><span class="f3 push-content">: 推樓上danny8376大的連結</span><span class="push-ipdatetime"> 12/27 02:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">felaray     </span><span class="f3 push-content">: 在現今公有雲的服務中,就算號稱99.95%的可靠性,</span><span class="push-ipdatetime"> 12/27 02:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">felaray     </span><span class="f3 push-content">: 也是包含要做異地備援的部分..所以只能說分散儲存</span><span class="push-ipdatetime"> 12/27 02:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">felaray     </span><span class="f3 push-content">: 也是一個必要的選項..</span><span class="push-ipdatetime"> 12/27 02:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smarttb1    </span><span class="f3 push-content">: danny那個連結的結論明明就是否定那個算法 假設太強</span><span class="push-ipdatetime"> 12/27 10:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">smarttb1    </span><span class="f3 push-content">: 這篇的標題聳動 有點譁眾取寵 實務上不是這樣</span><span class="push-ipdatetime"> 12/27 10:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">smarttb1    </span><span class="f3 push-content">: 請原PO提出實驗數據證明你的結果吧 不然沒參考價值</span><span class="push-ipdatetime"> 12/27 10:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">smarttb1    </span><span class="f3 push-content">: 低於50%的話  rebuild個幾次就會失敗吧</span><span class="push-ipdatetime"> 12/27 10:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">smarttb1    </span><span class="f3 push-content">: 我們公司16*4TB的RAID5磁碟陣列 怎麼換硬碟沒遇到過</span><span class="push-ipdatetime"> 12/27 10:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">azopper     </span><span class="f3 push-content">: Raid5 容錯，備份另外作</span><span class="push-ipdatetime"> 12/27 15:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cowbaying   </span><span class="f3 push-content">: TLER是WD的ERC  不要這麼針對WD好嗎?</span><span class="push-ipdatetime"> 12/30 20:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cowbaying   </span><span class="f3 push-content">: 另外RAID 5有校驗位元  發生URE時除非另外幾顆也掛</span><span class="push-ipdatetime"> 12/30 20:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cowbaying   </span><span class="f3 push-content">: 不然資料是100%</span><span class="push-ipdatetime"> 12/30 20:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cowbaying   </span><span class="f3 push-content">: 不要小看陣列的演算法好嗎?</span><span class="push-ipdatetime"> 12/30 20:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cowbaying   </span><span class="f3 push-content">: 你可以把這篇發給各DATA CENTER  看他們理不理你...</span><span class="push-ipdatetime"> 12/30 20:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">corlos      </span><span class="f3 push-content">: 一定是爆硬碟的悲憤文wwwwwwww</span><span class="push-ipdatetime"> 12/31 14:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny8376   </span><span class="f3 push-content">: DC當然不會理啊 早就沒再用RAID5了 何必管RAID5怎樣</span><span class="push-ipdatetime"> 01/02 11:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">avans       </span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 11/15 19:51
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Storage_Zone/M.1419542936.A.B8A.html?cacheKey=2101-545505286&amp;offset=19263&amp;offset-sig=4ad8a0a880505450ea8de26b7a9caab7f7b41fc1" data-longpollurl="/v1/longpoll?id=cf121c1125d7ce9b7eca9489c1be28e5865453a3" data-offset="19263"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
