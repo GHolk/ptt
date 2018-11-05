@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [請益] 是否需要有斷電保護的SSD - 看板 PC_Shopping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="簡單提一些好了
+為什麼需要斷電保護?
+正常關機時系統會送出ATA STANDBY IMMEDIATE指令，讓SSD知道要關機了
+讓SSD能夠準備將快取內的資料儲存起來(就是in-flight data)
+而不正常斷電則是沒有接收到ATA STANDBY IMMEDIATE指令就直接斷電
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [請益] 是否需要有斷電保護的SSD">
+<meta property="og:description" content="簡單提一些好了
+為什麼需要斷電保護?
+正常關機時系統會送出ATA STANDBY IMMEDIATE指令，讓SSD知道要關機了
+讓SSD能夠準備將快取內的資料儲存起來(就是in-flight data)
+而不正常斷電則是沒有接收到ATA STANDBY IMMEDIATE指令就直接斷電
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/PC_Shopping/M.1453819891.A.1C4.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/PC_Shopping/index.html"><span class="board-label">看板 </span>PC_Shopping</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/PC_Shopping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/PC_Shopping/M.1453819891.A.1C4.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">Cubelia (天空の夜明け)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">PC_Shopping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [請益] 是否需要有斷電保護的SSD</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Jan 26 22:51:09 2016</span></div>
+簡單提一些好了
+
+為什麼需要斷電保護?
+
+正常關機時系統會送出ATA STANDBY IMMEDIATE指令，讓SSD知道要關機了
+讓SSD能夠準備將快取內的資料儲存起來(就是in-flight data)
+
+而不正常斷電則是沒有接收到ATA STANDBY IMMEDIATE指令就直接斷電
+
+那在快取內的資料哩? 就遺失啦，也有可能會毀損
+甚至舊有資料會毀損或是遺失映射表(就有可能變磚了)
+
+而斷電保護(Power Loss Protection)簡單來說可以分三種
+
+1.保護現有(舊)資料
+
+可稱為&#34;data-at-rest&#34;
+
+基本上就是保證lower page不出錯
+不讓upper page編程時斷電，這時電壓不穩也影響到lower page
+(最快的lower page先編程然後才是upper page)
+
+因為lower page可能含有先前寫入過的資料(現有舊資料)
+
+這和MLC的編程原理有關(用兩個bit來儲存資料 lower page/upper page)
+TLC的就那就是三個bit(lower page/middle page/upper page)
+
+2.揮發性記憶體內的資料也要保護(如主控內的SRAM或是當快取用的DRAM)
+
+這邊要保護的話就是沖(flush)進去非揮發性記憶體內(如SSD的NAND Flash)
+這邊的資料可稱為&#34;in-flight data&#34;
+
+
+3.FTL層的映射表也有保護
+這個其實算是包含在快取內的部分
+
+因為開機時SSD會把映射表加載到快取內(提升性能)
+
+還有一個不用電容但也可以避免變磚的方法就是:
+斷電時放棄所有正在寫入的數據和in-flight data
+這樣的&#34;寫入保護&#34;可以避免寫入時電壓不穩造成lower page出錯
+
+再次通電時就調用最後一筆映射表(或類似還原點或超塊的東東來修復映射表)
+(定釋放快取內的映射表 or 兩張交替更新 or 類似還原點的數據)
+然後掃描並尋找最後一筆數據
+
+如果最後一筆數據是有效的=&gt;OK
+如果最後一筆數據是無效的=&gt;利用&#34;安全區&#34;(spare區/safe location)的數據來嘗試復原
+(但不保證能復原)
+
+這樣就算沒有電容也能避免變磚(類似的有Toshiba PFM)
+不過開機可能會花多一點點時間要讓SSD內部去運作或拼接映射表
+
+當然，也許還有其它的斷電保護沒有提到
+還請其他大大幫忙補充惹
+
+==============================================================================
+不過筆者在這裡提出第三點是因為OCZ Vector 180的PFM+沒有完全保護到in-flight data
+而是定時釋放快取DRAM，將映射表備份出來(存在非揮發性的NAND Flash內)
+
+且PCB上的電容可以保證lower page不出錯
+這樣基本上能夠避免絕大多數的變磚情形
+
+Intel 730/750則是Power Loss Imminent(因為是企業級架構下放)
+可以保證所有快取內的資料能夠被沖進非揮發性記憶體內(in-flight data就會受到保護)
+
+data-at-rest應該也會有保護到(pdf裡面沒寫的很明顯)
+
+至於Intel 730的功能有沒有被醃掉
+(電容和電路甚至SMART內的電容測試訊息也還有在)
+這篇的話aleki_intel是指出完全能運作
+<a href="https://communities.intel.com/thread/75984?start=0&amp;tstart=0" target="_blank" rel="nofollow">https://communities.intel.com/thread/75984?start=0&amp;tstart=0</a>
+
+然後ARK內是沒寫出來就是了
+
+端對端數據保護(end to end data protection)不確定有沒有保留
+不過顆粒的配置蠻有趣的
+
+240GB型號的顆粒配置為
+20nm 29F32B08MCMF2 (單顆32GB)八顆
+20nm 29F16B08LCMF2 (單顆16GB)一顆
+也許XOR die的配置還在?
+
+XOR die這點得翻Intel SSD DC S3700 Datacenter RAS Features
+中文詳解可看&#34;桌面與企業級的真實Intel DC S3700/S3500詳解&#34;這篇
+
+如果有保留的話那就真的是貴的很有道理(企業級產品對數據的安全性很重視der)
+
+話說前一陣子新出的DC S3710/3510則是改用一大排的陶瓷電容
+(有興趣的話可以google拆殼照，整個PCB上滿滿都是陶瓷電容的焊點)
+來取代DC S3700/3500的兩顆電解電容
+這樣會對單幾顆電容失效更有容錯力
+
+DC S3500的M.2版本也是改成這樣(這樣可以節省空間，畢竟M.2上的PCB空間很珍貴)
+
+Micron Crucial M500/M550/MX100/MX200
+PCB上面一小排陶瓷電容則是只有達到保護現有(舊)資料的功能
+所以並不是完整斷電保護
+
+==============================================================================
+有時遇到突然斷電或是突發的重開機時開機會特別久
+
+有可能就是SSD內部在重建或拼接FTL層映射表
+所以這時千萬不要急著用電腦然後關機或重開機，一打斷這個步驟有可能就真的磚囉
+
+而這就是美光M4的&#34;斷電大法&#34;原理
+(只插SATA電源進BIOS等30min up再關機接SATA數據線開機)
+因為就是在進行映射表的重建或拼接
+
+叫使用者拔下SATA數據線是要用戶不要急著去看SSD有沒有抓到
+而是像手機泡水放米缸內一樣
+這樣其實最大的功效就是可以避免你急著用手機又再進行一次通電，然後就磚惹
+
+==============================================================================
+有錯還請其它大大指正
+
+下面這幾篇的斷電保護都解說的很棒
+有沒有興趣都可以看看
+
+浴室帶你了解PCEVA定制版SSD
+<a href="http://bbs.pceva.com.cn/thread-124723-1-2.html" target="_blank" rel="nofollow">http://bbs.pceva.com.cn/thread-124723-1-2.html</a>
+
+建興S920系列之硬件號為3K011的SSD深度評測和分析(這篇實際測試真實狀況)
+<a href="http://bbs.pceva.com.cn/thread-123622-1-1.html" target="_blank" rel="nofollow">http://bbs.pceva.com.cn/thread-123622-1-1.html</a>
+
+OCZ Trion 100系列240GB和480GB容量TLC閃存SSD評測
+<a href="http://bbs.pceva.com.cn/forum.php?mod=viewthread&amp;tid=121051" target="_blank" rel="nofollow">http://bbs.pceva.com.cn/forum.php?mod=viewthread&amp;tid=121051</a>
+
+對OCZ Vector 180卡頓問題的個人分析
+<a href="http://bbs.pceva.com.cn/forum.php?mod=viewthread&amp;tid=125662" target="_blank" rel="nofollow">http://bbs.pceva.com.cn/forum.php?mod=viewthread&amp;tid=125662</a>
+
+東芝Q Pro 256GB深入評測和分析
+<a href="http://bbs.pceva.com.cn/thread-118231-1-1.html" target="_blank" rel="nofollow">http://bbs.pceva.com.cn/thread-118231-1-1.html</a>
+
+桌面與企業級的真實Intel DC S3700/S3500詳解(這篇分析Intel PLI分析的很詳細)
+<a href="http://bbs.pceva.com.cn/thread-119451-1-1.html" target="_blank" rel="nofollow">http://bbs.pceva.com.cn/thread-119451-1-1.html</a>
+
+SanDisk寫的Unexpected Power Loss Protection白皮書(英文)
+這篇有把上面寫的斷電保護方式都詳細寫出來
+<a href="http://www.sandisk.com/Assets/docs/Unexpected_Power_Loss_Protection_Final.pdf" target="_blank" rel="nofollow">http://www.sandisk.com/Assets/docs/Unexpected_Power_Loss_Protection_Final.pdf</a>
+
+==============================================================================
+就樓主的情況來說筆者覺得更偏向硬體問題
+治標不治本，先從問題的源頭解決才是正確做法(且還有UPS惹)
+
+--
+<span class="hl">推</span> <span class="f3 hl">Lavchi</span><span class="f3">:江宜樺：服貿利大於弊，一定得簽    民　眾：梅達利？       </span>03/27 01:58
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lavchi</span><span class="f3 push-content">:江宜樺：利大於弊                  民　眾：義大利？</span><span class="push-ipdatetime">03/27 01:59
+</span></div><span class="f1 hl">→</span> <span class="f3 hl">Lavchi</span><span class="f3">:江宜樺：利大於弊                  民　眾：利大於弊?      </span>03/27 01:59
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lavchi</span><span class="f3 push-content">:江宜樺：阿水啦～</span><span class="push-ipdatetime">                               03/27 01:59
+</span></div><span class="f1 hl">→</span> <span class="f3 hl">phobiamojo</span><span class="f3">:is it good for people?</span>                               03/27 02:02
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Lavchi</span><span class="f3 push-content">:哩簽跨麥</span><span class="push-ipdatetime">                                                03/27 02:05
+</span></div>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 59.127.175.203
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/PC_Shopping/M.1453819891.A.1C4.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/PC_Shopping/M.1453819891.A.1C4.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Nafusica    </span><span class="f3 push-content">: Vector 180安定</span><span class="push-ipdatetime"> 01/26 22:52
+</span></div>大大出現惹(worship)
+以Vector 180來說是保證可運作(就是驗証過)，確實是安定der安全牌
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jaylaio     </span><span class="f3 push-content">: 180 跟730 哪個比較適合當桌機系統碟啊？</span><span class="push-ipdatetime"> 01/26 23:09
+</span></div>私心比較愛Intel 730
+骷髏頭就4狂
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AerobladeIII</span><span class="f3 push-content">: 兩個都適合，只是730的保護性更高一些</span><span class="push-ipdatetime"> 01/26 23:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">AerobladeIII</span><span class="f3 push-content">: 三字頭的730沒跟到哭哭</span><span class="push-ipdatetime"> 01/26 23:11
+</span></div>去年三月買240GB 3999元
+欣亞前一陣子還有跳樓價XD
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jaylaio     </span><span class="f3 push-content">: 感謝回覆。那我就放心730系統碟，180資料碟，繼續</span><span class="push-ipdatetime"> 01/26 23:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jaylaio     </span><span class="f3 push-content">: 用下去</span><span class="push-ipdatetime"> 01/26 23:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">flamedevil  </span><span class="f3 push-content">: 好專業 看不懂 XD</span><span class="push-ipdatetime"> 01/26 23:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tn00210585  </span><span class="f3 push-content">: 感謝信心加持</span><span class="push-ipdatetime"> 01/26 23:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a5150219    </span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 01/26 23:48
+</span></div>((<span class="hl">推</span>回去
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">flamedevil  </span><span class="f3 push-content">: 詳解那篇看完還是選I的好了</span><span class="push-ipdatetime"> 01/27 00:18
+</span></div>就看個人喜好囉
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Radeon      </span><span class="f3 push-content">: 快推!!!!不過我真的看不懂QQ</span><span class="push-ipdatetime"> 01/27 00:34
+</span></div>我也很不懂R 根本大濕QQ
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">x52013      </span><span class="f3 push-content">: 730系統碟 Extreme Pro遊戲碟 雙信仰有加持</span><span class="push-ipdatetime"> 01/27 01:34
+</span></div>狂
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">flamedevil  </span><span class="f3 push-content">: 之前很多人推的三星，在評測裡各種打臉 好慘</span><span class="push-ipdatetime"> 01/27 01:44
+</span></div>840 Pro喔 kerker
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a5150219    </span><span class="f3 push-content">: 想買730，但是240好像不太夠，看到480的價錢…還是</span><span class="push-ipdatetime"> 01/27 01:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a5150219    </span><span class="f3 push-content">: 多捏一點上750好呢？</span><span class="push-ipdatetime"> 01/27 01:50
+</span></div>730 240GB當系統碟
+另一顆系統碟用SSD Plus之類的就夠惹
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">x52013      </span><span class="f3 push-content">: 三星推的是Pro，不是Evo，有沒有打臉還不確定</span><span class="push-ipdatetime"> 01/27 04:38
+</span></div>後來850 Pro和Evo的Performance consistency都做得蠻屌der
+以TLC的850 Evo來說只有SanDisk的Ultra II才能比
+MLC的話就是Intel 730和Extreme PRO了
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kyosera     </span><span class="f3 push-content">: Vector 180安定 +1</span><span class="push-ipdatetime"> 01/27 07:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Kyosera     </span><span class="f3 push-content">: 730 SSD 當系統暫存檔專用碟了 …</span><span class="push-ipdatetime"> 01/27 07:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bust222     </span><span class="f3 push-content">: 說實在的我對ocz主控不太有信心就是了，有錢當然是</span><span class="push-ipdatetime"> 01/27 08:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bust222     </span><span class="f3 push-content">: ntel,我繼續龜著用三星好了orz</span><span class="push-ipdatetime"> 01/27 08:18
+</span></div>照個人喜好和實際用途囉
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a5150219    </span><span class="f3 push-content">: 分析PLI那篇有和840Pro比較。</span><span class="push-ipdatetime"> 01/27 09:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">peter0627   </span><span class="f3 push-content">: 快推 其實我有點半懂  =  =</span><span class="push-ipdatetime"> 01/27 09:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">palcjm      </span><span class="f3 push-content">: 想不到對岸還能搞定制SSD團購....</span><span class="push-ipdatetime"> 01/27 09:08
+</span></div>對阿 雖然後面有些問題 但官方(點燈和pceva)都有一直在處理
+蠻用心der
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mesmerising </span><span class="f3 push-content">: PFM+似乎給180帶來性能上的麻煩</span><span class="push-ipdatetime"> 01/27 09:36
+</span></div>真的蠻有趣的
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ddrdod      </span><span class="f3 push-content">: 快推，不然別人以為我看不懂！</span><span class="push-ipdatetime"> 01/27 17:38
+</span></div>再修了一下內文 讓內文通順一點
+盡量減少英文名詞
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">flamedevil  </span><span class="f3 push-content">: M惹ㄦ</span><span class="push-ipdatetime"> 01/27 22:39
+</span></div>                射惹ㄦ
+<span class="f2">※ 編輯: Cubelia (59.127.175.203), 01/28/2016 12:52:27
+</span></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/PC_Shopping/M.1453819891.A.1C4.html?cacheKey=2100-12809156&amp;offset=8861&amp;offset-sig=5b5f30f6b8189a517cd31e393f3c478de5227761" data-longpollurl="/v1/longpoll?id=a93e7aa90473aaeca7b8c17bf0b38017de91f9fe" data-offset="8861"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
