@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[-GC-]完全關閉Chrome的「清理電腦」功能(教學) - 看板 Browsers - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="Chrome65以後內建了一個清理電腦的功能
+然而這個功能是沒有辦法完全關閉的，還有可能導致電腦卡頓...
+(回傳程式 Software_reporter_tool.exe 導致的)
+而且它有個自動回傳的功能，但卻出了Bug關不掉，看著有點不爽。
+(關閉回傳功能後，重新啓動Chrome瀏覽器時又自動開啓回傳了..)
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[-GC-]完全關閉Chrome的「清理電腦」功能(教學)">
+<meta property="og:description" content="Chrome65以後內建了一個清理電腦的功能
+然而這個功能是沒有辦法完全關閉的，還有可能導致電腦卡頓...
+(回傳程式 Software_reporter_tool.exe 導致的)
+而且它有個自動回傳的功能，但卻出了Bug關不掉，看著有點不爽。
+(關閉回傳功能後，重新啓動Chrome瀏覽器時又自動開啓回傳了..)
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Browsers/M.1524911129.A.406.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Browsers/index.html"><span class="board-label">看板 </span>Browsers</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Browsers/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Browsers/M.1524911129.A.406.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">zhtw (届かない恋...)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Browsers</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[-GC-]完全關閉Chrome的「清理電腦」功能(教學)</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sat Apr 28 18:25:23 2018</span></div>
+
+
+Chrome65以後內建了一個清理電腦的功能
+
+然而這個功能是沒有辦法完全關閉的，還有可能導致電腦卡頓...
+(回傳程式 Software_reporter_tool.exe 導致的)
+
+而且它有個自動回傳的功能，但卻出了Bug關不掉，看著有點不爽。
+(關閉回傳功能後，重新啓動Chrome瀏覽器時又自動開啓回傳了..)
+
+「向 Google 回報詳細資料
+提供你電腦上有害軟體、系統設定和處理程序的相關資訊」
+
+<a href="https://imgur.com/RWsxeBA.png" target="_blank" rel="nofollow">https://imgur.com/RWsxeBA.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="RWsxeBA"><a href="//imgur.com/RWsxeBA"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+所以本文提供完全關閉回傳功能的方法。(這樣也能讓它掃描失敗)
+
+
+1.找到Chrome的User Data資料夾。
+
+網址列輸入 chrome://version/ 即可找到。
+
+<a href="https://imgur.com/IKMRVgQ.png" target="_blank" rel="nofollow">https://imgur.com/IKMRVgQ.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="IKMRVgQ"><a href="//imgur.com/IKMRVgQ"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+2.完全關閉Chrome，找到User Data中的SwReporter資料夾，並將它刪除。
+
+<a href="https://imgur.com/yvesoKL.png" target="_blank" rel="nofollow">https://imgur.com/yvesoKL.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="yvesoKL"><a href="//imgur.com/yvesoKL"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+3.新增一個新文字文件檔(.txt)
+將它重新命名爲SwReporter，並將副檔名刪除。(重要)
+
+<a href="https://imgur.com/bH9Wzxr.png" target="_blank" rel="nofollow">https://imgur.com/bH9Wzxr.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="bH9Wzxr"><a href="//imgur.com/bH9Wzxr"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+4.右鍵開啓內容，並將唯獨勾上。
+
+<a href="https://imgur.com/ByAyZN1.png" target="_blank" rel="nofollow">https://imgur.com/ByAyZN1.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="ByAyZN1"><a href="//imgur.com/ByAyZN1"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+完成後再次開啓Chrome測試點選清理電腦的選項，
+應該會有下圖中「掃描失敗」的提示，這樣就是完成了。
+
+<a href="https://imgur.com/2qsALsK.png" target="_blank" rel="nofollow">https://imgur.com/2qsALsK.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="2qsALsK"><a href="//imgur.com/2qsALsK"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+這功能這麼雞肋，資料回傳還關不掉，無言....
+
+
+--
+RIME中州韻輸入法引擎，注音支援簡碼拼字的輸入法。
+聰明的輸入法懂我心意，思想用鍵盤表達。快來試試RIME吧！
+<a href="https://imgur.com/azysdzy.png" target="_blank" rel="nofollow">https://imgur.com/azysdzy.png</a>  <a href="http://rime.im/" target="_blank" rel="nofollow">http://rime.im/</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="azysdzy"><a href="//imgur.com/azysdzy"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 111.242.179.233
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Browsers/M.1524911129.A.406.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Browsers/M.1524911129.A.406.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kreen</span><span class="f3 push-content">: 推～這功能真的有點雞肋。</span><span class="push-ipdatetime"> 04/28 19:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">odyy</span><span class="f3 push-content">: 66版可以關。回傳資料不知道什麼時候加的，之前沒有</span><span class="push-ipdatetime"> 04/28 21:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">imwings32</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/28 22:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bunjie</span><span class="f3 push-content">: 感謝分享 剛剛也被那個reporter吃一堆CPU使用量</span><span class="push-ipdatetime"> 04/28 23:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">doom3</span><span class="f3 push-content">: 執行gpedit.msc去本機電腦windowns安全性軟體限制其他新增</span><span class="push-ipdatetime"> 04/29 00:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">doom3</span><span class="f3 push-content">: 一個規則也可以吧 我都在那邊設定阻擋升1709小幫手的執行檔</span><span class="push-ipdatetime"> 04/29 00:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">doom3</span><span class="f3 push-content">: 沒仔細看 原來是目錄 當我沒說</span><span class="push-ipdatetime"> 04/29 00:13
+</span></div>方法很多啦，能達成目的的就是好方法。
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kaoh08</span><span class="f3 push-content">: 推～Google黑科技蒸蚌</span><span class="push-ipdatetime"> 04/29 01:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sam613</span><span class="f3 push-content">: chrome會不會管太多了</span><span class="push-ipdatetime"> 04/29 08:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 因為ChromeBook的關係才搞這些毛吧...</span><span class="push-ipdatetime"> 04/29 11:54
+</span></div><span class="f2">※ 編輯: zhtw (111.242.179.233), 04/29/2018 14:33:14
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DargonD</span><span class="f3 push-content">: 難怪一陣就會看見被comodo的hips偵測的紀錄</span><span class="push-ipdatetime"> 04/29 17:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ppon</span><span class="f3 push-content">: 感覺Google一直在偷資料阿... 而且這種選項預設竟然是[啟用]</span><span class="push-ipdatetime"> 04/29 22:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bunjie</span><span class="f3 push-content">: 對了 這方法在每次版本升級後需要重新做一次嗎</span><span class="push-ipdatetime"> 04/29 23:30
+</span></div>不用
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/29 23:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">odyy</span><span class="f3 push-content">: 功能關掉，瀏覽器重開他會自動打開(等於沒法關掉)</span><span class="push-ipdatetime"> 04/30 00:52
+</span></div><span class="f2">※ 編輯: zhtw (42.77.217.195), 04/30/2018 05:09:27
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">enjoyself</span><span class="f3 push-content">: Chromium 也有嗎??</span><span class="push-ipdatetime"> 04/30 23:37
+</span></div>沒
+<span class="f2">※ 編輯: zhtw (111.242.179.233), 05/01/2018 00:53:52
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">osedax</span><span class="f3 push-content">: 有用有推</span><span class="push-ipdatetime"> 05/01 01:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">HiddenGuy</span><span class="f3 push-content">: 有用有推</span><span class="push-ipdatetime"> 05/01 03:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kaoh08</span><span class="f3 push-content">: 挑個自己信得過的Chromium-based，盡量別用Google Chrome</span><span class="push-ipdatetime"> 05/01 04:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nakibasara</span><span class="f3 push-content">: 我用66關掉之後 瀏覽器重開又被打開了</span><span class="push-ipdatetime"> 05/02 05:52
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Browsers/M.1524911129.A.406.html?cacheKey=2100-440640051&amp;offset=3633&amp;offset-sig=96fe01e3451e6e0b7f906d9c3970b5dadb6e43cd" data-longpollurl="/v1/longpoll?id=35c2314d1a35ffc37cdcb34097ca5321d19463e7" data-offset="3633"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

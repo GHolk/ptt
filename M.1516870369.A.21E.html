@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問卦] 計算π所使用的直徑與圓周 - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="其實所謂現行的π
+大家應該都知道有很多做法
+像是常見的
+1.利用泰勒級數爆開
+2.把圓分成無限等分 然後用1/2absinθ去逼近π的值
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問卦] 計算π所使用的直徑與圓周">
+<meta property="og:description" content="其實所謂現行的π
+大家應該都知道有很多做法
+像是常見的
+1.利用泰勒級數爆開
+2.把圓分成無限等分 然後用1/2absinθ去逼近π的值
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1516870369.A.21E.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Gossiping/M.1516870369.A.21E.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">B05504021 (6v)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問卦] 計算π所使用的直徑與圓周</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Jan 25 16:52:45 2018</span></div>
+其實所謂現行的π
+大家應該都知道有很多做法
+像是常見的
+1.利用泰勒級數爆開
+2.把圓分成無限等分 然後用1/2absinθ去逼近π的值
+
+不過網路上面有一個很有趣的作法
+推薦給各位參考參考
+簡而言之
+這個方法的主要目的就是找<span class="f1 hl">格子點</span>
+<span class="f6 hl">何謂格子點(Lattice point)? 就是在笛卡爾座標系上X,Y都是整數數值的點</span>
+我們可以先觀察 在圓的半徑從1開始每次加1後
+會穿過的格子點分別是
+Radius^2           : 0  1  2  3  4  5  6  7  8  9
+Lattice points 數量: 1  4  4  0  4  8  0  0  4  4
+乍看之下 感覺沒什麼規則
+可是其實我們可以把這些不同的半徑分類
+
+像是以半徑平方為25為例
+碰到的格子點有:(0,5) (0,-5) (5,0)  (-5,0)  (3,4) (3,-4) (-3,4) (-3,-4)
+               (4,3) (4,-3) (-4,3) (-4,-3)
+總共有12個格子點
+可是如果半徑平方式11
+那他一個格子點都不會碰到
+<span class="f3 hl">換句話說 沒有兩數平方和會等於11</span>
+
+下一步 我們引入複數 也就是高斯平面的概念
+假設我們(3,4)為例子 在高斯平面上面我們可以把他寫作3+4i
+然後高斯平面的操作就先不贅述
+簡而言之 可以透過乘以他的共軛複數或者市長的很像的複數做變化
+而在進行這些變化的時候 得出來的乘積剛剛好就是3^2+4^2=25
+因此可以透過這些方法找到 固定圓的半徑時所有的格子點數量
+這些格子點轉換成高斯平面上的複數 稱之為 <span class="f1 hl"> Gausian Integer</span>
+
+現在來討論質數這東西
+把一個數字質因數分解
+可以得出幾乎是只有一個解答
+像是60=2^2*3*5
+不過因為我們也可以把其中的質數轉換成為負數
+因此他的分解也有多種模式
+
+
+回到高斯integer
+Gausian integer也可以進行類似的操作
+像是(3+4i)和(-3+4i)之間的關係一樣
+可以運用此作法得出所有的組合
+至於組合數就是排列組合算一算就可以得出來
+像是5 我們可以寫作(2+i)(2-i)
+我們便稱其中的(2+i) 及 (2-i)為高斯質數
+因為他們不像5一樣可以在被拆解成更小的Gausian integer
+透過這項定義 我們可以發現 如果是除以4餘1的質數
+他們都可以被拆解成為高斯質數 所以他們本身不是高斯質數
+也就是說如果他們是畫在高斯平面上的圓形 他們必定會碰到格子點
+
+
+我們現在總算開始歸類的
+把歸類的索引視為χ
+如果除以4餘1的話 歸類為χ(1)=χ(5)=χ(9)=&gt;1
+如果除以4餘3的話 歸類為χ(3)=χ(7)=χ(11)=&gt;-1
+至於偶數的話就歸類為χ(2)=χ(4)=&gt;0
+會這樣歸類的原因是
+像上述 除以4餘1的數字可以分出新的Gausian integer
+可是如果是除以4餘3的話 甚麼都分不出來
+<span class="f3 hl">穿插一個重要的點 χ本身是可以相乘的</span>
+<span class="f3 hl">因為如果一個除以4於1的數字 乘以 除以4餘3的數字</span>
+<span class="f3 hl">最後會得到除以4餘3的數字</span>
+<span class="f1 hl">原理來源是因為mod</span>
+
+像是要找半徑平方是45的圓形所通過的格子點
+我們會把它拆解成 3^2*5
+而他的格子點數量算法是
+<span class="f1 hl"> 4(χ(1)+χ(3)+χ(3^2))*(χ(1)+χ(5))</span>
+<span class="f1 hl">=4(χ(1)+χ(3)+χ(5)+χ(9)+χ(15)+χ(45))</span>
+<span class="f1 hl">=4(1-1+1+1-1+1)</span>
+<span class="f1 hl">=8</span>
+所以我們終於可以用質數 也就是質因數分解表示格子點數量了
+最後 我們把它畫成幾何的概念
+計算一個圓形所包括的面積 有點像是找一個半徑超大的圓形裡面的格子點總和
+我們整理一下所有數字的格子點數
+可以發現有下列規律
+<a href="https://imgur.com/1C84ZSx.jpg" target="_blank" rel="nofollow">https://imgur.com/1C84ZSx.jpg</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="1C84ZSx"><a href="//imgur.com/1C84ZSx"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>而格子點的總數的算法便是
+<a href="https://imgur.com/EPfxGqW.jpg" target="_blank" rel="nofollow">https://imgur.com/EPfxGqW.jpg</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="EPfxGqW"><a href="//imgur.com/EPfxGqW"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>最後 當圓形的半徑逼近無限大時
+<span class="f1 hl">π便是上圖的數字和</span>
+
+source:<a href="https://www.youtube.com/watch?v=NaL_Cb42WyY" target="_blank" rel="nofollow">https://www.youtube.com/watch?v=NaL_Cb42WyY</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/NaL_Cb42WyY" frameborder="0" allowfullscreen></iframe></div></div></div>給大家參考
+以上
+
+--
+<a href="http://channel-korea.com/wp-content/uploads/2017/05/tzuyu-dispatch-2-1.jpg" target="_blank" rel="nofollow">http://channel-korea.com/wp-content/uploads/2017/05/tzuyu-dispatch-2-1.jpg</a>
+<div class="richcontent"><img src="http://channel-korea.com/wp-content/uploads/2017/05/tzuyu-dispatch-2-1.jpg" alt="" /></div><a href="http://www.moonrok.com/wp-content/uploads/2016/06/tzuyu-1.png" target="_blank" rel="nofollow">http://www.moonrok.com/wp-content/uploads/2016/06/tzuyu-1.png</a>
+<div class="richcontent"><img src="http://www.moonrok.com/wp-content/uploads/2016/06/tzuyu-1.png" alt="" /></div><a href="https://hdqwalls.com/download/kyrie-irving-yz-2560x1440.jpg" target="_blank" rel="nofollow">https://hdqwalls.com/download/kyrie-irving-yz-2560x1440.jpg</a>
+<div class="richcontent"><img src="https://hdqwalls.com/download/kyrie-irving-yz-2560x1440.jpg" alt="" /></div><a href="https://static.asiachan.com/Jihyo.full.163571.jpg" target="_blank" rel="nofollow">https://static.asiachan.com/Jihyo.full.163571.jpg</a>
+<div class="richcontent"><img src="https://static.asiachan.com/Jihyo.full.163571.jpg" alt="" /></div><a href="http://beatosblog.com/wp-content/uploads/2017/04/Kurt-Cobain-23-Years.jpg" target="_blank" rel="nofollow">http://beatosblog.com/wp-content/uploads/2017/04/Kurt-Cobain-23-Years.jpg</a>
+<div class="richcontent"><img src="http://beatosblog.com/wp-content/uploads/2017/04/Kurt-Cobain-23-Years.jpg" alt="" /></div>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 101.13.49.79
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1516870369.A.21E.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1516870369.A.21E.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">birdy590</span><span class="f3 push-content">: Chudnovsky algorithm</span><span class="push-ipdatetime">01/25 16:54
+</span></div>邏輯好像有點類似 我再研究研究
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fuhaho</span><span class="f3 push-content">: 好久沒睡的這麼熟了</span><span class="push-ipdatetime">01/25 16:54
+</span></div>美麗的數學
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zzzz8931</span><span class="f3 push-content">: 樓下完美分割披薩</span><span class="push-ipdatetime">01/25 16:55
+</span></div>我教家教學生這個會太難ㄇ?
+<span class="f2">※ 編輯: B05504021 (101.13.49.79), 01/25/2018 16:57:15
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">b2481</span><span class="f3 push-content">: 這篇不錯</span><span class="push-ipdatetime">01/25 16:59
+</span></div>我還滿喜歡這種奇特數學ㄉ
+<span class="f2">※ 編輯: B05504021 (101.13.49.79), 01/25/2018 17:00:20
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pisaliu</span><span class="f3 push-content">: 翻譯一下文組語言行嗎？</span><span class="push-ipdatetime">01/25 17:00
+</span></div>文組:3.14
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zzzz8931</span><span class="f3 push-content">: 他會問你，學這個以後能幹嘛</span><span class="push-ipdatetime">01/25 17:00
+</span></div>他聽得滿有興趣的 學生感覺是個數學魔人
+今年要考建中科學班
+<span class="f2">※ 編輯: B05504021 (101.13.49.79), 01/25/2018 17:01:15
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">birdy590</span><span class="f3 push-content">: 應該是現在效率最高的演算法, 從 Ramanujan 的天書改的</span><span class="push-ipdatetime">01/25 17:00
+</span></div>小弟才疏學淺 可能要再研究一番
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a04775</span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime">01/25 17:01
+</span></div>數學ㄉ奧妙
+<span class="f2">※ 編輯: B05504021 (101.13.49.79), 01/25/2018 17:02:43
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">franchy</span><span class="f3 push-content">: 翻譯成國小語言好嗎?</span><span class="push-ipdatetime"> 01/25 17:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">B05504021</span><span class="f3 push-content">: 國小不都直接背3.14 6.28 9.42? 我還有印象</span><span class="push-ipdatetime">01/25 17:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hijkxyzuw</span><span class="f3 push-content">: 寫得很好</span><span class="push-ipdatetime">01/25 17:04
+</span></div>謝啦 我第一次寫數學文
+<span class="f2">※ 編輯: B05504021 (101.13.49.79), 01/25/2018 17:05:19
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">howchiu</span><span class="f3 push-content">: 跟我想的一樣呢！</span><span class="push-ipdatetime">01/25 17:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">B05504021</span><span class="f3 push-content">: ^Q^</span><span class="push-ipdatetime">01/25 17:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RockManX8</span><span class="f3 push-content">: 我也是這樣認為</span><span class="push-ipdatetime">01/25 17:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">oaoa0123</span><span class="f3 push-content">: 啊啊 nice</span><span class="push-ipdatetime">01/25 17:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Oaqq5566</span><span class="f3 push-content">: 講到逼近文組要崩潰啦</span><span class="push-ipdatetime">01/25 17:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">birdy590</span><span class="f3 push-content">: <a href="https://www.zhihu.com/question/26427252" target="_blank" rel="nofollow">https://www.zhihu.com/question/26427252</a></span><span class="push-ipdatetime">01/25 17:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590</span><span class="f3 push-content">: 裡面有照片(真的是天書) 原思路不可考 很多人花了幾十年</span><span class="push-ipdatetime">01/25 17:23
+</span></div>印度人果然猛
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">birdy590</span><span class="f3 push-content">: 可能還沒完全弄懂</span><span class="push-ipdatetime">01/25 17:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rutw</span><span class="f3 push-content">: 專業</span><span class="push-ipdatetime">01/25 18:01
+</span></div><span class="f2">※ 編輯: B05504021 (101.13.49.79), 01/25/2018 18:04:54
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kkes0001</span><span class="f3 push-content">: 瑪雅看懂了</span><span class="push-ipdatetime"> 01/25 18:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">facehugger</span><span class="f3 push-content">: 我醫學系 覺得學這沒屁用 相信台積電工程師也這麼認</span><span class="push-ipdatetime"> 01/25 18:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">facehugger</span><span class="f3 push-content">: 為</span><span class="push-ipdatetime"> 01/25 18:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alan880227</span><span class="f3 push-content">: 謝謝你對文組友善</span><span class="push-ipdatetime"> 01/25 20:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">saedn</span><span class="f3 push-content">: 我看不懂 哭哭 OAQ  可以從頭教嗎!?</span><span class="push-ipdatetime"> 01/25 20:58
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Gossiping/M.1516870369.A.21E.html?cacheKey=2116-49183266&offset=6562&offset-sig=3e32fdccddb8840c690552c5e016bb6b5fb9216c" data-longpollurl="/v1/longpoll?id=0c4111120573893681b58a48116f1314ad108ca6" data-offset="6562"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

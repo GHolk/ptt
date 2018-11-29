@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問題] 如何將Ubuntu字體渲染完全搬到Manjaro - 看板 Linux - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content=":
+:
+: Ubuntu對中英文字體渲染效果實在一絕，
+: 要不是他字體渲染效果優於其他發行版，
+: 我也不會使用它，軟體舊又 bug 多，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問題] 如何將Ubuntu字體渲染完全搬到Manjaro">
+<meta property="og:description" content=":
+:
+: Ubuntu對中英文字體渲染效果實在一絕，
+: 要不是他字體渲染效果優於其他發行版，
+: 我也不會使用它，軟體舊又 bug 多，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Linux/M.1539269557.A.B52.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Linux/index.html"><span class="board-label">看板 </span>Linux</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Linux/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Linux/M.1539269557.A.B52.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">ChakraLinux (GNU/Chakra Project)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Linux</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問題] 如何將Ubuntu字體渲染完全搬到Manjaro</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Oct 11 22:52:33 2018</span></div>
+<span class="f2">※ 引述《s9209122222 (海海海)》之銘言：
+</span><span class="f6">: 標題: [問題] 如何將Ubuntu字體渲染完全搬到Manjaro
+</span><span class="f6">: 時間: Thu Oct 11 19:35:21 2018
+</span>:
+:
+<span class="f6">: Ubuntu對中英文字體渲染效果實在一絕，
+</span><span class="f6">: 要不是他字體渲染效果優於其他發行版，
+</span><span class="f6">: 我也不會使用它，軟體舊又 bug 多，
+</span><span class="f6">: 相較之下 Manjaro 問題反而少了很多，
+</span>:
+<span class="f6">: 請問有辦法完全將 Ubuntu 字體的設定
+</span><span class="f6">: 完全複製到 Manjaro 那邊嗎？
+</span><span class="f6">: Ubuntu 中英文是分開處理的，好複雜！
+</span>
+
+你在找的可能是 ttf-ubuntu-font-family （逃
+這個故事要從很久很久以前說起…（誤
+
+Linux桌面上的字型渲染是由好幾個東西堆積起來的：
+
+cairo：就是那個開羅宣言的開羅（x），專職做 2D 繪圖，所以被拿來「畫」字
+
+libxft：拿來在X上面畫字的東西
+
+freetype2：讀取字型檔格式的東西
+
+fontconfig：操作freetype2讀出字型，並且分類並給予規則
+            讓下面的小弟可以畫出東西
+
+harfbuzz：專司opentype的引擎，現在跟freetype2已經變成蛋雞不分水乳交融的景況
+
+infinality patchset 就是針對上面幾個軟體做一些特殊補釘
+至於ubuntu patch呢，我沒仔細跟，不過以程式碼來說
+可以視為從infinality抓一部分下來用的分支
+（雖然可能是反過來，ubuntu patch影響了infinality開發者patch的巧思）
+這兩個都是針對桌面環境，尤其是現代液晶螢幕的閱讀做的改進。
+
+
+但是，freetype跟fontconfig不是只為Linux或linux desktop服務的
+他還包括了給很多嵌入式系統（手機、廣告看板、etc.）使用。
+
+上游用了類似「這個補釘不夠週延」的理由打槍infinality patch。（況且，它的改進
+涉及多個上游，不太容易一次全進）
+
+
+不過在Debian論壇上[1]的八卦似乎偏向是政治議題：
+「只要Debian繼續打槍ubuntu上呈的patch，Debian就能繼續嘴ubuntu對linux界沒貢獻」
+
+這邊就不細講Debian跟Ubuntu兩家的恩怨情仇八點檔惹
+
+
+再來講到圖形界面的問題
+GTK/Gnome在「呈現」字型的手法跟Qt/KDE大不相同，導致初期使用時的體驗差很多。
+G家的東西相對比較毛躁而「生猛」，所以在有無ubuntu-patch下差異很明顯。
+然而這問題在Qt/KDE下反而不是問題（因為Qt預設就有做一些subpixel hint）
+
+不過這些東西都已經是歷史遺跡了啦～
+
+自從Freetype 2.7起，freetype2收了一些整理自infinality的patch[2]，讓整體的表現
+上與infinality已經相差無幾，接下來的幾個版號除了安全性外，主要是處理Adobe公司
+貢獻的CFF code，讓整體的表現更加「親民」了。
+
+而關於fontconfig的部份，其實ubuntu的patch主要都是在加入更多字型判斷（有些字型在
+原始fontconfig下自動分類會變得很怪，例如noto mono系列字型被判定成一般sans）
+以及加入一些他們自己的偏好（比較喜歡dejavu sans而非bitstream vera之類的）
+
+不過其實說在液晶螢幕下的顯示，其實一般人眼拙應該看不太出來（逃
+
+所以其實，只要安裝好ubuntu font family大概就完工一半了
+
+剩下的就是，去網路上挖看看有沒有人寫好的fonts.conf複製一份起來放
+或者用桌面環境提供的字型設定工具設定一下預設的字型也可
+（雷點大概在於，思源的ttc還沒被完整支援，通常自動替代時容易使用日本字型而非台灣
+字型，這點要用指定的，所以還是…↑回到上面：自己寫一份fonts.conf定義）
+大概是這樣吧。
+
+[1]<a href="http://forums.debian.net/viewtopic.php?f=6&amp;t=50742&amp;start=0" target="_blank" rel="nofollow">http://forums.debian.net/viewtopic.php?f=6&amp;t=50742&amp;start=0</a>
+[2]<a href="https://sourceforge.net/projects/freetype/files/freetype2/2.7/" target="_blank" rel="nofollow">https://sourceforge.net/projects/freetype/files/freetype2/2.7/</a>
+
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.119.157.128
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Linux/M.1539269557.A.B52.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Linux/M.1539269557.A.B52.html</a>
+</span>
+突然想到，假如有人在好奇怎樣的顯示叫做杯具，可以在Arch下開一下Java寫的圖形界面
+<a href="https://imgur.com/75EL5xl.png" target="_blank" rel="nofollow">https://imgur.com/75EL5xl.png</a>
+<div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="75EL5xl"><a href="//imgur.com/75EL5xl"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+有種回到Win9X年代的懷舊感吧！
+
+這時候就又是Arch Wiki出場的時候惹
+<a href="https://wiki.archlinux.org/index.php/Java_Runtime_Environment_fonts" target="_blank" rel="nofollow">https://wiki.archlinux.org/index.php/Java_Runtime_Environment_fonts</a>
+
+結論就是把
+export_JAVA_OPTIONS=&#39;-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndF
+eel -Dawt.useSystemAAFontSettings=lcd&#39;
+（這是一行，只是ptt字元限制截斷而已）
+這行文放進你的.bash_profile然後重新登入就可以惹
+<span class="f2">※ 編輯: ChakraLinux (140.119.157.128), 10/11/2018 23:10:38
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s9209122222</span><span class="f3 push-content">: 可是 ubuntu 他們看起來不是單單寫個 fonts.conf 那</span><span class="push-ipdatetime"> 10/12 00:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s9209122222</span><span class="f3 push-content">: 麼簡單耶，一大堆有的沒的設定檔</span><span class="push-ipdatetime"> 10/12 00:35
+</span></div>man fonts-conf (節錄
+FONTS-CONF(5)                                                                                                                                                              FONTS-CONF(5)
+
+NAME
+       fonts.conf - Font configuration files
+
+SYNOPSIS
+          /etc/fonts/fonts.conf
+          /etc/fonts/fonts.dtd
+          /etc/fonts/conf.d
+          $XDG_CONFIG_HOME/fontconfig/conf.d
+          $XDG_CONFIG_HOME/fontconfig/fonts.conf
+          ~/.fonts.conf.d
+          ~/.fonts.conf
+他會依序遍歷這些地方讀取設定檔，設定檔分開單純是為了維護跟閱讀方便而已
+你也可以把一切的一切都塞在一個fonts.conf裡
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ddtsatan</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 00:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: 畫字 freetype2 就能畫了。GTK 是用 pango 排版引擎</span><span class="push-ipdatetime"> 10/12 01:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: 底下可以選用 cairo、xft、pdf 等 backend 去畫</span><span class="push-ipdatetime"> 10/12 01:08
+</span></div>長姿勢惹@<a hrefhref="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="acf3ec">[email&#160;protected]</a>
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aeolus0829</span><span class="f3 push-content">: 有歷史給推</span><span class="push-ipdatetime"> 10/12 09:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">idletime</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 10:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ThxThx</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 10/12 12:40
+</span></div><span class="f2">※ 編輯: ChakraLinux (140.119.157.128), 10/12/2018 13:43:45
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hizuki</span><span class="f3 push-content">: 感恩解釋釐清</span><span class="push-ipdatetime"> 10/12 14:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">filiaslayers</span><span class="f3 push-content">: 想求debian跟ubuntu間的恩怨情仇XD</span><span class="push-ipdatetime"> 10/12 14:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Debian</span><span class="f3 push-content">: 推薦文章，我也是看報紙才知道的。</span><span class="push-ipdatetime"> 10/12 16:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lantw44</span><span class="f3 push-content">: 有不同 backend 的是 cairo 不是 pango 吧</span><span class="push-ipdatetime"> 10/12 19:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lantw44</span><span class="f3 push-content">: GTK+ 列印出來的 PDF 檔屬性裡都會看到 cairo</span><span class="push-ipdatetime"> 10/12 20:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gold740716</span><span class="f3 push-content">: 有八卦給推</span><span class="push-ipdatetime"> 10/12 21:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: 對。PDF 是 cairo 的，pango 沒包 XD</span><span class="push-ipdatetime"> 10/12 21:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: pango 只有 ft2/xft/win32/cairo 這幾個 backend</span><span class="push-ipdatetime"> 10/12 21:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: 漏了一個 coretext</span><span class="push-ipdatetime"> 10/12 21:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">goldie</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/12 22:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">holishing</span><span class="f3 push-content">: push</span><span class="push-ipdatetime"> 10/13 00:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">obarisk</span><span class="f3 push-content">: java不管怎麼改，看了就是不舒服啦...</span><span class="push-ipdatetime"> 10/13 15:35
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Linux/M.1539269557.A.B52.html?cacheKey=2099-1007659069&amp;offset=6261&amp;offset-sig=ebb74840f7a1b0fbe016f27f602f0bf2e547861a" data-longpollurl="/v1/longpoll?id=aab1417df7bd3a0d7e0bfd74550f2a32dac99417" data-offset="6261"></div>
+    
+
+    
+</div>
+
+		
+
+<script data-cfasync="false" srchref="http://www.ptt.cc/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

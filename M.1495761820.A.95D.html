@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問題] 為何不研發LOL的AlphaGo? - 看板 LoL - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="我剛好研究所是念機器學習的，
+平時對人工智慧跟類神經網路應用在遊戲上也有一些研究，
+提供給你最一線的資訊參考一下。
+因為這些名詞都是原文書或是論文裡面會用到的，等等會有一些專有名詞來源是英文
+我會簡單的翻譯一下，所以有更好的名詞翻譯歡迎提出。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問題] 為何不研發LOL的AlphaGo?">
+<meta property="og:description" content="我剛好研究所是念機器學習的，
+平時對人工智慧跟類神經網路應用在遊戲上也有一些研究，
+提供給你最一線的資訊參考一下。
+因為這些名詞都是原文書或是論文裡面會用到的，等等會有一些專有名詞來源是英文
+我會簡單的翻譯一下，所以有更好的名詞翻譯歡迎提出。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/LoL/M.1495761820.A.95D.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/LoL/index.html"><span class="board-label">看板 </span>LoL</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/LoL/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/LoL/M.1495761820.A.95D.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">tonylo2ooo (Logo)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">LoL</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問題] 為何不研發LOL的AlphaGo?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri May 26 09:23:37 2017</span></div>
+
+我剛好研究所是念機器學習的，
+平時對人工智慧跟類神經網路應用在遊戲上也有一些研究，
+提供給你最一線的資訊參考一下。
+
+因為這些名詞都是原文書或是論文裡面會用到的，等等會有一些專有名詞來源是英文
+我會簡單的翻譯一下，所以有更好的名詞翻譯歡迎提出。
+
+<span class="f2">※ 引述《z50905 (z50905)》之銘言：
+</span><span class="f6">: 看完棋王對AlphaGo的第二場對決
+</span><span class="f6">: 實在感嘆   AlphaGo經過了上億場演算經驗的學習
+</span>
+AlphaGo的理論我想網路上很多文章了，這邊不多說。
+重點就是（你也已經知道）AlphaGO是藉由輸入棋譜，加上對弈增強的即可。
+
+<span class="f6">: 成長到了人類無法想像的世界
+</span>因為資訊的交流在電腦世界是用電的速度，而人腦因為受限於神經傳導素的速度，
+跟輸出媒介（手腳，或是廣泛一點說是肌肉），
+或是靠發展幾千年的語言，累積的深厚codec，用少量的文字筆畫代表背後深厚的意涵。
+
+<span class="f6">: 不禁有個疑問
+</span><span class="f6">: 本身就是用電腦進行的LOL
+</span><span class="f6">: 也有玩家VS電腦的選項   但感覺電腦都廢廢的
+</span>
+這邊要想講，ＡＩ有兩種，一種是Rule-Based，也就是藉由大量的判斷式來模擬人類
+
+例如：敵方殘血-&gt;算傷害後完美接一套
+      自己殘血-&gt;算對面的魔量 傷害等等，撤退
+
+這樣的ＡＩ很容易被玩家抓到漏洞並且exploitation(反覆操作特定動作來獲勝)
+例如中階電腦以前會一直追玩家，你就可以在開場二塔去拖怪，拖到自家塔下殺賺錢。
+
+另一種則是像AlphaGo一樣的，一開始什麼都不會，但是每做錯一次就會回饋
+回神經網路去強化或是抑制特定行為，也就像人腦一般。
+需要大量長時間的訓練，成千上萬甚至數億次的對決，每個細微的操作都會回饋給網路
+
+拿馬力歐來舉例的話 可以看這影片：
+<a href="https://www.youtube.com/watch?v=qv6UVOQ0F44" target="_blank" rel="nofollow">https://www.youtube.com/watch?v=qv6UVOQ0F44</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/qv6UVOQ0F44" frameborder="0" allowfullscreen></iframe></div></div></div>一開始ＡＩ什麼都不會玩，一直送。
+這跟rule-based藉由人知道不要送頭寫一個殘血回家的code是不同的。
+
+
+<span class="f6">: 要創造出AlphaGo等級的LOL電腦應該滿容易的吧
+</span>其實DeepMind已經著手在星海爭霸上面進行學習了，
+<a href="https://www.youtube.com/watch?v=5iZlrBqDYPM" target="_blank" rel="nofollow">https://www.youtube.com/watch?v=5iZlrBqDYPM</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/5iZlrBqDYPM" frameborder="0" allowfullscreen></iframe></div></div></div>
+但為什麼不挑LOL？  因為人的因素太多，ＡＩ沒辦法對勝負有全盤的掌握
+也就是說，除了對手之外，ＡＩ還要考慮剩下四個會不會心態炸裂然後放推
+說不定ＡＩ這整波的操作其實是很棒的，結果一個人忽然送頭輸掉
+
+這樣會增加訓練的難度，因為人的變異數太大。
+
+<span class="f6">: 畢竟電腦不會有反射神經時間   反應速度都趨近於0秒
+</span>
+這我有一點點小意見，因為人的反應還需要經過腦袋的思考，
+多麼簡單的步驟都是經過處理的。也就是ＡＩ也是要把它接收到的資訊丟進神經網路
+然後回饋，或許也是需要幾ms甚至好幾分鐘的。
+
+有興趣去看一下alphaGo的對弈，你會發現ＡＩ會想很久，
+因為它正在進行決策樹的裁減跟硬爆。
+（把一些很不可能的動作去掉，然後細算那些可能的操作）
+
+另一方面，對，這是用電生理(神經傳導素) 跟 純電流的差別
+統計來說，你的眼睛看到畫面，到大腦最後做出反應大概有80ms的差距
+
+<span class="f6">: 大家覺得有可能創造出LOL版阿法狗嗎
+</span>
+可以，但有幾個原因
+
+1. 前面說過，浪費時間，因為人的變數太多
+一次訓練五台一起打又有難度，不如訓練一個StarCarft，從部隊數量到控兵都可以掌握
+連基地的建設，擺放位置等等訓練起來，跟LOL誰簡單都還很難說，
+但是可以讓人知道ＡＩ對戰局全盤的掌握度。
+LOL只能控一隻，沒辦法展現那種像是圍棋對弈中的大局觀。
+
+2. 有在看星海比賽都知道，任何部隊的交換都是綁定經濟（晶礦與瓦斯）
+也就是ＡＩ會有一個立即可以回饋的函數。
+每一支兵的交換他可以知道這波 “虧還是不虧”，
+
+這可以讓ＡＩ從小會戰的操作跟大局配置分開來訓練。
+類似有些選手吃兵操作不好，但是大局觀很強。（西...門?）
+
+
+<span class="f6">: PS:現行LOL電腦VS玩家
+</span><span class="f6">: 在地圖的黑暗處電腦的五個玩家真的有在運行嗎?
+</span><span class="f6">: 例如打野那些   求解
+</span>這邊問題沒看懂，先跳過。
+
+
+最後回應一下推文內有一些錯誤的觀念，像是什麼跟現在走位外掛有關的。
+
+
+現在看到星海的暴力ＡＩ，或是ＬＯＬ輔助程式，
+都是透過寫死的神奇走位拉打做出來的。
+也就是他單位跑速比你快的時候，你毒爆蟲滾到死也炸不到半隻。
+李星Ｑ到死都Ｑ不中。
+
+機槍兵(遠程小兵)整隊邊散邊拉打，ＡＰＭ突破天際。
+
+但是DeepMind現在在做的ＡＩ，是連毒爆蟲來了要散兵都不知道，
+再沒有任何人類給定預備知識的情況，只根據每隻單位，加上總體經濟的交換來目的。
+而且是有被限制ＡＰＭ的（應該是最高200-240左右），ＡＰＭ對他來說就像資源。
+也就是ＡＩ如果發現用細節操作散兵，就能一直贏，他就滿足了。
+但如果發現ＡＰＭ239/240都拿去操作，家裡亂亂蓋，都不能贏，
+他就會把一部分操作資源拿去探視野之類的。
+
+所以推文中提到那種變態ＡＩ，跟我們這邊討論的alphaGo以類神經網路為主的不同。
+十年後可能除了圍棋ＡＩ對決之外，
+還有星海ＡＩ對決，而且用的介面可能跟人類差不多，限制最大ＡＰＭ
+並且畫面轉換要綁定滑鼠DPI啊，
+那些都要固定，然後來一場公正的ＡＩ 星海對決。
+
+
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 101.13.48.161
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/LoL/M.1495761820.A.95D.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/LoL/M.1495761820.A.95D.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Firstshadow </span><span class="f3 push-content">: (づ′・ω・）づ 所以會用到Monte Carloㄇ</span><span class="push-ipdatetime">05/26 09:26
+</span></div>萌蒂卡蘿很多時候都會用，因為目標函數太過複雜去抽樣藉此刻畫樣貌。
+這方法不是只有alphaGo用，
+是因為這方法對於那種解太過複雜的問題，初期找出local解很有幫助
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccyaztfe    </span><span class="f3 push-content">: 我都聽得懂喔！</span><span class="push-ipdatetime">05/26 09:26
+</span></div>我是以科普文的方式寫的，
+盡量舉影片給大家看，看過影片再想想會比較好理解。
+
+真的哪裡太難懂一定要跟我說
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fkc         </span><span class="f3 push-content">: (づ′・ω・）づ這篇文比 晚餐要吃什麼 還要深澳</span><span class="push-ipdatetime">05/26 09:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eskawater   </span><span class="f3 push-content">: 假使讓會打LOL的AI出現 人類就要滅亡了</span><span class="push-ipdatetime">05/26 09:29
+</span></div>對於這種有點接觸到哲學的問題，我有一個真實例子。
+
+馬力歐影片中，
+那個ＡＩ在玩俄羅斯方塊，最後一塊疊上去一定會輸的那個瞬間，
+ＡＩ按下了暫停，再也不啟動遊戲。
+因為ＡＩ理解了：「不要玩，就不會輸。」
+或許對人類最好的方法就是不要出生，就不會死亡。
+
+但是身為一個人類，
+尼采認為：「盲目的樂觀，只會使人感覺膚淺；
+            過度的悲觀，則會使人走向毀滅。
+            唯有悲觀後的樂觀，才是精神上的強者！」
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xhakiboo    </span><span class="f3 push-content">: U文 大概要爆惹</span><span class="push-ipdatetime">05/26 09:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">louis210000 </span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime">05/26 09:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Hickman     </span><span class="f3 push-content">: lol的大局觀從BP就開始影響了</span><span class="push-ipdatetime">05/26 09:33
+</span></div>其實ＬＯＬ不會拿來作為ＡＩ的訓練還境原因可能也是，
+
+「不是一個好的ＤＥＭＯ」   ，即便很多人玩。
+
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PerfectFlash</span><span class="f3 push-content">: 恩恩  跟我想的一樣</span><span class="push-ipdatetime">05/26 09:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jk54op      </span><span class="f3 push-content">: 襪操 阿法狗大五隻</span><span class="push-ipdatetime">05/26 09:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RYOTSUKI    </span><span class="f3 push-content">: 這邊說的apm應該是有效指令數? AI優化到沒有廢指令</span><span class="push-ipdatetime">05/26 09:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RYOTSUKI    </span><span class="f3 push-content">: 的話 對人類還是很有優勢 人不太可能沒有操作失誤..</span><span class="push-ipdatetime">05/26 09:36
+</span></div>沒有廢指令，但一定有「更一舉數得的指令」
+也就是當apm是有限的，一定可以比較出高下。
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RyneSandberg</span><span class="f3 push-content">: 寫的好</span><span class="push-ipdatetime">05/26 09:36
+</span></div>
+謝謝^_^7
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snowmanturtl</span><span class="f3 push-content">: 做出一隊AI 會不會比較簡單？</span><span class="push-ipdatetime">05/26 09:37
+</span></div>也許會喔！
+既然都是整隊了，一次控制五隻，就很像星海的小會戰操作
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DON3000     </span><span class="f3 push-content">: 優</span><span class="push-ipdatetime">05/26 09:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">catinclay   </span><span class="f3 push-content">: 不一定要五台一起打 設計一台控五個是不是就能解決</span><span class="push-ipdatetime">05/26 09:39
+</span></div>我是覺得星海還有建築學，探勘，大招那些
+跟實際軍事演練比較像
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hook227     </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/26 09:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JustDuHua   </span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime">05/26 09:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">can18       </span><span class="f3 push-content">: 好奇星海他們是直接在星海上學習還是另外弄一個</span><span class="push-ipdatetime">05/26 09:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">can18       </span><span class="f3 push-content">: 因為星海一場不是要滿久的嗎 這樣會不會學很慢</span><span class="push-ipdatetime">05/26 09:42
+</span></div>如果最後要大量對弈
+可以透過暴雪那邊，把Game Loop調快，因為遊戲有三條時間線
+
+1. 現實時間線 （就是你我在的這個空間）
+2. 遊戲系統時間線 （不會因為遊戲暫停就停止）
+3. 遊戲內時間線 （按下暫停＝停止）
+
+一般3都會跟1同步，是刻意鎖住的，可以很輕鬆把3的限制拔掉，
+變成CPU多快，訓練就有多快。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hi1256789   </span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime">05/26 09:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Steyee      </span><span class="f3 push-content">: 推認真文</span><span class="push-ipdatetime">05/26 09:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">feverh      </span><span class="f3 push-content">: 如果有五個航航阿法狗還不被嘴到燒機</span><span class="push-ipdatetime">05/26 09:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shinenic    </span><span class="f3 push-content">: 認真推</span><span class="push-ipdatetime">05/26 09:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DabouLin    </span><span class="f3 push-content">: 那個暫停讓我雞皮疙瘩都起來了……</span><span class="push-ipdatetime">05/26 09:45
+</span></div><span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 09:48:31
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asabase     </span><span class="f3 push-content">: 快推 不然別人以為我看不懂</span><span class="push-ipdatetime">05/26 09:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tryff       </span><span class="f3 push-content">: 居然聽得懂太感動了</span><span class="push-ipdatetime">05/26 09:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Xanzero     </span><span class="f3 push-content">: 那個俄羅斯方塊 ai按暫停的影片是哪個 想看..</span><span class="push-ipdatetime">05/26 09:48
+</span></div><a href="https://youtu.be/qXXZLoq2zFc?t=6m6s" target="_blank" rel="nofollow">https://youtu.be/qXXZLoq2zFc?t=6m6s</a>  原版影片很長 這個是有人介紹的影片
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/qXXZLoq2zFc" frameborder="0" allowfullscreen></iframe></div></div></div>
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lebronlp097 </span><span class="f3 push-content">: 看LOL板長知識</span><span class="push-ipdatetime">05/26 09:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snakelalala </span><span class="f3 push-content">: 星海很快好嗎…</span><span class="push-ipdatetime">05/26 09:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">energyy1104 </span><span class="f3 push-content">: 星海一場比LOL快很多喔</span><span class="push-ipdatetime">05/26 09:50
+</span></div>其實問題不在遊戲一場的快慢與否，
+是因為遊戲時間線跟現實時間線要強制同步
+不然一秒過後遊戲時間就過了300分鐘了，鬼才能玩。
+
+在CPU強大的運轉底下，二十分鐘還是二十小時不過是芥子一般渺小。
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">howard841013</span><span class="f3 push-content">: 暫停好扯......好像漫畫的情節</span><span class="push-ipdatetime">05/26 09:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joefourtree </span><span class="f3 push-content">: 跟我想的一樣嘛~</span><span class="push-ipdatetime">05/26 09:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">winiel559   </span><span class="f3 push-content">: 修機器學習的課，可是RNN S2S GAN都練出一坨大便QQ</span><span class="push-ipdatetime">05/26 09:53
+</span></div>你可以拿GAN來鑑定誰在反串，順便train一個反串推文機器人 XD
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Poke5566    </span><span class="f3 push-content">: 文組先推</span><span class="push-ipdatetime">05/26 09:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric525498  </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/26 09:54
+</span></div><span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 09:55:46
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">npc776      </span><span class="f3 push-content">: (╮⊙▽⊙)a ???</span><span class="push-ipdatetime">05/26 09:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">winiel559   </span><span class="f3 push-content">: 下一個作業就是要做對話機器人= = 想吐</span><span class="push-ipdatetime">05/26 09:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">catinclay   </span><span class="f3 push-content">: 可是反串的界定人類都做不好(X</span><span class="push-ipdatetime">05/26 09:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Barry4304   </span><span class="f3 push-content">: 長知識給推</span><span class="push-ipdatetime">05/26 09:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aidsii      </span><span class="f3 push-content">: 如果AlphaGO的反應是0.001秒 那他打星海太強了</span><span class="push-ipdatetime">05/26 10:00
+</span></div>反應快慢有分兩段 一段是傳導媒介的極限速度（光/電/等等...）
+加上另一段，這問題的難度
+叫你聽到聲音就舉手 跟 問你一題腦力激盪 反應速度一定不同，因為問題難度差太多
+<span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 10:03:35
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Shushusnail </span><span class="f3 push-content">: 暫停好扯... 真的不是像一般外掛那樣了</span><span class="push-ipdatetime">05/26 10:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kk31406     </span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime">05/26 10:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chigo520    </span><span class="f3 push-content">: 怎麼會有人覺得電腦玩一場跟我們的時間一樣… 類神</span><span class="push-ipdatetime">05/26 10:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chigo520    </span><span class="f3 push-content">: 經應該是等於一個銅牌一直打然後每次都會自己修正</span><span class="push-ipdatetime">05/26 10:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chigo520    </span><span class="f3 push-content">: 錯誤 用大量場次來堆疊他的打法</span><span class="push-ipdatetime">05/26 10:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chouangus   </span><span class="f3 push-content">: U質文 推推</span><span class="push-ipdatetime">05/26 10:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qazwsx879345</span><span class="f3 push-content">: U文</span><span class="push-ipdatetime">05/26 10:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LucianK     </span><span class="f3 push-content">: 長知識!!</span><span class="push-ipdatetime">05/26 10:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ckniening   </span><span class="f3 push-content">: 阿法狗被隊友戳到心態炸裂的時候會在聊天室打什麼</span><span class="push-ipdatetime">05/26 10:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ckniening   </span><span class="f3 push-content">: ？</span><span class="push-ipdatetime">05/26 10:12
+</span></div>可能會講：
+「你好，我不明白“幹你老師奈德麗”是什麼 這是我在網路上查到的一些資料。」
+(siri口氣)
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Rex1009     </span><span class="f3 push-content">: SC最難的就是猜阿 特別厲害的選手都會騙</span><span class="push-ipdatetime">05/26 10:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">necotume    </span><span class="f3 push-content">: U到爆</span><span class="push-ipdatetime">05/26 10:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bob30727    </span><span class="f3 push-content">: 你好 我這碩論也是做AI 用類神經和基因演算來做星</span><span class="push-ipdatetime">05/26 10:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bob30727    </span><span class="f3 push-content">: 海的遊戲各項決策 很開心看到同業 碩一第一篇paper</span><span class="push-ipdatetime">05/26 10:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bob30727    </span><span class="f3 push-content">: 就是看reinforcement learning瑪莉歐</span><span class="push-ipdatetime">05/26 10:15
+</span></div>我先前是自己在寫Minecraft的生存AI，用訓練ATARI遊戲的架構
+有興趣可以站內信加好友聊聊
+<span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 10:17:26
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kimheeche   </span><span class="f3 push-content">: Reinforce learning就是看馬力歐學的@<a class="__cf_email__" hrefhref="http://www.ptt.cc/cdn-cgi/l/email-protection" data-cfemail="0b264be88b89">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> 台大的</span><span class="push-ipdatetime">05/26 10:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Fantasyweed </span><span class="f3 push-content">: 推個</span><span class="push-ipdatetime">05/26 10:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">willprince  </span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime">05/26 10:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zZzZzZzZ5566</span><span class="f3 push-content">: 認真優文</span><span class="push-ipdatetime">05/26 10:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qaz123505   </span><span class="f3 push-content">: 如果自己隊的上路整場被當洞打心態炸裂AI會選擇幫上</span><span class="push-ipdatetime">05/26 10:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">qaz123505   </span><span class="f3 push-content">: 還是神遊？</span><span class="push-ipdatetime">05/26 10:27
+</span></div>他會以他以往對戰，經過多方嘗試後判斷出來最好的方法
+如果神遊就能贏 而且比幫其他路有用
+神遊就好啊 因為數據會告訴它   別去其他路送優勢
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">louis10452  </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/26 10:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">atony8155   </span><span class="f3 push-content">: 星海怎麼比較像軍事模擬啊，以後阿法狗會不會被美軍</span><span class="push-ipdatetime"> 05/26 10:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">atony8155   </span><span class="f3 push-content">: 買去當指揮中心</span><span class="push-ipdatetime">05/26 10:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ap9xxx      </span><span class="f3 push-content">: 超級U文推 阿法囉一次用五臺電腦測的確不如星海好看</span><span class="push-ipdatetime">05/26 10:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cursedsoul  </span><span class="f3 push-content">: 嗯嗯，跟我想的差不多，還有幾點修改一下會更好</span><span class="push-ipdatetime">05/26 10:29
+</span></div>好唷 收到 ^_^7
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nefancy     </span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime">05/26 10:29
+</span></div><span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 10:31:49
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">q70412      </span><span class="f3 push-content">: 一樣背景的來推推 (づ′・ω・）づ</span><span class="push-ipdatetime">05/26 10:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chungkuowei </span><span class="f3 push-content">: 阿法狗原地開大  阿法狗跟智障一樣</span><span class="push-ipdatetime">05/26 10:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LLsolo      </span><span class="f3 push-content">: 優文 有沒有考慮去ptt的ai實驗室應徵</span><span class="push-ipdatetime">05/26 10:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">liannhwa    </span><span class="f3 push-content">: 暫停不就是根本設定沒寫好 一開始就不該有這選項</span><span class="push-ipdatetime">05/26 10:37
+</span></div>我覺得是它在所有可能的解集合中
+找出來了一個符合期待的且能完成的解，
+是人也很難想到其實暫停就不會輸啊，因為人玩遊戲的目的夾雜的許多其他原因
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MrJCB       </span><span class="f3 push-content">: 優文給推</span><span class="push-ipdatetime">05/26 10:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rwa123456   </span><span class="f3 push-content">: 其實遊戲變數蠻大的 patch 種族之間的應對</span><span class="push-ipdatetime">05/26 10:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Mankind69   </span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime">05/26 10:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rwa123456   </span><span class="f3 push-content">: 感覺學習上面可能要比圍棋類的要花更大的時間</span><span class="push-ipdatetime">05/26 10:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alonzohorse </span><span class="f3 push-content">: 推認真文</span><span class="push-ipdatetime">05/26 10:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cursedsoul  </span><span class="f3 push-content">: 阿法狗排到國棟會怎樣？</span><span class="push-ipdatetime">05/26 10:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chriscarryu </span><span class="f3 push-content">: 他會判斷如果遇到否放玩家該怎麼做嗎</span><span class="push-ipdatetime">05/26 10:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chriscarryu </span><span class="f3 push-content">: 會開噴嗎</span><span class="push-ipdatetime"> 05/26 10:42
+</span></div>如果ID是其中一個變量的話有可能，因為只要作為輸入，就會是學習的便因
+
+例如知道這對手是誰，他的棋路雖有千萬但不出他的思維框架
+知道對手是國動，殺他三次不出鼻地，早點出蟑螂屋推線角。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g8320484816 </span><span class="f3 push-content">: 先推在說</span><span class="push-ipdatetime">05/26 10:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lightleave  </span><span class="f3 push-content">: 一個阿發狗不夠，能不能測試五個阿發狗呢</span><span class="push-ipdatetime">05/26 10:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">koxinga     </span><span class="f3 push-content">: 即時戰略比較適合AI</span><span class="push-ipdatetime">05/26 10:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">funkD       </span><span class="f3 push-content">: 放去跟玩家學習說不定就變成嘴砲狗(x</span><span class="push-ipdatetime">05/26 10:48
+</span></div>當初twitter的bot一天內變成納粹仇女人士
+論邪惡人類還是拔得頭籌 ~_~
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">koxinga     </span><span class="f3 push-content">: 有些即時戰略遊戲的AI 滿強的</span><span class="push-ipdatetime">05/26 10:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ilohoo      </span><span class="f3 push-content">: 暫停那個超有哲理的啊，看來禪亞塔要出現了</span><span class="push-ipdatetime"> 05/26 10:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">leftavoid   </span><span class="f3 push-content">: U文</span><span class="push-ipdatetime">05/26 10:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">VoyagerKid  </span><span class="f3 push-content">: 優質 推～</span><span class="push-ipdatetime">05/26 10:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Dustwind    </span><span class="f3 push-content">: LOL有視角問題，不像圍棋雙方都上帝視角，思維只看</span><span class="push-ipdatetime">05/26 10:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Dustwind    </span><span class="f3 push-content">: 你有沒有推到</span><span class="push-ipdatetime">05/26 10:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zxcv820421  </span><span class="f3 push-content">: 恩  跟我想得一樣</span><span class="push-ipdatetime">05/26 10:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PoBa        </span><span class="f3 push-content">: 幹嘛那麼專業</span><span class="push-ipdatetime">05/26 11:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tso1408579  </span><span class="f3 push-content">: 科普文，優質</span><span class="push-ipdatetime">05/26 11:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">circums     </span><span class="f3 push-content">: 學長超神</span><span class="push-ipdatetime">05/26 11:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pe0853706   </span><span class="f3 push-content">: 那如果讓乾淨的AI打RK 從乾淨帳號開始 過程中會被</span><span class="push-ipdatetime"> 05/26 11:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pe0853706   </span><span class="f3 push-content">: 銅化 還是直線上升</span><span class="push-ipdatetime">05/26 11:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yeswater5566</span><span class="f3 push-content">: u文</span><span class="push-ipdatetime">05/26 11:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gg86300     </span><span class="f3 push-content">: 把阿法狗銅化</span><span class="push-ipdatetime">05/26 11:19
+</span></div>從twitter的發文機器人可以一葉知秋
+把alphaGO放到積分場  被銅化不是不可能的 :p
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tcc080206   </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/26 11:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Astringent  </span><span class="f3 push-content">: 所以現在的阿法狗運作模式就有點像類神經網路??</span><span class="push-ipdatetime">05/26 11:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PeterHenson </span><span class="f3 push-content">: 那想問一下會有機會連後勤都用阿法狗嗎</span><span class="push-ipdatetime">05/26 11:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">z7810312007 </span><span class="f3 push-content">: U文</span><span class="push-ipdatetime">05/26 11:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kducky      </span><span class="f3 push-content">: 如果用六台來打呢 五路加教練</span><span class="push-ipdatetime">05/26 11:32
+</span></div>其實類神經網路的架構裡面也常出現把Ａ網路的輸出當作Ｂ網路的輸入
+把教練的輸出當作選手的輸入，作為一種參考變數
+^__^... 純幻想 這邊我就不想亂講話了
+
+不過是有可能ＡＩ選手發現ＡＩ教練的話都沒用 就都不聽了
+這是很有可能的
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ysesst911840</span><span class="f3 push-content">: 好猛的文</span><span class="push-ipdatetime">05/26 11:35
+</span></div><span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 11:39:33
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DICKASDF    </span><span class="f3 push-content">: 所以假如真訓練出五台電腦 那跟職業隊打勝負比大概</span><span class="push-ipdatetime">05/26 11:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">archiewang  </span><span class="f3 push-content">: 還以為走錯版</span><span class="push-ipdatetime">05/26 11:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g5637128    </span><span class="f3 push-content">: U文推</span><span class="push-ipdatetime">05/26 11:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">aggress5566 </span><span class="f3 push-content">: Alphago的決策樹怎麼會是硬爆…</span><span class="push-ipdatetime"> 05/26 11:39
+</span></div>硬爆應該每個人定義不同
+我知道你想表達其中精妙之處
+不過對我來說，規律地把人類短時間無法窮盡的可能性算完，我覺得算硬爆
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andy8306233 </span><span class="f3 push-content">: 好文推推</span><span class="push-ipdatetime">05/26 11:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">imsu        </span><span class="f3 push-content">: 真的優質文</span><span class="push-ipdatetime">05/26 11:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">exeex       </span><span class="f3 push-content">: deep learning 太吃server計算資源啦</span><span class="push-ipdatetime">05/26 11:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tmumustkak  </span><span class="f3 push-content">: 長知識了</span><span class="push-ipdatetime">05/26 11:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tesslumin   </span><span class="f3 push-content">: 專業文 推推</span><span class="push-ipdatetime">05/26 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">exeex       </span><span class="f3 push-content">: 做出來也不會取代目前電腦AI</span><span class="push-ipdatetime">05/26 11:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">em1234      </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/26 11:43
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">Timba       </span><span class="f3 push-content">: 一堆  推文滿滿的錯誤與偏見在看星海</span><span class="push-ipdatetime">05/26 11:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Timba       </span><span class="f3 push-content">: 還討論的煞有其事  笑死</span><span class="push-ipdatetime">05/26 11:46
+</span></div>
+我星海是真的不強，哪裡有偏見願意為大家解惑嗎？
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GGthebest   </span><span class="f3 push-content">: 推個優質文 長知識惹</span><span class="push-ipdatetime">05/26 11:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tomlee1130  </span><span class="f3 push-content">: 你以後賺大錢可以養我嗎</span><span class="push-ipdatetime">05/26 11:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 其實我覺得你講的不是問題耶，訓練過程可以是5台電</span><span class="push-ipdatetime">05/26 11:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 腦對五台電腦，最後派出五台電腦跟人打就好啦</span><span class="push-ipdatetime">05/26 11:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yapdasccryay</span><span class="f3 push-content">: U文</span><span class="push-ipdatetime">05/26 11:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Fantasyweed </span><span class="f3 push-content">: 推特那個BOT真的很可怕lol</span><span class="push-ipdatetime">05/26 11:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">l010013     </span><span class="f3 push-content">: 推～</span><span class="push-ipdatetime">05/26 11:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 你寫的訓練方式感覺是一個電腦+4個人在訓練</span><span class="push-ipdatetime">05/26 11:52
+</span></div>確實，我是以選手角度來看
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kk87822     </span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime">05/26 11:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">k3062200    </span><span class="f3 push-content">: U質文</span><span class="push-ipdatetime">05/26 11:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 喔沒有我眼殘哈哈 別理我</span><span class="push-ipdatetime">05/26 11:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Batterygod  </span><span class="f3 push-content">: u質lol文</span><span class="push-ipdatetime">05/26 11:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chen841115  </span><span class="f3 push-content">: 是說昨天Sen又拿冠軍了 再次出國ㄏㄏ</span><span class="push-ipdatetime"> 05/26 11:55
+</span></div><span class="f2">※ 編輯: tonylo2ooo (101.13.48.161), 05/26/2017 12:00:43
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">granola858  </span><span class="f3 push-content">: 推 很多莊董臉都腫了</span><span class="push-ipdatetime"> 05/26 11:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cc875450    </span><span class="f3 push-content">: 有夠專業</span><span class="push-ipdatetime"> 05/26 12:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 但我覺得做lol阿法狗是有商業上的價值的，如果改成</span><span class="push-ipdatetime"> 05/26 12:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 讓一個AI控5隻，訓練方式AI對AI大量對決，也許我們</span><span class="push-ipdatetime"> 05/26 12:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">haloha1234  </span><span class="f3 push-content">: 會看到更多元的戰術跟選角</span><span class="push-ipdatetime"> 05/26 12:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Dustwind    </span><span class="f3 push-content">: 可是這樣電競還有存在的必要嗎</span><span class="push-ipdatetime"> 05/26 12:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Dustwind    </span><span class="f3 push-content">: 從原本學韓國變成學AI降(X</span><span class="push-ipdatetime"> 05/26 12:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s505015     </span><span class="f3 push-content">: 5個alphago欸 跟韓國人一樣</span><span class="push-ipdatetime"> 05/26 12:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DesignXD    </span><span class="f3 push-content">: U文</span><span class="push-ipdatetime"> 05/26 12:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kinomon     </span><span class="f3 push-content">: U文</span><span class="push-ipdatetime"> 05/26 12:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t81511270   </span><span class="f3 push-content">: 機器學習 推</span><span class="push-ipdatetime"> 05/26 12:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">j808010     </span><span class="f3 push-content">: 真的要比，我覺得應該是5隻都是ai，畢竟ai配合人類</span><span class="push-ipdatetime"> 05/26 12:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">j808010     </span><span class="f3 push-content">: ，還要牽扯到溝通問題，扯到人就很難大量重複學習</span><span class="push-ipdatetime"> 05/26 12:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jk55688     </span><span class="f3 push-content">: 這篇也太粗淺了</span><span class="push-ipdatetime"> 05/26 12:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kia280      </span><span class="f3 push-content">: 推112 machine learning</span><span class="push-ipdatetime"> 05/26 12:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s56565566123</span><span class="f3 push-content">: 那bp可以研發嗎</span><span class="push-ipdatetime"> 05/26 12:27
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/LoL/M.1495761820.A.95D.html?cacheKey=2051-686706219&offset=22406&offset-sig=63dfb4c741dbd1af77d46dfda09b80d3bef03b8e" data-longpollurl="/v1/longpoll?id=d3ca7d8518339c454953ced3be14067b66f10d87" data-offset="22406"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
