@@ -3,9 +3,7 @@ const fs = require('fs')
 const cheerio = require('cheerio')
 
 const baseUrl = 'http://gholk.github.io/ptt'
-const cheerioOption = {
-    decodeEntities: false
-}
+const cheerioOption = {keepNonAscii: true}
 
 function promiseRead(path) {
     return new Promise((promiseDone, promiseError) => {
