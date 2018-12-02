@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-12-02T11:51:07+08:00</updated>
+  <updated>2018-12-02T23:26:18+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,253 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543705478.A.D05.html</id>
+<title>[問卦] 精靈弓手有陰影了QQ</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543705478.A.D05.html" />
+<published>Sun Dec  2 07:04:35 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>真禮姐姐&gt;&lt;</name>
+<email>CavendishJr.bbs@ptt.cc</email>
+</author>
+
+<summary>上次被哥布林扒光
+現在要再次面對哥布林大軍
+心裡的陰影讓她手微微發抖
+不過哥殺暖暖得問一句.....
+https://i.imgur.com/st4eQWC.jpg
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543739168.A.08A.html</id>
+<title>[爆掛] 141個投票所 公投第14、15案疑似結果報反</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543739168.A.08A.html" />
+<published>Sun Dec  2 16:25:58 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>teco+film+love</name>
+<email>tecofilmlove.bbs@ptt.cc</email>
+</author>
+
+<summary>原文 https://tinyurl.com/ya4u8z6f
+剛剛看到yutin1987上傳的2018台灣公投的所有開票所的結果，
+https://github.com/g0v/referendum_report/tree/master/results2
+出於對資料的手癢，就立即下載下來跑了分析。不跑不知道，一跑嚇一跳。
+通過初步的描述分析就可以發現，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1382933680.A.F48.html</id>
+<title>Re: [技術] 有沒有ptt這個bbs實作細節的八卦</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1382933680.A.F48.html" />
+<published>Mon Oct 28 12:14:38 2013</published>
+<category term="Soft_Job" />
+
+<author>
+<name>自立而後立人</name>
+<email>TonyQ.bbs@ptt.cc</email>
+</author>
+
+<summary>        這個問題多年前我研究過。Orz
+        還跑去架了 itoc 來玩，現在站還活著。(telnet://tonyq.org )
+        先講結論：他會快是用別的東西換來的。
+        主流的 BBS 實作資料目錄結構多是 File System 為主的，
+        每個看板就是一個資料夾，資料夾內會有該看板所有文章，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543593486.A.62E.html</id>
+<title>[爆卦] 地質界Taiwan被正名為ChineseTaipei</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543593486.A.62E.html" />
+<published>Fri Nov 30 23:58:03 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>?</name>
+<email>sopi.bbs@ptt.cc</email>
+</author>
+
+<summary>以下不具名引用
+學術歸學術，政治歸政治？中華台北海峽是啥？
+最近學術界已經深刻感覺到中國共產黨的全面打壓了，能力所及之處，Taiwan 都在消失
+中。
+Taiwan 都被改成 Chinese Taipei，臺灣海峽，也就變成中國台北海峽。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543633837.A.77D.html</id>
+<title>[問卦] 請問usb3.0和usb3.1使用感覺是不是差不多</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543633837.A.77D.html" />
+<published>Sat Dec  1 11:10:34 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>經濟王7887</name>
+<email>chamge7788.bbs@ptt.cc</email>
+</author>
+
+<summary>大家好 各位鄉民大家好
+我新款的隨身碟出來了
+是usb 3.1的隨身碟
+我之前用usb的3.0隨身碟
+使用之後 兩者之差我根本沒感覺
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543593486.A.62E.html</id>
+<title>[爆卦] 地質界Taiwan被正名為ChineseTaipei</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543593486.A.62E.html" />
+<published>Fri Nov 30 23:58:03 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>?</name>
+<email>sopi.bbs@ptt.cc</email>
+</author>
+
+<summary>以下不具名引用
+學術歸學術，政治歸政治？中華台北海峽是啥？
+最近學術界已經深刻感覺到中國共產黨的全面打壓了，能力所及之處，Taiwan 都在消失
+中。
+Taiwan 都被改成 Chinese Taipei，臺灣海峽，也就變成中國台北海峽。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543628132.A.7B3.html</id>
+<title>[新聞] 高麗菜盛產價跌 農政單位：勸農民勿搶種</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543628132.A.7B3.html" />
+<published>Sat Dec  1 09:35:28 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>人生的本能 就是求生</name>
+<email>xx60824xx.bbs@ptt.cc</email>
+</author>
+
+<summary>1.媒體來源:UDN聯合
+2.完整新聞標題:高麗菜盛產價跌 農政單位：勸農民勿搶種卻被罵
+3.完整新聞內文:
+暖冬高麗菜盛產，價格低迷，農民叫苦，面對菜賤傷農，台南市農業局代理局長李建裕表
+示，今年9月份就預測高麗菜產量將過盛，農糧署多次發出「大宗蔬菜供苗預警資訊」，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543596358.A.105.html</id>
+<title>Re: [討論] 棒球板也淪陷了嗎？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543596358.A.105.html" />
+<published>Sat Dec  1 00:45:55 2018</published>
+<category term="HatePolitics" />
+
+<author>
+<name>林義雄殺了北極熊</name>
+<email>deathsong.bbs@ptt.cc</email>
+</author>
+
+<summary>大家好 雖然我現在退一
+不過之前主要棲息地在棒球板就跟大家
+分析一下較常出現的板上政治人物風向
+總之不是韓總的問題
+是只要講錯話 棒球板都會開酸
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1524262127.A.208.html</id>
+<title>Re: [問卦] 就因為一句話朝天宮跟鎮瀾宮就不來往了哦</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1524262127.A.208.html" />
+<published>Sat Apr 21 06:08:44 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>GO19870325</name>
+<email>GO19870325.bbs@ptt.cc</email>
+</author>
+
+<summary>其實北港朝天宮跟新港奉天宮也有一段爭正統的過節
+首先從正統之爭說起吧，圍繞在北港朝天宮身上的爭議， 就是與新港奉天宮的正統之爭
+， 民國50年代開始，新港李安邦與著名學者李獻璋 提出了笨港毀滅論，認為古笨港天妃
+廟遭到洪水沖毀 並進而提出，三尊媽祖各自歸為新港、北港、溪北 而新港奉天宮獲得大
+媽與大多數的文物，是繼承天妃廟正統的廟宇 這就是笨港之爭的開端。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543663874.A.227.html</id>
+<title>[新聞] 陸男在加拿大上網看18禁幼女圖　遭警逮補</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543663874.A.227.html" />
+<published>Sat Dec  1 19:31:11 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>歐普龍</name>
+<email>Operon.bbs@ptt.cc</email>
+</author>
+
+<summary>https://tw.news.appledaily.com/international/realtime/20181201/1476685/
+蘋果
+陸男在加拿大上網看18禁幼女圖　遭警逮捕　
+出版時間：2018/12/01 18:43
+中國一名25歲男子，有加拿大公民的身分，他在加拿大用手機看二次元18禁幼女圖，結果
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543664386.A.5D5.html</id>
+<title>Re: [新聞] 義美老總又出手了 將購150公噸高麗菜</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543664386.A.5D5.html" />
+<published>Sat Dec  1 19:39:42 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>肥特哥</name>
+<email>fatedate.bbs@ptt.cc</email>
+</author>
+
+<summary>小弟不才  是做跟酪農相關行業及部分農業小小農夫
+義美這次出手     其實還不錯     但他會得罪一堆業主
+可能沒意外要被查廠查到爆了
+像之前的  幫酪農加薪 1公升多1元
+http://www.epochtimes.com/b5/17/9/29/n9682204.htm
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543653816.A.7DE.html</id>
+<title>[新聞] 義美老總又出手了 將購150公噸高麗菜</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543653816.A.7DE.html" />
+<published>Sat Dec  1 16:43:32 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>好東西不簽嗎</name>
+<email>joug.bbs@ptt.cc</email>
+</author>
+
+<summary>義美老總又出手了 將購150公噸高麗菜
+近期高麗菜菜價下跌，農民叫苦連天，義美食品總經理高志明今天在官網臉書最新發文，
+以「好菜．無價．無助．無能．無奈！願助 喊價．護農．止跌．養生 」為標題，表達義
+美預定連續6周，以每公斤12.5元的價格，收購高麗菜150000公斤、即150公噸，希望有助
+菜價很快就可以回升到農友們不會虧損的價格以上。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543673929.A.70C.html</id>
+<title>Re: [問卦] 農民搶種的問題？</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543673929.A.70C.html" />
+<published>Sat Dec  1 22:18:46 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>不賣P幣</name>
+<email>TFsonG.bbs@ptt.cc</email>
+</author>
+
+<summary>農民8月和9月忍太久了 其實只要再忍2個月種下去就是爽賺了
+天災過後的蔬菜一定供過於求，然後2個月過後的菜價又會好
+要解決菜的供需這個問題不是中盤商
+現在台灣95%以上蔬菜落土長大前都需要經過育苗場
+如果是像甘藍這種大概就是99%，土拔苗幾乎不存在
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1543407520.A.A1D.html</id>
 <title>[新聞] NHK看台灣早餐文化「台人早餐當晚餐吃」</title>

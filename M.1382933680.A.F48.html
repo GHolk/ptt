@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [技術] 有沒有ptt這個bbs實作細節的八卦 - 看板 Soft_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="        這個問題多年前我研究過。Orz
+        還跑去架了 itoc 來玩，現在站還活著。(telnet://tonyq.org )
+        先講結論：他會快是用別的東西換來的。
+        主流的 BBS 實作資料目錄結構多是 File System 為主的，
+        每個看板就是一個資料夾，資料夾內會有該看板所有文章，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [技術] 有沒有ptt這個bbs實作細節的八卦">
+<meta property="og:description" content="        這個問題多年前我研究過。Orz
+        還跑去架了 itoc 來玩，現在站還活著。(telnet://tonyq.org )
+        先講結論：他會快是用別的東西換來的。
+        主流的 BBS 實作資料目錄結構多是 File System 為主的，
+        每個看板就是一個資料夾，資料夾內會有該看板所有文章，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Soft_Job/M.1382933680.A.F48.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" hrefhref="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Soft_Job/index.html"><span class="board-label">看板 </span>Soft_Job</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" hrefhref="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" hrefhref="http://www.ptt.cc/bbs/Soft_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Soft_Job/M.1382933680.A.F48.html"></div>
+
+			<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">TonyQ (自立而後立人)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Soft_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [技術] 有沒有ptt這個bbs實作細節的八卦</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Mon Oct 28 12:14:38 2013</span></div>
+<span class="f2">※ 引述《AzureCoder (AzureCoder)》之銘言：
+</span><span class="f6">: 到底ptt實作是使用什麼語言和結構，用的是什麼database
+</span><span class="f6">: 特別每次用文章搜尋功能時，對那速度都感到驚嘆
+</span><span class="f6">: 現在很多網上的論壇討論區規模很多沒ptt大，但搜尋功能很多都比ptt慢很多
+</span><span class="f6">: 到底為什麼ptt用夠做到
+</span>
+        這個問題多年前我研究過。Orz
+        還跑去架了 itoc 來玩，現在站還活著。(telnet://tonyq.org )
+
+        先講結論：他會快是用別的東西換來的。
+
+
+        主流的 BBS 實作資料目錄結構多是 File System 為主的，
+
+        每個看板就是一個資料夾，資料夾內會有該看板所有文章，
+        每篇會用一個代碼去存。
+
+        像這篇網址上的 id 應該就是他的 hash 。XD
+
+        <a href="http://www.ptt.cc/bbs/Soft_Job/M.1382884767.A.AFA.html" target="_blank" rel="nofollow">http://www.ptt.cc/bbs/Soft_Job/M.1382884767.A.AFA.html</a>
+        對於內文本身就是當成純文字檔案。
+
+
+        而看板列表，當然不會是弄個 database 去做 query 這種作法，
+        那是沒辦法達到這種效率跟速度的。
+
+
+        看板列表是直接把所有版面上的檔案清單，
+        直接用固定的 struct 寫成 index file。(.DIR)
+
+        struct 在這種狀況效能真的是快到一個習慣用 database 的人無法想像的程度，
+        但被空間限制也是麻煩到一個無法想像的程度。
+
+        光是你想讓標題多紀錄一個字或少紀錄一個字，就得整個索引檔重建，
+        全站的檔案何其多，光 rebuild 應該就會整死人，
+        基本上你不會想在 index 一直亂加有的沒的。
+
+        以前各大 bbs 出現索引檔損壞而導致使用者發生問題的狀況也時有耳聞。
+
+
+        另外一點， ptt 只能做特定看板的條件搜尋，
+        所以換言之，他只要掃一遍看板的索引檔就能做完 search 。
+
+        會快是當然的，而且 file io 基本上比 database 快上好幾倍。
+
+
+        而且還是一頁最多 20 筆的 pagination ， web 哪有一頁 20 筆這種事。XD
+
+
+        一般網站的 search 基本上都不會只做標題搜尋，這是一個問題，
+
+        剩下的完全就是 db 硬要對上 tune file IO 索引，
+        兩者的效能差距就是這麼大。
+
+        所以網站要快通常都是打 cache 把 db access 變成 file access 。
+
+
+        然後 bbs 搜尋並不算快，如果有人知道所謂「暴力恐龍搜尋」，
+        他的速度拿到一般 web 搜尋各大論壇的 search engine 來比，就會大輸不少。
+
+        這只是剛好 best case 打贏人家而已。XD
+
+
+        另一方面是 telnet 本身 stateful 跟 web state less 的傳輸瓶頸，
+        但代價是 bbs 會斷線需要重頭來，web 斷線多按幾次重新整理就好。
+
+
+        然後 bbs 用 file base 也有一些好處，他有機會做到，
+        把不同字母開頭的看板 mount 到不同硬碟，來搶出更多的 IO 效能。
+
+
+--
+這幾年來考慮到推文管理，也有一些站實驗性的將 database 導入 bbs 的計畫。
+
+然後 file IO 雖說效能快，但同時 IO 到一定程度之後，還是很可怕。
+
+巴哈姆特當初為了超過四千人數，還有挑戰過做多站的水平 scale ，
+結果產生出一堆壯文後來似乎是放棄了。
+
+ptt 能承載到十幾萬人這點才是他的技術內涵，
+最近一兩年推出的資源回收桶機制也是很有趣的，我一直都想讀但還沒去追細節。XD
+
+前面那些實驗最後結果如何，我大多沒有跟到，
+我想這裡應該還有些人知道，就寫來拋磚引玉。XD
+
+--
+
+        Life&#39;s a struggle but beautiful.
+
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc)
+</span>◆ From: 220.137.246.106
+<span class="f2">※ 編輯: TonyQ           來自: 220.137.246.106      (10/28 12:15)
+</span><span class="f2">※ 編輯: TonyQ           來自: 220.137.246.106      (10/28 12:15)
+</span><span class="f2">※ 編輯: TonyQ           來自: 220.137.246.106      (10/28 12:16)
+</span><span class="f2">※ 編輯: TonyQ           來自: 220.137.246.106      (10/28 12:20)
+</span><span class="f2">※ 編輯: TonyQ           來自: 220.137.246.106      (10/28 12:20)
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:FILE IO 不一定比DB IO 快, 現在有RAW DEVICE/ASM 了.</span><span class="push-ipdatetime"> 10/28 12:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">:其實一頁是可以超過 20 筆的 XD</span><span class="push-ipdatetime"> 10/28 12:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">guest2</span><span class="f3 push-content">:推一下</span><span class="push-ipdatetime"> 10/28 12:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">icemango</span><span class="f3 push-content">:用 terminal 看一頁可以有兩倍以上XD</span><span class="push-ipdatetime"> 10/28 12:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:@Lordaeron 感謝補充～ XD</span><span class="push-ipdatetime"> 10/28 13:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:@Bencrie 設定終端機列數就行了 不過這邊是舉例啦 XD</span><span class="push-ipdatetime"> 10/28 13:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:講到這個，之前有看到 MMDB 相關的訊息，還沒機會測測看效能</span><span class="push-ipdatetime"> 10/28 13:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:表現如何～</span><span class="push-ipdatetime"> 10/28 13:17
+</span></div><span class="f2">※ 編輯: TonyQ           來自: 220.137.246.106      (10/28 13:18)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cc1plus</span><span class="f3 push-content">:真的要快可以實作專用的 File System ....</span><span class="push-ipdatetime"> 10/28 13:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:ASM/RAW DEVICE 就比FS 快了, 快一倍了.</span><span class="push-ipdatetime"> 10/28 14:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:G 一下: Oracle IO Performance - Maklee</span><span class="push-ipdatetime"> 10/28 14:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccpz</span><span class="f3 push-content">:那 struct 真的是噩夢，升級或改欄位都要關站轉XD</span><span class="push-ipdatetime"> 10/28 15:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ccpz</span><span class="f3 push-content">:每次弄這心跳都爆衝</span><span class="push-ipdatetime"> 10/28 15:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccpz</span><span class="f3 push-content">:我記得 ptt 程式有一個特性就是記憶體cache吃很大</span><span class="push-ipdatetime"> 10/28 15:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccpz</span><span class="f3 push-content">:像是小天使, 看版資料這些表都是做成 daemon</span><span class="push-ipdatetime"> 10/28 15:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ccpz</span><span class="f3 push-content">:每個 client 就用 socket 去找他讀資料</span><span class="push-ipdatetime"> 10/28 15:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ccpz</span><span class="f3 push-content">:ref: <a href="http://goo.gl/Sw2hUz" target="_blank" rel="nofollow">http://goo.gl/Sw2hUz</a></span><span class="push-ipdatetime"> 10/28 15:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:@ccpz 我懂 XDDDD</span><span class="push-ipdatetime"> 10/28 15:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:不就是很基礎的東西而已, 書本上全都有的.</span><span class="push-ipdatetime"> 10/28 15:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:哪一本啊  我找機會去買來看看～ XD</span><span class="push-ipdatetime"> 10/28 16:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:哪一本DS/ALGO 的沒講呢?</span><span class="push-ipdatetime"> 10/28 21:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:你想抄CODE 哪是沒有的.</span><span class="push-ipdatetime"> 10/28 21:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asdfjkl90571</span><span class="f3 push-content">:樓上言語令人有點不舒服</span><span class="push-ipdatetime"> 10/28 22:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:樓上言語也令人很不舒服.</span><span class="push-ipdatetime"> 10/28 23:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yangyr</span><span class="f3 push-content">:想起以前lab的search engine搞的index..唉</span><span class="push-ipdatetime"> 10/28 23:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Naniko</span><span class="f3 push-content">:說起來以前天天在碰到石頭文的久遠記憶…</span><span class="push-ipdatetime"> 10/29 00:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">waterdisney</span><span class="f3 push-content">:這篇把bbs實作的細節講的蠻清楚的 推一個</span><span class="push-ipdatetime"> 10/29 00:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cookiesgreat</span><span class="f3 push-content">:那語氣我也覺得不太舒服= =</span><span class="push-ipdatetime"> 10/29 02:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:所以呢? 做CACHE 需要什麼DS/ALGO? 書上找不到的?</span><span class="push-ipdatetime"> 10/29 07:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:要講語氣, 還是拿點實力出來吧. 語氣呢.</span><span class="push-ipdatetime"> 10/29 07:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:就是WEB 的FORUM,也還是有使用FILE + DB 混合的.</span><span class="push-ipdatetime"> 10/29 07:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:只是&#34;方便?&#34;,或很多人不懂,所壓根沒有DB以外的想法而已.</span><span class="push-ipdatetime"> 10/29 07:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:各種作法,都有其限制,例如DB的作法,就受到FIELD 長度的</span><span class="push-ipdatetime"> 10/29 07:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:的限制,就變成字數的限制了. 有人一定會說BLOB的, 他自</span><span class="push-ipdatetime"> 10/29 07:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:已玩一下吧.</span><span class="push-ipdatetime"> 10/29 07:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gname</span><span class="f3 push-content">:FILE + DB 挺好玩的,只是... 好麻煩...= =&#34;</span><span class="push-ipdatetime"> 10/29 09:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dophin332</span><span class="f3 push-content">:L大花了這麼多行也沒多發表什麼,枉費作者拋磚引玉</span><span class="push-ipdatetime"> 10/29 09:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:這事,你問作者就好了, 我沒看過什麼新鮮作法, 不覺得</span><span class="push-ipdatetime"> 10/29 10:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:有什麼特別好磚的, 很多東西,有心都可以G 得到.</span><span class="push-ipdatetime"> 10/29 10:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">EveForEve</span><span class="f3 push-content">:現在應該可以把記憶體改成存取raid0的ssd來加速了~</span><span class="push-ipdatetime"> 10/29 10:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:SSD 還是沒RAM 快. 何況RAID.</span><span class="push-ipdatetime"> 10/29 10:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:errr 我想說你應該有推薦的書這樣我直接去買比較快啊XD</span><span class="push-ipdatetime"> 10/29 11:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我手上的 DS 的書是沒有直接談到 RAW DEVICE/ASM 在關聯式</span><span class="push-ipdatetime"> 10/29 11:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:資料庫的應用啦 XD</span><span class="push-ipdatetime"> 10/29 11:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我同意很多人沒有 DB 以外的想法是個問題，這也是我寫這篇</span><span class="push-ipdatetime"> 10/29 11:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:出來的理由，其實最早期我自己實作也是以 FS 為主，現在偶爾</span><span class="push-ipdatetime"> 10/29 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:還是會 File + DB 混用的方式進行開發。</span><span class="push-ipdatetime"> 10/29 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我再去找找相關知識的書來看就是了  不要這麼火爆啊～ XD</span><span class="push-ipdatetime"> 10/29 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我是很愛看書的 :)</span><span class="push-ipdatetime"> 10/29 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:丁骨文的書不就有講ASM的了? 不然上去網站找也完整.</span><span class="push-ipdatetime"> 10/29 11:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:這不用問的吧, 致於RAW DEVICE, 則任何商業DB 都有文件</span><span class="push-ipdatetime"> 10/29 11:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:件提到怎麼做. 也不用問人.</span><span class="push-ipdatetime"> 10/29 11:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:ASM 跟 RAW Device 的觀念我有啊，整合到 DB 上的效能調校是</span><span class="push-ipdatetime"> 10/29 11:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:另一回事就是了。你這麼說我就明白了。XD</span><span class="push-ipdatetime"> 10/29 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:那我再來找機會試驗看看相關的 solution ~ 感謝</span><span class="push-ipdatetime"> 10/29 11:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">moonblack</span><span class="f3 push-content">:看完覺得T大值得尊敬 願意分享而且態度讓人舒服XD 感謝~</span><span class="push-ipdatetime"> 10/29 12:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:要舒服,就待在家就好了,火星是很危險的.</span><span class="push-ipdatetime"> 10/29 12:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:RAW Device 的觀念? 整合到 DB 上的效能調校?</span><span class="push-ipdatetime"> 10/29 13:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:會這樣講,就表明了,你根本不知raw device.</span><span class="push-ipdatetime"> 10/29 13:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:我已經提了RD 是對應到FS, 就DBMS 而這, 就是將</span><span class="push-ipdatetime"> 10/29 13:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:就是將DB CREATE在FS 還是RD 的差異.</span><span class="push-ipdatetime"> 10/29 13:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我知道，問題是建過來還是有一些細節要處理，我想確認有沒有</span><span class="push-ipdatetime"> 10/29 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:已經討論過得議題而已。像是把 db 建在 memory (MMDB)，也不</span><span class="push-ipdatetime"> 10/29 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:只是把 memory mount 成 file system 這麼簡單，還要考慮資</span><span class="push-ipdatetime"> 10/29 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:料會不會因為斷電等問題而產生 data lost 。</span><span class="push-ipdatetime"> 10/29 14:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:這些整體的觀念是我在確認/探討的。</span><span class="push-ipdatetime"> 10/29 14:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我已經沒問你什麼了啊，這些議題我覺得自己 survey 就好了，</span><span class="push-ipdatetime"> 10/29 14:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:反正做一次就會知道他該怎麼運作跟可能的問題、限制在哪了。</span><span class="push-ipdatetime"> 10/29 14:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:將RAM mount 成FS 會快一些, 但不會比將TABLE CACHE 住</span><span class="push-ipdatetime"> 10/29 14:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:快, 而既然是 RD vs FS 還有什麼好比風險?</span><span class="push-ipdatetime"> 10/29 14:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:「我」不知道，或許有、或許沒有。XD</span><span class="push-ipdatetime"> 10/29 14:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我的話應該直覺會考慮的是 backup issue，不過要 survey 才</span><span class="push-ipdatetime"> 10/29 14:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:知道全貌。</span><span class="push-ipdatetime"> 10/29 14:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:backup issue? N家做得產品出來, 你還操心?</span><span class="push-ipdatetime"> 10/29 15:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我沒有在擔心，我只是在想該怎麼做，這就是研究...-_-</span><span class="push-ipdatetime"> 10/29 15:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leonz</span><span class="f3 push-content">:T大的修養是怎麼養成的? 是先天個性就這樣還是後天磨出來的?</span><span class="push-ipdatetime"> 10/29 18:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:@leonz 我個性其實還蠻火爆的啦 XD</span><span class="push-ipdatetime"> 10/29 20:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rex1224</span><span class="f3 push-content">:T大蠻火爆的....</span><span class="push-ipdatetime"> 10/30 00:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:很多事,是不懂就是不懂,要強出頭, 只會挨打的而已.</span><span class="push-ipdatetime"> 10/30 07:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:台灣人要嘛是愛強出頭,要嘛愛找溫暖,多從不面對現實.</span><span class="push-ipdatetime"> 10/30 07:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">PDCMG</span><span class="f3 push-content">:ASM是單指x86的?還是MIPS的?ARM的?8051的?PIC的?ASM很多種啊</span><span class="push-ipdatetime"> 10/30 10:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:Lordaeron 這些話的既視感好明顯，先說我投降，我只聽過 raw</span><span class="push-ipdatetime"> 10/30 10:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">: device ，但沒聽過 db 可以直接讀寫 raw device 加速。 XD</span><span class="push-ipdatetime"> 10/30 10:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:這部份我也覺得蠻值得去看看的～感謝</span><span class="push-ipdatetime"> 10/30 10:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:人家講DB, 結果有人亂入扯去ASSEMBLY.</span><span class="push-ipdatetime"> 10/30 12:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:知知是知知, 不知是不知, 亂扯一通, 只會討打.</span><span class="push-ipdatetime"> 10/30 12:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:等你來教的詳細點啊 XD</span><span class="push-ipdatetime"> 10/30 13:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:你付錢, 我來教, 沒問題的啊. 要付我就開價.</span><span class="push-ipdatetime"> 10/30 16:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">PDCMG</span><span class="f3 push-content">:科科，樓上你不懂組語我可以教你啊～ASM只能是DB的ASM?</span><span class="push-ipdatetime"> 10/31 00:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">crazydogx</span><span class="f3 push-content">:討打的題外話，L就是自己講的強出頭啊</span><span class="push-ipdatetime"> 10/31 01:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:討打就這樣,人家在講東, 自己鬼扯西, 還大言不慚的教人</span><span class="push-ipdatetime"> 10/31 09:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:我在寫組語時,你不知出生了沒.</span><span class="push-ipdatetime"> 10/31 09:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">PDCMG</span><span class="f3 push-content">:科科~我論coding能力與出生早晚之絕對關係!? 哈哈哈哈</span><span class="push-ipdatetime"> 10/31 10:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:哈...coding能力絕對等於邏輯好壞, 一個人連別人講什麼</span><span class="push-ipdatetime"> 10/31 10:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:都不知還自以為自己多強的亂入, 就明白, coding能</span><span class="push-ipdatetime"> 10/31 10:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:力不怎麼樣了. asm 呢, Mips 呢. coding 能力呢.</span><span class="push-ipdatetime"> 10/31 10:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:快拿出你的CODING 能力出來SHOW 看看吧.</span><span class="push-ipdatetime"> 10/31 10:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zanyking</span><span class="f3 push-content">:這樣都能戰起來？</span><span class="push-ipdatetime"> 10/31 10:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:就無聊嘛, 我還想看到這位強人去參加一下64k intro呢</span><span class="push-ipdatetime"> 10/31 10:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lordaeron</span><span class="f3 push-content">:看他的assembly 有多強.</span><span class="push-ipdatetime"> 10/31 10:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">PDCMG</span><span class="f3 push-content">:看看是誰先嗆出生囉~討論程式嗆出生了沒...這邏輯果然強~哈</span><span class="push-ipdatetime"> 10/31 13:52
+</span></div></div>
+    
+    <div id="article-polling" data-pollurlhref="http://www.ptt.cc/poll/Soft_Job/M.1382933680.A.F48.html?cacheKey=2101-1014271243&amp;offset=13629&amp;offset-sig=c5122a20a35ad2486ba2177daa376edc8268d444" data-longpollurl="/v1/longpoll?id=237460315398842e2b5b11efd3c949a3f6169e3e" data-offset="13629"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
