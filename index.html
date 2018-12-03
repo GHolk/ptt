@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="ext/icon.png">
     <link rel="apple-touch-icon" type="image/png" href="../ext/icon.png">
     <link rel="alternate" href="atom.xml" type="application/atom+xml">
-    <script src="../ext/meta-bloging.js"></script>
+    <!--script src="../ext/meta-bloging.js"></script-->
     <title>gholk 精選 U 文</title>
     <style>
       .date {
@@ -35,11 +35,15 @@
       .author .nickname:before {
         content: "(";
       }
+      #load-more-article {
+        display: block;
+        margin: 2em auto;
+      }
     </style>
   </head>
   <body>
     <h1>gholk 精選 U 文</h1>
-    <main>
+    <main data-init-count="20">
       <p>一些我覺得不錯，備份下來的文章。</p>
     </main>
     <template id="article-template">
@@ -54,8 +58,12 @@
         <pre class="summary"></pre>
       </article>
     </template>
-    <script src="../ext/atom-indexing.js"></script>
-    <script>
+    <button id="load-more-article">more</button>
+    <script type="module">
+      import {AtomIndex, Article} from '../ext/atom-render.js'
+      const q = 'querySelector'
+      const t = 'textContent'
+      const deep = true
       function defineGetter(name, query) {
         Object.defineProperty(Article.prototype, name, {
           get: query
@@ -67,9 +75,7 @@
       defineGetter('email', function () {
         return this.entry[q]('author email')[t]
       })
-      Article.prototype.createNode = function () {
-        const template = this.constructor.template
-        const listNode = this.constructor.listNode
+      Article.prototype.createBlogNode = function (template) {
         const node = template.cloneNode(deep)
         node[q]('h2 a')[t] = this.title
         node[q]('h2 a').href = this.url
@@ -83,11 +89,12 @@
         node[q]('.summary')[t] = this.description
         node[q]('.board')[t] = this.tags[0]
         this.node = node
-        listNode.appendChild(node)
       }
+      const atomIndex = new AtomIndex()
+      atomIndex.autoGenerateBlog(document)
     </script>
 
-    <form id="query-article">
+    <!--form id="query-article">
       <h2>query by js</h2>
       <textarea name="query-statement">
 title.match(/的/) &&
@@ -96,7 +103,7 @@ date &gt; new Date('2017-08-01')
       <label>match number: <output name="match-number"></output></label>
       <input type="submit">
       <script src="../ext/searcher.js"></script>
-    </form>
+    </form-->
   </body>
 </html>
 
