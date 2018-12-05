@@ -46,7 +46,7 @@ curl_sed() {
     if curl --remote-name --fail --cookie 'over18=1' "$url"
     then
         sed -i -r '
-            s#="/([^/])#href="http://www.ptt.cc/\1#
+            s#="/([^/])#="http://www.ptt.cc/\1#
             s#="//images\.ptt\.cc/.*/#="#
             s#="//ajax\.googleapis\.com/ajax/libs/jquery/[^/]+/#="#
             s#src="//#src="http://#g
