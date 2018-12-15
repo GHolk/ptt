@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-12-13T20:03:08+08:00</updated>
+  <updated>2018-12-15T20:48:12+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,82 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544629208.A.275.html</id>
+<title>[爆卦] 央視闢謠豬瘟：中國人民放心吃！</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544629208.A.275.html" />
+<published>Wed Dec 12 23:40:06 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>NAZZZ</name>
+<email>chiafann.bbs@ptt.cc</email>
+</author>
+
+<summary>央視出手  全國顫抖
+親  豬瘟跟你想的不一樣
+https://i.imgur.com/LVQYuUF.jpg
+https://i.imgur.com/7on4YSJ.jpg
+https://i.imgur.com/IGUhPA0.jpg
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544682174.A.678.html</id>
+<title>[道歉] 道歉文</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544682174.A.678.html" />
+<published>Thu Dec 13 14:22:52 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>1</name>
+<email>dicfishfish.bbs@ptt.cc</email>
+</author>
+
+<summary>本人林宏杰，帳號 dicfishfish 於 2016 年至 2018 年 9 月，
+經常多次於批踢踢八卦版文章底下留言散布，
+對馬英九總統與金溥聰先生的不實言論。
+此行為確實惡劣不對，並造成兩位困擾與影響，誠摯深切感到抱歉，
+針對此事，本人深感愧疚，相當後悔這段期間的低劣言行，
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544673495.A.AF3.html</id>
+<title>Re: [問卦] 月薪8萬很好花嗎?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544673495.A.AF3.html" />
+<published>Thu Dec 13 11:58:11 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>阿B</name>
+<email>bth060104.bbs@ptt.cc</email>
+</author>
+
+<summary>月收           300000
+勞健保           農保
+房貸           無
+小孩學費   無
+孝親           無
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544674561.A.4B4.html</id>
+<title>Re: [問卦] 月薪8萬很好花嗎?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544674561.A.4B4.html" />
+<published>Thu Dec 13 12:15:59 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>一世六百塵</name>
+<email>D600dust.bbs@ptt.cc</email>
+</author>
+
+<summary>很簡單，因為你沒那個屁股還愛吃那個瀉藥
+: 老婆月收與我差不多,有兩個小孩                          老婆收支
+: 月收           80000                                   80000
+: 勞健保          4300(自己,老母,一個小孩)                4300
+: 所得稅预扣      3000                                    3000
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1544663872.A.BD0.html</id>
 <title>[問卦] 月薪8萬很好花嗎?</title>
