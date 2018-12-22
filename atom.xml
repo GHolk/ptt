@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-12-22T13:11:34+08:00</updated>
+  <updated>2018-12-22T13:16:22+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,63 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544685272.A.87B.html</id>
+<title>[爆卦] 行政院防治假訊息危害專案報告逐字稿</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544685272.A.87B.html" />
+<published>Thu Dec 13 15:14:28 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>雨蒼</name>
+<email>billy3321.bbs@ptt.cc</email>
+</author>
+
+<summary>小弟今天心血來潮聽了今天行政院院會後記者會，發現羅秉成政委講解
+目前假訊息的處理方式蠻不錯的，因此我跟朋友把這次行政院院會內容
+打成逐字記錄，放在Hackmd上面，歡迎有興趣的朋友一起來了解，若有
+錯字也歡迎大家動手潤飾一下，並廣傳分享。
+https://i.imgur.com/lnuhC5Y.jpg
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544530455.A.819.html</id>
+<title>[爆卦] 龍介說不爽可以不要吃吳寶春的麵包</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544530455.A.819.html" />
+<published>Tue Dec 11 20:14:12 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>信長肛森蘭</name>
+<email>lupin2401.bbs@ptt.cc</email>
+</author>
+
+<summary>https://youtu.be/1pjtLFmEk_A
+影片大約在01：06
+龍介說寶春應該已經放棄台灣市場
+而且在其他段落
+龍介也說
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1544745580.A.F48.html</id>
+<title>Re: [問卦] 吳寶春的麵包很普通?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1544745580.A.F48.html" />
+<published>Fri Dec 14 07:59:36 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>六月椿</name>
+<email>Sherlock56.bbs@ptt.cc</email>
+</author>
+
+<summary>囧，我好像沒回答到吳寶春的麵包好不好吃，
+真的是不好意思XD
+在那之前，我想先說說麵包什麼時候最好吃。
+很多人都會說剛出爐的麵包最好吃啦，
+不過除非你是麵包店的員工，
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1545407828.A.248.html</id>
 <title>[爆卦] 德國聯邦文件-台灣的國籍為taiwanisch !!</title>
