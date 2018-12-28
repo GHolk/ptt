@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-12-27T19:07:05+08:00</updated>
+  <updated>2018-12-28T14:38:39+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,44 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1545900669.A.8FC.html</id>
+<title>Re: [問卦] 鍵盤滑鼠買破千的是什麼樣的人?</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1545900669.A.8FC.html" />
+<published>Thu Dec 27 16:51:00 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>石頭書</name>
+<email>stand1234.bbs@ptt.cc</email>
+</author>
+
+<summary>你有長時間敲打筆電，敲到最後指尖在痛的經驗嗎？
+你有滑著滑鼠，但有時覺得位移好像遲了一點，拿久了手會酸的感覺嗎？
+作為一名以文字為生的台文所肥宅，我有。
+（雖然台文所和這篇文章一點關係也沒有XD）
+所以我開始買機械式鍵盤。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1545741529.A.904.html</id>
+<title>[全省] 中華民國憲兵隊-國軍人才招募</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1545741529.A.904.html" />
+<published>Tue Dec 25 20:38:47 2018</published>
+<category term="job" />
+
+<author>
+<name>兔寶寶阿新</name>
+<email>wastelifela.bbs@ptt.cc</email>
+</author>
+
+<summary>job版禁止張貼違反「就業服務法」、「性別平等工作法」、「勞基法」與其他法律之文
+章
+發文者已同意一切遵循現行法律，並確知文責自負。本工作確實勞健保
+此兩行刪除，文章會被刪除不另通知。
+※請各位資方配合遵守。
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1494079324.A.845.html</id>
 <title>Fw: [爆卦] 新罕布夏州翻盤了</title>
