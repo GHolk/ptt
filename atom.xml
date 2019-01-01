@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2018-12-31T12:55:37+08:00</updated>
+  <updated>2019-01-01T11:55:48+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,215 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1532466242.A.18F.html</id>
+<title>Re: [思辯] 父權社會是不是必然</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1532466242.A.18F.html" />
+<published>Wed Jul 25 05:03:58 2018</published>
+<category term="ask-why" />
+
+<author>
+<name>火神</name>
+<email>Ebergies.bbs@ptt.cc</email>
+</author>
+
+<summary>這個議題蠻有趣的，寫了一個小的 AI 程式測試看看結果會怎麼樣
+這個程式裡面預期了幾種社會
+1. 一夫多妻社會
+2. 一妻多夫社會
+3. 多夫多妻社會
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546177409.A.930.html</id>
+<title>[新聞] 72歲老翁酒駕 撞死騎單車低收戶母子</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546177409.A.930.html" />
+<published>Sun Dec 30 21:43:26 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>無限風光在險峰</name>
+<email>gotopark.bbs@ptt.cc</email>
+</author>
+
+<summary>72歲老翁酒駕 撞死騎單車低收戶母子
+嘉義縣72歲陳姓男子昨天中午參加廟會喝酒後開轎車回家，途經鹿草鄉豐稠村馬稠後工業
+區路口，涉嫌追撞騎單車的一對低收入戶陳姓婦人及兒子，母子慘死；陳男酒測值0.24，
+依公共危險及過失致死罪嫌法辦。
+元旦連假發生憾事，且又是酒駕造成家庭破碎。陳婦住在朴子市內厝里，里長彭永達及警
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546082117.A.9F5.html</id>
+<title>[問卦] 在布魯塞爾被搶劫怎麼辦</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546082117.A.9F5.html" />
+<published>Sat Dec 29 19:15:15 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>八嘎冏</name>
+<email>SoWell.bbs@ptt.cc</email>
+</author>
+
+<summary>如標題
+魯弟正在布魯塞爾觀光
+昨天晚上在路上被兩個不知是尼哥還是阿拉伯人搶劫
+手機跟錢包都沒了
+好在家人即時匯款給台北駐比利時代表處
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546218721.A.0BE.html</id>
+<title>[新聞] 欺他不識字賴帳500萬　木工癌逝2天後勝訴</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546218721.A.0BE.html" />
+<published>Mon Dec 31 09:11:42 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>浮雲上的貓</name>
+<email>xuein.bbs@ptt.cc</email>
+</author>
+
+<summary>蘋果日報
+欺他不識字賴帳500萬　木工癌逝2天後勝訴
+出版時間：2018/12/31 09:00
+https://imgur.com/0OEMhaB
+住宅消保會理事長吳翃毅協助蔡師傅調解遭積欠的工程款。彭仁義攝
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546219380.A.997.html</id>
+<title>[新聞] 大鵬灣發現兩種新蚵仔，雙線牡蠣具養殖</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546219380.A.997.html" />
+<published>Mon Dec 31 09:22:52 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>烏賊</name>
+<email>wenjames.bbs@ptt.cc</email>
+</author>
+
+<summary>大鵬灣發現兩種新蚵仔，雙線牡蠣具養殖潛力
+農傳媒
+文／ 林宜潔　圖片提供／ 行政院農業委員會　首圖攝影／ 黃世澤
+臺灣年產值高達40幾億的牡蠣產業，可望再添新物種。農委會水產試驗所（以下簡稱水試
+所）在大鵬灣進行的牡蠣物種調查中，發現2種臺灣尚未有紀錄的矮牡蠣與雙線牡蠣。其
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546179927.A.AC2.html</id>
+<title>[新聞] Swatch「不理降租」撤東區　Fossil也要走</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546179927.A.AC2.html" />
+<published>Sun Dec 30 22:25:25 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>萬惡之城</name>
+<email>Gotham.bbs@ptt.cc</email>
+</author>
+
+<summary>1.媒體來源:
+三立
+2.完整新聞標題:
+Swatch「不理降租」撤東區　Fossil也要走
+3.完整新聞內文:
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546236041.A.6CB.html</id>
+<title>Re: [問卦] 演化論是不是自己打臉自己</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546236041.A.6CB.html" />
+<published>Mon Dec 31 14:00:37 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>張阿月紅茶冰</name>
+<email>moonblacktea.bbs@ptt.cc</email>
+</author>
+
+<summary>不知道大家有沒有看過一部小說
+叫做《樓下的房客》
+有看過的話可以更了解這種感覺
+就是當你從結果看回去的時候
+你會覺得過程的機率太低，怎麼可能
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546227415.A.9F5.html</id>
+<title>Re: [新聞] 明年3月訪美 柯文哲：價值觀與美國相近</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546227415.A.9F5.html" />
+<published>Mon Dec 31 11:36:48 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>潤潤</name>
+<email>jfubgabc.bbs@ptt.cc</email>
+</author>
+
+<summary>一堆人酸柯文哲搖擺，沒有中心思想
+但在檯面上柯文哲才是把台灣這顆棋子玩得最好的那一個
+大家心裡都明白中國不會武統我們
+美國也不會讓中國用經濟方式統一我們
+台灣能不能獨立
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546240940.A.38D.html</id>
+<title>[問卦] 慟！fgo即將完結，關閉伺服器</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546240940.A.38D.html" />
+<published>Mon Dec 31 15:22:17 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>james</name>
+<email>jack8587.bbs@ptt.cc</email>
+</author>
+
+<summary>奈須表示，就是要讓玩家感受他當初破完FF4時的失落感，各地課長即將崩潰了嗎？
+以下轉自Nga翻譯:
+梶田氏：哦哦......又多了一個不想死的理由雖然不是在懷疑，但FGO真的第二部就會完結
+了嗎？
+奈須氏：。準備好的計劃表裡是預定了第二部完結的因此準備到第二部為止，把想做的東西
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546043878.A.B04.html</id>
+<title>Fw: [情報] FGO預定第二部完結 絕不開放SIKP寶具動畫</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546043878.A.B04.html" />
+<published>Sat Dec 29 08:37:56 2018</published>
+<category term="C_Chat" />
+
+<author>
+<name>狐</name>
+<email>kitune.bbs@ptt.cc</email>
+</author>
+
+<summary>作者: kitune (狐) 看板: C_Question
+標題: [情報] FGO預定第二部完結 絕不開放SIKP寶具動畫
+時間: Sat Dec 29 08:37:27 2018
+http://blog.esuteru.com/archives/9244580.html 懶人包
+這是從マフィア梶田跟奈須きのこ對談中擷取的消息
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546241520.A.D7C.html</id>
+<title>[新聞] 年末震撼彈！「蘇打綠」青峰宣布拆夥　</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546241520.A.D7C.html" />
+<published>Mon Dec 31 15:31:57 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>(0_ 0)</name>
+<email>hugh509.bbs@ptt.cc</email>
+</author>
+
+<summary>蘋果日報
+年末震撼彈！「蘇打綠」青峰宣布拆夥　自己唱「對生命負責」
+樂團「蘇打綠」從去年宣布休團3年後，成員各自單飛發展。今在2018年最後一天，主唱
+吳青峰突然在臉書PO出和林暐哲共同聲明，青峰表示與經紀人合約到期後決定走自己的路
+，他表示：「對自己的生命負責！」確定出走「蘇打綠」。（娛樂中心／綜合報導）
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1534090744.A.A28.html</id>
 <title>[問題] 哪些迪士尼動畫的主題曲紅到大家都會唱?</title>
