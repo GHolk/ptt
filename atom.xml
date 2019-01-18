@@ -4,7 +4,7 @@
                  type="text/css"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://gholk.github.io/ptt</id>
-  <updated>2019-01-17T17:08:51+08:00</updated>
+  <updated>2019-01-18T10:38:04+08:00</updated>
   <icon>http://gholk.github.io/ext/icon.png</icon>
   <title>gholk 精選 U 文</title>
   <subtitle>一些我覺得不錯，備份下來的文章。</subtitle>
@@ -16,6 +16,196 @@
     <email>85619andy@gmail.com</email>
   </author>
   <generator uri="https://cheerio.js.org/">cheerio</generator>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547216141.A.3F2.html</id>
+<title>Re: [新聞] 翻案！媽媽嘴老闆呂炳宏改判免賠 謝依涵</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547216141.A.3F2.html" />
+<published>Fri Jan 11 22:15:39 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>尊爵不凡廢文王</name>
+<email>tp943308.bbs@ptt.cc</email>
+</author>
+
+<summary>很多鄉民都說老闆要為員工負責那誰要當老闆
+其實不能這樣講
+只是剛好遇到媽媽嘴這個案件只能說
+錯誤的個案 適當的立法
+雇主要賠償是很正常的事
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547259590.A.E85.html</id>
+<title>[新聞] 台灣女孩勇闖美墨邊界　情定美國「劉大尉</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547259590.A.E85.html" />
+<published>Sat Jan 12 10:19:46 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>今天左手陪我</name>
+<email>touyuan.bbs@ptt.cc</email>
+</author>
+
+<summary>1.媒體來源:
+^^蘋果日報  蘋果日報
+2.完整新聞標題:
+台灣女孩勇闖美墨邊界　情定美國「劉大尉」
+3.完整新聞內文:
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1543302575.A.AD4.html</id>
+<title>[新聞]沒第一時間接到小英賀電 侯友宜：陌生來電</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1543302575.A.AD4.html" />
+<published>Tue Nov 27 15:09:32 2018</published>
+<category term="Gossiping" />
+
+<author>
+<name>Liese</name>
+<email>wl3532.bbs@ptt.cc</email>
+</author>
+
+<summary>1.媒體來源:
+※ 例如蘋果日報、奇摩新聞
+自由
+2.完整新聞標題:
+※ 標題沒有寫出來 ---&gt; 依照板規刪除文章
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546742538.A.AAA.html</id>
+<title>小六</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546742538.A.AAA.html" />
+<published>Sun Jan  6 10:42:07 2019</published>
+<category term="Beauty" />
+
+<author>
+<name>Rei Kuromiya</name>
+<email>ReiKuromiya.bbs@ptt.cc</email>
+</author>
+
+<summary>https://pbs.twimg.com/media/DvKJUnhVsAA8NJ_.jpg
+https://pbs.twimg.com/media/DvKJUneU0AAaVAl.jpg
+https://pbs.twimg.com/media/DvKJUndVAAE4N9x.jpg
+https://pbs.twimg.com/media/DkyIr_nU0AEAf7g.jpg
+https://pbs.twimg.com/media/DvLk_kQUwAE-gEH.jpg
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547291158.A.627.html</id>
+<title>[新聞] 日本女講師與台灣男大生結婚！產子後老</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547291158.A.627.html" />
+<published>Sat Jan 12 19:05:55 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>無言......</name>
+<email>hsnugear.bbs@ptt.cc</email>
+</author>
+
+<summary>ETtoday
+日本女講師與台灣男大生結婚！產子後老公神隱　她一人辛苦育兒
+新北市一名就讀日文系的男大生，與系上日本女講師談戀愛並發生關係。日女懷孕後，兩
+人結婚，但男方畢業後，趁日女回國產子時，傳E-mail說要離婚，接著搬離原本的住處，
+日女回台後，找不到老公，只能一人辛苦扶養孩子。兩人分居迄今逾10年，男方決定訴請
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1546944252.A.675.html</id>
+<title>[問題] 關機後停一陣子再開機的指令</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1546944252.A.675.html" />
+<published>Tue Jan  8 18:44:09 2019</published>
+<category term="Linux" />
+
+<author>
+<name>玉米怪</name>
+<email>ryu12393.bbs@ptt.cc</email>
+</author>
+
+<summary>請問有沒有可以讓系統關機後停一陣子再開機的指令呢？QQ
+使用shutdown -r +時間的指令似乎是算reboot
+想讓系統到S5，停止一陣子後再重開機。
+不知道有沒有linux層的指令可以使用呢？感謝！
+--
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547381329.A.E27.html</id>
+<title>[新聞]口譯哥派駐美代表處 中國官媒集體崩潰嗆「</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547381329.A.E27.html" />
+<published>Sun Jan 13 20:08:44 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>ckbdfrst</name>
+<email>ckbdfrst.bbs@ptt.cc</email>
+</author>
+
+<summary>http://news.ltn.com.tw/news/world/breakingnews/2670595 自由時報 2019-01-13
+口譯哥派駐美代表處 中國官媒集體崩潰嗆「居心何在」
+〔即時新聞／綜合報導〕駐美代表處新任政治組長趙怡翔上任消息傳開後，中國官媒立刻
+被踢批批實業坊鄉民發現集體崩潰，痛罵總統蔡英文是在培養「獨派外交官」，不少鄉民
+看了反而忍不住拍手叫好。
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547357009.A.526.html</id>
+<title>Re: [問卦] 如果勞基法納刑責會怎樣</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547357009.A.526.html" />
+<published>Sun Jan 13 13:23:26 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>夏舞楓</name>
+<email>Freeven.bbs@ptt.cc</email>
+</author>
+
+<summary>假如這個議題發酵到浮上檯面
+網路媒體會第一時間出來偷換概念帶風向：
+[勞基法納刑責？ 恐影響勞工權益]
+[勞基法納刑責造成經濟衰退!？ 專家表示：將造成經濟衰退性恐慌]
+[勞基法將納刑責，網友怒：工作也犯法？]
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547381032.A.082.html</id>
+<title>Re: [新聞] 重返政壇 羅文嘉將接任民進黨秘書長</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547381032.A.082.html" />
+<published>Sun Jan 13 20:03:49 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>寒夜</name>
+<email>xxxg00w0.bbs@ptt.cc</email>
+</author>
+
+<summary>黨
+: 新任黨秘書長，將由淡出政壇已久的前立委羅文嘉接任。
+: 羅文嘉為前總統陳水扁子弟兵，曾擔任陳水扁立委時期的國會辦公室主任，陳水扁擔任
+台
+: 北市長時，羅文嘉擔任北市府發言人；陳水扁當選總統後，羅文嘉先後擔任文建會副主
+</summary>
+</entry>
+<entry>
+<id>http://gholk.github.io/ptt/M.1547391200.A.EE5.html</id>
+<title>[問卦] 肉圓會加一種白白的膏狀物是什麼</title>
+<link rel="alternate" href="http://gholk.github.io/ptt/M.1547391200.A.EE5.html" />
+<published>Sun Jan 13 22:53:17 2019</published>
+<category term="Gossiping" />
+
+<author>
+<name>酷拉皮卡</name>
+<email>Kulapica.bbs@ptt.cc</email>
+</author>
+
+<summary>如題
+肉圓常會加一種白白的膏狀物
+黏黏的 沒什麼味道
+那個是什麼呢?
+嗶☆咔
+</summary>
+</entry>
 <entry>
 <id>http://gholk.github.io/ptt/M.1536559655.A.175.html</id>
 <title>[問卦] 軍人社會地位大約等於哪個職業</title>
