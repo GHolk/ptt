@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問題] Mac還是Linux? - 看板 Linux - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="正好我有一位朋友M氏是收錢給人弄Tinkpad driver的
+然後我是類似領域的，稍微講講Linux在筆電上情況
+基本上很少有筆電在Linux上不能跑的，新的型號多少都能完成基本
+功能：
+能正常啟動
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問題] Mac還是Linux?">
+<meta property="og:description" content="正好我有一位朋友M氏是收錢給人弄Tinkpad driver的
+然後我是類似領域的，稍微講講Linux在筆電上情況
+基本上很少有筆電在Linux上不能跑的，新的型號多少都能完成基本
+功能：
+能正常啟動
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Linux/M.1551153258.A.D37.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Linux/index.html"><span class="board-label">看板 </span>Linux</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Linux/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Linux/M.1551153258.A.D37.html"></div>
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">hizuki (入贅桧月家，我妻彩花)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Linux</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問題] Mac還是Linux?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Feb 26 11:54:14 2019</span></div>
+正好我有一位朋友M氏是收錢給人弄Tinkpad driver的
+然後我是類似領域的，稍微講講Linux在筆電上情況
+
+基本上很少有筆電在Linux上不能跑的，新的型號多少都能完成基本
+功能：
+能正常啟動
+NVIDIA/Intel顯示卡能跑（with proprietary driver)
+儲存器都能正常訪問
+USB port可以用
+wired ethernet可以動
+攝像頭可以動（反正都是USB的）
+
+雖然有的時候可能要自己手動更動kernel，對arch用戶也不是什麼大問題。
+
+
+然而什麼觸控板，fingerprint sensor, power management就可能不能工作了。
+經常有什麼resume不起來的問題，或者resume後網路卡或者什麼USB port不能
+工作。SD reader又怎麼怎麼了。有的時候inernal speaker也會出問題，
+和external那邊切換有問題，這個部分desktop上比較多，laptop的配置比較簡單
+（沒有多音道）很少出事。
+
+
+所以才有我朋友M氏的工作，想要完善支援一個小個的Tinkpad，寫的東西不計其數。
+有些東西只能原廠來進行支援，Intel的團隊很完善了，除了影片播放的VA-API
+driver支援比較慢，一般都是產品先出才有寫driver，其他都是先支援才有產品的。
+
+NVIDIA的graphics卡支援一般都很好，反正notebook的晶片都是後出的，desktop平台
+早就支援一輪了,notebook的driver都會在產品上市前拿到driver。當然功能是肯定
+有缺的，比如以前linux上的driver是不可以在OpenGL上輸出10bits的
+(Windows上用DX早就可以了），去年開始才開放。
+
+除開上面的重要功能外，一般人不會注意的可以忍受的，有什麼online ROM update,
+TPM之類的都可以等。沒有也不會有人叫。
+
+* 引述《mgdesigner (機槍設計師)》之銘言：
+<span class="f6">: ※ 引述《Natsutaka (夏宇)》之銘言：
+</span><span class="f6">: : 他的Wifi晶片有Intel 8265和Qualcomm QCA61x4A兩種
+</span><span class="f6">:                ~~~~~~~~~~~~~
+</span><span class="f6">: 這個是 Intel i5-8265U CPU 內建的wifi晶片（已經整合進去）
+</span><span class="f6">: : Intel還好，但Qualcomm這一顆我Google過，恐怕難以驅動
+</span>這款是ath10k driver的應該是OK
+
+Qualcommon的wifi driver算現在情況不錯的了，Broadcom和Realtek才是最惡的。
+QCA和Atheros除了一些型號有某些band或者protocol不能在Linux driver下工作，
+基本上都沒有問題。
+
+--
+你比較喜歡哪一個?
+<span class="f2 hl">當年不是黨國大老但是被江浙財團捧紅的中國帥哥</span>
+<span class="f1 hl">跟同樣擁兵一方的諸侯約會裁軍結果半途諸侯們爽約，平常有在寫日記的莊嚴男人開始發飆</span>
+<span class="f4 hl">在旁邊讀著荒漠甘泉冷眼旁觀看著薔薇戰爭的人，為了中國的事情爭吵</span>
+<span class="f3 hl">別國調侃是不是中國總統，義正詞嚴的說著我是民族的燈塔的威嚴老先生</span>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 103.29.142.67
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Linux/M.1551153258.A.D37.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Linux/M.1551153258.A.D37.html</a>
+</span>忘記說了，keyboard的那些Fn切換device status這樣的也是有一個driver在
+那邊管的，不過每個廠商的(IBM, HP, Dell)都萬年不變，所以支持起來很簡單。
+只要PS2/USB能動就行。
+<span class="f2">※ 編輯: hizuki (103.29.142.67), 02/26/2019 11:57:46
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">froce</span><span class="f3 push-content">: 這篇講的很詳細，基本上如果沒原生產廠支援，灌linux的筆電</span><span class="push-ipdatetime"> 02/26 16:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">froce</span><span class="f3 push-content">: ，會遇到的幾乎就是這樣。尤其是電源管理和多點觸控真的影</span><span class="push-ipdatetime"> 02/26 16:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">froce</span><span class="f3 push-content">: 響使用很大。</span><span class="push-ipdatetime"> 02/26 16:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">froce</span><span class="f3 push-content">: 所以我最後覺得還是買mac，然後ssh回去桌機server比較方便</span><span class="push-ipdatetime"> 02/26 16:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">froce</span><span class="f3 push-content">: 。</span><span class="push-ipdatetime"> 02/26 16:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sinclaireche</span><span class="f3 push-content">: 電源管理都裝laptop_mode tool</span><span class="push-ipdatetime"> 02/26 17:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sinclaireche</span><span class="f3 push-content">: 不過SD卡和TB3閒置時似乎都會耗電</span><span class="push-ipdatetime"> 02/26 17:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hizuki</span><span class="f3 push-content">: 耗電倒是小問題，經常是關機關了風扇還在轉；windows重啓</span><span class="push-ipdatetime"> 02/26 19:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hizuki</span><span class="f3 push-content">: 到linux有些設備不正常，必須冷啟動；suspend無法喚醒；li</span><span class="push-ipdatetime"> 02/26 19:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hizuki</span><span class="f3 push-content">: nux才會開機雜亂螢幕</span><span class="push-ipdatetime"> 02/26 19:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">soem</span><span class="f3 push-content">: 嘗試起來最麻煩的是筆電的音效要下一些參數給kernel driver</span><span class="push-ipdatetime"> 02/26 21:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">soem</span><span class="f3 push-content">: 才會正常運作，但又不知道實際的值，只能翻wiki找類似型號一</span><span class="push-ipdatetime"> 02/26 21:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">soem</span><span class="f3 push-content">: 組一組試。</span><span class="push-ipdatetime"> 02/26 21:15
+</span></div>我倒是很少遇到這種問題，雖然我也有上報alsa過去解決問題
+我後來為了免麻煩，都是只用Bluetooth headphone了
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">soem</span><span class="f3 push-content">: 然後NV的optimus難搞就想說關掉算了，結果發現bios沒選項控</span><span class="push-ipdatetime"> 02/26 21:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">soem</span><span class="f3 push-content">: 制，只好找認真看Bumblebee跟bbswitch怎麼關掉顯卡省電</span><span class="push-ipdatetime"> 02/26 21:18
+</span></div>這幾年這個問題倒是不大了，Bumblebee支援很成熟了。
+不過這邊倒是外接熒幕輸出經常出問題，因為Bumblebee對bypass輸出的支援很差。
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">idisnothing</span><span class="f3 push-content">: WIN重啟到LINUX有些設備不正常我也遇過 但是是桌機</span><span class="push-ipdatetime"> 02/26 22:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">idisnothing</span><span class="f3 push-content">: 要關機然後再冷開機真D麻煩</span><span class="push-ipdatetime"> 02/26 22:41
+</span></div>還好筆電啟動速度也比較快，不過比較慢的伺服器或者工作站平台的主機板，基本上
+都對Linux支援很完善了。
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">noonee</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 02/27 13:01
+</span></div><span class="f2">※ 編輯: hizuki (103.29.142.67), 02/27/2019 14:01:20
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ryu3y3s</span><span class="f3 push-content">: 補個資訊 通常如果有 Nvidia 顯卡的筆電要如果要省電需要</span><span class="push-ipdatetime"> 02/28 18:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Ryu3y3s</span><span class="f3 push-content">: 處理 Optimus 的問題 還有有小機率 HDMI 輸出是接在 Nvid</span><span class="push-ipdatetime"> 02/28 18:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Ryu3y3s</span><span class="f3 push-content">: ia 上 要多設定一些東西才會動</span><span class="push-ipdatetime"> 02/28 18:17
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Linux/M.1551153258.A.D37.html?cacheKey=2099-1031430688&amp;offset=5034&amp;offset-sig=4478ece230446b17735b970e5f1fd7337d58290a" data-longpollurl="/v1/longpoll?id=4d01954175445cfe7dbc6504bcfdedc2564cdd21" data-offset="5034"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
