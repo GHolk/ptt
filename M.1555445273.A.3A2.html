@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[討論] 我們與資安的距離 - 看板 Soft_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="最近有一部公視的戲劇叫「我們與惡的距離」，還蠻紅的。
+上周日剛播完七、八集，讓台劇版的人氣衝上站上第二，
+大約7000人在台劇版吧。
+這部戲有在公視+和catchplay上架，每周日晚上九點和公視同時直播。
+前兩個星期都有造成公視+和catchplay因負載過大，出現當機的情形
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[討論] 我們與資安的距離">
+<meta property="og:description" content="最近有一部公視的戲劇叫「我們與惡的距離」，還蠻紅的。
+上周日剛播完七、八集，讓台劇版的人氣衝上站上第二，
+大約7000人在台劇版吧。
+這部戲有在公視+和catchplay上架，每周日晚上九點和公視同時直播。
+前兩個星期都有造成公視+和catchplay因負載過大，出現當機的情形
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Soft_Job/M.1555445273.A.3A2.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Soft_Job/index.html"><span class="board-label">看板 </span>Soft_Job</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Soft_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Soft_Job/M.1555445273.A.3A2.html"></div>
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">monoceros629 (獨角獸)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Soft_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[討論] 我們與資安的距離</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Wed Apr 17 04:07:51 2019</span></div>
+最近有一部公視的戲劇叫「我們與惡的距離」，還蠻紅的。
+上周日剛播完七、八集，讓台劇版的人氣衝上站上第二，
+大約7000人在台劇版吧。
+
+這部戲有在公視+和catchplay上架，每周日晚上九點和公視同時直播。
+前兩個星期都有造成公視+和catchplay因負載過大，出現當機的情形
+我有小研究一下，catchplay的片源是放在Amazon S3，然後有做CDN
+可是即使做了CDN也有可能負載過大，所以還需要動態的調整CDN的負載，
+這真的很技術。
+
+不過我今天要講的不是這個問題
+兩三個星期前，我看完一、二集時
+就試著想要破解看看，能不能先看未上架的影片
+用網路監控工具就發現會一直從S3下載片段回來，再組合
+然後我又發現catchplay的命名規則很簡單
+稍微改個連結，就下載到了連公視還沒播出的資料，
+當下確定全部影片都已上傳到AWS S3了。
+
+不過最後我卡在對影片格式不熟，也對前端技術不夠熟
+不過最後我卡在對影片格式不熟，也對前端技術不夠熟
+所以組起來的mp4，撥放是一片黑，
+因為我也不是那麼急，這件事就放著了。
+
+直到今天，公視目前播到第8集，
+我竟然在網路上看到完整的第9集。
+證明己經被破解了，我認為這件事很嚴重，
+對公視來說，大幅影響首播的人氣
+對Catchplay來說，付大錢買版權，結果播的比盜版網站還慢。
+<span class="f2">※ 編輯: monoceros629 (39.12.128.139), 04/17/2019 04:23:49
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bakedgrass</span><span class="f3 push-content">: 想到以前馬英九的治國週記...你要領小禮物了嗎？</span><span class="push-ipdatetime">04/17 05:53
+</span></div><span class="f2">※ 編輯: monoceros629 (39.12.128.139), 04/17/2019 07:00:25
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ldkrsi</span><span class="f3 push-content">: 很公視的風格XD</span><span class="push-ipdatetime"> 04/17 07:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CCWck</span><span class="f3 push-content">: 你與違反著作權法的距離只差一點點了</span><span class="push-ipdatetime"> 04/17 08:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">allenxxx</span><span class="f3 push-content">: 你與地板上肥皂的距離?</span><span class="push-ipdatetime"> 04/17 08:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hooll111</span><span class="f3 push-content">: 抓資安漏洞 Amazon應該獎勵他</span><span class="push-ipdatetime"> 04/17 08:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vi000246</span><span class="f3 push-content">: 這篇要低調一點 雖然我連7.8集都還沒看</span><span class="push-ipdatetime"> 04/17 09:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fhsh810305</span><span class="f3 push-content">: 這又不是Amazon的漏洞.... 我們離資安的距離真的很遠</span><span class="push-ipdatetime"> 04/17 09:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: 影片DRM加密是在Codec上做加密，再封裝成fMP4,方便透過c</span><span class="push-ipdatetime"> 04/17 09:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: dn發佈，你沒解密Key也沒用,不怕你下載</span><span class="push-ipdatetime"> 04/17 09:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">: 這個問題在提早有影音檔可以看 而不是DRM</span><span class="push-ipdatetime"> 04/17 09:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">: 聽原po的描述 我猜在 Cloudfront 那段沒做更細緻的權限控制</span><span class="push-ipdatetime"> 04/17 09:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">:  <a href="https://i.imgur.com/xSnI3hY.jpg" target="_blank" rel="nofollow">https://i.imgur.com/xSnI3hY.jpg</a></span><span class="push-ipdatetime"> 04/17 09:34
+</span></div><div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="xSnI3hY"><a href="//imgur.com/xSnI3hY"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">: 另外一個問題是 如果你想抓盜版 必須期望 當初在建這個CDN</span><span class="push-ipdatetime"> 04/17 09:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">: 分發時有先記得開一組Log Bucket</span><span class="push-ipdatetime"> 04/17 09:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lovebridget</span><span class="f3 push-content">: 放了告到爽啊 順便炒知名度</span><span class="push-ipdatetime"> 04/17 09:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">: 不然上CDN 外部存取進來是沒有記錄的</span><span class="push-ipdatetime"> 04/17 09:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lovebridget</span><span class="f3 push-content">: 跟專利一樣 巴不得你去踩</span><span class="push-ipdatetime"> 04/17 09:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alog</span><span class="f3 push-content">: 原po有空的話其實可以回報lol</span><span class="push-ipdatetime"> 04/17 09:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: 技術本身不一定是外流的主要原因，技術人員本身就要有更</span><span class="push-ipdatetime"> 04/17 09:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: 好的道德標準，比平常人更容易接觸到原始資料或大眾的個</span><span class="push-ipdatetime"> 04/17 09:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: 資</span><span class="push-ipdatetime"> 04/17 09:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">crossdunk</span><span class="f3 push-content">: 冰與火之歌前幾季才剛出第一集後面都有了= =</span><span class="push-ipdatetime"> 04/17 10:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a0960330</span><span class="f3 push-content">: 原po不要回報，在台灣回報資安漏洞只會被關而已</span><span class="push-ipdatetime"> 04/17 10:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ktecv2000</span><span class="f3 push-content">: 繼蚊香社流出後這是是公視流出ㄇ</span><span class="push-ipdatetime"> 04/17 10:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mcmj5566</span><span class="f3 push-content">: 試了一下的確可以 只是沒有字幕XD 但我還是乖乖等週日播</span><span class="push-ipdatetime"> 04/17 10:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mcmj5566</span><span class="f3 push-content">: 出 支持一下國產作品</span><span class="push-ipdatetime"> 04/17 10:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Huffman</span><span class="f3 push-content">: 看一下張啟元用1元購買統聯車票的事件</span><span class="push-ipdatetime"> 04/17 12:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">es8603</span><span class="f3 push-content">: 小心被&#34;解決不了問題只好解決提出問題的人&#34;</span><span class="push-ipdatetime"> 04/17 13:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jack10220</span><span class="f3 push-content">: 八卦那有貼相關新聞了</span><span class="push-ipdatetime"> 04/17 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">for5566</span><span class="f3 push-content">: 查了一下，這應該是內部人員自己流出的，CDN上的都有DRM</span><span class="push-ipdatetime"> 04/17 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">for5566</span><span class="f3 push-content">: 加密，實務上也沒有需要把未加密的檔放在cdn，放在S3上有</span><span class="push-ipdatetime"> 04/17 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">for5566</span><span class="f3 push-content">: 可能，但S3權限預設就不公開，也看不出有理由把它設公開</span><span class="push-ipdatetime"> 04/17 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dreamnook</span><span class="f3 push-content">: 請你直接跟公視聯絡吧O.O</span><span class="push-ipdatetime"> 04/17 14:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lisa68</span><span class="f3 push-content">: 已上新聞</span><span class="push-ipdatetime"> 04/17 14:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TWBilly</span><span class="f3 push-content">: 我通知一下在AWS的朋友</span><span class="push-ipdatetime"> 04/17 14:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">monoceros629</span><span class="f3 push-content">: 有DRM的話，我就不知道是內部流出，還是DRM被破解</span><span class="push-ipdatetime"> 04/17 15:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">monoceros629</span><span class="f3 push-content">: 了</span><span class="push-ipdatetime"> 04/17 15:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">monoceros629</span><span class="f3 push-content">: 不過如果小心一點的話，就算有DRM，還是不應該讓未</span><span class="push-ipdatetime"> 04/17 15:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">monoceros629</span><span class="f3 push-content">: 上架的影片檔能被下載</span><span class="push-ipdatetime"> 04/17 15:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SuperCry</span><span class="f3 push-content">: catchplay好像給薪不是很大方</span><span class="push-ipdatetime"> 04/17 15:40
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">andy199113</span><span class="f3 push-content">: 阿就不是cdn問題阿</span><span class="push-ipdatetime"> 04/17 17:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andy199113</span><span class="f3 push-content">: CDN使用亞馬遜和阿里雲  影片提早上架，有DRM加密</span><span class="push-ipdatetime"> 04/17 17:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">andy199113</span><span class="f3 push-content">: 程式碼js沒有加密 + DRM可能有漏洞被解出串流影音金鑰</span><span class="push-ipdatetime"> 04/17 17:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">andy199113</span><span class="f3 push-content">: 依照國外 應該是播出完後才正式上架 但這OTT直接上架</span><span class="push-ipdatetime"> 04/17 17:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">andy199113</span><span class="f3 push-content">: 應該不是對岸字幕組特地弄字幕 而是官方字幕檔也上架</span><span class="push-ipdatetime"> 04/17 17:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zaramaru2</span><span class="f3 push-content">: 你是ctf大師吧?</span><span class="push-ipdatetime"> 04/17 18:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vn509942</span><span class="f3 push-content">: 解決不了問題，先解決白帽</span><span class="push-ipdatetime"> 04/17 19:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: 我個人還是偏向內部流出的可能性較大，若DRM被破解的話</span><span class="push-ipdatetime"> 04/17 19:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">polonine</span><span class="f3 push-content">: ，不會只有這一部片出問題</span><span class="push-ipdatetime"> 04/17 19:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">darkMood</span><span class="f3 push-content">: 沒什麼，如果考慮所有的惡意，人類無法生存，希望有</span><span class="push-ipdatetime"> 04/17 20:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">darkMood</span><span class="f3 push-content">: 惡意的人都被雷劈死，被砂石車輾死，被太陽曬死，哈</span><span class="push-ipdatetime"> 04/17 20:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bill750121</span><span class="f3 push-content">: 應該就在codec上加密了吧...</span><span class="push-ipdatetime"> 04/17 20:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">monoceros629</span><span class="f3 push-content">: 這好像是catchplay 第一次投資自製劇，所以之前都</span><span class="push-ipdatetime"> 04/18 06:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">monoceros629</span><span class="f3 push-content">: 是直接上架就能看，不像這次是上架但是不給看</span><span class="push-ipdatetime"> 04/18 06:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bitcch</span><span class="f3 push-content">: 每一集的key應該都是獨立的吧 就算影片抓下來也撥不了</span><span class="push-ipdatetime"> 04/18 21:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">williamtsai</span><span class="f3 push-content">: 其實可以直接用 m3u8 載，只要你有 token 就好了，不</span><span class="push-ipdatetime"> 04/19 12:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">williamtsai</span><span class="f3 push-content">: 過他好像有把音軌放在別的地方，我目前是估計他所有</span><span class="push-ipdatetime"> 04/19 12:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">williamtsai</span><span class="f3 push-content">: 集數都共用一個 token，所以只要有合法 token 就可以</span><span class="push-ipdatetime"> 04/19 12:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">williamtsai</span><span class="f3 push-content">: 把還沒公佈的集數爬下來</span><span class="push-ipdatetime"> 04/19 12:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">williamtsai</span><span class="f3 push-content">: 等，我是用公視+ 不是 catchplay XD</span><span class="push-ipdatetime"> 04/19 12:12
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Soft_Job/M.1555445273.A.3A2.html?cacheKey=2101-1014008879&amp;offset=7379&amp;offset-sig=171652e00364d19abe4934820699c0fe7bc73037" data-longpollurl="/v1/longpoll?id=2dfea95a256a182357b684c1efafdb179dbd0979" data-offset="7379"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
