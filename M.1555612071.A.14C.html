@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問卦] 不用函數庫和亂數 寫程式求pi值的方法? - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="這裡提供一種途徑，只用到 C 語言標準函式庫裡頭的以下函式:
+* fopen / fclose
+* getc / putc
+既然上述說要「浪費電腦能力」，那我們不妨試試這個策略:
+a. 實作符合 Turing completeness (圖靈完備) 的 Brainfuck 程式語言 [1]
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問卦] 不用函數庫和亂數 寫程式求pi值的方法?">
+<meta property="og:description" content="這裡提供一種途徑，只用到 C 語言標準函式庫裡頭的以下函式:
+* fopen / fclose
+* getc / putc
+既然上述說要「浪費電腦能力」，那我們不妨試試這個策略:
+a. 實作符合 Turing completeness (圖靈完備) 的 Brainfuck 程式語言 [1]
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1555612071.A.14C.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Gossiping/M.1555612071.A.14C.html"></div>
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">jserv (松鼠)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問卦] 不用函數庫和亂數 寫程式求pi值的方法?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Apr 19 02:27:45 2019</span></div>
+<span class="f2">※ 引述《fragmentwing (片翼碎夢)》之銘言：
+</span><span class="f6">: 小弟程式設計新手
+</span><span class="f6">: 看到後面的講義習題要算圓周率
+</span><span class="f6">: 如果不用亂數，也不用函數庫的話
+</span><span class="f6">: 我自己用了一個在寫之前就覺得很浪費電腦能力的方法
+</span><span class="f6">: 在電腦能力處理極限，還沒法精確到小數點後第二位呢
+</span><span class="f6">: 鄉民會怎麼用程式求圓周率呢?
+</span>
+這裡提供一種途徑，只用到 C 語言標準函式庫裡頭的以下函式:
+* fopen / fclose
+* getc / putc
+
+既然上述說要「浪費電腦能力」，那我們不妨試試這個策略:
+a. 實作符合 Turing completeness (圖靈完備) 的 Brainfuck 程式語言 [1]
+   執行環境;
+b. 撰寫 Brainfuck 程式，使其得以計算圓周率，並用十進位浮點數輸出;
+
+可將 Brainfuck 的執行環境設想為一台機器，擁有一個讀寫頭及無限長的紙帶，
+機器會依下列指令進行操作:
+    &gt; : 使讀寫頭在紙帶上前進一格
+    &lt; : 使讀寫頭在紙帶上後退一格
+    + : 對目前讀寫頭下的值，進行遞增 1 的運算
+    - : 對目前讀寫頭下的值，進行遞減 1 的運算
+    . : 將目前讀寫頭下的值，以對應的字母輸出
+    , : 將目前讀寫頭下的字母讀入並轉為數字後寫回
+    [ : 比較目前的值，若不為 0 即前進，若為 0 就略過指令，直到遇上匹配的 ]
+    ] : 比較目前的值，若不為 0，指令要跳回上個出現 [ 的位置
+
+不難發現，作為一個「知易行難」的程式語言，Brainfuck 僅有 8 個指令，其中
+2 個是 I/O 動作。作為 Turing machine 的實踐，Brainfuck 對記憶體單元作直接
+存取，對應到 C 語言的概念來說，如果 char *p 指向記憶體區塊的話，Brainfuck
+語言的 8 個指令可對照為以下 C 等價敘述:
+
+    Brainfuck       C
+    ---------       ---------
+    &gt;               ++p;
+    &lt;               --p;
+    +               ++*p;
+    -               --*p;
+    .               putchar(*p);
+    ,               *p = getchar();
+    [               while (*p) {
+    ]               }
+
+也就是說，下方的 Brainfuck 程式碼：
+    +++++[-]
+
+對應到 C 語言程式碼為：
+    *p = +5;
+    while (*p != 0) {
+        *p--;
+    }
+
+既然有了指令對照表，我們即可著手建構小型的 Brainfuck 直譯器: (檔名為 bf.c)
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+static int p[64 * 1024], d[1024 * 1024], r, t, e;
+int main(int c, char *v[]) {
+    if (c &lt; 2) exit(1);
+    for (FILE *f = fopen(v[1], &#34;r&#34;); f &amp;&amp; (c = getc(f)) != EOF; p[r++] = c);
+    for (r = 0; (c = p[r]); r++) {
+        if (c == &#39;&gt;&#39;) t++;
+        if (c == &#39;&lt;&#39;) t--;
+        if (c == &#39;+&#39;) d[t]++;
+        if (c == &#39;-&#39;) d[t]--;
+        if (c == &#39;.&#39;) putc(d[t], stdout);
+        for (e = 0; c == &#39;[&#39; &amp;&amp; !d[t]; r++) {
+            if (p[r] == &#39;[&#39;) e++;
+            if ((p[r] == &#39;]&#39;) &amp;&amp; (e-- == 1)) break;
+        }
+        for (; c == &#39;]&#39; &amp;&amp; d[t]; r--) {
+            if (p[r] == &#39;]&#39;) e++;
+            if ((p[r] == &#39;[&#39;) &amp;&amp; (e-- == 1)) break;
+        }
+    }
+}
+
+回到一開始提到的 Turing completeness，Brainfuck 與其說是程式語言，不如說是
+一台理想機器的描述：機器具有無限的儲存 (storage，也就是無限長的紙帶)、運算
+(arithmetic，如遞增和遞減)、條件判斷 ([ ] 涉及目前值是否為 0 的判斷) 以及
+重複 (repetition，這也是 [ ] 的行為)，Brainfuck 這台機器具備上述四項特徵，
+是 Turing completeness。依據 Alan Turing 的觀點，這樣的一台機器，即可模擬
+人類所能進行的任何計算過程，自然就包含圓周率的計算。
+
+Felix Nawothnig 撰寫出可依據給定位數要求，計算並輸出十進位表示法的 Brainfuck
+程式 [2]，我略作調整，如下: (檔名為 pi.b)
+
+<span class="f6">&gt;  +++++ +++++ +++++ +++++ +++++ (25 digits)
+</span>
+[&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;++++++++++&lt;&lt;&lt;&lt;&lt;&lt;&lt;-]&gt;+++++[&lt;+++++++++&gt;-]+&gt;&gt;&gt;&gt;&gt;&gt;+[&lt;&lt;+++[&gt;&gt;[-&lt;]&lt;[&gt;]&lt;-]&gt;
+&gt;[&gt;+&gt;]&lt;[&lt;]&gt;]&gt;[[-&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;]&gt;&gt;&gt;+++&gt;-]&lt;[&lt;&lt;&lt;&lt;]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+[-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;[&lt;+[-&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;
+]&gt;&gt;&gt;&gt;&gt;]&lt;&lt;&lt;&lt;[&gt;&gt;&gt;&gt;&gt;[&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;-[&lt;&lt;++++++++++&gt;&gt;-]&gt;&gt;&gt;[&lt;&lt;[&lt;+&lt;&lt;+&gt;&gt;&gt;-]&lt;[&gt;+&lt;-]&lt;++
+&lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;[-]&lt;&lt;-&lt;[-&gt;&gt;+&lt;-[&gt;&gt;&gt;]&gt;[[&lt;+&gt;-]&gt;+&gt;&gt;]&lt;&lt;&lt;&lt;&lt;]&gt;[-]&gt;+&lt;&lt;&lt;-[&gt;&gt;+&lt;&lt;-]&lt;]&lt;&lt;&lt;&lt;+&gt;&gt;&gt;
+&gt;&gt;&gt;&gt;&gt;[-]&gt;[&lt;&lt;&lt;+&gt;&gt;&gt;-]&lt;&lt;++++++++++&lt;[-&gt;&gt;+&lt;-[&gt;&gt;&gt;]&gt;[[&lt;+&gt;-]&gt;+&gt;&gt;]&lt;&lt;&lt;&lt;&lt;]&gt;[-]&gt;+&gt;[&lt;&lt;+&lt;+&gt;&gt;&gt;
+-]&lt;&lt;&lt;&lt;+&lt;+&gt;&gt;[-[-[-[-[-[-[-[-[-&lt;-&gt;[-&lt;+&lt;-&gt;&gt;]]]]]]]]]]&lt;[+++++[&lt;&lt;&lt;++++++++&lt;++++++++&gt;
+&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;+&lt;-&gt;&gt;&gt;&gt;[&gt;+&lt;&lt;&lt;+++++++++&lt;-&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;[&gt;&gt;+&lt;&lt;-]+&lt;[-&gt;-&lt;]&gt;[&gt;&gt;.&lt;&lt;&lt;&lt;[+.[-]]&gt;&gt;-]
+&gt;[&gt;&gt;.&lt;&lt;-]&gt;[-]&gt;[-]&gt;&gt;&gt;[&gt;&gt;[&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;-]]&gt;&gt;[-]&lt;&lt;&lt;[-]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;]++++++++++.
+
+乍看鬼畫符的程式，注意到最後一個字元是 . (將目前讀寫頭下的值，以對應的字母輸出)
+
+編譯 Brainfuck 直譯器並載入圓周率計算程式:
+
+    $ gcc -o bf bf.c
+    $ ./bf pi.b
+
+在我的電腦 (AMD Ryzen Threadripper 2990WX 32-Core Processor, AMD 重返榮耀!) 搭配
+Ubuntu Linux 18.04 LTS，執行時間約為 0.3 秒，ELF 執行檔約佔 6KB 空間。
+
+參考執行輸出如下:
+    3.141592653589793238462643
+
+若要提高圓周率計算的有效位數，那麼修改 pi.b 的第一行，把 + 指令的數量增加即可。
+
+用雙手駕馭電腦的滋味，真是美妙 :-)
+
+[1] brainf*ck: <a href="https://esolangs.org/wiki/brainfuck" target="_blank" rel="nofollow">https://esolangs.org/wiki/brainfuck</a>
+[2] <a href="https://copy.sh/brainfuck/prog/yapi.b" target="_blank" rel="nofollow">https://copy.sh/brainfuck/prog/yapi.b</a>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.116.246.163
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1555612071.A.14C.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1555612071.A.14C.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tyrande</span><span class="f3 push-content">: 恩恩 昨晚媽祖也是跟我講這個答案</span><span class="push-ipdatetime"> 04/19 02:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bibico0206</span><span class="f3 push-content">: 阿伯，早點睡 不要熬夜</span><span class="push-ipdatetime"> 04/19 02:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lovesooman</span><span class="f3 push-content">: 幹 不要回這種好嗎 我還不想睡覺</span><span class="push-ipdatetime"> 04/19 02:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">minifat</span><span class="f3 push-content">: 今天還有一萬多人 都被柴員了嗎</span><span class="push-ipdatetime"> 04/19 02:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Justapig</span><span class="f3 push-content">: 先推再看</span><span class="push-ipdatetime"> 04/19 02:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jeffery95099</span><span class="f3 push-content">: 先推不然別人以為我看不懂</span><span class="push-ipdatetime"> 04/19 02:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">saturn22k</span><span class="f3 push-content">: 先推</span><span class="push-ipdatetime"> 04/19 02:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Splash5</span><span class="f3 push-content">: +&lt;&gt;&lt; +&lt;&gt;&lt;</span><span class="push-ipdatetime"> 04/19 02:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wl00887404</span><span class="f3 push-content">: jserv 先給推</span><span class="push-ipdatetime"> 04/19 02:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a3831038</span><span class="f3 push-content">: 松鼠竟然也投奔真香世界了</span><span class="push-ipdatetime"> 04/19 02:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cisbpmtw</span><span class="f3 push-content">: google pi ten thousand digits</span><span class="push-ipdatetime"> 04/19 02:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hcwang1126</span><span class="f3 push-content">: cool</span><span class="push-ipdatetime"> 04/19 02:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Wand</span><span class="f3 push-content">: 半夜大神出巡，推。</span><span class="push-ipdatetime"> 04/19 02:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ap954212</span><span class="f3 push-content">: AMD 重返榮耀!</span><span class="push-ipdatetime"> 04/19 02:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">q14721472</span><span class="f3 push-content">: ...為什麼要這樣子算</span><span class="push-ipdatetime"> 04/19 02:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @q14721472, 回歸初心 (?)</span><span class="push-ipdatetime"> 04/19 02:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nanako81240</span><span class="f3 push-content">: ......</span><span class="push-ipdatetime"> 04/19 02:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g5637128</span><span class="f3 push-content">: 跪著推</span><span class="push-ipdatetime"> 04/19 02:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Hsieh0709</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 02:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @a3831038, 那我忘了附上「真香警告」</span><span class="push-ipdatetime"> 04/19 02:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 第一頁要標註「Brainfuck不是Pornhub的新分類」(嗶!)</span><span class="push-ipdatetime"> 04/19 02:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">david0426</span><span class="f3 push-content">: 第一次前20</span><span class="push-ipdatetime"> 04/19 02:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">solemnDan</span><span class="f3 push-content">: 強</span><span class="push-ipdatetime"> 04/19 02:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">newland</span><span class="f3 push-content">: 半夜睡不著覺</span><span class="push-ipdatetime"> 04/19 02:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @lovesooman, 其實這篇沒寫完，數學原理還沒探討，我正在</span><span class="push-ipdatetime"> 04/19 02:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 排版，作為新教材。從 Turing 機器到征服圓周率運算</span><span class="push-ipdatetime"> 04/19 02:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jj1379746</span><span class="f3 push-content">: 講中文好嗎</span><span class="push-ipdatetime"> 04/19 02:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @newland, 夜睡不著覺，把 pi 哼成 C 程式</span><span class="push-ipdatetime"> 04/19 02:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">angragod</span><span class="f3 push-content">: 朝聖推</span><span class="push-ipdatetime"> 04/19 03:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jackie0804</span><span class="f3 push-content">: 狂</span><span class="push-ipdatetime"> 04/19 03:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xru03</span><span class="f3 push-content">: 強</span><span class="push-ipdatetime"> 04/19 03:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @jj1379746, 也是可改用 BF 來講</span><span class="push-ipdatetime"> 04/19 03:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TurtleLee</span><span class="f3 push-content">: 厲害</span><span class="push-ipdatetime"> 04/19 03:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KJFC</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 03:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">q0500</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 03:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asdkmm5050</span><span class="f3 push-content">: 跪</span><span class="push-ipdatetime"> 04/19 03:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">himekami</span><span class="f3 push-content">: ob&#39;_&#39;ov AMD讚</span><span class="push-ipdatetime"> 04/19 03:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WYchuang</span><span class="f3 push-content">: 我老闆問我為啥要跪著上班</span><span class="push-ipdatetime"> 04/19 03:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Aerci</span><span class="f3 push-content">: 恩...略懂</span><span class="push-ipdatetime"> 04/19 03:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">surimodo</span><span class="f3 push-content">: AMD YES</span><span class="push-ipdatetime"> 04/19 03:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Dinenger</span><span class="f3 push-content">: 我修過資訊概論兩學期，跟我想得差不多嘛</span><span class="push-ipdatetime"> 04/19 03:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smallcar801</span><span class="f3 push-content">: 還弄一個直譯器真的很浪費才能…跪著看完</span><span class="push-ipdatetime"> 04/19 03:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @smallcar801, www.slideshare.net/jserv/vm-construct #</span><span class="push-ipdatetime"> 04/19 03:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">adifdtd</span><span class="f3 push-content">: 還真的有brainfuck  XDD</span><span class="push-ipdatetime"> 04/19 03:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 才能若要充分「浪費」，應該先從設計高階描述轉BF的編譯器</span><span class="push-ipdatetime"> 04/19 03:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 開始，過程中可搭配特定的巨集或工具集設計，並且改善虛擬</span><span class="push-ipdatetime"> 04/19 03:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 機器的執行效能，甚至設計profiler來追蹤hotspot，當然JIT</span><span class="push-ipdatetime"> 04/19 03:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DLHZ</span><span class="f3 push-content">: 獻出我的膝蓋</span><span class="push-ipdatetime"> 04/19 03:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 或AOT編譯器的實作也很吸引人，最後再附上形式化驗證</span><span class="push-ipdatetime"> 04/19 03:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xinov1139311</span><span class="f3 push-content">: 跪求whitespace或chicken寫法</span><span class="push-ipdatetime"> 04/19 03:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BBQSaShiMi</span><span class="f3 push-content">: 半夜看見神 這個好有趣</span><span class="push-ipdatetime"> 04/19 03:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dsct</span><span class="f3 push-content">: 先推 假裝看得懂</span><span class="push-ipdatetime"> 04/19 03:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @Splash5, 若要為了嘉瑜設計BF的方言(變種)，我好有興趣</span><span class="push-ipdatetime"> 04/19 03:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">twosheep0603</span><span class="f3 push-content">: 半夜不睡看見神了</span><span class="push-ipdatetime"> 04/19 03:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">drajan</span><span class="f3 push-content">: 想不到brainfuck這麼有內涵 看wiki還以為只是來鬧場的</span><span class="push-ipdatetime"> 04/19 03:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WYchuang</span><span class="f3 push-content">: [-[-[-[-[-[-[-[-[-&lt;-&gt;[-&lt;+&lt;-&gt;&gt;]]]]]]]]]] 這回圈好噁心</span><span class="push-ipdatetime"> 04/19 03:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">woifeiwen</span><span class="f3 push-content">: 公 三小                          阿我怎麼按推了</span><span class="push-ipdatetime"> 04/19 03:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">scarfman</span><span class="f3 push-content">: 有神快拜</span><span class="push-ipdatetime"> 04/19 03:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @woifeiwen, 我不是故意跟你的大腦交流的...</span><span class="push-ipdatetime"> 04/19 03:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dmeiki</span><span class="f3 push-content">: 太帥了</span><span class="push-ipdatetime"> 04/19 03:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wei115</span><span class="f3 push-content">: <a href="https://copy.sh/brainfuck/" target="_blank" rel="nofollow">https://copy.sh/brainfuck/</a></span><span class="push-ipdatetime"> 04/19 03:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wei115</span><span class="f3 push-content">: 為什麼用這直譯器得出的直是3.141135232456912829104152？</span><span class="push-ipdatetime"> 04/19 03:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wei115</span><span class="f3 push-content">: 值</span><span class="push-ipdatetime"> 04/19 03:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @wei115, 好問題!Brainfuck的執行結果依賴cell size而定</span><span class="push-ipdatetime"> 04/19 03:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">honsan</span><span class="f3 push-content">: 推宅色夫</span><span class="push-ipdatetime"> 04/19 03:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 這是BF實作上一個致命的問題，往往導致non-portable</span><span class="push-ipdatetime"> 04/19 03:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 由執行結果可推知，copy.sh的BF實作和我給予的程式對於cell</span><span class="push-ipdatetime"> 04/19 03:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">twosheep0603</span><span class="f3 push-content">: 理論上無限長的紙帶被直譯器限制了？</span><span class="push-ipdatetime"> 04/19 03:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: size規範不同，8-bit cell會導致4個位數後就有overflow</span><span class="push-ipdatetime"> 04/19 03:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 16-bit cell的BF則會讓537位數後發生overflow</span><span class="push-ipdatetime"> 04/19 03:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 倘若改為32-bit cell，overflow就會在數百萬位數後才發生</span><span class="push-ipdatetime"> 04/19 03:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @twosheep0603, Wikipedia的Brainfuck詞目提到Portability</span><span class="push-ipdatetime"> 04/19 03:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: issues: Cell size, Array size, End-of-line code,</span><span class="push-ipdatetime"> 04/19 03:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: End-of-file behavior.</span><span class="push-ipdatetime"> 04/19 03:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @wei115, 若這樣的解釋你可理解，歡迎撰寫可變更cell size</span><span class="push-ipdatetime"> 04/19 03:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 的直譯器並調整pi.b的實作，來驗證上述overflow議題</span><span class="push-ipdatetime"> 04/19 03:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wei115</span><span class="f3 push-content">: 喔喔，感謝解惑，之前我寫的都是8bit現在改成16bit和32bit</span><span class="push-ipdatetime"> 04/19 03:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wei115</span><span class="f3 push-content">: 執行結果都與範例一致</span><span class="push-ipdatetime"> 04/19 03:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 所以說，BF真是「知易行難」，理解指令的意義只要三分鐘</span><span class="push-ipdatetime"> 04/19 04:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 但涉及到可攜性、最佳化，還有轉譯現有應用，都很難</span><span class="push-ipdatetime"> 04/19 04:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @tyrande, 昨天媽祖提醒我要自幹C語言編譯器，所以我就趕出</span><span class="push-ipdatetime"> 04/19 04:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 一個原始程式碼約2千5百行的小型C語言編譯器，稍後我貼出來</span><span class="push-ipdatetime"> 04/19 04:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">morrislek</span><span class="f3 push-content">: 耶，每個字母我都看的懂耶！啾咪</span><span class="push-ipdatetime"> 04/19 04:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LuMya</span><span class="f3 push-content">: 跟我想的差不多 給推</span><span class="push-ipdatetime"> 04/19 04:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gaduoray</span><span class="f3 push-content">: 釣到了==</span><span class="push-ipdatetime"> 04/19 04:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashura1234</span><span class="f3 push-content">: ...這什麼</span><span class="push-ipdatetime"> 04/19 04:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stw0975</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 05:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">aeolus811tw</span><span class="f3 push-content">: 要是你把BBP改成BF就能準確計算了, 不過那個大小應該</span><span class="push-ipdatetime"> 04/19 05:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">aeolus811tw</span><span class="f3 push-content">: 很變態</span><span class="push-ipdatetime"> 04/19 05:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ramirez</span><span class="f3 push-content">: 那部</span><span class="push-ipdatetime"> 04/19 05:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abram</span><span class="f3 push-content">: 何不 print(“3.1415”)</span><span class="push-ipdatetime"> 04/19 05:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @aeolus811tw, 量化分析很有趣呀</span><span class="push-ipdatetime"> 04/19 06:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @abram, printf函式內建的format string本質上也是Turing</span><span class="push-ipdatetime"> 04/19 06:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 完備，這意味著，上述的BF直譯器能透過printf來實作 (!)</span><span class="push-ipdatetime"> 04/19 06:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 詳見: <a href="https://github.com/HexHive/printbf" target="_blank" rel="nofollow">https://github.com/HexHive/printbf</a></span><span class="push-ipdatetime"> 04/19 06:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">saint01</span><span class="f3 push-content">: 好</span><span class="push-ipdatetime"> 04/19 06:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: HN一則評語很傳神: &#34;Ah yes, Brainfuck. For when assembly</span><span class="push-ipdatetime"> 04/19 06:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: is too easy.&#34;</span><span class="push-ipdatetime"> 04/19 06:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">StarCat76</span><span class="f3 push-content">: 啊啊 樓下說略懂略懂</span><span class="push-ipdatetime"> 04/19 06:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Informatik</span><span class="f3 push-content">: 先推再說</span><span class="push-ipdatetime"> 04/19 06:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">airyptt</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 06:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">peterj0727</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 06:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">h73o1012</span><span class="f3 push-content">: 8==============D~0</span><span class="push-ipdatetime"> 04/19 06:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amethystboy</span><span class="f3 push-content">: 我希望用雙手駕馭C 罩杯</span><span class="push-ipdatetime"> 04/19 06:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">maxian30201</span><span class="f3 push-content">: 好羨慕看得懂的人Q_Q</span><span class="push-ipdatetime"> 04/19 07:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aresou</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 07:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">casco5566</span><span class="f3 push-content">: 神人</span><span class="push-ipdatetime"> 04/19 07:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WindSucker</span><span class="f3 push-content">: 嗯嗯</span><span class="push-ipdatetime"> 04/19 07:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">traboffic</span><span class="f3 push-content">: 我的brainfucked up了</span><span class="push-ipdatetime"> 04/19 07:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ee8iqp7x</span><span class="f3 push-content">: 2990wx...</span><span class="push-ipdatetime"> 04/19 07:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Luluemiko</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 07:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hepatomasu</span><span class="f3 push-content">: 寫沙小</span><span class="push-ipdatetime"> 04/19 07:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ambitious</span><span class="f3 push-content">: 嗯 跟我想的差不多</span><span class="push-ipdatetime"> 04/19 07:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">VrGnKiler</span><span class="f3 push-content">: 教授好！</span><span class="push-ipdatetime"> 04/19 07:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eggbird</span><span class="f3 push-content">: 完全不懂，只能推</span><span class="push-ipdatetime"> 04/19 08:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">playboy78945</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 08:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jhangyu</span><span class="f3 push-content">: 是來自新世界的神</span><span class="push-ipdatetime"> 04/19 08:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mmarty</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 08:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ck517</span><span class="f3 push-content">: 強</span><span class="push-ipdatetime"> 04/19 08:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yuiweq1999</span><span class="f3 push-content">: 有神快拜</span><span class="push-ipdatetime"> 04/19 08:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">goodfuture</span><span class="f3 push-content">: 大神受小弟一拜！！</span><span class="push-ipdatetime"> 04/19 08:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hercheles</span><span class="f3 push-content">: 神人出現</span><span class="push-ipdatetime"> 04/19 08:24
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">bonfferoni</span><span class="f3 push-content">: 公啥洨</span><span class="push-ipdatetime"> 04/19 08:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">erre</span><span class="f3 push-content">: 還是輸陳博，看不到車尾燈</span><span class="push-ipdatetime"> 04/19 08:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mynewid</span><span class="f3 push-content">: 嗯嗯,算寫得不錯</span><span class="push-ipdatetime"> 04/19 08:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tongzhou</span><span class="f3 push-content">: 有神快敗</span><span class="push-ipdatetime"> 04/19 08:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dcoog7880</span><span class="f3 push-content">: 快推</span><span class="push-ipdatetime"> 04/19 08:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chang564</span><span class="f3 push-content">: 這！！強</span><span class="push-ipdatetime"> 04/19 08:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kenny60710</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime"> 04/19 08:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lakeinlake</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 08:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ura1210</span><span class="f3 push-content">: 想請問怎麼不用fclose 不需要釋放嗎</span><span class="push-ipdatetime"> 04/19 08:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">richardz</span><span class="f3 push-content">: 完全看不懂=.=</span><span class="push-ipdatetime"> 04/19 08:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MattOwl</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 09:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abb123456</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 09:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chaunen</span><span class="f3 push-content">: 靠 太專業了吧</span><span class="push-ipdatetime"> 04/19 09:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jackwula9211</span><span class="f3 push-content">: 松鼠重返榮耀</span><span class="push-ipdatetime"> 04/19 09:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">silverzeus</span><span class="f3 push-content">: 有神快拜:)</span><span class="push-ipdatetime"> 04/19 09:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chang505</span><span class="f3 push-content">: 好噁</span><span class="push-ipdatetime"> 04/19 09:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yeh0416</span><span class="f3 push-content">: hello world</span><span class="push-ipdatetime"> 04/19 09:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiwi0530</span><span class="f3 push-content">: 老師超強</span><span class="push-ipdatetime"> 04/19 09:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Raynor</span><span class="f3 push-content">: 不用fclose是因為FILE *f宣告在for迴圈內的關係嗎？</span><span class="push-ipdatetime"> 04/19 09:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Raynor</span><span class="f3 push-content">: 我記得迴圈結束會自動釋放</span><span class="push-ipdatetime"> 04/19 09:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Archer55b6</span><span class="f3 push-content">: 推，長知識</span><span class="push-ipdatetime"> 04/19 09:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tim0922</span><span class="f3 push-content">: 跪惹</span><span class="push-ipdatetime"> 04/19 09:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iambillno1la</span><span class="f3 push-content">: 嗯嗯嗯嗯  中間那段再補充些 就更好了</span><span class="push-ipdatetime"> 04/19 10:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chiu1505</span><span class="f3 push-content">: …好猛</span><span class="push-ipdatetime"> 04/19 10:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ant0210</span><span class="f3 push-content">: 嗯嗯 完全看不懂</span><span class="push-ipdatetime"> 04/19 10:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jwchao</span><span class="f3 push-content">: 大神凌晨出巡</span><span class="push-ipdatetime"> 04/19 10:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">internetms52</span><span class="f3 push-content">: 推...辛苦了...</span><span class="push-ipdatetime"> 04/19 10:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zero11995</span><span class="f3 push-content">: 太屌= =</span><span class="push-ipdatetime"> 04/19 10:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wate5566</span><span class="f3 push-content">: AMD yes!! <a href="http://i.imgur.com/0ZvsF2b.jpg" target="_blank" rel="nofollow">http://i.imgur.com/0ZvsF2b.jpg</a></span><span class="push-ipdatetime"> 04/19 10:18
+</span></div><div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="0ZvsF2b"><a href="//imgur.com/0ZvsF2b"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DarkyIsCat</span><span class="f3 push-content">: 嗚wow</span><span class="push-ipdatetime"> 04/19 10:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hank850503</span><span class="f3 push-content">: 三小…</span><span class="push-ipdatetime"> 04/19 10:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">serding</span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime"> 04/19 10:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wahaha99</span><span class="f3 push-content">: 神人 @@</span><span class="push-ipdatetime"> 04/19 10:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ian90911</span><span class="f3 push-content">: 太神啦</span><span class="push-ipdatetime"> 04/19 10:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">coburn</span><span class="f3 push-content">: 摸透C語言摸不到C罩杯 推導方程式推不倒小學妹 推一個</span><span class="push-ipdatetime"> 04/19 10:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @ura1210, 為了縮減行數，我就偷懶假設底層作業系統能釋放</span><span class="push-ipdatetime"> 04/19 10:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: stream I/O資源</span><span class="push-ipdatetime"> 04/19 10:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @bonfferoni, 一句話: Brainfuck (不是雙關語)</span><span class="push-ipdatetime"> 04/19 10:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @coburn, 感謝提醒，之後我會補充方程式推導</span><span class="push-ipdatetime"> 04/19 10:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 小學妹也可以談啦，數學軼事挺多</span><span class="push-ipdatetime"> 04/19 10:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @jhangyu, 人人都該是電腦的主人</span><span class="push-ipdatetime"> 04/19 10:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">conq</span><span class="f3 push-content">: 好…好猛</span><span class="push-ipdatetime"> 04/19 11:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @amethystboy, 我雙手駕馭後，現在成為專職奶爸</span><span class="push-ipdatetime"> 04/19 11:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fallen01</span><span class="f3 push-content">: 恩恩  老師跟我想的一樣</span><span class="push-ipdatetime"> 04/19 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @iambillno1la, 好的，歡迎發文推坑，我可以多多練習打字</span><span class="push-ipdatetime"> 04/19 11:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">roggerbass</span><span class="f3 push-content">: 有神快拜</span><span class="push-ipdatetime"> 04/19 11:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Meerz</span><span class="f3 push-content">: 講中文好嗎？</span><span class="push-ipdatetime"> 04/19 11:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a2470abc</span><span class="f3 push-content">: brainfuck也能自幹0.0 AMD重返榮耀了</span><span class="push-ipdatetime"> 04/19 11:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stiles</span><span class="f3 push-content">: 朝聖推</span><span class="push-ipdatetime"> 04/19 11:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">usoko</span><span class="f3 push-content">: 幹既神又無聊XDDDDD</span><span class="push-ipdatetime"> 04/19 11:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @usoko, 之後補幾個non-trivial應用，就不會無聊了</span><span class="push-ipdatetime"> 04/19 11:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">penta</span><span class="f3 push-content">: 老師 我資質真的不夠ww</span><span class="push-ipdatetime"> 04/19 11:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @penta, 歡迎一同學習: <a href="http://hackfoldr.org/dykc/" target="_blank" rel="nofollow">http://hackfoldr.org/dykc/</a></span><span class="push-ipdatetime"> 04/19 11:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @ant0210, 可參閱 <a href="https://hackmd.io/s/SkBsZoReb" target="_blank" rel="nofollow">https://hackmd.io/s/SkBsZoReb</a></span><span class="push-ipdatetime"> 04/19 11:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">HowLeeHi</span><span class="f3 push-content">: push</span><span class="push-ipdatetime"> 04/19 12:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chigi</span><span class="f3 push-content">: 跪了</span><span class="push-ipdatetime"> 04/19 12:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rog43</span><span class="f3 push-content">: 老師又被釣出來了</span><span class="push-ipdatetime"> 04/19 12:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LierX</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/19 12:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nicayoung</span><span class="f3 push-content">: 每個字都看得懂，合起來完全看不懂XD</span><span class="push-ipdatetime"> 04/19 12:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">farseer7</span><span class="f3 push-content">: 有神快拜</span><span class="push-ipdatetime"> 04/19 12:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jasonwung</span><span class="f3 push-content">: 先推</span><span class="push-ipdatetime"> 04/19 13:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">planetstar</span><span class="f3 push-content">: 強！</span><span class="push-ipdatetime"> 04/19 13:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @usoko, 冒險遊戲 &#39;Lost Kingdom&#39; 可用 Brainfuck 實作</span><span class="push-ipdatetime"> 04/19 14:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: <a href="http://jonripley.com/i-fiction/games/LostKingdomBF.html" target="_blank" rel="nofollow">http://jonripley.com/i-fiction/games/LostKingdomBF.html</a></span><span class="push-ipdatetime"> 04/19 14:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @wei115, 可在 <a href="https://esolangs.org" target="_blank" rel="nofollow">https://esolangs.org</a> 搜尋</span><span class="push-ipdatetime"> 04/19 14:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: &#34;Brainfuck bitwidth conversions&#34;，得知8-bit BF的轉換</span><span class="push-ipdatetime"> 04/19 14:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @wate5566, 重返榮耀！</span><span class="push-ipdatetime"> 04/19 14:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">splasky</span><span class="f3 push-content">: 嗯嗯 跟我想的一樣</span><span class="push-ipdatetime"> 04/19 14:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @splasky, 等你的 pull request 啊</span><span class="push-ipdatetime"> 04/19 14:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">azzc1031</span><span class="f3 push-content">: 恩恩 跟我洗澡時想的差不多</span><span class="push-ipdatetime"> 04/19 15:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @Meerz, 你若真要「中文」的程式語言，可找「草泥馬語」</span><span class="push-ipdatetime"> 04/19 15:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 參見: <a href="https://segmentfault.com/a/1190000000606169" target="_blank" rel="nofollow">https://segmentfault.com/a/1190000000606169</a></span><span class="push-ipdatetime"> 04/19 15:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 以下示範用「草泥馬語輸出 1, 2, 3, ..., 10 等數值</span><span class="push-ipdatetime"> 04/19 15:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 草草草泥馬 馬草草草泥草草草草泥泥馬</span><span class="push-ipdatetime"> 04/19 15:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 草馬草 泥馬草泥 草草草泥草泥草馬</span><span class="push-ipdatetime"> 04/19 15:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 泥馬草草 草草草泥馬 泥草草草 草馬草</span><span class="push-ipdatetime"> 04/19 15:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 草草草泥草泥泥馬 泥草草</span><span class="push-ipdatetime"> 04/19 15:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 馬泥草草泥草草草泥草泥馬</span><span class="push-ipdatetime"> 04/19 15:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 馬草馬草泥草草草草泥泥馬</span><span class="push-ipdatetime"> 04/19 15:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 馬草草草泥草草草泥草泥馬 草馬馬 馬馬馬</span><span class="push-ipdatetime"> 04/19 15:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: ---(((上面都是中文字，組合起來就費解了)))---</span><span class="push-ipdatetime"> 04/19 15:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeffrank</span><span class="f3 push-content">: ................好詩好詩</span><span class="push-ipdatetime"> 04/19 15:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 科普文章: <a href="https://www.ithome.com.tw/voice/126027" target="_blank" rel="nofollow">https://www.ithome.com.tw/voice/126027</a></span><span class="push-ipdatetime"> 04/19 15:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stiles</span><span class="f3 push-content">: 朝聖推</span><span class="push-ipdatetime"> 04/19 16:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sam90205</span><span class="f3 push-content">: .... 太神啦</span><span class="push-ipdatetime"> 04/19 17:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wzshi</span><span class="f3 push-content">: 說中文</span><span class="push-ipdatetime"> 04/19 17:31
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">wario2014</span><span class="f3 push-content">: 大哥，請講地球話，謝謝</span><span class="push-ipdatetime"> 04/19 17:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ten9</span><span class="f3 push-content">: 朝聖 XDDDDDDD</span><span class="push-ipdatetime"> 04/19 19:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">positMIT</span><span class="f3 push-content">: ubuntu給推</span><span class="push-ipdatetime"> 04/19 19:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MoreCourage</span><span class="f3 push-content">: 跪推</span><span class="push-ipdatetime"> 04/19 20:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jssmile</span><span class="f3 push-content">: 朝聖</span><span class="push-ipdatetime"> 04/19 20:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">thaleschou</span><span class="f3 push-content">: 我都看了些什麼</span><span class="push-ipdatetime"> 04/19 20:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BabySatan</span><span class="f3 push-content">: 直譯器是不是少了一個 BF operator &#34;,&#34;</span><span class="push-ipdatetime"> 04/19 22:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yin0123</span><span class="f3 push-content">: 朝聖</span><span class="push-ipdatetime"> 04/19 23:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">user1120</span><span class="f3 push-content">: 強</span><span class="push-ipdatetime"> 04/20 00:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric21489</span><span class="f3 push-content">: 百推內</span><span class="push-ipdatetime"> 04/20 01:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ikenaka</span><span class="f3 push-content">: 推成大神</span><span class="push-ipdatetime"> 04/20 02:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Benbenyale</span><span class="f3 push-content">: 未來寫程式可能跟藝術一樣 沒有選語言的限制</span><span class="push-ipdatetime"> 04/20 06:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @BabySatan, 是的，輸入的指令故意忽略，為了省行數</span><span class="push-ipdatetime"> 04/20 09:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @wario2014, 在地球上能夠被人理解的語言算地球話吧？BF是</span><span class="push-ipdatetime"> 04/20 09:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @eric21489, 望您牽成，再推幾把</span><span class="push-ipdatetime"> 04/20 09:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @thaleschou, 你看到活生生的圖靈機</span><span class="push-ipdatetime"> 04/20 09:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @wzshi, 中文程式語言好幾套，包含台灣人做的丙正正(C++的</span><span class="push-ipdatetime"> 04/20 09:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 中文版本，用中文保留字和允許中文符號)</span><span class="push-ipdatetime"> 04/20 09:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 上述的pi.b運作原理是1995年BBP公式的變形，儘管BF沒內建</span><span class="push-ipdatetime"> 04/20 09:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 豐富數學運算，但由於其Turing完備本質，所以我們仍可將BBP</span><span class="push-ipdatetime"> 04/20 09:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 轉換為等價BF操作，於是圓周率的計算類似長整數乘法，展開</span><span class="push-ipdatetime"> 04/20 09:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 為一系列的指標和迴圈操作</span><span class="push-ipdatetime"> 04/20 09:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jahfone</span><span class="f3 push-content">: U文 在fb看到跑來推文</span><span class="push-ipdatetime"> 04/20 09:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nurockplayer</span><span class="f3 push-content">: 朝聖推</span><span class="push-ipdatetime"> 04/20 10:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 不免會有人質疑上述手法「有什麼用？」用途總是人們找出的</span><span class="push-ipdatetime"> 04/20 16:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 比方說，這手法對於程式混淆器有一定助益，成就write-only</span><span class="push-ipdatetime"> 04/20 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: code，要從Brainf*ck一類程式碼反推最初高階程式流程相當難</span><span class="push-ipdatetime"> 04/20 16:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 延伸閱讀: <a href="https://youtu.be/R7EEoWg6Ekk" target="_blank" rel="nofollow">https://youtu.be/R7EEoWg6Ekk</a></span><span class="push-ipdatetime"> 04/20 16:29
+</span></div><div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/R7EEoWg6Ekk" frameborder="0" allowfullscreen></iframe></div></div></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JapanEmperor</span><span class="f3 push-content">: j教授又下凡了 跪</span><span class="push-ipdatetime"> 04/20 22:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fragmentwing</span><span class="f3 push-content">: 居然被大神回啦 以後開始學C回來看看</span><span class="push-ipdatetime"> 04/22 05:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JustinHere</span><span class="f3 push-content">: 前陣子玩過 <a href="https://openhome.cc/Gossip/Computation/" target="_blank" rel="nofollow">https://openhome.cc/Gossip/Computation/</a></span><span class="push-ipdatetime"> 04/22 08:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @fragmentwing, 你要多推坑，讓我可以置入性行銷C語言</span><span class="push-ipdatetime"> 04/22 10:19
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Gossiping/M.1555612071.A.14C.html?cacheKey=2100-51623996&amp;offset=29020&amp;offset-sig=acff077e8416cf69f982a3da0a6ba29804e378db" data-longpollurl="/v1/longpoll?id=58a893663291f327ae6922563137916fd1cce54e" data-offset="29020"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

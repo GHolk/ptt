@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問卦] 不用函數庫和亂數 寫程式求pi值的方法? - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="每次看到大神出來回文，就是不一樣。
+小弟只是做一點補充，關於 Brainf*ck 程式語言的部分（看完腦袋都糊成一塊）
+這有什麼用途呢？
+用途很大，可以拯救一整個物種。
+我們都知道皮卡丘在惡劣的工作環境，有事沒事都要聽從訓練家出去戰鬥，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問卦] 不用函數庫和亂數 寫程式求pi值的方法?">
+<meta property="og:description" content="每次看到大神出來回文，就是不一樣。
+小弟只是做一點補充，關於 Brainf*ck 程式語言的部分（看完腦袋都糊成一塊）
+這有什麼用途呢？
+用途很大，可以拯救一整個物種。
+我們都知道皮卡丘在惡劣的工作環境，有事沒事都要聽從訓練家出去戰鬥，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1555665713.A.AF7.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Gossiping/M.1555665713.A.AF7.html"></div>
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">kcheart (很菜很魯 就是魯菜嗎？)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問卦] 不用函數庫和亂數 寫程式求pi值的方法?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Apr 19 17:21:48 2019</span></div>
+每次看到大神出來回文，就是不一樣。
+
+小弟只是做一點補充，關於 Brainf*ck 程式語言的部分（看完腦袋都糊成一塊）
+
+這有什麼用途呢？
+用途很大，可以拯救一整個物種。
+
+我們都知道皮卡丘在惡劣的工作環境，有事沒事都要聽從訓練家出去戰鬥，
+三不五時還會被打得片體鱗傷，
+為了拯救皮卡丘，除了建立收容之家，收容眾多的皮卡丘之外，
+也許有一個更好的方式，就是幫他們轉職，脫離險惡的工作環境及僱主。
+那要轉職什麼好呢？
+考慮現在的就業市場，可以轉職成高薪的程式設計師。
+
+我們知道皮卡丘(pikachu)，只會發出三個聲音 pi ka chu，
+所以我們依照皮卡丘的語言特性，設計一個專屬皮卡丘使用的程式語言。[1]
+這個程式語言，可讓皮卡丘專屬使用，且容易使用。
+
+Brainfuck       Pikalang
+---------       ---------
+<span class="f6">&gt;               pipi
+</span>&lt;               pichu
++               pi
+-               ka
+.               pikachu
+,               pikapi
+[               pika
+]               chu
+
+
+所以 Hello, world! 的程式碼，使用皮卡丘程式語言，就可以寫成
+
+pi pi pi pi pi pi pi pi pi pi pika pipi pi pi pi pi pi pi pi pipi pi pi
+pi pi pi pi pi pi pi pi pipi pi pi pi pipi pi pichu pichu pichu pichu ka
+chu pipi pi pi pikachu pipi pi pikachu pi pi pi pi pi pi pi pikachu
+pikachu pi pi pi pikachu pipi pi pi pikachu pichu pichu pi pi pi pi pi
+pi pi pi pi pi pi pi pi pi pi pikachu pipi pikachu pi pi pi pikachu ka
+ka ka ka ka ka pikachu ka ka ka ka ka ka ka ka pikachu pipi pi pikachu
+pipi pikachu
+
+
+這樣子，皮卡丘們就可以順利轉職，是不是很棒呢？
+
+
+[1] <a href="https://esolangs.org/wiki/pikalang" target="_blank" rel="nofollow">https://esolangs.org/wiki/pikalang</a>
+
+
+當然皮卡丘程式語言，不是只有一種，也有其他設計的方式，
+像是
+<a href="http://trove42.com/pikachu-syntax-rules/" target="_blank" rel="nofollow">http://trove42.com/pikachu-syntax-rules/</a>
+
+
+大家一起來幫助皮卡丘～
+
+
+<span class="f2">※ 引述《jserv (松鼠)》之銘言：
+</span><span class="f6">: ※ 引述《fragmentwing (片翼碎夢)》之銘言：
+</span><span class="f6">: : 小弟程式設計新手
+</span><span class="f6">: : 看到後面的講義習題要算圓周率
+</span><span class="f6">: : 如果不用亂數，也不用函數庫的話
+</span><span class="f6">: : 我自己用了一個在寫之前就覺得很浪費電腦能力的方法
+</span><span class="f6">: : 在電腦能力處理極限，還沒法精確到小數點後第二位呢
+</span><span class="f6">: : 鄉民會怎麼用程式求圓周率呢?
+</span><span class="f6">: 這裡提供一種途徑，只用到 C 語言標準函式庫裡頭的以下函式:
+</span><span class="f6">: * fopen / fclose
+</span><span class="f6">: * getc / putc
+</span><span class="f6">: 既然上述說要「浪費電腦能力」，那我們不妨試試這個策略:
+</span><span class="f6">: a. 實作符合 Turing completeness (圖靈完備) 的 Brainfuck 程式語言 [1]
+</span><span class="f6">:    執行環境;
+</span><span class="f6">: b. 撰寫 Brainfuck 程式，使其得以計算圓周率，並用十進位浮點數輸出;
+</span><span class="f6">: 可將 Brainfuck 的執行環境設想為一台機器，擁有一個讀寫頭及無限長的紙帶，
+</span><span class="f6">: 機器會依下列指令進行操作:
+</span><span class="f6">:     &gt; : 使讀寫頭在紙帶上前進一格
+</span><span class="f6">:     &lt; : 使讀寫頭在紙帶上後退一格
+</span><span class="f6">:     + : 對目前讀寫頭下的值，進行遞增 1 的運算
+</span><span class="f6">:     - : 對目前讀寫頭下的值，進行遞減 1 的運算
+</span><span class="f6">:     . : 將目前讀寫頭下的值，以對應的字母輸出
+</span><span class="f6">:     , : 將目前讀寫頭下的字母讀入並轉為數字後寫回
+</span><span class="f6">:     [ : 比較目前的值，若不為 0 即前進，若為 0 就略過指令，直到遇上匹配的 ]
+</span><span class="f6">:     ] : 比較目前的值，若不為 0，指令要跳回上個出現 [ 的位置
+</span><span class="f6">: 不難發現，作為一個「知易行難」的程式語言，Brainfuck 僅有 8 個指令，其中
+</span><span class="f6">: 2 個是 I/O 動作。作為 Turing machine 的實踐，Brainfuck 對記憶體單元作直接
+</span><span class="f6">: 存取，對應到 C 語言的概念來說，如果 char *p 指向記憶體區塊的話，Brainfuck
+</span><span class="f6">: 語言的 8 個指令可對照為以下 C 等價敘述:
+</span><span class="f6">:     Brainfuck       C
+</span><span class="f6">:     ---------       ---------
+</span><span class="f6">:     &gt;               ++p;
+</span><span class="f6">:     &lt;               --p;
+</span><span class="f6">:     +               ++*p;
+</span><span class="f6">:     -               --*p;
+</span><span class="f6">:     .               putchar(*p);
+</span><span class="f6">:     ,               *p = getchar();
+</span><span class="f6">:     [               while (*p) {
+</span><span class="f6">:     ]               }
+</span><span class="f6">: 也就是說，下方的 Brainfuck 程式碼：
+</span><span class="f6">:     +++++[-]
+</span><span class="f6">: 對應到 C 語言程式碼為：
+</span><span class="f6">:     *p = +5;
+</span><span class="f6">:     while (*p != 0) {
+</span><span class="f6">:         *p--;
+</span><span class="f6">:     }
+</span><span class="f6">: 既然有了指令對照表，我們即可著手建構小型的 Brainfuck 直譯器: (檔名為 bf.c)
+</span><span class="f6">: #include &lt;stdio.h&gt;
+</span><span class="f6">: #include &lt;stdlib.h&gt;
+</span><span class="f6">: static int p[64 * 1024], d[1024 * 1024], r, t, e;
+</span><span class="f6">: int main(int c, char *v[]) {
+</span><span class="f6">:     if (c &lt; 2) exit(1);
+</span><span class="f6">:     for (FILE *f = fopen(v[1], &#34;r&#34;); f &amp;&amp; (c = getc(f)) != EOF; p[r++] = c);
+</span><span class="f6">:     for (r = 0; (c = p[r]); r++) {
+</span><span class="f6">:         if (c == &#39;&gt;&#39;) t++;
+</span><span class="f6">:         if (c == &#39;&lt;&#39;) t--;
+</span><span class="f6">:         if (c == &#39;+&#39;) d[t]++;
+</span><span class="f6">:         if (c == &#39;-&#39;) d[t]--;
+</span><span class="f6">:         if (c == &#39;.&#39;) putc(d[t], stdout);
+</span><span class="f6">:         for (e = 0; c == &#39;[&#39; &amp;&amp; !d[t]; r++) {
+</span><span class="f6">:             if (p[r] == &#39;[&#39;) e++;
+</span><span class="f6">:             if ((p[r] == &#39;]&#39;) &amp;&amp; (e-- == 1)) break;
+</span><span class="f6">:         }
+</span><span class="f6">:         for (; c == &#39;]&#39; &amp;&amp; d[t]; r--) {
+</span><span class="f6">:             if (p[r] == &#39;]&#39;) e++;
+</span><span class="f6">:             if ((p[r] == &#39;[&#39;) &amp;&amp; (e-- == 1)) break;
+</span><span class="f6">:         }
+</span><span class="f6">:     }
+</span><span class="f6">: }
+</span><span class="f6">: 回到一開始提到的 Turing completeness，Brainfuck 與其說是程式語言，不如說是
+</span><span class="f6">: 一台理想機器的描述：機器具有無限的儲存 (storage，也就是無限長的紙帶)、運算
+</span><span class="f6">: (arithmetic，如遞增和遞減)、條件判斷 ([ ] 涉及目前值是否為 0 的判斷) 以及
+</span><span class="f6">: 重複 (repetition，這也是 [ ] 的行為)，Brainfuck 這台機器具備上述四項特徵，
+</span><span class="f6">: 是 Turing completeness。依據 Alan Turing 的觀點，這樣的一台機器，即可模擬
+</span><span class="f6">: 人類所能進行的任何計算過程，自然就包含圓周率的計算。
+</span><span class="f6">: Felix Nawothnig 撰寫出可依據給定位數要求，計算並輸出十進位表示法的 Brainfuck
+</span><span class="f6">: 程式 [2]，我略作調整，如下: (檔名為 pi.b)
+</span><span class="f6">: &gt;  +++++ +++++ +++++ +++++ +++++ (25 digits)
+</span><span class="f6">: [&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;++++++++++&lt;&lt;&lt;&lt;&lt;&lt;&lt;-]&gt;+++++[&lt;+++++++++&gt;-]+&gt;&gt;&gt;&gt;&gt;&gt;+[&lt;&lt;+++[&gt;&gt;[-&lt;]&lt;[&gt;]&lt;-]&gt;
+</span><span class="f6">: &gt;[&gt;+&gt;]&lt;[&lt;]&gt;]&gt;[[-&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;]&gt;&gt;&gt;+++&gt;-]&lt;[&lt;&lt;&lt;&lt;]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+[-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;[&lt;+[-&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;
+</span><span class="f6">: ]&gt;&gt;&gt;&gt;&gt;]&lt;&lt;&lt;&lt;[&gt;&gt;&gt;&gt;&gt;[&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;-[&lt;&lt;++++++++++&gt;&gt;-]&gt;&gt;&gt;[&lt;&lt;[&lt;+&lt;&lt;+&gt;&gt;&gt;-]&lt;[&gt;+&lt;-]&lt;++
+</span><span class="f6">: &lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;[-]&lt;&lt;-&lt;[-&gt;&gt;+&lt;-[&gt;&gt;&gt;]&gt;[[&lt;+&gt;-]&gt;+&gt;&gt;]&lt;&lt;&lt;&lt;&lt;]&gt;[-]&gt;+&lt;&lt;&lt;-[&gt;&gt;+&lt;&lt;-]&lt;]&lt;&lt;&lt;&lt;+&gt;&gt;&gt;
+</span><span class="f6">: -]&lt;&lt;&lt;&lt;+&lt;+&gt;&gt;[-[-[-[-[-[-[-[-[-&lt;-&gt;[-&lt;+&lt;-&gt;&gt;]]]]]]]]]]&lt;[+++++[&lt;&lt;&lt;++++++++&lt;++++++++&gt;
+</span><span class="f6">: &gt;[&gt;&gt;.&lt;&lt;-]&gt;[-]&gt;[-]&gt;&gt;&gt;[&gt;&gt;[&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;-]]&gt;&gt;[-]&lt;&lt;&lt;[-]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;]++++++++++.
+</span><span class="f6">: 乍看鬼畫符的程式，注意到最後一個字元是 . (將目前讀寫頭下的值，以對應的字母輸出)
+</span><span class="f6">: 編譯 Brainfuck 直譯器並載入圓周率計算程式:
+</span><span class="f6">:     $ gcc -o bf bf.c
+</span><span class="f6">:     $ ./bf pi.b
+</span><span class="f6">: 在我的電腦 (AMD Ryzen Threadripper 2990WX 32-Core Processor, AMD 重返榮耀!) 搭配
+</span><span class="f6">: Ubuntu Linux 18.04 LTS，執行時間約為 0.3 秒，ELF 執行檔約佔 6KB 空間。
+</span><span class="f6">: 參考執行輸出如下:
+</span><span class="f6">:     3.141592653589793238462643
+</span><span class="f6">: 若要提高圓周率計算的有效位數，那麼修改 pi.b 的第一行，把 + 指令的數量增加即可。
+</span><span class="f6">: 用雙手駕馭電腦的滋味，真是美妙 :-)
+</span><span class="f6">: [1] brainf*ck: <a href="https://esolangs.org/wiki/brainfuck" target="_blank" rel="nofollow">https://esolangs.org/wiki/brainfuck</a>
+</span><span class="f6">: [2] <a href="https://copy.sh/brainfuck/prog/yapi.b" target="_blank" rel="nofollow">https://copy.sh/brainfuck/prog/yapi.b</a>
+</span>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 42.73.73.252
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1555665713.A.AF7.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1555665713.A.AF7.html</a>
+</span><span class="f2">※ 編輯: kcheart (42.73.73.252), 04/19/2019 17:23:05
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jackwula9211</span><span class="f3 push-content">: 程式執行下去可以放電嗎</span><span class="push-ipdatetime"> 04/19 17:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashrum</span><span class="f3 push-content">: 原po已經很好笑了,還能想出應用真的不簡單XD</span><span class="push-ipdatetime"> 04/19 17:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">q14721472</span><span class="f3 push-content">: ................................</span><span class="push-ipdatetime"> 04/19 17:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smallkaka</span><span class="f3 push-content">: 傻眼</span><span class="push-ipdatetime"> 04/19 17:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">observer0117</span><span class="f3 push-content">: 幫推</span><span class="push-ipdatetime"> 04/19 19:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amethystboy</span><span class="f3 push-content">: 喔耶</span><span class="push-ipdatetime"> 04/19 20:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 感謝補充 :-)</span><span class="push-ipdatetime"> 04/20 09:23
+</span></div>感謝大神來加持
+<span class="f2">※ 編輯: kcheart (114.137.196.68), 04/21/2019 12:05:07
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hijkxyzuw</span><span class="f3 push-content">: 笑死</span><span class="push-ipdatetime"> 04/21 19:23
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Gossiping/M.1555665713.A.AF7.html?cacheKey=2100-8466473&amp;offset=7093&amp;offset-sig=c3e2c54879c617aae6b32ac51adc94c94f798607" data-longpollurl="/v1/longpoll?id=310fdc4765575de13fb0927d0705ca829c0f74e3" data-offset="7093"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
