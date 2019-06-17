@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問題] 為什麼作業系統都用C寫？　而不用C++呢? - 看板 C_and_CPP - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="我對C++不熟悉，熟悉的kernel或者作業系統只有GNU Linux
+作業系統其實是很廣泛的一個東西，可以指kernel上的變動，比如Debian
+也可以指userspace的變動比如Android
+我這篇文章專門講Kernel層級的東西，我不熟悉的東西麻煩大家指正
+: →  bdvstg: 不同編譯器裝飾名稱規則不同？                            06/12 23:17
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問題] 為什麼作業系統都用C寫？　而不用C++呢?">
+<meta property="og:description" content="我對C++不熟悉，熟悉的kernel或者作業系統只有GNU Linux
+作業系統其實是很廣泛的一個東西，可以指kernel上的變動，比如Debian
+也可以指userspace的變動比如Android
+我這篇文章專門講Kernel層級的東西，我不熟悉的東西麻煩大家指正
+: →  bdvstg: 不同編譯器裝飾名稱規則不同？                            06/12 23:17
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/C_and_CPP/M.1560409135.A.48F.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/C_and_CPP/index.html"><span class="board-label">看板 </span>C_and_CPP</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/C_and_CPP/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/C_and_CPP/M.1560409135.A.48F.html"></div>
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">hizuki (入贅桧月家，我妻彩花)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">C_and_CPP</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問題] 為什麼作業系統都用C寫？　而不用C++呢?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Jun 13 14:58:41 2019</span></div>
+我對C++不熟悉，熟悉的kernel或者作業系統只有GNU Linux
+
+作業系統其實是很廣泛的一個東西，可以指kernel上的變動，比如Debian
+也可以指userspace的變動比如Android
+
+我這篇文章專門講Kernel層級的東西，我不熟悉的東西麻煩大家指正
+
+<span class="f6">: →  bdvstg: 不同編譯器裝飾名稱規則不同？                            06/12 23:17
+</span><span class="f6">: →  MOONRAKER: 有時要看你主要開發平台上有什麼好用                   06/13 10:12
+</span><span class="f6">: 推 loadingN: ABI的問題嗎？                                         06/13 10:42
+</span>對kernel其實不是很大的問題，畢竟Linux kernel很長一段時間都是只能用gcc編譯的
+Intel試過去支援，llvm也是一個。很多Marco或者struct declaiming無法相容許
+
+<span class="f2">※ 引述《jobsdone (完工了)》之銘言：
+</span><span class="f6">: 標題: Re: [問題] 為什麼作業系統都用C寫？　而不用C++呢?
+</span><span class="f6">: 時間: Wed Jun 12 22:20:09 2019
+</span><span class="f6">: fuchsia的kernel叫作zircon，是個microkernel
+</span><span class="f6">: 看了檔案名稱，大部分是cpp結尾
+</span><span class="f6">: 看了一下原始碼的內容，給我的感覺更像c而不是c++，至少跟modern c++差很多
+</span><span class="f6">: 雖然c++的彈性很大，想寫成像c也可以
+</span><span class="f6">: 但是為什麼不乾脆寫c就好呢？
+</span>問題就再於大家會問這個問題的人都太熟悉standard library了，可是在kernel space
+下根本沒有這種東西，更不要提基礎的I/O操作了或者memory作業了。
+
+C++在我的觀點下，早期版本真的和C89很想，只是多了幾個對struct上的重命名擴展(繼承)，
+還有規定了一個struct的初始化與釋放通用命名，允許對某個struct進行運算符重設定
+
+多數C89不支援的功能，都可以用Marco定義來解決，其實沒有多多少
+仔細想以上上述的功能，到底有多少是必須的？好想也沒有那麼多需求的
+
+然後我們現在要處理這個多出來的繼承功能，linker要大傷腦筋了，整個building的
+速度就被拖下來了。這就要問為什麼要用C++了？
+
+回頭來看，C++後來的標準加入了一堆heap操作，atomic符號，signal/event處理，
+這些東西對kernel space有什麼意義？compiler看了也不知道要怎麼做阿？那C++
+還真沒什麼用處。結果又要為了這些功能擋掉一堆compiler的功能，不然就是拖慢
+速度，可能別的小新開發者也會靠北靠母，為什麼自己想好好的程式這邊不能用。
+<span class="f6">: 作業系統用c++寫的也不是說沒有，最近還有一篇論文是用go寫作業系統
+</span><span class="f6">: ※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 110.26.103.74 (臺灣)
+</span><span class="f6">: ※ 文章網址: <a href="https://www.ptt.cc/bbs/C_and_CPP/M.1560349211.A.234.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/C_and_CPP/M.1560349211.A.234.html</a>
+</span><span class="f6">: 推 TitanEric: 之前看到有人用Rust寫                                 06/12 23:34
+</span><span class="f6">: → firejox: 看過用haskell寫的                                      06/13 03:14
+</span><span class="f6">: 推 CoNsTaR: 用 Rust 寫問題會是什麼？目的碼體積太大？               06/13 10:51
+</span>
+和Go的問題一樣，他們語言的特性都沒有了，這些語言設計的時候，就是沒有考慮
+過如果沒有standard library的情況下會如何
+
+Go還更糟糕，如果沒有Go runtime，到底這個語言有什麼優勢？programming model
+都要大改了，順便說一下thread什麼的，在kernel space其實一點意義都沒有。
+
+有人給我錢的話，我可以設計一個CPU可以吃Java bytecode或者Python。
+
+--
+你比較喜歡哪一個?
+<span class="f2 hl">當年不是黨國大老但是被江浙財團捧紅的中國帥哥</span>
+<span class="f1 hl">跟同樣擁兵一方的諸侯約會裁軍結果半途諸侯們爽約，平常有在寫日記的莊嚴男人開始發飆</span>
+<span class="f4 hl">在旁邊讀著荒漠甘泉冷眼旁觀看著薔薇戰爭的人，為了中國的事情爭吵</span>
+<span class="f3 hl">別國調侃是不是中國總統，義正詞嚴的說著我是民族的燈塔的威嚴老先生</span>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 103.29.142.67 (香港)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/C_and_CPP/M.1560409135.A.48F.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/C_and_CPP/M.1560409135.A.48F.html</a>
+</span><span class="f2">※ 編輯: hizuki (103.29.142.67 香港), 06/13/2019 14:59:37
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MOONRAKER</span><span class="f3 push-content">: 吃bytecode應該有過了 吃python比較霹靂 XD</span><span class="push-ipdatetime"> 06/13 15:14
+</span></div>ARM的ThumbEE或者Jazelle不完全是哦，不過被破梗了其實說來就這種東西
+純粹看能支援多少class而已
+<span class="f2">※ 編輯: hizuki (103.29.142.67 香港), 06/13/2019 15:17:57
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: Rust 的 std 不能算是語言特性吧 = =</span><span class="push-ipdatetime"> 06/13 17:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 現在有些 library 也都用 no_std + core 來拼效能，code</span><span class="push-ipdatetime"> 06/13 17:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">:  還是很 Rusty 啊</span><span class="push-ipdatetime"> 06/13 17:18
+</span></div>可是多數人理解的東西就是有std的情況阿，另外Rust我很不熟悉，想來和C++類似
+<span class="f2">※ 編輯: hizuki (103.29.142.67 香港), 06/13/2019 17:27:02
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aria0520</span><span class="f3 push-content">: Rust特性是安全相關吧</span><span class="push-ipdatetime"> 06/13 21:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TitanEric</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 06/13 23:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: Rust 從語意上來看像函數式語言，雖然語法上像物件導向，</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 我只能說和 C++ 的初衷實在差滿多...</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 而且實際上有在用 Rust 都知道 std 常常不是最佳方案，</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 例如 hashmap 有 hashbrown (hashbrown 之前有 fxhash),</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">:  channel 有 crossbeam</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 個人的感受，這個語言最大的特性是高度抽象化（例如有類</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 似GADT）的同時卻仍在乎對硬體的低階控制（例如copy或ref</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: ，struct成員順序、padding），沒有肥大的GC或一些奇怪</span><span class="push-ipdatetime"> 06/14 01:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 的物件導向理論（亦即不需要一個runtime或std來做背後的</span><span class="push-ipdatetime"> 06/14 01:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 事情）卻能在編譯期保證沒有 memory 或 interprocess 的</span><span class="push-ipdatetime"> 06/14 01:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 問題，不用編譯成 C (which c++ kinda needs to) 卻 nati</span><span class="push-ipdatetime"> 06/14 01:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: vely 支援多平臺多架構，而且擁有高效能</span><span class="push-ipdatetime"> 06/14 01:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 我不覺得這些語言特性和 std 有什麼關係，也不覺得沒有 s</span><span class="push-ipdatetime"> 06/14 01:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: td Rust 就不像 Rust，更不覺得它只是 yet another C++</span><span class="push-ipdatetime"> 06/14 01:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TitanEric</span><span class="f3 push-content">: 推樓上 想問一下Rust的定位像C還是C++？</span><span class="push-ipdatetime"> 06/14 12:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lc85301</span><span class="f3 push-content">: 我覺得都不太像</span><span class="push-ipdatetime"> 06/14 14:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 我覺得有點像認清現實的 Haskell lol</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 如果只和 C C++ 比的話，純 Rust（只包含 core 不包含 st</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: d）寫出來的東西語意上比較像只用 templates 和 std::var</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: iant, std::optional, std::function..., c++2a concepts</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">:  的 C++</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 但語法上其實沒有 template, concepts 什麼的，你看到的</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CoNsTaR</span><span class="f3 push-content">: 都是一般函數，loops，結構定義，結構實作，變數宣告</span><span class="push-ipdatetime"> 06/14 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">firejox</span><span class="f3 push-content">: atomic 還是有用處的，如果你是跑在多核心的環境下會需要</span><span class="push-ipdatetime"> 06/14 21:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">firejox</span><span class="f3 push-content">: 的</span><span class="push-ipdatetime"> 06/14 21:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lc85301</span><span class="f3 push-content">: 認清現實的Haskell XDDDD</span><span class="push-ipdatetime"> 06/15 18:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TitanEric</span><span class="f3 push-content">: 感謝C大認真解說</span><span class="push-ipdatetime"> 06/15 23:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yoco</span><span class="f3 push-content">: 同 CoNsTaR</span><span class="push-ipdatetime"> 06/16 02:24
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/C_and_CPP/M.1560409135.A.48F.html?cacheKey=2103-606484082&amp;offset=6961&amp;offset-sig=f6cf16ceb953ea48367f699900e2e9756163d348" data-longpollurl="/v1/longpoll?id=7f336ea9630aa482bd3cb545447b4efc0d110bc6" data-offset="6961"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
