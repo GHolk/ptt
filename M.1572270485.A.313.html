@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[情報] 卡普空 RE Conference 全程影片公開 - 看板 GameDesign - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="老卡今年9月在東京與大阪舉辦了兩場關於RE ENGINE的技術分享conference。
+http://www.capcom.co.jp/RE2019/
+今天終於把所有動畫通通放上youtube公開囉~
+剛好有去現場，因內容全是日文，在此簡單說一些概要。
+當初看到報名時填的表格還有類似轉職意願表單等，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[情報] 卡普空 RE Conference 全程影片公開">
+<meta property="og:description" content="老卡今年9月在東京與大阪舉辦了兩場關於RE ENGINE的技術分享conference。
+http://www.capcom.co.jp/RE2019/
+今天終於把所有動畫通通放上youtube公開囉~
+剛好有去現場，因內容全是日文，在此簡單說一些概要。
+當初看到報名時填的表格還有類似轉職意願表單等，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/GameDesign/M.1572270485.A.313.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/GameDesign/index.html"><span class="board-label">看板 </span>GameDesign</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/GameDesign/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">kuku321 (halipapon)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">GameDesign</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[情報] 卡普空 RE Conference 全程影片公開</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Mon Oct 28 21:48:03 2019</span></div>
+老卡今年9月在東京與大阪舉辦了兩場關於RE ENGINE的技術分享conference。
+<a href="http://www.capcom.co.jp/RE2019/" target="_blank" rel="nofollow">http://www.capcom.co.jp/RE2019/</a>
+
+今天終於把所有動畫通通放上youtube公開囉~
+
+剛好有去現場，因內容全是日文，在此簡單說一些概要。
+
+當初看到報名時填的表格還有類似轉職意願表單等，
+
+想說內容應該是用技術去包裝的徵才大會，抱著技術分享可能只是表層的心態去的，
+
+結果意外硬核，都是實務經驗，看了些推特感想，對沒有實務經驗的學生可能稍難。
+
+------------------------------------------
+全部議程:
+<span class="f3 hl">・複数のAAAタイトル開発に耐える汎用ゲームエンジンの設計と運用</span>
+　<a href="https://youtu.be/fc3avwM-oTE" target="_blank" rel="nofollow">https://youtu.be/fc3avwM-oTE</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/fc3avwM-oTE" frameborder="0" allowfullscreen></iframe></div></div></div>
+採用模塊設計，基底、物理、音效、AI等通通都是一個一個模塊，
+除了基底綁定老卡自家技術外，其餘內容都可視需求更換他廠或自家模塊，
+全部的處理都有定義好pipeline上該待的位置，各session可視各自需求ON/OFF任何模塊，
+且include全部可視化node-base，讓runtime debug可以最有效率地進行。
+
+另外引擎端是C++撰寫，但Application端全是C#，
+因此Application端不可有任何各project自定義的擴充功能，
+任何擴充都由引擎部分進行再回到Application端使用，以確保技術共有與維護能穩定。
+
+另外為確保記憶體存取的安全性，Application端不能主動呼叫任何資源存取，
+都必須透過引擎去非同步讀取。
+
+使用RE ENGINE開發的所有作品，都必須確保能於引擎往後任何的版本上正常運行。
+因已發售作品已經由QA完整測試，因此有極高的確實性，
+用來驗證新技術的實裝正確與否是十分具有信賴性的test case。
+現場有展示使用18年度新實裝的Lighting技術來跑的惡靈古堡7，
+經由CPU使用率已經畫面呈現等能快速對新技術的實用性進行評比。
+
+
+<span class="f3 hl">・ユーザー中心の設計思想によるRE ENGINEのUX改善の取り組み</span>
+　<a href="https://youtu.be/YhnIW2XY_wU" target="_blank" rel="nofollow">https://youtu.be/YhnIW2XY_wU</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/YhnIW2XY_wU" frameborder="0" allowfullscreen></iframe></div></div></div>
+2010年就有進行新世代引擎的開發，但是2012發現不敷使用，
+因此決定打掉重練，並將其中技術轉至RE ENGINE穢土重生。
+同時魔物獵人世界的開發也正式確定將以魔改造MT Framework來進行。
+
+2012 RE ENGINE開發初中期，以Programmer為主體進行研發，
+但是投入Project實務後，不管企劃或是美術都有不少惡評，
+尤其是UI部分很多都是Programmer美學，icon或是線條粗細等都沒有設計，全憑感覺。
+
+後來決定向專業UX部門尋求人手，對UX層面進行了完全重製。
+也有像iOS或是Android一樣訂立設計準則要求遵守，才成為現在的RE ENGINE。
+
+
+<span class="f3 hl">・RE ENGINEでのレベルデザインにおけるHoudini Engineとの連携</span>
+　<a href="https://youtu.be/ABpjD-9FRe0" target="_blank" rel="nofollow">https://youtu.be/ABpjD-9FRe0</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/ABpjD-9FRe0" frameborder="0" allowfullscreen></iframe></div></div></div>
+基本上就是運用Houdini Engine去做快速的連動模擬，
+在RE ENGINE上快速拖拉幾何等基礎物件進行設計，
+後端傳至Houdini Engine去cook，然後結果回去RE ENGINE直接模擬，
+企劃和美術可以快速進行試作，確認沒問題後再正式投入實際的resourece製作。
+
+
+<span class="f3 hl">・背景で役に立つプロシージャルモデリング～制作現場でのHoudini実用例の紹介～</span>
+　<a href="https://youtu.be/Q67T8K8SxHg" target="_blank" rel="nofollow">https://youtu.be/Q67T8K8SxHg</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/Q67T8K8SxHg" frameborder="0" allowfullscreen></iframe></div></div></div>
+就是上面那點的實例介紹。
+
+
+<span class="f3 hl">・モジュラーリギング ～リギングをより効率よく、より簡単に～</span>
+　<a href="https://youtu.be/nivB9gIoBx4" target="_blank" rel="nofollow">https://youtu.be/nivB9gIoBx4</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/nivB9gIoBx4" frameborder="0" allowfullscreen></iframe></div></div></div>
+美術在骨架的應用方式以及workflow改善與心得。
+
+
+<span class="f3 hl">・「バイオハザードRE:2」における組み技リターゲット技術</span>
+　<a href="https://youtu.be/x58JnJJSDYM" target="_blank" rel="nofollow">https://youtu.be/x58JnJJSDYM</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/x58JnJJSDYM" frameborder="0" allowfullscreen></iframe></div></div></div>
+在不同角色對敵人的組合連攜技的設計時，
+是如何使用程式來解決問題，去降低不同組合的重複性resource製作。
+讓原需數年的美術resoourece製作時間大幅縮短到1年內。
+
+基本上就是簡單的演算法和美術預塞隱藏骨架配合的實作演算法介紹。
+
+
+<span class="f3 hl">・技術が生み出すゲームアニメーション</span>
+　～プロシージャルアニメーション／モーションマッチング～
+　<a href="https://youtu.be/t3KCgZDZ93E" target="_blank" rel="nofollow">https://youtu.be/t3KCgZDZ93E</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/t3KCgZDZ93E" frameborder="0" allowfullscreen></iframe></div></div></div>
+跟上面的講座有點類似，只是內容就是比較深一點的數學了。
+讓不同體型的敵人搭配不同的武器，如何穩定在各種地形出相同的攻擊。
+大致就是這幾年主流的procedural animation實例介紹。
+
+後半是16年GDC上，UBI在榮耀戰魂上提出的Motion Matching方法的投入實驗介紹。
+詳細請看UBI的發表內容
+<a href="https://tinyurl.com/y24sgmzr" target="_blank" rel="nofollow">https://tinyurl.com/y24sgmzr</a>
+
+簡單說，就是捨棄以往類似state machine，1對1的motion resource製作，
+而是讓演員錄製一支5分鐘的影片，
+影片內容有規定必須遵照特定路線與動作來拍攝，以確保motion data的完整性。
+然後在角色當下的動作完成時，會回去找該5分鐘影片一禎一禎搜尋，
+搭配玩家的指令輸入，去找出最合適的那一禎動作，並遷移過去。
+這是非常高價且奢侈的方式，基本上現世代主機遊戲難以實現該作法，
+但是榮耀戰魂剛好是肢體表現為主的格鬥遊戲，有辦法將所有資源通通拿來算motion，
+因此非常可能是本世代唯一一片有辦法使用該技術的作品。
+
+目前Motion Matching已被視為會成為下世代主機的標準workflow，
+因此各廠都開始有在投入相關研究與實驗，去年萬代也在CEDEC有類似發表。
+這裡老卡有簡單DEMO了一下他們的成果。
+另外認為原本UBI所提出的5分鐘影片模式在應用時並不好使用，
+因此改成已數支4 50秒影片的方式來實作，發現效果不俗。
+
+<span class="f3 hl">・レンダリング技術の進化</span>
+　<a href="https://youtu.be/Gz0k91MVjys" target="_blank" rel="nofollow">https://youtu.be/Gz0k91MVjys</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/Gz0k91MVjys" frameborder="0" allowfullscreen></iframe></div></div></div>
+這段基本上就是近期流行的Rendering技術大雜燴，
+各項技術在RE ENGINE還有惡靈古堡2 惡魔獵人5的實際成果。
+部分內容在去年CEDEC介紹魔物獵人使用MT Framework做魔改時也有類似應用。
+
+另外有DEMO部分惡魔獵人5使用光追去渲染出來的成果，
+整體表現不錯，只是目前在鏡子反射上有些瓶頸卡住尚未實作。
+
+
+<span class="f3 hl">・「デビルメイクライ5」におけるシミュレーション ～破壊と二次アニメーション～</span>
+　<a href="https://youtu.be/DQOzMoNaB_U" target="_blank" rel="nofollow">https://youtu.be/DQOzMoNaB_U</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/DQOzMoNaB_U" frameborder="0" allowfullscreen></iframe></div></div></div>
+美術的實作trick介紹，
+事先模擬bake的動畫，與CPU/GPU Motion混合使用去平衡視覺與遊戲設計的實例解說。
+
+
+<span class="f3 hl">・「デビルメイクライ5」におけるVFX解説</span>
+　<a href="https://youtu.be/7UPc79EMwgk" target="_blank" rel="nofollow">https://youtu.be/7UPc79EMwgk</a>
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/7UPc79EMwgk" frameborder="0" allowfullscreen></iframe></div></div></div>
+跟上面一樣是美術resource的實例介紹，只是這次換成VFX製作。
+運用shader的搭配，如何bake出真實感高的VFX。
+
+另外還有搭配run-time的數據輸入去對特效實時產生變化的一些實作內容介紹。
+
+------------------------------------------
+
+大概就是以上內容，簡單分享一下。
+
+另外有說目前支援Vulkan部分已實裝，正在驗證中，另有對應Google Stadia的計畫。
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 131.147.239.56 (日本)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/GameDesign/M.1572270485.A.313.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/GameDesign/M.1572270485.A.313.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: 模塊</span><span class="push-ipdatetime"> 10/28 21:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bencrie</span><span class="f3 push-content">: 工程師的美感被嫌成這樣 QQ</span><span class="push-ipdatetime"> 10/28 21:56
+</span></div><span class="f2">※ 編輯: kuku321 (131.147.239.56 日本), 10/28/2019 22:04:20
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">coolrobin</span><span class="f3 push-content">: 感謝分享 m(_&#34;_)m</span><span class="push-ipdatetime"> 10/29 00:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dreamnook</span><span class="f3 push-content">:</span><span class="push-ipdatetime"> 10/29 07:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wangm4a1</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/29 08:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sakyer</span><span class="f3 push-content">: 讚</span><span class="push-ipdatetime"> 10/29 21:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dklassic</span><span class="f3 push-content">: 第一次覺得學了多年的日文很實用 XDDD</span><span class="push-ipdatetime"> 10/31 19:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ConSeR</span><span class="f3 push-content">: 感謝翻譯分享</span><span class="push-ipdatetime"> 11/02 11:29
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/GameDesign/M.1572270485.A.313.html?cacheKey=2084-671364240&amp;offset=6247&amp;offset-sig=52c1e9e11aec37e45f97abaebbe2e22673cdc52e" data-longpollurl="/v1/longpoll?id=4098a56fdc5fee0485ff506ab7e1ab5ca1f2dfd0" data-offset="6247"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
