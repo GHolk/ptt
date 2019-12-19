@@ -67,6 +67,10 @@ curl_sed() {
     add_meta "$file"
 }
 
+clean_url() {
+    sed 's/?.*$//; s/#.*$//'
+}
+
 cd $ptt_dir || error 'can not cd `~/web/ptt/`!' 6
 
 
@@ -111,11 +115,11 @@ fi
 
 if [ -n "$1" ]
 then
-    $mydo "$1"
+    $mydo "$(echo "$1" | clean_url)"
 else
     if [ "$clean" != 1 ]
     then
-        while read url
+        clean_url | while read url
         do
             $mydo "$url"
         done
