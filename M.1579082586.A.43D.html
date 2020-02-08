@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[情報] CVE 2020-0601 相關討論 - 看板 NetSecurity - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="昨天凌晨到今天有一個 CVE 狂刷我的 twitter ，很多人瘋狂轉貼想必問題十分嚴重，於
+是看了下一些分析和公告，大概有個底後想說分享一下，順便賺 P 幣 XD
+因為 M$ 的公告被 taviso 吐槽說 NSA 寫的公告比 M$ 的有用，所以我直接看了 NSA 的
+公告，這個問題好像也是 NSA 爆出來的
+NSA CyberSecurity  Advisory
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[情報] CVE 2020-0601 相關討論">
+<meta property="og:description" content="昨天凌晨到今天有一個 CVE 狂刷我的 twitter ，很多人瘋狂轉貼想必問題十分嚴重，於
+是看了下一些分析和公告，大概有個底後想說分享一下，順便賺 P 幣 XD
+因為 M$ 的公告被 taviso 吐槽說 NSA 寫的公告比 M$ 的有用，所以我直接看了 NSA 的
+公告，這個問題好像也是 NSA 爆出來的
+NSA CyberSecurity  Advisory
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/NetSecurity/M.1579082586.A.43D.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/NetSecurity/index.html"><span class="board-label">看板 </span>NetSecurity</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/NetSecurity/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">b0920075 (Void)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">NetSecurity</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[情報] CVE 2020-0601 相關討論</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Wed Jan 15 18:02:59 2020</span></div>
+昨天凌晨到今天有一個 CVE 狂刷我的 twitter ，很多人瘋狂轉貼想必問題十分嚴重，於
+是看了下一些分析和公告，大概有個底後想說分享一下，順便賺 P 幣 XD
+
+因為 M$ 的公告被 taviso 吐槽說 NSA 寫的公告比 M$ 的有用，所以我直接看了 NSA 的
+公告，這個問題好像也是 NSA 爆出來的
+
+NSA CyberSecurity  Advisory
+<a href="https://media.defense.gov/2020/Jan/14/2002234275/-1/-1/0/" target="_blank" rel="nofollow">https://media.defense.gov/2020/Jan/14/2002234275/-1/-1/0/</a>
+CSA-WINDOWS-10-CRYPT-LIB-20190114.PDF
+
+要把 CSA 那邊拼接到上面的 url 上才看的到 (url 太長了QQ)
+
+內容我大概簡短的摘要下:
+
+該漏洞編號 cve 2020 0601 ，問題發生在密碼學相關功能元件上 (根據其他篇的說法好像
+是出在 CRYPT32.DLL 上，下面補上來源)，根據幾篇文章來看應該是橢圓曲線驗證的地方
+出差錯導致的
+
+該漏洞主要破壞了 windows 驗證憑證的方法和允許 remote code execution 以及把惡意
+程式碼當作可信任並接收下來
+
+受影響的部分包括:
+        HTTPS network connections
+        Signed files and emails
+        Signed executable code launched as user-mode process
+
+另外被影響的作業系統版本包括 Windows 10, Windows server 2016/2019, 任何依賴
+windows 信任機制的應用程式
+
+建議的措施:
+        立刻打上補丁
+        企業方若不能將所有機器打上補丁則應優先對關鍵和廣泛使用的 services 打上
+補丁，像是： windows based web appliances, web servers, 任何用到 tls 驗證的
+proxy, domain controllers, DNS server, update server, VPN server,
+IPsec negotiation
+        另外對優先考慮以下具高風險的端點: 直接對外連接的端點、被特權用戶平凡使
+用的端點
+        使用 tls 檢查的 proxy 對有漏洞的端點
+        用 wireshark parse 和 extract 憑證
+        用 openssl 和 windows certutil 對憑證進行深度分析、檢查有無惡意的特性
+
+NSA 提供了幾個方法來驗證 X509 憑證:
+
+$ certutil -asn &lt;certificate_filename&gt;
+$ openssl asn1parse -inform DER -in &lt;certificate_filename&gt; -i -dump
+
+(以下的內容因為有些不是很了解，就姑且翻譯一下丟上來)
+上述的命令 parse 和印出特定 DER 編碼憑證的 ASN.1 物件，檢查這些結果有無橢圓曲線
+的性質，若憑證具有明確的 curve OID 值可以被判定為良性，舉例來說 NISTP384 中
+的 curve OID value 是 1.3.132.0.34 。若憑證有明確定義與標準相吻合的參數則可以視
+為良性
+
+可以透過以下命令列出已註冊的橢圓曲線和其參數:
+$ certutil -displayEccCurve
+$ certutil -displayEccCurve &lt;curve_name&gt;
+
+openssl 可以透過以下命列看到編譯在 openssl 內的標準曲線:
+$ openssl ecparam -list_curves
+$ openssl ecparam -name &lt;curve_name&gt; -param_enc explicit -text
+
+若有憑證包含明確定義的橢圓曲線參數但參數跟標準曲線只有「部分吻合」的話應被視為可
+疑，特別是有可信任的憑證的公鑰的憑證。
+
+下面這篇是在 reddit 上看到的，有人分享該漏洞的可能發生原因
+<a href="https://keychest.net/stories/massive-ms-windows-bug-by-nsa-how-it-works-maybe" target="_blank" rel="nofollow">https://keychest.net/stories/massive-ms-windows-bug-by-nsa-how-it-works-maybe</a>
+
+因為對密碼學不是說非常熟怕誤人子弟，大家有興趣的就自己上去看看吧，作者也說可能
+是根本不同的成因，權當作參考。
+
+另外這篇最下面 DETECT 的部分有檢查 CRYPT32.DLL 有無更新的方法，可以去看一下，其
+他內容跟 NSA advisory 差不多就不貼了
+
+<a href="https://gist.github.com/SwitHak/62fa7f8df378cae3a459670e3a18742d" target="_blank" rel="nofollow">https://gist.github.com/SwitHak/62fa7f8df378cae3a459670e3a18742d</a>
+
+再補上幾個參考資料:
+
+M$ 的 advisory:
+<a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0601" target="_blank" rel="nofollow">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0601</a>
+
+M$ 的 defender ATP threat and vulnerability management 可以偵測出該漏洞並阻止:
+<a href="https://twitter.com/djteller/status/1217347590301396992?s=20" target="_blank" rel="nofollow">https://twitter.com/djteller/status/1217347590301396992?s=20</a>
+
+來自 @jovi0608 的圖片解釋(日文的，不過大多是漢字和公式):
+<a href="https://pbs.twimg.com/media/EOUBXENUEAARsy1?format=png&amp;name=small" target="_blank" rel="nofollow">https://pbs.twimg.com/media/EOUBXENUEAARsy1?format=png&amp;name=small</a>
+
+另一份詳細的原理和成因
+<a href="https://medium.com/zengo/win10-crypto-vulnerability-cheating-in-elliptic-curve-" target="_blank" rel="nofollow">https://medium.com/zengo/win10-crypto-vulnerability-cheating-in-elliptic-curve-</a>
+billiards-2-69b45f2dcab6
+打算等等看這篇 &gt;&lt;
+
+剛剛發現有人放出 poc
+<a href="https://github.com/kudelskisecurity/chainoffools" target="_blank" rel="nofollow">https://github.com/kudelskisecurity/chainoffools</a>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 61.228.97.208 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/NetSecurity/M.1579082586.A.43D.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/NetSecurity/M.1579082586.A.43D.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">isaacc</span><span class="f3 push-content">: 其實比較八卦的部分是大陸今天一直在傳的文章...</span><span class="push-ipdatetime"> 01/15 22:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">b0920075</span><span class="f3 push-content">: 中國在傳啥，沒關注到</span><span class="push-ipdatetime"> 01/16 02:52
+</span></div><span class="f2">※ 編輯: b0920075 (61.228.97.208 臺灣), 01/16/2020 07:37:10
+</span><span class="f2">※ 編輯: b0920075 (61.228.97.208 臺灣), 01/16/2020 11:19:13
+</span></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/NetSecurity/M.1579082586.A.43D.html?cacheKey=2084-485816876&amp;offset=3957&amp;offset-sig=cd55f81768126b83db1d39bf7b5ad39bba8a6758" data-longpollurl="/v1/longpoll?id=3b192961c57c12b1117f160927f377625ec200ff" data-offset="3957"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
