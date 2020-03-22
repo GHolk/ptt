@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[閒聊] PS5 架構理念討論 - 看板 PlayStation - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="原本只是自己整理個思路，不過也許會有人想看看也說不定就貼上來了。
+更重要的事先聲明是 XSX 的一些細微資訊還沒曝光，這邊的推論可能會隨日後硬體拆解出
+現之後失效。
+討論內容基本延伸自 Digital Foundry 的影片（https://youtu.be/4higSVRZlkA ）
+先講結論：
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[閒聊] PS5 架構理念討論">
+<meta property="og:description" content="原本只是自己整理個思路，不過也許會有人想看看也說不定就貼上來了。
+更重要的事先聲明是 XSX 的一些細微資訊還沒曝光，這邊的推論可能會隨日後硬體拆解出
+現之後失效。
+討論內容基本延伸自 Digital Foundry 的影片（https://youtu.be/4higSVRZlkA ）
+先講結論：
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/PlayStation/M.1584587820.A.316.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/PlayStation/index.html"><span class="board-label">看板 </span>PlayStation</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/PlayStation/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">dklassic (DK)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">PlayStation</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[閒聊] PS5 架構理念討論</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Mar 19 11:16:58 2020</span></div>
+原本只是自己整理個思路，不過也許會有人想看看也說不定就貼上來了。
+更重要的事先聲明是 XSX 的一些細微資訊還沒曝光，這邊的推論可能會隨日後硬體拆解出
+現之後失效。
+討論內容基本延伸自 Digital Foundry 的影片（<a href="https://youtu.be/4higSVRZlkA" target="_blank" rel="nofollow">https://youtu.be/4higSVRZlkA</a> ）
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/4higSVRZlkA" frameborder="0" allowfullscreen></iframe></div></div></div>
+先講結論：
+PS5 是手術刀、XSX 是大槌（譬喻出自：<a href="https://youtu.be/YHTbdpk_y98" target="_blank" rel="nofollow">https://youtu.be/YHTbdpk_y98</a> ）
+<div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/YHTbdpk_y98" frameborder="0" allowfullscreen></iframe></div></div></div>XSX 有帳面上粗暴好懂的效能。
+PS5 能潛在提升創意發揮空間，但是要開發者願意配合才有意義。<span class="f3 hl">否則就是下個 PS Vita、
+</span><span class="f3 hl">PS3</span>。
+
+然後<span class="f3 hl">小朋友才選擇，大人全主機制霸</span>。
+不過我是小朋友所以我選 PC + PS5。
+
+
+討論部分涉及：
+一、PS5 的隱藏規格
+二、PS5 隱藏規格的意涵
+三、PS5 的挑戰
+四、XSX 的方針解讀（臆測性質很高，在發表前很不準）
+
+以下開始：
+一、PS5 的隱藏規格
+<span class="f3 hl">PS5 效能輸 XSX 一大截已經是事實</span>，但是有一些比較不容易注意到的規格（簡單來說就是
+害大家一直 zzz 的那些無聊的部分）。
+
+PS5 在 SSD 管理上放了一顆 Zen 2 core，所以其實 CPU 總共是 8 + 1 顆核心。
+而音效管理上放了一個 GPU CU，所以硬體裡面總 CU 數其實是 36 + 1。
+顯然放一顆客製 CPU 和一顆客製 CU 就算轉移效能到遊戲上也沒辦法產生什麼幫助，所以
+這些規格對於計算力的貢獻可以說是零。
+
+但是這兩個東西實際上有可能對開發創意產生很大的影響。
+
+
+二、PS5 隱藏規格的意涵
+（一）SSD 管理用的客製 Zen 2 core
+簡單粗暴的理解就是：這是一個真正把 SSD 直接當作記憶體操作管理的架構。
+
+我們過去所認知的關卡架構通常都是使用走廊、窄路、強制走路片段、電梯等手法，限制
+玩家的移動狀況以避免關卡有載入問題。
+例如說玩家走路速度是 5m/s，下一個關卡區域要替換掉整整 6G 記憶體的內容，PS4 的記
+憶體替換大概 1G 要花 20 秒，就故意設計一個 20*6*5 = 600 公尺長走廊讓玩家走。
+所以過去記憶體管理的議題大幅影響了關卡設計。
+但是 PS5 則可以在 2.13 秒內直接替換掉整個 16G 記憶體的內容，代表這段走廊長度就
+會縮減到 5*2.13 = 10.65 公尺長。
+600 VS 10.65 這個極端的例子實際上不會發生，但回想起 PS4 世代仍然有很多一百公尺
+左右的載入用走廊，就是 100 VS 1.78 的程度。
+
+代表說配合 PS5 設計的遊戲，未來關卡設計都可以不用為了配合載入而煩惱，讓關卡設計
+的創意不需要受到效能影響。
+是一個讓遊戲設計師與技術困難脫鉤的可能性。
+
+（二）音效管理用的 SU
+過去有很多音效管理做得很好的遊戲實際上都會直接切出一顆 CPU 專門來做。
+這次直接拉一顆平行運算能力很強的 SU 出來當作音效處理器，等於是可以在遊戲內做非
+常大規模的混音。
+照這次的演講內容形容就是「可以獨立處理每一滴雨滴的聲響」。
+這點可能對自詡木耳的人比較無感；但是對於注重音效體驗的玩家來說，所聽到的聲音就
+不再是從單一聲源播放整個空間的下雨聲，而是實際上空間正確的聲響。
+
+對於剩下的人，實際上這對遊戲體驗也可能有重大的影響。
+例如說這個空間正確性會反映在多人遊戲中聽腳步聲的準確度，過去遊戲音效邏輯會直接
+計算玩家與聲音來源的相對位置，然後就直接將聲音從那個方向傳出。
+但是現實生活中聲音應該要沿著開放空間傳遞，例如說不是隔著牆而是從房間的門傳過來
+。雖然初期可能會感到不適應，但是熟悉之後反而會因為符合現實而更能直覺判斷。
+
+像是《虹彩六號：圍攻行動》就有嘗試自己做這件事情的模擬（雖然很常有 Bug）。
+PS5 用獨立 CU 來做音效混音的架構，可能可以讓開發者都能夠輕易地做到類似效果。
+
+
+三、PS5 的架構簡評與主機戰爭挑戰
+
+雖然距離上市還很久，這只是個帳面上的嘴砲。
+不過 PS5 照上述兩點可能會為未來的遊戲設計開啟完全不同的面向，讓我們有機會看到不
+受現代主機/電腦架構限制而設計出來的遊戲。
+以這點來說 PS5 的確看起來像是一個「前所未有的架構」。
+
+但反過來顯然過去 PS 特規產品有過的問題，也有可能會在這次主機大戰中發作。
+那就是開發者願不願意做特規支援，甚至是自願平台獨佔開發。
+上世代看到的幾個特規支援問題例子包含：
+＊PS4 手把的處控板與螢光條
+＊PS3 的 9 核心 CPU
+＊PSVita 的前後觸控功能、六軸感應、前後鏡頭
+
+這些例子至今仍然認為是很有發揮空間的設計，尤其 PS3 其實明明現代看來是個效能很高
+的優點，卻最後敗於當時開發者對於多核心開發能力低落，而導致幾乎所有遊戲效能表現
+上反而輸給了計算力比較弱的 Xbox 360。
+
+列舉幾個開發者應該會有的狀況大概是：
+＊雖然 PS5 的載入速度爆快，但是我們還是得配合 XSX 的載入速度設計
+＊雖然 PS5 可以做精細的音效控制，但是我們還是得配合 XSX 做音效處理（或不敷成本
+地設計兩個版本）
+＊雖然是前所未有的架構，但是我們還是得配合 PC 玩家的電腦架構設計
+所以雖然看起來是能對創意做進一步地延伸，但是對於多多（平台）益善的開發者來說就
+未必是件好事，而可能反過來傷害了自己。
+
+而 Sony 主機定價可能反而因為這些客製架構不容易壓低，甚至沒有把這些價格成本直接
+轉移到計算力來得有效率。所以我猜測 PS5 雖然計算力差 XSX 一大截，或許售價並不會
+像有些人想的那麼樂觀壓在 $399 XD
+
+雖然 XSX 的價格一定更高，但這時候價差不多的情形下要讓消費者理解這個架構的未來、
+讓開發者理解這個架構對創意的延伸，顯然是一個超級無敵大的挑戰。
+
+
+四、XSX 的方針解讀
+
+算是額外加碼。
+大家都在笑（？）XSX 的價格可能爆高，但是我們都知道上世代因為規格制訂錯誤而成為
+永遠墊底的 Xbox One，這肯定是微軟為什麼要卡一個超英趕美規格主機的理由。而這樣肯
+定會定價出超過正常人負擔範圍的主機。
+
+但微軟應該也沒有太蠢，啦。
+目前比較可靠的流出消息（例如說 AMD 未知元件測試數據），都指出 Xbox 這世代應該會
+是上市就雙主機販賣的商業模型，應該會推出另一台與 XBX 同級（但是是新架構）的主機
+。顯然就可以訂在比 PS5 價格更低的甜蜜點。
+這或許也是為什麼 Xbox 宣布首波次世代遊戲會一路支援回去 Xbox One，因為他們應該還
+要照顧次世代的低規格主機。
+
+大概是對微軟本世代方針的解讀。
+
+至於 PS5 本世代到底會不會有 4K 效能墊底的問題......，至少現在數字上應該不會：
+PS4 舊架構 1.84 TFLOP
+PS5 新架構 10.28 TFLOP
+目前已知資訊都顯示新架構單位計算力實質效能超過舊架構，所以 PS5 的效能絕對有比起
+前代主機多了四倍以上的效能。
+純粹用解析度提升 1080p→4K 來看，應該是綽綽有餘的。雖然難保不會像 Xbox One 一樣
+估算失敗，但個人現在持樂觀看法。至於 8K 什麼的先有錢買 8K 螢幕再來煩惱吧。
+
+
+結論預測次世代主機最佳購買方針：
+PC + 主機：PS5
+只有主機：XSX
+沒有錢：低規 XSX
+大人：全主機制霸
+
+
+以上參考，歡迎指教（？）
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 111.250.50.111 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/PlayStation/M.1584587820.A.316.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/PlayStation/M.1584587820.A.316.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">akinori</span><span class="f3 push-content">: 1</span><span class="push-ipdatetime"> 03/19 11:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gogolct</span><span class="f3 push-content">: 現在用ps4 pro的人大概有些會不買或跳去XSX吧，買ps5升級</span><span class="push-ipdatetime"> 03/19 11:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gogolct</span><span class="f3 push-content">: 感不夠，乾脆等ps5 pro</span><span class="push-ipdatetime"> 03/19 11:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">max83111</span><span class="f3 push-content">: 最佳策略應該是PS5+PC+NS拉 沒有玩不到的東西了</span><span class="push-ipdatetime"> 03/19 11:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 4，家庭劇院系統還是家用主機適合</span><span class="push-ipdatetime"> 03/19 11:24
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 11:24:53
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dbjdx</span><span class="f3 push-content">: xbox one 沒遊戲啊</span><span class="push-ipdatetime"> 03/19 11:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">e04bank</span><span class="f3 push-content">: 內容為王</span><span class="push-ipdatetime"> 03/19 11:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jeffreyshe</span><span class="f3 push-content">: 終究還是要看開發難度 像ps3那樣子性能再強也沒用</span><span class="push-ipdatetime"> 03/19 11:25
+</span></div>
+嗯，新的這個音效系統其實我也不覺得小工作室容易駕馭。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 如果只玩PS獨佔遊戲XB是沒遊戲，但當R星UBI CD Proj</span><span class="push-ipdatetime"> 03/19 11:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: ect B社EA空氣嗎？</span><span class="push-ipdatetime"> 03/19 11:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 遊戲廠商為了2邊都賺,再怎麼開發難度都要克服的</span><span class="push-ipdatetime"> 03/19 11:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 阿還漏了一個From Software</span><span class="push-ipdatetime"> 03/19 11:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 除非是無解,但連NS那種都有人硬移植上去了</span><span class="push-ipdatetime"> 03/19 11:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 有錢好辦事,為什麼要二選一</span><span class="push-ipdatetime"> 03/19 11:28
+</span></div>
+沒錢（人）沒時間啊，不然有錢（人）有時間當然針對每個平台特色功能延伸開發 XD
+實際上就是很有可能都會往最低規格靠齊，例如說畫面表現就是以 PS5 為底線開發，
+特色功能則配合 XSX 沒有特殊硬體而開發。
+但當然如果 PS5 其實像上世代的 Xbox One 一樣效能預估不足，而導致難以實現開發者在
+畫面表現上的願景，就有可能會一樣變成最佳化中的孤兒 XD
+希望不會啦。
+<span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 11:34:44
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s213092921</span><span class="f3 push-content">: 講那麼多，PS5+PRO都買就好了</span><span class="push-ipdatetime"> 03/19 11:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 老實說看不出來PS5架構哪裡前所未見，ps3之後Sony就一</span><span class="push-ipdatetime"> 03/19 11:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 直強調對開發者友善的開發環境</span><span class="push-ipdatetime"> 03/19 11:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s213092921</span><span class="f3 push-content">: 啊不是否定這篇文章及作者，粉粉不用考慮太多</span><span class="push-ipdatetime"> 03/19 11:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">neogetter</span><span class="f3 push-content">: 問題是在亞洲,那些跨平台三廠遊戲搜不到人啊…</span><span class="push-ipdatetime"> 03/19 11:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">squallcml</span><span class="f3 push-content">: 1</span><span class="push-ipdatetime"> 03/19 11:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 更不可能去搞一個前所未有架構增加開發者麻煩</span><span class="push-ipdatetime"> 03/19 11:30
+</span></div>
+是物理上的新架構喔！
+
+這次的 PCI-E 4.0 是直接跟 GPU、CPU 整併在一起存取的設計，我們電腦中的顯示卡是沒
+有辦法直接對 SSD 進行讀取的，所以就算你在電腦使用 PCI-E 4.0 的 SSD，然後你的顯
+示卡也還是要透過原有的電腦架構去存取你的 SSD。
+
+但這件事情其實不會對開發者造成困難度增加，就只是以前在做的事情......現在超快。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 只要有提供簡單好上手的API給開發者方便使用</span><span class="push-ipdatetime"> 03/19 11:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 前所未有的架構的開發難度也不會上升太多</span><span class="push-ipdatetime"> 03/19 11:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 尤其是這次音效的部分 如果只要把聲音通通打包用PS5 API</span><span class="push-ipdatetime"> 03/19 11:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 這代XSX和ps5架構反而都更向傳統PC架構靠攏了</span><span class="push-ipdatetime"> 03/19 11:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 廠商自己沒辦法克服,那他就必須只賺一邊</span><span class="push-ipdatetime"> 03/19 11:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 丟過去就會自己幫我用獨立CU算好播出去的話 對開發沒差</span><span class="push-ipdatetime"> 03/19 11:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 這真的不是我們要擔心的</span><span class="push-ipdatetime"> 03/19 11:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">max83111</span><span class="f3 push-content">: 你提的那些大廠遊戲都嘛跨到PC上了 除非你沒PC或PC太爛</span><span class="push-ipdatetime"> 03/19 11:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 最爛也有PC版可以玩不是嗎</span><span class="push-ipdatetime"> 03/19 11:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">max83111</span><span class="f3 push-content">: 不然用PC玩體驗絕對會比主機好的 還有一堆額外的東西</span><span class="push-ipdatetime"> 03/19 11:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 連apu都放棄回歸到CPU + GPU</span><span class="push-ipdatetime"> 03/19 11:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 比起來PS3 cell那種 連最底層CPU多核心架構都要開發者自</span><span class="push-ipdatetime"> 03/19 11:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 行開發特化的情境 跟現在差蠻多的就是</span><span class="push-ipdatetime"> 03/19 11:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">max83111</span><span class="f3 push-content">: 更別說XB因為是微軟的所以就算獨佔XB也會上PC 像士官長</span><span class="push-ipdatetime"> 03/19 11:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 再者現在很多都兼用別人已完成的引擎在開發</span><span class="push-ipdatetime"> 03/19 11:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 相容性問題在那裡就應該必須被解決了</span><span class="push-ipdatetime"> 03/19 11:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">max83111</span><span class="f3 push-content">: 相比之下在獨佔這塊更沒優勢了</span><span class="push-ipdatetime"> 03/19 11:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 絕對不是PS3那個情況</span><span class="push-ipdatetime"> 03/19 11:34
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 11:41:54
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 我是覺得ps5和XSX主機目標很一致，這代主機的重點就兩</span><span class="push-ipdatetime"> 03/19 11:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 個：光追和改善讀取</span><span class="push-ipdatetime"> 03/19 11:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Nico0214</span><span class="f3 push-content">: 哪邊獨佔吸引我 就買哪邊 除非效能差距大影響我遊戲體</span><span class="push-ipdatetime"> 03/19 11:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Nico0214</span><span class="f3 push-content">: 驗 不然我根本看不出來XD</span><span class="push-ipdatetime"> 03/19 11:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: XSX之前簡報也一直在說微軟自己設計SSD專用晶片對於遊</span><span class="push-ipdatetime"> 03/19 11:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KotoriCute</span><span class="f3 push-content">: 戲讀取的改善</span><span class="push-ipdatetime"> 03/19 11:38
+</span></div>
+對，所以這點還比較未知，可是 Sony 直說是使用 Zen 2 core，然後還明確給出了讀取速
+度。因為這樣才特地在這邊做額外討論，也因為這樣我才說等到 XSX 未來拆解之後可能會
+發現這邊的論點失效。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Nico0214</span><span class="f3 push-content">: 身為PC+主機的我，會買ps5就是，因為微軟的獨佔幾乎都會</span><span class="push-ipdatetime"> 03/19 11:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Nico0214</span><span class="f3 push-content">: 出pc，ps的獨佔不會</span><span class="push-ipdatetime"> 03/19 11:40
+</span></div>
+對，我也是這樣想 XD
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 對啊我也是,目前的畫面已經很強.在更強的畫面下,我也只</span><span class="push-ipdatetime"> 03/19 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 用NB的人要去組一台玩遊戲效能超過XSX的要花多少錢</span><span class="push-ipdatetime"> 03/19 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 能說出這個很漂亮那個也很漂亮的區別(?)所以真正影響遊</span><span class="push-ipdatetime"> 03/19 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">i386</span><span class="f3 push-content">: ps3跟360那段有點不正確,PS3當時是認為可以靠Cell強大運算</span><span class="push-ipdatetime"> 03/19 11:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 遊戲體驗的是流暢度.流暢度夠的話就好說</span><span class="push-ipdatetime"> 03/19 11:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">i386</span><span class="f3 push-content">: 能力去取代GPU, 但後來發現不行才再追加GPU進去的</span><span class="push-ipdatetime"> 03/19 11:42
+</span></div>
+整體來說 PS3 理論計算力應該大於 Xbox 360 是事實，不容易發揮也是事實 XD
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 反正就看每個人狀況自己挑組合啊，但說XB沒遊戲真</span><span class="push-ipdatetime"> 03/19 11:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 的好笑</span><span class="push-ipdatetime"> 03/19 11:42
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 11:45:17
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 認為歸認為,但真的諸事不順</span><span class="push-ipdatetime"> 03/19 11:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 如果xbx能夠支援steam遊戲的話...那可能就會買了</span><span class="push-ipdatetime"> 03/19 11:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ksng1092</span><span class="f3 push-content">: XSX也有專屬音效處理器</span><span class="push-ipdatetime"> 03/19 11:45
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">deray</span><span class="f3 push-content">: SSD快有個鳥用？</span><span class="push-ipdatetime"> 03/19 11:45
+</span></div>
+我連數學都算給你看了你這樣對得起你的良心嗎！
+<span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 11:46:00
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eric840421</span><span class="f3 push-content">: 想想今年前的戰畫面到現在的戰內容</span><span class="push-ipdatetime"> 03/19 11:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eric840421</span><span class="f3 push-content">: 幾*</span><span class="push-ipdatetime"> 03/19 11:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">schenkopp</span><span class="f3 push-content">: 認真文推一下,但嘴砲數據玩家的心情也是要顧一下</span><span class="push-ipdatetime"> 03/19 11:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">walkxd136</span><span class="f3 push-content">: 獨佔遊戲bj4</span><span class="push-ipdatetime"> 03/19 11:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cocogogo</span><span class="f3 push-content">: ps5沒啥隱藏效能啦 物理極限就是那樣</span><span class="push-ipdatetime"> 03/19 11:47
+</span></div>
+我都寫說<span class="f3 hl">效能貢獻是零</span>了？
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 除非獨佔 不然預載設計還是會找到最短板平台去調整阿</span><span class="push-ipdatetime"> 03/19 11:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ksng1092</span><span class="f3 push-content">: 他又不是說隱藏效能XD</span><span class="push-ipdatetime"> 03/19 11:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lawer1314</span><span class="f3 push-content">: xbx若真能支援steam，真的會很有吸引力！否則根據一直</span><span class="push-ipdatetime"> 03/19 11:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lawer1314</span><span class="f3 push-content">: 以來xbx對亞洲的經營，還是會乖乖掏錢買ps5！</span><span class="push-ipdatetime"> 03/19 11:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 不然不同平台載的狀況不太一樣 遊戲設計下去可能變調</span><span class="push-ipdatetime"> 03/19 11:48
+</span></div>
+對，所以這就是挑戰。
+而且這次 PS5 是效能短板的那方，所以這次特色功能多能讓開發者支持就是能否從戰爭中
+勝出的關鍵了。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: XBX怎麼可能支援STEAM..</span><span class="push-ipdatetime"> 03/19 11:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 這和我說PS5要支援nshop一樣,快島了可能就會發生了吧</span><span class="push-ipdatetime"> 03/19 11:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 走廊那段我覺得除非極端到不行狀況</span><span class="push-ipdatetime"> 03/19 11:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 不然XBSX的NVME也足以應付+預讀吧</span><span class="push-ipdatetime"> 03/19 11:52
+</span></div>
+看資料吞吐量，因為我們現在還不知道 XSX 到底能不能把 SSD 當成記憶體讀。
+因為 PS5 的相關數據公布了所以我們才能有這個討論，Xbox 如果也有做相同的架構，那
+存取速度的確可能只是 5GB/s vs 2GB/s 而已。
+
+可是如果 XSX 的架構還是傳統架構的話，2GB/s 就只是理論最大值，實際上會下修不少。
+<span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 11:57:22
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 那個進步感應該是對比這世代 同級的XBSX大概差異不大</span><span class="push-ipdatetime"> 03/19 11:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">twitch123</span><span class="f3 push-content">: 想當年PS4多風光，如今效能被吊打 獨佔也跨pc了 可憐</span><span class="push-ipdatetime"> 03/19 11:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">twitch123</span><span class="f3 push-content">: 哪</span><span class="push-ipdatetime"> 03/19 11:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 大概是要在CPU+GPU能負荷的狀況下模擬人類做夢</span><span class="push-ipdatetime"> 03/19 11:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 會一直即時的換場景跟位置等等這種超級端表現才有差</span><span class="push-ipdatetime"> 03/19 11:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 所以這性能上與其說開發者意願 不如說要表現有多強</span><span class="push-ipdatetime"> 03/19 11:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 大概只能真的開發PS5獨佔遊戲XD</span><span class="push-ipdatetime"> 03/19 11:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: XSX如果還是傳統架構就像PC那樣阿,還是要等老半天</span><span class="push-ipdatetime"> 03/19 11:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: MS不會那麼犯傻沒在這塊打磨吧</span><span class="push-ipdatetime"> 03/19 11:58
+</span></div>
+先想想 PS5 因為加這些東西會讓成本上升多少，再想想 XSX 現在訂價上看多少。
+與其說犯傻沒打磨，我覺得認知商業上純粹計算力比較有行銷效益才是重點 XD
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 如果還要考慮兼容舊平台或pc 設計上就不能太激進</span><span class="push-ipdatetime"> 03/19 11:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a00948872</span><span class="f3 push-content">: 有高階pc的買ps5就好</span><span class="push-ipdatetime"> 03/19 12:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">talan</span><span class="f3 push-content">: XSX也有專門的音效處理晶片</span><span class="push-ipdatetime"> 03/19 12:06
+</span></div>
+目前資訊看不出來只是傳統的音效晶片還是像這樣等於是把 GPU 架構拿出來用。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 感覺會特化的廠商還是少數</span><span class="push-ipdatetime"> 03/19 12:08
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 12:10:25
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">talan</span><span class="f3 push-content">: 不是只有ps5才有&#34;精細的音效控制&#34;，xsx也有自己的光追音效</span><span class="push-ipdatetime"> 03/19 12:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 只能期待第一方 除非現成API都包好好直接可以用</span><span class="push-ipdatetime"> 03/19 12:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">isaka</span><span class="f3 push-content">: 音效先別說工作室願不願意做了，玩家的遊戲音效設備也要跟</span><span class="push-ipdatetime"> 03/19 12:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">isaka</span><span class="f3 push-content">: 上啊</span><span class="push-ipdatetime"> 03/19 12:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mercuries2</span><span class="f3 push-content">: 你應該多去看XSX的技術文章再來打這篇比較好，xbox版</span><span class="push-ipdatetime"> 03/19 12:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mercuries2</span><span class="f3 push-content">: 有翻譯。Xbox這次有強調他們有技術能把100g的材質快速</span><span class="push-ipdatetime"> 03/19 12:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mercuries2</span><span class="f3 push-content">: 丟進記憶體裡，也有專門的晶片在處理資料壓縮。</span><span class="push-ipdatetime"> 03/19 12:12
+</span></div>
+有看啦，我哪來熊心豹子膽 XD
+
+但是目前資訊都還沒有 XSX 的 GPU、CPU 對 SSD 存取方式的說明。
+簡單來說他們現在說的東西都還只是「我們很快」跟一些參考數字，但還看不到架構。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SoNesAzusa</span><span class="f3 push-content">: 遊戲為主吧 我要玩的都出在ps上 還可以向下相容 市佔</span><span class="push-ipdatetime"> 03/19 12:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">SoNesAzusa</span><span class="f3 push-content">: 率跟身邊朋友也沒人買xbox 遊戲能連線朋友都買ps版 特</span><span class="push-ipdatetime"> 03/19 12:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">SoNesAzusa</span><span class="f3 push-content">: 地買xbox來邊緣的嗎w</span><span class="push-ipdatetime"> 03/19 12:13
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 12:16:17
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jakechen1027</span><span class="f3 push-content">: 玩單機為主的沒差吧</span><span class="push-ipdatetime"> 03/19 12:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zorroptt</span><span class="f3 push-content">: 獨特架構得遷就其他主機難發揮 性能同樣也是吧 w</span><span class="push-ipdatetime"> 03/19 12:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">FOUR26708292</span><span class="f3 push-content">: 遊戲比較重要</span><span class="push-ipdatetime"> 03/19 12:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chi17</span><span class="f3 push-content">: PC+PS二十年了沒理過xb在幹嘛…有買手把接PC啦XD</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 除非獨佔 不然通常都馬不會特別優化 除非真的時間很多或</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 有被塞錢  不然這些都是成本喔</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mikeneko</span><span class="f3 push-content">: PC+PS5的前提是，你PC要有那個屁股跑次時代大作</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mikeneko</span><span class="f3 push-content">: 每次講到PC都有人說跟主機比好貴，結果用筆電用i3還在</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mikeneko</span><span class="f3 push-content">: 那邊講微軟本家我用PC玩就好，根本呵呵</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">xu3fu6xup6</span><span class="f3 push-content">: 你是不是不知道amd有個東西叫做hbcc</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xu3fu6xup6</span><span class="f3 push-content">: 有一張顯卡叫做radeon vega ssg 2tb</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xu3fu6xup6</span><span class="f3 push-content">: 你是不是更不知道拿cu算音效是amd北極星顯卡後就有的</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xu3fu6xup6</span><span class="f3 push-content">: 東西</span><span class="push-ipdatetime"> 03/19 12:20
+</span></div>
+這樣就要噓讓人難過欸，我們又不是討論這功能是不是沒有人想過 XD
+
+你要這樣討論的話 GPU Mesh Procedure Generation 也是二十年前的論文啊 XDDDDDD
+我們這邊討論的重點當然是搭配主機世代的完整硬體統合，才能延伸成遊戲開發者的開發
+基礎，而這件事情 XSX 不知道有沒有做，如果只有一方有整併的話會造成什麼影響我應該
+是寫得滿清楚吧。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">neogetter</span><span class="f3 push-content">: 單機為主就PC啊,還有MOD可以用</span><span class="push-ipdatetime"> 03/19 12:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xu3fu6xup6</span><span class="f3 push-content">: 新卡→顯卡</span><span class="push-ipdatetime"> 03/19 12:21
+</span></div>幫你改
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 被塞錢的不是都是搞劣化嗎(X</span><span class="push-ipdatetime"> 03/19 12:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xu3fu6xup6</span><span class="f3 push-content">: 除了資料壓縮的部分外 明明都amd祖產</span><span class="push-ipdatetime"> 03/19 12:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 我忽然想到PS5好像沒有說有沒有雙遊戲以上待機功能</span><span class="push-ipdatetime"> 03/19 12:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JunDorisJun</span><span class="f3 push-content">: 理論上這麼強的話應該也可以做到 xsx最喜歡功能XD</span><span class="push-ipdatetime"> 03/19 12:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 那個應該軟體層面的事 想不想做而已</span><span class="push-ipdatetime"> 03/19 12:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: Pc要用80ti/80+gsync啦，體驗感好很多</span><span class="push-ipdatetime"> 03/19 12:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: RAM to SSD類似休眠而已</span><span class="push-ipdatetime"> 03/19 12:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 以下真的買家機較划算</span><span class="push-ipdatetime"> 03/19 12:25
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 12:33:24
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 電腦升級買張2070s也就差不多夠用了</span><span class="push-ipdatetime"> 03/19 12:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Urgot</span><span class="f3 push-content">: $ony沒得吹了，只能吹ssd有多快...但老實講ssd能有多少影響</span><span class="push-ipdatetime"> 03/19 12:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Urgot</span><span class="f3 push-content">: ，至少在pc上看不出來</span><span class="push-ipdatetime"> 03/19 12:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PTTfaggot</span><span class="f3 push-content">: 感覺這次跨平臺遊戲是盒子會贏</span><span class="push-ipdatetime"> 03/19 12:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tomlin121283</span><span class="f3 push-content">: 沒人會討論啦 都忙著戰主機</span><span class="push-ipdatetime"> 03/19 12:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">e04su3no</span><span class="f3 push-content">: 我覺得別太期望三廠會為PS5做什麼客製化</span><span class="push-ipdatetime"> 03/19 12:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qweertyui891</span><span class="f3 push-content">: pc極限高我知道，事實根本沒幾個人花大錢買高效能</span><span class="push-ipdatetime"> 03/19 12:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">qweertyui891</span><span class="f3 push-content">: 顯示卡</span><span class="push-ipdatetime"> 03/19 12:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">e04su3no</span><span class="f3 push-content">: 不過如果能做到遠遠的就有清楚的貼圖而不是靠近時才出現</span><span class="push-ipdatetime"> 03/19 12:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">e04su3no</span><span class="f3 push-content">: ，對遊戲體驗還是有很大的提升</span><span class="push-ipdatetime"> 03/19 12:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 只有少部分遊戲ssd/hdd 有差異</span><span class="push-ipdatetime"> 03/19 12:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: LOD要開大，也要顯卡稱的住</span><span class="push-ipdatetime"> 03/19 12:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gbman</span><span class="f3 push-content">: ps5pro會有，不用擔心，早期衝量，晚期出ps5pro給高階玩家</span><span class="push-ipdatetime"> 03/19 12:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ksng1092</span><span class="f3 push-content">: PC上面看不出來其實也是因為各處都有瓶頸東卡西卡</span><span class="push-ipdatetime"> 03/19 12:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ikarifaye</span><span class="f3 push-content">: 大絕招：要配置我去買電腦就好了</span><span class="push-ipdatetime"> 03/19 12:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">patrickleeee</span><span class="f3 push-content">: 用PC玩 不就有人愛吹GAMEPASS</span><span class="push-ipdatetime"> 03/19 12:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">henryyeh5566</span><span class="f3 push-content">: 感覺你的解讀很...奇妙？</span><span class="push-ipdatetime"> 03/19 12:42
+</span></div>
+只是個嘗試，顯然只是個人意見，完全不代表 Sony 官方規劃架構的目的。
+說真的也只是延伸最前面貼的影片的解讀而已，歡迎指教。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">qweertyui891</span><span class="f3 push-content">: 最後都要遷就PC架構才是最現實的，好聽叫優化 難聽</span><span class="push-ipdatetime"> 03/19 12:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">qweertyui891</span><span class="f3 push-content">: 叫加班</span><span class="push-ipdatetime"> 03/19 12:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">f16leon</span><span class="f3 push-content">: gamepass也有pc</span><span class="push-ipdatetime"> 03/19 12:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aiam</span><span class="f3 push-content">: Xbox其實也蠻好的啊 一台買了可以玩歷代xbox遊戲 而且商店價</span><span class="push-ipdatetime"> 03/19 12:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">aiam</span><span class="f3 push-content">: 格超級便宜還有包月的選項，以後應該會想入手，但PS5的獨佔</span><span class="push-ipdatetime"> 03/19 12:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">aiam</span><span class="f3 push-content">: 對我們來說更有吸引力沒錯</span><span class="push-ipdatetime"> 03/19 12:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: Xgp 版的遊戲不能用mod，優化也較有問題，應該很少人</span><span class="push-ipdatetime"> 03/19 12:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 用吧</span><span class="push-ipdatetime"> 03/19 12:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 蛤 不能MOD</span><span class="push-ipdatetime"> 03/19 12:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: Pc上的微軟gamepass啦，要也是用ea/ubi的gamepass</span><span class="push-ipdatetime"> 03/19 12:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alvistan</span><span class="f3 push-content">: PC+PS5應該要改成2080+PS5 低階PC根本跑不了大作</span><span class="push-ipdatetime"> 03/19 12:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: PC優點就畫面設定彈性阿 低階的全特效關調跑低解析也能玩</span><span class="push-ipdatetime"> 03/19 12:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: 除非是只有內顯的</span><span class="push-ipdatetime"> 03/19 12:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alvistan</span><span class="f3 push-content">: 曾經我用R9 270玩暗影 簡直是惡夢...</span><span class="push-ipdatetime"> 03/19 12:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 以xsx 宣稱獨立光追12t來講，要ampere才有機會打xsx</span><span class="push-ipdatetime"> 03/19 12:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 目前turing的光追不實用，2077不知道撐不撐的住</span><span class="push-ipdatetime"> 03/19 12:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">peacemaker1</span><span class="f3 push-content">: 連線已經被fornite克服了啊，現在大廠都會想跨平台連</span><span class="push-ipdatetime"> 03/19 12:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">peacemaker1</span><span class="f3 push-content">: 線，越多人一起玩越好</span><span class="push-ipdatetime"> 03/19 12:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ludashi</span><span class="f3 push-content">: xbox垃垃來的，沒啥強大的遊戲</span><span class="push-ipdatetime"> 03/19 12:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a1234567289</span><span class="f3 push-content">: 當初Xbox 360的計算力沒有亞於PS3吧 PS3的flops大多</span><span class="push-ipdatetime"> 03/19 12:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a1234567289</span><span class="f3 push-content">: 數情況下都沒用到 整數運算又輸到沒褲子</span><span class="push-ipdatetime"> 03/19 12:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jason748</span><span class="f3 push-content">: 所以2080以下都是垃圾就對了？索粉真好玩</span><span class="push-ipdatetime"> 03/19 12:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">i386</span><span class="f3 push-content">: 當時PS3的運算能力都在CPU上而不是在GPU上</span><span class="push-ipdatetime"> 03/19 12:55
+</span></div>
+我對這點的解讀是非常規才是重點就是了 XD
+當時的開發者也可以選擇針對強度差很多的 CPU 特化模擬類的計算，但實際上就 PS3 週
+期我們根本沒看到這樣發揮 CPU 潛力的遊戲 XD
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 1080p...ok，4k真的要80/80ti啊</span><span class="push-ipdatetime"> 03/19 12:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 配合解析度去調整就好了,沒說一定都要ultra high</span><span class="push-ipdatetime"> 03/19 12:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a1234567289</span><span class="f3 push-content">: PS3的CPU是浮點強 但整數很弱 可是浮點用到的次數並</span><span class="push-ipdatetime"> 03/19 12:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a1234567289</span><span class="f3 push-content">: 沒有那麼多 會這樣是因為當初他們要畫面和物理都用Ce</span><span class="push-ipdatetime"> 03/19 12:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a1234567289</span><span class="f3 push-content">: ll算 沒要加顯卡 只是沒想到flops不夠強</span><span class="push-ipdatetime"> 03/19 12:57
+</span></div>
+事後論就是規格規劃錯誤，跟本世代 Xbox One 一樣。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: 現在主機一堆遊戲不都搞動態解析度</span><span class="push-ipdatetime"> 03/19 12:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 因為人對張數比較敏感吧,</span><span class="push-ipdatetime"> 03/19 12:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LABOYS</span><span class="f3 push-content">: 重點還是遊戲有哪些，我就是為了想玩的遊戲會買一台的人</span><span class="push-ipdatetime"> 03/19 12:59
+</span></div>
+我以為龍虎王會說「我全都要！」
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: XSX的獨立光追真的有贏RTX還是一個問號巴 兩邊宣稱的數</span><span class="push-ipdatetime"> 03/19 13:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 據又不太一樣 RTX當初公告的數據是另一種面向的</span><span class="push-ipdatetime"> 03/19 13:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 2邊的RT都是上市有遊戲再看看吧</span><span class="push-ipdatetime"> 03/19 13:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: 100FPS以內的張數變動很明顯  用動態解析度會比較好</span><span class="push-ipdatetime"> 03/19 13:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 我自己也是覺得NV都搞不定的東西AMD能變出什麼</span><span class="push-ipdatetime"> 03/19 13:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">biggest1983</span><span class="f3 push-content">: 所以像戰神的無讀取畫面會更流暢？</span><span class="push-ipdatetime"> 03/19 13:01
+</span></div>
+想像一下傳送門不用先進去異空間就可以直接到目的地的戰神。
+當然這影響到了後續故事的某個要素啦，不過我猜是這個無接縫載入用迴廊影響了故事上
+的設計，而不是反過來。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 但我想能搞到上市就是要OK才給過的</span><span class="push-ipdatetime"> 03/19 13:01
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 13:08:37
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 張數變動容易發生在不能整除30或60的撕裂感</span><span class="push-ipdatetime"> 03/19 13:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alvistan</span><span class="f3 push-content">: NV不會搞不定 只是這一代是白老鼠 本來就會比較爛</span><span class="push-ipdatetime"> 03/19 13:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 不過XB1X已經有120Hz訊號輸出了所以比較好(不是張數)</span><span class="push-ipdatetime"> 03/19 13:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 我是覺穩幀比高幀重要，穩定30/45fps比120-70-120體</span><span class="push-ipdatetime"> 03/19 13:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 驗感好</span><span class="push-ipdatetime"> 03/19 13:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bala045</span><span class="f3 push-content">: 全買就好啦 可是我沒時間玩</span><span class="push-ipdatetime"> 03/19 13:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 這是連gsync或vfr都救不了</span><span class="push-ipdatetime"> 03/19 13:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: 高幀要搭配可變更新率 體驗才會更好</span><span class="push-ipdatetime"> 03/19 13:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 反正目標60應該是沒問題啦, PC目標都144了</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pusheen</span><span class="f3 push-content">: 雖然 PC 效能爆強，但我們還是要配合 console</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 你差太多，gsync一樣會感到頓挫感</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">silomin</span><span class="f3 push-content">: RT的效果和效率要好還是需要在遊戲開發早期就有規劃設計</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 當初給的數據是每秒10/8/6 Giga Rays 跟微軟講的數據不</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 能直接比</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: 現在要穩幀現在要穩靠動態解析度就搞定了</span><span class="push-ipdatetime"> 03/19 13:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alvistan</span><span class="f3 push-content">: 不可能會允許這麼大震盪 就像現在也不會30-60</span><span class="push-ipdatetime"> 03/19 13:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alvistan</span><span class="f3 push-content">: 開發者會去限制</span><span class="push-ipdatetime"> 03/19 13:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 4K/144/hdr的3a還沒單卡能壓制啦</span><span class="push-ipdatetime"> 03/19 13:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 不過我記得有一個是Pascal直接暴力硬算跟Turing的對比</span><span class="push-ipdatetime"> 03/19 13:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RGZ91B</span><span class="f3 push-content">: 120-70-120通常都是CPU性能不足</span><span class="push-ipdatetime"> 03/19 13:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 那個看起來應該比較接近微軟提供的意思</span><span class="push-ipdatetime"> 03/19 13:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william456</span><span class="f3 push-content">: 那是舉例啦，很多情況下cpu都還沒吃滿呢</span><span class="push-ipdatetime"> 03/19 13:13
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 13:14:39
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rasputin</span><span class="f3 push-content">: 我不太相信跨平台開發者會去配合友機改變設計，依過往</span><span class="push-ipdatetime"> 03/19 13:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rasputin</span><span class="f3 push-content">: 經驗比較會是「那就讓友機版讀取時稍微頓一下」</span><span class="push-ipdatetime"> 03/19 13:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 其實有個重點啦 SPU的影響力不是只有聲音表現上的提升</span><span class="push-ipdatetime"> 03/19 13:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 而是聲音相關程序通通獨立出來 原本由CPU負責的運算消失</span><span class="push-ipdatetime"> 03/19 13:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 整體處理的多核運算優化上 預處理 處理 後處理的等待時間</span><span class="push-ipdatetime"> 03/19 13:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 縮減等等連動影響 實際運算速度不是單純CPU數值的比較就</span><span class="push-ipdatetime"> 03/19 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 能得出結果</span><span class="push-ipdatetime"> 03/19 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 再加上IO速度的差異 兩邊使用記憶體量一樣的情況下 表現</span><span class="push-ipdatetime"> 03/19 13:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuku321</span><span class="f3 push-content">: 真的很難說哪邊會比較好 因為實際使用材質就在那不會變</span><span class="push-ipdatetime"> 03/19 13:22
+</span></div>
+以這點來說看到兩個出發點不盡相同的次世代主機倒是挺不錯的。
+順便期待一下 XX?? 的 PS5 版啊 XDD
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">i386</span><span class="f3 push-content">: 跨平台還有PC阿, PC的SSD也沒這些特異功能</span><span class="push-ipdatetime"> 03/19 13:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric910005</span><span class="f3 push-content">: 這些都假象 哪邊遊戲多哪邊有客群</span><span class="push-ipdatetime"> 03/19 13:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eric910005</span><span class="f3 push-content">: 而且老實說忠誠玩家沒那麼容易跑掉 玩了10幾年突然換</span><span class="push-ipdatetime"> 03/19 13:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eric910005</span><span class="f3 push-content">: 跑道 我覺得佔極少數</span><span class="push-ipdatetime"> 03/19 13:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">segio</span><span class="f3 push-content">: 問題還有人會跑到XB去嗎?MS根本就沒怎麼在經營遊戲了吧</span><span class="push-ipdatetime"> 03/19 13:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tsairay</span><span class="f3 push-content">: 你手上一堆ps4遊戲的不太可能會換跑道啦,要不然你以前買</span><span class="push-ipdatetime"> 03/19 13:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tsairay</span><span class="f3 push-content">: 還沒玩的怎麼辦</span><span class="push-ipdatetime"> 03/19 13:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">i386</span><span class="f3 push-content">: 怎麼辦?繼續用PS4玩啊, 又不是PS5出了PS4就會自己自爆XD</span><span class="push-ipdatetime"> 03/19 13:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hipposman</span><span class="f3 push-content">: 沒玩就…放著 然後還會一直長出來也沒去玩 很討厭</span><span class="push-ipdatetime"> 03/19 13:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TaipeiKindom</span><span class="f3 push-content">: 不用吵了 買PS5最划算</span><span class="push-ipdatetime"> 03/19 13:40
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">cute101037</span><span class="f3 push-content">: 買ps5唯一原因，因為psn+還有10年==</span><span class="push-ipdatetime"> 03/19 13:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ksng1092</span><span class="f3 push-content">: 兩三年後都還能玩PS4的人，換PS5其實他也不會想說&#34;啊這</span><span class="push-ipdatetime"> 03/19 13:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ksng1092</span><span class="f3 push-content">: 就是被隔壁壓在地上摩擦的畫質嗎&#34;</span><span class="push-ipdatetime"> 03/19 13:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eric840421</span><span class="f3 push-content">: 微軟還有心在經營遊戲嗎？沒心出新機幹嘛？</span><span class="push-ipdatetime"> 03/19 13:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TaipeiKindom</span><span class="f3 push-content">: 微軟狂買工作室丟在那邊也沒成果</span><span class="push-ipdatetime"> 03/19 13:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">graphict</span><span class="f3 push-content">: 硬體規格慘輸，然後系統軟體調教能力也輸</span><span class="push-ipdatetime"> 03/19 13:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vvvvaaaa</span><span class="f3 push-content">: 現在只能等外型了，如果外型也炸，我的信仰應該就崩盤了</span><span class="push-ipdatetime"> 03/19 13:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gogolct</span><span class="f3 push-content">: 外型是能玩嗎...？應該看是不是又要直升機起飛吧</span><span class="push-ipdatetime"> 03/19 13:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 外型其實蠻重要的 一般家庭買來當家電的不少</span><span class="push-ipdatetime"> 03/19 13:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">teruhyde12</span><span class="f3 push-content">: 外型能變成機器人再說，不然是能贏多少?</span><span class="push-ipdatetime"> 03/19 13:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">isaka</span><span class="f3 push-content">: 但是目前向下相容好像也是模擬ps4的硬體去跑不是嗎</span><span class="push-ipdatetime"> 03/19 13:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BSpowerx</span><span class="f3 push-content">: 外型要方方正正一點才是騙老婆說是路由器阿</span><span class="push-ipdatetime"> 03/19 14:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 降頻啦XD</span><span class="push-ipdatetime"> 03/19 14:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">teruhyde12</span><span class="f3 push-content">: 而且不是一堆人怕老婆發現，外型跟電腦主機殼一樣就</span><span class="push-ipdatetime"> 03/19 14:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">teruhyde12</span><span class="f3 push-content">: 好啦</span><span class="push-ipdatetime"> 03/19 14:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ksng1092</span><span class="f3 push-content">: 系統軟體調教要實機才會知道吧...</span><span class="push-ipdatetime"> 03/19 14:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: Pro也是後來才給開升速</span><span class="push-ipdatetime"> 03/19 14:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 當年凶箱失敗就是那個外盒</span><span class="push-ipdatetime"> 03/19 14:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 為了變小一點他們把變壓器外接又出了別的問題</span><span class="push-ipdatetime"> 03/19 14:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gogolct</span><span class="f3 push-content">: 是，但是XSX是把舊遊戲提升到新硬體升級跑</span><span class="push-ipdatetime"> 03/19 14:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 意思是你要開發跨平台遊戲這些都沒用嗎？要利用這些</span><span class="push-ipdatetime"> 03/19 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 就只能在PS5賣？</span><span class="push-ipdatetime"> 03/19 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 有沒有用要看遊戲廠商要不要用</span><span class="push-ipdatetime"> 03/19 14:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 聰明的我全都要的廠商是不可能放過任何機會的</span><span class="push-ipdatetime"> 03/19 14:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">isaka</span><span class="f3 push-content">: 就想像成joycon各種功能就好，東西放在那，但要不要針對它</span><span class="push-ipdatetime"> 03/19 14:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">isaka</span><span class="f3 push-content">: 去做還是看廠商</span><span class="push-ipdatetime"> 03/19 14:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 所以其他平台也做得到？不是只有PS5？</span><span class="push-ipdatetime"> 03/19 14:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 這東西出來了才知道,到底IO的差別和RT的差別在哪裡</span><span class="push-ipdatetime"> 03/19 14:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 不是啊，第一點涉及關卡設計，不可能同一款遊戲不同</span><span class="push-ipdatetime"> 03/19 14:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 我們也只能蝦猜</span><span class="push-ipdatetime"> 03/19 14:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 平台看到的關卡不同吧？</span><span class="push-ipdatetime"> 03/19 14:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Askalaphos</span><span class="f3 push-content">: 後續推出有 PRO 改良版機率有多少呢？ 拭目以待 ^^</span><span class="push-ipdatetime"> 03/19 14:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 要出PRO就不可能只差一點就推出來</span><span class="push-ipdatetime"> 03/19 14:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 但現在的AMD能力也只能推出差一點的版本</span><span class="push-ipdatetime"> 03/19 14:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">segio</span><span class="f3 push-content">: 跨平台也要平台能賣吧.以XB平台的吸金能力.沒事幹嘛跨?</span><span class="push-ipdatetime"> 03/19 14:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 以現況來說7:3的市佔,你不跨等於少掉3成機會阿</span><span class="push-ipdatetime"> 03/19 14:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 遊戲一片開發成本比一片高,不弄就要喝西北風了吧</span><span class="push-ipdatetime"> 03/19 14:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gxxboator</span><span class="f3 push-content">: 推詳細分析, 不過老衲腦中的重點不是光光迴廊變短,</span><span class="push-ipdatetime"> 03/19 14:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Gxxboator</span><span class="f3 push-content">: 而是短迴廊之後的新玩法或新型態遊戲……</span><span class="push-ipdatetime"> 03/19 14:34
+</span></div>
+嗯，反正就是有機會讓遊戲設計再次翻盤。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lskjd9058</span><span class="f3 push-content">: 我猜想Sony還是想用獨佔/限時獨佔來鞏固他們的市場</span><span class="push-ipdatetime"> 03/19 14:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lskjd9058</span><span class="f3 push-content">: 方便開發的環境以及向下支援到PS一代 都是為了營造出</span><span class="push-ipdatetime"> 03/19 14:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Gxxboator</span><span class="f3 push-content">: 不然只是迴廊變短, 不太會是讓遊戲更好玩的關鍵……</span><span class="push-ipdatetime"> 03/19 14:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lskjd9058</span><span class="f3 push-content">:  一種&#34;PS5可以玩到很多遊戲&#34;的概念 來吸引消費者購買</span><span class="push-ipdatetime"> 03/19 14:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lskjd9058</span><span class="f3 push-content">: 對於仍舊追求聲光效果的玩家來說 PS5可能難以滿足他們</span><span class="push-ipdatetime"> 03/19 14:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lskjd9058</span><span class="f3 push-content">: 但對於沒有高級顯卡又想玩很多遊戲的玩家來說 PS5應該</span><span class="push-ipdatetime"> 03/19 14:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lskjd9058</span><span class="f3 push-content">: 算是不錯的選擇?</span><span class="push-ipdatetime"> 03/19 14:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">auron4041</span><span class="f3 push-content">: 事實就是PS5可以玩比較多的遊戲嘛</span><span class="push-ipdatetime"> 03/19 14:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 簡單說好了，jedi fallen order要一直鑽洞就是這</span><span class="push-ipdatetime"> 03/19 14:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 原因，那他下一代如果要全平台是不是一樣要鑽洞？如</span><span class="push-ipdatetime"> 03/19 14:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TotalBiscuit</span><span class="f3 push-content">: 果他不想鑽洞是不是只能出在PS5上？</span><span class="push-ipdatetime"> 03/19 14:43
+</span></div>
+對這就是難題。
+原本已經掌握得不錯這種配合載入需求的遊戲設計，接下來會受到相當衝擊 XD
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gdtg10900</span><span class="f3 push-content">: 想買PS5但怕4K出現30/60 fps差距</span><span class="push-ipdatetime"> 03/19 14:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">commandoEX</span><span class="f3 push-content">: 照結論來說PS5前兩年會被PS4/XBOX ONE拖住沒啥用</span><span class="push-ipdatetime"> 03/19 14:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">commandoEX</span><span class="f3 push-content">: 後面轉換期過了大家也熟了新主機，新的特色能壓過效能</span><span class="push-ipdatetime"> 03/19 14:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">segio</span><span class="f3 push-content">: 7:3是歐美吧.日本大概9.9:0.1...</span><span class="push-ipdatetime"> 03/19 14:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">commandoEX</span><span class="f3 push-content">: 差距嗎?另外音效晶片的效益能不能透過電視喇叭表現出</span><span class="push-ipdatetime"> 03/19 14:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">commandoEX</span><span class="f3 push-content">: 來?畢竟玩家機又玩音響的應該不是特別多</span><span class="push-ipdatetime"> 03/19 14:55
+</span></div>
+是喔，而且不如說耳機的效益應該最高。
+官方立場是要一路支援到所以播放設備都能有同級體驗，不過我其實想不到耳機之外要怎
+樣做。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gogolct</span><span class="f3 push-content">: 音效XBX已經超越一個車身了，PS5現在才要追</span><span class="push-ipdatetime"> 03/19 14:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">isaka</span><span class="f3 push-content">: 感覺音效主要是要給vr用</span><span class="push-ipdatetime"> 03/19 14:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asgardgogo</span><span class="f3 push-content">: 中文化啊</span><span class="push-ipdatetime"> 03/19 15:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t77133562003</span><span class="f3 push-content">: 能吐槽的地方也太多 我還是閉嘴好了</span><span class="push-ipdatetime"> 03/19 15:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lauoosai</span><span class="f3 push-content">: 不管如何，這次我會等pro版出來再說</span><span class="push-ipdatetime"> 03/19 15:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DWADE03</span><span class="f3 push-content">: 想買就先買，遊戲陣容好才是重要的。反正一台也沒多少錢</span><span class="push-ipdatetime"> 03/19 15:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KooriHime90</span><span class="f3 push-content">: 那顆所謂的SSD管理用CPU在了解Zen2架構的人看法 他</span><span class="push-ipdatetime"> 03/19 15:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KooriHime90</span><span class="f3 push-content">: 其實就是Zen2本來的IO Die根本就沒有另外加一顆CPU</span><span class="push-ipdatetime"> 03/19 15:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Jerrylin1212</span><span class="f3 push-content">: 以前軟軟也幻想DX12和雲端運算能挽救xb1效能</span><span class="push-ipdatetime"> 03/19 15:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Jerrylin1212</span><span class="f3 push-content">: 結果後來還是出一台硬體強一點的比較快</span><span class="push-ipdatetime"> 03/19 15:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 時間會證明一切啦,我猜到時候一定是索尼沒穿褲子</span><span class="push-ipdatetime"> 03/19 15:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Askalaphos</span><span class="f3 push-content">: 如果能支援 ATMOS 音效應該不賴</span><span class="push-ipdatetime"> 03/19 15:22
+</span></div>
+理論上他們要做的事情就是要讓這種音效表現能在盡可能多的裝置上呈現啦 XD
+應該是會比較厲害才對。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 這次SONY不像微軟XB1的eSRAM+DDR3那麼慘,但是性能還是</span><span class="push-ipdatetime"> 03/19 15:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 差距很大,跨平台遊戲表現98%大概都會輸,只玩獨佔沒差</span><span class="push-ipdatetime"> 03/19 15:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 最好選項真的是組一台RTX3070以上的PC + PS5,其實和這世</span><span class="push-ipdatetime"> 03/19 15:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 代一樣沒變,一樣是PC+PS4最佳解</span><span class="push-ipdatetime"> 03/19 15:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">herson8852</span><span class="f3 push-content">: 這些對我們來講沒用啦...有廠商開發能發揮這些東西的</span><span class="push-ipdatetime"> 03/19 15:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">herson8852</span><span class="f3 push-content">: 獨佔才有可能劃分出分水嶺</span><span class="push-ipdatetime"> 03/19 15:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MartyFriedma</span><span class="f3 push-content">: xbox未來某些遊戲說不定會可以跟pc跨平台連線</span><span class="push-ipdatetime"> 03/19 15:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 這是缺點吧XD</span><span class="push-ipdatetime"> 03/19 15:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t77133562003</span><span class="f3 push-content">: 很多遊戲一直都是跨pc sony也是..</span><span class="push-ipdatetime"> 03/19 15:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">commandoEX</span><span class="f3 push-content">: XB1出的時候哪來的DX12?而且DX12算是從家機那回流到</span><span class="push-ipdatetime"> 03/19 15:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">commandoEX</span><span class="f3 push-content">: PC上的</span><span class="push-ipdatetime"> 03/19 15:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gxxboator</span><span class="f3 push-content">: 老衲的最佳解還是全機制霸+香香機上網看攻略就好……</span><span class="push-ipdatetime"> 03/19 15:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 最佳解就是全機制霸然後玩手游當課長</span><span class="push-ipdatetime"> 03/19 15:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t77133562003</span><span class="f3 push-content">: 最佳解不是打開手機 看全平台實況嗎 我雲我驕傲</span><span class="push-ipdatetime"> 03/19 15:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Gxxboator</span><span class="f3 push-content">: 這樣四萬塊可以搞定接下來七年的遊戲花費,</span><span class="push-ipdatetime"> 03/19 15:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: PS平台還是很多日系XBOX玩不到,例如我正要玩的十三機兵</span><span class="push-ipdatetime"> 03/19 15:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 還有MHW唯獨XBOX平台沒中文,整個被遺忘</span><span class="push-ipdatetime"> 03/19 15:40
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">Shower360</span><span class="f3 push-content">: 信仰滿點</span><span class="push-ipdatetime"> 03/19 15:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Jerrylin1212</span><span class="f3 push-content">: 我哪句話說xb1出的時候就有DX12==</span><span class="push-ipdatetime"> 03/19 15:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cocowing</span><span class="f3 push-content">: 在台灣市場,XBOX要贏是不可能了,除非微軟爸爸一台賣半價</span><span class="push-ipdatetime"> 03/19 15:41
+</span></div><span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 15:47:28
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yangtsur</span><span class="f3 push-content">: 趁機學英文也不錯啊</span><span class="push-ipdatetime"> 03/19 15:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">i386</span><span class="f3 push-content">: xbox台區商店那鬼樣子, 沒人買只能說剛好而已</span><span class="push-ipdatetime"> 03/19 15:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Basa9</span><span class="f3 push-content">: 微軟300%不可信</span><span class="push-ipdatetime"> 03/19 15:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gbman</span><span class="f3 push-content">: Xboxs要贏要看獨佔，可是好像都有pc版，2080ti+ps5撐到換ps</span><span class="push-ipdatetime"> 03/19 15:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gbman</span><span class="f3 push-content">: 5pro +4080ti</span><span class="push-ipdatetime"> 03/19 15:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">YJJ</span><span class="f3 push-content">: 感覺是另有意圖想配合vr</span><span class="push-ipdatetime"> 03/19 15:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">letmecc</span><span class="f3 push-content">: 推整理</span><span class="push-ipdatetime"> 03/19 16:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alvis000</span><span class="f3 push-content">: 要也是ps+ns   xsx台灣賣不起來</span><span class="push-ipdatetime"> 03/19 16:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lanstype</span><span class="f3 push-content">: 總之外型要像路由器我才能買（x</span><span class="push-ipdatetime"> 03/19 16:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CloudVII</span><span class="f3 push-content">: 凶盒播放器我覺得不行</span><span class="push-ipdatetime"> 03/19 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayuhb</span><span class="f3 push-content">: 凶盒空氣清淨機造型我還挺喜歡的</span><span class="push-ipdatetime"> 03/19 16:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">menchian</span><span class="f3 push-content">: 把SSD當成RAM來操作，在這滿街都是QLC的時代，壽命堪憂</span><span class="push-ipdatetime"> 03/19 16:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MrDisgrace</span><span class="f3 push-content">: 滿街QLC???</span><span class="push-ipdatetime"> 03/19 16:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ayuhb</span><span class="f3 push-content">: 哈哈哈哈 滿街QLC</span><span class="push-ipdatetime"> 03/19 16:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: SSD當RAM不用想了拉 傳統Nand速度不夠 連3Dxpoint都很免</span><span class="push-ipdatetime"> 03/19 17:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig</span><span class="f3 push-content">: 強了 只能當Cache加減用而已</span><span class="push-ipdatetime"> 03/19 17:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuninaka</span><span class="f3 push-content">: 這個沒有當RAM操作拉</span><span class="push-ipdatetime"> 03/19 17:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kuninaka</span><span class="f3 push-content">: 速度還是差RAM很多</span><span class="push-ipdatetime"> 03/19 17:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OGoTTe</span><span class="f3 push-content">: 有pc和ps4p的我選擇觀望 反正三年內第一方一定玩得到</span><span class="push-ipdatetime"> 03/19 19:28
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">ryosam</span><span class="f3 push-content">: 整個就是信仰文，對我來說哪一台安靜就買哪一台，PS4 Pro</span><span class="push-ipdatetime"> 03/19 21:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ryosam</span><span class="f3 push-content">: 那個跟飛機起飛一樣的聲音我實在不行，現在雙平台都有的</span><span class="push-ipdatetime"> 03/19 21:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ryosam</span><span class="f3 push-content">: 遊戲我都買xbox版，xonex安靜畫面又好，為什麼不買</span><span class="push-ipdatetime"> 03/19 21:02
+</span></div>
+我自己都不是很相信開發者會買帳了，你從哪裡看出信仰文（汗
+<span class="f2">※ 編輯: dklassic (111.250.50.111 臺灣), 03/19/2020 21:31:58
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jior</span><span class="f3 push-content">: 其實有pro的跳PS5升級感還是很大啦，光cpu跟讀取就差多少了</span><span class="push-ipdatetime"> 03/19 21:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jior</span><span class="f3 push-content">: ，GPU提升也是超過一倍，只是買一台輸XSX的機器感覺有點疙瘩</span><span class="push-ipdatetime"> 03/19 21:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jior</span><span class="f3 push-content">: 而已</span><span class="push-ipdatetime"> 03/19 21:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jajepound</span><span class="f3 push-content">: 買ps4pro不也是買一臺輸xox的機器嗎</span><span class="push-ipdatetime"> 03/19 22:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alfread</span><span class="f3 push-content">: 我多聽了幾遍，覺得所謂的第 9 個 Zen 2 核心應該是聽錯</span><span class="push-ipdatetime"> 03/19 23:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alfread</span><span class="f3 push-content">: 一個是 Kraken 解壓縮單元相當於 9 個 Zen 2 核心效能</span><span class="push-ipdatetime"> 03/19 23:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alfread</span><span class="f3 push-content">: 一個是說 I/O 輔助處理器 &#34;不是&#34; Zen 2 核心而是專門的</span><span class="push-ipdatetime"> 03/19 23:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zingy</span><span class="f3 push-content">: 腦補最強，什麼都沒有也可以吹出一篇。</span><span class="push-ipdatetime"> 03/20 00:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BraveCattle</span><span class="f3 push-content">: 如果SONY在發售前沒有拿出傳聞中的PS5P，那PS5要在價</span><span class="push-ipdatetime"> 03/20 00:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">BraveCattle</span><span class="f3 push-content">: 格拿出優勢，不然這世代起步會比較辛苦</span><span class="push-ipdatetime"> 03/20 00:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 看了一下PS4pro比XB1X便宜100美,差40%效能</span><span class="push-ipdatetime"> 03/20 01:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CVTaihouKai</span><span class="f3 push-content">: 大概像這樣吧,希望是這樣</span><span class="push-ipdatetime"> 03/20 01:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KAOKAOKAO</span><span class="f3 push-content">: 推分析  都要看SDK好不好用  市場策略/教育有無到位</span><span class="push-ipdatetime"> 03/20 08:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KAOKAOKAO</span><span class="f3 push-content">: 要差異化  就要有調整客戶開發習慣的能力</span><span class="push-ipdatetime"> 03/20 08:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KAOKAOKAO</span><span class="f3 push-content">: Cell不是沒有機會  但沒有 Nvidia 的腹地去開發 CUDA</span><span class="push-ipdatetime"> 03/20 08:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KAOKAOKAO</span><span class="f3 push-content">: 也沒有 Khronos 的格局用開放標準去拼 OpenCL</span><span class="push-ipdatetime"> 03/20 08:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KAOKAOKAO</span><span class="f3 push-content">: 沒有人願意幫你寫軟體  再好的架構都是一頭熱</span><span class="push-ipdatetime"> 03/20 08:16
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/PlayStation/M.1584587820.A.316.html?cacheKey=2084-278936598&amp;offset=44504&amp;offset-sig=23104ba13b65a096584ab13140353fc387ea9588" data-longpollurl="/v1/longpoll?id=e076050d348f80abbb54101dd8338fbb29076d44" data-offset="44504"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

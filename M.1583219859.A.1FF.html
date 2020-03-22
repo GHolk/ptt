@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[情報] 聯發科晶片漏洞 - 看板 MobileComm - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="轉錄吳泓霖FB(john wu；magisk作者）
+[Android 系統安全三兩事]
+今天 Google 公開了一個重大 Android 系統資安事件，在資安圈內引發不小的反響，而
+且意外的跟台灣有關聯 。這件事其實在一個月前我就得知了，不過為了配合 Google 的
+要求，一直等到今天才正式公開。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[情報] 聯發科晶片漏洞">
+<meta property="og:description" content="轉錄吳泓霖FB(john wu；magisk作者）
+[Android 系統安全三兩事]
+今天 Google 公開了一個重大 Android 系統資安事件，在資安圈內引發不小的反響，而
+且意外的跟台灣有關聯 。這件事其實在一個月前我就得知了，不過為了配合 Google 的
+要求，一直等到今天才正式公開。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/MobileComm/M.1583219859.A.1FF.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/MobileComm/index.html"><span class="board-label">看板 </span>MobileComm</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/MobileComm/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">itgma (一機罵)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">MobileComm</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[情報] 聯發科晶片漏洞</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Mar  3 15:17:37 2020</span></div>
+
+
+轉錄<span class="f3 hl">吳泓霖FB(john wu；magisk作者）</span>
+
+
+[Android 系統安全三兩事]
+
+今天 Google 公開了一個重大 Android 系統資安事件，在資安圈內引發不小的反響，而
+且意外的跟台灣有關聯 。這件事其實在一個月前我就得知了，不過為了配合 Google 的
+要求，一直等到今天才正式公開。
+
+故事要從去年二月開始說起：XDA 論壇上的某位名叫 &#34;diplomatic&#34; 的網友為了改機 Ama
+zon 的廉價平板 Fire Tablet 系列 (使用聯發科的晶片)，開始分析其系統來找漏洞，最
+終被他找到某個內核 (Linux kernel) 驅動程式的軟體漏洞。不久後他便發現，這個漏洞
+竟然幾乎在「所有」使用聯發科 64 位元晶片的手機都存在 (包含 2015 的型號)！但他
+非但沒有通告任何廠商，反而還在 4 月的時候在 XDA 論壇上很「天真」的發表「聯發科
+ ARMv8 通用的奇蹟破解」一文，想說可以「造福」大量想要改機的手機玩家。
+
+所以說，這個所謂漏洞，到底多嚴重？
+
+簡直是災難！CVSS 指標高達 9.3/10！
+
+<span class="f3 hl">簡單解釋這個漏洞給了解 OS 的人：它可以讓 userspace 的程式直接對 kernel memory </span>
+<span class="f3 hl">存取/寫入。</span>這基本上就等於隨便一個惡意程式都能「完全」操控整個系統，竊取任意使
+用者資料什麼的都是小 case！
+
+聯發科表示，他們在去年 5 月其實就得知這個漏洞，並有將修正補丁發送給他們的客戶
+。若聯發科的聲明屬實，那即便漏洞的補丁已經存在超過 9 個月，至今幾乎市面上所有
+使用聯發科 64 位元晶片的機型都仍未將其修復，受影響的機子恐達上千萬，不容小覷！
+
+使用聯發科晶片的手機大都是中低階機型。這些手機通常因為利潤過低，提供售後系統維
+護不僅不敷成本，購買的用戶大多根本也不會在意 (俗夠大碗的手機，有什麼好嫌的？)
+，所以基本上手機買來的當天就是所謂「孤兒機」，不怎麼會收到系統更新。
+
+智慧型手機已經成為人們生活極重要的一部分，小小一台裝置基本上存有我們所有的資料
+。這個事件警惕我們，有系統更新是幸福的，收到通知後最好盡快升級！還有，如果經濟
+許可的話，千萬不要貪小便宜去買廉價手機！
+
+。。。。。。。
+
+P.S. 為什麼最後會牽扯上 Google？為何被要求等到 3 月才能公開此消息？這就得說明
+Google 對 Android 系統的資安政策，不過因篇幅關係這裡就省略了。欲知後事如何，且
+待下回分解
+
+
+——————————
+底下留言補充
+
+P.S.S. 這個是 XDA 為此次事件做的超詳細報導 (此文作者有跟我請教過)，若想知道更
+多細節的 (或是等不及我下回更新 XDD)，可以做直接參考
+<a href="https://www.xda-developers.com/mediatek-su-rootkit-exploit/" target="_blank" rel="nofollow">https://www.xda-developers.com/mediatek-su-rootkit-exploit/</a>
+
+
+——————————
+
+去年5月就知道漏洞
+距離現在幾乎快一年了
+低階安卓手機用戶的個資真easy
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 61.223.8.159 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/MobileComm/M.1583219859.A.1FF.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/MobileComm/M.1583219859.A.1FF.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cplusplus426</span><span class="f3 push-content">: 沒差 反正聯發科員工還是爽賺</span><span class="push-ipdatetime"> 03/03 15:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NickXiang   </span><span class="f3 push-content">: 還好啦 隔壁牙膏廠還不是活的好好的</span><span class="push-ipdatetime"> 03/03 15:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DiviNeLuke  </span><span class="f3 push-content">: intel出那包都還是活得好好的</span><span class="push-ipdatetime"> 03/03 15:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kouta       </span><span class="f3 push-content">: 谷歌資安團隊急著公佈iOS 但自己的壓下來蓋牌沒事ㄦ</span><span class="push-ipdatetime"> 03/03 15:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Hohenzollern</span><span class="f3 push-content">: 就算聯發科修正漏洞 手機廠商裝死也沒屁用</span><span class="push-ipdatetime"> 03/03 15:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Twinkling   </span><span class="f3 push-content">: Intel、Qualcomm也都出包過...</span><span class="push-ipdatetime"> 03/03 15:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lumia625    </span><span class="f3 push-content">: 哭塔怎出現了 前面的文等你回啊</span><span class="push-ipdatetime"> 03/03 15:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Lumia625    </span><span class="f3 push-content">: <a href="http://www.ptt.cc/bbs/MobileComm/M.1583198027.A.47A.html" target="_blank" rel="nofollow">#1UNQzBHw</a> 怕你漏看</span><span class="push-ipdatetime"> 03/03 15:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dai26       </span><span class="f3 push-content">: 反正我也不考慮發哥的機子</span><span class="push-ipdatetime"> 03/03 15:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Fm4n        </span><span class="f3 push-content">: 可以空發哥了 (這不是股票板)</span><span class="push-ipdatetime"> 03/03 15:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abc0922001  </span><span class="f3 push-content">: 果然還是要買＿＿＿＿</span><span class="push-ipdatetime"> 03/03 15:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abc21086999 </span><span class="f3 push-content">: 還好我用Pixel</span><span class="push-ipdatetime"> 03/03 15:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AJizzInPants</span><span class="f3 push-content">: 疑 kbo出現一位了 可是你應該去上面那邊護主啊</span><span class="push-ipdatetime"> 03/03 15:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ymx3xc      </span><span class="f3 push-content">: 我有P10的XA1耶~</span><span class="push-ipdatetime"> 03/03 16:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shlee       </span><span class="f3 push-content">: 問題其實在於手機廠商很少對這種低階機發送更新修補</span><span class="push-ipdatetime"> 03/03 16:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shlee       </span><span class="f3 push-content">: 即使聯發科很早就發送修補更新給手機廠也沒什麼用</span><span class="push-ipdatetime"> 03/03 16:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JhouHank    </span><span class="f3 push-content">: 紅米note8 pro：</span><span class="push-ipdatetime"> 03/03 16:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kawhi5566   </span><span class="f3 push-content">: 資工系教授：現成的研究所考題</span><span class="push-ipdatetime"> 03/03 16:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NankanAvenge</span><span class="f3 push-content">: 教授根本懶的自己出題吧 從恐龍本或歷屆考題翻一翻</span><span class="push-ipdatetime"> 03/03 16:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NankanAvenge</span><span class="f3 push-content">: 放上去就好了</span><span class="push-ipdatetime"> 03/03 16:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Hohenzollern</span><span class="f3 push-content">: 記得2015年底資安公司發佈安卓早期用滑動解鎖的指</span><span class="push-ipdatetime"> 03/03 16:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Hohenzollern</span><span class="f3 push-content">: 紋辨識bug 那些手機廠也是裝死到底</span><span class="push-ipdatetime"> 03/03 16:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">c52chungyuny</span><span class="f3 push-content">: john wu提醒：請勿購買垃圾廉價機  感謝中國垃圾</span><span class="push-ipdatetime"> 03/03 17:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">c52chungyuny</span><span class="f3 push-content">: 以後進不了台灣</span><span class="push-ipdatetime"> 03/03 17:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sockrover   </span><span class="f3 push-content">: 可是這算是台灣垃圾嗎Orz</span><span class="push-ipdatetime"> 03/03 17:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">HMKRL       </span><span class="f3 push-content">: 聯發科補bug了阿 是垃圾廠不更新 這是台灣垃圾的話</span><span class="push-ipdatetime"> 03/03 17:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">HMKRL       </span><span class="f3 push-content">: intel前陣子CPU一堆bug 是不是也要說是美國垃圾www</span><span class="push-ipdatetime"> 03/03 17:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">h8565656p   </span><span class="f3 push-content">: 廠商不更新還怪發哥?</span><span class="push-ipdatetime"> 03/03 17:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rickie1141  </span><span class="f3 push-content">: 同理Intel = 美國垃圾</span><span class="push-ipdatetime"> 03/03 17:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alvistan    </span><span class="f3 push-content">: Intel=聯發科</span><span class="push-ipdatetime"> 03/03 18:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a3831038    </span><span class="f3 push-content">: INTEL是有溫度的企業</span><span class="push-ipdatetime"> 03/03 18:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LunLin9590  </span><span class="f3 push-content">: 發哥 意外嗎</span><span class="push-ipdatetime"> 03/03 19:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cp296633    </span><span class="f3 push-content">: 發哥機安卓版本更新都被放生</span><span class="push-ipdatetime"> 03/03 19:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ctes940008  </span><span class="f3 push-content">: 沒溫度的冷門晶片</span><span class="push-ipdatetime"> 03/03 19:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pigman1331  </span><span class="f3 push-content">: 到底空了幾張，到處發一樣的文</span><span class="push-ipdatetime"> 03/03 20:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">david7112123</span><span class="f3 push-content">: 幫高調</span><span class="push-ipdatetime"> 03/03 21:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">styyu1281   </span><span class="f3 push-content">: 拿這個酸MTK是在哈囉？</span><span class="push-ipdatetime"> 03/03 22:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">styyu1281   </span><span class="f3 push-content">: MTK都修了，手機廠不修干MTK屁事。</span><span class="push-ipdatetime"> 03/03 22:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dynamo      </span><span class="f3 push-content">: 股價上看400</span><span class="push-ipdatetime"> 03/03 23:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hzaxcp386   </span><span class="f3 push-content">: 反正大多數MTK手機不會是有系統更新的</span><span class="push-ipdatetime"> 03/04 05:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s93281      </span><span class="f3 push-content">: htc desire買好買滿,一人一機救救makes</span><span class="push-ipdatetime"> 03/04 22:51
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/MobileComm/M.1583219859.A.1FF.html?cacheKey=2084-212307571&amp;offset=6607&amp;offset-sig=9081efebbb4167859330cee131adf8c0113c0c73" data-longpollurl="/v1/longpoll?id=feec69c5eb99fbd6e14aad6da1a18e99d3be8c3e" data-offset="6607"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
