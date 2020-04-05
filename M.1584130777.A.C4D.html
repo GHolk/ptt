@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問答] 是否能外部連線至家中電腦(浮動ip) - 看板 Network - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="推文有提到 DDNS 的機制，我這邊講個 Tor 的 onion service (以前叫做 hidden
+service)，可以用在 ISP 連 public ip 都沒給你用的情況。
+https://www.torproject.org/docs/hidden-services.html.en
+因為你是 Ubuntu，所以先安裝最新版的 Tor，這邊可以照官方文件
+https://2019.www.torproject.org/docs/debian 的說明來做。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問答] 是否能外部連線至家中電腦(浮動ip)">
+<meta property="og:description" content="推文有提到 DDNS 的機制，我這邊講個 Tor 的 onion service (以前叫做 hidden
+service)，可以用在 ISP 連 public ip 都沒給你用的情況。
+https://www.torproject.org/docs/hidden-services.html.en
+因為你是 Ubuntu，所以先安裝最新版的 Tor，這邊可以照官方文件
+https://2019.www.torproject.org/docs/debian 的說明來做。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Network/M.1584130777.A.C4D.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	<script async src='/cdn-cgi/bm/cv/2172558837/api.js'></script></head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Network/index.html"><span class="board-label">看板 </span>Network</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Network/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">DarkKiller (System hacked)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Network</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問答] 是否能外部連線至家中電腦(浮動ip)</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sat Mar 14 04:19:25 2020</span></div>
+<span class="f2">※ 引述《dav1a1223 (Lai_can)》之銘言：
+</span><span class="f6">: 各位前輩好，
+</span><span class="f6">: 目前家中電腦(OS為Ubuntu，租屋處為浮動ip)有些GPU運算資源，
+</span><span class="f6">: 有時在外工作會想ssh連回家使用，甚至希望可以直接開 jupyter notebook server 可以
+</span><span class="f6">: 直接用網頁存取。
+</span><span class="f6">: 但以往的經驗都是在固定ip的情境下設定供對外連線，
+</span><span class="f6">: 想問目前這種情況有可能且如何能達成同樣也能連回家使用呢？能夠透過當前被分到的ip
+</span><span class="f6">: 去連線嗎？
+</span><span class="f6">: 謝謝各位
+</span>
+推文有提到 DDNS 的機制，我這邊講個 Tor 的 onion service (以前叫做 hidden
+service)，可以用在 ISP 連 public ip 都沒給你用的情況。
+
+<a href="https://www.torproject.org/docs/hidden-services.html.en" target="_blank" rel="nofollow">https://www.torproject.org/docs/hidden-services.html.en</a>
+
+因為你是 Ubuntu，所以先安裝最新版的 Tor，這邊可以照官方文件
+<a href="https://2019.www.torproject.org/docs/debian" target="_blank" rel="nofollow">https://2019.www.torproject.org/docs/debian</a> 的說明來做。
+
+先建立 /etc/apt/sources.list.d/tor.list (假設是 18.04)：
+
+    deb <a href="https://deb.torproject.org/torproject.org" target="_blank" rel="nofollow">https://deb.torproject.org/torproject.org</a> bionic main
+    deb-src <a href="https://deb.torproject.org/torproject.org" target="_blank" rel="nofollow">https://deb.torproject.org/torproject.org</a> bionic main
+
+然後把 Tor 的 GPG key 加進系統：(官方是用 root 跑，我這邊加上 sudo)
+
+    curl <a href="https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc" target="_blank" rel="nofollow">https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</a> | sudo gpg --import
+    sudo gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
+
+接下來更新 apt 資料然後裝 tor：
+
+    sudo apt update; sudo apt install -y tor deb.torproject.org-keyring
+
+接著照 <a href="https://2019.www.torproject.org/docs/tor-onion-service.html.en" target="_blank" rel="nofollow">https://2019.www.torproject.org/docs/tor-onion-service.html.en</a> 這
+邊的說明設定。
+
+在 /etc/tor/torrc 裡面這樣放：
+
+    HiddenServiceDir /var/lib/tor/hidden_service/
+    HiddenServicePort 22 127.0.0.1:22
+
+重啟後就會在 /var/lib/tor/hidden_service/hostname 看到機器名稱，像是：
+
+    0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghij.onion
+
+這個版本是新版的名稱比較長，有可能你會看到比較短的 hostname，像是：
+
+    0123456789abcdef.onion
+
+接著就可以在公司的機器 (也需要裝 Tor) 上用 torify 連進去，像是這樣：
+
+    torify ssh 0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghij.onion
+
+--
+                                                Resistance is futile.
+                          <a href="https://blog.gslin.org/" target="_blank" rel="nofollow">https://blog.gslin.org/</a> &amp; &lt;<a href="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afde9f6f3f4dafde9f6f3f4b4f5e8fd">[email&#160;protected]</a>&gt;
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 122.116.104.21 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Network/M.1584130777.A.C4D.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Network/M.1584130777.A.C4D.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lecheck</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 03/17 09:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tomsawyer</span><span class="f3 push-content">: 話說這樣不會被sdn之類的偵測到嗎</span><span class="push-ipdatetime"> 03/24 19:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gold740716</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 04/05 20:30
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Network/M.1584130777.A.C4D.html?cacheKey=2084-158867981&amp;offset=2545&amp;offset-sig=3e2807996d7057f2fd425991d0a06bb2535e4604" data-longpollurl="/v1/longpoll?id=41016702f14a5f8362fb9bff871045bfb9d3cc71" data-offset="2545"></div>
+    
+
+    
+</div>
+
+		
+
+<script data-cfasync="false" src="http://www.ptt.cc/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'57f34fce1c18f099',m:'6bd936c3ed0341410077024fc149a8e34458374d-1586090155-1800-AWOqjPNf5CmPwba8YV/xgBDyMbsHxVipw1yU/oqLawSoVW2ZpSzDb2WIeDSYQuJb4x13GOungsgGKI7Rc1h3kltpIjbTwjQFomgvdq9mOOkGVNKF3aHxuRo01DbEllF0tc9Hw75G/WFRuOvZHqIF7M61OELg4nL3gmiy/7wSSrrF',s:[0x4fe9f322e9,0x67cd37ec62],fb:0,}})();</script></body>
+</html>
