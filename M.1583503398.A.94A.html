@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[爆卦] 電腦科學家證明MIP*=RE - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="https://arxiv.org/pdf/2001.04383.pdf
+五位學者發表了標題為MIP*=RE的論文.從計算複雜性的角度來說,等式被證明成立也表示
+我們能用多方量子交互式證明來驗證圖靈停機問題.可說是計算複雜性理論四十多年來最
+為深刻的結果之一
+多方量子交互式證明系統(MIP*)
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[爆卦] 電腦科學家證明MIP*=RE">
+<meta property="og:description" content="https://arxiv.org/pdf/2001.04383.pdf
+五位學者發表了標題為MIP*=RE的論文.從計算複雜性的角度來說,等式被證明成立也表示
+我們能用多方量子交互式證明來驗證圖靈停機問題.可說是計算複雜性理論四十多年來最
+為深刻的結果之一
+多方量子交互式證明系統(MIP*)
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1583503398.A.94A.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	<script async src='/cdn-cgi/bm/cv/2172558837/api.js'></script></head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">jackliao1990 (jack)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[爆卦] 電腦科學家證明MIP*=RE</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Mar  6 22:03:13 2020</span></div>
+<a href="https://arxiv.org/pdf/2001.04383.pdf" target="_blank" rel="nofollow">https://arxiv.org/pdf/2001.04383.pdf</a>
+
+五位學者發表了標題為MIP*=RE的論文.從計算複雜性的角度來說,等式被證明成立也表示
+我們能用多方量子交互式證明來驗證圖靈停機問題.可說是計算複雜性理論四十多年來最
+為深刻的結果之一
+
+多方量子交互式證明系統(MIP*)
+
+學過貝爾不等式就知道兩方的量子相關 (quantum correlation)能取到古典相關取不到的
+值.若從交互式證明的角度來看,糾纏的兩方對應兩個玩家(即證明者),量子相關中的局部
+可觀測量可以看成兩個玩家對裁判(即驗證者)提出的問題所採取的的策略,而且玩家和裁
+判之間的通信是古典的.這樣的non-local game就是一個MIP*協議
+
+遞迴可列舉/圖靈可識別語言(RE)
+
+任何算法都可以寫成一個圖靈機.那麼要怎麼判斷一個圖靈機能否停機呢?一種方法是先看
+看一步時會不會停,再看兩步時會不會停,以此類推,如果圖靈機能停機,那麼總有一步會停
+下來.當然也可能停不下來,這樣一步一步嘗試的過程對應的複雜度就是RE
+
+MIP*=RE的意義
+
+1.否定Tsirelson問題
+
+前面的non-local games中,把貝爾不等式中的情形一般化得到的是張量積模型,也就是說
+兩個玩家的量子策略分別作用於自己拿到的那部分糾纏態所在的量子位元,以及自己手上
+的量子位元.但是也可以考慮另一種一般化-即兩個玩家除了自己手上的量子位元外還有一
+部分量子位元是公共的,他們的策略可以作用在公共部分和自己的部分上,而且兩個玩家
+選取不同策略的順序不會影響結果 (即對易),這稱作對易算符模型
+
+Boris Tsirelson在1980年代問了一個問題:張量積模型和對易算符模型定義的非局域性
+(non-locality)是否等價?
+
+這篇論文給出了反例:存在一個non-local game,它在對易算符模型下的最優獲勝概率是1,
+但是在張量積模型下的最優獲勝概率至多是1/2.
+
+2.推翻 Connes 嵌入猜想
+
+從算子代數的角度說,等式推翻了Connes嵌入猜想,該猜想由菲爾茲獎得主Alain Connes提
+出:對於具有無限多個可測量變量量子系統,是否可以通過具有有限數量的簡單系統近似？
+
+對物理學家來說,這表示兩個曾被認為是等價的獨立數學對象在解釋測量糾纏系統時,實際
+上是不等價的,某些從無限到有限的近似也將不再像物理學家曾經設想的那樣奏效
+
+證明過程
+
+如果把求解張量積模型的non-local games的最大獲勝概率的圖靈機寫成一個non-local
+game並不斷應用間隙不變壓縮技術的話.如果圖靈機停機,則最大獲勝概率是1;如果圖靈機
+不停機,則最大獲勝概率不超過1/2.這就證明了MIP*的RE下界,而且MIP*的平凡上界也是RE
+(因為列舉玩家間共享的糾纏態的維度),從而導出 MIP*=RE
+
+此外為了給出Tsirelson問題的否定回答.必須考慮對易算符模型下的non-local game的SDP
+hierarchy,即通過逐漸增加玩家們共享的糾纏態維度來判斷最大獲勝概率是不是小於1.把
+求解這個SDP hierarchy的圖靈機用上述間隙不變壓縮技術不斷壓縮,如果這個圖靈機不會
+停機,那麼得到的non-local game在對易算符模型下的最大獲勝概率是1,但是在張量積模型
+下的最大獲勝概率不超過1/2(否則需要兩個玩家之間共享無窮維度糾纏)
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 123.192.157.138 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1583503398.A.94A.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1583503398.A.94A.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">XXXXHAY</span><span class="f3 push-content">: 快推以免被發現我看不懂</span><span class="push-ipdatetime">   39.9.232.153 03/06 22:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rogerno1</span><span class="f3 push-content">: ？</span><span class="push-ipdatetime">  118.166.7.228 03/06 22:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pinhanpaul</span><span class="f3 push-content">: 嗯嗯！！樓下也想到了</span><span class="push-ipdatetime">  211.76.54.132 03/06 22:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">laughing</span><span class="f3 push-content">: 恩 好喔</span><span class="push-ipdatetime">  220.129.48.39 03/06 22:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kuochuwon</span><span class="f3 push-content">: 恩恩 和我上禮拜推導的結果差不多</span><span class="push-ipdatetime">175.181.152.253 03/06 22:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pouttuiqoy</span><span class="f3 push-content">: 跟我想的差不多 給推</span><span class="push-ipdatetime">  42.74.239.252 03/06 22:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">as8644731</span><span class="f3 push-content">: 嗯嗯我也是這樣想</span><span class="push-ipdatetime">223.139.107.143 03/06 22:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joumay</span><span class="f3 push-content">: 嗯 跟我想的一樣</span><span class="push-ipdatetime">   114.24.2.231 03/06 22:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Imotucc</span><span class="f3 push-content">: 恩恩 Imotucc也是這樣想</span><span class="push-ipdatetime">140.112.245.226 03/06 22:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Matz</span><span class="f3 push-content">: 是不是偷看我的筆記本啊</span><span class="push-ipdatetime">122.116.159.149 03/06 22:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">louic</span><span class="f3 push-content">: 唉..明明中文比較多 沒有一句看得懂</span><span class="push-ipdatetime">   1.170.41.116 03/06 22:04
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">XXXXLINDA</span><span class="f3 push-content">: 可憐</span><span class="push-ipdatetime">223.138.104.248 03/06 22:04
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">deepdish</span><span class="f3 push-content">: 沒人在意</span><span class="push-ipdatetime"> 220.134.89.190 03/06 22:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kd1523</span><span class="f3 push-content">: 可惜我的筆記本已經寫不下了.....</span><span class="push-ipdatetime">112.104.107.177 03/06 22:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">b10485762000</span><span class="f3 push-content">: Baum–Connes conjecture是錯的???</span><span class="push-ipdatetime">    36.230.69.2 03/06 22:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rhox</span><span class="f3 push-content">: 恩恩，之前就猜到了，只是沒寫下來</span><span class="push-ipdatetime">  111.240.87.64 03/06 22:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">b389b1c</span><span class="f3 push-content">: ...</span><span class="push-ipdatetime">  111.82.39.161 03/06 22:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AlianF</span><span class="f3 push-content">: 我大便就有猜想了</span><span class="push-ipdatetime">101.136.213.152 03/06 22:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">em4</span><span class="f3 push-content">: 我以為大家都知道</span><span class="push-ipdatetime"> 110.26.126.213 03/06 22:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">b10213044</span><span class="f3 push-content">: 跟我想得差不多</span><span class="push-ipdatetime">  61.231.245.52 03/06 22:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bye2007</span><span class="f3 push-content">: P≠NP？</span><span class="push-ipdatetime">  111.83.138.44 03/06 22:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ykes60513</span><span class="f3 push-content">: P-NP問題解決了叫我</span><span class="push-ipdatetime"> 173.251.98.246 03/06 22:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">purplebfly</span><span class="f3 push-content">: 所以能幹麼?</span><span class="push-ipdatetime">   36.227.17.86 03/06 22:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wintxa</span><span class="f3 push-content">: 其實差不多 只是有幾句表達可以更白點 讓</span><span class="push-ipdatetime">   101.12.66.86 03/06 22:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wintxa</span><span class="f3 push-content">: 更多人懂更好</span><span class="push-ipdatetime">   101.12.66.86 03/06 22:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DM1984</span><span class="f3 push-content">: .................</span><span class="push-ipdatetime">   101.8.205.91 03/06 22:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sharkimage</span><span class="f3 push-content">: 好複雜</span><span class="push-ipdatetime">  218.161.27.64 03/06 22:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">djyunjie</span><span class="f3 push-content">: 我的研究被搶發了</span><span class="push-ipdatetime"> 125.230.23.118 03/06 22:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mig</span><span class="f3 push-content">: 土條一定早就想過這個了</span><span class="push-ipdatetime"> 180.177.109.41 03/06 22:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kao0502</span><span class="f3 push-content">: 恩恩 果然跟我之前想的一樣</span><span class="push-ipdatetime">140.112.240.247 03/06 22:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aggressorX</span><span class="f3 push-content">: 沒有我的參與還是證明出來了嗎...</span><span class="push-ipdatetime">  36.231.41.213 03/06 22:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minicoke</span><span class="f3 push-content">: 真廢 之前我早寫出來 只是紙不夠長</span><span class="push-ipdatetime"> 101.137.48.109 03/06 22:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gigo0419</span><span class="f3 push-content">: 其實理論是錯的 但打字太麻煩了我不打</span><span class="push-ipdatetime">  46.125.250.57 03/06 22:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tananadishow</span><span class="f3 push-content">: 我只知道PV=nRT</span><span class="push-ipdatetime">223.141.113.241 03/06 22:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kaodio</span><span class="f3 push-content">: 哩共蝦</span><span class="push-ipdatetime">   114.43.86.64 03/06 22:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dear0106</span><span class="f3 push-content">: 公鯊小啦，不就銅板人頭或字最大2分之一</span><span class="push-ipdatetime"> 36.239.108.190 03/06 22:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">panda04056</span><span class="f3 push-content">: 沒錯我就知道是這樣</span><span class="push-ipdatetime">   1.162.44.194 03/06 22:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Mihoko927</span><span class="f3 push-content">: 嗯 看不懂</span><span class="push-ipdatetime">    114.47.0.81 03/06 22:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">as6633208</span><span class="f3 push-content">: 沒錯，果然如此 嗯嗯</span><span class="push-ipdatetime">123.241.176.171 03/06 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chucky</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime">180.217.147.176 03/06 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bigbotin</span><span class="f3 push-content">: 公鯊小....</span><span class="push-ipdatetime">122.121.105.230 03/06 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sasa789</span><span class="f3 push-content">: 跟我推算的結果差不多</span><span class="push-ipdatetime">  114.27.106.63 03/06 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sushi11</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime">  101.13.208.56 03/06 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Peurintesa</span><span class="f3 push-content">: 演算法菜雞請問這是一種NPC問題嗎==</span><span class="push-ipdatetime">  1.165.164.219 03/06 22:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tomlin121283</span><span class="f3 push-content">: 完全看不懂XD</span><span class="push-ipdatetime"> 223.137.184.70 03/06 22:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qscgg</span><span class="f3 push-content">: 我比較想知道你是真的懂還是覺得很厲害就貼</span><span class="push-ipdatetime"> 114.26.152.206 03/06 22:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">furnaceh</span><span class="f3 push-content">: 我也是這樣想的</span><span class="push-ipdatetime"> 123.195.193.78 03/06 22:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mingyu608</span><span class="f3 push-content">: 嗯嗯 沒錯</span><span class="push-ipdatetime">    39.9.44.127 03/06 22:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bansar</span><span class="f3 push-content">: 我早就知道了</span><span class="push-ipdatetime">114.136.141.173 03/06 22:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fyer</span><span class="f3 push-content">: 畢業論文原本想做這個 可惜我是商科的= =</span><span class="push-ipdatetime">223.138.131.214 03/06 22:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sowbm</span><span class="f3 push-content">: ....對不起，我不懂</span><span class="push-ipdatetime">111.241.153.100 03/06 22:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">highwayshih</span><span class="f3 push-content">: 跟我想的差不多 可惜沒空整理成論文</span><span class="push-ipdatetime"> 118.160.13.116 03/06 22:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zxcasd848</span><span class="f3 push-content">: 對不起 我拉低八掛板的素質了</span><span class="push-ipdatetime">    1.200.51.60 03/06 22:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sa0124</span><span class="f3 push-content">: 就是在探討 張量積模型和對易算符模型定義</span><span class="push-ipdatetime">223.140.200.233 03/06 22:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sa0124</span><span class="f3 push-content">: 的非局域性嘛</span><span class="push-ipdatetime">223.140.200.233 03/06 22:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">upeo</span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime">101.137.133.110 03/06 22:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tw15</span><span class="f3 push-content">: 嗯嗯我也是這樣想</span><span class="push-ipdatetime">  219.71.91.194 03/06 22:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">animad</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime">  36.228.11.109 03/06 22:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">brad001</span><span class="f3 push-content">: 跟我想的差不多 不錯</span><span class="push-ipdatetime"> 223.139.151.16 03/06 22:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mack860120</span><span class="f3 push-content">: 跟我想的一樣 推文寫不下而已</span><span class="push-ipdatetime">  114.26.45.241 03/06 22:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wahaha99</span><span class="f3 push-content">: 看不懂給推</span><span class="push-ipdatetime">  1.171.153.222 03/06 22:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CostDown</span><span class="f3 push-content">: 靠爸 這問題上面就有六十幾個鄉民都會</span><span class="push-ipdatetime">  111.71.58.153 03/06 22:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">venomsoul</span><span class="f3 push-content">: 等等，我到底要修科學還是國文才能懂</span><span class="push-ipdatetime"> 122.118.110.60 03/06 22:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ohkokusa</span><span class="f3 push-content">: 果然跟我想的一樣阿</span><span class="push-ipdatetime">  101.8.211.248 03/06 22:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">henryyeh5566</span><span class="f3 push-content">: 所以解決了PPAP問題了沒</span><span class="push-ipdatetime">  61.223.16.149 03/06 22:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">upeo</span><span class="f3 push-content">: 倒是很好奇 量子電腦的理論還在建立 怎麼就</span><span class="push-ipdatetime">101.137.133.110 03/06 22:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">paulabxz123</span><span class="f3 push-content">: 樓下聽說你是甲甲 你覺得呢</span><span class="push-ipdatetime">   42.73.66.218 03/06 22:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">upeo</span><span class="f3 push-content">: 有實體出來？難道是逆向工程？</span><span class="push-ipdatetime">101.137.133.110 03/06 22:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zaqimon</span><span class="f3 push-content">: 所以哪支股票會漲？</span><span class="push-ipdatetime">    219.91.9.86 03/06 22:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">panda816</span><span class="f3 push-content">: 嗯嗯 跟我想的差不多</span><span class="push-ipdatetime">   42.74.74.183 03/06 22:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howarddddads</span><span class="f3 push-content">: 嗯 我也是這麼想</span><span class="push-ipdatetime"> 123.110.15.194 03/06 22:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">williamshia</span><span class="f3 push-content">: 說中文好嗎 喔原來已經是中文了</span><span class="push-ipdatetime">  1.172.145.237 03/06 22:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cool911234</span><span class="f3 push-content">: 3.7d re</span><span class="push-ipdatetime">  101.14.160.40 03/06 22:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gink</span><span class="f3 push-content">: 嗯嗯，上次我也這麼說的</span><span class="push-ipdatetime"> 49.216.100.160 03/06 22:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">moonlind</span><span class="f3 push-content">: 說中文</span><span class="push-ipdatetime"> 111.254.38.203 03/06 22:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">newti</span><span class="f3 push-content">: 完全看不懂.....</span><span class="push-ipdatetime">114.137.206.151 03/06 22:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">frank72</span><span class="f3 push-content">: 差不多結論 嗯</span><span class="push-ipdatetime"> 36.229.197.251 03/06 22:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jej</span><span class="f3 push-content">: 記者專業一點好嗎？ 看不下去了</span><span class="push-ipdatetime"> 223.137.50.199 03/06 22:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">proprome</span><span class="f3 push-content">: 恩恩 果然跟我想的一樣</span><span class="push-ipdatetime">  49.215.193.69 03/06 22:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iuus</span><span class="f3 push-content">: 跟我推的差不多</span><span class="push-ipdatetime">  180.204.140.8 03/06 22:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bodielu</span><span class="f3 push-content">: 我之前不是說過了嗎</span><span class="push-ipdatetime">  180.204.36.12 03/06 22:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">klm619</span><span class="f3 push-content">: 3.7d  -re</span><span class="push-ipdatetime">  114.45.10.109 03/06 22:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hirobumi</span><span class="f3 push-content">: 跟我想的差不多麻</span><span class="push-ipdatetime"> 223.137.103.30 03/06 22:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NewShiisDog</span><span class="f3 push-content">: 大發現欸 太了不起了 謝謝你讓我學到</span><span class="push-ipdatetime">180.217.195.248 03/06 22:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NewShiisDog</span><span class="f3 push-content">: 了一課</span><span class="push-ipdatetime">180.217.195.248 03/06 22:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ethan30213</span><span class="f3 push-content">: 我不是說過了嗎</span><span class="push-ipdatetime"> 36.235.231.214 03/06 22:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">goldflower</span><span class="f3 push-content">: 看不懂= =</span><span class="push-ipdatetime"> 49.214.162.197 03/06 22:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eeccms</span><span class="f3 push-content">: 跟我想的大致一樣</span><span class="push-ipdatetime"> 36.226.125.253 03/06 22:26
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">benptt</span><span class="f3 push-content">: 跟我的論文一樣，我自己都看不懂~</span><span class="push-ipdatetime">   39.12.161.90 03/06 22:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vehuo</span><span class="f3 push-content">: 恩啊</span><span class="push-ipdatetime"> 125.224.98.175 03/06 22:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lmf770410</span><span class="f3 push-content">: 嗯嗯跟我想的一樣</span><span class="push-ipdatetime"> 223.137.224.45 03/06 22:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xm3k0828</span><span class="f3 push-content">: 我昨天才跟我爸分享我的成果</span><span class="push-ipdatetime"> 36.229.222.142 03/06 22:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">william806</span><span class="f3 push-content">: 終於等到我的想法被證實的這天</span><span class="push-ipdatetime">  39.13.100.188 03/06 22:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dcoog7880</span><span class="f3 push-content">: XD</span><span class="push-ipdatetime"> 114.137.234.73 03/06 22:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Daface</span><span class="f3 push-content">: 跟我想的一樣 差不多</span><span class="push-ipdatetime">   36.229.83.21 03/06 22:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CCMg</span><span class="f3 push-content">: 我國小大便的時候就推出來了</span><span class="push-ipdatetime">  42.77.142.237 03/06 22:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WLR</span><span class="f3 push-content">: 跨隆謀</span><span class="push-ipdatetime">  59.127.250.13 03/06 22:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">supdoraking</span><span class="f3 push-content">: 我早就想到超好的證明 只是筆記本寫</span><span class="push-ipdatetime">   1.160.38.177 03/06 22:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g5978gyy</span><span class="f3 push-content">: 那有試過先重開機了嗎</span><span class="push-ipdatetime">  223.137.4.156 03/06 22:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">supdoraking</span><span class="f3 push-content">: 不下</span><span class="push-ipdatetime">   1.160.38.177 03/06 22:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zucca</span><span class="f3 push-content">: 跟我昨天夢的差不多</span><span class="push-ipdatetime">  223.138.62.18 03/06 22:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CO2</span><span class="f3 push-content">: 嗯 我也這麼想</span><span class="push-ipdatetime">   1.163.91.223 03/06 22:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yuwei0531</span><span class="f3 push-content">: 這不是常識嗎？</span><span class="push-ipdatetime">  110.30.114.11 03/06 22:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Number9527</span><span class="f3 push-content">: 我早就知道了</span><span class="push-ipdatetime">  180.204.2.198 03/06 22:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">moume</span><span class="f3 push-content">: 簡單來說這個算式會讓智能電腦判斷更加精</span><span class="push-ipdatetime"> 36.235.248.251 03/06 22:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">moume</span><span class="f3 push-content">: 準，算是一個大躍進</span><span class="push-ipdatetime"> 36.235.248.251 03/06 22:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">arcc</span><span class="f3 push-content">: 在複製貼上阿記者~~~</span><span class="push-ipdatetime">   1.168.37.143 03/06 22:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bn5566</span><span class="f3 push-content">: 跟我想的一樣欸</span><span class="push-ipdatetime"> 223.140.58.211 03/06 22:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DH0617</span><span class="f3 push-content">: 我60年前就寫出來了</span><span class="push-ipdatetime"> 180.217.150.66 03/06 22:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tinderbox</span><span class="f3 push-content">: 最近有個小朋友問我什麼是 MIP*=RE</span><span class="push-ipdatetime">  118.168.62.58 03/06 22:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yao03911</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime">  1.164.109.227 03/06 22:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nomorepipe</span><span class="f3 push-content">: 恩恩跟我想的一樣</span><span class="push-ipdatetime">   111.83.33.14 03/06 22:46
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">sleepmilk</span><span class="f3 push-content">: 共啥小啦！麻煩翻譯一下。</span><span class="push-ipdatetime">   49.216.4.110 03/06 22:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PigBlood</span><span class="f3 push-content">: 攻殺小</span><span class="push-ipdatetime">  118.165.62.76 03/06 22:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NetworkDemon</span><span class="f3 push-content">: 很接近我的想法</span><span class="push-ipdatetime">   36.234.94.80 03/06 22:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iamhemry</span><span class="f3 push-content">: 和我想的一樣</span><span class="push-ipdatetime"> 27.246.201.206 03/06 22:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">UDK0821</span><span class="f3 push-content">: 我也是這樣想的</span><span class="push-ipdatetime">  27.247.72.147 03/06 22:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OBassO</span><span class="f3 push-content">: #@$^$%&amp;%^*</span><span class="push-ipdatetime">   220.137.47.1 03/06 22:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ringohejia</span><span class="f3 push-content">: MIC=GARBAGE</span><span class="push-ipdatetime"> 36.239.134.230 03/06 22:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kkkk9527</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime">  111.82.249.59 03/06 22:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CityRanger</span><span class="f3 push-content">: 是在哈囉 我甚麼都看不懂 是不是要放</span><span class="push-ipdatetime">134.208.227.138 03/06 23:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pd3mnd</span><span class="f3 push-content">: 都是中文，但我一個字都看不懂</span><span class="push-ipdatetime"> 180.217.145.86 03/06 23:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">woifeiwen</span><span class="f3 push-content">: 想跟樓下一起量子糾纏</span><span class="push-ipdatetime">  218.164.71.12 03/06 23:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SWS7983</span><span class="f3 push-content">: 來啊</span><span class="push-ipdatetime"> 36.225.179.228 03/06 23:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">y095588063</span><span class="f3 push-content">: 這還要發表？我以為嘗試</span><span class="push-ipdatetime"> 101.12.100.209 03/06 23:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sky85924</span><span class="f3 push-content">: 看吧 我早就說了</span><span class="push-ipdatetime">    42.76.51.73 03/06 23:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">okc5566</span><span class="f3 push-content">: 這每個理組的都會吧</span><span class="push-ipdatetime">   122.117.27.9 03/06 23:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jajoy</span><span class="f3 push-content">: 恩恩 跟我想到差不多</span><span class="push-ipdatetime">  114.39.12.158 03/06 23:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cosicosi</span><span class="f3 push-content">: 沒錯 我也是這麼想的</span><span class="push-ipdatetime"> 101.15.206.201 03/06 23:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">proletariat</span><span class="f3 push-content">: 不明覺厲</span><span class="push-ipdatetime">220.129.176.239 03/06 23:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">i90186</span><span class="f3 push-content">: 反正連中文都看不懂，你可以寫原文</span><span class="push-ipdatetime"> 61.224.129.129 03/06 23:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mastungz</span><span class="f3 push-content">: 快推以免被人發現我看不懂</span><span class="push-ipdatetime">122.116.190.212 03/06 23:12
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">jensheng09</span><span class="f3 push-content">: 你可以推文</span><span class="push-ipdatetime"> 111.83.113.138 03/06 23:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">keyman2</span><span class="f3 push-content">: 想騙我偏不信</span><span class="push-ipdatetime"> 118.161.201.95 03/06 23:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lanslore</span><span class="f3 push-content">: 是啊，沒錯，你說的沒錯</span><span class="push-ipdatetime">  101.12.200.18 03/06 23:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">youshallnotp</span><span class="f3 push-content">: 嗯嗯 跟我想的一樣</span><span class="push-ipdatetime">  111.71.73.156 03/06 23:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">reppoc</span><span class="f3 push-content">: 就說真理都能化成簡單公式</span><span class="push-ipdatetime"> 124.11.208.221 03/06 23:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">solemn17</span><span class="f3 push-content">: 大致上都正確</span><span class="push-ipdatetime"> 223.136.255.35 03/06 23:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cody6101</span><span class="f3 push-content">: 嗯嗯 跟我想的一樣</span><span class="push-ipdatetime">223.138.189.239 03/06 23:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">baia8053</span><span class="f3 push-content">: 唉就差一步而已 結果被搶先了</span><span class="push-ipdatetime">   49.216.46.34 03/06 23:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andy78714</span><span class="f3 push-content">: 看不懂==</span><span class="push-ipdatetime">  101.12.46.101 03/06 23:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MangoGTE</span><span class="f3 push-content">: 原來如此</span><span class="push-ipdatetime">114.136.205.184 03/06 23:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shala</span><span class="f3 push-content">: 陳腐之論</span><span class="push-ipdatetime"> 138.68.224.227 03/06 23:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">haeiou</span><span class="f3 push-content">: 沒錯，另外e=mc平方</span><span class="push-ipdatetime">  111.71.51.161 03/06 23:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">spitonface</span><span class="f3 push-content">: 我以為這基本常識不想講而已＝ ＝</span><span class="push-ipdatetime">   49.216.40.27 03/06 23:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hipocritos</span><span class="f3 push-content">: 操 超過八成物理系學生也看不懂好嗎?</span><span class="push-ipdatetime">123.193.180.170 03/06 23:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lom0120</span><span class="f3 push-content">: 嗯嗯嗯嗯</span><span class="push-ipdatetime"> 223.136.84.110 03/06 23:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Flcyndi</span><span class="f3 push-content">: 突然覺得中文不好</span><span class="push-ipdatetime">   42.74.118.53 03/06 23:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">k0127</span><span class="f3 push-content">: 我小學就想到了</span><span class="push-ipdatetime">  114.36.232.70 03/06 23:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lairx</span><span class="f3 push-content">: 好嗯嗯對就是這樣</span><span class="push-ipdatetime"> 223.136.205.96 03/06 23:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s81048112</span><span class="f3 push-content">: 恩 喔 嗯?</span><span class="push-ipdatetime">  27.52.193.145 03/06 23:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sasaogidada</span><span class="f3 push-content">: 明天早餐吃什麼阿</span><span class="push-ipdatetime">   27.52.235.78 03/06 23:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chienyu2001</span><span class="f3 push-content">: 嗯嗯我也是這麼想的</span><span class="push-ipdatetime"> 223.136.95.108 03/06 23:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">inmee</span><span class="f3 push-content">: 這跟我大學的論文有87%相似</span><span class="push-ipdatetime">  49.219.172.37 03/06 23:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jily</span><span class="f3 push-content">: 供三小 = =</span><span class="push-ipdatetime">   1.160.85.183 03/06 23:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yun0817</span><span class="f3 push-content">: pv=nrt</span><span class="push-ipdatetime"> 36.229.184.169 03/06 23:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">frosagen2018</span><span class="f3 push-content">: 我之前就講過了==</span><span class="push-ipdatetime">  220.143.9.204 03/06 23:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MEVIUS</span><span class="f3 push-content">: 跟我當初想的一樣</span><span class="push-ipdatetime">125.230.136.203 03/06 23:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sbilor</span><span class="f3 push-content">: 早就想過了</span><span class="push-ipdatetime">   42.74.40.110 03/06 23:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RICEFINCH</span><span class="f3 push-content">: 我早就覺得是這樣</span><span class="push-ipdatetime">  49.217.76.157 03/06 23:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rainfarmer</span><span class="f3 push-content">: 噓文不懂別出來彰顯你的無腦</span><span class="push-ipdatetime"> 142.93.221.120 03/06 23:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">reexamor</span><span class="f3 push-content">: 抱歉 我文組...</span><span class="push-ipdatetime">  42.72.242.237 03/06 23:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kimsuperkimo</span><span class="f3 push-content">: 抱歉我機械類所也看不懂</span><span class="push-ipdatetime">  220.132.177.3 03/06 23:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ruledesign</span><span class="f3 push-content">: 幹我國小這樣寫還被老師改錯</span><span class="push-ipdatetime">  36.229.141.95 03/06 23:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">calvin0319</span><span class="f3 push-content">: 嗯嗯  跟我想的差不多</span><span class="push-ipdatetime">   42.74.84.143 03/06 23:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sugiuchi</span><span class="f3 push-content">: 竟然跟我寫的筆記有87分像。我太懶了</span><span class="push-ipdatetime">  123.193.101.6 03/06 23:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Yamashiro</span><span class="f3 push-content">: 已知用火</span><span class="push-ipdatetime">  42.75.181.166 03/06 23:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a8866442</span><span class="f3 push-content">: 恩恩 跟我想的差不多</span><span class="push-ipdatetime">    27.52.73.28 03/06 23:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ryuri</span><span class="f3 push-content">: 對不起我看不懂啊啊啊</span><span class="push-ipdatetime"> 111.83.152.249 03/06 23:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vivihk215</span><span class="f3 push-content">: 我書讀不多 這是中文？</span><span class="push-ipdatetime">114.198.186.109 03/06 23:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gay7788</span><span class="f3 push-content">: 我論文題目本來要寫這個，可是教授太菜</span><span class="push-ipdatetime"> 111.71.215.161 03/06 23:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gay7788</span><span class="f3 push-content">: 看不懂</span><span class="push-ipdatetime"> 111.71.215.161 03/06 23:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Tmmontal</span><span class="f3 push-content">: 這種文也能爆，啥小啦</span><span class="push-ipdatetime"> 36.234.112.233 03/06 23:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">soyokaza</span><span class="f3 push-content">: 嗯嗯嗯，差不多是這樣</span><span class="push-ipdatetime">    1.170.66.82 03/07 00:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mp5good</span><span class="f3 push-content">: 認真說，這其實算哲學系範圍的東西</span><span class="push-ipdatetime">150.117.250.149 03/07 00:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Evajavaleon</span><span class="f3 push-content">: 可以說人話嗎</span><span class="push-ipdatetime">  114.27.32.139 03/07 00:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">stw0975</span><span class="f3 push-content">: ？？</span><span class="push-ipdatetime">    42.75.88.68 03/07 00:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">liorio</span><span class="f3 push-content">: 每個字我都唸的出來 怎麼拚在一起沒有一句</span><span class="push-ipdatetime">   36.229.61.17 03/07 00:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">liorio</span><span class="f3 push-content">: 看得懂QQ</span><span class="push-ipdatetime">   36.229.61.17 03/07 00:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SantaNM</span><span class="f3 push-content">: 維大力？</span><span class="push-ipdatetime">  42.73.148.104 03/07 00:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">find64324</span><span class="f3 push-content">: ==</span><span class="push-ipdatetime">  42.73.124.139 03/07 00:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">linlaosure</span><span class="f3 push-content">: 對齁 原來還可以這樣想</span><span class="push-ipdatetime">  42.72.128.113 03/07 00:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">siegfred</span><span class="f3 push-content">: 不是，這是物理和計算機科學的結合</span><span class="push-ipdatetime">  1.160.136.221 03/07 00:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">siegfred</span><span class="f3 push-content">: 這裡面好多對岸用語</span><span class="push-ipdatetime">  1.160.136.221 03/07 00:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">siegfred</span><span class="f3 push-content">: 台灣是用古典，對岸用語是經典</span><span class="push-ipdatetime">  1.160.136.221 03/07 00:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">weiwade</span><span class="f3 push-content">: 草泥馬 看不懂啦</span><span class="push-ipdatetime">   114.43.7.194 03/07 00:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abc1212050</span><span class="f3 push-content">: 看不懂....</span><span class="push-ipdatetime">101.136.116.227 03/07 00:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">keptcy</span><span class="f3 push-content">: 跟我想表達一樣嗯嗯</span><span class="push-ipdatetime">223.136.140.198 03/07 00:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minggood</span><span class="f3 push-content">: 看起來沒甚麼大問題 寫得還行</span><span class="push-ipdatetime">  111.83.198.48 03/07 00:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">blackkeys</span><span class="f3 push-content">: 對啊 就是這樣啊</span><span class="push-ipdatetime">  59.115.55.147 03/07 00:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AnewMitch</span><span class="f3 push-content">: 我阿嬤剛剛寫書法,寫一寫就導出來啦</span><span class="push-ipdatetime">   49.159.124.7 03/07 00:21
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">kevinyin9</span><span class="f3 push-content">: 1月就發的 你現在才看哦？</span><span class="push-ipdatetime">  42.72.203.245 03/07 00:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Scorfish</span><span class="f3 push-content">: 果然是這樣</span><span class="push-ipdatetime">   1.34.107.202 03/07 00:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">issndard5655</span><span class="f3 push-content">: 好，明年研所就出這題</span><span class="push-ipdatetime">  49.217.12.194 03/07 00:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nyc212</span><span class="f3 push-content">: 黃子嘉大大會說是trivial</span><span class="push-ipdatetime"> 27.247.105.117 03/07 00:25
+</span></div><span class="f2">※ 編輯: jackliao1990 (123.192.157.138 臺灣), 03/07/2020 00:35:26
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xacid</span><span class="f3 push-content">: 科科</span><span class="push-ipdatetime">104.167.146.224 03/07 00:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wl843907</span><span class="f3 push-content">: 沒錯</span><span class="push-ipdatetime">   36.228.31.46 03/07 00:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shadowdio</span><span class="f3 push-content">: 我同意這樣的說法</span><span class="push-ipdatetime">  114.47.170.22 03/07 00:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BOMBGUY</span><span class="f3 push-content">: 嗯做得不錯</span><span class="push-ipdatetime"> 111.82.157.216 03/07 00:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">joeyben</span><span class="f3 push-content">: 三小</span><span class="push-ipdatetime">  101.12.43.212 03/07 00:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">harry81719</span><span class="f3 push-content">: 嗯嗯  沒錯呢！</span><span class="push-ipdatetime">   1.165.217.25 03/07 00:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hank850503</span><span class="f3 push-content">: 我之前也是這樣想 不過我覺得裡面還有</span><span class="push-ipdatetime">  114.46.112.77 03/07 00:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hank850503</span><span class="f3 push-content">: 瑕疵</span><span class="push-ipdatetime">  114.46.112.77 03/07 00:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">b06606005</span><span class="f3 push-content">: 共三小</span><span class="push-ipdatetime">220.137.118.205 03/07 00:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bigtien6292</span><span class="f3 push-content">: 跟昨天大便推導的差不多</span><span class="push-ipdatetime">114.136.160.148 03/07 00:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TomChu</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime">  220.141.86.59 03/07 00:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">holdallnight</span><span class="f3 push-content">: 嗯嗯 看來有人跟我想的一樣</span><span class="push-ipdatetime">  223.137.80.47 03/07 00:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cokecolatw</span><span class="f3 push-content">: 母鯊大</span><span class="push-ipdatetime"> 111.250.35.132 03/07 00:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">germing</span><span class="f3 push-content">: 原來如此啊 (￣ー￣) 等等 我是誰？</span><span class="push-ipdatetime">  49.215.240.87 03/07 00:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Scott850205</span><span class="f3 push-content">: 嗯嗯 當初我給的意見他們有聽進去</span><span class="push-ipdatetime">  42.77.159.159 03/07 00:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wei2291</span><span class="f3 push-content">: 當初我就是說這樣 沒人信</span><span class="push-ipdatetime"> 36.237.191.188 03/07 00:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">O8sang</span><span class="f3 push-content">: 看不懂但好像很厲害推</span><span class="push-ipdatetime">  101.10.62.119 03/07 00:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yin10321133</span><span class="f3 push-content">: 嗯嗯量子糾纏</span><span class="push-ipdatetime">   39.12.36.194 03/07 01:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fifybl</span><span class="f3 push-content">: 看不懂......很厲害的樣貌(－－〆)</span><span class="push-ipdatetime">106.104.157.132 03/07 01:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wholewing</span><span class="f3 push-content">: 公鯊小</span><span class="push-ipdatetime">   114.41.65.14 03/07 01:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dragonjj</span><span class="f3 push-content">: 幹你娘，每個中文我都看得懂，合起來是</span><span class="push-ipdatetime"> 223.137.49.135 03/07 01:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dragonjj</span><span class="f3 push-content">: 什麼哇糕？</span><span class="push-ipdatetime"> 223.137.49.135 03/07 01:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">octangus07</span><span class="f3 push-content">: 嗯嗯我也是這樣想</span><span class="push-ipdatetime">   39.8.167.208 03/07 01:08
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">yyy123456789</span><span class="f3 push-content">: 可以講人話嗎</span><span class="push-ipdatetime">180.217.110.234 03/07 01:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">david7112123</span><span class="f3 push-content">: 原來如此</span><span class="push-ipdatetime">  107.77.226.48 03/07 01:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joshua830325</span><span class="f3 push-content">: 工蝦聽謀啦</span><span class="push-ipdatetime"> 114.41.219.150 03/07 01:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">carlotta</span><span class="f3 push-content">: 嗯嗯沒錯</span><span class="push-ipdatetime">  1.165.163.186 03/07 01:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">glenn608</span><span class="f3 push-content">: 原來如此</span><span class="push-ipdatetime"> 114.136.229.86 03/07 01:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">troubledanny</span><span class="f3 push-content">: 誰來翻譯一下。QQ</span><span class="push-ipdatetime"> 115.43.255.150 03/07 01:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pian0214</span><span class="f3 push-content">: 文組路過</span><span class="push-ipdatetime">  111.71.14.252 03/07 01:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fhsh115</span><span class="f3 push-content">: 嗯嗯 我也是這麼想</span><span class="push-ipdatetime">  39.10.231.153 03/07 01:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amows</span><span class="f3 push-content">: 可以說白話文嗎? 什麼! 已經是了喔!!</span><span class="push-ipdatetime">  42.73.244.255 03/07 01:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s98091028</span><span class="f3 push-content">: 跟我算的結果差不多嗯嗯</span><span class="push-ipdatetime">   101.12.13.25 03/07 01:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">SEVEnMonth</span><span class="f3 push-content">: 跟我當初想的差不多啊</span><span class="push-ipdatetime">  49.214.172.96 03/07 01:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ken32293355</span><span class="f3 push-content">: 這我國小就在跟同學討論了</span><span class="push-ipdatetime">     39.8.200.3 03/07 01:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">h965715</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime">  180.217.89.84 03/07 01:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iamnotme</span><span class="f3 push-content">: 等等 這是亂碼嗎</span><span class="push-ipdatetime"> 61.230.160.239 03/07 01:28
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">Centauro</span><span class="f3 push-content">: 寫一個沒人看的懂的文章是在自highㄇ</span><span class="push-ipdatetime">   36.237.86.23 03/07 01:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hanmas</span><span class="f3 push-content">: 你的證明也太短XD</span><span class="push-ipdatetime"> 172.58.109.195 03/07 01:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">r5e97nk63</span><span class="f3 push-content">: 簡單講，就是物理學有些假設錯了，很</span><span class="push-ipdatetime">   220.136.1.85 03/07 01:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">r5e97nk63</span><span class="f3 push-content">: 多東西要改，是這樣嗎= =？</span><span class="push-ipdatetime">   220.136.1.85 03/07 01:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">as1100</span><span class="f3 push-content">: 嗯嗯 我也是這樣想的</span><span class="push-ipdatetime">    42.76.27.76 03/07 01:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiki62431</span><span class="f3 push-content">: 嗯嗯上次就有推導出來只是感覺還差了</span><span class="push-ipdatetime"> 180.204.116.88 03/07 01:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kiki62431</span><span class="f3 push-content">: 什麼</span><span class="push-ipdatetime"> 180.204.116.88 03/07 01:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pillowkiller</span><span class="f3 push-content">: 簡單</span><span class="push-ipdatetime">223.139.125.231 03/07 01:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">msou</span><span class="f3 push-content">: 之前就有過這樣的想法了</span><span class="push-ipdatetime"> 110.30.144.151 03/07 01:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dinel7821967</span><span class="f3 push-content">: 我就知道</span><span class="push-ipdatetime">   1.165.219.69 03/07 01:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">givemeakiss</span><span class="f3 push-content">: 過時的想法別貼好嗎？</span><span class="push-ipdatetime">  114.34.214.30 03/07 02:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wigping</span><span class="f3 push-content">: 雖然都是中文，卻無法理解文意^_^</span><span class="push-ipdatetime">  49.216.162.35 03/07 02:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rogerz6217</span><span class="f3 push-content">: 嗯嗯 差不多了</span><span class="push-ipdatetime">  42.72.207.111 03/07 02:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ShockHo222</span><span class="f3 push-content">: 趕快推不然以為我看不懂</span><span class="push-ipdatetime">     39.8.34.74 03/07 02:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BILLBADY</span><span class="f3 push-content">: 嗯嗯嗯，圖靈機嘛，很早就吃過了，還不</span><span class="push-ipdatetime">182.155.131.118 03/07 02:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">BILLBADY</span><span class="f3 push-content">: 錯吃，沒想到有人吃雞吃到發論文吶，是</span><span class="push-ipdatetime">182.155.131.118 03/07 02:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">BILLBADY</span><span class="f3 push-content">: 個吃貨啊</span><span class="push-ipdatetime">182.155.131.118 03/07 02:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">BILLBADY</span><span class="f3 push-content">: 不過我還是較喜歡肯德基就是了</span><span class="push-ipdatetime">182.155.131.118 03/07 02:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MarsCrp1</span><span class="f3 push-content">: 量子糾纏我倒是懂一點</span><span class="push-ipdatetime">  42.72.105.245 03/07 02:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kirakira520</span><span class="f3 push-content">: 嗯嗯，跟我想的一樣啊，只是我沒說出</span><span class="push-ipdatetime">   27.105.26.46 03/07 02:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kirakira520</span><span class="f3 push-content">: 來而已</span><span class="push-ipdatetime">   27.105.26.46 03/07 02:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aazhong</span><span class="f3 push-content">: 看不懂 但好像很厲害的樣子</span><span class="push-ipdatetime"> 114.136.148.34 03/07 02:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s81669</span><span class="f3 push-content">: 我去年大便的時候在馬桶上就想到了</span><span class="push-ipdatetime"> 123.241.76.172 03/07 02:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s81669</span><span class="f3 push-content">: 的時候</span><span class="push-ipdatetime"> 123.241.76.172 03/07 02:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiy75</span><span class="f3 push-content">: 不懂</span><span class="push-ipdatetime">    1.163.180.1 03/07 02:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">seanlee0131</span><span class="f3 push-content">: 對啊 我大概兩年前也得到一樣的結論</span><span class="push-ipdatetime">  223.140.71.53 03/07 02:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashura1234</span><span class="f3 push-content">: 嗯嗯  跟我想的一樣</span><span class="push-ipdatetime">  107.220.69.28 03/07 02:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zqAI3yGOAT</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">140.112.243.155 03/07 02:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RX7802</span><span class="f3 push-content">: 我每一個字都看得懂，但組合起來就看不懂</span><span class="push-ipdatetime">223.138.149.187 03/07 03:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RX7802</span><span class="f3 push-content">: 了</span><span class="push-ipdatetime">223.138.149.187 03/07 03:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccufcc</span><span class="f3 push-content">: 理組果然不會寫科普文</span><span class="push-ipdatetime">   39.11.37.204 03/07 03:29
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">zxcvbbb</span><span class="f3 push-content">: 公三小</span><span class="push-ipdatetime">   1.200.223.92 03/07 03:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">YuzanJhang</span><span class="f3 push-content">: 為啥總會有人來八卦板貼這種文章啊</span><span class="push-ipdatetime">220.137.152.156 03/07 04:03
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">y477646</span><span class="f3 push-content">: 全是中國用語，難以閱讀</span><span class="push-ipdatetime"> 203.121.244.40 03/07 04:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lin0129</span><span class="f3 push-content">: 對耶，我上次的公式也推出這個結果</span><span class="push-ipdatetime">123.193.209.142 03/07 04:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abd86731</span><span class="f3 push-content">: 我不是看不懂 只是需要再思考一下</span><span class="push-ipdatetime"> 180.217.65.236 03/07 04:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">willion003</span><span class="f3 push-content">: 教授說等我弄懂這個問題我就能畢業，</span><span class="push-ipdatetime">123.192.188.237 03/07 04:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">willion003</span><span class="f3 push-content">: 請問我484永遠無法畢業了</span><span class="push-ipdatetime">123.192.188.237 03/07 04:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">robobo</span><span class="f3 push-content">: 喔喔喔喔（趕快假裝看得懂）</span><span class="push-ipdatetime">  101.12.48.132 03/07 05:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gibson72</span><span class="f3 push-content">: 這我懂 若P則Q咩</span><span class="push-ipdatetime"> 114.39.101.242 03/07 05:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sdf89lgt</span><span class="f3 push-content">: 看來我國文學的不好</span><span class="push-ipdatetime">   39.8.170.173 03/07 06:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pleasewait</span><span class="f3 push-content">: 看廢物們推文滿好笑的......你看屁啊</span><span class="push-ipdatetime">  223.137.136.3 03/07 06:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lianpig5566</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime">     27.247.9.4 03/07 07:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Vhiilrvp</span><span class="f3 push-content">: 這個我也花了1星期才搞懂</span><span class="push-ipdatetime">   42.75.86.230 03/07 07:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OGC100times</span><span class="f3 push-content">: 前陣子才剛跟同學討論過</span><span class="push-ipdatetime">   101.12.45.20 03/07 07:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gamha</span><span class="f3 push-content">: 平常叫你多讀書吧</span><span class="push-ipdatetime"> 223.137.224.23 03/07 07:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">OGC100times</span><span class="f3 push-content">: PV=NRT</span><span class="push-ipdatetime">   101.12.45.20 03/07 07:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ag029718</span><span class="f3 push-content">: 這是常識好嗎</span><span class="push-ipdatetime">  175.97.17.255 03/07 07:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jay0215</span><span class="f3 push-content">: 我理組的，我看不懂，我驕傲</span><span class="push-ipdatetime"> 27.242.126.140 03/07 07:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">souldrinking</span><span class="f3 push-content">: 我曾三次想推倒這個理論..所以跟我</span><span class="push-ipdatetime">    42.73.95.46 03/07 07:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">souldrinking</span><span class="f3 push-content">: 想的差不多？</span><span class="push-ipdatetime">    42.73.95.46 03/07 07:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MaryWorkHard</span><span class="f3 push-content">: 記者 快來抄</span><span class="push-ipdatetime">   1.34.177.241 03/07 08:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">e8151848</span><span class="f3 push-content">: PM=DRT</span><span class="push-ipdatetime">180.217.206.148 03/07 08:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pjharper</span><span class="f3 push-content">: 看不懂……應該正常吧…</span><span class="push-ipdatetime"> 101.13.132.106 03/07 08:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mathrew</span><span class="f3 push-content">: 我以為大家都知道的說</span><span class="push-ipdatetime">  220.133.14.87 03/07 08:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ohrring</span><span class="f3 push-content">: 嗯嗯我也是這麼想的</span><span class="push-ipdatetime"> 223.136.251.65 03/07 08:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stayforever</span><span class="f3 push-content">: 我有更簡單的證明，可是推文寫不下</span><span class="push-ipdatetime">  114.34.221.25 03/07 08:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kami0857</span><span class="f3 push-content">: 不懂</span><span class="push-ipdatetime">   1.34.238.224 03/07 08:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">camelliaking</span><span class="f3 push-content">: 推，我早就覺得是這樣</span><span class="push-ipdatetime">  49.216.41.119 03/07 08:46
+</span></div><span class="f2">※ 編輯: jackliao1990 (123.192.157.138 臺灣), 03/07/2020 08:47:41
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gipo776</span><span class="f3 push-content">: 這是中文我怎麼看不懂</span><span class="push-ipdatetime"> 101.15.137.112 03/07 09:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ujjgeok</span><span class="f3 push-content">: 早就知道是這樣</span><span class="push-ipdatetime">   42.77.18.140 03/07 09:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">antibody27</span><span class="f3 push-content">: 講中文</span><span class="push-ipdatetime">   1.175.80.216 03/07 09:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">waterwolf</span><span class="f3 push-content">: 嗯 我也曾經想過 如今得到驗證</span><span class="push-ipdatetime">    39.10.62.68 03/07 10:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">astrophy</span><span class="f3 push-content">: 推翻 Connes 嵌入猜想這件事情比較大條</span><span class="push-ipdatetime">  27.242.62.224 03/07 10:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">astrophy</span><span class="f3 push-content">: ，近似法被受限的消息對於理論物理不是</span><span class="push-ipdatetime">  27.242.62.224 03/07 10:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">astrophy</span><span class="f3 push-content">: 好事情</span><span class="push-ipdatetime">  27.242.62.224 03/07 10:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">colbie0102ye</span><span class="f3 push-content">: 放八卦幹啥呢</span><span class="push-ipdatetime">   27.242.71.56 03/07 10:10
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">qqbanjan</span><span class="f3 push-content">: 你中文有夠爛</span><span class="push-ipdatetime"> 111.240.131.32 03/07 10:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t19960804</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime">  27.52.136.210 03/07 10:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eeEthan</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime"> 49.219.165.145 03/07 10:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a1119151</span><span class="f3 push-content">: 我早就知道了</span><span class="push-ipdatetime"> 60.249.249.252 03/07 10:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zylsg5347</span><span class="f3 push-content">: 哈 我也這麼覺得</span><span class="push-ipdatetime">  101.137.54.71 03/07 10:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dream74917</span><span class="f3 push-content">: 這是中文？</span><span class="push-ipdatetime">   60.79.231.23 03/07 11:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a26515969</span><span class="f3 push-content">: 沒一句看得懂==</span><span class="push-ipdatetime">  49.216.100.31 03/07 12:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">southright</span><span class="f3 push-content">: 我高中上音樂就想到了 太廢不想發</span><span class="push-ipdatetime">   73.183.157.2 03/07 13:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lin212324</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">   42.74.144.30 03/07 13:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nature1</span><span class="f3 push-content">: 你lag了哦</span><span class="push-ipdatetime">   42.77.245.96 03/07 13:47
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">henry7448</span><span class="f3 push-content">: 寫英文好嗎？ 中文看不懂</span><span class="push-ipdatetime">   31.205.21.28 03/07 14:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">deangood01</span><span class="f3 push-content">: &#34;演&#34;算法，甚麼算法 支那用語</span><span class="push-ipdatetime"> 70.187.170.124 03/07 14:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">OGC218</span><span class="f3 push-content">: 看不懂</span><span class="push-ipdatetime">   101.9.245.84 03/07 15:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hackfox</span><span class="f3 push-content">: 確實是這樣</span><span class="push-ipdatetime">111.251.205.232 03/07 15:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smallbird711</span><span class="f3 push-content">: 嗯 跟我想的一樣</span><span class="push-ipdatetime">  36.230.108.44 03/07 15:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">super223351</span><span class="f3 push-content">: 你講的是中文嗎</span><span class="push-ipdatetime"> 180.204.203.81 03/07 15:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">logLCY</span><span class="f3 push-content">: 論文本來想寫這個的，但太簡單被教授打槍</span><span class="push-ipdatetime"> 123.195.46.204 03/07 17:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eldar</span><span class="f3 push-content">: 太多專有名詞了,這樣寫鄉民怎麼看得懂</span><span class="push-ipdatetime">140.112.235.107 03/07 17:29
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">miraclesam</span><span class="f3 push-content">: 記者怎麼不抄這個呢</span><span class="push-ipdatetime">180.204.151.237 03/07 18:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eroha90021</span><span class="f3 push-content">: 重開機XD</span><span class="push-ipdatetime">223.139.152.195 03/07 21:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abasqoo</span><span class="f3 push-content">: 講人話</span><span class="push-ipdatetime"> 180.217.216.45 03/07 23:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">unadix</span><span class="f3 push-content">: 嗯嗯，我認同這篇文章 （字看得懂，連起</span><span class="push-ipdatetime">  42.74.158.176 03/08 00:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">unadix</span><span class="f3 push-content">: 來不認得）</span><span class="push-ipdatetime">  42.74.158.176 03/08 00:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jjomj666</span><span class="f3 push-content">: 呀巴哩…</span><span class="push-ipdatetime">     39.8.1.150 03/08 02:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zik2084</span><span class="f3 push-content">: 輕鬆啊</span><span class="push-ipdatetime">   71.95.59.193 03/08 14:34
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Gossiping/M.1583503398.A.94A.html?cacheKey=2084-27729939&amp;offset=35864&amp;offset-sig=22cf0fddf90c23b967070efc7064c227037d5bc1" data-longpollurl="/v1/longpoll?id=6880aa987fbf7b656b1d925e14a18d987f610b16" data-offset="35864"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'580114275a9cf08d',m:'852bc7956b0e1d8d477f5e527d75578a9eccc176-1586234512-1800-AfxyqDvVPRo1aQ3t/R2PeJXrTGQLmiIJqTiCgc36suZ/YBbcgu3fok0B8cpVTktYGhcvg31jHBHU6aMO/3dJeOIiXqScN9yvxLGoZxhM6IcX9xUr0DXZ9fVq+fg76BG89C4tHfuEJTIwGYUYBEr474R+APF7WjU7QB5i4N8nvL+Q',s:[0x066a11620f,0x39e43d143d],fb:0,}})();</script></body>
+</html>
