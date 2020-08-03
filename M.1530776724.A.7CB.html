@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[分享] 與巫師三的設計師討論關卡設計 - 看板 GameDesign - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="這陣子在玩The Witcher3。
+遊玩的時候對於遊戲中的「過度」導航系統其實不是很滿意，於是上網搜尋了一下他們在
+製作Level Design的相關資料，找到了一位當時的Level Designer, Miles Tost的Twitte
+r，打算寫信詢問一下他們是如何設計這個系統的。
+以下是信件內容的翻譯，想與大家分享交流
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[分享] 與巫師三的設計師討論關卡設計">
+<meta property="og:description" content="這陣子在玩The Witcher3。
+遊玩的時候對於遊戲中的「過度」導航系統其實不是很滿意，於是上網搜尋了一下他們在
+製作Level Design的相關資料，找到了一位當時的Level Designer, Miles Tost的Twitte
+r，打算寫信詢問一下他們是如何設計這個系統的。
+以下是信件內容的翻譯，想與大家分享交流
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/GameDesign/M.1530776724.A.7CB.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	<script async src='/cdn-cgi/bm/cv/2172558837/api.js'></script></head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/GameDesign/index.html"><span class="board-label">看板 </span>GameDesign</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/GameDesign/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">yoshimisakae (Sakae)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">GameDesign</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[分享] 與巫師三的設計師討論關卡設計</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Jul  5 15:45:19 2018</span></div>
+這陣子在玩The Witcher3。
+
+遊玩的時候對於遊戲中的「過度」導航系統其實不是很滿意，於是上網搜尋了一下他們在
+製作Level Design的相關資料，找到了一位當時的Level Designer, Miles Tost的Twitte
+r，打算寫信詢問一下他們是如何設計這個系統的。
+
+以下是信件內容的翻譯，想與大家分享交流
+
+我：「哈囉，Mr. Tost。
+我最近在分析巫師三的關卡設計，但遇到了一些困難之處。正巧看到一篇專訪文章(*1)得
+知您是巫師三的Level Designer。方便詢問您一些問題嗎？感謝。」
+
+Tost：「嘿，沒問題，儘管問吧。但是更正一下，我只是當時兩位Level Designer的其中
+一位。」
+
+我：「感謝！我會說巫師三的關卡很難分析的原因是因為，我認為小地圖的導航系統真的
+幫忙過頭了。這會讓玩家傾向依靠這個系統而不是透過Level Design的提示(如關卡結構
+﹑光影﹑標的物等)來探索遊戲世界。
+我蠻好奇的是，當時團隊對在做這個決定的時候，是期望玩家可以毫不費力地跟著小白點
+就到達目的地呢？還是你們確實希望玩家可以親自探索這個世界卻因為導航系統的關係讓
+玩家傾向用方便快速的方式來遊玩？
+如果當時的決定的確是希望玩家可以方便地使用這個導航系統來遊玩，那你們對於玩家過
+於關注UI提示而失去對遊戲的沉浸感這件事情又有甚麼看法嗎？
+原諒我使用「玩家」一詞但其實以上只是我的個人經驗與意見。
+再次感謝您閱讀我這一長串的問題     」
+
+Tost：「這是個相當好的問題！
+或許我可以透過時序性的解釋我們當時是怎麼打造這個世界的來回答這個問題：
+在最開始的時候，我們確定了一個明確的目標就是我們希望玩家可以不透過地圖來探索這
+個世界，簡單地透過他們所見以及甚麼讓他們感到好奇來引導他們。
+
+這個設計的理念是，透過自由的探索，這會培養出一種「遊蕩感(Sense of wonder)」並
+因此讓探索這件事更加有趣與使人投入。
+
+除此之外，我們只希望玩家當我們想讓他迷失方向才感到迷失方向。這就是為甚麼你可以
+在遊戲世界中發現大量的地景標的物。Novigrad Temple Island在區域地圖的任何地方幾
+乎都可以看得到﹑再往南你可以看到Tower of Fyke Island, the Bald Mountain Tree,
+Crow&#39;s Perch。某些區域看起來像是燒毀的廢墟﹑某些區域則非常繁榮。甚至在配色上也
+會改變。這些都是為了幫助玩家隨時了解他自己身在何處。
+
+除此之外，我們做了一個叫做「連鎖POI(*2)」的設計。想像你在一個洞窟探索，並在完
+成任務後抵達了出口，我們期望你能在出口附近就發現下一個可能的目標。這個目標可以
+是某個還有一段距離的東西(像是村莊﹑廢墟或只是一條通道)或是某個很近的東西。這讓
+我們可以給予玩家像是麵包屑一般的線索來引導其從這個POI到下一個POI，有些時候他也
+可能會遇到兩個線索而必須選擇其中一個。這也會讓玩家更有身為探索者的感覺。
+
+以我個人的意見而言，這個遊戲最棒的體驗方式應該是：不在POI上做標示﹑不顯示小白
+點進行導航。這遊戲就被設計該如此進行的。玩家可以在遊戲世界中迷失，然後到處漫遊
+，然後發現一些令你感到驚奇的事物。任何UI上的標示都會破壞這種驚奇感。
+
+但人生最機掰的就是那個BUT。遊戲開發的過程總是會需要妥協，直到在某個時間點完成
+了遊戲。我們之所以會加入UI標示是因為，有相當多數的玩家(特別是西方國家)喜歡遊戲
+的內容更直接了當地呈現。他們可能不會堅持繼續在遊戲世界中漫遊直到找到目標。因為
+他們可能疲於工作或是照顧小孩，所以可能只有一到兩個小時可以玩遊戲，有時候甚至一
+個禮拜只有一次玩遊戲的時間。為了幫助這些玩家在經過這麼長的間隔能夠再次投入遊戲
+的世界，我們做了你所說的「過度幫助」的導航系統。透過免除因為找尋某樣東西而耗費
+大量時間，使玩家可以更簡單地找到那些遊戲中有趣的點。
+
+現在可以理解為甚麼這是很多核心玩家感到矛盾的地方。人們常會說這樣的系統會讓玩家
+非常快速地弱智化(dumbling down)。但其實從開發者的觀點而言這個議題更簡單一點，
+我們製作遊戲然後大家能夠樂在其中。越多的人能夠享受我們的作品我們就越快樂。我們
+很謙遜地看待這款遊戲獲得大量的好名聲這件事，我也很高興能看到這款遊戲與各式各樣
+的人們產生了共鳴，不論是核心玩家亦或是休閒玩家。
+
+對我個人而言，當我們要將POI標示系統與導航小白點加入遊戲的時候，我與另外一位Lev
+el Designer是相當反對這件事，並且與我們的Game directors有過不少討論。最終的結
+果是，我們決定提供選項讓玩家可以在選單中關閉這項系統(試著不依賴這些系統玩一下
+巫師三，再告訴我你的想法！)。透過這個方式，我想我們可以讓任何種類的玩家（再一
+次強調，為了讓更多人能夠享受這款遊戲）都能找到自己希望遊玩的方式。因為大多數的
+休閒玩家甚少調整遊戲設定選項並直接地跳入遊戲的世界，我們將導航系統設為預設，而
+更有經驗的玩家很簡單的能夠進選單關閉這個系統。我認為這是一個相當好的妥協，而且
+我記得我當時在遊戲發售前的受訪時相當積極的傳達與溝通這件事。（我想你可以說是我
+個人的堅持，哈哈。）
+
+所以總結來說，UI引導提示是故意做得如此幫忙過頭的，為了迎合某些類型的玩家，並讓
+大量主流的人們遊玩我們的遊戲。就我個人的意見而言，對核心玩家與愛好探索的玩家，
+這款遊戲是被設計應該關掉這些功能的，也是享受這款遊戲最佳的方式。所有人都應該嘗
+試這種玩法至少一次。然而隨著年齡的增長，我越來越能夠理解那些休閒玩家了。我能夠
+「浪費」在遊戲中的時間似乎越來越少，這也意味著我發現我自己越來越只對那些「確定
+是好」的遊戲與「能夠尊重我的時間」的遊戲感興趣。這或許不是一件好事，但畢竟我也
+只是一個普通人。
+
+我希望這些有回答到你的問題，並且對我堆積如牆一般高的文字數感到有趣。感謝你的閱
+讀。
+
+祝好
+Miles」
+
+*1:當時受訪的文章
+<a href="https://www.dualshockers.com/the-witcher-3-wild-hunt-level-designer-answers-a-" target="_blank" rel="nofollow">https://www.dualshockers.com/the-witcher-3-wild-hunt-level-designer-answers-a-</a>
+ton-of-questions-about-the-upcoming-rpg/
+
+*2: POI, Point Of Interest，指遊戲中有趣的點或任務目的地。
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 60.250.32.99
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/GameDesign/M.1530776724.A.7CB.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/GameDesign/M.1530776724.A.7CB.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bornmax</span><span class="f3 push-content">: 很棒的分享! 巫師團隊的Director下的決策真是正確!!</span><span class="push-ipdatetime"> 07/05 15:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nightfish</span><span class="f3 push-content">: 好文</span><span class="push-ipdatetime"> 07/05 16:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wangm4a1</span><span class="f3 push-content">: 很有趣 薩爾達反而在小地圖沒那麼多標示物</span><span class="push-ipdatetime"> 07/05 17:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wangm4a1</span><span class="f3 push-content">: 各有優缺點 不過巫師我反而不會熟記大部份地形</span><span class="push-ipdatetime"> 07/05 17:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">biosphere</span><span class="f3 push-content">: 好文推</span><span class="push-ipdatetime"> 07/05 17:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zseineo</span><span class="f3 push-content">: 太COOOOOL了 推</span><span class="push-ipdatetime">07/05 18:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zseineo</span><span class="f3 push-content">: 我個人也覺得足跡太過頭了XD 我只有開位置標示</span><span class="push-ipdatetime">07/05 18:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Julibea</span><span class="f3 push-content">: 推好文</span><span class="push-ipdatetime"> 07/05 18:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eye5002003</span><span class="f3 push-content">: 正確的決定 我就是缺乏時間的那種玩家</span><span class="push-ipdatetime">07/05 20:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: 好文大推</span><span class="push-ipdatetime">07/05 20:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">okinawa8</span><span class="f3 push-content">: 我沒導航不行...</span><span class="push-ipdatetime">07/05 20:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kentones</span><span class="f3 push-content">: 感謝分享！</span><span class="push-ipdatetime">07/05 22:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kevin0925x</span><span class="f3 push-content">: 有導航都會迷路 我不敢想像沒有導航的開放世界</span><span class="push-ipdatetime">07/05 22:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eye5002003</span><span class="f3 push-content">: 如果地圖設計的跟異塵餘生4一樣就可以不用導航</span><span class="push-ipdatetime">07/06 00:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eye5002003</span><span class="f3 push-content">: fallout4給了太多明顯地標 河流 公路 發光海 都有幫助</span><span class="push-ipdatetime"> 07/06 00:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eye5002003</span><span class="f3 push-content">: 血與酒的地圖就改善很多了，不容易迷路</span><span class="push-ipdatetime">07/06 00:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">penguinfuko</span><span class="f3 push-content">: 好棒的文章。請問可以轉steam版嗎？</span><span class="push-ipdatetime">07/06 18:36
+</span></div>沒問題哦
+<span class="f2">※ 編輯: yoshimisakae (42.73.120.152), 07/06/2018 19:29:20
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">urmfo</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">07/06 21:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">RadiationXen</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime">07/07 10:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">azukikao</span><span class="f3 push-content">: 看到會願意考慮玩家想要什麼的Designer真好！推！</span><span class="push-ipdatetime"> 07/07 12:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sotsu2016</span><span class="f3 push-content">: 真好 原來是這樣</span><span class="push-ipdatetime"> 07/07 15:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sotsu2016</span><span class="f3 push-content">: 回覆也好客氣，謝謝原po分享</span><span class="push-ipdatetime"> 07/07 15:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cklppt</span><span class="f3 push-content">: 看到這篇我也想到轉steamXD 之前steam板有上古5跟巫師3在</span><span class="push-ipdatetime"> 07/08 05:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cklppt</span><span class="f3 push-content">: 開放世界任務與導航方面設計差異的戰文=w=</span><span class="push-ipdatetime"> 07/08 05:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rurumi0318</span><span class="f3 push-content">: 推，很棒的討論</span><span class="push-ipdatetime"> 07/09 13:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KanoLoa</span><span class="f3 push-content">: 棒棒</span><span class="push-ipdatetime"> 07/10 11:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">naya7415963</span><span class="f3 push-content">: 感謝翻譯與分享</span><span class="push-ipdatetime"> 07/11 17:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eternalsway</span><span class="f3 push-content">: 同意尊重玩家的時間</span><span class="push-ipdatetime"> 07/15 03:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g5637128</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/19 22:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hipnos</span><span class="f3 push-content">: 幫推 感謝分享!</span><span class="push-ipdatetime"> 07/20 08:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hipnos</span><span class="f3 push-content">: 看兩位都沒轉 我就順手轉到steam版 希望原po見諒</span><span class="push-ipdatetime"> 07/20 08:08
+</span></div>感謝轉貼
+<span class="f2">※ 編輯: yoshimisakae (111.241.153.26), 07/21/2018 13:24:37
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">penguinfuko</span><span class="f3 push-content">: 謝樓上H大，窩問了結果以為轉了QQ</span><span class="push-ipdatetime"> 07/22 01:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rickkcir</span><span class="f3 push-content">: 很完整的解釋了系統開發的來龍去脈，推推推</span><span class="push-ipdatetime"> 07/29 10:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yangfrank1</span><span class="f3 push-content">: 推推！</span><span class="push-ipdatetime"> 08/01 15:17
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/GameDesign/M.1530776724.A.7CB.html?cacheKey=2084-671697009&amp;offset=8699&amp;offset-sig=397ca54f093e2f8950acf780a7d6b38769e3e336" data-longpollurl="/v1/longpoll?id=63ba5ba0161ff752a63ab027523c100ec5765f48" data-offset="8699"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'5b85f65a2d760000',m:'85710302a473a3e5f57eb333314cfa256a90e2a3-1595680962-1800-AXF8jeYU84/shSpampm9dzkpp2l7w2pItesZtG3dc5GS/eB7g6Tpg72BRteVr15Bpr8WnqoV4mAVelXZlekSzT1Oz47aI5UCDamntm8Y/jmDLlMS0/nxoXpEAbZM/kPsoAKF3Z/HR6v3wGidesMn6GPKlsgV+oiC43KEdgTVes/r',s:[0xff2443cd98,0x9f718c89c9],}})();</script></body>
+</html>
