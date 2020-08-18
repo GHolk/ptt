@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>重構的幾個迷思 - 看板 Soft_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="覺得最近很多文章都有些不求甚解的問題，來寫點論述。
+1. 重構不是什麼了不起的事情
+2. 變更程式碼，重寫舊的程式碼成自己爽的樣子，不一定是重構。
+3. 重構是一種相對安全的工具型開發方法論，
+但仍然有不少風險跟誘惑。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="重構的幾個迷思">
+<meta property="og:description" content="覺得最近很多文章都有些不求甚解的問題，來寫點論述。
+1. 重構不是什麼了不起的事情
+2. 變更程式碼，重寫舊的程式碼成自己爽的樣子，不一定是重構。
+3. 重構是一種相對安全的工具型開發方法論，
+但仍然有不少風險跟誘惑。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Soft_Job/M.1594081682.A.E16.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Soft_Job/index.html"><span class="board-label">看板 </span>Soft_Job</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Soft_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">TonyQ (得理饒人)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Soft_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">重構的幾個迷思</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Jul  7 08:27:58 2020</span></div>
+
+
+
+覺得最近很多文章都有些不求甚解的問題，來寫點論述。
+
+1. 重構不是什麼了不起的事情
+
+2. 變更程式碼，重寫舊的程式碼成自己爽的樣子，不一定是重構。
+
+3. 重構是一種相對安全的工具型開發方法論，
+但仍然有不少風險跟誘惑。
+
+4. 如果你不應該或沒權力改的程式碼，
+不要以為自稱是重構就能取得變更的權力。
+
+5. 測試(單元或整合)，是一種快速驗證，
+程式是否符合自己預期的工具，但並不是不會犯錯的保證。
+
+因為，自己的預期可能就是錯的，也可能測試相依過深，
+一時半刻沒有足夠好的介面，測不到真正的主要情境。
+
+
+6. 不論重寫或重構，所有的程式碼變更都有一個本質，
+要把時間花在刀口上，對重要的程式碼優先處理，
+不重要的程式碼延後處理，程式碼都有優先權問題。
+
+
+所謂的程式碼沒壞就不要修他，
+本質上是「如果他的現況不影響別的事情，暫時不用管他」。
+
+但如果他已經卡到別的功能的擴充或維護，
+造成 DEBUG 困難，常出問題等，修改他就有了價值。
+
+那個狀態就又是另一回事。
+
+
+======
+
+另外，有些話我覺得講的不夠白，做點翻譯：
+
+
+1. 東西沒壞就不要改他：
+
+你最近改壞的東西太多了/
+你最近正常改好的東西太少了/
+這段扣不關你的事情你沒有權限可以碰。
+
+
+2. 開發應該要先做測試：
+
+你最近改壞的東西太多了/
+你最近正常改好的東西太少了
+
+
+3. 要重構之前應該要先做測試：
+
+你現在的 CODE 搞不好都已經在亂寫了，
+再大規模改 CODE 會不會死的更難看。
+
+4. 這 CODE 寫的很爛：
+
+我想把 CODE 改成我看起來爽的樣子
+
+
+=====
+
+坦白說，你寫程式品質高的話，要怎麼炫技都可以，
+凡人登山要確保，很多高手可以無確保登山，
+但這些人每隔幾年也就會有一兩個摔死上新聞。
+
+
+嗯，反正說到底改程式碼的權限是個政治問題。
+
+
+打著重構或效能調整的名義變更是沒關係，
+但有沒有做好，是一翻兩瞪眼的事情。
+
+
+個人 Credit 喪失事小，
+把使用這個工具的人給搞成白癡事大，
+
+還麻煩大家，量力而為。
+
+
+自己爛，不會開發，不要牽拖工具方法論。
+
+
+要重構先還是要測試先，會問這種問題的，
+還不如先練習看看什麼是重構，什麼是測試。
+
+
+
+-----
+Sent from JPTT on my Google Pixel 3 XL.
+
+--
+
+<span class="f6 b4 hl">      網頁上拉近距離的幫手              實現 GMail豐富應用的功臣   </span>
+
+<span class="f6 hl">        數也數不清的友善使用者體驗      這就是ｊａｖａｓｃｒｉｐｔ</span>
+
+<span class="f0 hl">                                                歡迎同好到 AJAX 板一同討論。</span>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 61.231.31.193 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Soft_Job/M.1594081682.A.E16.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Soft_Job/M.1594081682.A.E16.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">d1288999</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/07 08:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yyhsiu</span><span class="f3 push-content">: 推前半，做事真的要看帶來的價值</span><span class="push-ipdatetime"> 07/07 08:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bill0205</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/07 09:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gaitz</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/07 09:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WTFCN</span><span class="f3 push-content">: 台肯</span><span class="push-ipdatetime"> 07/07 09:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lovez04wj06</span><span class="f3 push-content">: 除了半瓶水以外，真的有人喜歡沒事就重購嗎？</span><span class="push-ipdatetime"> 07/07 10:46
+</span></div>
+比起有沒有事(應該沒多少人是真的沒事的),
+更重要的問題是很多人會看 code 看不順眼. (不過這個行為本身不見得是壞事)
+
+看到一個問題就想要去挑戰更好的作法,
+不論是求表現也好, 或是想找事情殺時間, 這是人之常情.
+<span class="f2">※ 編輯: TonyQ (210.61.209.201 臺灣), 07/07/2020 10:49:27
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asd51052000</span><span class="f3 push-content">: 是不是少了[心得]?</span><span class="push-ipdatetime"> 07/07 10:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">x000032001</span><span class="f3 push-content">: 加功能就容易伴隨著重構 不然經常會變得疊床架屋</span><span class="push-ipdatetime"> 07/07 11:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ian90911</span><span class="f3 push-content">: 中肯</span><span class="push-ipdatetime"> 07/07 11:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jhengsiaomin</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/07 12:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tbpfs</span><span class="f3 push-content">: 中肯</span><span class="push-ipdatetime"> 07/07 12:37
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">iceman5566</span><span class="f3 push-content">: 你的標題先重構一下吧</span><span class="push-ipdatetime"> 07/07 12:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Menderca</span><span class="f3 push-content">: 中肯推</span><span class="push-ipdatetime"> 07/07 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">longlyeagle</span><span class="f3 push-content">: E</span><span class="push-ipdatetime"> 07/07 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shooter555</span><span class="f3 push-content">: 加功能伴隨重構 那應該會想打寫架構的人</span><span class="push-ipdatetime"> 07/07 13:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TAKADO</span><span class="f3 push-content">: 改扣之前先問問自己，這段程式這麼爛大家都有看到，為什麼</span><span class="push-ipdatetime"> 07/07 13:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TAKADO</span><span class="f3 push-content">: 沒有前人去改它，凡事必有因果。</span><span class="push-ipdatetime"> 07/07 13:32
+</span></div>
+我自己改過很多次, 通常原因都是前人能力不足/膽量不足. 
+所以要問問的應該是自己有沒有比前人厲害.
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shooter555</span><span class="f3 push-content">: 不過真的就是權限問題 權限夠想把所有功能改掉 不用說</span><span class="push-ipdatetime"> 07/07 13:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shooter555</span><span class="f3 push-content">: 物件化 擬人化都可以 每個功能幫它取個名子</span><span class="push-ipdatetime"> 07/07 13:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jixiang</span><span class="f3 push-content">: 中肯</span><span class="push-ipdatetime"> 07/07 13:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">x000032001</span><span class="f3 push-content">: 哪來的萬用架構都不用動就可以加功能 不需要dirty wo</span><span class="push-ipdatetime"> 07/07 13:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">x000032001</span><span class="f3 push-content">: rk 請務必讓我見識怎麼設計出來的</span><span class="push-ipdatetime"> 07/07 13:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KeyFSN</span><span class="f3 push-content">: 就是有阿 看過才會讚嘆公司花大錢請 senior 不是沒有原因</span><span class="push-ipdatetime"> 07/07 13:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">as30385438</span><span class="f3 push-content">: 能搞出萬用架構應該也不是senior, 是神了</span><span class="push-ipdatetime"> 07/07 14:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">as30385438</span><span class="f3 push-content">: 不然就是一堆overdesign的garbage code自以為很神</span><span class="push-ipdatetime"> 07/07 14:08
+</span></div><span class="f2">※ 編輯: TonyQ (210.61.209.201 臺灣), 07/07/2020 14:11:04
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Darkword1987</span><span class="f3 push-content">: 我覺得要refactor要有理由 醜不算</span><span class="push-ipdatetime"> 07/07 14:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shooter555</span><span class="f3 push-content">: 架構總要保留可以擴充跟相容的空間吧 加一個功能就要</span><span class="push-ipdatetime"> 07/07 14:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shooter555</span><span class="f3 push-content">: 這就是有問題的</span><span class="push-ipdatetime"> 07/07 14:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">shooter555</span><span class="f3 push-content">: 重構</span><span class="push-ipdatetime"> 07/07 14:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hichcock</span><span class="f3 push-content">: 年輕人應該多鼓勵重構當練功, 但是請私下做</span><span class="push-ipdatetime"> 07/07 15:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hichcock</span><span class="f3 push-content">: 不要影響到大家工作的環境, 重構下去你才會發現很多問題</span><span class="push-ipdatetime"> 07/07 15:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hichcock</span><span class="f3 push-content">: 包含自己缺少的, 還有舊架構的涵義等等</span><span class="push-ipdatetime"> 07/07 15:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">leveger0903</span><span class="f3 push-content">: 如果該專案幾乎沒有後續需求的話 只是醜我可以</span><span class="push-ipdatetime"> 07/07 15:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leveger0903</span><span class="f3 push-content">: 但是常常有後續一堆需求 加上前人刻意不照公司寫程</span><span class="push-ipdatetime"> 07/07 15:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leveger0903</span><span class="f3 push-content">: 式規範走 留下很多坑 東西又在線上 不得不選這條路</span><span class="push-ipdatetime"> 07/07 15:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lazarus1121</span><span class="f3 push-content">: 站在管理者的立場就是沒壞不要改，因為錯了要擔責任</span><span class="push-ipdatetime"> 07/07 17:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lazarus1121</span><span class="f3 push-content">: 但站在開發者的角度，這東西不改我會很難維護跟除錯</span><span class="push-ipdatetime"> 07/07 17:38
+</span></div>我是管理者而且我會改，反正我扛責任沒人會說什麼。
+這篇真正的立場叫做掂掂自己斤兩。
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lazarus1121</span><span class="f3 push-content">: 這篇的立場只是偏前者</span><span class="push-ipdatetime"> 07/07 17:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joery</span><span class="f3 push-content">: 推能跑沒問題再爛也不要動code,很難改不知道是否有地雷，可</span><span class="push-ipdatetime"> 07/07 18:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">joery</span><span class="f3 push-content">: 3會付出代價</span><span class="push-ipdatetime"> 07/07 18:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">airtsubasa</span><span class="f3 push-content">: 如果公司沒有自己的規範呢？ 呵呵…</span><span class="push-ipdatetime"> 07/07 20:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">simpleplanya</span><span class="f3 push-content">: 推唷</span><span class="push-ipdatetime"> 07/07 21:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ericjc</span><span class="f3 push-content">: 推一個</span><span class="push-ipdatetime"> 07/07 22:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">clamperni</span><span class="f3 push-content">: 說真的我到現在還沒遇到真的懂重構的 2倒是一堆XD</span><span class="push-ipdatetime"> 07/08 00:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Csongs</span><span class="f3 push-content">: 很多人只是看不慣別人寫得而已</span><span class="push-ipdatetime"> 07/08 00:05
+</span></div><span class="f2">※ 編輯: TonyQ (61.231.78.150 臺灣), 07/08/2020 05:24:43
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nenpow</span><span class="f3 push-content">: 這篇整理得很清楚, 但多數人還是只會擷取自己想聽的</span><span class="push-ipdatetime"> 07/08 08:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LuyTe</span><span class="f3 push-content">: premature optimization is the root of all evil</span><span class="push-ipdatetime"> 07/08 09:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LuyTe</span><span class="f3 push-content">: 重構跟講英文很像，你會看到一堆英文很爛的人很有自信開口</span><span class="push-ipdatetime"> 07/08 09:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LuyTe</span><span class="f3 push-content">: 講，也會看到英文很好卻不敢開口的人。你會看到一堆該重構</span><span class="push-ipdatetime"> 07/08 09:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LuyTe</span><span class="f3 push-content">: 的人找理由不去重構，也會看到不該重構的人OCD發作改些沒意</span><span class="push-ipdatetime"> 07/08 09:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LuyTe</span><span class="f3 push-content">: 義的東西</span><span class="push-ipdatetime"> 07/08 09:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smily134</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/08 11:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zx1986</span><span class="f3 push-content">: &gt; 凡人登山要確保   超中肯！Testing 先起來再說重構！</span><span class="push-ipdatetime"> 07/08 13:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">overhead</span><span class="f3 push-content">: 抱持code沒壞就不要改的，是爛主管。通常就是他自己cod</span><span class="push-ipdatetime"> 07/11 15:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">overhead</span><span class="f3 push-content">: ing能力差，不勤練，不好好寫test。還因為他是這種人，</span><span class="push-ipdatetime"> 07/11 15:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">overhead</span><span class="f3 push-content">: 整個團隊也慢慢變這種風格。</span><span class="push-ipdatetime"> 07/11 15:36
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Soft_Job/M.1594081682.A.E16.html?cacheKey=2085-1013869105&amp;offset=8492&amp;offset-sig=659621808f45aed4284b633ecffc964dfab52249" data-longpollurl="/v1/longpoll?id=4978197e93f608f9de45680e2e1dadb6db9c8494" data-offset="8492"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
