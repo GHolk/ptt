@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[其他] 漫談無限（一） - 看板 Math - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="一、前言：
+中秋月圓佳節愉快！看著○○的月餅，就聯想到∞這個數學家用來代表無限概念的符號。
+在開篇之前，我想簡單的說，本系列文旨在闡述一個全新的概念來理解無窮，
+而我想用通俗有趣的筆法來達成這個目標，用白話文的筆調植基於一個理念，
+只有對概念極為熟悉的人，才能寫出深入淺出的介紹性文章，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[其他] 漫談無限（一）">
+<meta property="og:description" content="一、前言：
+中秋月圓佳節愉快！看著○○的月餅，就聯想到∞這個數學家用來代表無限概念的符號。
+在開篇之前，我想簡單的說，本系列文旨在闡述一個全新的概念來理解無窮，
+而我想用通俗有趣的筆法來達成這個目標，用白話文的筆調植基於一個理念，
+只有對概念極為熟悉的人，才能寫出深入淺出的介紹性文章，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Math/M.1410070045.A.588.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Math/index.html"><span class="board-label">看板 </span>Math</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Math/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">ginstein (邁向學術之路)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Math</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[其他] 漫談無限（一）</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sun Sep  7 14:07:19 2014</span></div>
+一、前言：
+
+中秋月圓佳節愉快！看著○○的月餅，就聯想到∞這個數學家用來代表無限概念的符號。
+
+在開篇之前，我想簡單的說，本系列文旨在闡述一個全新的概念來理解無窮，
+
+而我想用通俗有趣的筆法來達成這個目標，用白話文的筆調植基於一個理念，
+
+只有對概念極為熟悉的人，才能寫出深入淺出的介紹性文章，
+
+如果你讀後能接受這個新觀點的話，那就達成撰寫本文的目的之一：
+
+「凡事都存在著無限的可能！」
+
+即使在經過千錘百鍊的古典(或稱標準)數學分析中，也有可能從中反思產生新的領悟。
+
+為了鋪陳和比較相關既有概念，會提到一些歷史發展和進階學派的敘述，
+
+如果你略過這些，即使只有普通中學的程度，只要你擁有一顆好奇心和一個清楚的頭腦，
+
+那就應該能輕鬆理解本系列文關於無窮的新觀點。
+
+
+
+為了讓各位看官提起點精神，睜大眼睛看下去，開頭先來個驚人的宣稱：
+
+「新概念將在中學基礎上改寫高等古典(標準)數學分析！」
+
+我估計學過古典數學分析的讀者看到這，有 99% 以上會哈哈大笑或是大罵作者發神經！
+
+沒學過古典分析的讀者，我用一些經典笑話來描述古典數學分析的難度：
+
+典故一：遙遠的年代以前，傳說某數學系教授，高微(高等微積分)課程學期結束後，
+
+    告訴助教說，只讓兩個最高的過，其餘當掉！高微這門課不修個兩遍怎麼可能會懂。
+
+典故二：複變(複變數函數論)這門課，課名就暗示了要學過兩遍才會懂。至於實變
+
+    (實變數函數論)，修過的朋友就能體會為何要修十遍才有可能真的懂！
+
+那剩下不到 1% 涉獵過非標準分析的讀者可能會說，這件事非標準分析早做過了，
+
+我要說，要入門非標準分析一樣不簡單，而具備普通中學程度就可接受本文。
+
+知道了這個驚人宣稱的難度後，你可能會感到好奇或困惑，這件事有可能嗎？
+
+
+
+好了，讓我們言歸正傳來談如何去理解無窮的新觀點：
+
+先從一個具體的問題開始，無窮數列 {1, 1/2, 1/3,..., 1/n,...} 的極限是什麼？
+
+知道極限定義的讀者會說：廢話，這個數列的極限不就是０。
+
+但是我相信大多數人第一次遇到這問題時都有個感覺，這個數列的極限似乎不是０，
+
+雖然這個數列無限趨近於０，因為無窮數列當中的每一項都不是０，極限似乎不是０！
+
+眾所皆知極限概念是古典分析學中的重要基礎概念之一，
+
+現行的無窮數列極限定義可參考 <a href="https://en.wikipedia.org/wiki/Limit_of_a_sequence" target="_blank" rel="nofollow">http://en.wikipedia.org/wiki/Limit_of_a_sequence</a>
+
+雖然初學者可能一頭霧水，但是近兩百年來的驗證，這個嚴謹的定義絕對正確可用。
+
+因此如果改變了極限定義，那就要改變微分、積分定義方式，也就重新改寫了古典分析學
+
+理解無窮的新觀點就從重新認識極限開始。
+
+
+
+各位看官注意了，我說無窮數列 {1, 1/2, 1/3,..., 1/n,...} 的真正極限是個無窮小！
+
+注意！這個無窮小「不是負無限大」，指的是和０的差別小於任意正數的非零無窮小。
+
+有部分讀者會說這個想法歷史上早出現過了，正因為問題重重才被放棄。
+
+為避免被誤會不瞭解歷史，所以才大放厥詞，也為了給不熟悉的讀者大致了解歷史脈絡，
+
+接下來我們先來略述一下分析學發展史。
+
+
+
+
+二、分析簡史
+
+微積分是微分和積分兩種工具的組合。微積分在剛開始發展時，
+
+微分是想像成兩個無窮小數的相除，積分是無窮多個無窮小數的相加。
+
+數學大師們在推論中使用無窮小，但總是能推導出正確的公式結果，
+
+所以在微積分發展之初，著重在各種領域中的應用，並未深入推論中的不嚴謹之處。
+
+
+
+神學家喬治·貝克萊(George Berkeley)批評微積分的基礎建立在矛盾的無窮小概念上，
+
+這神奇的無窮小在公式推導中一會兒不是零，一會兒又是零，可說是「消逝量的幽靈」！
+
+如果數學家可以不講求邏輯正確性，忍受古怪玄奇的無窮小概念，
+
+那麼為什麼不能接受帶點神秘色彩的宗教信仰呢？
+
+
+
+神學家的批評雖是出於宗教動機，但切中要害！
+
+在使用直覺但自身矛盾的無窮小概念上，數學大師們雖能避開錯誤推論，
+
+更常見的是一般人推導出錯誤的公式與結果。
+
+在被無窮小、終極比值等說法弄得烏煙瘴氣後，無窮小概念在非常勉強的心情下被放棄。
+
+此外非歐幾何的發展更顯示了直觀的論述不能替代嚴謹的證明。
+
+數學家最終放棄了在分析學中訴諸直覺的輕率論述，
+
+取而代之的是精確的定義和嚴謹的證明來確保推論的正確性。
+
+
+
+為了確保正確性，數學家先將微積分中的連續、微分、積分等基本觀念，
+
+建立在用 ε-N, ε-δ 精確術語所陳述的極限概念上，
+
+極限概念基於考察無窮實數數列之收斂極限，
+
+只要實數的概念嚴謹了，那分析學的基礎就穩固了！
+
+古典分析的實數理論，採用了單調有界實數數列的極限還是個實數的觀點，
+
+也就是俗稱的實數完備性公理，可推出阿基米德性質，排除無窮小的概念，
+
+從而建立起堅實的實數理論，並衍生了集合論、測度論，
+
+進而在各種稀奇古怪的集合上進行了直覺難以想像的測度。
+
+從此，因為沒讀個十遍是不會理解古典分析學的博大精深之處，
+
+數學家終於擺脫神學家的打擾了:)
+
+
+
+從嚴謹的定義開始，經過正確的邏輯推論，建立起來的古典數學分析，
+
+雖然達成了嚴謹而正確推論的原始目標，
+
+卻也同時證明出了種種違反直覺、不可思議的古怪結果。
+
+在嚴格化分析學基礎的過程中，
+
+集合論、邏輯學等數學基礎科目也得到充分發展，深深影響至今。
+
+有趣的是，在數學家放棄無窮小後，邏輯學家反而建立起非標準分析而接納這概念。
+
+簡略地帶過分析發展史，
+
+回想「無窮數列 {1, 1/2, 1/3,..., 1/n,...} 的真正極限是個無窮小」這個宣稱，
+
+讓我們聚焦在「無窮數列的真正極限是什麼」這個問題上。
+
+
+
+
+三、極量初探
+
+「無窮數列的真正極限」指的是什麼呢？要怎麼定義呢？
+
+這個解答的概念其實很簡單自然，就像零、負整數、實數的概念一樣簡單自然。
+
+套用金剛經的句型：所謂簡單自然，即非簡單自然，是名簡單自然！
+
+了解數系概念發展史的讀者，應該會對這比喻有所了解，這邊先略過這段歷史。
+
+在已完備的實數基礎上，讓我們開始討論無窮數列的真正極限：
+
+1.要能對平面向量、空間向量、高維向量推廣到無窮維向量這事有概念；
+
+補充一下，這一步類似從有限位小數點的有理數推廣到具有無限位小數點的實數。
+
+如果你能接受具有無限位小數點的實數概念，那麼也應該能接受無窮維向量這概念。
+
+2.要能把一個無窮數列視為一個無窮維向量；
+
+3.這個無窮數列的真正極限與性質由其無窮維向量尾端的無窮多項(尾項)所決定。
+
+一句話，極量是無窮數列所表示的無窮維向量之尾項。
+
+這個真正極限還是一個無窮維向量，姑且稱之為極量。
+
+
+
+這個剛定義出來、熱騰騰的新概念「極量」有哪些特性呢？
+
+⊙兩無窮數列除有限項不等，其餘所有項都相等時，有相同的極量。比方說：
+  兩無窮數列 {所有項皆為0} 和 {前12345678項是9,其餘項皆為0}，有相同的極量。
+
+⊙無窮維向量之尾項對應項不同時, 有不同的極量。舉例來說：兩無窮數列
+  {0,1,2,...,n-1,...} 和 {1,2,3,...,n,...} 有不同的極量。
+
+⊙極量是數系的自然拓展，拓展了實數。
+  常數實數無窮數列的極量就是該實數本身，當然尾項是常數數列就夠了。
+
+⊙極量的各種運算就由對應的無窮數列運算來定義。
+
+⊙極量是向量，可以有偏序關係。極量的偏序關係來自無窮數列尾項的偏序關係。
+
+⊙無窮數列 {1, 1/2, 1/3,..., 1/n,...} 的極量是個非零無窮小量。
+
+⊙無窮數列 {1, 2, 3,..., n,...} 的極量是個無窮大量。
+
+
+
+那麼引入極量的概念有什麼用？
+
+古典分析學中收斂的概念是必要的，因為不收斂的數學物件會得出一些意外的矛盾結果。
+
+還記得初學極限概念時，說明無窮大概念會造成悖論的例子嗎？
+
+「令 S=1+2+4+...，顯然 S=∞，把左右式各減去 1，
+
+  S-1=2+4+8+...=2(1+2+4+...)=2S =&gt; S=-1。」
+
+推出 ∞=-1 這個悖論是因為無窮大的概念嗎？讓我們用極量的觀點重新檢視：
+
+「定義 S 為部分和數列 {1,1+2,1+2+4,1+2+4+8,1+2+4+8+16...} 的極量，
+
+  也就是數列 {1,3,7,15,31,...} 的極量，
+
+  則 S-1 是數列 {0,2,6,14,...} 的極量，2S 是數列 {2,6,14,30,...} 的極量。」
+
+這是兩個不同的極量，雖然都是無窮大量，導致悖論的原因是把不同的無窮大視為相同。
+
+這點正是早期數學家的盲點、誤區！
+
+當你將不同的無窮量當成相同而計算，當然很容易產生矛盾、錯誤的推論。
+
+在新分析學中，收斂的概念從必要降為重要。
+
+
+
+遞增或遞減的單調數列有個無窮小或無窮大極量的說法看來還算合理，
+
+畢竟分析學教科書中，最重要的實數完備性公理告訴我們：有界單調數列必有極限。
+
+BUT！人生最厲害就是這個 BUT！BUT 無窮數列不是只有遞增或遞減的單調數列啊？
+
+好吧！既然你誠心誠意的發問了，那我就大發慈悲的告訴你... 呃，這不是神奇寶貝，
+
+這是神奇極量的神奇之處，因為任意無窮數列是兩單調無窮數列之差，
+
+所以只要接受了單調數列有個極量的存在，就能保證發散數列的極量也存在！
+
+就如同有界變差的函數可拆解成兩單調函數之差，發散數列是兩個單調數列之差。
+
+以 {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,...} 來說，可拆解成
+
+「  {0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6,...}
+  - {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5,...}
+  = {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,...} 」
+
+這個例子中有兩點值得注意的地方：
+
+⊙發散數列的極量是兩無窮大量的差，是個不定極量，也反映了 ∞-∞ 的不定性說法。
+
+⊙這兩個無窮大量很像，但不一樣。
+
+新分析學把有界單調數列才有極限的有界條件拿掉了，收斂的概念從必要降為重要。
+
+學過十遍(說錯，是實變)就能了解 limsup, liminf 是極量的上下界。
+
+上下界不等時，是個不定極量；上下界是相等實數時，是個收斂極量。
+
+收斂極量可以拆解成實數加上一個無窮小量，還有很多其他概念上的改變...
+
+怎麼樣，不是唬人的！極量的新概念是不是從中學基礎上改寫了高等數學分析呢？
+
+
+
+從單調數列論述極量概念的存在性主要給受過古典分析訓練(ㄊㄨˊㄉㄨˊ)的讀者，
+
+為了服務沒接受過古典分析訓練(ㄊㄨˊㄉㄨˊ)的讀者，我提供另一種論述方式，
+
+改寫自我早期未公開的文章，是我最早領悟到極量這概念的想法：
+
+「讓我們想像一個永不結束的無窮實驗，我們定時依序把觀察數據記錄下來，
+
+  我們好奇的是，這個實驗的「最終結果」會是什麼？
+
+  通常我們認為如果觀察數據趨向一個定值，那麼最終結果就應該是那個定值；
+
+  如果沒有趨向定值，那麼我們就不能確定實驗的最終結果會是什麼。
+
+  換個角度，世界會不一樣。我們所有的觀察數據不就確定了實驗的最終結果嗎？
+
+  只要所有的數據都相同，兩個實驗就會有相同的最終結果。
+
+  因為是最終結果，所以有限多項的觀察數據不一致也沒關係，
+
+  只要某項之後的觀察數據全部一樣，那麼兩個實驗就會達到相同的最終結果。」
+
+上述的無窮實驗數據就是一個無窮數列，而無窮實驗數據的最終結果就是本文的極量。
+
+這個想法我當時稱為極限原理，是另一個極量的存在性論述方式。
+
+
+
+對眾多讀者來說，接觸極量概念的狀況或許會類似於初次接觸虛數的狀況，
+
+就算相信虛數確確實實的存在，依然會一頭霧水，新概念的存在到底有什麼用呢？
+
+以古喻今一下，負數和虛數的概念在統整、化簡高次方程式的結果有很大的效用。
+
+或可參考此文：<a href="http://math.ntnu.edu.tw/~horng/letter/vol3no2f.htm" target="_blank" rel="nofollow">http://math.ntnu.edu.tw/~horng/letter/vol3no2f.htm</a>
+
+如果讀者了解數系發展史的話，就會知道零、負數、無理數、實數、虛數等概念，
+
+並不是一出現就被數學家接受。數的概念是什麼？是什麼改變了數學家的心態？
+
+讓原本的不接受轉而承認是新的數字概念？期待本文能夠提供一些這方面的省思。
+
+
+
+用極量改寫古典分析學很有用，新分析學我姑且稱之為極分析，
+
+古典分析的一些怪異現象在極分析中有較合理的解釋。
+
+因為從無窮數列改寫，古典分析容易改寫成極分析(類似程式架構重組)，
+
+但是因為頁邊的空白太小... 啊，這藉口如今不能用了！
+
+但是因為本文名為漫談無限，不是漫談分析，而且不能在 PTT 上用 LaTeX...
+
+所謂的極分析那是另一個 Long Story，在這先略過這大工程！
+
+讀者只要知道這是一直追尋分析學合理基礎眾多嘗試中的一種就行了。
+
+
+
+
+四、學派比較
+
+接下來我們討論、比較不同學派，沒受過訓練(ㄊㄨˊㄉㄨˊ)的讀者可以跳過不看沒差。
+
+知道非標準分析學派的讀者可能會說，改寫分析學基礎這檔事非標準分析早做過啦！
+
+利用無窮數列來定義無窮小、無窮大，本文也不是第一個這麼做的。比方說：
+
+<a href="http://episte.math.ntu.edu.tw/articles/mm/mm_15_4_05/index.html" target="_blank" rel="nofollow">http://episte.math.ntu.edu.tw/articles/mm/mm_15_4_05/index.html</a>
+
+的確，極量的建構方式和某些非標準分析的建構方式很像，
+
+事實上我也曾經以為極量概念只是非標準分析建構下的特例，
+
+非標準分析的特色就是建構具有無窮小、無窮大、三一律等特性的超實數系。
+
+後來我才意識到根本上搞反了，全序的超實數系才是偏序的極量的特例！
+
+因為在抽象的數系上建構，沒有三一律的「數」無法被人自然地接受，
+
+非標準分析為了建構保有三一律特性的超實數系，仰賴繁瑣的邏輯論證。
+
+但是極量的建構方式是自然的，從向量觀點來看，三一律並非必要的。
+
+另外超實數的正式建構方式非常依賴邏輯學，進行數值分析有其問題。
+
+相對的，極量的論述很簡單，要進行數值分析時回到無窮數列來就可以。
+
+總之，古典分析排除了無窮小和無窮大的概念，建構在實數的完備性上。
+
+非標準分析在邏輯上證明了包含無窮小、無窮大、三一律的超實數的存在性。
+
+而極分析建構在包含無窮小和無窮大的極量上，而極量在概念上是實數的向量。
+
+更加了解學派的發展脈絡後，我相信極量的概念正延續著歷史，正創造著歷史！
+
+
+
+
+五、結語
+
+文章開頭的驚人宣稱主要想吸引讀者的目光讀下去，如果你讀到這有收穫就好:)
+
+有讀者或許會覺得有很多地方我應該可以講得更清楚，相關歷史說的更詳實。
+
+這邊我要抱歉一下，光是想要清楚地闡述「極量」這個新概念就挺累人的，
+
+只想達到主要目標的心態下，歷史發展能帶過就帶過，非相關細節能省就省，
+
+有機會再改寫本文的話，會把更多相關部分寫清楚，或者有板友隨喜順手補充也好。
+
+本篇談了極量的新觀點來理解無窮，也是新分析學的建立基礎。
+
+我們考察了關於無窮數列 {1, 1/2, 1/3,..., 1/n,...} 的極限，
+
+在古典分析中的極限是0，但該無窮數列在新分析學中的極限是個無窮小極量。
+
+希望本文能激起讀者對於無限概念的好奇心和想像力！
+
+--
+At the end, it never ends.
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 220.134.27.134
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Math/M.1410070045.A.588.html" target="_blank" rel="nofollow">http://www.ptt.cc/bbs/Math/M.1410070045.A.588.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CindyLinz   </span><span class="f3 push-content">: 推^^</span><span class="push-ipdatetime"> 09/07 16:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Vulpix      </span><span class="f3 push-content">: 好文推～  不過我覺得非標準分析還有一個很美好的</span><span class="push-ipdatetime"> 09/07 17:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Vulpix      </span><span class="f3 push-content">: 事是「只要不是0都可以當分母」，這個比排序更重要</span><span class="push-ipdatetime"> 09/07 17:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joeywayi    </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 18:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">polut       </span><span class="f3 push-content">: 推一個</span><span class="push-ipdatetime"> 09/07 20:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ginstein    </span><span class="f3 push-content">: 回V大,超實數系有三一律,所以非0數都能當分母,不過</span><span class="push-ipdatetime"> 09/08 06:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ginstein    </span><span class="f3 push-content">: 極量概念捨棄三一律換得其他好處,找機會再補充說明</span><span class="push-ipdatetime"> 09/08 06:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Landau      </span><span class="f3 push-content">: 好文推，不過有沒有下集還是reference可供參考的？</span><span class="push-ipdatetime"> 09/08 11:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">contaminate </span><span class="f3 push-content">: 雖然看不太懂可是還是要推</span><span class="push-ipdatetime"> 09/08 12:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ginstein    </span><span class="f3 push-content">: 回L大,還有後續,另外極量是原創概念,沒有reference</span><span class="push-ipdatetime"> 09/08 14:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jacky7987   </span><span class="f3 push-content">: 推個 蠻有趣的</span><span class="push-ipdatetime"> 09/08 16:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tdk4        </span><span class="f3 push-content">: 有趣的文章，要思考一下</span><span class="push-ipdatetime"> 09/10 01:54
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Math/M.1410070045.A.588.html?cacheKey=2084-538141699&amp;offset=12808&amp;offset-sig=bf20ae955115371b711cc270e80151bb11836406" data-longpollurl="/v1/longpoll?id=e5a2dfc1d9a505991b2746a9e17f5468f20b2959" data-offset="12808"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
