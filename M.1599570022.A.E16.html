@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[情報] 微軟減少抓漏獎金，駭客索性公布Windows  - 看板 PC_Shopping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="微軟減少抓漏獎金，駭客索性公布Windows 10權限升級漏洞
+文/林妍溱 | 2020-09-08發表
+一名安全研究人員公布Windows 10存在一權限升級漏洞，可讓沒有權限的人士在關鍵資料
+夾內新增任何檔案。
+Windows中的system32是一個存放作業系統關鍵檔案的資料夾，需要有權限才能存取。但
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[情報] 微軟減少抓漏獎金，駭客索性公布Windows ">
+<meta property="og:description" content="微軟減少抓漏獎金，駭客索性公布Windows 10權限升級漏洞
+文/林妍溱 | 2020-09-08發表
+一名安全研究人員公布Windows 10存在一權限升級漏洞，可讓沒有權限的人士在關鍵資料
+夾內新增任何檔案。
+Windows中的system32是一個存放作業系統關鍵檔案的資料夾，需要有權限才能存取。但
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/PC_Shopping/M.1599570022.A.E16.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/PC_Shopping/index.html"><span class="board-label">看板 </span>PC_Shopping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/PC_Shopping/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">purplvampire (阿修雷)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">PC_Shopping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[情報] 微軟減少抓漏獎金，駭客索性公布Windows </span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Sep  8 21:00:19 2020</span></div>
+微軟減少抓漏獎金，駭客索性公布Windows 10權限升級漏洞
+
+文/林妍溱 | 2020-09-08發表
+
+一名安全研究人員公布Windows 10存在一權限升級漏洞，可讓沒有權限的人士在關鍵資料
+夾內新增任何檔案。
+
+Windows中的system32是一個存放作業系統關鍵檔案的資料夾，需要有權限才能存取。但
+長期從事抓漏的研究人員Jonas Lykkegaard發現，<span class="f3 hl">只要Windows 10開啟Hyper-V，就沒有
+</span><span class="f3 hl">這個限制，任何人都可以在system 32中新增檔案</span>。這個檔案一旦寫入就不能刪除或修改
+，但<span class="f1 hl">使用者建立新檔案時可加入任何偏好的資料，包括惡意程式。</span>
+
+美國電腦緊急回應小組（CERT）研究人員Will Dormann認為，這個漏洞相當糟糕，若讓他
+人在系統systems32資料下成功新增WD.dll，將會有嚴重後果。
+
+所幸在Windows 10 Pro、企業（Enterprise）及教育（Education）版中的Hyper-V是關閉
+的，可保用戶免於惡意程式執行之害，但是Bleeping Computer報導，<span class="f3 hl">如果使用者開啟
+</span><span class="f3 hl">Windows沙箱功能的話，就會自動啟動Hyper-V。Windows 10 1903版本後都內建沙箱功能</span>
+，允許用戶在隔離環境下執行來路不明的檔案、開啟文件或網頁，確保系統安全性。
+
+Lykkegaard說他花了30小時就找到這個漏洞。至於何以不向微軟通報此一漏洞，
+<span class="f3 hl">Lykkegaard指出，最近微軟將外界人士的權限升級漏洞通報獎金，由2萬降為2千美元，如
+</span><span class="f3 hl">果他真的拿到2千美元（還不見得能拿到），折算時薪也才66美元</span>，實在不值得，索性將
+之公布。
+
+事實上，可能有新仇舊恨促使Lykkegaard公布這項漏洞。7月間他宣稱通報微軟相當多漏
+洞，涵括可在UEFI分區寫入程式、Hyper-V檔案快取下毒（file cache poisoning）、繞
+過登入驗證、螢幕鎖定保護等許多權限升級漏洞，<span class="f2 hl">價值至少10萬美元</span>，然而他認為微軟藉
+故拖延爭取修補時間，實則不想付錢。<span class="f3 hl">Lykkegaard說已長達7個月沒拿到微軟任何獎金，
+</span><span class="f3 hl">走投無路的他決定從當天倒數計時，逐次公布所有他通報給微軟的漏洞。</span>
+
+<a href="https://www.ithome.com.tw/news/139868" target="_blank" rel="nofollow">https://www.ithome.com.tw/news/139868</a>
+
+
+好可怕，趕快把Hyper-V關一關，阿幹我有用沙箱跟Docker！
+
+去你X的微軟，這麼有錢還這麼摳！Bug修不完，漏洞又一直來，馬的
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 180.177.123.190 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/PC_Shopping/M.1599570022.A.E16.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/PC_Shopping/M.1599570022.A.E16.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LastAttack  </span><span class="f3 push-content">: Hyper-V不是很常見嗎==</span><span class="push-ipdatetime"> 09/08 21:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">atbb        </span><span class="f3 push-content">: 大概覺得給太多漏洞獎金沒面子吧～</span><span class="push-ipdatetime"> 09/08 21:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccbbaa      </span><span class="f3 push-content">: win server的一堆要hyper-v阿...</span><span class="push-ipdatetime"> 09/08 21:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hn9480412   </span><span class="f3 push-content">: Server不開Hyper-V就廢了一半吧</span><span class="push-ipdatetime"> 09/08 21:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shinkiro    </span><span class="f3 push-content">: 微軟嘔嘔嘔</span><span class="push-ipdatetime"> 09/08 21:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jakkx       </span><span class="f3 push-content">: 這真的有點摳…</span><span class="push-ipdatetime"> 09/08 21:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mecca       </span><span class="f3 push-content">: 賺越多的果然越小氣</span><span class="push-ipdatetime"> 09/08 21:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">spfy        </span><span class="f3 push-content">: diu臉阿微軟 堂堂萬億鎂企業不願意付錢</span><span class="push-ipdatetime"> 09/08 21:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pinacolada  </span><span class="f3 push-content">: 太摳了吧…</span><span class="push-ipdatetime"> 09/08 21:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MK47        </span><span class="f3 push-content">: 微軟這麼大間的公司 連這點錢都要省.........</span><span class="push-ipdatetime"> 09/08 21:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MK47        </span><span class="f3 push-content">: server去撿垃圾裝debian啦 穩又不耗資源</span><span class="push-ipdatetime"> 09/08 21:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">elynn889    </span><span class="f3 push-content">: 哈哈哈</span><span class="push-ipdatetime"> 09/08 21:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">seiya2000   </span><span class="f3 push-content">: server版沒有這個漏洞吧</span><span class="push-ipdatetime"> 09/08 21:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MK47        </span><span class="f3 push-content">: 原po應該是專業版 開來裝docker吧</span><span class="push-ipdatetime"> 09/08 21:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tomsawyer   </span><span class="f3 push-content">: server如果是做dc ad的應該不會開到hyperv</span><span class="push-ipdatetime"> 09/08 21:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tomsawyer   </span><span class="f3 push-content">: 如果是vm server或分享站就會</span><span class="push-ipdatetime"> 09/08 21:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wahaha2005  </span><span class="f3 push-content">: 美國律師熱身中</span><span class="push-ipdatetime"> 09/08 21:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">SnakeO      </span><span class="f3 push-content">: 那麼多漏洞三百萬付不起,微軟也真寒酸</span><span class="push-ipdatetime"> 09/08 21:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KevinR      </span><span class="f3 push-content">: WSL2當場廢掉...</span><span class="push-ipdatetime"> 09/08 21:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s9209122222 </span><span class="f3 push-content">: 垃圾一般的系統</span><span class="push-ipdatetime"> 09/08 21:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">acidrain    </span><span class="f3 push-content">: 準備告到脫褲了</span><span class="push-ipdatetime"> 09/08 22:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Anderson0819</span><span class="f3 push-content">: 哈哈係鶴</span><span class="push-ipdatetime"> 09/08 22:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sunnyx      </span><span class="f3 push-content">: 說服大家很好用的 用用看 怎摸還能發現一大堆問題</span><span class="push-ipdatetime"> 09/08 22:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sunnyx      </span><span class="f3 push-content">: 然後還是自己挹注發現基金 當然不弄自己打自己的事</span><span class="push-ipdatetime"> 09/08 22:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sunnyx      </span><span class="f3 push-content">: 情</span><span class="push-ipdatetime"> 09/08 22:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asdg62558   </span><span class="f3 push-content">: 摳門</span><span class="push-ipdatetime"> 09/08 22:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">KopiLuwak   </span><span class="f3 push-content">: Hyper-V sucks</span><span class="push-ipdatetime"> 09/08 22:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andy70612   </span><span class="f3 push-content">: 家用版  發抖中...</span><span class="push-ipdatetime"> 09/08 22:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">estupid     </span><span class="f3 push-content">: 好像沒開</span><span class="push-ipdatetime"> 09/08 22:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wayne1120   </span><span class="f3 push-content">: 陳財佑：</span><span class="push-ipdatetime"> 09/08 22:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ptta        </span><span class="f3 push-content">: 連這點錢也要省喔！</span><span class="push-ipdatetime"> 09/08 22:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chocopie    </span><span class="f3 push-content">: 股價創新高還要省這種小錢</span><span class="push-ipdatetime"> 09/08 23:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hn9480412   </span><span class="f3 push-content">: 家用版不能開Hyper-V沒差啊</span><span class="push-ipdatetime"> 09/08 23:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">skhten      </span><span class="f3 push-content">: 漏洞多到付不起獎金 還是diu臉</span><span class="push-ipdatetime"> 09/08 23:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">justoncetime</span><span class="f3 push-content">: 會不會越補越大洞</span><span class="push-ipdatetime"> 09/08 23:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andy199113  </span><span class="f3 push-content">: Windows 10 正版用戶真可憐 漏洞一堆</span><span class="push-ipdatetime"> 09/09 00:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sjr500      </span><span class="f3 push-content">: 客家窗</span><span class="push-ipdatetime"> 09/09 00:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">luis1056379 </span><span class="f3 push-content">: 家用能開吧 不然我上次看我哥開的很爽的那個是啥X</span><span class="push-ipdatetime"> 09/09 00:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">luis1056379 </span><span class="f3 push-content">: D 是說我最近手賤去開了</span><span class="push-ipdatetime"> 09/09 00:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: 家用版沒有hyper-v</span><span class="push-ipdatetime"> 09/09 01:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">blackstyles </span><span class="f3 push-content">: 沒Hyper-V就沒有VM怎麼可能不開</span><span class="push-ipdatetime"> 09/09 01:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WeAntiTVBS  </span><span class="f3 push-content">: 客家窗 無誤</span><span class="push-ipdatetime"> 09/09 01:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">q0325       </span><span class="f3 push-content">: 賺這麼多  還這麼小氣  這麼大的洞</span><span class="push-ipdatetime"> 09/09 02:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dic1911     </span><span class="f3 push-content">: 垃圾微軟</span><span class="push-ipdatetime"> 09/09 02:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">justoncetime</span><span class="f3 push-content">: home預設沒有,但就跟群組原則一樣還是有方法開</span><span class="push-ipdatetime"> 09/09 02:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">justoncetime</span><span class="f3 push-content">: 不過VMware player/workstation好用多了</span><span class="push-ipdatetime"> 09/09 02:18
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">vwpassat    </span><span class="f3 push-content">: 不把微軟打到變成1975年4月4日的市值，它是不會好好</span><span class="push-ipdatetime"> 09/09 02:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vwpassat    </span><span class="f3 push-content">: 專心做軟體的。</span><span class="push-ipdatetime"> 09/09 02:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nissptt     </span><span class="f3 push-content">: 快兩兆美元的企業這麼小氣</span><span class="push-ipdatetime"> 09/09 03:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ggirls      </span><span class="f3 push-content">: hyper-V 是高級很貴功能，最好是企業都沒在用啦。</span><span class="push-ipdatetime"> 09/09 04:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">slsamg7112  </span><span class="f3 push-content">: 但是VMWare workstation會跟hyper-v打架所以都關了</span><span class="push-ipdatetime"> 09/09 06:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: hyper-v 在pro以上就是免費送的功能，哪裡貴…？</span><span class="push-ipdatetime"> 09/09 07:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Fm960805    </span><span class="f3 push-content">: pro跟home的價差…嗯這邊果然都是有錢人</span><span class="push-ipdatetime"> 09/09 07:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ATand       </span><span class="f3 push-content">: 猜是人力不夠去驗證這些bug也沒空即時去修</span><span class="push-ipdatetime"> 09/09 08:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PTTNella    </span><span class="f3 push-content">: 幫你抓 bug，還這麼小氣</span><span class="push-ipdatetime"> 09/09 08:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hn9480412   </span><span class="f3 push-content">: 在server2008的話hyper-v確實是要加價賣的啦</span><span class="push-ipdatetime"> 09/09 08:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hcwang1126  </span><span class="f3 push-content">: 我以為微軟早就不是作業系統公司</span><span class="push-ipdatetime"> 09/09 08:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">verdandy    </span><span class="f3 push-content">: 要M$回到1975除非雲服務和Azure烙賽</span><span class="push-ipdatetime"> 09/09 08:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sniper2824  </span><span class="f3 push-content">: M$這些東西烙賽最虧的也不是他們啦= =</span><span class="push-ipdatetime"> 09/09 09:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sniper2824  </span><span class="f3 push-content">: 是那些中小假AI公司 顆顆</span><span class="push-ipdatetime"> 09/09 09:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Khadgar     </span><span class="f3 push-content">: Pro 和home就算彩盒版才差2000元...是時薪要多低才</span><span class="push-ipdatetime"> 09/09 10:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Khadgar     </span><span class="f3 push-content">: 能酸...</span><span class="push-ipdatetime"> 09/09 10:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">verdandy    </span><span class="f3 push-content">: 而且買隨機版價差也只到1000</span><span class="push-ipdatetime"> 09/09 10:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MaxGDAM     </span><span class="f3 push-content">: 小氣的代價ㄏㄏ</span><span class="push-ipdatetime"> 09/09 12:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: 他應該不是酸啦，應該是搞不清楚企業要用家用版還</span><span class="push-ipdatetime"> 09/09 12:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: 是專業版，亦或者是企業版之類吧</span><span class="push-ipdatetime"> 09/09 12:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: 至於一般個人使用…不少nb都已經是用pro當作隨機出</span><span class="push-ipdatetime"> 09/09 12:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: 售的版本了，再加上之前買防毒送序號也都直接送專</span><span class="push-ipdatetime"> 09/09 12:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">free112136  </span><span class="f3 push-content">: 業版了</span><span class="push-ipdatetime"> 09/09 12:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LonyIce     </span><span class="f3 push-content">: 微軟也太摳了吧</span><span class="push-ipdatetime"> 09/09 13:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gameking    </span><span class="f3 push-content">: 說個笑話 開沙箱保護系統自動幫你開後門</span><span class="push-ipdatetime"> 09/09 13:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GTX960      </span><span class="f3 push-content">: 是我就乖乖付那三百萬了，早知如此</span><span class="push-ipdatetime"> 09/09 17:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">facebookig  </span><span class="f3 push-content">: 安卓模擬器都會用到啊！</span><span class="push-ipdatetime"> 09/09 21:25
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/PC_Shopping/M.1599570022.A.E16.html?cacheKey=2084-43934782&amp;offset=9467&amp;offset-sig=7f1ade5c7f3e56df977d9e40df458e480301474c" data-longpollurl="/v1/longpoll?id=8426795c96ae9070c9182674efe39c7c6197efe5" data-offset="9467"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
