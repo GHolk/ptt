@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[問卦] cpu 和指令集為什麼要設計那麼複雜？ - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="如題，
+第一次碰組語的時候，才知道 cpu 裡有一堆暫存器，
+各個暫存器能存的資料大小不一樣，
+每個暫存器還要用專門的指令用來存取和寫入。
+雖然也是有直接存取記憶體位址的指令，
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[問卦] cpu 和指令集為什麼要設計那麼複雜？">
+<meta property="og:description" content="如題，
+第一次碰組語的時候，才知道 cpu 裡有一堆暫存器，
+各個暫存器能存的資料大小不一樣，
+每個暫存器還要用專門的指令用來存取和寫入。
+雖然也是有直接存取記憶體位址的指令，
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1586182268.A.EE8.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">Gold740716 (項為之強)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[問卦] cpu 和指令集為什麼要設計那麼複雜？</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Mon Apr  6 22:11:05 2020</span></div>
+如題，
+第一次碰組語的時候，才知道 cpu 裡有一堆暫存器，
+各個暫存器能存的資料大小不一樣，
+每個暫存器還要用專門的指令用來存取和寫入。
+雖然也是有直接存取記憶體位址的指令，
+但跑起來好像會比暫存器慢。
+
+設計 cpu 的在想什麼？
+為什麼要設計那麼多指令和暫存器？
+有沒有八卦？
+
+--
+ 「路就是一條直直的。」
+--
+<span class="f2">※ 編輯: XXXXGAY (140.112.116.118), 09/19/2015 14:46:16</span>
+<span class="f2">※ 編輯: XXXXGAY (127.0.0.1), 09/19/2015 14:49:52</span>
+<span class="f2">※ 編輯: iXXXXGAY5566 (255.255.255.255), 09/19/2015 14:57:33</span>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.113.127.95 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1586182268.A.EE8.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1586182268.A.EE8.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bobjohns</span><span class="f3 push-content">: cd..</span><span class="push-ipdatetime"> 04/06 22:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">james732</span><span class="f3 push-content">: 我長得像CPU嗎</span><span class="push-ipdatetime"> 04/06 22:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Misfits</span><span class="f3 push-content">: ls</span><span class="push-ipdatetime"> 04/06 22:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">emptie</span><span class="f3 push-content">: 因為比較快</span><span class="push-ipdatetime"> 04/06 22:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">james732</span><span class="f3 push-content">: 對了你是不是沒有聽過CISC跟RISC</span><span class="push-ipdatetime"> 04/06 22:12
+</span></div>
+好像 risc 是精簡， x86 是複雜指令集吧。
+但看來也是一堆暫存器和專門指令不是嗎？
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">baobeising</span><span class="f3 push-content">: 你猜猜看啊...</span><span class="push-ipdatetime"> 04/06 22:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yqhyou</span><span class="f3 push-content">: 不複雜，你以為誰都可以搞高科技？</span><span class="push-ipdatetime"> 04/06 22:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bsunset</span><span class="f3 push-content">: 寫起來比較爽</span><span class="push-ipdatetime"> 04/06 22:13
+</span></div>
+像程式語言一樣，變數就是變數，
+不要分什麼暫存器和記憶體不是很好嗎？
+
+<span class="f2">※ 編輯: Gold740716 (140.113.127.95 臺灣), 04/06/2020 22:13:58
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">EvilDoom</span><span class="f3 push-content">: 你有想過CPU的感受嗎? 沒有，因為你只有想到你自己</span><span class="push-ipdatetime"> 04/06 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">morichi</span><span class="f3 push-content">: 有些複雜的原因4要支援舊系統R</span><span class="push-ipdatetime"> 04/06 22:15
+</span></div><span class="f2">※ 編輯: Gold740716 (140.113.127.95 臺灣), 04/06/2020 22:16:26
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">baobeising</span><span class="f3 push-content">: 你可以從指令的層級去思考看看</span><span class="push-ipdatetime"> 04/06 22:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">morichi</span><span class="f3 push-content">: 就是要分R 效能是擠出來ㄉ</span><span class="push-ipdatetime"> 04/06 22:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">baobeising</span><span class="f3 push-content">: CUP做那麼精密 你應該希望他主要的功能順暢快速</span><span class="push-ipdatetime"> 04/06 22:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s638450</span><span class="f3 push-content">: 你只用簡單的結構做出高效能的東西? 這個世界沒那麼簡單</span><span class="push-ipdatetime"> 04/06 22:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">koushimei</span><span class="f3 push-content">: 因為電腦只能判斷0或1</span><span class="push-ipdatetime"> 04/06 22:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aaaba</span><span class="f3 push-content">: 你自己去用模擬器搞一套硬體和指令集看效能怎樣啊</span><span class="push-ipdatetime"> 04/06 22:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">morichi</span><span class="f3 push-content">: 跟上網一樣 書籤就是你的reg</span><span class="push-ipdatetime"> 04/06 22:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">poi96300</span><span class="f3 push-content">: <a href="https://i.imgur.com/bf09yNm.jpg" target="_blank" rel="nofollow">https://i.imgur.com/bf09yNm.jpg</a></span><span class="push-ipdatetime"> 04/06 22:20
+</span></div><div class="richcontent"><blockquote class="imgur-embed-pub" lang="en" data-id="bf09yNm"><a href="//imgur.com/bf09yNm"></a></blockquote><script async src="http://s.imgur.com/min/embed.js" charset="utf-8"></script></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">fallinlove15</span><span class="f3 push-content">: 成本考量啊</span><span class="push-ipdatetime"> 04/06 22:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">morichi</span><span class="f3 push-content">: 去修個計組就清楚ㄌ</span><span class="push-ipdatetime"> 04/06 22:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a12349221</span><span class="f3 push-content">: 修計組就知道了</span><span class="push-ipdatetime"> 04/06 22:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BDrip</span><span class="f3 push-content">: <a href="https://www.youtube.com/watch?v=_2uXqTi42LI" target="_blank" rel="nofollow">https://www.youtube.com/watch?v=_2uXqTi42LI</a></span><span class="push-ipdatetime"> 04/06 22:24
+</span></div><div class="richcontent"><div class="resize-container"><div class="resize-content"><iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/_2uXqTi42LI" frameborder="0" allowfullscreen></iframe></div></div></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">BDrip</span><span class="f3 push-content">: 這個就八種指令而已</span><span class="push-ipdatetime"> 04/06 22:25
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">upeo</span><span class="f3 push-content">: 不爽 自己發明新的架構啊 不要用指令集啊</span><span class="push-ipdatetime"> 04/06 22:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kevin1221</span><span class="f3 push-content">: 還在擠牙膏</span><span class="push-ipdatetime"> 04/06 22:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ptta</span><span class="f3 push-content">: 你來設計一個簡單能動的阿！</span><span class="push-ipdatetime"> 04/06 22:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pttenjk</span><span class="f3 push-content">: SICㄇ</span><span class="push-ipdatetime"> 04/06 22:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 你可以設計一個有16g sram 沒有 dram 的機器</span><span class="push-ipdatetime"> 04/06 22:49
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">coware</span><span class="f3 push-content">: 哪裡複雜，不就讀寫加減移跳四十個跟注音符號一樣多嗎</span><span class="push-ipdatetime"> 04/06 22:53
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">ghgn</span><span class="f3 push-content">: 有指令集反而方便多了好嗎 沒指令集你的程式會超難寫</span><span class="push-ipdatetime"> 04/06 23:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ttff</span><span class="f3 push-content">: 其實常用的指令也就那幾個 如果不喜歡這些你可以自己發明阿</span><span class="push-ipdatetime"> 04/06 23:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ifconfig5566</span><span class="f3 push-content">: 有預感jserv即將抵達戰場</span><span class="push-ipdatetime"> 04/06 23:22
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">a04775</span><span class="f3 push-content">: 去修計算機組織阿</span><span class="push-ipdatetime"> 04/06 23:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric21489</span><span class="f3 push-content">: 想釣jserv484</span><span class="push-ipdatetime"> 04/06 23:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dave123</span><span class="f3 push-content">: riscv讚</span><span class="push-ipdatetime"> 04/06 23:39
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">snapdragon</span><span class="f3 push-content">: 不爽可以自己發明ISA啊</span><span class="push-ipdatetime"> 04/06 23:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vick72806</span><span class="f3 push-content">: 效率問題 休計組老師會告訴你原因</span><span class="push-ipdatetime"> 04/06 23:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">juicylove</span><span class="f3 push-content">: 你是想跳槽CS 準備考研究所對吧</span><span class="push-ipdatetime"> 04/07 00:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chuegou</span><span class="f3 push-content">: 你不爽就用fpga兜自己的isa阿</span><span class="push-ipdatetime"> 04/07 00:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jaid</span><span class="f3 push-content">: 這計概就有講了吧...學組語都不用先讀計概嗎?</span><span class="push-ipdatetime"> 04/07 00:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CYCUTalker</span><span class="f3 push-content">: 所以你需要compiler</span><span class="push-ipdatetime"> 04/07 03:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jengjye</span><span class="f3 push-content">: 大小都一樣吧，都word size...目的用途不同罷了</span><span class="push-ipdatetime"> 04/26 14:55
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Gossiping/M.1586182268.A.EE8.html?cacheKey=2431-547306452&amp;offset=5312&amp;offset-sig=b0c367a66f2fa4bab052abda250f7ae94adbb037" data-longpollurl="/v1/longpoll?id=261b2342d82696d55bec86a020bc1f9fff68dd15" data-offset="5312"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
