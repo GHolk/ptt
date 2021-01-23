@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問卦] C 是怎麼被開發出來的？ - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="恁久好無？(客語，音標: anˋgiuˋhoˋmoˇ)
+我是廢文大學的教師
+以下展開雙「廢」的對談。
+: 大家都知道很多程式的語言是C開發出來的，那大家也知道C語言是B語言開發出來的，那大
+: 家也知道B語言是A語言開發出來的
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問卦] C 是怎麼被開發出來的？">
+<meta property="og:description" content="恁久好無？(客語，音標: anˋgiuˋhoˋmoˇ)
+我是廢文大學的教師
+以下展開雙「廢」的對談。
+: 大家都知道很多程式的語言是C開發出來的，那大家也知道C語言是B語言開發出來的，那大
+: 家也知道B語言是A語言開發出來的
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1599426964.A.292.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">jserv (松鼠)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問卦] C 是怎麼被開發出來的？</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Mon Sep  7 05:15:58 2020</span></div>
+<span class="f2">※ 引述《zuso (  )》之銘言：
+</span><span class="f6">: 大A賀，我是廢問大師
+</span>
+恁久好無？(客語，音標: anˋgiuˋhoˋmoˇ)
+我是廢文大學的教師
+
+以下展開雙「廢」的對談。
+
+<span class="f6">: 大家都知道很多程式的語言是C開發出來的，那大家也知道C語言是B語言開發出來的，那大
+</span><span class="f6">: 家也知道B語言是A語言開發出來的
+</span><span class="f6">: 那意思是說A語言是用機器語開發出來的囉？就是用打洞卡010101那樣戳出來的
+</span><span class="f6">: 請問大概是這樣子吧？
+</span>
+回覆 C 語言的由來之前，我們先來討論文化演化論。英國人類學之父泰羅 (Edward
+Burnett Tylor) 爵士 [1] 提出「文化演化論」，指一種表示時間形式的過程，持續
+而且通常會形成文化的累積與進步。在 1881 年出版的《人類學》(Anthropology)
+一書中，他認為似乎在任何地方都可發現精緻的藝術品、深奧的知識及複雜的典章
+制度等，都是從較早、較簡單、且較粗淺的階段逐漸發展或進化而來。文化演化論
+認為文化的進化有下列兩種模式:
+
+ 1. 單一路線的進化：把人類文化視作單一的整體，即將整體的任何部分作為一個單位
+    或體系而追溯其進化的歷程
+ 2. 多條路線的進化：把人類文化看作人為領域的範圍，如區域文化或民族文化，
+    從而闡明某些文化及促進其進化的各種因素的交互作用，尋出其進化路線
+
+儘管電腦程式語言的歷史相對很短 [2]，但若用上述文化演化論的觀點來解析程式
+語言發展仍相當貼切。
+
+符合現代高階語言特性第一個程式語言是 Plankalkul [3]，後者是德國工程師暨電子
+計算機先驅 Konrad Zuse (以設計出 Z3 可程式化的電子計算機而聞名，曾為了融資
+而在二戰期間和納粹德國合作) 在 1943 到 1945 年間所發展，比 1954 年開始發展
+的 FORTRAN 程式語言早十年，但 Plankalkul 的設計直到 1972 年才被正式發表 (多
+少與納粹德國的處境有關)，而到第一個用於 Plankalkul 語言的編譯器著手實作，
+已是 1975 年的事情。因此，如果談論完整開發並能運作的高階程式語言，FORTRAN
+最古老的資格仍無人夠撼動。顯然 Plankalkul 幾乎掩沒於時代的長河，但具備了
+數值指定 (assignment)、子程式 (subroutine)、條件判斷 (conditional)、浮點數
+運算、陣列 (array)、階層方式結構、斷言 (assertion)、例外處理等等特徵，甚至
+FORTRAN 還不見得全部擁有。FORTRAN 和 Plankalkul 不存在相互影響的關係，但
+光看設計概念的話，卻可說趨同演化。用文化演化論的說法，這是多條路線的進化。
+
+C 語言至今將近有 50 年歷史，但以程式語言演化的歷程來說，仍算是較晚才提出，
+要論資歷，絕對要談 LGOL 60 [4]。ALGOL 是 Algorithmic Language (演算法所用的
+語言) 的縮寫，提出巢狀 (nested) 結構和一系列程式流程控制，今日我們熟知的
+if-else 語法，就在 ALGOL 60 出現。ALGOL 60 和 COBOL 程式語言並列史上最早
+工業標準化的程式語言。
+
+1950 年代末期，為滿足人們駕馭電腦所需，多種程式語言被提出，但這些程式語言
+往往圍繞在 UNIVAC 電腦或 IBM 700 系列大型主機上，要跨越機器間交換或分享
+程式 (注意，當時尚未有 &#34;software&#34; 的概念) 相當困難，無形中限制工業發展。
+為此，1957 年 5 月 10 日國際電腦協會 (Association for Computing Machinery;
+ACM) 受理「研究與開發適用於電腦主機無關的科學應用程式語言」的要求，並指派
+隔年邀請相關學者專家在瑞士蘇黎世舉辦首度程式語言發展會議，ALGOL 是這背景的
+產物，最初的版本叫做 ALGOL 58，源自於 1958 年 12 月的 ALGOL 報告，這啟發
+頗多學術和工業圈的程式語言發展，包含廣泛用於美國軍事系統的 JOVIAL [5]，後者
+廣泛用於 B-52 同溫層堡壘轟炸機、F-15 鷹式戰鬥機、F-16 戰隼戰鬥機等等。
+
+值得一提的是，電腦科學系學生接觸到的 Backus normal form (BNF) [6] 就是
+John Backus 為了ALGOL 58 特別發展，後來 BNF 在 Peter Naur 教授的改善後，
+成為 Backus-Naur form，後者的命名，來自知名電腦科學家 Donald Knuth 教授的
+建議。
+
+ALGOL 60 是歐洲和美國境內科學家的共同創作，在 1960 年 1 月 11 日到 16 日之
+間，以下出席者:
+
+* 歐洲:
+  Friedrich L. Bauer (慕尼黑工業大學，在北大西洋公約組織 [NATO] 1967 年的
+  會議上，正式探討 &#39;software engineering&#39; 一詞，界定今日我們所見軟體工程的
+  議題), Peter Naur, Heinz Rutishauser (瑞士數學家，程式語言常見的 for 迴圈
+  就是他提出的，最初以德語介詞 fur，後來改寫為英語 for), Klaus Samelson (在
+  ALGOL 58/60 扮演關鍵角色，程式的區塊結構和透過堆疊來處理執行資訊的手法，
+  就由他提出), Bernard Vauquois, Adriaan van Wijngaarden (Edsger W. Dijkstra
+  的博士班指導教授，兩人並肩為荷蘭首款電腦 ARRA 投入軟體開發。W-grammar 也是
+  Wijngaarden 提出), Michael Woodger (英國國家物理實驗室 [NPL] 的電腦科學家，
+  曾和 Alan Turing 合作開發 Pilot ACE 電腦，也是 Ada 程式語言共同設計者);
+
+* 美國:
+  John W. Backus, Julien Green, Charles Katz (和 Grace Hopper 准將合作在
+  UNIVAC 電腦上發展程式語言), John McCarthy (人工智慧領域的開創者，在 1958
+  年提出 LISP 程式語言，和 Dennis Ritchie 同樣在 2011 年過世), Alan J. Perlis
+  (ACM 前主席，對編譯器設計有重大影響), Joseph Henry Wegstein (投入 COBOL
+  程式語言的發展)
+
+這華麗的出席者清單中，許多人是 Turing Award (圖靈獎，自 1966 年設立) 得主，
+源自 ALGOL 的創新尚有 1966 年 Niklaus Wirth 與 C. A. R. Hoare 以 ALGOL X 為
+基礎，提出改善的 ALGOL W，而 Niklaus Wirth 的研究成果最後導至他在 1970 年
+創造 Pascal 程式語言。
+
+經典的 Hello World 程式在 ALGOL 60 長得像這樣：
+
+    BEGIN
+      FILE F(KIND=REMOTE);
+      WRITE(F, &lt;&#34;HELLO WORLD!&#34;&gt;);
+    END.
+
+可以留意到，ALGOL 60 在語言層面沒有內建的 I/O 處理機制，所以需要由編譯器和
+執行環境提供對應的 I/O 處理常式，這意味著沒有放諸四海皆準的 Hello World 通用
+程式。有沒有發現這樣的限制和 C 語言很像呢？
+
+除了 ALGOL 60，直接影響 C 語言的程式語言是 BCPL，後者是劍橋大學的 Martin
+Richards 於 1967 年訪問麻省理工學院時期所設計。BCPL 程式語言的提出，是回應
+同樣是劍橋大學發展的 CPL (最初的意思是 Cambridge Programming Language，後來
+由於和倫敦大學合作，更名為 &#34;Combined Programming Language&#34;，也被戲稱為
+&#34;Cambridge Plus London&#34;)。首篇提及 CPL 的論文發表於 1963 年，其設計接近硬體
+，程式設計的門檻高，而且不容易實作其編譯器，拖到 1970 年才有首個 CPL 的編譯
+器。
+
+BCPL 對 CPL 做了簡化，這個 &#34;B&#34; 字母就是 &#34;Basic&#34; 的意思，由於 BCPL 語言設計的
+精簡，所以其編譯器可在 16 KB 的空間實作出來，也是最早 Hello World 程式出現的
+程式語言 [7]。最初的 BCPL 編譯器被 Rudd Canaday 博士 (貢獻早期 UNIX 檔案系統
+的實作，在 Bell Labs 退休後，創辦三間公司，而且在 2015 年加入矽谷的新創公司
+Entefy [8]，還用 Ruby on Rails 撰寫程式，真是活到老、學到老的典範！) 和 Bell
+Labs 的同事移植到 Multics 作業系統和 GE-635 主機中的 GECOS 作業系統 [9]
+
+GE-635 是 1960 年代奇異電氣 (General Electric; GE) 發展的 GE-600 系列大型
+主機的一項產品 [10]，1960 年代，在美蘇冷戰的時空背景，作為 Project MAC [13]
+的執行者， AT&amp;T, GE 及 MIT 合作開發 Multics 作業系統。在 1960 年代初期，MIT
+設計的 CTSS (Compatible Time-Sharing System) 已相當成功，因此 1964 年啟動的
+Multics 作業系統專案大幅延伸 CTSS 的成果，Multics 也採用 GE-635 大型主機。
+
+UNIX 作業系統汲取 Multics 的養分，並且拋開 Multics 眾多笨重且難以在當時中
+低階大型主機上實作的特徵，諸如動態連結和資料庫 (史上首個商業關聯性資料庫就
+在 Multics 作業系統上開發)。終身只在 Bell Labs 工作的 Dennis Ritchie 在 1972
+年到 1973 年間發展 C 語言及其編譯器，並在 1974 年發表經典論文 &#34;The UNIX
+time-sharing system&#34; [12]，彼時 UNIX 作業系統已用 C 語言重寫，並在 DEC PDP-11
+硬體上驗證。
+
+Bell Labs 的 Dennis Ritchie, Ken Thompson, Rudd Canaday 等人都在 1960 年代
+涉入 Multics 專案的開發工作，1969 年 2 月 Bell Labs 因為不滿 Multics 發展
+牛步化，決定退出和 MIT 及 GE 的合作。我們不難發現，原來開發 UNIX 和 C 語言
+的這票 Bell Labs 工程人員不僅熟悉 Multics，也掌握 BCPL 程式語言。
+
+BCPL 是首個引入 bracket (即 { } 和 [ ] 一類的表示法) 的程式語言，還提供單行
+註解 (即 // )，BCPL 的 Hello World 程式長得像以下: [14]
+
+    get &#34;streams.d&#34;
+    external
+    [
+    Ws
+    ]
+
+    let Main() be
+    [
+    Ws(&#34;Hello World!*N&#34;)
+    ]
+
+其中開頭的 get &#34;streams.d&#34; 就如同 C 語言的 #include，而 external [ Ws ]
+宣告外部函式，這裡的 Ws 是 write string 的意思，再往下就可見到熟悉的 Main()，
+裡頭的 *N 是 C 語言的 &#39;\n&#39;，即換行符號。
+
+BCPL 在 1967 年發表，而 Ken Thompson 和 Dennis Ritchie 在 1969 年又將 BCPL
+簡化，稱為 B 語言，確保得以運作在 PDP-7 [15]。BCPL, B 和 C 語言都可歸類於
+ALGOL 60 風格的程式語言，格外適合系統軟體的開發，短小精悍且易於撰寫對應的
+編譯器，值得注意的是，BCPL 的若干語法和語言處理機制比 B 語言或 C 語言來得
+嚴謹，所以不用仰賴分號 (;) 來區分個別敘述、資料聲明，和副程式。
+
+從上面的 BCPL 程式可見，BCPL 使用 global vector 機制，讓個別編譯的單元間，
+得以存取到副程式和資料，程式設計者需要自行計算偏移量 (offset)，也就是把重新
+定位 (relocation) 的責任交給程式設計師，而後期的 B 語言和 C 語言則透過連結器
+(linker)，避開 BCPL 的 global vector 使用的不便。
+
+&#34;The Development of the C Language&#34; [21] 一文詳盡地介紹 BCPL -&gt; B -&gt; New B
+-&gt; C 程式語言間的演化和考量點，強烈建議閱讀。
+
+Unix 在 PDP-7 上首次運行後，1969 年 Doug McIlroy 在這之上發展第一個編譯器
+定義工具 TMG，得以開發 top-down, recursive-descent 風格的編譯器。同樣在 Bell
+Labs 的 Doug McIlroy 和 Robert (Bob) Morris 使用 TMG，為 Multics 開發早期的
+PL/I 編譯器。Ken Thompson 則開始思考，既然有了 TMG，那麼 UNIX 上應該要有專門
+開發系統軟體的程式語言，於是他著手簡化 BCPL 而開發出 B 語言，並搭配 TMG 工具
+來產生早期的編譯器。
+
+Ken Thompson 嘗試用 B 語言重寫 B 語言編譯器 (為了 self-hosting [17])，PDP-7
+機器上的 B 語言編譯器不會產生機械碼，而是透過一個簡單的 stack-based 虛擬機器
+來執行轉換過的 opcode，又因為 PDP-7 硬體太慢又有嚴苛的空間限制，所以除了 B
+語言執行環境外，只有很少的程式能用 B 語言開發。後來 Dennis Ritchie 出手，
+改寫 B 語言編譯器，允許輸出 GE-635 機械碼，也就是成為真正能用的編譯器，這
+也是 B 語言編譯器支援 GCOS 作業系統的過程。
+
+在 1970 年，這群 Bell Labs 的高手終於獲得 DEC PDP-11 主機，這個 16-bit
+處理器對於日後 UNIX 發展相當重要：他們遇到硬體相容性的議題，萌生再次發展新
+的程式語言的念頭。原本 BCPL 和 B 語言都是 word-addressed，即無論處理什麼
+資料，都對應到硬體資料匯流排的寬度 (即 word)，但在 PDP-11 完全不是這回事，
+PDP-11 的設計是 byte 導向，因此 Dennis Ritchie 在 1971 年著手在 B 語言增添
+char 型態，並改寫原本不能產生真正機械碼的設計，這樣擴充過的 B 語言被稱為
+&#34;New B&#34;，簡稱 NB。
+
+對應的 B 程式語言手冊可參照:
+* &#34;Users&#39; Reference to B&#34; [18]: 針對 16-bit 的 PDP-11
+* &#34;USERS&#39; REFERENCE TO B ON MH-TSS&#34; [19]: 針對 36-bit 的 Honeywell 6000 系列
+                                          [20] 大型主機
+
+New B 沒有存在多久，很快就被後續的 C 語言取代，後者重新定義完整的資料類別，
+在C 語言之前的 BCPL 和 B 語言都沒有型態 (type) 的觀念，但 C 語言明確規範，
+卻又不會因為類別系統太複雜，導致對應的 C 編譯器不容易實作，這樣的設計也反映
+到指標的變革。
+
+上述程式語言演化的家族史，是為了破除單一路線發展的迷思，也就是說，不存在
+「機械碼 -&gt; A 語言 -&gt; B 語言 -&gt; C 語言」這樣的路線，在 C 語言之前就有好幾
+個高階語言，甚至比 C 語言高階許多，這些程式語言可用來打造各式工具，如組譯
+器 (而且要考慮交叉組譯的需求，也就是 cross-assembler，如上討論)、原始碼對
+原始碼的轉換器 (pre-processor 就是一種類型)、連結器 (linker)，最後才會是
+今日我們普遍認定的編譯器。
+
+至於如何一步一步建構編譯器自身的過程，也就是 self-hosting，值得大書特書，
+編譯器專案 shecc - Self-Hosting and Educational C Compiler [22] 示範如何用
+尋常的 C 語言編譯器 (針對 x86_64) 產生執行檔，接著產生出支援 Arm 架構的 C
+語言編譯器，最終可直接在 Arm 的環境運作並依據輸入的 C 程式去產生原生執行檔
+—— 完全不需要其他工具的輔助，這樣逐步建構編譯器自身。
+
+最後，引用 Dennis M. Ritchie 的話來解釋 C 語言的成功:
+
+<span class="f6">: C is quirky, flawed, and an enormous success. While accidents of history
+</span><span class="f6">: surely helped, it evidently satisfied a need for a system implementation
+</span><span class="f6">: language efficient enough to displace assembly language, yet sufficiently
+</span><span class="f6">: abstract and fluent to describe algorithms and interactions in a wide
+</span><span class="f6">: variety of environments.
+</span>(C 語言很彆扭又缺陷重重，卻異常成功。固然有歷史的巧合推波助瀾，但也的確是因
+ 它能滿足於系統軟體實作的程式語言期待：既有相當的效率來取代組合語言，又可充分
+ 達到抽象且流暢，能用於描述在多樣環境的演算法。」
+
+在 C 語言之前就存在的「直系」親屬:
+* A: ALGOL 60
+* B: BCPL, B
+
+就語法來說，C 語言的確長得很「古怪」，不若之前那些程式語言貼近數學表示法或英文
+書寫方式，但得益於 C 語言做的許多取捨，可成功地運作在多種不同的硬體環境、支援
+多樣的作業系統，從而讓 UNIX (或相容的) 作業系統及 C 語言編譯器的組合，深刻地
+影響你我所處的數位世界。
+
+如果你讀到這裡，還對 C 語言和 UNIX 作業系統充滿興致，千萬不要錯過「Linux 核心
+設計」課程:
+    <a href="http://wiki.csie.ncku.edu.tw/linux/schedule" target="_blank" rel="nofollow">http://wiki.csie.ncku.edu.tw/linux/schedule</a>
+以及
+「進階電腦系統理論與實作」課程:
+    <a href="http://wiki.csie.ncku.edu.tw/sysprog/schedule" target="_blank" rel="nofollow">http://wiki.csie.ncku.edu.tw/sysprog/schedule</a>
+
+這裡有大量線上教材、對 GNU/Linux 和相關實作探討，還有跟你一同學習的小夥伴。
+
+[1] <a href="https://en.wikipedia.org/wiki/Edward_Burnett_Tylor" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Edward_Burnett_Tylor</a>
+[2] <a href="https://en.wikipedia.org/wiki/Timeline_of_programming_languages" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Timeline_of_programming_languages</a>
+[3] <a href="https://en.wikipedia.org/wiki/Plankalk%C3%BCl" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Plankalk%C3%BCl</a>
+[4] <a href="https://en.wikipedia.org/wiki/ALGOL_60" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/ALGOL_60</a>
+[5] <a href="https://en.wikipedia.org/wiki/JOVIAL" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/JOVIAL</a>
+[6] <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form</a>
+[7] <a href="https://www.catb.org/jargon/html/B/BCPL.html" target="_blank" rel="nofollow">https://www.catb.org/jargon/html/B/BCPL.html</a>
+[8] <a href="https://www.prnewswire.com/news-releases/" target="_blank" rel="nofollow">https://www.prnewswire.com/news-releases/</a> \
+    co-inventor-of-unix-dr-rudd-canaday-joins-palo-alto-tech-startup-entefy-300024608.html
+[9] <a href="https://en.wikipedia.org/wiki/General_Comprehensive_Operating_System" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/General_Comprehensive_Operating_System</a>
+[10] <a href="https://en.wikipedia.org/wiki/GE-600_series" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/GE-600_series</a>
+[11] DTSS: <a href="https://en.wikipedia.org/wiki/Dartmouth_Time_Sharing_System" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Dartmouth_Time_Sharing_System</a>
+[12] UNIX: <a href="https://dl.acm.org/citation.cfm?id=361061" target="_blank" rel="nofollow">https://dl.acm.org/citation.cfm?id=361061</a>
+[13] Project MAC: <a href="https://multicians.org/project-mac.html" target="_blank" rel="nofollow">https://multicians.org/project-mac.html</a>
+[14] <a href="https://www.righto.com/2016/06/hello-world-in-bcpl-language-on-xerox.html" target="_blank" rel="nofollow">https://www.righto.com/2016/06/hello-world-in-bcpl-language-on-xerox.html</a>
+[15] 重建過的 B 語言編譯器和在 PDP-7 上運作的 UNIX 原始程式碼，可見:
+     <a href="https://github.com/DoctorWkt/pdp7-unix" target="_blank" rel="nofollow">https://github.com/DoctorWkt/pdp7-unix</a>
+<a href="https://github.com/sergev/b-compiler/tree/master/pdp7" target="_blank" rel="nofollow">https://github.com/sergev/b-compiler/tree/master/pdp7</a>
+[16] TMG: <a href="https://multicians.org/tmg.html" target="_blank" rel="nofollow">https://multicians.org/tmg.html</a>
+[17] <a href="https://en.wikipedia.org/wiki/Self-hosting" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Self-hosting</a>
+[18] <a href="https://www.bell-labs.com/usr/dmr/www/kbman.html" target="_blank" rel="nofollow">https://www.bell-labs.com/usr/dmr/www/kbman.html</a>
+[19] <a href="https://www.bell-labs.com/usr/dmr/www/bref.html" target="_blank" rel="nofollow">https://www.bell-labs.com/usr/dmr/www/bref.html</a>
+[20] <a href="https://en.wikipedia.org/wiki/Honeywell_6000_series" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Honeywell_6000_series</a>
+[21] <a href="https://www.bell-labs.com/usr/dmr/www/chist.html" target="_blank" rel="nofollow">https://www.bell-labs.com/usr/dmr/www/chist.html</a>
+[22] <a href="https://github.com/jserv/shecc" target="_blank" rel="nofollow">https://github.com/jserv/shecc</a>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.116.246.163 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1599426964.A.292.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1599426964.A.292.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sx4152</span><span class="f3 push-content">: 推...</span><span class="push-ipdatetime"> 09/07 05:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gorilla823</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 05:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Scathach</span><span class="f3 push-content">: 深夜(?)優文</span><span class="push-ipdatetime"> 09/07 05:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @Scathach, 明明就是早起 (?)</span><span class="push-ipdatetime"> 09/07 05:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kkkkkktw</span><span class="f3 push-content">: jsvr</span><span class="push-ipdatetime"> 09/07 05:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alex5262</span><span class="f3 push-content">: 推老師的課 學到很多</span><span class="push-ipdatetime"> 09/07 05:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">www17010</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 05:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @kkkkkktw, UNIX 風格的推文 (笑)</span><span class="push-ipdatetime"> 09/07 05:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">syk1104</span><span class="f3 push-content">: 阿鬼說中文啦QQ</span><span class="push-ipdatetime"> 09/07 05:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @syk1104, 9 月 16 日才鬼門關，現在讓阿鬼好好揮灑</span><span class="push-ipdatetime"> 09/07 05:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amovie</span><span class="f3 push-content">: 人肉一下  這成大課程教授的花名與這ID關係匪淺</span><span class="push-ipdatetime"> 09/07 05:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jia106</span><span class="f3 push-content">: 只能推了</span><span class="push-ipdatetime"> 09/07 05:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hsu1999a1</span><span class="f3 push-content">: 大認真了吧</span><span class="push-ipdatetime"> 09/07 05:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">he02789222</span><span class="f3 push-content">: &lt;(_ _)&gt;&lt;(_ _)&gt;&lt;(_ _)&gt;</span><span class="push-ipdatetime"> 09/07 05:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @hsu1999a1, 我只是上來打課程廣告，請不要介意</span><span class="push-ipdatetime"> 09/07 05:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rickphyman42</span><span class="f3 push-content">: 跪推大神</span><span class="push-ipdatetime"> 09/07 05:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">damody</span><span class="f3 push-content">: 詳細</span><span class="push-ipdatetime"> 09/07 05:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jason1596t</span><span class="f3 push-content">: 先推假裝看得懂</span><span class="push-ipdatetime"> 09/07 05:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">woaifafewen</span><span class="f3 push-content">: 又釣到了</span><span class="push-ipdatetime"> 09/07 05:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kis28519</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 05:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qqwer0309</span><span class="f3 push-content">: 跪</span><span class="push-ipdatetime"> 09/07 05:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jimmy0524</span><span class="f3 push-content">: 受益匪淺</span><span class="push-ipdatetime"> 09/07 05:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cliff2102</span><span class="f3 push-content">: 請收下我的膝蓋</span><span class="push-ipdatetime"> 09/07 05:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rex44391</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 05:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stin</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 05:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asdkmm5050</span><span class="f3 push-content">: 拜大神，都在fb看你的文章</span><span class="push-ipdatetime"> 09/07 05:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Xaymaca</span><span class="f3 push-content">: 習近平:    給我用中文寫機器看的懂的程式</span><span class="push-ipdatetime"> 09/07 05:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">donkilu</span><span class="f3 push-content">: 推jserv大</span><span class="push-ipdatetime"> 09/07 05:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mickey94378</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 05:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @asdkmm5050, 感謝捧場，這時我該說「反正我很閒」</span><span class="push-ipdatetime"> 09/07 06:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zzyyxx77</span><span class="f3 push-content">: 有什麼地方可以學sql</span><span class="push-ipdatetime"> 09/07 06:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zzyyxx77</span><span class="f3 push-content">: 突然公作要用到 超級大外行</span><span class="push-ipdatetime"> 09/07 06:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">olctw</span><span class="f3 push-content">: [問卦] C語言離C罩杯有多遠</span><span class="push-ipdatetime"> 09/07 06:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lobotime</span><span class="f3 push-content">: 優質文必推</span><span class="push-ipdatetime"> 09/07 06:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">angerD</span><span class="f3 push-content">: 早安</span><span class="push-ipdatetime"> 09/07 06:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wayne841227</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pemit</span><span class="f3 push-content">: 優文必推！</span><span class="push-ipdatetime"> 09/07 06:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: <a href="https://twitter.com/jserv/status/865494427447336961" target="_blank" rel="nofollow">https://twitter.com/jserv/status/865494427447336961</a> #</span><span class="push-ipdatetime"> 09/07 06:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amethystboy</span><span class="f3 push-content">: 有趣</span><span class="push-ipdatetime"> 09/07 06:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Wangdy</span><span class="f3 push-content">: 看不懂啦，教授不要當我</span><span class="push-ipdatetime"> 09/07 06:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @olctw, 課程的 FAQ 中，我一直想加上關於罩杯的討論，但..</span><span class="push-ipdatetime"> 09/07 06:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 似乎是假命題，老婆懷孕後，罩杯自動會升級。問題圓滿回覆</span><span class="push-ipdatetime"> 09/07 06:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">L1ON</span><span class="f3 push-content">: 老師好</span><span class="push-ipdatetime"> 09/07 06:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chayoung</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @zzyyxx77, 在家(地方?)就可學 SQL，搭配 SQL Fiddle 練習</span><span class="push-ipdatetime"> 09/07 06:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: <a href="http://sqlfiddle.com/" target="_blank" rel="nofollow">http://sqlfiddle.com/</a> # 線上練習 SQL 語法</span><span class="push-ipdatetime"> 09/07 06:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ricey</span><span class="f3 push-content">: 謝謝分享。</span><span class="push-ipdatetime"> 09/07 06:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">youngglasses</span><span class="f3 push-content">: 幹嘛google 剪貼</span><span class="push-ipdatetime"> 09/07 06:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">POCARI5566</span><span class="f3 push-content">: 老師  搶不到課了你還推銷</span><span class="push-ipdatetime"> 09/07 06:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bobbyac01</span><span class="f3 push-content">: 太早了</span><span class="push-ipdatetime"> 09/07 06:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NciscalA</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @youngglasses, 我只是派發廣告傳單，順便抬槓</span><span class="push-ipdatetime"> 09/07 06:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cerberi</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @POCARI5566, 通常只有第一週教室比較擠，之後就涼爽通風</span><span class="push-ipdatetime"> 09/07 06:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rs6000</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sazabik</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">observer0117</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 06:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">VENIVERSUM</span><span class="f3 push-content">: 好文推~ 遙想曾用fortran畫函數的日子...</span><span class="push-ipdatetime"> 09/07 06:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lbjstar</span><span class="f3 push-content">: 大師 你好</span><span class="push-ipdatetime"> 09/07 06:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">phant</span><span class="f3 push-content">: 重要的C89呢？(敲碗）</span><span class="push-ipdatetime"> 09/07 07:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tosakashiron</span><span class="f3 push-content">: 老師推</span><span class="push-ipdatetime"> 09/07 07:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">whiteheart</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @phant, 你要發另一篇問卦文，讓我接球</span><span class="push-ipdatetime"> 09/07 07:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">maxwellbkwt</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">silentduke</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">moment1129</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dangerousair</span><span class="f3 push-content">: 推喔</span><span class="push-ipdatetime"> 09/07 07:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hans1461</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iorittn</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zexd</span><span class="f3 push-content">: 未看先推</span><span class="push-ipdatetime"> 09/07 07:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SanyaMyBride</span><span class="f3 push-content">: 原來如此</span><span class="push-ipdatetime"> 09/07 07:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">solitary0</span><span class="f3 push-content">: 推推，謝謝</span><span class="push-ipdatetime"> 09/07 07:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">utdsml</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chris112358</span><span class="f3 push-content">: 先推再看</span><span class="push-ipdatetime"> 09/07 07:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MattOwl</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">saskuran</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime"> 09/07 07:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">spector66</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ckid</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jimjim951357</span><span class="f3 push-content">: 先推再看</span><span class="push-ipdatetime"> 09/07 07:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tommytyc</span><span class="f3 push-content">: 讚讚</span><span class="push-ipdatetime"> 09/07 07:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s9234032</span><span class="f3 push-content">: 先推再看</span><span class="push-ipdatetime"> 09/07 07:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wertes</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GentleGolem</span><span class="f3 push-content">: 雖然是廣告但是內容很優，給過</span><span class="push-ipdatetime"> 09/07 07:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shallmay</span><span class="f3 push-content">: 用心的優文推</span><span class="push-ipdatetime"> 09/07 07:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @GentleGolem, 感謝教授給分！</span><span class="push-ipdatetime"> 09/07 07:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">goldie</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 07:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">limbo3014</span><span class="f3 push-content">: 未看先推</span><span class="push-ipdatetime"> 09/07 07:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tweence</span><span class="f3 push-content">:</span><span class="push-ipdatetime"> 09/07 07:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Sunofgod</span><span class="f3 push-content">: 老學長好 醉資心還在時看過學長們討論過你神蹟的文章</span><span class="push-ipdatetime"> 09/07 07:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @Sunofgod, 不用急著叫我「學長」，等我畢業要叫你們學長姐</span><span class="push-ipdatetime"> 09/07 07:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">r51211214</span><span class="f3 push-content">: 推好文</span><span class="push-ipdatetime"> 09/07 07:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jixiang</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 08:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yunyhi</span><span class="f3 push-content">: 好用心</span><span class="push-ipdatetime"> 09/07 08:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mikemiao1492</span><span class="f3 push-content">: 666</span><span class="push-ipdatetime"> 09/07 08:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">unlearn</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 09/07 08:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">turtlebj4</span><span class="f3 push-content">: 推 雖然有很多看不懂QQ</span><span class="push-ipdatetime"> 09/07 08:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @turtlebj4, 補習班廣告都要讓你無法一眼看穿，才有效果</span><span class="push-ipdatetime"> 09/07 08:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">slidezhen</span><span class="f3 push-content">: dy</span><span class="push-ipdatetime"> 09/07 08:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Sacral</span><span class="f3 push-content">: 推！！！！！</span><span class="push-ipdatetime"> 09/07 08:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mike40709</span><span class="f3 push-content">: 牛逼</span><span class="push-ipdatetime"> 09/07 08:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @mike40709, 沒錯，C語言的前身是New B，簡稱NB(牛逼)</span><span class="push-ipdatetime"> 09/07 08:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sses60802</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 08:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">notneme159</span><span class="f3 push-content">: 看不懂還是推</span><span class="push-ipdatetime"> 09/07 08:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snalvc</span><span class="f3 push-content">: 朝聖</span><span class="push-ipdatetime"> 09/07 08:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">j19871001</span><span class="f3 push-content">: 老師五點就上課了</span><span class="push-ipdatetime"> 09/07 08:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">johnson35762</span><span class="f3 push-content">: 厲害厲害 推推</span><span class="push-ipdatetime"> 09/07 08:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Skasila</span><span class="f3 push-content">: 還是第一次上早五的課</span><span class="push-ipdatetime"> 09/07 08:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yuiweq1999</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 08:37
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">AInnor</span><span class="f3 push-content">: 你發廢文比你的學生多 有想過我們的感受嗎</span><span class="push-ipdatetime"> 09/07 08:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">e12518166339</span><span class="f3 push-content">: 老師真用心</span><span class="push-ipdatetime"> 09/07 08:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dreamyi</span><span class="f3 push-content">: 專業好文</span><span class="push-ipdatetime"> 09/07 08:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LierX</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 08:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wooshot</span><span class="f3 push-content">: 詳盡</span><span class="push-ipdatetime"> 09/07 08:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kokunmai</span><span class="f3 push-content">:</span><span class="push-ipdatetime"> 09/07 08:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sammy6314</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 09:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric17195</span><span class="f3 push-content">: 老師有開碩班的課嗎</span><span class="push-ipdatetime"> 09/07 09:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">octopuz</span><span class="f3 push-content">: 推推推</span><span class="push-ipdatetime"> 09/07 09:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">summerleaves</span><span class="f3 push-content">: 優質 清新 專業 推老師</span><span class="push-ipdatetime"> 09/07 09:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fakeimage</span><span class="f3 push-content">: 推大神</span><span class="push-ipdatetime"> 09/07 09:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">v2266514</span><span class="f3 push-content">: 太神啦</span><span class="push-ipdatetime"> 09/07 09:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashs92223</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 09/07 09:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">atbb</span><span class="f3 push-content">: 先推</span><span class="push-ipdatetime"> 09/07 09:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dantevergil</span><span class="f3 push-content">: 朝聖</span><span class="push-ipdatetime"> 09/07 09:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a410006108</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 09:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ikenaka</span><span class="f3 push-content">: 我還不推爆116</span><span class="push-ipdatetime"> 09/07 09:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lunawalker</span><span class="f3 push-content">: 感謝教學</span><span class="push-ipdatetime"> 09/07 09:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @AInnor, 發廢文不落人後</span><span class="push-ipdatetime"> 09/07 09:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JHNJHNJHN</span><span class="f3 push-content">: 說到C 我只能想到 CC檸檬</span><span class="push-ipdatetime"> 09/07 09:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jengjye</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 09/07 09:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nergal126</span><span class="f3 push-content">: 我還以為在上ptt呢 原來是課本啊</span><span class="push-ipdatetime"> 09/07 09:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @JHNJHNJHN, 有一套解析器(parser)產生器就叫Lemon，也可</span><span class="push-ipdatetime"> 09/07 09:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">killyou273</span><span class="f3 push-content">: 推～</span><span class="push-ipdatetime"> 09/07 09:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: 用來產生 C 語言編譯器(一般簡稱CC)，於是整個叫做LemonCC</span><span class="push-ipdatetime"> 09/07 09:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: <a href="https://en.wikipedia.org/wiki/Lemon_(parser_generator)" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Lemon_(parser_generator)</a></span><span class="push-ipdatetime"> 09/07 09:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fukku100</span><span class="f3 push-content">: 推，請問課程會錄影嗎</span><span class="push-ipdatetime"> 09/07 09:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Lydia66</span><span class="f3 push-content">: 老師早安</span><span class="push-ipdatetime"> 09/07 09:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: <a href="http://wiki.csie.ncku.edu.tw/sysprog/schedule" target="_blank" rel="nofollow">http://wiki.csie.ncku.edu.tw/sysprog/schedule</a> #部分錄影</span><span class="push-ipdatetime"> 09/07 09:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @eric17195, 有，本學期我開兩門碩士班的課程</span><span class="push-ipdatetime"> 09/07 09:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: <a href="https://www.dcard.tw/f/ncku/p/234365647" target="_blank" rel="nofollow">https://www.dcard.tw/f/ncku/p/234365647</a> #課程說明</span><span class="push-ipdatetime"> 09/07 09:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ctes940008</span><span class="f3 push-content">: 佛心來著，阿鬼在開頭30分鐘就掛了。</span><span class="push-ipdatetime"> 09/07 09:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @turtlebj4, 一定是我沒寫好，你可另外發文，做球給我改進</span><span class="push-ipdatetime"> 09/07 09:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pcchen81220</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 09:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MARTINA3016</span><span class="f3 push-content">: 好奇這篇有幾個人看的懂</span><span class="push-ipdatetime"> 09/07 10:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">blueweak</span><span class="f3 push-content">: ......... 就算你是jserv 我還是直接end</span><span class="push-ipdatetime"> 09/07 10:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">applewarm</span><span class="f3 push-content">: 推推推</span><span class="push-ipdatetime"> 09/07 10:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">djboy</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 10:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @blueweak, 我們的緣分還不夠</span><span class="push-ipdatetime"> 09/07 10:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eggbird</span><span class="f3 push-content">: 先推一下</span><span class="push-ipdatetime"> 09/07 10:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">www16852</span><span class="f3 push-content">: 嗯嗯嗯 跟我想的差不多</span><span class="push-ipdatetime"> 09/07 10:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MidoBanA</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 10:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">comp2468</span><span class="f3 push-content">: 可是你的故事講下來還是 op-&gt;A-&gt;B-&gt;C啊</span><span class="push-ipdatetime"> 09/07 10:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fragmentwing</span><span class="f3 push-content">: lisp這麼早</span><span class="push-ipdatetime"> 09/07 10:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">philae1112</span><span class="f3 push-content">: 老師安安</span><span class="push-ipdatetime"> 09/07 10:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gibson870811</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 10:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ccucwc</span><span class="f3 push-content">: 認真文...你這篇打多久啊？！</span><span class="push-ipdatetime"> 09/07 10:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">webberhan</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 10:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">marshmallows</span><span class="f3 push-content">: 推一個</span><span class="push-ipdatetime"> 09/07 10:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kelvin1105</span><span class="f3 push-content">: 太優質了吧 連reference都有</span><span class="push-ipdatetime"> 09/07 11:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Sam0453</span><span class="f3 push-content">: 參考文獻這麼多是怎樣</span><span class="push-ipdatetime"> 09/07 11:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lf2lf2kk</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 11:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">notinservice</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 12:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a22230724</span><span class="f3 push-content">: 長知識</span><span class="push-ipdatetime"> 09/07 12:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">starfishfish</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 12:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">starfishfish</span><span class="f3 push-content">: 專業</span><span class="push-ipdatetime"> 09/07 12:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bbo6uis122</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 12:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abb123456</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 12:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jssmile</span><span class="f3 push-content">: 朝聖</span><span class="push-ipdatetime"> 09/07 12:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pao0111</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 13:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tongzhou</span><span class="f3 push-content">: 有神...</span><span class="push-ipdatetime"> 09/07 13:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">astrophy</span><span class="f3 push-content">: 優文必推</span><span class="push-ipdatetime"> 09/07 13:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @comp2468, 我強調多條路線相互影響的發展，而非單一脈絡</span><span class="push-ipdatetime"> 09/07 13:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chen8958</span><span class="f3 push-content">: 朝聖</span><span class="push-ipdatetime"> 09/07 13:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SamuelLuo</span><span class="f3 push-content">:  推</span><span class="push-ipdatetime"> 09/07 13:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">omegajoker</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 14:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Juder</span><span class="f3 push-content">: 好專業</span><span class="push-ipdatetime"> 09/07 14:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dnkofe</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 14:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">oiolo</span><span class="f3 push-content">: 原來是寫論文啊</span><span class="push-ipdatetime"> 09/07 14:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">meRscliche</span><span class="f3 push-content">: orz</span><span class="push-ipdatetime"> 09/07 14:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dsa888888</span><span class="f3 push-content">: 推有點硬</span><span class="push-ipdatetime"> 09/07 16:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">godchildtw</span><span class="f3 push-content">: 聽說，有C語言的compiler是用C語言寫出來的</span><span class="push-ipdatetime"> 09/07 17:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @godchildtw, 做到這境界就是 self-host</span><span class="push-ipdatetime"> 09/07 17:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ghsu2012</span><span class="f3 push-content">: 專業推</span><span class="push-ipdatetime"> 09/07 18:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snio2427</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 18:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">letbeit</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 20:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">opencat</span><span class="f3 push-content">: 好硬</span><span class="push-ipdatetime"> 09/07 20:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">btlantisa</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 20:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jasonwung</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 21:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">user1120</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/07 23:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Xiaobao1129</span><span class="f3 push-content">: 老師好</span><span class="push-ipdatetime"> 09/08 02:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jamining</span><span class="f3 push-content">: 老師必推</span><span class="push-ipdatetime"> 09/08 09:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">uohZemllac</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 09/08 11:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">summerleaves</span><span class="f3 push-content">: 老師 wiki csie linux 那個連結找不到網頁耶</span><span class="push-ipdatetime"> 09/09 11:04
+</span></div><span class="f2">※ 編輯: jserv (140.116.246.163 臺灣), 09/09/2020 14:16:01
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jserv</span><span class="f3 push-content">: @summerleaves, 感謝回報，已修正</span><span class="push-ipdatetime"> 09/09 14:17
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Gossiping/M.1599426964.A.292.html?cacheKey=2431-551183701&amp;offset=33074&amp;offset-sig=a79ec29b56db35b5bee4e1bf01c754df6b87ed2a" data-longpollurl="/v1/longpoll?id=7d4fec65e9c8930104f9578f53695c1264a7780b" data-offset="33074"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
