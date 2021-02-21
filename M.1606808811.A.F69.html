@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[爆卦] DeepMind開發的AlphaFold解決了高懸48年 - 看板 Gossiping - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-gran
+d-challenge-in-biology
+Christian B. Anfinsen在1972年諾貝爾化學獎的獲獎感言中提出了一個假設:理論上蛋
+白質的氨基酸序列應該完全決定其結構。這個假設顯示我們用1維氨基酸序列就能預測蛋
+白質3維結構。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[爆卦] DeepMind開發的AlphaFold解決了高懸48年">
+<meta property="og:description" content="https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-gran
+d-challenge-in-biology
+Christian B. Anfinsen在1972年諾貝爾化學獎的獲獎感言中提出了一個假設:理論上蛋
+白質的氨基酸序列應該完全決定其結構。這個假設顯示我們用1維氨基酸序列就能預測蛋
+白質3維結構。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Gossiping/M.1606808811.A.F69.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html"><span class="board-label">看板 </span>Gossiping</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Gossiping/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">jackliao1990 (jack)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Gossiping</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[爆卦] DeepMind開發的AlphaFold解決了高懸48年</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Tue Dec  1 15:46:44 2020</span></div>
+<a href="https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-gran" target="_blank" rel="nofollow">https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-gran</a>
+d-challenge-in-biology
+Christian B. Anfinsen在1972年諾貝爾化學獎的獲獎感言中提出了一個假設:理論上蛋
+白質的氨基酸序列應該完全決定其結構。這個假設顯示我們用1維氨基酸序列就能預測蛋
+白質3維結構。
+然而蛋白質在進入3維結構前，理論上可折疊方式的數量是天文數字，用暴力計算來列舉
+一種蛋白質的所有可能結構需要的時間比宇宙的年齡還長。
+DeepMind公司為此開發了AlphaFold 2，用來解開蛋白質折疊問題-其複雜度比解決圍棋
+問題的AlphaGo(複雜度10^171)高出129個數量級。這個AI一直以來受到&#34;先射箭後畫靶&#34;
+的作弊質疑，因此DeepMind決定接受馬克斯普朗克研究所蛋白質進化學系主任Andrei L
+upas提出的挑戰：預測古細菌的膜蛋白。
+十年來科學家雖然獲取了這個蛋白質的X光數據，但是一直無法理解它。AlphaFold 2輸
+出了該蛋白質詳細圖像後，科學家用半小時進行驗證，實驗結果完全符合AlphaFold的預
+測。
+AlphaFold 2系統的訓練方式如下:研究員把折疊蛋白質認作是一個空間圖，殘基是節點
+，邊緣連接著非常接近的殘基。之後建立一個基於注意力機制的神經網路系統，並進行
+端到端訓練。
+AI會試圖解釋這個圖的結構，同時對它構建的隱式圖進行推理。這個推理過程還會用到
+生物學已知的知識進行完善(Ex.同源序列,多序列比對,氨基酸殘基對)。AlphaFold還使
+用了內部可靠度指標來判斷結構中哪些部分是可靠的。重複這過程，該系統能在幾天內
+確定正確結構。
+研究員還在擁有17萬個蛋白質結構的數據庫上訓練AI。訓練進行了幾週的時間，使用大
+約128個TPUv3內核（相當於100-200個GPU）。
+AlphaFold 2的GDT(蛋白質結構預測的評估標準)平均得分為92.4，這表示誤差不超過一
+個原子大小，計算生物學家John Moult說：&#34;某種意義上，蛋白質折疊問題已經解決了。
+&#34;
+哈薩比斯表示:&#34;DeepMind背後的終極願景一直是構建通用AI，利用通用AI來極大地加速
+科學發現的步伐，幫助我們更好地了解周圍世界。&#34;
+
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 42.73.15.77 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Gossiping/M.1606808811.A.F69.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Gossiping/M.1606808811.A.F69.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KLGlikeshit</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime"> 12/01 15:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bill403777</span><span class="f3 push-content">: 嗯嗯，跟我想得差不多</span><span class="push-ipdatetime"> 12/01 15:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">koromo1991</span><span class="f3 push-content">: 八卦應該不可能有人不懂吧 這個蠻好理解的</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Selvage</span><span class="f3 push-content">: 啊發狗：不堪一擊</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lopopo001</span><span class="f3 push-content">: 我就說吧。早就說過了</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cuteSquirrel</span><span class="f3 push-content">: 恩恩 和樓下基因演算高手想得差不多</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Scathach</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qk3380888</span><span class="f3 push-content">: 所以比阿發狗還猛嗎</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aggressorX</span><span class="f3 push-content">: 我喝醉的時候給的提示終於讓他們聽懂了嗎</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vowpool</span><span class="f3 push-content">: 蛋白質摺疊要幹嘛? 會比較好吃嗎</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kinki999</span><span class="f3 push-content">: 嗯～不懂</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hanzomain</span><span class="f3 push-content">: 何時會幫人腦植入晶片</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">acolam</span><span class="f3 push-content">: 好狂</span><span class="push-ipdatetime"> 12/01 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Colantoni</span><span class="f3 push-content">: 啊這不是我在樓梯間遇到隔壁阿婆隨口聊天的內容嗎</span><span class="push-ipdatetime"> 12/01 15:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">panzerbug</span><span class="f3 push-content">: 讚</span><span class="push-ipdatetime"> 12/01 15:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bruce511239</span><span class="f3 push-content">: 對阿 我之前就這樣覺得</span><span class="push-ipdatetime"> 12/01 15:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">STi2011</span><span class="f3 push-content">: 恩恩 你終於進步了 我很欣慰</span><span class="push-ipdatetime"> 12/01 15:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JustBecauseU</span><span class="f3 push-content">: 會不會算到saddle point</span><span class="push-ipdatetime"> 12/01 15:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bengowa</span><span class="f3 push-content">: 恩恩 跟我想的差不多嘛</span><span class="push-ipdatetime"> 12/01 15:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bloodyiris</span><span class="f3 push-content">: 差一個原子就差多少了 但也還是很猛就是了</span><span class="push-ipdatetime"> 12/01 15:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">juicebeach</span><span class="f3 push-content">: 嗯</span><span class="push-ipdatetime"> 12/01 15:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">StepZero2One</span><span class="f3 push-content">: 生醫重返榮耀</span><span class="push-ipdatetime"> 12/01 15:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">REALJOINGO</span><span class="f3 push-content">: 太強了就對很多鏢靶藥物的開發會很有幫助</span><span class="push-ipdatetime"> 12/01 15:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">applebg</span><span class="f3 push-content">: 台灣生科的環境，懂得人應該不多吧</span><span class="push-ipdatetime"> 12/01 15:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Vassili242</span><span class="f3 push-content">: 寫中文好嗎</span><span class="push-ipdatetime"> 12/01 15:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LeafLu</span><span class="f3 push-content">: 嗯嗯</span><span class="push-ipdatetime"> 12/01 15:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stock5566</span><span class="f3 push-content">: 早就說了</span><span class="push-ipdatetime"> 12/01 15:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ECZEMA</span><span class="f3 push-content">: 給病毒胺基酸序列 可以決定三維空間結構了 生化武器大突破</span><span class="push-ipdatetime"> 12/01 15:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Irenicus</span><span class="f3 push-content">: 這超屌 如果每次預測都準的話以後蛋白質結構都不用做了</span><span class="push-ipdatetime"> 12/01 15:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Irenicus</span><span class="f3 push-content">: 新藥(新病毒)開發的速度可以快上好幾倍</span><span class="push-ipdatetime"> 12/01 15:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jim543000</span><span class="f3 push-content">: 一群垃圾人類 嘿嘿</span><span class="push-ipdatetime"> 12/01 15:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Irenicus</span><span class="f3 push-content">: 人類能逃的時間越來越少了</span><span class="push-ipdatetime"> 12/01 15:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">good5755</span><span class="f3 push-content">: 其實這應該算是資工領域 跟生物關聯性不大</span><span class="push-ipdatetime"> 12/01 15:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Vedfolnir</span><span class="f3 push-content">: 這樣還有需要<a href="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="70161f1c14191e1730181f1d15">[email&#160;protected]</a>嗎</span><span class="push-ipdatetime"> 12/01 15:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">donflower</span><span class="f3 push-content">: 下一步是癌症疫苗了吧</span><span class="push-ipdatetime"> 12/01 15:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">btaro</span><span class="f3 push-content">: 這在生物領域算核彈級的突破</span><span class="push-ipdatetime"> 12/01 15:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s505015</span><span class="f3 push-content">: 差多了好嗎</span><span class="push-ipdatetime"> 12/01 16:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">james80351</span><span class="f3 push-content">: 我用1050ti訓練一分鐘就得到結果 Deepmind太弱了吧(X)</span><span class="push-ipdatetime"> 12/01 16:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">XDDDpupu5566</span><span class="f3 push-content">: 天啊！</span><span class="push-ipdatetime"> 12/01 16:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">littlemame</span><span class="f3 push-content">: 何時AI會做病毒把人類殺光呢</span><span class="push-ipdatetime"> 12/01 16:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">abc0922001</span><span class="f3 push-content">: 難怪不用圍棋了，太簡單了</span><span class="push-ipdatetime"> 12/01 16:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">izual</span><span class="f3 push-content">: 人類能逃的時間越來越少了...可怕</span><span class="push-ipdatetime"> 12/01 16:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ro991010</span><span class="f3 push-content">: 簡而言之就是.. 算了 懂的都懂</span><span class="push-ipdatetime"> 12/01 16:03
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">algebraic</span><span class="f3 push-content">: 跟我今天上午想的差不多</span><span class="push-ipdatetime"> 12/01 16:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Busufu</span><span class="f3 push-content">: 我大便都能算出來 這還需要寫ai?</span><span class="push-ipdatetime"> 12/01 16:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NLstyle</span><span class="f3 push-content">: 比阿發狗的問題複雜度高129個數量級是什麼鬼</span><span class="push-ipdatetime"> 12/01 16:05
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">mutzy52000</span><span class="f3 push-content">: 幹文組看不懂啦</span><span class="push-ipdatetime"> 12/01 16:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">opengaydoor</span><span class="f3 push-content">: 嗯嗯 我早就知道了</span><span class="push-ipdatetime"> 12/01 16:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">HaHaPoint</span><span class="f3 push-content">: 感謝AI證實我的理論</span><span class="push-ipdatetime"> 12/01 16:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rhythm7321</span><span class="f3 push-content">: 這個和阿發狗下棋誰贏？</span><span class="push-ipdatetime"> 12/01 16:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">satllion</span><span class="f3 push-content">: 這是生物資訊，蠻好奇TPUv3價格多少，感覺不是一般實驗</span><span class="push-ipdatetime"> 12/01 16:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zaqimon</span><span class="f3 push-content">: 阿發狗什麼時候可以跟我說明天哪支股票會漲停</span><span class="push-ipdatetime"> 12/01 16:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">satllion</span><span class="f3 push-content">: 室負擔得起，不過他已經有訓練好的模型，能夠開放給大家</span><span class="push-ipdatetime"> 12/01 16:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">satllion</span><span class="f3 push-content">: 使用那就好了</span><span class="push-ipdatetime"> 12/01 16:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cwt0115</span><span class="f3 push-content">: 印證我之前所說的</span><span class="push-ipdatetime"> 12/01 16:12
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">dslite</span><span class="f3 push-content">: 那也是用猜的 沒有golden data</span><span class="push-ipdatetime"> 12/01 16:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bigcookie2</span><span class="f3 push-content">: 恩恩 大概是這樣沒錯</span><span class="push-ipdatetime"> 12/01 16:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">daye2012</span><span class="f3 push-content">: 我論文就這樣寫啊，教授看不懂還罵我</span><span class="push-ipdatetime"> 12/01 16:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">soarling</span><span class="f3 push-content">: 好</span><span class="push-ipdatetime"> 12/01 16:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abadjoke</span><span class="f3 push-content">: 這個已經是能從一次元資訊回推三次元資訊了 太扯</span><span class="push-ipdatetime"> 12/01 16:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cds08011125</span><span class="f3 push-content">: 好厲害</span><span class="push-ipdatetime"> 12/01 16:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">The4sakenOne</span><span class="f3 push-content">: 生科起飛？？</span><span class="push-ipdatetime"> 12/01 16:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TomChu</span><span class="f3 push-content">: 好像很厲害？</span><span class="push-ipdatetime"> 12/01 16:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">p2p8ppp</span><span class="f3 push-content">: 神經網絡又贏了</span><span class="push-ipdatetime"> 12/01 16:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s505015</span><span class="f3 push-content">: 沒有很厲害 因為這是很久的技術</span><span class="push-ipdatetime"> 12/01 16:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">james80351</span><span class="f3 push-content">: 看官網定價TPUv3:$1752/month nVidia V100:$540/month</span><span class="push-ipdatetime"> 12/01 16:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kevabc1</span><span class="f3 push-content">: AlphaFold is skynet</span><span class="push-ipdatetime"> 12/01 16:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">james80351</span><span class="f3 push-content">: 月租的v3還是8核而已 實驗是128核所以再乘16倍?</span><span class="push-ipdatetime"> 12/01 16:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jesuscries</span><span class="f3 push-content">: 嗯 跟我想的差不多</span><span class="push-ipdatetime"> 12/01 16:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">boss74123</span><span class="f3 push-content">: 我早就知道qi會這樣做</span><span class="push-ipdatetime"> 12/01 16:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">boss74123</span><span class="f3 push-content">: ai 啦幹 該死自動選字</span><span class="push-ipdatetime"> 12/01 16:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">elcnick</span><span class="f3 push-content">: 恩恩跟我想的一樣</span><span class="push-ipdatetime"> 12/01 16:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">orange76525</span><span class="f3 push-content">: 是重大突破欸</span><span class="push-ipdatetime"> 12/01 16:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">WWIII</span><span class="f3 push-content">: 不頒諾貝爾獎給ai?</span><span class="push-ipdatetime"> 12/01 16:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">speculator</span><span class="f3 push-content">: 這真的很不錯</span><span class="push-ipdatetime"> 12/01 16:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">r5e97nk63</span><span class="f3 push-content">: 人腦無法跟上理解AI</span><span class="push-ipdatetime"> 12/01 16:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kobala</span><span class="f3 push-content">: 我之前就一直講了 沒人要信</span><span class="push-ipdatetime"> 12/01 16:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pieceofcake</span><span class="f3 push-content">: 原來是這樣啊</span><span class="push-ipdatetime"> 12/01 16:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">treeman47</span><span class="f3 push-content">: 所以要搬給它諾貝爾獎了吧</span><span class="push-ipdatetime"> 12/01 16:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CityRanger</span><span class="f3 push-content">: 寫的很好欸 複雜度是怎麼算的</span><span class="push-ipdatetime"> 12/01 16:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">orgysolitude</span><span class="f3 push-content">: 以前寫過大綱，後來忘記繼續</span><span class="push-ipdatetime"> 12/01 16:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gustavvv</span><span class="f3 push-content">: 之前大便的時候有想到 推</span><span class="push-ipdatetime"> 12/01 16:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Leesanity</span><span class="f3 push-content">: 厲害！</span><span class="push-ipdatetime"> 12/01 16:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">flyqoo</span><span class="f3 push-content">: 嗯，和我想的一樣</span><span class="push-ipdatetime"> 12/01 16:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tikowm</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime"> 12/01 16:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">christopherl</span><span class="f3 push-content">: 生科要起飛了</span><span class="push-ipdatetime"> 12/01 16:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PhySeraph</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime"> 12/01 16:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sealdoom</span><span class="f3 push-content">: 會得諾貝爾獎 蛋白質工程的通通要失業了</span><span class="push-ipdatetime"> 12/01 16:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">oyaji5566</span><span class="f3 push-content">: 這個我在costco買乳清蛋白的時候有想到，結帳就忘了</span><span class="push-ipdatetime"> 12/01 16:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">generic</span><span class="f3 push-content">: 原來如此</span><span class="push-ipdatetime"> 12/01 16:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aimgel</span><span class="f3 push-content">: 剛在拉死的時候驗算了一下 AI表現不錯喔</span><span class="push-ipdatetime"> 12/01 17:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CBGET5858</span><span class="f3 push-content">: 供三小</span><span class="push-ipdatetime"> 12/01 17:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lugiam</span><span class="f3 push-content">: AI繼續發展下去 人類就差不多要進入知識奇異點了</span><span class="push-ipdatetime"> 12/01 17:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AoWsL</span><span class="f3 push-content">: 下個人類毀滅的病毒是被電腦製造出來的，不太意外</span><span class="push-ipdatetime"> 12/01 17:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">spirit119</span><span class="f3 push-content">: 不就我昨天睡前想到的東西嗎 這樣也能上新聞喔</span><span class="push-ipdatetime"> 12/01 17:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">EKman</span><span class="f3 push-content">: 阿發狗：書呆子來打星海啦</span><span class="push-ipdatetime"> 12/01 17:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Artymo</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 12/01 17:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">e1q3z9c7</span><span class="f3 push-content">: 真可惜被他先發表了</span><span class="push-ipdatetime"> 12/01 17:18
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">edsion76</span><span class="f3 push-content">: 還有人不知道喔？</span><span class="push-ipdatetime"> 12/01 17:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qkenny</span><span class="f3 push-content">: 強</span><span class="push-ipdatetime"> 12/01 17:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">likeyousmile</span><span class="f3 push-content">: 奇點只存在科幻小說啦，物理學定律還是硬限制。</span><span class="push-ipdatetime"> 12/01 17:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">driftingjong</span><span class="f3 push-content">: 太瘋狂了!!</span><span class="push-ipdatetime"> 12/01 17:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">getbacker</span><span class="f3 push-content">: 這也是現代電腦夠強才能硬幹</span><span class="push-ipdatetime"> 12/01 17:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">replacements</span><span class="f3 push-content">: 大概就是這樣！棒</span><span class="push-ipdatetime"> 12/01 17:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">whhw</span><span class="f3 push-content">: 恩恩</span><span class="push-ipdatetime"> 12/01 17:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kinomon</span><span class="f3 push-content">: 開始覺得有點噁了</span><span class="push-ipdatetime"> 12/01 17:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NomadShu</span><span class="f3 push-content">: 靠杯，這是聖杯等級的issue耶</span><span class="push-ipdatetime"> 12/01 17:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tr931003</span><span class="f3 push-content">: 對的，是這樣沒錯</span><span class="push-ipdatetime"> 12/01 17:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">will331</span><span class="f3 push-content">: 計算生物學家可以洗洗睡了</span><span class="push-ipdatetime"> 12/01 17:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nasalconcha</span><span class="f3 push-content">: 屌炸</span><span class="push-ipdatetime"> 12/01 17:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">newest</span><span class="f3 push-content">: 這個很重要，可以解狂牛病跟老人癡呆</span><span class="push-ipdatetime"> 12/01 17:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">saedn</span><span class="f3 push-content">: 好可怕 這可叫暴力拆解嗎？</span><span class="push-ipdatetime"> 12/01 17:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nasalconcha</span><span class="f3 push-content">: 以後484不用點晶惹</span><span class="push-ipdatetime"> 12/01 17:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wiork</span><span class="f3 push-content">: 有人能翻譯嗎....</span><span class="push-ipdatetime"> 12/01 17:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a8866442</span><span class="f3 push-content">: 天網快出來了</span><span class="push-ipdatetime"> 12/01 17:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">broken119</span><span class="f3 push-content">: 我輸了 我誤差兩個原子 輸的心服口服</span><span class="push-ipdatetime"> 12/01 17:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dg0704</span><span class="f3 push-content">: 現在是attention is all you need的世界了</span><span class="push-ipdatetime"> 12/01 18:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lovegensokyo</span><span class="f3 push-content">: 呃 誰來解釋一下所以知道蛋白質折疊可以幹嘛？</span><span class="push-ipdatetime"> 12/01 18:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rXIN</span><span class="f3 push-content">: 這很狂==</span><span class="push-ipdatetime"> 12/01 18:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SEVEnMonth</span><span class="f3 push-content">: 我就說吧</span><span class="push-ipdatetime"> 12/01 18:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ShockHo222</span><span class="f3 push-content">: 趕快推不然別人以為我看不懂</span><span class="push-ipdatetime"> 12/01 18:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">diawboris</span><span class="f3 push-content">: 生科起飛個鬼阿 本來就要念一堆賺不到錢的書了 現在還</span><span class="push-ipdatetime"> 12/01 18:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">diawboris</span><span class="f3 push-content">: 要學著用ML 崩潰好嗎</span><span class="push-ipdatetime"> 12/01 18:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiy75</span><span class="f3 push-content">: 蛋白質工程可以進入下一步了</span><span class="push-ipdatetime"> 12/01 18:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sanpf</span><span class="f3 push-content">: 嗯嗯，跟我想得差不多</span><span class="push-ipdatetime"> 12/01 18:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dffrew</span><span class="f3 push-content">: 知道結構就能知道功能和運作方式，對生化反應和藥物設計</span><span class="push-ipdatetime"> 12/01 18:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wmh1109</span><span class="f3 push-content">: 嗯，比我厲害，我目前只能下圍棋贏AlphaGo</span><span class="push-ipdatetime"> 12/01 18:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dffrew</span><span class="f3 push-content">: 來說都很重要</span><span class="push-ipdatetime"> 12/01 18:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">noname912301</span><span class="f3 push-content">: 竟然解決了！？</span><span class="push-ipdatetime"> 12/01 18:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">team1245</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime"> 12/01 18:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">appleball200</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 12/01 18:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mystage</span><span class="f3 push-content">: 天網已經來了</span><span class="push-ipdatetime"> 12/01 18:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sa250135</span><span class="f3 push-content">: 要失業了</span><span class="push-ipdatetime"> 12/01 18:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mystage</span><span class="f3 push-content">: 知道蛋白質如何折疊，就能預測性質。這也是AI被期待解決</span><span class="push-ipdatetime"> 12/01 19:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mystage</span><span class="f3 push-content">: 的重大問題之一。全世界的科技發展停滯了許久，終於有望</span><span class="push-ipdatetime"> 12/01 19:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mystage</span><span class="f3 push-content">: 迎來新一波加速。AI搭配量子電腦</span><span class="push-ipdatetime"> 12/01 19:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xiao2chen</span><span class="f3 push-content">: 跟我想的差不多</span><span class="push-ipdatetime"> 12/01 19:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yujchen</span><span class="f3 push-content">: 這個真的厲害，但研究上光知道折法是不夠的</span><span class="push-ipdatetime"> 12/01 19:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yujchen</span><span class="f3 push-content">: 能快速做出預測，但後面要驗證的東西還是很多</span><span class="push-ipdatetime"> 12/01 19:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stw0975</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 12/01 19:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sky40236</span><span class="f3 push-content">: 嗯嗯，跟我想的一樣</span><span class="push-ipdatetime"> 12/01 19:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pig0038</span><span class="f3 push-content">: 狂...下一步就是倒推基因序列了，何時會有調整者</span><span class="push-ipdatetime"> 12/01 19:29
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">quinietos</span><span class="f3 push-content">: 第二段還不是看賓州教授的論文推導的 沒創意</span><span class="push-ipdatetime"> 12/01 19:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">seanlee0131</span><span class="f3 push-content">: 我就說吧 跟我想的一樣</span><span class="push-ipdatetime"> 12/01 19:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tkufc</span><span class="f3 push-content">: 這個人是不是撿到我的筆記==</span><span class="push-ipdatetime"> 12/01 19:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">because0131</span><span class="f3 push-content">: 嗯嗯嗯 當時我也是這樣想的</span><span class="push-ipdatetime"> 12/01 19:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kenny60710</span><span class="f3 push-content">: 哈哈簡單</span><span class="push-ipdatetime"> 12/01 19:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jajypn</span><span class="f3 push-content">: 嗯嗯 我就知道是這樣..</span><span class="push-ipdatetime"> 12/01 20:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lairx</span><span class="f3 push-content">: 我也這麼覺得</span><span class="push-ipdatetime"> 12/01 20:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">asdqwe32</span><span class="f3 push-content">: 生科元年再叫我</span><span class="push-ipdatetime"> 12/01 20:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">robocon</span><span class="f3 push-content">: 我每天跑的<a href="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="55333a39313c3b32153d3a3830">[email&#160;protected]</a>可以停了？</span><span class="push-ipdatetime"> 12/01 20:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">deathsman</span><span class="f3 push-content">: 我當初就是電腦等級太差才算到現在 不然就是我發表的</span><span class="push-ipdatetime"> 12/01 20:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">headiron</span><span class="f3 push-content">: 恩恩, 我也是這樣覺得, 現在終於成功了</span><span class="push-ipdatetime"> 12/01 20:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gynd31517</span><span class="f3 push-content">: I told you</span><span class="push-ipdatetime"> 12/01 20:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jacky123ooo</span><span class="f3 push-content">: 嗯嗯我也是這樣想的</span><span class="push-ipdatetime"> 12/01 20:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">create8</span><span class="f3 push-content">: 看不懂啦</span><span class="push-ipdatetime"> 12/01 20:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">theknight</span><span class="f3 push-content">: 我當初也是這麼說</span><span class="push-ipdatetime"> 12/01 20:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">starfishfish</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 12/01 20:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">starfishfish</span><span class="f3 push-content">: 這有點猛</span><span class="push-ipdatetime"> 12/01 20:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Suboy</span><span class="f3 push-content">: 嗯本來就是這樣的</span><span class="push-ipdatetime"> 12/01 21:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">JoeyChen</span><span class="f3 push-content">: 靠 人類的生化技術是不是要進入新的階段了</span><span class="push-ipdatetime"> 12/01 21:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">webster1112</span><span class="f3 push-content">: 人類透過AI又接近上帝一大步了 應該說我們要當上帝了</span><span class="push-ipdatetime"> 12/01 21:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gipo776</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 12/01 21:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dcoog7880</span><span class="f3 push-content">: 天網</span><span class="push-ipdatetime"> 12/01 22:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Bonjwa</span><span class="f3 push-content">: 我小學就解決了</span><span class="push-ipdatetime"> 12/01 22:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">thevoidfancy</span><span class="f3 push-content">: 就是用AI回推重建結晶圖譜</span><span class="push-ipdatetime"> 12/01 23:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">FTICR</span><span class="f3 push-content">: <a href="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3573757d">[email&#160;protected]</a>直接改去算AI可能比算力學模擬有用了</span><span class="push-ipdatetime"> 12/01 23:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dnek</span><span class="f3 push-content">: 太神奇了吧，所以我說那個人型電腦什麼時候才要問世</span><span class="push-ipdatetime"> 12/01 23:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sidneys</span><span class="f3 push-content">: 太強啦</span><span class="push-ipdatetime"> 12/02 00:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hodj</span><span class="f3 push-content">: 跟我想的一樣</span><span class="push-ipdatetime"> 12/02 00:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">z1120123</span><span class="f3 push-content">: 本來就是這樣啊</span><span class="push-ipdatetime"> 12/02 00:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Nauglamir</span><span class="f3 push-content">: 怎麼一直有人問折疊是甚麼，連結裡面有影片說明啊</span><span class="push-ipdatetime"> 12/02 00:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gooddogleg</span><span class="f3 push-content">: 我就知道</span><span class="push-ipdatetime"> 12/02 00:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CN091118</span><span class="f3 push-content">: 中文好難啊</span><span class="push-ipdatetime"> 12/02 01:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aneshsiao</span><span class="f3 push-content">: 蛋白質結構預測的評估標準)平均得分為92.4，這表示誤差</span><span class="push-ipdatetime"> 12/02 09:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">aneshsiao</span><span class="f3 push-content">: 不超過一個原子大小，這是什麼意思？</span><span class="push-ipdatetime"> 12/02 09:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aneshsiao</span><span class="f3 push-content">: 人類跟AI比起來像個智障</span><span class="push-ipdatetime"> 12/02 09:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bvcxz741</span><span class="f3 push-content">: 好像很厲害耶</span><span class="push-ipdatetime"> 12/02 10:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Jerry08957</span><span class="f3 push-content">: 不超過一個原子 應是指平均不超過 所以部份完全符合</span><span class="push-ipdatetime"> 12/02 11:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Jerry08957</span><span class="f3 push-content">: 部份推測完全符合 有些還是有幾個誤差</span><span class="push-ipdatetime"> 12/02 11:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Phoenix0115</span><span class="f3 push-content">: 我還以為只有我知道 想不到八卦版這麼多人懂</span><span class="push-ipdatetime"> 12/02 14:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smallbird711</span><span class="f3 push-content">: 嗯嗯嗯 跟我想的一樣</span><span class="push-ipdatetime"> 12/02 18:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t214312004</span><span class="f3 push-content">: 猛！！</span><span class="push-ipdatetime"> 12/03 10:57
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Gossiping/M.1606808811.A.F69.html?cacheKey=2431-564590273&amp;offset=20566&amp;offset-sig=7f943b5b28858c04baa3070b4dfff9d941eebf96" data-longpollurl="/v1/longpoll?id=85f7bbac734030482f2ae1eb4b7012d8a8718f8e" data-offset="20566"></div>
+    
+
+    
+<div class="bbs-screen bbs-footer-message">本網站已依台灣網站內容分級規定處理。此區域為限制級，未滿十八歲者不得瀏覽。</div>
+
+</div>
+
+		
+
+<script data-cfasync="false" src="http://www.ptt.cc/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
