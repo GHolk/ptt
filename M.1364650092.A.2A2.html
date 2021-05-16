@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[翻譯] Prototype-based OOP over class-based - 看板 Translate-CS - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="原文網址: http://programmers.stackexchange.com/questions/110936/#110939
+============= 譯文：以下譯文使用 Markdown 語法撰寫 =============
+###關於物件導向程式設計，基於原型比較基於類別的方式，好在哪裡？###
+***Vivek Viswanathan 發問， Pierre 修改。***
+*標籤：設計、物件導向、無關於語言*
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[翻譯] Prototype-based OOP over class-based">
+<meta property="og:description" content="原文網址: http://programmers.stackexchange.com/questions/110936/#110939
+============= 譯文：以下譯文使用 Markdown 語法撰寫 =============
+###關於物件導向程式設計，基於原型比較基於類別的方式，好在哪裡？###
+***Vivek Viswanathan 發問， Pierre 修改。***
+*標籤：設計、物件導向、無關於語言*
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Translate-CS/M.1364650092.A.2A2.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Translate-CS/index.html"><span class="board-label">看板 </span>Translate-CS</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Translate-CS/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">yauhh (喲)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Translate-CS</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[翻譯] Prototype-based OOP over class-based</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sat Mar 30 21:28:06 2013</span></div>
+原文網址: <a href="https://programmers.stackexchange.com/questions/110936/#110939" target="_blank" rel="nofollow">http://programmers.stackexchange.com/questions/110936/#110939</a>
+
+============= 譯文：以下譯文使用 Markdown 語法撰寫 =============
+
+###關於物件導向程式設計，基於原型比較基於類別的方式，好在哪裡？###
+
+***Vivek Viswanathan 發問， Pierre 修改。***
+*標籤：設計、物件導向、無關於語言*
+
+過去我都在做基於類型的物件導向程式設計，後來當我開始寫JavaScript時，對為何都
+是用基於原型的方式感到有疑問。
+
+1. 假如可以，請問基於原型的物件導向設計結構上有什麼好處？譬如可以期待它在某些
+   時候執行速度比較快，或者有較不密集佔用記憶體嗎？
+
+2. 從程式員的方面看，有什麼優點？譬如寫什麼哪種程式比較簡單，或者比較方便藉由
+   原型重新利用別人的程式？
+
+請不要把這個問題看成特別是JavaScript的問題，因為關於JavaScript，過往有人講
+出很多有錯的論點，完全跟原型無關。相對的，請由理論方面端視它，告知基於原型對
+基於類別有什麼不同的好處。
+
+感謝。
+
+---
+
+***mikera 回答：***
+
+我有很多處理到這兩種方式的經驗，是用Java寫RPG。本來我用了基於類別的物件導向寫
+完一個遊戲，但最後覺得那是錯的方式，當類別樹長多了，程式就不好維護。於是，我把
+全部程式修改為基於原型。結果好多了，很好管理。
+
+如果你感到有興趣，到這裡下載源碼 ([Tyrant - Java
+Roguelike](<a href="https://sourceforge.net/projects/tyrant/" target="_blank" rel="nofollow">http://sourceforge.net/projects/tyrant/</a> &#34;Tyrant - JavaRoguelike&#34;))
+。
+
+主要的效益如下：
+
+
+- **容易弄出新的類別** ：只要把另一個類別當做原型複製一份來，改一些屬性，
+  瞧，一個新的類別。我用這種方法來建立藥水瓶，如例子，每個改 3 到 6 行 Java
+  。比開一個新的 class 檔案並載入樣版更好做。
+
+- **可能藉由相對很少的程式來建置和修改大量的類別**：例如 Tyrant 有
+  3000 件不同的原型，但總共只有 42,000 行程式。以 Java 來說很驚人。
+
+- **多重繼承很簡單**：只要從一個原型複製出一部份的屬性，貼到另一個原型
+  中。以 RPG 為例，可能你想要「鋼鐵魔像」怪物要有些「鋼」物件的特性，還
+  要有些「魔像」怪物的特性，還要有些「智力不足的怪物」的特性。用原型法比
+  較簡單。否則你嘗試類別繼承看看......
+
+- **可以藉由屬性參數做聰明的事** ：藉著在通用的「讀取屬性」方法中放一些
+  聰明的邏輯，可以做出各種參數。譬如要定義一只魔法戒指可以給穿戴者增加 2 點力
+  量，就這麼做。邏輯是要加在戒指物件中而不是「讀取力量」方法，這樣就會避免在
+  程式中放很多條件判斷，來檢查像「人物是否戴一只力量之戒」的例子。
+
+- **實例可以做為別的實例的模版** ：譬如，很容易「克隆」物件，只要把現有物
+  件當做新物件的原型。不必為每個類別分別寫複雜的克隆邏輯。
+
+- **容易在運作中改變行為** ：譬如，在執行時可以相當任意改變屬性，讓物件
+  「變形」。允許你做到酷炫的遊戲特效，而且這可以和「腳本語言」搭配，在運作時可
+  以做到幾乎任何事情。
+
+- **較適於用「函數風格」的編程** ：你會發現自己在寫大量的函數分析物件運作
+  得當，而不是把這種邏輯寫死在某個類別的方法裡頭。我個人偏好這種函數語言程式風
+  格。
+
+主要的缺點如下：
+
+- **失去靜態型別的保障** ：因為你在有效地創造動態物件系統。這往往表示你要
+  寫更多測試來確保物件的行為很正確，而因此物件是正確的「類別」。
+
+- **額外耗損一些效能** ：有些物件屬性都一定要在一些對應表裡頭尋找，所以在
+  性能方面會付出一點代價。在我的情況中這是沒問題，但可能在別人的情況中可能有
+  點問題，例如 3D 畫面中有很多物件時，刷新畫片是每一張畫片都查詢每個物件。
+
+- **不能用同一個方式重構** ：基於原型的系統基本上是你自己用程式製造繼承樹
+  。整合開發工具和重構工具沒真的幫你忙，因為這些工具不懂你的做法。我從來沒撞
+  到問題，但如果你自己不小心，維護就會失控。可能要自己用測試的程式檢查你的繼
+  承樹架構正確。
+
+- **長得有點怪** ：慣用原有的物件導向程式設計風格的人很容易把腦子搞亂。「
+  誰寫的，只有一個類別，類別名字叫做『東西』？」「這個 final Thing class 要
+  怎麼繼承？」「你這根本不是 OOP ！」「有這麼多 static 方法用在全部的物件上
+  幹嘛？」
+
+最後，實作的注意事項：
+
+- 我用到 Java HashMap 來放屬性，而且有個「根」指標指回到原型上。這運作得很
+  順，但有以下缺點： ***a)*** 讀取屬性有時要回訪資料結構，走過一大堆父節點，
+  讓效能受損， ***b)*** 如果修改了父原型，會影響到沒有覆寫屬性的子原型。一不
+  小心就會造成無謂的程式錯誤。
+
+- 若再給我一次機會，我會用不可變的持續性對應表來維護屬性，就像 Clojure 的持
+  續性對應表一樣。或者用我自己做的 Java 持續性雜湊對應表來做。這樣，可由簡單
+  的複製修改和不可變的行為得到優勢，那就不必讓原型拉一個指標指向父原型。
+
+- 在物件屬性中放函數或方法，會讓你得到樂趣。我用這種破格的方式，像「腳本」類別
+  的匿名的子型別，寫起 Java 不太簡潔。讓我再做一次，我可能會拿較容易嵌入裡頭
+  的語言用來寫腳本，例如用 Clojure 或 Groovy 。
+
+***(回應)***
+
+1. +1 跟這個很像
+ steve-yegge.blogspot.com/2008/10/universal-design-pattern.html
+   - jk。 09月27日&#39;11 8:45
+
+2. +1 分析得很好。雖然這套方法比較是因應 Java 模型。像 Delphi、 C#、VB.Net
+   都有明確的屬性。- umlcat 09月27日&#39;11 15:22
+
+3. @ umlcat  - 我認為 Java 模型相當類似 Delphi 和 C# 模型，除非是簡便的定
+   義屬性語法 - 你仍然應該要靜態定義想要的屬性。原型模式的重點在於定義不是靜
+   態的，你不必預先做任何宣告。...... 在9月28日&#39;11 2:21 -- mikera
+
+---
+
+***umlcat 回答：***
+
+基於原型的物件導向程式設計的優點是物件和「類別」可以在執行時擴充。
+
+基於類別的物件導向程式設計有一些不錯的功能，但可惜的是，是由程式語言決定。
+
+Object Pascal（DELPHI）、 VB.NET 和 C# 有個非常直接的方式可使用屬性（不要
+和欄位搞混）和屬性的存取方法，而 Java 和 C++ 屬性是由方法存取。PHP 把兩種方
+式混合，稱做「神奇方法」。
+
+即使主流的類別式物件導向語言是靜態型別，仍然有些類別可以是動態型別。我認為類別
+的物件導向的靜態型別很有用，因為它允許稱做是物件檢查的功能，可以用來以可見的方
+式快速實現整合開發工具及開發網頁。
+
+
+--
+/yau
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc)
+</span>◆ From: 118.167.54.194
+<span class="f2">※ 編輯: yauhh           來自: 118.167.54.194       (03/30 21:32)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Minilogo</span><span class="f3 push-content">:無關語言，GOOD!</span><span class="push-ipdatetime"> 03/30 23:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">swpoker</span><span class="f3 push-content">:深有同感~我在設計web service也是有這樣的問題</span><span class="push-ipdatetime"> 04/01 11:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stopcrying</span><span class="f3 push-content">:推，最近才看了這篇文章</span><span class="push-ipdatetime"> 04/08 12:37
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Translate-CS/M.1364650092.A.2A2.html?cacheKey=2085-741576218&amp;offset=5708&amp;offset-sig=f6633d6c7ef0a06ba8afa472331fbec2be631f67" data-longpollurl="/v1/longpoll?id=f24a28d27d326ec4216d79a99f9d13c8b2c79a4b" data-offset="5708"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[翻譯] 即時通大戰 Chat Wars(上篇) - 看板 Translate-CS - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="http://blog.rayer.idv.tw/posts/195203-translation-chat-wars-1
+本文以Markdown格式書寫
+寫在前面 : 這篇文章主要是在談早期MSN vs AOL的大戰。這場大戰其實結果還滿清楚的，MSN打倒了AOL Instant Messenger(AIM)，成為未來十年內最成功的IM(Instant Messenger)。這篇文章提到的不止是商場策略，而且還提到了許多技術方面的東西，尤其是Microsoft怎麼「破解」AOL Service Server
+David Auerbach，早期的MSN主要開發工程師之一。
+原文網址 : [n+1 Magazine - Issue 19](https://nplusonemag.com/issue-19/essays/chat-wars/)
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[翻譯] 即時通大戰 Chat Wars(上篇)">
+<meta property="og:description" content="http://blog.rayer.idv.tw/posts/195203-translation-chat-wars-1
+本文以Markdown格式書寫
+寫在前面 : 這篇文章主要是在談早期MSN vs AOL的大戰。這場大戰其實結果還滿清楚的，MSN打倒了AOL Instant Messenger(AIM)，成為未來十年內最成功的IM(Instant Messenger)。這篇文章提到的不止是商場策略，而且還提到了許多技術方面的東西，尤其是Microsoft怎麼「破解」AOL Service Server
+David Auerbach，早期的MSN主要開發工程師之一。
+原文網址 : [n+1 Magazine - Issue 19](https://nplusonemag.com/issue-19/essays/chat-wars/)
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Translate-CS/M.1398461158.A.34D.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Translate-CS/index.html"><span class="board-label">看板 </span>Translate-CS</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Translate-CS/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">Killercat (殺人貓™)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Translate-CS</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[翻譯] 即時通大戰 Chat Wars(上篇)</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sat Apr 26 05:25:50 2014</span></div>
+
+<a href="http://blog.rayer.idv.tw/posts/195203-translation-chat-wars-1" target="_blank" rel="nofollow">http://blog.rayer.idv.tw/posts/195203-translation-chat-wars-1</a>
+
+本文以Markdown格式書寫
+
+寫在前面 : 這篇文章主要是在談早期MSN vs AOL的大戰。這場大戰其實結果還滿清楚的，MSN打倒了AOL Instant Messenger(AIM)，成為未來十年內最成功的IM(Instant Messenger)。這篇文章提到的不止是商場策略，而且還提到了許多技術方面的東西，尤其是Microsoft怎麼「破解」AOL Service Server
+
+David Auerbach，早期的MSN主要開發工程師之一。
+
+原文網址 : [n+1 Magazine - Issue 19](<a href="https://nplusonemag.com/issue-19/essays/chat-wars/)" target="_blank" rel="nofollow">https://nplusonemag.com/issue-19/essays/chat-wars/)</a>
+
+#Chat Wars - 即時通大戰 - David Auerbach
+
+在1998年那年的夏天，我從學校畢業加入了微軟在華盛頓州，雷蒙德市的辦公室。我一進去就被分配到草創時期的MSN Messenger Service的即時通訊軟體開發的行列。老實講，這來自於行銷部門名字真是糟透了，極端的笨拙，杯底朝天的創意，大概就是他們以後常常被嘲笑的形容詞。Buddy List? CUC Me? MSN Messenger?不，我們叫他MSN Messneger Service吧。在之後的文章我們會簡稱這東西為Messenger。
+
+**(譯註 : 其實台灣多半還是叫他MSN，這名字單看縮寫其實是還好啦....)**
+
+在當時即時通三大巨頭是AOL Instant Messenger(AIM)，Yahoo跟ICQ。讓我們看看當年的情勢：AOL當年(1990年代)靠著大量發送，幾乎是把光碟當傳單塞到你信箱的宣傳攻勢，成為了全國最大的撥接服務提供者。而重點是：所有AOL的用戶都自動的成為了AIM的客戶，這數量可是達到了一千萬註冊量。而緊追在後的Yahoo跟ICQ則各有數百萬的客群，哇，這在90年代真的是一個相當巨大的數字概念。
+
+我隨即意識到了這將會是一個相當龐大的計劃：在用戶端，我們要做一個漂亮美觀的界面，讓使用者能夠看到他們的朋友上下線，讓他們能夠自由更換整個UI上的字形字體顏色，看起來要很酷...等等的功能。這代表著，我們要弄出一個用戶端程式不止要有著其他競爭對手的功能，還要比他們更酷一點！而Server端的開發者則需要弄出一套機制來跟各個用戶端溝通，包含著告訴這些用戶端說你的朋友上下線訊息，這樣你的用戶端才能在適當時間通知你「Gordon上線啦」的視覺效果。Server端要做的事情不止於此，微軟後來為此買下了一家叫做Hotmail的公司(對，就是我們以ꬊ廒籅儐慵otmail)，Server端還得負責把整個Messenger系統跟Hotmail整合起來，而Hotmail本身就擁有數千萬的用戶**(譯註 : 原文是Tens of Millions，不過據我所知當年Hotmail客戶並沒有那麼多，這邊應該有點誇飾了)**，而最迫切最關鍵的地方在於必須把hotmail用戶資料跟Messenger整合起來讓他們可以用email登入。恩，這是一個很不簡單的工作，真的。
+
+這個Team最早只有十個人，慢慢地這個team成長到了好幾倍的大小。我們在做用戶端的時候總是在討論著哪些功能是一定要做的，哪些功能是我們想要的，哪些功能是我們目前實在是搞不定的。我當年是組裡面最年輕的一個，只有20歲，以當時的講法就是青澀毫無經驗。我一開始被分配去做一個小功能，慢慢的越來越大的責任就落在我身上了。我當時在做的就是那個輸入訊息的視窗，就是夠老的人應該都記得的「在此輸入訊息...」的那個部分。這東西可沒直覺上那麼單純簡單，我在上面花了很大的苦工，我翻修了字體控制的代碼，而且還得讓他相容於非拉丁語系的那些奇ꤊギ漲r元 : 中文，日文，韓文，印度文，還有左右順序跟普通文字相反的希伯來文以及阿拉伯文。處理著好友上線產生的popup視窗，讓它甚至能四處被拖拉，還有在上面植入惡名昭彰充滿著bug的online-only bars **(譯註：老實講我也不知道什麼是online-only bar，有誰能補充一下嗎？)** 。處理「關閉程式」這段也是個很棘手的工作，要讓每個視窗整齊劃一利落的關閉，能正確的回收占用的系統資源，在這些前提下還得讓程式不當掉 **(譯註：寫過的大概才知道當年的Win16 API在這方面真的是既麻煩且棘手，不是現代人能想像的 =P)** 。
+
+搞定了客戶端以後，我們可以喘一口氣等Server
+Team搞定跟Hotmail整合的屎缺。我們除了修好了所有看得到的bug以外，還加上了一些純粹是為了好玩而加上去的小功能。不過，這產品還沒推出以前，微軟其實已經預見到要吸引新用戶的其中一個最大的困難點就是：各種即時通其實彼此是不互通的。AIM跟Yahoo是無法通話的，當然也無法跟ICQ通，所以，自然他們都沒辦法跟Messenger的用戶互相彼此通訊，這對吸引用戶來使用Messenger來講可不是好事，誰想login以後看到上面只有自己孤單一個人？AOL擁有著目前最大的客戶數量，自然我們就會先把腦子動到這上面去：如何讓Messenger的用戶可以同時Login到Messenger
+跟AOL的Server，用Messenger的客戶端就能跟兩種服務的使用者聊天。這個計劃我們稱之為「橋接」(Interop)
+
+這真的要幹下去，老實講手法還挺粗暴的，但原理也意外的簡單。一個程式是靠一個預先定義好的Protocol(協定)去跟Server溝通，這個協定就是一種對話的模板，定義著來回「對話」的解釋方法。當年最廣泛被使用的是用於www webpage上的HTTP protocol，這個是架構在TCP/IP(一種Internet最基礎的底層通訊協定)之上的一種通訊協定。網路提供者使用者這些通訊協定來當作互相傳遞訊息的主要工具。有些通訊協定是公開的，有著完整的定義文件的，每個人都在使用的，最著名的例子就是前面提到的HTTP,
+TCP/IP等等的通訊協定。然而也有些是私有的，有著智慧財產權的，文件不公開的通訊協定，比方說AIM使用的通訊協定&#34;OSCAR&#34;(Open System for CommunicAtion in Realtime， **譯註：說來諷刺，名字有個Open呢** )。這並不是公開的通訊協定，所以事實上我並不知道該怎麼去解讀它。不過，解讀最好的方法就是收集足夠量的資訊。我跟我老闆就註冊了個AIM的帳號，安裝他們的用戶端，然後攔截跟觀察這個用戶端跟AIM的Server怎麼對話的。一個簡單的例子就像下面這樣
+
+    2A 02 EE FA 00 B0 00 0E 00 06 00 00 9B 7D BD 28  *............}.(
+    33 41 35 36 35 43 38 37 00 03 00 03 00 28 0D 52  3A565C87.....(.R
+    45 41 4C 52 65 67 72 65 73 73 6F 72 00 00 00 03  EALRegressor....
+    00 01 00 02 00 10 00 0F 00 04 00 00 00 18 00 03  ................
+    00 04 3E 4C BE 8C 00 01 00 00 00 05 00 68 00 02  ..&gt;L.........h..
+    00 08 75 73 2D 61 73 63 69 69 00 03 00 02 65 6E  ..us-ascii....en
+    00 01 00 48 69 2E 2E 20 41 6E 79 62 6F 64 79 3F  ...Hi.. Anybody?
+
+大多數的訊息其實都是難以解讀的，不過封包中間倒是有著我們聊天的明碼訊息。&#34;Hi... Anybody?&#34;
+當我透過打進這行字的時候，我經由從我的網路封包截取到一段內容，包含著同樣的字串。這通訊協定的封包裡面，某些部分看起來在每次傳送的時候都不太一樣，但是有些地方卻是很明顯的每次都相同。我們嘗試著用開發中的client，把抓取到的封包中間明碼的部分替代為其他的對話，然後把它送回AOL的Server。恩...AOL會發現有些奇怪的Message來自於雷蒙德市？不不不，這不太可能，他們可是有著數以百萬的使用者呢，而我們卻是實實在在的偷用他們的通訊協定在跟他們Server「對話」。我們第一次的簡單嘗試中，我們並沒有發送太多的訊息。老實說，我跟我的主管
+其實並不認為這個「小花招」會被採用，這功能看起來可疑性真是爆表啊！這功能大概在正式Release以前就會被拿掉吧。但是，我們錯了，上頭還滿喜歡這功能的。所以，就在1999年7月22號，Microsoft正式推出了MSN Messenger Service，也正式宣告加入即時通市場的戰局 -- 我們小小的「AOL橋接系統」也包含在裡面呢。
+
+這東西一推出，勇於嘗鮮的一群人當然迫不及待的試試看這東西。這東西酷斃啦，所有功能都正常，比其他家更棒的國際語言支援(那個還記得那個希伯來文跟阿拉伯文的問題嗎)，這東西跟Hotmail完美的整合，而且我們還可以用這支程式來跟本來就在AOL上的朋友聊天呢！看起來我們的小發想，獲得的成果還挺豐碩的。
+
+當然，即使沒有人跟AOL通風報信，AOL還是會知道的 - 當然，相當的不高興。AOL在Server端採取了一些行動來防止Messenger連上去，而且會回傳一組訊息：「請使用官方支援的AIM，你可以在這裡下載...(連結)」。但是，想當然耳，AOL一定要知道從通訊協定上，發現使用者用的是Messenger，才有辦法封阻啊。顯然的，如果我們「偽造」的OSCAR通訊協定看起來簡直跟AIM發出的OSCAR協定一模一樣，這樣AOL的Server根本就無從得知這訊息是來自AIM還是Messenger了。我拿了AIM的Client，仔細的研究它跟AOL
+Server的對話，這次我們找出了封包中某些位元代表的意義以後，讓我們的Messenger可以「偽造」出更相似的OSCAR封包。同樣的攻防來回了幾輪，他們當然對他們家的AIM比我們瞭若指掌，也知道如何去利用混淆的訊息讓Server可以更正確的辨認出AIM的Client。每天這種攻防都持續著，天天有新玩意新花招！他們某天下了一招狠招，他們知道某些訊息是來自於Microsoft的研發中心，他們把所有的Messenger訊息再度成功的阻擋起來 --
+唯獨故意放過來自於研發中心IP的訊息，恩，我們完全不知道他們已經成功的再度阻擋了其他使用者的Messenger呢，我們用起來看起來真完全沒有問題啊。這次AOL的防禦讓我們足足困擾了兩三個小時，我們才發現他們有這招。
+
+微軟跟AOL都是在當年的超級大公司，所以很快的記者的報導就找上門了。就在兩天後的7月24號，紐約時報的頭版上就出現了這則報導：「網路世界的戰爭，正藉由即時通軟體盛大的展開！」。這...其實看起來就很像讀一篇拳擊報導，只是這次我變成了裡面海扁以及被海扁的人。當時的報紙詳實的報導著AOL努力的封鎖住Messenger的入侵，「但是微軟拒絕妥協。禮拜五稍晚，這個巨人再度補強了他們家的MSN Messenger一度突破AOL設下的障礙，但是AOL在一個小時內再度成功的重新防禦了起來！」
+
+阿，我把這篇新聞紙錶匡起來做紀念。誠然，我名字並沒有被寫在上面，但是沒關係！這可是我幹的好事呢！
+
+----------
+
+時間來到了1999年，正是Microsoft第一個作業系統MS-DOS發行後的整整20年。微軟當時是世界上最大的公司之一，擁有超過三萬名員工，其中有一萬個在雷蒙德市。恩，用校園比喻的話，這大概跟耶魯大學差不多大。
+
+這個電腦巨擘有什麼秘密？他們從以前到現在，基本上都是個徹頭徹尾的軟體公司。70年代，是個電腦沙漠的時代，一些業餘愛好者還在想盡辦法把當時還屬於巨無霸等級的電腦，不管是成本還是體積，都縮小到一個家庭可以接受的範圍，而Bill Gates跟Paul Allen - 這兩個人往後創立了Microsoft - 在那段時間也找出了在這種「相對小型」系統開發程式的方法。幾年後的1980年，他們跟IBM合作開始作出了後來有相當名氣的作業系統 - MS-DOS(for MicroSoft Disk Operation System)，搭載在第一組量產的個人電腦上
+**(譯註:這點其實是頗有爭議的，因為有人認為是1977年的Apple ]\[，而非這邊所暗示的IBM PC5100/5150。而當然，Apple ]\[ 搭載的並非MS-DOS )** 。幾年後他們跟當年的Apple合作，提供當時的Apple一些軟體，包含了最早期的Microsoft Word在內。Gates跟Allen的高瞻遠矚，將個人電腦的發展拉到一個高峰，也讓電腦使用者會去想要替他們的電腦去添購新的軟體。
+
+IBM當年跟微軟的合作，授權給微軟替IBM出品的PC製作作業系統，這其實是送了一檯印鈔機給當年的微軟。軟體的世界比硬體大得多，而且需要大型資本硬體設備的地方很少，最多最多就是製造個磁碟片，跟微處理器以及其他的硬體週邊設備比起來，實在需要投入的資本有夠低。而且，既然微軟在那個年代幾乎是唯一的家用電腦作業系統製作商，這幾乎是把自己的銷量給綁在當年瘋狂上昇的PC產業上，這可是賺錢的保證！IBM可不是當年唯一的硬體製造商，但是微軟可是唯一的主流作業系統製作商啊。
+
+微軟的崛起並非惦惦吃三碗公，也絕非一凡風順。在的1984年，Apple首次公開了麥金塔，這是在個人電腦領域的首次挑戰。在1983年研發出的Lisa是很有名氣，可是他很難被稱為個人電腦，因為它要價美金10000大洋。麥金塔有著當時最先進，由Xerox
+Parc研發出來的作業系統，有一個相當接近我們在十年後才普遍看得到的圖形化界面。這家公司大手筆的買下了超級杯的廣告時段，宣告了次一個世代家庭電腦的新革命，說真的，Apple的宣傳詞絕不誇大。在麥金塔之前的個人電腦幾乎都是純文字界面，而這個讓你能幾乎把一切都給視覺化，幾乎就是我們現在「桌面」的定義了。我七歲的時候看到了這東西，天，這東西真是令人目眩神迷，但是當年的電腦實在不太夠力，所以也不會把這東西當作是電腦的必要界面。我當年用的電腦，也是MS-DOS界面，我還得一行行的從命令列去輸入指令，以當年來講這是再也自然不過的。ꘊ酑O日子到了快要90年代那段時間，家用電腦已經快到可以讓多工(看起來像是同時做兩件事情或者更多)實用化，那很明顯，圖形化界面自然就遠比普通文字命令列更具使用者友好度以及吸引力啦。
+
+微軟自然也是這樣想的。在1985年他們發表了第一款Windows，有些重點當然不能漏掉，很多部分是從Apple那裡買下專利使用權的。這其實與其說是我們熟知的「視窗」，還不如說比較像是一個檔案管理員，只是你能用滑鼠去操作而已，頂多啦，再加上一些小型的程式會跳出視窗，比方說小算盤。其實這只是一個MS-DOS的改進，還離已經有現代化圖像界面的Mac遠得很。1987年，Windows 2.0發行，這版本仍然很笨拙，但是至少跟1.0版比起來好一點，至少多了可套疊的浮動視窗以及一些有用的功能。Apple當然知道微軟想要幹嘛，在1988年，他們正式對微軟採取了法律戰。
+
+不過，Apple法律戰並沒有占到上風。的確Windows在很多方面看起來真的很像麥金塔的作業系統 **(譯者註 : [System 6](<a href="https://en.wikipedia.org/wiki/System_6)" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/System_6)</a>，各位可以看看[Windows2.0](<a href="https://en.wikipedia.org/wiki/Windows_2.0)" target="_blank" rel="nofollow">https://en.wikipedia.org/wiki/Windows_2.0)</a>跟它有沒有很像XD)** ，但是要說「一樣」或者「抄襲」似乎又有點太牽強。在法院的判決是這樣寫的：「幾乎所有有爭議的相似之處，都是從當初Apple授權來的，或者一些非常明顯的基礎設計概念。所謂的非法抄襲，應該是要看起來完全一樣才是」。
+
+這個判決結果出爐於1992，Apple當然毫無疑問的上訴，但是1994年上訴也被駁回了。這對Apple來講無疑也是一個暨失去Steve Jobs以後再一記重擊 **(譯註：SJ於1985年離開Apple，回歸則是1996年的事情)** 。整個麥金塔品牌受困於很糟的管理階層，「高貴」定價的電腦，毫無意義的規格封閉以及保護主義以至於不開放其他公司參與製作麥金塔硬體 **(譯註：其實作者這邊沒寫對，Mac Clone麥金塔相容機就是在1986年被Apple授權給其他廠商開發的，而這紙協議反倒是1996年被回歸的Steve
+Jobs撕毀)**，這家公司眼睜睜的看著市占率在這個10年內快速下降，最後也只好把Steve Jobs再度請回來坐鎮。在Apple這些大風大浪中，毫無疑問最大的受益者就是Windows，在這些年裡面席捲了整個市場。Windows即使沒有Mac OS的典雅以及一致性，但是其實以一個OS來講這已經很OK了，跟麥金塔那貴族般的定價來相比，顯然對消費者的吸引力更加強烈。在這場法律大戰以後，Windows 95出生了。有了先前的判例，Windows這次更進一步的「偷」走Mac OS的檔案回收桶概念，把人家的「垃圾桶」改個名字叫做「資源回收桶」就拿來用在Windows
+95身上。往後很長一段時間裡面，這Windows簡直看起來如入無人之境。
+
+Gates跟Allen都是非常有經驗的程式設計師，但是程式設計的歷史上可是一堆比他們還要聰明許多的人，卻不像他們到最後成為了億萬富翁，他們之所以與眾不同的成功，來自於於商業手腕。他們在很長的一段時間，仍然保持著一個小公司的低姿態，說真的，一個純軟體公司實在不需要太大來製作軟體。寫程式說真的不難，但是他們對電腦來講是個到處都需要的東西，所以靠這個收到驚人的收益並不是什麼難事 **(譯註：這是當年的生態，我們就不要太吐槽這觀點了...)**
+。在30年前，一個賣50美金的軟體，所需要投入的人力，遠比我們今天要賣50塊錢的其他東西都來得少 **(這段我懷疑我有翻譯錯誤，原文是The amount of person-hours that goes into a $50 piece of software today dwarfs that of a $50 item of software thirty years ago. )** 。在1983年來說，一個超原始的文字處理程式要價289，還需要用戶使用小貼紙去貼在鍵盤上來標示出各個按鍵的特殊功能 **(譯註：可是仔細想想，現在的文字處理程式好像沒高明多少，也是得叫出選單來一個個記啊 XD)** 。在今天來講的話，隨便一個open
+source或者freeware都能做的比當年這價格的軟體好得多，這世界變化真的很大啊。
+
+在當年這種環境下，微軟靠著迅速的反應，積極的態度以及謹慎小心的行事快速地在軟體業界崛起。但是我得說，他們強項可不是本身的發明跟創新，而是(把別人的idea)包裝，改進跟整合。他們當初有句耳熟能詳的口號「在同級中最佳」，哎，尖酸點的說的話，就是他們會做一個產品，也許用的還是市場上其他產品的idea，進入市場，把這產品包裝成市面上看起來最ok的，然後想辦法占有這個市場，這造成了一個奇怪的循環：微軟產品好不好用，是取決於市面上其他產品好不好用。
+
+Lotus的試算表「Lotus
+123」是個在80年代到90年早期的殺手級軟體，而界面概念都很類似的微軟的試算表Excel則是在1985年初登場，很快的就成為微軟Office套件裡面最受歡迎的軟體之一，而反倒是Office套件裡的文字處理軟體像是WordPerfect跟WordStar感覺就比較沒那麼好，這使得自家老本業的Word跟Excel比起來相形失色。有趣的是，在當時市場上並沒有任何看起來很棒的email軟體下，Office裡面的Exchange一直都是又慢又容易當機，這情況一直至少維持到了二十一世紀初。微軟總是耗盡心力去加強他們「有競爭對手」的軟體，其他的？放著爛吧。在90年代末期，我有幸參訪了在麻州的똊キ_公司Digital Equipment Corporation(就是DEC迪吉多，在往後被Compaq康柏買走了，不過這是後話），他們的文化跟微軟一整個大相徑庭。他們有許多的員工在開發Threading(執行緒，就是讓OS在CPU上同時執行數個程式)技術，他們在這領域已經開發了20年。一半的開發者都是在該領域的博士級專家。他們從來不會為了提早發行產品而對品質有所妥協。
+
+唉，我想這就是微軟的「成功」祕訣吧。
+
+微軟強項不在於發明創造，不過並不代表他們沒有這樣做。在Word裡面有個稱為Clippy的小元件，看起來像是個安全別針的玩意，偶爾會從右下角彈起來，這是個發明 **(譯註：我也不知道Clippy是啥，作者也只有講那麼多，我看不太出來是不是諷刺啊 XD)** 。Microsoft Bob是一隻戴著太陽眼鏡的黃狗，他在Windows
+95裡面你可能需要幫助的時候，會跳出來當作提示者，這也是個發明。Cairo是個「聲稱是自1990年以來最具革命性的作業系統」，好吧我所知不多，要不是這東西壓根從來沒有真正的釋出過，，也許我會說他是真的「創新」。不過整個公司的氛圍來說，他們比較希望進入一個市場，然後去成為該市場的top
+1，而不是去真正的「發明」出什麼東西來。在缺乏一個明確目標下，計劃永遠都是渾沌不明而且跌跌撞撞的。在1990年的這種大家都一心一意的在搞網際網路的情況下，沒人在真正的「創造」出什麼新的市場，那，微軟要去哪「搶奪」市場？這並不是說微軟或者其他人不知道「該開拓新的賺錢的市場」，而是微軟根本，完全的，沒有這種自己開創新市場的機制跟動力。他們只打算繼續在現有的市場搶奪更多，吃得更飽。
+
+(作者對這段的附註，往後再翻。簡單的說，他認為XBox算是一個對MS來講很少見，開拓新市場的嘗試)
+Of note is the single major product success of late Microsoft: the Xbox gaming console. While the Xbox has yet to turn more than a tiny overall profit since its introduction in 2001, it has established itself as a stalwart of the gaming world. This could occur for two reasons: first, unlike anything having to do with the internet, it was completely isolated from the Windows and Office empires, and so did not run afoul of those groups; and second, there were clear, existing, profitable models to
+copy—Nintendo’s and Sony’s—and Microsoft was willing to lose billions of dollars in re-creating that model. For the last time, they caught up to their competitors in short order and equaled them, at the cost of turning no profit themselves.
+
+時間繼續往下走到1999年，這時候的微軟正處於一種微妙的平衡，平衡于財務上的保守安全以及對未來的不確定性。靠著Windows跟Office這兩頭市場巨獸，微軟一直在家用以及商用市場保持著相當大的主導地位。當年美國跟微軟著名的反托拉斯法律戰在2000年前後來到了高峰，但是即使如此，這個實質上的「壟斷」仍然短期內看不到任何衰退的跡象。當年美國司法部試圖將微軟分切為兩個子公司，一個業務主要是Windows，一個業務主要是Office，但這其實也沒有任何幫助，更何況微軟上訴還推翻了這個裁決，微軟還試圖訴諸語論控訴美國司法部試圖「摧毀」一家公司。整
+個世間最後落幕，看起來像是個奇怪的政治性表演，我甚至懷疑這場鬧劇，除了讓軟體公司學到「要養一群律師跟國會說客」這件事情以外，對整個軟體工業有任何微乎其微的影響。
+
+不過，在這段法律明刀暗槍的你一刀我一槍的過程中，我倒是發現了個有趣的事情：在我來到公司以前，公司的最高層級其實就已經有分為鷹派跟鴿派，為了公司未來的發展在激烈的爭執。鴿派主張跟各個網際網路公司合作，比方說Netscape(這是個很早的瀏覽器公司啊)甚至AOL，跟他們技術上的合作來擴展自己的影響力。而鷹派則主張全面制霸，讓微軟想儘辦法成為市場上唯一的網際網路供應者。這問題的核心其實就是在於Windows，這可是史上最賺錢的軟體啊！但是真正理想中的網際網路大未來，是靠著Internet連接各個client，而不是侷限在Windows裡面 -
+一個沒有Windows的大世界，這說真的是個很困難的道路。「我可不想在後人的歷史上參上一筆，變成一個破壞史上最成功的專案的人」，一個前鷹派的微軟高階主管在爭論中這樣說道。結論是，鷹派贏了，鴿派出走，但是最後鷹派仍然是輸了這場戰役。
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 118.160.18.161
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Translate-CS/M.1398461158.A.34D.html" target="_blank" rel="nofollow">http://www.ptt.cc/bbs/Translate-CS/M.1398461158.A.34D.html</a>
+</span><span class="f2">※ 編輯: Killercat (118.160.18.161), 04/26/2014 05:27:09
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tiefblau</span><span class="f3 push-content">:我好喜歡這種非純技術帶點講故事的文章，尤其攻防戰xd</span><span class="push-ipdatetime"> 04/26 14:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tiefblau</span><span class="f3 push-content">:clippy除非你超年輕，不然一定碰過以前word那個小幫手阿</span><span class="push-ipdatetime"> 04/26 14:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tiefblau</span><span class="f3 push-content">:迴紋針型，除了看他跳舞沒有啥功能的鬼東西，還有海豚型</span><span class="push-ipdatetime"> 04/26 15:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PsMonkey</span><span class="f3 push-content">:迴紋針已經很後來了 [自爆]</span><span class="push-ipdatetime"> 04/26 15:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GoalBased</span><span class="f3 push-content">:排版有點怪怪的</span><span class="push-ipdatetime"> 04/27 00:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Killercat</span><span class="f3 push-content">:那是因為用硬貼上BBS的關係 會被255字元截斷</span><span class="push-ipdatetime"> 04/27 13:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tiefblau</span><span class="f3 push-content">:這個嘛... 小弟現在大學生 原來迴紋針還是很後來 =口=</span><span class="push-ipdatetime"> 04/27 19:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PsMonkey</span><span class="f3 push-content">:Office 97 是一隻小黃狗  XD （版主帶頭岔題 [逃]）</span><span class="push-ipdatetime"> 04/27 22:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KAOKAOKAO</span><span class="f3 push-content">:推office97是狗，不過也可以改啦</span><span class="push-ipdatetime"> 07/27 06:48
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Translate-CS/M.1398461158.A.34D.html?cacheKey=2085-741576278&amp;offset=18916&amp;offset-sig=03fbb2d171b241dcc3ceccd366649d36abab7a67" data-longpollurl="/v1/longpoll?id=f587601397b979d9a5246f7bbcd2cafb75f5ef2b" data-offset="18916"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
