@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>閱讀文章 - 看板 Programming - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="======
+    程式語言的 compiler/interprter 有時候被稱為 Language Virtual Machine,
+表示她能讓下層的硬體結合此語言的編譯/解譯功能之後, 讓使用者覺得是在使用一
+台 High Level Language Machine.
+    如同 Thompson 所舉的例子, 當這個 VM 的功能要擴充時, 通常就是&#34;多&#34;認識
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+
+<meta property="og:description" content="======
+    程式語言的 compiler/interprter 有時候被稱為 Language Virtual Machine,
+表示她能讓下層的硬體結合此語言的編譯/解譯功能之後, 讓使用者覺得是在使用一
+台 High Level Language Machine.
+    如同 Thompson 所舉的例子, 當這個 VM 的功能要擴充時, 通常就是&#34;多&#34;認識
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Programming/M.1173463264.A.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Programming/index.html"><span class="board-label">看板 </span>Programming</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Programming/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">發信人</span><span class="article-meta-value"><a href="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a1e0f191e0f18440808192a080819440919030f4404091f440f0e1f441e1d">[email&#160;protected]</a> (try or test),</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Programming</span></div><div class="article-metaline"><span class="article-meta-tag">標  題</span><span class="article-meta-value">Re: [轉錄]Re: [討論] Gmail收外部信…怎麼放心把密碼交出</span></div><div class="article-metaline"><span class="article-meta-tag">發信站</span><span class="article-meta-value">中央大學松濤風情資訊站 (Fri Mar  9 22:05:38 2007)</span></div><div class="article-metaline"><span class="article-meta-tag">轉信站</span><span class="article-meta-value">ptt!ctu-reader!ctu-gate!news.nctu!news.ncu!news.csie.ncu!Evergreen</span></div>
+<span class="f6">&gt; ==&gt;發信人: <a href="http://www.ptt.cc/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d098bfa79cb5b598b9feb2b2a390a0a4a4feb3b3">[email&#160;protected]</a> (想和妳去把把風), 信區: programming
+</span><span class="f6">&gt; 作者: davidyu (davidyu) 看板: Google
+</span><span class="f6">&gt; 果你對 compiler 的知識還算熟悉的話，應該知道 C 的 compiler 是可以用 C 來寫的
+</span><span class="f6">&gt; 這是一個雞生蛋，蛋生雞的問題，不過我們的確是用 C 來寫 C compiler。
+</span><span class="f6">&gt; Thompson 的 compiler 之所以特別，是他在其中偷偷藏了一個 bug。UNIX 有一個程式
+</span><span class="f6">&gt; 叫 login，它是負責核對使用者帳號和密碼的程式。Thompson 的 compiler 如果發現它
+</span><span class="f6">&gt; 在 compile 一個 UNIX 的 login 程式時，它會在比對密碼的時候，偷偷加入一筆萬用
+</span><span class="f6">&gt; 密碼。如此一來，用這個 compiler 產生出來的 UNIX，都會有這個「漏洞」在。你會說
+</span><span class="f6">&gt; 這個只要檢查 compiler 的程式碼就可以發現了。沒錯，所以 Thompson 的 compiler
+</span><span class="f6">&gt; 還有一個神奇的功能。這個 compiler 如果發現它在 compile 一個 compiler 的時候，
+</span><span class="f6">&gt; 它會把它本身的這個「神奇功能」放到 compiler 裡頭，所以用這個 compiler compile
+</span><span class="f6">&gt; 出來的 compiler (我知道這有點難懂 XD)也都會帶有這個神奇功能。之後，他再用
+</span><span class="f6">&gt; compiler 把本身自己 compile 一次後，就可以把神奇功能從程式碼裡面隱藏起來，只有
+</span><span class="f6">&gt; 從 binary 才看的出端倪。
+</span><span class="f6">&gt; 這會造成一個問題，就是你即使有原始碼，你也沒辦法確保你的程式是可以信任的。你
+</span><span class="f6">&gt; 要能夠確定你的程式是可靠的，唯一的辦法就是全部從頭來。如果你把這個問題過度延
+</span><span class="f6">&gt; 深，你就會發現你可能要從 CPU 的電晶體開始設計，才有辦法「保證」你的程式是完
+</span><span class="f6">&gt; 全符合你的意思在執行。
+</span><span class="f6">&gt; 所以，信任，不是見簡單的事。
+</span>======
+    程式語言的 compiler/interprter 有時候被稱為 Language Virtual Machine,
+表示她能讓下層的硬體結合此語言的編譯/解譯功能之後, 讓使用者覺得是在使用一
+台 High Level Language Machine.
+    如同 Thompson 所舉的例子, 當這個 VM 的功能要擴充時, 通常就是&#34;多&#34;認識
+一個敘述指令或 keyword 而且能做出對應的工作, 但比起舊的 HLVM 的能力, 這
+是多出來的, 所以舊的 HLVM 不認得這新增的指述. 如何讓這新增的指述與舊的一
+併結合還能讓舊的 HLVM 能鑑識運作也能編譯解譯出新的指述, 就需看如何讓原本
+不認識的指述在舊的 HLVM 如何被識別出來, 然後又能使之跑到一個新定的對應動
+作那裡去處理.
+    Thompson 舉的例子是需額外做動作處理的 Escape character, 假設新指令就
+是 \VT , 但用 11 矇過 copiler , 使之跳到某絕對地址(11)去執行, 在那個絕對
+地址就偷偷的塞進一段 patch 或 後門. 這個特異功能的後門結合舊的 HLVM 功能
+就能合成一個新的有特異功能的 HLVM .
+    C compiler 結合硬體形成的這個 HLVM 可以認得 C 語言程式做對應動作, 所
+以用 C 寫出來的 C-compiler program 就可以請這個 C HLVM 去做對應動作做出
+要求的功能來.
+   只是, 若用這個含額外特異功能的 C HLVM 照樣也能造出原有的 C-compiler ,
+這個特例是這個特異功能的新 C HLVM 還加了一個功能, 可進一步地也把新增的特
+異功能也掛進這個舊的 C-compiler 裡, 這就使得舊的 C-compiler 也被加注了此
+項特異功能.
+   加掛的時候讓使用者不知不覺就是病毒或後門的做法, 若大張旗鼓讓使用者同意
+新增功能就是 download update 行為.
+   AMD 對其新的 processor 的架構與 micro-code 改進了 Virtual Machine 的功
+能, 可以設定那種情況要 escape/trap 再由下層看不見的 VM monitor (這就是
+Thompson 說的加掛的, 隱藏的特異功能)來做解譯動作. 有人也同樣的認為如果這
+個 VM mornitor 就是個後門, 那還真的比那個有 source program 的 C compiler
+還不容易察覺.
+   在舊有的功能機器上加掛特異功能形成新的功能機器, 其原則一直都沒變, 就
+是先矇混加掛或插入, 再對特定訊息能攔截轉向到特異功能模組, 隨後就是能銜
+接或持續複製擴散. 這個模式就是生物基因與病毒的行徑.
+
+   這是概念也是一種技術, 做硬體的是習而不察, 做界面硬體與 driver 的, 或
+是對現有程式加掛額外功能的, 則是老招 &#34;加掛-攔截-轉向&#34;.
+   至於特異功能是後門還是會偷密碼, 信用卡號, 還是一個很好用的新增功能, 
+那就完全是 &#34;存乎一心的 trust 與 credit &#34;.
+
+--
+<span class="f4 hl"> ◎ Origin: 中央松濤站□bbs.csie.ncu.edu.tw  From: 140.115.6.234</span>
+</div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Programming/M.1173463264.A.html?cacheKey=2148-805430015&amp;offset=3702&amp;offset-sig=fe809b55c1a993bccbf70b3dddca86d487b191f9" data-longpollurl="/v1/longpoll?id=b909cbf9b4b9163f43154dabca40f52b848369a7" data-offset="3702"></div>
+    
+
+    
+</div>
+
+		
+
+<script data-cfasync="false" src="http://www.ptt.cc/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

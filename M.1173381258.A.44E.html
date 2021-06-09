@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[轉錄]Re: [討論] Gmail收外部信…怎麼放心把密碼交出去呢? - 看板 Programming - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="作者: davidyu (davidyu) 看板: Google
+標題: Re: [討論] Gmail收外部信…怎麼放心把密碼交出去呢?
+時間: Sat Feb 24 12:19:19 2007
+講到 trust, 就不得不提一下這個很有名的故事：
+故事的主角是 Ken Thompson，他是 Turing Award 得主，也是發明 C 語言和 UNIX 的
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[轉錄]Re: [討論] Gmail收外部信…怎麼放心把密碼交出去呢?">
+<meta property="og:description" content="作者: davidyu (davidyu) 看板: Google
+標題: Re: [討論] Gmail收外部信…怎麼放心把密碼交出去呢?
+時間: Sat Feb 24 12:19:19 2007
+講到 trust, 就不得不提一下這個很有名的故事：
+故事的主角是 Ken Thompson，他是 Turing Award 得主，也是發明 C 語言和 UNIX 的
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Programming/M.1173381258.A.44E.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Programming/index.html"><span class="board-label">看板 </span>Programming</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Programming/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">HowLeeHi (想和妳去把把風)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Programming</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[轉錄]Re: [討論] Gmail收外部信…怎麼放心把密碼交出去呢?</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Mar  9 03:14:17 2007</span></div>
+<span class="f2">※ [本文轉錄自 Google 看板]
+</span>
+作者: davidyu (davidyu) 看板: Google
+標題: Re: [討論] Gmail收外部信…怎麼放心把密碼交出去呢?
+時間: Sat Feb 24 12:19:19 2007
+
+講到 trust, 就不得不提一下這個很有名的故事：
+
+故事的主角是 Ken Thompson，他是 Turing Award 得主，也是發明 C 語言和 UNIX 的
+關鍵人物，目前在 Google 工作(這樣就和這個板有關了 ;-)。
+
+這個故事是這樣的。Thompson 寫過一個很有趣的程式，是一個特別的 C compiler。如
+果你對 compiler 的知識還算熟悉的話，應該知道 C 的 compiler 是可以用 C 來寫的
+這是一個雞生蛋，蛋生雞的問題，不過我們的確是用 C 來寫 C compiler。
+
+Thompson 的 compiler 之所以特別，是他在其中偷偷藏了一個 bug。UNIX 有一個程式
+叫 login，它是負責核對使用者帳號和密碼的程式。Thompson 的 compiler 如果發現它
+在 compile 一個 UNIX 的 login 程式時，它會在比對密碼的時候，偷偷加入一筆萬用
+密碼。如此一來，用這個 compiler 產生出來的 UNIX，都會有這個「漏洞」在。你會說
+這個只要檢查 compiler 的程式碼就可以發現了。沒錯，所以 Thompson 的 compiler
+還有一個神奇的功能。這個 compiler 如果發現它在 compile 一個 compiler 的時候，
+它會把它本身的這個「神奇功能」放到 compiler 裡頭，所以用這個 compiler compile
+出來的 compiler (我知道這有點難懂 XD)也都會帶有這個神奇功能。之後，他再用
+compiler 把本身自己 compile 一次後，就可以把神奇功能從程式碼裡面隱藏起來，只有
+從 binary 才看的出端倪。
+
+這會造成一個問題，就是你即使有原始碼，你也沒辦法確保你的程式是可以信任的。你
+要能夠確定你的程式是可靠的，唯一的辦法就是全部從頭來。如果你把這個問題過度延
+深，你就會發現你可能要從 CPU 的電晶體開始設計，才有辦法「保證」你的程式是完
+全符合你的意思在執行。
+
+所以，信任，不是見簡單的事。
+
+喔.....我還想補一句「電腦是很危險的，你還是回去用算盤吧」...XD
+
+p.s. 詳細的故事可以在這邊找到 <a href="https://www.acm.org/classics/sep95/" target="_blank" rel="nofollow">http://www.acm.org/classics/sep95/</a>
+
+<span class="f2">※ 引述《davidyu (davidyu)》之銘言：
+</span><span class="f6">: 呃...那你怎麼敢用電腦？
+</span><span class="f6">: 從你打密碼開始，你的密碼就經過了鍵盤，主機板，CPU，網路卡，作業系統，ISP，
+</span><span class="f6">: Router，等等等......你全部每一層都信任嗎？(幫助中國建立GFW的)Cisco能信任嗎？
+</span><span class="f6">: 邪惡大本營的M$能信任嗎？這裡面隨便有一層要偷竊你的密碼都是易如反掌。
+</span><span class="f6">: 我敢用，是因為我沒什麼重要的資料放在電腦上，是因為我信任這些公司。同理，你也
+</span><span class="f6">: 可以想想看為什麼你敢用電腦。
+</span><span class="f6">: ※ 引述《Aligu1009 (=.=)》之銘言：
+</span><span class="f6">: : 能利用Gmail收外部信
+</span><span class="f6">: : 再透過Gmail強大的擋垃圾信機制擋掉惱人的垃圾信當然很棒
+</span><span class="f6">: : 但是，為什麼各位敢把其他信箱的密碼告訴google呢?
+</span><span class="f6">: : 小弟我就是因為不想把其他的帳號密碼告訴google
+</span><span class="f6">: : 而遲遲不敢使用fetch mail功能的人啊....
+</span>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc)
+</span>◆ From: 24.6.168.117
+<span class="f2">※ 編輯: davidyu         來自: 24.6.168.117         (02/24 12:23)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OldSu</span><span class="f3 push-content">:說故事的邏輯好強 XD</span><span class="push-ipdatetime"> 02/24 12:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jealous0953</span><span class="f3 push-content">:我眼花了= =&#34;&#34;&#34;</span><span class="push-ipdatetime"> 02/24 12:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nevertheless</span><span class="f3 push-content">:好一個「用這個 compiler compile出來的compiler」XD</span><span class="push-ipdatetime"> 02/24 12:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">earow</span><span class="f3 push-content">:酷...</span><span class="push-ipdatetime"> 02/24 13:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JohnRoyer</span><span class="f3 push-content">:「還是回去用算盤吧」  XD</span><span class="push-ipdatetime"> 02/24 13:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Killertcell</span><span class="f3 push-content">:好棒的文章</span><span class="push-ipdatetime"> 02/24 17:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dotZu</span><span class="f3 push-content">:大推</span><span class="push-ipdatetime"> 02/24 18:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eggimage</span><span class="f3 push-content">:XD 推</span><span class="push-ipdatetime"> 02/24 18:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PsMonkey</span><span class="f3 push-content">:有神奇到 \囧/</span><span class="push-ipdatetime"> 02/24 23:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CrBoy</span><span class="f3 push-content">:這讓我想到很多人分不清 compile 跟 compiler 的差別...</span><span class="push-ipdatetime"> 02/24 23:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">maxisam</span><span class="f3 push-content">:這真是太有趣了 XD</span><span class="push-ipdatetime"> 02/25 07:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">osalivon</span><span class="f3 push-content">:好故事 :)</span><span class="push-ipdatetime"> 02/25 10:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Tsoul</span><span class="f3 push-content">:    「還是回去用算盤吧」</span><span class="push-ipdatetime"> 02/25 11:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">flylover</span><span class="f3 push-content">:有神奇到 XDDDDD</span><span class="push-ipdatetime"> 02/25 13:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hcbarry</span><span class="f3 push-content">:推推推</span><span class="push-ipdatetime"> 02/26 10:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">leo80042</span><span class="f3 push-content">:XDDD</span><span class="push-ipdatetime"> 02/28 13:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">csdcbiz</span><span class="f3 push-content">:難得看到有人把著個故事講的這麼清楚xd</span><span class="push-ipdatetime"> 02/28 22:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SophiaCat</span><span class="f3 push-content">:推 敘事的功力很強</span><span class="push-ipdatetime"> 03/01 20:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jark41</span><span class="f3 push-content">:電腦是很危險的</span><span class="push-ipdatetime"> 03/05 11:53
+</span></div>
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc) 
+</span>◆ From: 59.121.211.138
+</div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Programming/M.1173381258.A.44E.html?cacheKey=2148-805425693&amp;offset=4621&amp;offset-sig=ceb2d6e4fa857ad971426471120bab06c816134a" data-longpollurl="/v1/longpoll?id=7dfe90547d00eebf527d90af3605fa1bd5bb156f" data-offset="4621"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
