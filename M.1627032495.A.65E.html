@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[心得] Leetcode 刷題解答與 Python 3 小技巧分享 - 看板 Soft_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="嗨，大家週末愉快！
+不知道還記不記得之前小弟有分享面試 Google TW SWE 的心得，
+最後有提到小弟當初有發願，如果順利進去要把過去寫過題目留存的解答整理分享出來，
+最近終於施工完了，提供給有需要的人可以自由取用。
+這份解答內涵蓋了 781 題的 Python 3 解法（太早期刷的題目就沒留解法了 QQ），
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[心得] Leetcode 刷題解答與 Python 3 小技巧分享">
+<meta property="og:description" content="嗨，大家週末愉快！
+不知道還記不記得之前小弟有分享面試 Google TW SWE 的心得，
+最後有提到小弟當初有發願，如果順利進去要把過去寫過題目留存的解答整理分享出來，
+最近終於施工完了，提供給有需要的人可以自由取用。
+這份解答內涵蓋了 781 題的 Python 3 解法（太早期刷的題目就沒留解法了 QQ），
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Soft_Job/M.1627032495.A.65E.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Soft_Job/index.html"><span class="board-label">看板 </span>Soft_Job</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Soft_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">wheels ()</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Soft_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[心得] Leetcode 刷題解答與 Python 3 小技巧分享</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Jul 23 17:28:13 2021</span></div>
+嗨，大家週末愉快！
+
+
+不知道還記不記得之前小弟有分享面試 Google TW SWE 的心得，
+
+最後有提到小弟當初有發願，如果順利進去要把過去寫過題目留存的解答整理分享出來，
+
+最近終於施工完了，提供給有需要的人可以自由取用。
+
+
+這份解答內涵蓋了 781 題的 Python 3 解法（太早期刷的題目就沒留解法了 QQ），
+
+寫這些解答的目的是為了還願並且回饋給還在努力的板友，
+
+唯一的使用限制就是請不要拿來作商業用途，讓知識無償分享出去，感謝大家。
+
+<a href="https://www.notion.so/lenchen/LeetCode-47d625b874894484af7c055b024b9817" target="_blank" rel="nofollow">https://www.notion.so/lenchen/LeetCode-47d625b874894484af7c055b024b9817</a>
+
+
+
+內容主要分成四大類，
+
+
+1. 資料結構
+
+主題涵蓋常用於 Leetcode 內解題的資料結構，
+
+較常見的：Array/String, Matrix, Linked List, HashSet/Map, Stack, Queue, Heap
+
+較高階的：DSU, Trie, BIT
+
+還有偶爾會用到 Deque 跟 sortedcontainers，但數量比較少就沒特別分類。
+
+
+2. 演算法
+
+這邊其實是我自己的歸類，不一定只有這些 XD
+
+內容涵蓋有：
+
+greedy, multiple pointers, sliding window, sort, DFS/BFS, backtracking,
+
+sweep line, rolling sum, binary search, dynamic programming, minimax
+
+
+有趣的是這邊沒列 divide and conquer 這個經典分類，
+
+因為好像幾乎沒遇到過哪題是只能使用 divide and conquer 解的，
+
+所以就沒有讓它自成一個分類了。
+
+但若有題目也可以用 divide and conquer 解的話，
+
+我也有寫下來，所以還是可以再自行了解下。
+
+
+3. 圖
+
+圖相關的問題因為太經典所以自成一個主題，
+
+整理了我所遇到的常見圖論演算法，還有 topological sort 的兩種方式，
+
+最重要的是 tree 相關的分類也包含在這一部分內。
+
+
+4. 其他
+
+數學、隨機、位元操作相關的題目都會在這裡。
+
+
+大致上就分這四個部分，每個解答底下都有一行字總結這題的解題概念，
+
+因為跨越了兩年半所以 coding style 可能也有些不一樣，
+
+但保證其中 99% 的內容都是我親手一個個字元打出來的，
+
+希望能幫助到有需要的人 :)
+
+
+
+另外順便再分享一些我覺得使用 Python 3 刷題時可以用的一些小技巧，
+
+可以讓你的 code 變得更精簡，大家可以看看然後挑自己喜歡的來使用：
+
+
+1. 用 next 搭配 generator comprehension 來獲取第一個滿足條件的元素，
+
+像是 next(ele for ele in arr if ele &gt; 0)，就可以拿到 arr 中的第一個正數。
+
+
+2. 解對稱性題目時，可以把引數調換 call 一次，減少重複的 code，像是：
+
+def foo(a, b):
+    if a &gt; b: return foo(b, a)
+    ...
+
+就可以讓你接下來維持在 a &lt;= b 的前提下繼續寫 code，或者直接 swap 引數也可以：
+
+def foo(a, b):
+    if a &gt; b: a, b = b, a
+    ...
+
+
+3. python dict 可以使用 tuple 作 multikey，像是 d[k1, k2, k3]，
+
+如此一來就不用巢狀 dict 了（d[k1][k2][k3]）
+
+
+4. 可以使用 unpacking 來抽取出需要的參數，像是：
+
+A = [1, 2, 3, 4, 5]
+
+foo, *B, bar = A
+
+可以得到 foo == 1, B == [2, 3, 4], bar == 5
+
+另外還可以用巢狀 unpacking，
+
+像是 for i, (a, b) in enumerate(pairs): 就超級常用。
+
+
+5. Python 3.8 跟 3.9 有多了一些不錯的東西，
+
+像是 3.8 的 assignment expression(:=) 跟 3.9 的 dict shallow merge(|)
+
+都有機會可以讓 code 更精簡。
+
+
+6. 有些 matrix 或是 grid 的題目，兩個 dimension 長度有可能為 0，
+
+可以用 if not any(matrix): return xxx 來處理（感謝 Stefan Pochmann）
+
+
+7. in 也會消費 iterator，
+
+所以如果想知道某個 str s2 是不是另一個 str s1 的 subsequence 可以這麼做，
+
+I = iter(s1)
+return all(c in I for c in s2)
+
+（再次感謝 Stefan Pochmann）
+
+
+8. 想要測兩個數是不是同正負可以用 (a &gt; 0) is (b &gt; 0)，記得事先檢查 0
+
+板友提供 (credit to @pig2014)： a ^ b &gt; 0 更好
+
+
+9. 想要攤平巢狀 list 可以用 sum(L, []) &lt;- 不建議！途中 list 會一直重新 alloc
+
+(credit to @coquelicot)
+
+參考 stack overflow：<a href="https://bit.ly/3rz8UqH" target="_blank" rel="nofollow">https://bit.ly/3rz8UqH</a>
+
+建議的替代：
+
+9.1. list comprehension: A = [ele for sub in arr for ele in sub]
+
+9.2. itertools: A = list(itertools.chain.from_iterable(arr))
+
+9.3. reduce: A = functools.reduce(operator.iconcat, arr, [])
+
+
+10. 某些要提供 factory function 的地方，可以遞迴給自己，像是：
+
+trie = lambda: collections.defaultdict(trie)
+
+
+11. itemgetter 在某些需要 key 的 builtin function 很好用，像是：
+
+sorted(A, key=itemgetter(1))，等同於寫 key=lambda x: x[1]
+
+
+12. 因為 Python list 提供 negative indexing，
+
+在某些情況可以用 ~i 來獲得對應於 i 的反向 indexing，像是：
+
+for i in range(len(A)):
+    A[i] += xxx  # A[0],  A[1],  A[2] , ...
+    A[~i] += ooo # A[-1], A[-2], A[-3], ...
+
+
+大概就是這些東西了吧，這些技巧有些人喜歡有些人不喜歡，
+
+我覺得沒有對錯啦，就挑自己覺得不錯的用吧 XD
+
+happy coding！
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 118.161.76.160 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Soft_Job/M.1627032495.A.65E.html" target="_blank" rel="nofollow">https://www.ptt.cc/bbs/Soft_Job/M.1627032495.A.65E.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yupog2003</span><span class="f3 push-content">: 還沒看內容，先大推，感謝</span><span class="push-ipdatetime"> 07/23 17:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">EngineerChen</span><span class="f3 push-content">: 推神人</span><span class="push-ipdatetime"> 07/23 17:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Csir</span><span class="f3 push-content">: 神QQ</span><span class="push-ipdatetime"> 07/23 17:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiki86151</span><span class="f3 push-content">: 推 python很多技巧真的很好用</span><span class="push-ipdatetime"> 07/23 17:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mathbookh2o2</span><span class="f3 push-content">: 感覺實用</span><span class="push-ipdatetime"> 07/23 17:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Lyumin</span><span class="f3 push-content">: 推爆</span><span class="push-ipdatetime"> 07/23 17:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hanamini</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jamfly</span><span class="f3 push-content">: 大推</span><span class="push-ipdatetime"> 07/23 18:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KingSteven</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">longint</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kyrie77</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MoonCode</span><span class="f3 push-content">:</span><span class="push-ipdatetime"> 07/23 18:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cossetannie</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sph113</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">parsons12342</span><span class="f3 push-content">: 推好心</span><span class="push-ipdatetime"> 07/23 18:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">k798976869</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 18:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chatnoir</span><span class="f3 push-content">: 大推</span><span class="push-ipdatetime"> 07/23 18:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">UnReal5566</span><span class="f3 push-content">: 有神</span><span class="push-ipdatetime"> 07/23 19:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eggy1018</span><span class="f3 push-content">: 真的是有刷的很深的才知道的python3小技巧！ 推一本effe</span><span class="push-ipdatetime"> 07/23 19:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eggy1018</span><span class="f3 push-content">: ctive python 90 method</span><span class="push-ipdatetime"> 07/23 19:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CKNTUErnie</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 19:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Findagreen</span><span class="f3 push-content">: 太佛了 在這邊祝福原po上廁所都有衛生紙</span><span class="push-ipdatetime"> 07/23 19:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">luweber88</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 19:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">oopssugar</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/23 19:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">duck10704</span><span class="f3 push-content">: 推  神人</span><span class="push-ipdatetime"> 07/23 19:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TAMSHUI</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 07/23 19:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ZuiYang</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 19:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">HMW</span><span class="f3 push-content">: push</span><span class="push-ipdatetime"> 07/23 19:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">gaowei16</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 19:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kagami3421</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 19:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alpe</span><span class="f3 push-content">: 大推</span><span class="push-ipdatetime"> 07/23 19:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">phys</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 20:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WaterLengend</span><span class="f3 push-content">: 只能推了</span><span class="push-ipdatetime"> 07/23 20:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rumrumrum</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/23 20:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kangan987</span><span class="f3 push-content">: 太強了！推</span><span class="push-ipdatetime"> 07/23 20:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">unmolk</span><span class="f3 push-content">: 推….</span><span class="push-ipdatetime"> 07/23 20:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ttsung2</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 20:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">underwater</span><span class="f3 push-content">: 雖然不是用python,還是大推</span><span class="push-ipdatetime"> 07/23 20:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">littleshin</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 20:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">onthesea</span><span class="f3 push-content">: 太神了</span><span class="push-ipdatetime"> 07/23 20:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">knme</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 20:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bowin</span><span class="f3 push-content">: 推分享</span><span class="push-ipdatetime"> 07/23 20:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">itis0423</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 20:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lingege32</span><span class="f3 push-content">: 推大神</span><span class="push-ipdatetime"> 07/23 20:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jinmin88</span><span class="f3 push-content">: 太猛啦</span><span class="push-ipdatetime"> 07/23 20:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">llltt123</span><span class="f3 push-content">: 推 感謝大神</span><span class="push-ipdatetime"> 07/23 20:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OSDBNetwork</span><span class="f3 push-content">: 推 大神</span><span class="push-ipdatetime"> 07/23 21:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">leewei05</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/23 21:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ericx790101</span><span class="f3 push-content">: 推！感謝無私分享！</span><span class="push-ipdatetime"> 07/23 21:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tnfshjcc</span><span class="f3 push-content">: 推推 實用Python技巧</span><span class="push-ipdatetime"> 07/23 21:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">EntHeEnd</span><span class="f3 push-content">: 讚喔</span><span class="push-ipdatetime"> 07/23 21:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">caeserhaha</span><span class="f3 push-content">: 推爆</span><span class="push-ipdatetime"> 07/23 21:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nicehorse06</span><span class="f3 push-content">: 大神推</span><span class="push-ipdatetime"> 07/23 21:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tw11509</span><span class="f3 push-content">: 推，太神啦</span><span class="push-ipdatetime"> 07/23 22:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aassdd926</span><span class="f3 push-content">: 看完覺得我不會寫Python…</span><span class="push-ipdatetime"> 07/23 22:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DCTmaybe</span><span class="f3 push-content">: 也太神了吧</span><span class="push-ipdatetime"> 07/23 22:17
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">devilkool</span><span class="f3 push-content">: 厲害</span><span class="push-ipdatetime"> 07/23 22:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bjocke831010</span><span class="f3 push-content">: 感謝大神～</span><span class="push-ipdatetime"> 07/23 23:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Luke3723</span><span class="f3 push-content">: 太神了 推！！</span><span class="push-ipdatetime"> 07/23 23:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yesgowow</span><span class="f3 push-content">: 推 謝謝分享</span><span class="push-ipdatetime"> 07/23 23:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tommytyc</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 00:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">birdman</span><span class="f3 push-content">: 推分享</span><span class="push-ipdatetime"> 07/24 01:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ss8651twtw</span><span class="f3 push-content">: 學到了好多技巧 推推</span><span class="push-ipdatetime"> 07/24 01:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">juju123</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/24 01:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yoshonabee</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 01:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cacadeon</span><span class="f3 push-content">: 感謝詳細分享</span><span class="push-ipdatetime"> 07/24 01:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">f8210440</span><span class="f3 push-content">: 感謝 分享</span><span class="push-ipdatetime"> 07/24 01:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">charle0911</span><span class="f3 push-content">: 娘子出來看善心的耶穌</span><span class="push-ipdatetime"> 07/24 02:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vincent0965</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 02:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s1020824</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 02:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cococing</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/24 02:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">la197352</span><span class="f3 push-content">: 謝謝分享</span><span class="push-ipdatetime"> 07/24 03:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mirror0227</span><span class="f3 push-content">: 有些技巧讓可讀性降低了 寧願不用</span><span class="push-ipdatetime"> 07/24 03:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mirror0227</span><span class="f3 push-content">: Code寫得快沒錯 但好讀重要很多吧</span><span class="push-ipdatetime"> 07/24 03:17
+</span></div>
+同意，所以我文中有說有些人喜歡有些人不喜歡，選自己喜歡的用就好，
+
+像是我個人比較偏好用 dict.setdefault 建 trie 而不是用 defauldict，
+
+但這些技巧的背後都代表著一些語言特性，了解一下並不吃虧。
+
+而且說句實在話，限制短時間的面試 跟 長期維護的產品，出發點並不能一概而論。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dog661121</span><span class="f3 push-content">: 推爆</span><span class="push-ipdatetime"> 07/24 03:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jack529</span><span class="f3 push-content">: 讚</span><span class="push-ipdatetime"> 07/24 03:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">arunaway</span><span class="f3 push-content">: 謝謝分享</span><span class="push-ipdatetime"> 07/24 04:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hydradevil</span><span class="f3 push-content">: 推佛心</span><span class="push-ipdatetime"> 07/24 06:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">davidpanda</span><span class="f3 push-content">: 下面的小技巧要慎用, 主要是你需要解釋給面試官聽</span><span class="push-ipdatetime"> 07/24 07:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">davidpanda</span><span class="f3 push-content">: 不是寫得快就好</span><span class="push-ipdatetime"> 07/24 07:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">davidpanda</span><span class="f3 push-content">: leetcode的題目其實討論區都有很好的答案</span><span class="push-ipdatetime"> 07/24 07:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">davidpanda</span><span class="f3 push-content">: 想不出來的時候其實不妨看看討論區</span><span class="push-ipdatetime"> 07/24 07:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">davidpanda</span><span class="f3 push-content">: 最後就是要融會貫通, 如果自己當過面試官就知道</span><span class="push-ipdatetime"> 07/24 07:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">davidpanda</span><span class="f3 push-content">: 其實很容易可以看出來面試者是真的懂還是背答案</span><span class="push-ipdatetime"> 07/24 07:15
+</span></div>
+沒錯，絕對不要背答案，一個變化就倒了，該學習的是每題背後用到的觀念。
+
+然後這份的解法就是揉合了討論區跟解答寫出來的 XD
+
+因為發現有時候 leetcode 解答反而不是最佳解，
+
+像是 Morris traversal 就只有少數幾篇解答有提到，但超多題目其實都可以用。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">papaya0807</span><span class="f3 push-content">: 推好神</span><span class="push-ipdatetime"> 07/24 08:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiillen</span><span class="f3 push-content">: 太佛拉</span><span class="push-ipdatetime"> 07/24 09:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">j6004j6</span><span class="f3 push-content">: 推起來~ 太佛了</span><span class="push-ipdatetime"> 07/24 09:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mike8469</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 09:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jimjim951357</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 09:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">HelloPTT</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 10:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">julian9925</span><span class="f3 push-content">: 好佛，謝謝大大分享</span><span class="push-ipdatetime"> 07/24 11:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Rayishere</span><span class="f3 push-content">: 大推~~~ 感謝大大的無私分享</span><span class="push-ipdatetime"> 07/24 11:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">swinds24</span><span class="f3 push-content">: 推分享！</span><span class="push-ipdatetime"> 07/24 11:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">elseif</span><span class="f3 push-content">: 感謝分享! 來拜讀!</span><span class="push-ipdatetime"> 07/24 12:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">FireKingStar</span><span class="f3 push-content">: 謝謝大大的分享，我會仔細的研讀它。</span><span class="push-ipdatetime"> 07/24 12:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">loveu8</span><span class="f3 push-content">: 推分享~</span><span class="push-ipdatetime"> 07/24 12:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">angellee0102</span><span class="f3 push-content">: 感謝分享！</span><span class="push-ipdatetime"> 07/24 12:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sarsman</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 12:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">windmax1</span><span class="f3 push-content">: 天啊 大神太偉大了</span><span class="push-ipdatetime"> 07/24 13:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tinwen</span><span class="f3 push-content">: 推~</span><span class="push-ipdatetime"> 07/24 15:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ID3238</span><span class="f3 push-content">: 謝謝分享 這對求職面試幫助很大</span><span class="push-ipdatetime"> 07/24 15:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stu51211</span><span class="f3 push-content">: 謝謝！</span><span class="push-ipdatetime"> 07/24 15:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Raymond0710</span><span class="f3 push-content">: 感謝無私分享</span><span class="push-ipdatetime"> 07/24 15:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hortune</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 07/24 15:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nba887215</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 15:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">AgileSeptor</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 15:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snowm</span><span class="f3 push-content">: 謝謝分享！</span><span class="push-ipdatetime"> 07/24 15:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">euleramon</span><span class="f3 push-content">: 想請問一下大大是不是有做過 AI相關的領域？</span><span class="push-ipdatetime"> 07/24 16:37
+</span></div>
+沒有耶，在學期間是有修過幾門 AI/ML 相關的課程，
+
+出社會後主要是在做 web/app 的開發。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">deforest111</span><span class="f3 push-content">: 推強者</span><span class="push-ipdatetime"> 07/24 16:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gaogaigar</span><span class="f3 push-content">: 推佛心 可惜我躺平了才看到</span><span class="push-ipdatetime"> 07/24 17:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">blackdiz</span><span class="f3 push-content">: 感謝分享，好人一生平安</span><span class="push-ipdatetime"> 07/24 17:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cuh0309</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 17:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andy9595995</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 18:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vvind</span><span class="f3 push-content">: 太棒了</span><span class="push-ipdatetime"> 07/24 18:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">freedls</span><span class="f3 push-content">: 這個必推</span><span class="push-ipdatetime"> 07/24 19:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sky80420</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/24 19:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jasonwung</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/24 19:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">playboy007gy</span><span class="f3 push-content">: 好人一生平安</span><span class="push-ipdatetime"> 07/24 19:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tigerya</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 07/24 21:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qq9966pp</span><span class="f3 push-content">: 必須推</span><span class="push-ipdatetime"> 07/24 22:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nofeel0</span><span class="f3 push-content">: 推，感恩大大</span><span class="push-ipdatetime"> 07/24 22:30
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cotbel</span><span class="f3 push-content">: 是notion，整理得好乾淨! 推推</span><span class="push-ipdatetime"> 07/24 22:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DLHZ</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/24 23:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hongwl030</span><span class="f3 push-content">: 推 有實力又好心</span><span class="push-ipdatetime"> 07/24 23:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kevinfilter</span><span class="f3 push-content">: 大推 感謝分享</span><span class="push-ipdatetime"> 07/24 23:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a24626296</span><span class="f3 push-content">: 感恩，讚歎</span><span class="push-ipdatetime"> 07/24 23:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shieldsky</span><span class="f3 push-content">: 真的好厲害！感謝分享！技巧很實用！</span><span class="push-ipdatetime"> 07/25 00:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ob9618</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 00:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">f821027</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 01:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KindWei</span><span class="f3 push-content">: 推 python技巧</span><span class="push-ipdatetime"> 07/25 01:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">amiwry</span><span class="f3 push-content">: 感謝分享</span><span class="push-ipdatetime"> 07/25 03:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PonyTail0901</span><span class="f3 push-content">: 太強大了 希望我也能早日上岸</span><span class="push-ipdatetime"> 07/25 04:05
+</span></div><span class="f2">※ 編輯: wheels (118.161.76.160 臺灣), 07/25/2021 04:15:03
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bcjohn</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 08:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">apple20132</span><span class="f3 push-content">: 推 感謝</span><span class="push-ipdatetime"> 07/25 09:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">summerleaves</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/25 09:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">somoo</span><span class="f3 push-content">: 推神人 感謝無私分享</span><span class="push-ipdatetime"> 07/25 09:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cypress5048</span><span class="f3 push-content">: 大推！！</span><span class="push-ipdatetime"> 07/25 10:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">blueVC</span><span class="f3 push-content">: 感謝分享！</span><span class="push-ipdatetime"> 07/25 11:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">darkch</span><span class="f3 push-content">: 這一定要推</span><span class="push-ipdatetime"> 07/25 11:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kuochuwon</span><span class="f3 push-content">: 收藏一下，推</span><span class="push-ipdatetime"> 07/25 11:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lofu</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 14:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gn02335338</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 15:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">followmeyo</span><span class="f3 push-content">: 高手</span><span class="push-ipdatetime"> 07/25 16:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rotalume</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 07/25 17:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ukuk666888</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 17:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JocMon</span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime"> 07/25 18:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 9的話分享個小東西 在整理資料的時候常常用到的</span><span class="push-ipdatetime"> 07/25 19:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 主要是好幾種攤平的方法 其實速度上會有差異</span><span class="push-ipdatetime"> 07/25 19:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 之前因為有需求有寫過一些比較</span><span class="push-ipdatetime"> 07/25 19:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: reduce跟map印象中到了一定的scale後速度頗慢 所以直</span><span class="push-ipdatetime"> 07/25 19:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 接棄用 numpy的話如果能指定型別 速度會快上更多</span><span class="push-ipdatetime"> 07/25 19:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 不過如果都是python的list的話 就要看了 通常會慢都</span><span class="push-ipdatetime"> 07/25 20:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 是混用的鍋</span><span class="push-ipdatetime"> 07/25 20:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 像是有時候知道pure python跑比較快的寫法 但拿回來</span><span class="push-ipdatetime"> 07/25 20:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: 的是巢狀numpy array 光轉成list成本就很大了</span><span class="push-ipdatetime"> 07/25 20:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">world4jason</span><span class="f3 push-content">: py真坑XD</span><span class="push-ipdatetime"> 07/25 20:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">answermangtr</span><span class="f3 push-content">: 超級巧 剛剛看完您的面試心得就發現您發新文章</span><span class="push-ipdatetime"> 07/25 20:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ekmund</span><span class="f3 push-content">: 用心分享給推</span><span class="push-ipdatetime"> 07/25 20:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snow10725</span><span class="f3 push-content">: 圍觀感謝</span><span class="push-ipdatetime"> 07/25 20:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xoy232</span><span class="f3 push-content">: 推大神</span><span class="push-ipdatetime"> 07/25 21:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">elvis17</span><span class="f3 push-content">: 推 感謝大神分享～</span><span class="push-ipdatetime"> 07/25 22:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ouranos</span><span class="f3 push-content">: 大推，謝謝分享！</span><span class="push-ipdatetime"> 07/25 22:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smily134</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/25 23:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tsubasaxxx</span><span class="f3 push-content">: 收藏推 謝謝</span><span class="push-ipdatetime"> 07/25 23:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">koichip</span><span class="f3 push-content">: 推，謝謝大神分享</span><span class="push-ipdatetime"> 07/26 00:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hongyan</span><span class="f3 push-content">: 推 謝謝大什!!!</span><span class="push-ipdatetime"> 07/26 00:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hongyan</span><span class="f3 push-content">:      神</span><span class="push-ipdatetime"> 07/26 00:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dannymc</span><span class="f3 push-content">: 推推，感謝分享</span><span class="push-ipdatetime"> 07/26 00:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">whatabiggun</span><span class="f3 push-content">: 感謝</span><span class="push-ipdatetime"> 07/26 00:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">airforceso</span><span class="f3 push-content">: 感恩推推推</span><span class="push-ipdatetime"> 07/26 02:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ufap</span><span class="f3 push-content">: 謝謝</span><span class="push-ipdatetime"> 07/26 04:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stone0811</span><span class="f3 push-content">: 先推</span><span class="push-ipdatetime"> 07/26 07:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">whitecolor</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/26 09:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BlazarArc</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/26 12:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aacs0130</span><span class="f3 push-content">: 推推，實用，不過某些特殊的語法要確定自己了解再用</span><span class="push-ipdatetime"> 07/26 13:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">maoqq0405</span><span class="f3 push-content">: 推推</span><span class="push-ipdatetime"> 07/26 15:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sandy4645</span><span class="f3 push-content">: 推 太佛 謝謝分享</span><span class="push-ipdatetime"> 07/26 16:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TRESS</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/26 22:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard50009</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/26 23:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard50009</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/26 23:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard50009</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/26 23:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">howard50009</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/26 23:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">timuwtpirt</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/28 00:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">WWIII</span><span class="f3 push-content">: 感動啊 軟體人都是無私奉獻</span><span class="push-ipdatetime"> 07/28 16:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">holmes2136</span><span class="f3 push-content">: 推分享</span><span class="push-ipdatetime"> 07/28 19:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sars78786</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 07/29 23:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NealPope</span><span class="f3 push-content">: 推爆啦！</span><span class="push-ipdatetime"> 07/30 00:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">justboa</span><span class="f3 push-content">: 謝謝分享！</span><span class="push-ipdatetime"> 07/30 12:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hsiaotzu0505</span><span class="f3 push-content">: 推！謝謝！</span><span class="push-ipdatetime"> 08/01 11:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tinnnnnngg</span><span class="f3 push-content">: 推實用</span><span class="push-ipdatetime"> 08/03 02:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gvles1210</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 08/03 16:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">YNNEKUW</span><span class="f3 push-content">: 大推</span><span class="push-ipdatetime"> 08/03 19:10
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">salamii</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 08/03 23:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">markbex</span><span class="f3 push-content">: 推！感謝分享</span><span class="push-ipdatetime"> 08/04 22:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">UlyssesLee</span><span class="f3 push-content">: 好久沒來這版 一來就看到神 推推</span><span class="push-ipdatetime"> 08/05 23:08
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Soft_Job/M.1627032495.A.65E.html?cacheKey=2149-1014057007&amp;offset=24781&amp;offset-sig=63553faf805c34f9cfec9b4a24552595b9decee4" data-longpollurl="/v1/longpoll?id=8e9e830840c01d80bad770512628237ad4a0eed3" data-offset="24781"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
