@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[分享] CD音源遊戲轉換方式 - 看板 Old-Games - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="https://www.dosbox.com/wiki/Cuesheet
+重點就在這篇 DOSBOX 的 Wiki
+說明了 DOSBOX 上如何掛載 Mixed-Mode CD 映像檔
+也就是多半採用的 cue/bin 的映像檔
+若有原始光碟, 在 Linux 上就可以透過提供的指令轉出 cue/bin
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[分享] CD音源遊戲轉換方式">
+<meta property="og:description" content="https://www.dosbox.com/wiki/Cuesheet
+重點就在這篇 DOSBOX 的 Wiki
+說明了 DOSBOX 上如何掛載 Mixed-Mode CD 映像檔
+也就是多半採用的 cue/bin 的映像檔
+若有原始光碟, 在 Linux 上就可以透過提供的指令轉出 cue/bin
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Old-Games/M.1628084128.A.655.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Old-Games/index.html"><span class="board-label">看板 </span>Old-Games</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Old-Games/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">ChampYen (網路黑貓)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Old-Games</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[分享] CD音源遊戲轉換方式</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Wed Aug  4 21:35:26 2021</span></div>
+<a href="https://www.dosbox.com/wiki/Cuesheet" target="_blank" rel="noreferrer noopener nofollow">https://www.dosbox.com/wiki/Cuesheet</a>
+
+重點就在這篇 DOSBOX 的 Wiki
+說明了 DOSBOX 上如何掛載 Mixed-Mode CD 映像檔
+也就是多半採用的 cue/bin 的映像檔
+若有原始光碟, 在 Linux 上就可以透過提供的指令轉出 cue/bin
+
+下半的 &#34;Compressed audio tracks&#34; 就是如何修改 .cue 檔的方法
+
+1. 透過原始光碟或是 cue/bin 把音軌擷取出 .wav 檔案
+
+2. Linux 下使用 oggenc *.wav 即可壓縮檔案
+   oggenc 還可以加上 -q N, N 介於 -1~10, 控制音質, 預設為 3
+   這裡也可以用喜歡的工具轉為 mp3 檔案
+
+3. 修改 .cue 檔
+   * 對於每個 Track 開頭增加
+     FILE &#34;OGG_AUD_FILE&#34; OGG
+     這裡 OGG_AUD_FILE 是該軌對應的 OGG 相對路徑檔案名稱
+     事實上 MP3 也可以, 結尾 TAG 則改為 MP3
+   * 對於 INDEX 時間一律改為
+     INDEX 01 00:00:00
+
+基本上就這樣, 比較可惜的是 VM 工具 (qemu, vbox, pcem) 不支援這模式
+因此只能套用在 dosbox 可及的 dos / win3.1 遊戲
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 123.110.208.161 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Old-Games/M.1628084128.A.655.html" target="_blank" rel="noreferrer noopener nofollow">https://www.ptt.cc/bbs/Old-Games/M.1628084128.A.655.html</a>
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eclipsegs</span><span class="f3 push-content">: 請教C大，不含音軌的ISO要如何製作呢?感恩。</span><span class="push-ipdatetime"> 08/04 21:51
+</span></div>如果有原始 CD 這就是一般燒錄軟體建立 ISO 檔功能
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">if4</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 08/04 21:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jangfu</span><span class="f3 push-content">: 請問CD音軌取出來了 如何將CD音軌中的ISO去掉BIN 壓縮</span><span class="push-ipdatetime"> 08/04 22:33
+</span></div>同一樓, 但事實上可以從 cue/bin 擷取出 iso
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MikageSayo</span><span class="f3 push-content">: 以前某段時期的家機遊戲片分享也是這樣(CD音軌改mp3)</span><span class="push-ipdatetime"> 08/04 23:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cloud1017</span><span class="f3 push-content">: 很久以前下載過CD音軌轉OGG的PCE血之輪迴</span><span class="push-ipdatetime"> 08/04 23:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">if4</span><span class="f3 push-content">: 用flac的格式，可能比MP3還好</span><span class="push-ipdatetime"> 08/04 23:58
+</span></div>要聽無損就直接用 cue/bin 就好, OGG 已經比 MP3 好
+音質的提升可以考慮用 dosbox-staging + cue/iso,opus
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xd852369</span><span class="f3 push-content">: 推 實用</span><span class="push-ipdatetime"> 08/05 03:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eclipsegs</span><span class="f3 push-content">: 自答，我用燒資料的方式包成一個iso好像就可以了。</span><span class="push-ipdatetime"> 08/05 06:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eclipsegs</span><span class="f3 push-content">: BIN檔轉ISO要用什麼軟體呢? OS：WIN10</span><span class="push-ipdatetime"> 08/05 09:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">if4</span><span class="f3 push-content">: UltraISO</span><span class="push-ipdatetime"> 08/05 10:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">if4</span><span class="f3 push-content">: *更正: UltraISO，PowerISO</span><span class="push-ipdatetime"> 08/05 10:31
+</span></div>個人不太用 Windows 所以 Windows 請參考 if4 提供的資訊
+Linux 下可以透過 bchunk 這個指令搭配參數
+<span class="f2">※ 編輯: ChampYen (123.110.208.161 臺灣), 08/05/2021 12:12:04
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cloud1017</span><span class="f3 push-content">: 用Flac大小跟原映像檔相差不多 轉了不就脫褲子放屁</span><span class="push-ipdatetime"> 08/05 12:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jangfu</span><span class="f3 push-content">: 用cue/bin 擷取出 iso 容量還是一樣大 並沒有縮減</span><span class="push-ipdatetime"> 08/05 21:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jangfu</span><span class="f3 push-content">: 不知道是哪個步驟要做才能縮小容量</span><span class="push-ipdatetime"> 08/05 21:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ChampYen</span><span class="f3 push-content">: 建議你直接針對第一軌擷取出來</span><span class="push-ipdatetime"> 08/05 21:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jangfu</span><span class="f3 push-content">: 請問如何指針對第一軌擷取出來 感謝</span><span class="push-ipdatetime"> 08/05 23:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eclipsegs</span><span class="f3 push-content">: 請問C大，BIN檔要抽音軌只能靠虛擬光碟or燒成cd再抽出?</span><span class="push-ipdatetime"> 08/07 16:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ChampYen</span><span class="f3 push-content">: 透過工具即可,查了一下像是 Windows 上的 CUETools</span><span class="push-ipdatetime"> 08/07 20:26
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Old-Games/M.1628084128.A.655.html?cacheKey=2148-163342904&amp;offset=3227&amp;offset-sig=6f008095f019b410377b8f8e763beead7d284af6" data-longpollurl="/v1/longpoll?id=cec59ba646b0c45517eb9eb20b819217b794f050" data-offset="3227"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
