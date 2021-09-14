@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[心得] 在Android破解遠X限速 - 看板 MobileComm - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="原文有測試與介紹，原理大概就是丟封包到Speedtest，遠_就會幫你加速惹，本文主要是補充在Android執行的方法。
+首先在Play商店安裝Termux https://bit.ly/2SulXt7
+完成後依序輸入指令
+pkg upgrade (輸入y)
+pkg install python (輸入y)
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[心得] 在Android破解遠X限速">
+<meta property="og:description" content="原文有測試與介紹，原理大概就是丟封包到Speedtest，遠_就會幫你加速惹，本文主要是補充在Android執行的方法。
+首先在Play商店安裝Termux https://bit.ly/2SulXt7
+完成後依序輸入指令
+pkg upgrade (輸入y)
+pkg install python (輸入y)
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/MobileComm/M.1588401368.A.E6F.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/MobileComm/index.html"><span class="board-label">看板 </span>MobileComm</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/MobileComm/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">jeff85898 ()</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">MobileComm</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[心得] 在Android破解遠X限速</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sat May  2 14:30:00 2020</span></div>
+原文有測試與介紹，原理大概就是丟封包到Speedtest，遠_就會幫你加速惹，本文主要是補充在Android執行的方法。
+
+首先在Play商店安裝Termux <a href="https://bit.ly/2SulXt7" target="_blank" rel="noreferrer noopener nofollow">https://bit.ly/2SulXt7</a>
+
+完成後依序輸入指令
+pkg upgrade (輸入y)
+pkg install python (輸入y)
+pkg install git (輸入y)
+git clone <a href="https://github.com/orz811017/boost_bandwidth_via_speedtest.git" target="_blank" rel="noreferrer noopener nofollow">https://github.com/orz811017/boost_bandwidth_via_speedtest.git</a>
+
+輸入ls檢查一下
+
+$ls
+<span class="f4 hl">boost_bandwidth_via_speedtest </span>
+
+這樣就是有順利下載軟體包了
+
+輸入cd boost_bandwidth_via_speedtest
+
+就會到boost_bandwidth_via_speedtest資料夾裡，然後
+python setup.py install
+
+最後輸入 speedtest-cli
+
+$ speedtest-cli
+Retrieving speedtest.net configuration... Testing from HiNet (1.165.87.171)... Retrieving speedtest.net server list... Selecting best server based on ping... Hosted by Chief Telecom (Changhua) [15.33 km]: 14.907 ms
+
+可以執行表示安裝成功，Termux會在背景執行，遠_以為你在Speedtest測速，就可以持續跑滿速了。
+
+下次執行只需要打開Termux，輸入 speedtest-cli (或speedtest)
+
+原文作者用的是遠_399電銷方案，發現有限速，大家可以用用看，測試自己的方案有沒有限速，應該適用任何有測速白名單的電信。 <a href="https://bit.ly/3fa6mJ1" target="_blank" rel="noreferrer noopener nofollow">https://bit.ly/3fa6mJ1</a>
+
+----
+Sent from <span class="f4 hl">BePTT </span>on my HTC 10
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 1.165.87.171 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/MobileComm/M.1588401368.A.E6F.html" target="_blank" rel="noreferrer noopener nofollow">https://www.ptt.cc/bbs/MobileComm/M.1588401368.A.E6F.html</a>
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ReDmango    </span><span class="f3 push-content">: 樓上有一篇了</span><span class="push-ipdatetime">05/02 14:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aegis43210  </span><span class="f3 push-content">: 這篇實作給推</span><span class="push-ipdatetime">05/02 14:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 這麼剛好這樣也op 是在雷神論壇看到的嗎？不過我有</span><span class="push-ipdatetime">05/02 14:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 補充在Android執行方式</span><span class="push-ipdatetime">05/02 14:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sky0301     </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/02 14:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ginlom      </span><span class="f3 push-content">: 推實用！有ios的操作方法嗎？</span><span class="push-ipdatetime">05/02 14:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jog7788     </span><span class="f3 push-content">: 其實這不只對遠傳有用XDDD對所有偷限速的都有用</span><span class="push-ipdatetime">05/02 14:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jog7788     </span><span class="f3 push-content">: 我試過台灣大寬頻也是這樣</span><span class="push-ipdatetime">05/02 14:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cakin       </span><span class="f3 push-content">: 太屌了…</span><span class="push-ipdatetime">05/02 14:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">gg123sf     </span><span class="f3 push-content">: 已使用 感謝</span><span class="push-ipdatetime">05/02 14:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">suzhou      </span><span class="f3 push-content">: 所以五大電信都會這樣？連最悲劇的亞太也有？XD</span><span class="push-ipdatetime">05/02 14:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">APC         </span><span class="f3 push-content">: 哇塞了</span><span class="push-ipdatetime">05/02 14:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">matrox323   </span><span class="f3 push-content">: 幹屌翻已使用</span><span class="push-ipdatetime">05/02 14:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashianQQ    </span><span class="f3 push-content">: 輸入完ls之後就不會繼續操作了xDD</span><span class="push-ipdatetime">05/02 14:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ashianQQ    </span><span class="f3 push-content">: 找不到tab鍵 QQ</span><span class="push-ipdatetime">05/02 14:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">iamstrapless</span><span class="f3 push-content">: 太屌啦</span><span class="push-ipdatetime">05/02 15:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cysfmc      </span><span class="f3 push-content">: 那iso?</span><span class="push-ipdatetime">05/02 15:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 找不到Tab鍵可以直接輸入</span><span class="push-ipdatetime">05/02 15:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Segal       </span><span class="f3 push-content">: 背景跑就是有些耗電跟浪費資源。不知道有沒有辦法</span><span class="push-ipdatetime">05/02 15:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Segal       </span><span class="f3 push-content">: 改放到次要DNS裡，發起連線時順便ping一下就好</span><span class="push-ipdatetime">05/02 15:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Segal       </span><span class="f3 push-content">: (DNS快取的TTL也夠短，應該不會因為timeout而失效</span><span class="push-ipdatetime">05/02 15:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: cd boost_bandwidth_via_speedtest</span><span class="push-ipdatetime">05/02 15:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">good10740   </span><span class="f3 push-content">: $ ls 這段看不懂</span><span class="push-ipdatetime">05/02 15:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TUMUASHUN   </span><span class="f3 push-content">: 太神啦 給推</span><span class="push-ipdatetime">05/02 15:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">emptie      </span><span class="f3 push-content">: 沒tab就手動輸入整串吧</span><span class="push-ipdatetime">05/02 15:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chocopie    </span><span class="f3 push-content">: 這個月用了800GB 完全沒限速，沒用甚麼破解APP</span><span class="push-ipdatetime">05/02 15:12
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ftank183    </span><span class="f3 push-content">: 有台哥大的測試過 用這個方法的話 晚上網路速度會上</span><span class="push-ipdatetime">05/02 15:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ftank183    </span><span class="f3 push-content">: 升嗎QQ</span><span class="push-ipdatetime">05/02 15:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">www26235673 </span><span class="f3 push-content">: 真D猛</span><span class="push-ipdatetime">05/02 15:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">seedk869    </span><span class="f3 push-content">: ls 後面沒動作</span><span class="push-ipdatetime">05/02 15:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: <a href="https://i.imgur.com/VyQgvBK.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/VyQgvBK.jpg</a></span><span class="push-ipdatetime">05/02 15:21
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/VyQgvBKl.jpg?e=1631666438&amp;s=Qi-xVa4sFaegyQUfxSzgEw" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: cd b(然後按Tab)</span><span class="push-ipdatetime">05/02 15:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 沒有Tab就用複製的吧 不過Termux應該會給你Tab喔，</span><span class="push-ipdatetime">05/02 15:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 在鍵盤上方</span><span class="push-ipdatetime">05/02 15:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">f860506     </span><span class="f3 push-content">: 台灣大用了這個晚上就跑得動720P嗎</span><span class="push-ipdatetime">05/02 15:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ayasesayuki </span><span class="f3 push-content">: 手機遠傳門號</span><span class="push-ipdatetime">05/02 15:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayasesayuki </span><span class="f3 push-content">: 使用前</span><span class="push-ipdatetime">05/02 15:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayasesayuki </span><span class="f3 push-content">: <a href="https://i.imgur.com/Iif469Y.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/Iif469Y.jpg</a></span><span class="push-ipdatetime">05/02 15:24
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/Iif469Yl.jpg?e=1631714200&amp;s=dEoZo9qtpKHfgvklG6jT_g" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayasesayuki </span><span class="f3 push-content">: 使用後</span><span class="push-ipdatetime">05/02 15:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayasesayuki </span><span class="f3 push-content">: <a href="https://i.imgur.com/2u3nRG9.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/2u3nRG9.jpg</a></span><span class="push-ipdatetime">05/02 15:24
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/2u3nRG9l.jpg?e=1631693718&amp;s=qxjjlX9LK26zZYiiXl_QKg" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">strawbeary  </span><span class="f3 push-content">: 問我不準，我的台哥一直都很穩==</span><span class="push-ipdatetime">05/02 15:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">egniknah    </span><span class="f3 push-content">: 好強! 大推 ls沒有動作看是不是有開擋廣告</span><span class="push-ipdatetime">05/02 15:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">egniknah    </span><span class="f3 push-content">: 要再做一次git clone</span><span class="push-ipdatetime">05/02 15:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">raxdata     </span><span class="f3 push-content">: 意思是要測速時就會解除限速嗎？</span><span class="push-ipdatetime">05/02 15:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">seedk869    </span><span class="f3 push-content">:   好像完成了 感恩</span><span class="push-ipdatetime">05/02 15:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qqq46677    </span><span class="f3 push-content">: 天哪有點厲害</span><span class="push-ipdatetime">05/02 15:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Dacamiya    </span><span class="f3 push-content">: 跟鬼一樣</span><span class="push-ipdatetime">05/02 15:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">matrox323   </span><span class="f3 push-content">: 好爽喔!!!超快 IOS JB應該也行？</span><span class="push-ipdatetime">05/02 15:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kai08130623 </span><span class="f3 push-content">: 推！目前還沒遇過限速先存起來放</span><span class="push-ipdatetime">05/02 15:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kai08130623 </span><span class="f3 push-content">: 推！</span><span class="push-ipdatetime">05/02 15:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">oh753951    </span><span class="f3 push-content">: 好猛XDDDDDDDD</span><span class="push-ipdatetime">05/02 15:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tienba      </span><span class="f3 push-content">: 感謝大大耐心教學</span><span class="push-ipdatetime">05/02 15:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">fujisawa    </span><span class="f3 push-content">: 笑死 還敢用測速白名單啊</span><span class="push-ipdatetime">05/02 15:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ilou        </span><span class="f3 push-content">: 台哥大好像有效，不過晚上限速最嚴重時段再測一次。</span><span class="push-ipdatetime">05/02 15:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">taffy128s   </span><span class="f3 push-content">: 推 來看遠_工程師要怎麼處理XD</span><span class="push-ipdatetime">05/02 15:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tienba      </span><span class="f3 push-content">: 不過我用中華好像前後沒什麼差別</span><span class="push-ipdatetime">05/02 15:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">whatslove   </span><span class="f3 push-content">: 推實作</span><span class="push-ipdatetime">05/02 15:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: ios可以試試看iSH 不過指令可能稍微不同</span><span class="push-ipdatetime">05/02 15:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: <a href="https://ish.app/" target="_blank" rel="noreferrer noopener nofollow">https://ish.app/</a></span><span class="push-ipdatetime">05/02 15:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">roc074      </span><span class="f3 push-content">: 笑死，電信巨頭玩小手段現在反而被利用XD</span><span class="push-ipdatetime">05/02 15:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">okgogogo    </span><span class="f3 push-content">: 4g AP背景跑，無敵了！</span><span class="push-ipdatetime">05/02 15:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">roc074      </span><span class="f3 push-content">: 種花不是沒有來陰的，但是我自己遇過的情況比較少</span><span class="push-ipdatetime">05/02 15:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">roc074      </span><span class="f3 push-content">: ，至少多數時候都可以維持在30Mb以上。</span><span class="push-ipdatetime">05/02 15:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">roc074      </span><span class="f3 push-content">: <a href="https://i.imgur.com/tz08ATJ.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/tz08ATJ.jpg</a></span><span class="push-ipdatetime">05/02 15:49
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/tz08ATJl.jpg?e=1631691667&amp;s=CUImfpb7bXIw4QzRhf7WBQ" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">GuanLu      </span><span class="f3 push-content">: 請問這個是否手機要root才能做？</span><span class="push-ipdatetime">05/02 15:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 不用哦 只要安裝Termux就可以了</span><span class="push-ipdatetime">05/02 15:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kbpoop      </span><span class="f3 push-content">: 這個中華有用嗎</span><span class="push-ipdatetime">05/02 15:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Memento202  </span><span class="f3 push-content">: 好難懂… QQ</span><span class="push-ipdatetime">05/02 15:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TEAC3358    </span><span class="f3 push-content">: 太威啦</span><span class="push-ipdatetime">05/02 15:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">horstyle0411</span><span class="f3 push-content">: 看晚上尖峰時段LM111能跑多少</span><span class="push-ipdatetime">05/02 16:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">good10740   </span><span class="f3 push-content">: 獲利王電信 速度有上升 感謝</span><span class="push-ipdatetime">05/02 16:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">twerik      </span><span class="f3 push-content">: 已成功安裝</span><span class="push-ipdatetime">05/02 16:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bluesky8031 </span><span class="f3 push-content">: 中華沒用  一樣是限速</span><span class="push-ipdatetime">05/02 16:10
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig    </span><span class="f3 push-content">: 在Git有看到人家包好的speedtest cli for java</span><span class="push-ipdatetime">05/02 16:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig    </span><span class="f3 push-content">: 應該是能包一隻android app在背景跑就好</span><span class="push-ipdatetime">05/02 16:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">williamsf1  </span><span class="f3 push-content">: <a href="https://i.imgur.com/gyFPgLK.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/gyFPgLK.jpg</a></span><span class="push-ipdatetime">05/02 16:14
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/gyFPgLKl.jpg?e=1631672298&amp;s=rEeQ7r8WcIqtdFbqRtNG0w" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">williamsf1  </span><span class="f3 push-content">: 等晚上再試驗台哥</span><span class="push-ipdatetime">05/02 16:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig    </span><span class="f3 push-content">: 不過我的門號用speedtest沒啥用 跑YT還是被卡在700</span><span class="push-ipdatetime">05/02 16:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig    </span><span class="f3 push-content">: KB/s左右 1080P轉轉轉 煩死</span><span class="push-ipdatetime">05/02 16:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">x740552     </span><span class="f3 push-content">: 有用幫推，第一次跑那麼快</span><span class="push-ipdatetime">05/02 16:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joker00507  </span><span class="f3 push-content">: line mobile也可以嗎？</span><span class="push-ipdatetime">05/02 16:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ShibaTatsuya</span><span class="f3 push-content">: 推，長知識了</span><span class="push-ipdatetime">05/02 16:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">QWET80706   </span><span class="f3 push-content">: 安卓10也能嗎 我跑前面第二行指令就無效了</span><span class="push-ipdatetime">05/02 16:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 可以欸 我就是安卓10 出現什麼錯誤嗎</span><span class="push-ipdatetime">05/02 16:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">x740552     </span><span class="f3 push-content">: 我也是安卓10阿，應該是複製錯了吧</span><span class="push-ipdatetime">05/02 16:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">good10740   </span><span class="f3 push-content">: 安卓10可以 打指令ENTER之後 按Y</span><span class="push-ipdatetime">05/02 16:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">QWET80706   </span><span class="f3 push-content">: 啊沒事搞懂了 我以為要直接打y</span><span class="push-ipdatetime">05/02 16:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LinkMiguel  </span><span class="f3 push-content">: 神</span><span class="push-ipdatetime">05/02 16:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinkMiguel  </span><span class="f3 push-content">: 樓上yt卡484該搭配vpn使用會更好(?</span><span class="push-ipdatetime">05/02 16:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">roro0       </span><span class="f3 push-content">: 給推！</span><span class="push-ipdatetime">05/02 16:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ntut99me    </span><span class="f3 push-content">: 證明，遠傳真的限速。</span><span class="push-ipdatetime">05/02 16:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Problem001  </span><span class="f3 push-content">: iOS用apt抓完python就沒有setuptools了</span><span class="push-ipdatetime">05/02 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">sheepbear   </span><span class="f3 push-content">: 低調</span><span class="push-ipdatetime">05/02 16:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ms07b3      </span><span class="f3 push-content">: 輸入完cd boost_bandwidth_via_speedtest沒有反應耶</span><span class="push-ipdatetime">05/02 16:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">whhw        </span><span class="f3 push-content">: 先推</span><span class="push-ipdatetime">05/02 16:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">matrox323   </span><span class="f3 push-content">: @ms07b3 打dir看一下應該在目錄裡面了</span><span class="push-ipdatetime">05/02 16:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 沒有反應是正常的哦 繼續輸入</span><span class="push-ipdatetime">05/02 16:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: python setup.py install</span><span class="push-ipdatetime">05/02 16:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">matrox323   </span><span class="f3 push-content">: 直接執行後續指令即可</span><span class="push-ipdatetime">05/02 16:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rickieyang  </span><span class="f3 push-content">: 遠傳是用哪一家 DPI 呀, 那麼笨...</span><span class="push-ipdatetime">05/02 16:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinkMiguel  </span><span class="f3 push-content">: 而且如果 未來他們又修補了這個方法，沒有法律上能</span><span class="push-ipdatetime">05/02 16:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">LinkMiguel  </span><span class="f3 push-content">: 制裁的方法嗎</span><span class="push-ipdatetime">05/02 16:38
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">matrox323   </span><span class="f3 push-content">: 低調</span><span class="push-ipdatetime">05/02 16:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">z2608002    </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/02 16:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">neo19       </span><span class="f3 push-content">: 樓上a大中華17T神人XD</span><span class="push-ipdatetime">05/02 16:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ms07b3      </span><span class="f3 push-content">: 可以了感恩 不過本來就不是無限速好像沒啥變化</span><span class="push-ipdatetime">05/02 16:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">undft082    </span><span class="f3 push-content">: 太屌</span><span class="push-ipdatetime">05/02 16:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">friedpig    </span><span class="f3 push-content">: 我的確是掛VPN才能解YT問題 G_G</span><span class="push-ipdatetime">05/02 16:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kevio       </span><span class="f3 push-content">: 跪求iOS解法~~</span><span class="push-ipdatetime">05/02 16:50
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">a6444long   </span><span class="f3 push-content">: 低調</span><span class="push-ipdatetime">05/02 16:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric1835566 </span><span class="f3 push-content">: 噓噓東：....怎麼測速數量瘋狂增加</span><span class="push-ipdatetime">05/02 16:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">eric1835566 </span><span class="f3 push-content">: 遠傳這根本有詐騙的嫌疑吧</span><span class="push-ipdatetime">05/02 16:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nptrj       </span><span class="f3 push-content">: 我用賴沒變，但有不卡了的錯覺？</span><span class="push-ipdatetime">05/02 17:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">spfy        </span><span class="f3 push-content">: 我猜X傳會放話要&#34;處理&#34;這些用戶嚇嚇不懂的人</span><span class="push-ipdatetime">05/02 17:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snkk9898    </span><span class="f3 push-content">: 遠傳安卓10測試有感</span><span class="push-ipdatetime">05/02 17:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">spfy        </span><span class="f3 push-content">: 最後不了了之</span><span class="push-ipdatetime">05/02 17:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a79111010   </span><span class="f3 push-content">: 這樣放一個月流量不知道有多少XD</span><span class="push-ipdatetime">05/02 17:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BDrip       </span><span class="f3 push-content">: 只有ping而已 一次沒幾個位元組吧</span><span class="push-ipdatetime">05/02 17:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a79111010   </span><span class="f3 push-content">: 只有PING的話那的確是還好</span><span class="push-ipdatetime">05/02 17:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">orz811017   </span><span class="f3 push-content">: 只有連server 後面的upload/download test都沒做</span><span class="push-ipdatetime">05/02 17:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">myskyfu     </span><span class="f3 push-content">: 有點厲害呀</span><span class="push-ipdatetime">05/02 17:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Memento202  </span><span class="f3 push-content">: 請問 git clone那邊 後面網址是直接輸入嗎@@卡在下</span><span class="push-ipdatetime">05/02 17:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Memento202  </span><span class="f3 push-content">: 載軟體包 感謝</span><span class="push-ipdatetime">05/02 17:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a22665566200</span><span class="f3 push-content">: 太神啦</span><span class="push-ipdatetime">05/02 17:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TomChu      </span><span class="f3 push-content">: 笑死 反將一軍</span><span class="push-ipdatetime">05/02 17:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 對哦 git clone 含後面網址全部複製起來 再按enter</span><span class="push-ipdatetime">05/02 17:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BDrip       </span><span class="f3 push-content">: 開啟第一次取得伺服器列表 後面就簡單的指令吧(?</span><span class="push-ipdatetime">05/02 17:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xylophone135</span><span class="f3 push-content">: 本人用遠傳 試了一下感覺跟沒有用沒什麼差 看YouT</span><span class="push-ipdatetime">05/02 17:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xylophone135</span><span class="f3 push-content">: ube 4K一樣一種轉圈圈 有人跟我一樣嗎</span><span class="push-ipdatetime">05/02 17:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">doom3       </span><span class="f3 push-content">: 24小時每分鐘都在PING嗎 這樣手機不能休眠耶</span><span class="push-ipdatetime">05/02 17:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">doom3       </span><span class="f3 push-content">: 寫成APP 螢幕亮時或排時程再PING比較好</span><span class="push-ipdatetime">05/02 17:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">roger717    </span><span class="f3 push-content">: 需要root嗎</span><span class="push-ipdatetime">05/02 17:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g9h5j1k0    </span><span class="f3 push-content">: 太神啦感謝作者 但台星好像沒用</span><span class="push-ipdatetime">05/02 18:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: <a href="https://i.imgur.com/Ov0uCeH.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/Ov0uCeH.jpg</a></span><span class="push-ipdatetime">05/02 18:00
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/Ov0uCeHl.jpg?e=1631670978&amp;s=RKA-i9aZMnAJe0I-HGfU6Q" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 可以按exit暫時關掉 之後再重開</span><span class="push-ipdatetime">05/02 18:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: YT會卡的話可以搭配VPN試試看</span><span class="push-ipdatetime">05/02 18:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tonybbbb    </span><span class="f3 push-content">: 10M限速也能適用嗎?</span><span class="push-ipdatetime">05/02 18:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 本來就限速的似乎沒什麼用</span><span class="push-ipdatetime">05/02 18:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">crystal666  </span><span class="f3 push-content">: 低調三小，限速這麼噁心才要高調給大家知道。</span><span class="push-ipdatetime">05/02 18:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">awakes      </span><span class="f3 push-content">: 請問如果是那種用超過12g降速128k吃到飽的有用嗎？</span><span class="push-ipdatetime">05/02 18:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">a910298     </span><span class="f3 push-content">: line mobile 21M限速改了還是一樣</span><span class="push-ipdatetime">05/02 18:26
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">colin8930   </span><span class="f3 push-content">: 怎麼沒人嘴白名單？</span><span class="push-ipdatetime">05/02 18:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">acctouhou   </span><span class="f3 push-content">:  <a href="https://i.imgur.com/61NbDm0.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/61NbDm0.jpg</a></span><span class="push-ipdatetime">05/02 18:29
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/61NbDm0l.jpg?e=1631688130&amp;s=onfqSsi6ce5ZaWNKU1A8iA" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aegis43210  </span><span class="f3 push-content">: 這只是提升優先權，本來就慢的沒用</span><span class="push-ipdatetime">05/02 18:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">id0221      </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime">05/02 18:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">FuwafuwaCAT </span><span class="f3 push-content">: 有時候連限速的21都跑不到  用了就行了 感謝</span><span class="push-ipdatetime">05/02 18:40
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">NCTUduke    </span><span class="f3 push-content">: 噓低調，推大神</span><span class="push-ipdatetime">05/02 18:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">good10740   </span><span class="f3 push-content">: 搞不好ping 購物網也會變快</span><span class="push-ipdatetime">05/02 18:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tommy123310 </span><span class="f3 push-content">: 本來就限速的沒用吧</span><span class="push-ipdatetime">05/02 18:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tommy123310 </span><span class="f3 push-content">: 你巔峰時段測速度也上不去 代表他不是限制你 是真</span><span class="push-ipdatetime">05/02 18:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tommy123310 </span><span class="f3 push-content">: 的就在塞車吧 不然照道理說他會開頻寬給測速用戶==</span><span class="push-ipdatetime">05/02 18:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kikooo      </span><span class="f3 push-content">: 說沒反應的「git clone <a href="https://github.com/orz811" target="_blank" rel="noreferrer noopener nofollow">https://github.com/orz811</a></span><span class="push-ipdatetime">05/02 18:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kikooo      </span><span class="f3 push-content">: 017/boost_bandwidth_via_speedtest.git」這段也要</span><span class="push-ipdatetime">05/02 18:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kikooo      </span><span class="f3 push-content">: 貼上執行喔</span><span class="push-ipdatetime">05/02 18:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rayray0410  </span><span class="f3 push-content">: 這樣會不會多了幾百mb在手機裡啊</span><span class="push-ipdatetime">05/02 18:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rayray0410  </span><span class="f3 push-content">: install python git 在電腦都幾百mb吧？</span><span class="push-ipdatetime">05/02 19:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zerozzz7887 </span><span class="f3 push-content">: 有人測台哥了嗎？</span><span class="push-ipdatetime">05/02 19:07
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">winstonuno  </span><span class="f3 push-content">: 低調</span><span class="push-ipdatetime">05/02 19:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Memento202  </span><span class="f3 push-content">: 成功了 雖然不知道有沒有用 感謝</span><span class="push-ipdatetime">05/02 19:09
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">EricTsushima</span><span class="f3 push-content">: 好神</span><span class="push-ipdatetime">05/02 19:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashianQQ    </span><span class="f3 push-content">: 我有開沒開大概差5mb而已xDD</span><span class="push-ipdatetime">05/02 19:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">l1l         </span><span class="f3 push-content">: 難怪最近遠傳特別慢 大家都用這個解限速</span><span class="push-ipdatetime">05/02 19:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">puresugar   </span><span class="f3 push-content">: 所以本來測速就慢的沒救嗎？</span><span class="push-ipdatetime">05/02 19:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kikooo      </span><span class="f3 push-content">: 沒顯著提示就是收訊不佳 不是被限速</span><span class="push-ipdatetime">05/02 19:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g8k         </span><span class="f3 push-content">: 臺星沒用+1</span><span class="push-ipdatetime">05/02 19:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">shuo19971203</span><span class="f3 push-content">: 笑了！ 推</span><span class="push-ipdatetime">05/02 19:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bl3649765   </span><span class="f3 push-content">: 存推不下</span><span class="push-ipdatetime">05/02 20:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aa3556501   </span><span class="f3 push-content">: 求iOS</span><span class="push-ipdatetime">05/02 20:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">JJ925841    </span><span class="f3 push-content">: 很實用</span><span class="push-ipdatetime">05/02 20:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ms07b3      </span><span class="f3 push-content">: 請問安裝的東西要如何乾淨移除</span><span class="push-ipdatetime">05/02 20:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">w113353     </span><span class="f3 push-content">: 測速本來就跑不動的話用這個也沒用 表示你的所在區</span><span class="push-ipdatetime">05/02 20:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">w113353     </span><span class="f3 push-content">: 域沒有多餘的頻寬了</span><span class="push-ipdatetime">05/02 20:49
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">mike0285    </span><span class="f3 push-content">: 台星沒用</span><span class="push-ipdatetime">05/02 20:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jeff85898   </span><span class="f3 push-content">: 直接刪除即可 應用程式資料會一起刪除</span><span class="push-ipdatetime">05/02 20:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snd9527     </span><span class="f3 push-content">: line mobile 21m 沒效＋1 不過還是感謝分享</span><span class="push-ipdatetime">05/02 21:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sufate      </span><span class="f3 push-content">: 感謝</span><span class="push-ipdatetime">05/02 21:14
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">ilovewenfang</span><span class="f3 push-content">: 低調 感謝po文</span><span class="push-ipdatetime">05/02 21:17
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">Ilou        </span><span class="f3 push-content">: <a href="https://i.imgur.com/2R5OY1t.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/2R5OY1t.jpg</a></span><span class="push-ipdatetime">05/02 21:20
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/2R5OY1tl.jpg?e=1631687690&amp;s=0Bk0InY9qwsk04Y8-7YNGQ" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Ilou        </span><span class="f3 push-content">: 哎唷，晚上測速效果不錯呢！  低調</span><span class="push-ipdatetime"> 05/02 21:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wtfconk     </span><span class="f3 push-content">: 合約本有速限的跟這個無關,以為可以無限速也太天真X</span><span class="push-ipdatetime"> 05/02 21:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">wtfconk     </span><span class="f3 push-content">: D</span><span class="push-ipdatetime"> 05/02 21:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yauaia      </span><span class="f3 push-content">: 好用！！</span><span class="push-ipdatetime"> 05/02 21:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kai08130623 </span><span class="f3 push-content">: 484有人誤會用法啊？你拿LM211還想突破啊？</span><span class="push-ipdatetime"> 05/02 21:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NgJovi      </span><span class="f3 push-content">: XDDD 被狂打一巴掌</span><span class="push-ipdatetime"> 05/02 21:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Tahuiyuan   </span><span class="f3 push-content">: 好像可以透過把腳本包裝進hello world來簡化操作？</span><span class="push-ipdatetime"> 05/02 21:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ashianQQ    </span><span class="f3 push-content">: <a href="https://i.imgur.com/GeQLC2T.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/GeQLC2T.jpg</a></span><span class="push-ipdatetime"> 05/02 21:48
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/GeQLC2Tl.jpg?e=1631668048&amp;s=ff4I3Yy_ddxFIGme8O_MYw" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ashianQQ    </span><span class="f3 push-content">: <a href="https://i.imgur.com/0PQrPHu.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/0PQrPHu.jpg</a></span><span class="push-ipdatetime"> 05/02 21:48
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/0PQrPHul.jpg?e=1631671126&amp;s=sTkZn_skKSDHEFD7TUMBVg" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ashianQQ    </span><span class="f3 push-content">: 幹說好的不限速呢</span><span class="push-ipdatetime"> 05/02 21:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s860064     </span><span class="f3 push-content">: 太神了~~</span><span class="push-ipdatetime"> 05/02 21:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">paul40807   </span><span class="f3 push-content">: 這個是全速吃到飽合約在用的 什麼限速限流量的根本</span><span class="push-ipdatetime"> 05/02 21:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">paul40807   </span><span class="f3 push-content">: 沒用好嗎</span><span class="push-ipdatetime"> 05/02 21:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t20480401   </span><span class="f3 push-content">: 有人測試中華有用嗎？我晚上看1080p都會轉圈圈…</span><span class="push-ipdatetime"> 05/02 21:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wright      </span><span class="f3 push-content">: 變得妖獸快</span><span class="push-ipdatetime"> 05/02 22:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mm770912    </span><span class="f3 push-content">: 請問git clone要輸入帳號密碼那段怎麼辦</span><span class="push-ipdatetime"> 05/02 22:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">firemon     </span><span class="f3 push-content">: line mobile 21m 沒效＋1 還是感謝分享</span><span class="push-ipdatetime"> 05/02 22:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">popbitch    </span><span class="f3 push-content">: 好有趣，證實了限速，也證實了白名單</span><span class="push-ipdatetime"> 05/02 22:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">la8day      </span><span class="f3 push-content">: 再說一次 遠傳吃到飽就是垃圾</span><span class="push-ipdatetime"> 05/02 22:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dreamerV    </span><span class="f3 push-content">: 好棒</span><span class="push-ipdatetime"> 05/02 22:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">seal81924   </span><span class="f3 push-content">: 可悲遠傳 我上禮拜才接到電銷399過去 可憐的我QQ</span><span class="push-ipdatetime"> 05/02 22:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Jwfsm       </span><span class="f3 push-content">: 我中華測前測後沒差，看地點，有些地點是真慢</span><span class="push-ipdatetime"> 05/02 22:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bluenova    </span><span class="f3 push-content">: 問一下，電信業者這樣搞，不會有相關罰則嗎？很惡劣</span><span class="push-ipdatetime"> 05/02 22:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bluenova    </span><span class="f3 push-content">: 耶，否認刻意限速，還故意設白名單。</span><span class="push-ipdatetime"> 05/02 22:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yuro1470    </span><span class="f3 push-content">: 實用推</span><span class="push-ipdatetime"> 05/02 22:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sdriver     </span><span class="f3 push-content">: 有點厲害</span><span class="push-ipdatetime"> 05/02 22:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sdto        </span><span class="f3 push-content">: 感謝分享！雖然早已受不了跳離台哥了</span><span class="push-ipdatetime"> 05/02 22:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">herozeek    </span><span class="f3 push-content">: 台哥測沒用</span><span class="push-ipdatetime"> 05/02 22:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jaylaio     </span><span class="f3 push-content">: 台哥大悲劇使用前有33妹，使用後剩10妹</span><span class="push-ipdatetime"> 05/02 22:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jaylaio     </span><span class="f3 push-content">: <a href="https://i.imgur.com/trzs6Z2.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/trzs6Z2.jpg</a></span><span class="push-ipdatetime"> 05/02 22:47
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/trzs6Z2l.jpg?e=1631709033&amp;s=eAgStamF99JpfXfjHC-fxw" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jaylaio     </span><span class="f3 push-content">: <a href="https://i.imgur.com/z8I2x6r.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/z8I2x6r.jpg</a></span><span class="push-ipdatetime"> 05/02 22:47
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/z8I2x6rl.jpg?e=1631664831&amp;s=5ZAh89DNFTnKEr6-PVLOXw" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">p1227426    </span><span class="f3 push-content">: 高調</span><span class="push-ipdatetime"> 05/02 23:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sa12e3      </span><span class="f3 push-content">: 樓上上搞笑？</span><span class="push-ipdatetime"> 05/02 23:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Banrin      </span><span class="f3 push-content">: 手機看這篇怎變無標題</span><span class="push-ipdatetime"> 05/02 23:02
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sa12e3      </span><span class="f3 push-content">: 請問要怎麼解釋樓上上的狀況呢？</span><span class="push-ipdatetime"> 05/02 23:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kenlin0105  </span><span class="f3 push-content">: 幹剛換11 pro 垃圾手機</span><span class="push-ipdatetime"> 05/02 23:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pigeon14    </span><span class="f3 push-content">: git clone 後有root的機子失敗，QQ</span><span class="push-ipdatetime"> 05/02 23:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kai08130623 </span><span class="f3 push-content">: 請他去找柳橙汁啊…</span><span class="push-ipdatetime"> 05/02 23:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lkj12tw     </span><span class="f3 push-content">: 台星、中華皆沒用</span><span class="push-ipdatetime"> 05/02 23:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">popopal     </span><span class="f3 push-content">: 這個較適合199電銷這種XD 299電銷真的會去退佣</span><span class="push-ipdatetime"> 05/02 23:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">popopal     </span><span class="f3 push-content">: 不然不會有人說怎輸LM111</span><span class="push-ipdatetime"> 05/02 23:33
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">get951753   </span><span class="f3 push-content">: 代表辦台哥遠傳都是被限速的盤子哈哈哈 可憐哪</span><span class="push-ipdatetime"> 05/02 23:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s87269x     </span><span class="f3 push-content">: 這是電信業者偷設白名單騙人家網速，把這方法把自己</span><span class="push-ipdatetime"> 05/02 23:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s87269x     </span><span class="f3 push-content">: 加進白名單讓他們限不了速不是很合理的作為嗎。有種</span><span class="push-ipdatetime"> 05/02 23:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s87269x     </span><span class="f3 push-content">: 不要設白名單讓人家看看你們真實網速啊幹。</span><span class="push-ipdatetime"> 05/02 23:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">get951753   </span><span class="f3 push-content">: 高調補推 卡一個看工程師怎麼解決</span><span class="push-ipdatetime"> 05/02 23:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lkd311      </span><span class="f3 push-content">: <a href="https://i.imgur.com/BF9THXf.jpg." target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/BF9THXf.jpg.</a> 台哥晚上就是棒!</span><span class="push-ipdatetime"> 05/02 23:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">lkd311      </span><span class="f3 push-content">: !</span><span class="push-ipdatetime"> 05/02 23:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">IOU9527     </span><span class="f3 push-content">: 這個測試間隔是多久？</span><span class="push-ipdatetime"> 05/02 23:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: 999的遠傳  使用前 (單純湊熱鬧xDD</span><span class="push-ipdatetime"> 05/02 23:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: <a href="https://i.imgur.com/B572EMa.png" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/B572EMa.png</a></span><span class="push-ipdatetime"> 05/02 23:53
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/B572EMal.png?e=1631697853&amp;s=J3tX2Xtq-v-PBmiC5WEQvA" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: 使用後 沒什麼太大變化</span><span class="push-ipdatetime"> 05/02 23:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: <a href="https://i.imgur.com/ozt4qM8.png" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/ozt4qM8.png</a></span><span class="push-ipdatetime"> 05/02 23:54
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/ozt4qM8l.png?e=1631659141&amp;s=lv1urJryVYJNflHE3qVk1w" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">orz811017   </span><span class="f3 push-content">: 呃 樓上應該拿非Speedtest的網域比較準</span><span class="push-ipdatetime"> 05/02 23:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">svetalee    </span><span class="f3 push-content">: 感謝教學，但使用前後沒有差QQ</span><span class="push-ipdatetime"> 05/02 23:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Komibo      </span><span class="f3 push-content">: 這篇真神</span><span class="push-ipdatetime"> 05/02 23:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aegis43210  </span><span class="f3 push-content">: 愈高費率的吃到飽合約，用這招的效果愈差</span><span class="push-ipdatetime"> 05/03 00:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">KyA         </span><span class="f3 push-content">: 工程師應該差不多發現這篇改了</span><span class="push-ipdatetime"> 05/03 00:01
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kenyon0619  </span><span class="f3 push-content">: 感覺滿好抓的 這招應該活不久</span><span class="push-ipdatetime"> 05/03 00:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: 感謝大大提醒 重測了下挺有感的 觀感上ww 使用後</span><span class="push-ipdatetime"> 05/03 00:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: <a href="https://i.imgur.com/cbRL8Yu.png" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/cbRL8Yu.png</a></span><span class="push-ipdatetime"> 05/03 00:20
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/cbRL8Yul.png?e=1631692747&amp;s=heFu1x6RgkOSyvXc-VXEdg" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: 使用前，測的時候發現忘了關 所以順序反了xD</span><span class="push-ipdatetime"> 05/03 00:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">minuetCE    </span><span class="f3 push-content">: <a href="https://i.imgur.com/IoZ1Xdd.png" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/IoZ1Xdd.png</a></span><span class="push-ipdatetime"> 05/03 00:21
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/IoZ1Xddl.png?e=1631669687&amp;s=Jb8AD1833NaHA0EmII1tqg" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MoneMizuno  </span><span class="f3 push-content">: <a href="https://imgur.com/JAOsv4S" target="_blank" rel="noreferrer noopener nofollow">https://imgur.com/JAOsv4S</a> 不知有沒有效，推個</span><span class="push-ipdatetime"> 05/03 00:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">momo0215    </span><span class="f3 push-content">: lm211無效  還是感謝</span><span class="push-ipdatetime"> 05/03 00:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">super1725w  </span><span class="f3 push-content">: 好像有點猛</span><span class="push-ipdatetime"> 05/03 00:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LGamia      </span><span class="f3 push-content">: 有沒有辦法一點開就自動執行speedtest-cli</span><span class="push-ipdatetime"> 05/03 00:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">orz811017   </span><span class="f3 push-content">: 用tasker 或是automateit就能做到更自動化了</span><span class="push-ipdatetime"> 05/03 00:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qazwsx855193</span><span class="f3 push-content">: 笑死  可悲遠傳  有本是把speedtest白名單拔掉啊xD</span><span class="push-ipdatetime"> 05/03 01:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">YZRIA       </span><span class="f3 push-content">: 真的有差</span><span class="push-ipdatetime"> 05/03 01:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">longya      </span><span class="f3 push-content">: 這是證明遠傳吃到飽還限速  可以投訴NCC了吧</span><span class="push-ipdatetime"> 05/03 01:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">weer87936   </span><span class="f3 push-content">: <a href="https://i.imgur.com/4GPVf4u.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/4GPVf4u.jpg</a></span><span class="push-ipdatetime"> 05/03 01:15
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/4GPVf4ul.jpg?e=1631706544&amp;s=aZEA0EdTHsxA1IiNUEbO2A" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">uuuuu1236   </span><span class="f3 push-content">: 台哥大也可以嗎?謝謝</span><span class="push-ipdatetime"> 05/03 01:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yoyokaty    </span><span class="f3 push-content">: 美國限速，也可以破解了，我終於可以看720p 1080p</span><span class="push-ipdatetime"> 05/03 01:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Luther      </span><span class="f3 push-content">: 懶得拔卡開熱點給安卓機，遠傳799沒什麼差<a href="http://i." target="_blank" rel="noreferrer noopener nofollow">http://i.</a></span><span class="push-ipdatetime"> 05/03 01:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Luther      </span><span class="f3 push-content">: imgur.com/5HPO71O.jpg</span><span class="push-ipdatetime"> 05/03 01:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Luther      </span><span class="f3 push-content">: <a href="https://i.imgur.com/hmfJiFH.jpg" target="_blank" rel="noreferrer noopener nofollow">http://i.imgur.com/hmfJiFH.jpg</a></span><span class="push-ipdatetime"> 05/03 01:36
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/hmfJiFHl.jpg?e=1631671976&amp;s=1G_ji4N0k-daHwhxOVlPYg" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chris900812 </span><span class="f3 push-content">: 有效有推！  自從改成吃到飽後每天只要到晚上都超有</span><span class="push-ipdatetime"> 05/03 01:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chris900812 </span><span class="f3 push-content">: 感降速……既然是怕人用就不要推這種方案……很瞎</span><span class="push-ipdatetime"> 05/03 01:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">funkball    </span><span class="f3 push-content">: LM111 有效, 低調~</span><span class="push-ipdatetime"> 05/03 01:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">retry3965   </span><span class="f3 push-content">: LM111有效的定義是能突破10M喔？</span><span class="push-ipdatetime"> 05/03 02:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wsung       </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 05/03 02:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chris80125  </span><span class="f3 push-content">: ios可以用a-Shell 實測過ok</span><span class="push-ipdatetime"> 05/03 02:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chris80125  </span><span class="f3 push-content">: <a href="https://i.imgur.com/cl44h5C.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/cl44h5C.jpg</a></span><span class="push-ipdatetime"> 05/03 02:57
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/cl44h5Cl.jpg?e=1631677761&amp;s=LzHiJBhDu7fGpZpFR9s1og" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Camy0828    </span><span class="f3 push-content">: 台哥悲劇，本來25用了剩下9</span><span class="push-ipdatetime"> 05/03 03:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Banrin      </span><span class="f3 push-content">: 台哥的幹嘛連進來擠= =</span><span class="push-ipdatetime"> 05/03 03:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jyunwei     </span><span class="f3 push-content">: 這不就證明了這是跟遠傳買東西他不但不供貨給你，</span><span class="push-ipdatetime"> 05/03 04:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jyunwei     </span><span class="f3 push-content">: 你去檢查的時候還給你做假象嗎</span><span class="push-ipdatetime"> 05/03 04:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ckc7958     </span><span class="f3 push-content">: initialize sparse-checkout file to include onl</span><span class="push-ipdatetime"> 05/03 04:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ckc7958     </span><span class="f3 push-content">: y files at root</span><span class="push-ipdatetime"> 05/03 04:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ckc7958     </span><span class="f3 push-content">: 請問是要root才能嗎</span><span class="push-ipdatetime"> 05/03 04:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">potatososo  </span><span class="f3 push-content">: 怕有Trojan horses</span><span class="push-ipdatetime"> 05/03 05:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mygame      </span><span class="f3 push-content">: line111 啟用前測速7m, 啟用後才能跑足10m…</span><span class="push-ipdatetime"> 05/03 07:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pure2249    </span><span class="f3 push-content">: 好聰明，但這樣不是變相對speedtest做DDOS攻擊了嗎</span><span class="push-ipdatetime"> 05/03 07:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pure2249    </span><span class="f3 push-content">: ？XDD</span><span class="push-ipdatetime"> 05/03 07:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">laechan     </span><span class="f3 push-content">: 裁判! <a href="https://i.imgur.com/b6rr9Fl.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/b6rr9Fl.jpg</a></span><span class="push-ipdatetime"> 05/03 07:54
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/b6rr9Fll.jpg?e=1631683181&amp;s=EjySgrfQ4I_85U7kVV6zGw" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CloudVII    </span><span class="f3 push-content">: line 211沒辦法突破21的上限</span><span class="push-ipdatetime"> 05/03 09:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">heatsink    </span><span class="f3 push-content">: 簽約沒限速的門號才有用，自願限速的維持上限就好了</span><span class="push-ipdatetime"> 05/03 09:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">longya      </span><span class="f3 push-content">: 怎麼會有人以為自己簽限速約的會有用…</span><span class="push-ipdatetime"> 05/03 09:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">awakes      </span><span class="f3 push-content">: 簽那種過量才限速的又用嗎？</span><span class="push-ipdatetime"> 05/03 09:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ja20331     </span><span class="f3 push-content">: 我lm211晚上尖峰時段小於5m 在speedtest測速後 能提</span><span class="push-ipdatetime"> 05/03 09:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ja20331     </span><span class="f3 push-content">: 升到15m左右 (每次約120秒)不要異想天開能突破21m</span><span class="push-ipdatetime"> 05/03 09:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Memento202  </span><span class="f3 push-content">: 從10m跳到40  感謝</span><span class="push-ipdatetime"> 05/03 10:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cutekenny   </span><span class="f3 push-content">: line mobile晚上youtube會很卡，用這個應該就不會卡</span><span class="push-ipdatetime"> 05/03 10:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bill0205    </span><span class="f3 push-content">: 完全看得懂指令欸</span><span class="push-ipdatetime"> 05/03 10:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jwchen119   </span><span class="f3 push-content">: termux可以透過crontab&amp;crond去定時執行，termux關</span><span class="push-ipdatetime"> 05/03 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jwchen119   </span><span class="f3 push-content">: 掉也會在後台自己跑</span><span class="push-ipdatetime"> 05/03 11:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">jwchen119   </span><span class="f3 push-content">: 剛剛LM211從原本的7Mbps升到滿速，感謝分享</span><span class="push-ipdatetime"> 05/03 11:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jjs11795    </span><span class="f3 push-content">: 推分享 這樣能不能控告電信公司啊</span><span class="push-ipdatetime"> 05/03 11:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">funkball    </span><span class="f3 push-content">: LM111 尖峰時段不到10M,用了可以到10M</span><span class="push-ipdatetime"> 05/03 11:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">es8603      </span><span class="f3 push-content">: 互相鬥法XD</span><span class="push-ipdatetime"> 05/03 12:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MonsterVai  </span><span class="f3 push-content">: 要怎麼在termux貼上阿QQ</span><span class="push-ipdatetime"> 05/03 12:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PopeVic     </span><span class="f3 push-content">: 好奇中華有這問題嗎XD</span><span class="push-ipdatetime"> 05/03 12:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bill0205    </span><span class="f3 push-content">: 可以複製之後在cli畫面上點選 之後點paste</span><span class="push-ipdatetime"> 05/03 12:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PoiViww     </span><span class="f3 push-content">: 可以投訴了吧</span><span class="push-ipdatetime"> 05/03 13:01
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">chen891276  </span><span class="f3 push-content">: 笑NCC不敢開罰遠X啦</span><span class="push-ipdatetime"> 05/03 13:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">paulyang5054</span><span class="f3 push-content">: 高調</span><span class="push-ipdatetime"> 05/03 13:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wei33huang  </span><span class="f3 push-content">: 有人可以教學一下iOS嗎QQ</span><span class="push-ipdatetime"> 05/03 14:16
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">ericlien0206</span><span class="f3 push-content">: 低調</span><span class="push-ipdatetime"> 05/03 15:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">aegis43210  </span><span class="f3 push-content">: 蘋果用高費率就好，預算不足別用蘋果</span><span class="push-ipdatetime"> 05/03 15:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">retry3965   </span><span class="f3 push-content">: 如果想要把全部東西都清掉 只要反安裝Termux就可以</span><span class="push-ipdatetime"> 05/03 15:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">retry3965   </span><span class="f3 push-content">: 嗎</span><span class="push-ipdatetime"> 05/03 15:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pusufu5566  </span><span class="f3 push-content">: 用到最後兩個程序就是會卡住請問為什麼呢</span><span class="push-ipdatetime"> 05/03 17:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hms5232     </span><span class="f3 push-content">: 寫個 shell 就更懶人了</span><span class="push-ipdatetime"> 05/03 20:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gavatzky    </span><span class="f3 push-content">: 遠傳董事長是誰去查一下，政府不敢罰啦</span><span class="push-ipdatetime"> 05/03 20:58
+</span></div><span class="f2">※ 編輯: jeff85898 (125.224.5.216 臺灣), 05/03/2020 23:07:26
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rainsilver  </span><span class="f3 push-content">: 代表這些測速都是假的 都是可以被操作的?</span><span class="push-ipdatetime"> 05/04 00:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rainsilver  </span><span class="f3 push-content">: 測的時候給你看起來很快 原來是有特別設計過?</span><span class="push-ipdatetime"> 05/04 00:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rainsilver  </span><span class="f3 push-content">: 如果是真的也太扯吧</span><span class="push-ipdatetime"> 05/04 00:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">et260368    </span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 05/04 00:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">trg21333333 </span><span class="f3 push-content">: 遠傳真的誇張</span><span class="push-ipdatetime"> 05/04 04:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dupd8017    </span><span class="f3 push-content">: 扯爆 本來10M 弄完都破百==</span><span class="push-ipdatetime"> 05/04 09:00
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">kkb512sk    </span><span class="f3 push-content">: 又要招攬新客戶，卻不新增設備(基地台)，人太多塞</span><span class="push-ipdatetime"> 05/04 09:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kkb512sk    </span><span class="f3 push-content">: 車就限速，吃相真難看</span><span class="push-ipdatetime"> 05/04 09:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tpegioe     </span><span class="f3 push-content">: 推造福遠_使用者（含LM），不過我用中華，用不到</span><span class="push-ipdatetime"> 05/04 12:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">IOU9527     </span><span class="f3 push-content">: 若防火牆有主機監控功能，定時1min偵測speedtest</span><span class="push-ipdatetime"> 05/04 12:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">IOU9527     </span><span class="f3 push-content">: 是否為一樣效果?</span><span class="push-ipdatetime"> 05/04 12:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">RanceTsai   </span><span class="f3 push-content">: 太神喇</span><span class="push-ipdatetime"> 05/04 12:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">cchh179     </span><span class="f3 push-content">: <a href="https://i.imgur.com/RPFTdvS.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/RPFTdvS.jpg</a></span><span class="push-ipdatetime"> 05/04 12:59
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/RPFTdvSl.jpg?e=1631699555&amp;s=HSWCk1YfBMVWodjUjUSTuA" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">cchh179     </span><span class="f3 push-content">: 傑克這真是太神奇了</span><span class="push-ipdatetime"> 05/04 13:01
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s0831720    </span><span class="f3 push-content">: 有時候網速這種事真的很吃生活圈，我雙北市遠傳用起</span><span class="push-ipdatetime"> 05/04 13:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s0831720    </span><span class="f3 push-content">: 來是都蠻正常沒被限速過</span><span class="push-ipdatetime"> 05/04 13:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">intotherain </span><span class="f3 push-content">: 這只對偷限速又用測速白名單欺騙消費者的業者有用</span><span class="push-ipdatetime"> 05/04 13:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">intotherain </span><span class="f3 push-content">: 那種人數過多大家一起慢的 你弄了也一樣慢</span><span class="push-ipdatetime"> 05/04 13:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xhung       </span><span class="f3 push-content">: 笑死 遠X用這種方式作弊網速</span><span class="push-ipdatetime"> 05/04 14:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">david086t   </span><span class="f3 push-content">: 推 台灣之星起飛了 之前晚上看yt有夠卡</span><span class="push-ipdatetime"> 05/04 15:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MK47        </span><span class="f3 push-content">: XDDDDDDDDDDD</span><span class="push-ipdatetime"> 05/04 18:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">chris80125  </span><span class="f3 push-content">: <a href="https://i.imgur.com/K51qFJS.jpg" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/K51qFJS.jpg</a></span><span class="push-ipdatetime"> 05/04 18:52
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/K51qFJSl.jpg?e=1631676879&amp;s=9dw5tb7iSZxlfqK7Ume3AA" alt="" loading="lazy" /></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">chris80125  </span><span class="f3 push-content">: ios版本指令（a-Shell)</span><span class="push-ipdatetime"> 05/04 18:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nicegigi    </span><span class="f3 push-content">: 感謝大大分享ios版本 教學</span><span class="push-ipdatetime"> 05/04 21:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jim924211   </span><span class="f3 push-content">: 笑死xdd</span><span class="push-ipdatetime"> 05/05 01:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">luiGiF      </span><span class="f3 push-content">: 使用前後根本沒差..QQ</span><span class="push-ipdatetime"> 05/05 13:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">stage0317   </span><span class="f3 push-content">: 有用大推</span><span class="push-ipdatetime"> 05/05 20:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">kiloM       </span><span class="f3 push-content">: 前年就申辦LM211用一年都是跑滿21M，去年還續約一年</span><span class="push-ipdatetime"> 05/05 21:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kiloM       </span><span class="f3 push-content">: ，四月開始晚上剩不到10M，現在這個針打下去又可以</span><span class="push-ipdatetime"> 05/05 21:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kiloM       </span><span class="f3 push-content">: 跑滿了</span><span class="push-ipdatetime"> 05/05 21:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">andyll2     </span><span class="f3 push-content">: 剛剛凌晨12點剛換SIM卡跳到遠傳 實測沒什麼差</span><span class="push-ipdatetime"> 05/06 02:54
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stage0317   </span><span class="f3 push-content">: 超有感</span><span class="push-ipdatetime"> 05/09 00:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">eric525498  </span><span class="f3 push-content">: 推 看遠傳網路工程師要怎麼解決了 XDD</span><span class="push-ipdatetime"> 05/10 17:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ja20331     </span><span class="f3 push-content">: youtube疑似被獨立限速5.5m</span><span class="push-ipdatetime"> 05/10 19:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sirui       </span><span class="f3 push-content">: 為什麼ios操作，下載master.zip失敗@@</span><span class="push-ipdatetime"> 05/15 11:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a19951001</span><span class="f3 push-content">: 台哥無解</span><span class="push-ipdatetime"> 08/15 09:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">z83420123   </span><span class="f3 push-content">: 失效了嗎？</span><span class="push-ipdatetime"> 04/15 19:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nekochen28  </span><span class="f3 push-content">: 我的也故障了 兩台手機都是</span><span class="push-ipdatetime"> 04/18 14:26
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/MobileComm/M.1588401368.A.E6F.html?cacheKey=2148-203346170&amp;offset=37901&amp;offset-sig=28cdd6495021d47b234b266cdb38404866d3f896" data-longpollurl="/v1/longpoll?id=b3fb50a9ed6c58a702f90941a54ecaed3b35ecbd" data-offset="37901"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
