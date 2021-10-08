@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [-Fx-] 套件審核等到天荒地老... - 看板 Browsers - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="難得在這邊看到有關套件審核的討論, 就順便來分享一下有關套件審核的部份.
+以下是我憑記憶寫的, 有錯誤的話歡迎指正.
+Firefox(AMO)和Chrome(CWS)一開始就使用了兩個不同的審核策略,
+所以我們可以分別討論這兩個兩種不同的作法.
+首先是Firefox(AMO), 主要是人工審核,
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [-Fx-] 套件審核等到天荒地老...">
+<meta property="og:description" content="難得在這邊看到有關套件審核的討論, 就順便來分享一下有關套件審核的部份.
+以下是我憑記憶寫的, 有錯誤的話歡迎指正.
+Firefox(AMO)和Chrome(CWS)一開始就使用了兩個不同的審核策略,
+所以我們可以分別討論這兩個兩種不同的作法.
+首先是Firefox(AMO), 主要是人工審核,
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Browsers/M.1632889000.A.8A7.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Browsers/index.html"><span class="board-label">看板 </span>Browsers</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Browsers/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">ettoolong (ettoolong)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Browsers</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [-Fx-] 套件審核等到天荒地老...</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Wed Sep 29 12:16:24 2021</span></div>
+難得在這邊看到有關套件審核的討論, 就順便來分享一下有關套件審核的部份.
+以下是我憑記憶寫的, 有錯誤的話歡迎指正.
+Firefox(AMO)和Chrome(CWS)一開始就使用了兩個不同的審核策略,
+所以我們可以分別討論這兩個兩種不同的作法.
+
+首先是Firefox(AMO), 主要是人工審核,
+但實際上全球審核員只有十幾人(2018年時, 現在不曉得有沒有增加),
+AMO上面約25300個套件只有118個是完全審核的(剛剛查的數據),
+其餘的為部份審查(審查過之前某一版, 但沒審過最新版)或未審查.
+可想而知, 大部份的套件都是沒審過的, 除非你就只裝一兩個, 像我就是這種,
+不然多少都會裝到沒審過的, 我所有在AMO的套件, 現在也都是未審核狀態.
+
+那如何確保沒審過的套件是安全的呢? 審核團隊用的是一個叫風險值的指標.
+首先, 當你上傳一個新套件, AMO後台就會先把這個套件作分析,
+大致上就是看你套件manifest.json內容, 看你的API permissions &amp; Host permissions,
+看你有沒有content script 和 該 content script 的 match patterns,
+看你有沒有自訂CSP, 看你有沒有用到高風險API(eval 或類似作用的code),
+看你有沒有使用混淆後的code,
+權限越大, 能改動越多網站, 使用高風險API, 就會有一個越高的風險值.
+審核者一上線就會看到一個用風險值排序的套件列表, 然後從一些高風險的套件開始審.
+另外, 上傳新版本也會提高風險值, 例如一個套件經過人工審核後,
+風險值就會降一些, 經過多次更版, 如果都沒有重新審核, 風險值就會一直疊加
+(就會跑到審核列表的前面一些),
+距離最後一次審核版本, 改越多, 加越多, 直到重新被人工審核.
+
+再來就是套件的人工審核其實是分兩塊,
+一塊叫內容審核, 一塊叫安全性審核, 兩塊的審核員是分開的.
+
+內容審核其實是你上傳套件的第一關, 審核員無需技術背景,
+只要審核你的套件內容有無違反AMO條款(不能有色情, 賭博, 違反美國法律之類的),
+一般來說你上傳新套件或新版本, 會發現沒有立即出現在架上,
+那就是因為還沒通過內容審核, 雖然這個過程也是人工, 但因為不用實際檢查程式碼,
+所以可以審很快, 只要審查員上線, 通常可以審個上百個.
+＊ 有一陣子AMO是上傳就上架, 但是後來AMO受到廣告攻擊,
+用自動化方式上傳一堆廣告套件, AMO 也不像CWS要繳5塊美金,
+所以砍帳號也無法阻止自動化註冊, 最後只好把上架後的內容審核改到上架前執行.
+
+安全性審核就是大家平常比較熟知的審核, 需要技術背景,
+主要就是檢查你套件是否安全, 有沒有把使用者資料傳到特定地方,
+有沒有動態注入代碼問題, 有沒有提供混淆前的原始碼,
+有沒有對應的隱私條款, 有沒有嚴重效能問題等.
+
+一般你上傳套件後, 只要通過內容審核, 就會立即上架,
+之後(可能是很久以後)才會有安全性審核.
+
+
+再來是Chrome(CWS), 主要是自動審核, 但近兩三年有人工審核,
+Google作為大數據的霸權, 除了結合靜態分析和動態分析外,
+還導入了機器學習, 用來自動分析套件是否有問題,
+從2015年的一份報告中指出Google已累積了超過45TB的動態分析資料.
+
+Google的機器人會查詢搜索引擎, 瀏覽社交媒體, 查看熱門新聞網站,
+看看有沒有該套件的相關資訊.
+舉例來說, 如果有新聞網站報導了一篇某某套件竊取使用者資料,
+或是有社群網站上有人討論到某某套件含有惡意程式碼,
+Google就會自動下架該套件(當然會經過一些AI判定)
+這也就是為啥有時候在CWS上的套件會莫明其妙下架,
+因為AI有時候會誤判, 而當惡意套件在論壇上被討論時,
+套件也會自動下架, 因為AI是24小時隨時都在幫忙監看的.
+
+得益於越來越強大的機器學習, CWS的無人工審核讓開發者上傳套件後
+無需等候人工審核就可以直接上架,
+但是還是有不少漏網之魚, 比起AMO, CWS常常是套件被使用者發現問題後才下架.
+(AMO也偶有惡意套件, 但相對少一些, 但審核人力問題, 很難改善)
+畢竟惡意套件也有很多手段讓你難以透過簡單的自動檢查發現問題.
+這兩年我在上傳套件到CWS時, 有注意到, 含有content script
+(且有大範圍match patterns)的套件, 在上傳後會出現要人工審核(雖然不知道是
+真人工還是人工智慧), 因此需要等個一兩天才會真的上架.
+說明了Google對安全性的要求仍然是持續進步的.
+
+實際上我也很久沒認真寫套件了, 所以上面的資訊可能沒有到最新,
+不過大方向應該還是一樣的, 可以給想開發套件的人一點參考.
+如果對上面提到的部份有問題, 歡迎討論.
+
+--
+巴巴人 巔峰46級，有鑑於自己的肉體與力量的極限，苦思煩惱後，他所作出的結論是：
+<span class="hl">Thankful</span>。為了報答先祖賜予自己的無盡力量，他想表示一點心意，於是想到了 ─
+<span class="f1 hl">一天一萬次Thankful的先祖鎚</span>。首先<span class="hl">調整呼吸，敬拜、祈禱，擺好準備姿勢，揮鎚！</span>
+完成這些連續動作，一開始花的時間是五秒到六秒。第一天實行下來，還沒揮完一萬次，
+就花了十八小時以上。每天過著揮完就睡，醒來繼續揮的日子。經過了兩星期，他察覺到
+異狀。揮完了一萬次，太陽仍未下山。<span class="hl">Thankful的先祖鎚一萬次，花不到一小時的時間</span>！
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 61.222.157.197 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/Browsers/M.1632889000.A.8A7.html" target="_blank" rel="noreferrer noopener nofollow">https://www.ptt.cc/bbs/Browsers/M.1632889000.A.8A7.html</a>
+</span><span class="f2">※ 編輯: ettoolong (61.222.157.197 臺灣), 09/29/2021 13:03:22
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MK47</span><span class="f3 push-content">: 推解說 比推文裡一堆胡說八道的好多了</span><span class="push-ipdatetime"> 09/29 14:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s9209122222</span><span class="f3 push-content">: Firefox 真的很可憐，要是人力夠就好了</span><span class="push-ipdatetime"> 09/29 14:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MilchFlasche</span><span class="f3 push-content">: 厲害的一篇文。嗚，希望Firefox的CSS實做以及JavaSc</span><span class="push-ipdatetime"> 09/29 16:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MilchFlasche</span><span class="f3 push-content">: ript相容性都能維持不墜啊……有的bug十幾年了還在</span><span class="push-ipdatetime"> 09/29 16:34
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">frankmito</span><span class="f3 push-content">: 所以現在火狐的狀態是內容審核也人力不足囉</span><span class="push-ipdatetime"> 09/29 19:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Seventhsky</span><span class="f3 push-content">: 人力不足是常態了 所以真的不知道那麼愛開新企畫幹嘛</span><span class="push-ipdatetime"> 09/29 19:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Seventhsky</span><span class="f3 push-content">: 最後還不是沒人力做下去草草收掉 都不知道loop幾次了</span><span class="push-ipdatetime"> 09/29 19:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sdbb</span><span class="f3 push-content">: 幫火狐QQ</span><span class="push-ipdatetime"> 09/29 23:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 一直開新專案八成是有管理「專家」導入KPI制度的結</span><span class="push-ipdatetime"> 09/30 03:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 果</span><span class="push-ipdatetime"> 09/30 03:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 畢竟修Bug跟維護穩定性在「管理專家」眼中不是什麼</span><span class="push-ipdatetime"> 09/30 03:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 「有生產力」的工作</span><span class="push-ipdatetime"> 09/30 03:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Kagero</span><span class="f3 push-content">: 反正firefox又贏了 贏到再丟個幾千萬用戶也沒差</span><span class="push-ipdatetime"> 09/30 18:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Kagero</span><span class="f3 push-content">: 說不定Mozilla的目標是拿掉附加元件</span><span class="push-ipdatetime"> 09/30 18:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Kagero</span><span class="f3 push-content">: 才會這樣搞人 畢竟第三方就是危險 沒第三方才保證安全</span><span class="push-ipdatetime"> 09/30 18:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">m20081015</span><span class="f3 push-content">: 粗暴言論duck不必，FX當初會崛起就是因為附加元件，為</span><span class="push-ipdatetime"> 10/01 09:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">m20081015</span><span class="f3 push-content">: 安全性把附加元件拔掉？Mozilla又不是頭殼壞掉，隨著</span><span class="push-ipdatetime"> 10/01 09:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">m20081015</span><span class="f3 push-content">: 瀏覽器技術演進，追隨越快的網頁渲染載入、越快的啟動</span><span class="push-ipdatetime"> 10/01 09:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">m20081015</span><span class="f3 push-content">: 速度，舊型的附加元件已經不合時宜</span><span class="push-ipdatetime"> 10/01 09:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alchemy123</span><span class="f3 push-content">: 講得這麼浮誇 鉻v3裝沒看見 顆顆</span><span class="push-ipdatetime"> 10/01 10:29
+</span></div>如果你是指 manifest v3 的問題的話, 我之前已經發過文了,有興趣可以再回去看,
+基本上 Firefox 也會很快跟上v3,
+但會不會完全照 Chrome 的規格改掉 webRequest API 就還不確定,
+這也是公開的資訊, 有興趣可以去 AMO 的 blog 上找一下之前的文章.
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kenqr</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/02 16:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 10/02 22:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: FF：你的超能力是什麼？ - Google：我很有錢。</span><span class="push-ipdatetime"> 10/04 03:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: Google: 別忘了，你還是靠我養的，每年兩億</span><span class="push-ipdatetime"> 10/05 20:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BDrip</span><span class="f3 push-content">: Fx:你不養我 就找Bing喔?</span><span class="push-ipdatetime"> 10/05 21:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: 可否冒昧問問資訊來源？是兩家公司公開說明過審查方針</span><span class="push-ipdatetime"> 10/05 23:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: ？還是你認識兩家公司的員工？XD</span><span class="push-ipdatetime"> 10/05 23:09
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: Fx最近的狀況就是(1)以前不用人工審核的現在通通要審，</span><span class="push-ipdatetime"> 10/05 23:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: 而且一個版本審一個月以後，下個版本即使只更動一兩行</span><span class="push-ipdatetime"> 10/05 23:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: ，也要審差不多一個月... (2)以前unlisted幾乎不用審的</span><span class="push-ipdatetime"> 10/05 23:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: 現在也變成都要審，看起unlisted再也沒什麼用了XD</span><span class="push-ipdatetime"> 10/05 23:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">danny0838</span><span class="f3 push-content">: (3)用很瞎的安全性理由退件...我有空另外說明好了...</span><span class="push-ipdatetime"> 10/05 23:16
+</span></div>(1)上傳一個新版本要一個月會才上架, 這就真的很扯,
+一般來說最多一天就會上了, 但是以前發生過後台出錯,
+套件被重複簽章或沒有被自動簽章這類的問題,
+因此如果上傳後太久沒有出現, 建議去線上頻道直接問.
+先加入 Matrix, 然後找 Add-on Reviewer 這個 room,
+<a href="https://wiki.mozilla.org/Matrix" target="_blank" rel="noreferrer noopener nofollow">https://wiki.mozilla.org/Matrix</a>
+有3個room跟套件有關, 分別是 Add-ons, AMO, Add-on Reviewer,
+跟審核有關的問題, 或是套件被reject, 都可以上 Add-on Reviewer 問.
+跟開發有關的問題可以在 Add-ons 問.
+
+(2) unlisted 要審這我也是覺得滿奇怪的, 以前是不用審的,
+而且我也不記得官方有公佈過這類的政策修改, 建議也是去頻道上問比較準.
+
+(3) 可以說明一下所謂的很瞎理由嗎?
+因為審查本身也是有一些基本規則(哪些可以/哪些不行).
+所以可能要看到退件理由才能確定是不是真的很瞎.
+
+基本上AMO和CWS審查方針都是查得到的資料.
+AMO的在:
+<a href="https://extensionworkshop.com/documentation/publish/add-on-policies/" target="_blank" rel="noreferrer noopener nofollow">https://extensionworkshop.com/documentation/publish/add-on-policies/</a>
+上面提及的內容審查(Content Review)的審查內容
+就在 Content 這個段落內.
+更多審核的資訊可以參考這幾篇:
+<a href="https://wiki.mozilla.org/Add-ons/Reviewers/Guide" target="_blank" rel="noreferrer noopener nofollow">https://wiki.mozilla.org/Add-ons/Reviewers/Guide</a>
+此為 reviewer 的指南, 內容含蓋所有 reviewer 要知道的內容,
+(包含工具, 政策, 流程, 團隊 等)
+如果只是想看一下流程, 可以看這篇:
+<a href="https://wiki.mozilla.org/Add-ons/Reviewers/Guide/Reviewing" target="_blank" rel="noreferrer noopener nofollow">https://wiki.mozilla.org/Add-ons/Reviewers/Guide/Reviewing</a>
+
+如果你在AMO上有自己的套件, 就可以去報名Add-on reviewer.
+如果想要幫忙解決人力問題的, 可以去試試,
+但是我剛剛查了一下, 已經找不到報名reviewer的計畫(計畫關閉中),
+不過如果真的有興趣的話, 還是可以去 Matrix 的 Add-on Reviewer 那邊問問.
+
+CWS的審核流程也是很多年前公開過的.
+不過我現在一時找不到詳細內容, 所以我才會說是憑印象寫 XD,
+其實那篇內容比我上面講的還複雜, 除了自動檢查程式碼內容,
+機器人自動收集擴充套件資訊外, 還包含防毒軟體,
+使用者回報之類的流程, 然後還有一些ML的分析,
+解釋CWS如何透過特徵分析(函蓋套件程式碼內容, 社群討論, 開發者分析,
+下載量和安裝量分析, 評論分析 等)
+找出有問題的套件.
+<span class="f2">※ 編輯: ettoolong (61.222.157.197 臺灣), 10/07/2021 11:13:48
+</span></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Browsers/M.1632889000.A.8A7.html?cacheKey=2148-438936603&amp;offset=9549&amp;offset-sig=2cbabc2addee97d8c6c1df4b609b8c36ccba0437" data-longpollurl="/v1/longpoll?id=90751d2fd40a75b9bf8ee00b844177b5924d9e1a" data-offset="9549"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

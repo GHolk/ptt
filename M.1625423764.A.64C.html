@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [問題] ptt的bug。 - 看板 PttBug - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="    根據 PttBBS 的原始碼，的確是這樣的。
+    請見: https://github.com/ptt/pttbbs/blob/7b35778243/common/bbs/search.c
+    以下對處理邏輯的說明，主要是根據此程式碼所得出的。
+    common/bbs/search.c 包含以下兩個處理文章搜尋的函式：
+select_read_should_build() 與 select_read_build()。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [問題] ptt的bug。">
+<meta property="og:description" content="    根據 PttBBS 的原始碼，的確是這樣的。
+    請見: https://github.com/ptt/pttbbs/blob/7b35778243/common/bbs/search.c
+    以下對處理邏輯的說明，主要是根據此程式碼所得出的。
+    common/bbs/search.c 包含以下兩個處理文章搜尋的函式：
+select_read_should_build() 與 select_read_build()。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/PttBug/M.1625423764.A.64C.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/PttBug/index.html"><span class="board-label">看板 </span>PttBug</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/PttBug/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">IepID (Iep Iweidieng)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">PttBug</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [問題] ptt的bug。</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Mon Jul  5 02:35:59 2021</span></div>
+<span class="f2">※ 引述《holishing ( )》之銘言：
+</span><span class="f6">: </span><span class="hl">推 </span><span class="f3 hl">holishing</span><span class="f3">: 如果過一陣子才正常，那就是已知問題                  </span> 07/04 14:11
+
+<span class="f2">※ 引述《roujuu (老中)》之銘言：
+</span><span class="f6">: 是因為 ptt 這個bbs的程式寫法的關係嗎？
+</span><span class="f6">: 「過一陣子才正常」是因為程式的寫法並不是隨時都去運算以更新相關方面的搜尋結果？
+</span>
+    根據 PttBBS 的原始碼，的確是這樣的。
+
+    請見: <a href="https://github.com/ptt/pttbbs/blob/7b35778243/common/bbs/search.c" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ptt/pttbbs/blob/7b35778243/common/bbs/search.c</a>
+    以下對處理邏輯的說明，主要是根據此程式碼所得出的。
+
+    common/bbs/search.c 包含以下兩個處理文章搜尋的函式：
+select_read_should_build() 與 select_read_build()。
+
+
+    select_read_build() 會更新或重新建立搜尋結果，並建檔儲存。
+而儲存的檔案，以下稱之為「搜尋結果檔」。
+    注意不同的搜尋條件會對應不同的搜尋結果檔。
+請見 mbbsd/read.c 中的函式 select_read()：
+<a href="https://github.com/ptt/pttbbs/blob/7b35778243/mbbsd/read.c#L651...L720" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ptt/pttbbs/blob/7b35778243/mbbsd/read.c#L651...L720</a>
+
+
+    select_read_should_build() 會決定是否需要更新或重新建立搜尋結果。
+
+    首先，如果搜尋結果檔尚未建立，就需要重新建立搜尋結果。
+
+    接著，這個函式會檢查看板的 SRexpire。
+（SRexpire 應該是最近一次對此看板進行需要重新建立搜尋結果的操作的時間）
+    如果搜尋結果檔比 SRexpire 還早建立的話，就需要重新建立搜尋結果。
+
+    檢查完 SRexpire 後，會再檢查搜尋結果檔的更新時間（未更新過則為建立時間）。
+    如果搜尋結果超過 1 小時未更新，就會重新建立搜尋結果。
+    如果距上次更新未超過 1 小時，但超過 3 分鐘未更新，
+就會以目前的搜尋結果檔為基礎，更新搜尋結果。
+    如果距上次更新未超過 3 分鐘，則會直接使用目前的搜尋結果檔當作搜尋結果。
+
+    此外，當搜尋條件包含 m/s 標記或推文數時，
+只要搜尋紀錄的更新時間距上次更新超過 3 分鐘，就會一律重新建立搜尋結果。
+請見: <a href="https://github.com/ptt/pttbbs/blob/7b35778243/mbbsd/read.c#L700...L701" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ptt/pttbbs/blob/7b35778243/mbbsd/read.c#L700...L701</a>
+
+
+    因此，若是遇到此類問題，目前暫時的因應方式是先等待 3 分鐘後再重新搜尋。
+若仍然遇到問題，則可嘗試增加 m/s 標記或推文數的搜尋條件。
+
+    而從系統端解決的方式之一，則是找出會導致搜尋結果與文章列表不合的文章操作，
+並使看板的 SRexpire 在這些操作後被更新，讓下次搜尋能使用重新建立的搜尋結果。
+
+
+<span class="f2">※ 引述《roujuu (老中)》之銘言：
+</span><span class="f6">: 【板主:u10400068/zouelephant/redDest..】[希洽] Steam夏季特賣登場 看板《C_Chat》
+</span><span class="f6">: [←]離開 [→]閱讀 [Ctrl-P]發表文章 [d]刪除 [z]精華區 [i]看板資訊/設定 [h]說明
+</span><span class="f6">:    編號    日 期 作  者       文  章  標  題                         人氣:818
+</span><span class="f6">:  346277 +43 6/27 dzwei        □ [閒聊] やなぎなぎ最經典的歌曲是哪首?
+</span><span class="f6">:  346278 +   6/27 dalyadam     □ [實況] Forsen 玩(Bro Falls)惡搞?抄襲?
+</span>（恕省略以下內容……）
+
+    至於問題報告的內容，個人覺得以畫面擷圖為主來敘述的話，
+讀者會需要看圖說故事，且文章篇幅會較大，因此閱讀上可能會比較不容易理解，
+而引用上可能也會有不甚方便之處。
+
+    如果能確定畫面中有助於判斷問題的部份的話，僅保留該部份有助於減少文章篇幅。
+    但若不清楚畫面中須要保留的部份，而不便取捨的話，
+如果每張擷圖都有文字說明此擷圖所對應的操作步驟，讀者會更容易理解。
+
+    而如果能從問題報告的標題看出此問題的大致的類型，甚至大致的症狀的話，
+也可以幫助站方與協助維護程式的人員判斷此問題的重要程度。
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.116.130.29 (臺灣)
+</span><span class="f2">※ 文章網址: <a href="https://www.ptt.cc/bbs/PttBug/M.1625423764.A.64C.html" target="_blank" rel="noreferrer noopener nofollow">https://www.ptt.cc/bbs/PttBug/M.1625423764.A.64C.html</a>
+</span>
+    目前 select_read_build() 以某個搜尋結果檔為基礎，更新搜尋結果時，
+並不會更動此搜尋結果檔中已存在的文章項目。
+
+    所以如果搜尋結果中與文章列表不合的項目已在搜尋結果檔中，
+需要等待 1 小時後再重新搜尋，以重新建立搜尋結果。
+
+    但距搜尋結果的更新時間未超過 1 小時之時，任何人進行條件相同的搜尋，
+都會造成更新時間被重設為進行搜尋的時間，而需要重新等待 1 小時。
+    因此，如果使用的搜尋條件較為熱門，等待 1 小時的因應方式會較不可靠，
+而使用增加條件的因應方式會較可靠。
+<span class="f2">※ 編輯: IepID (140.116.130.29 臺灣), 07/05/2021 03:22:51
+</span></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/PttBug/M.1625423764.A.64C.html?cacheKey=2148-875314375&amp;offset=3666&amp;offset-sig=a2bc42b61fee8c5fa22edc4d94e2a03836239848" data-longpollurl="/v1/longpoll?id=e635d5712709e2d1378012a632b9aa846de811f4" data-offset="3666"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
