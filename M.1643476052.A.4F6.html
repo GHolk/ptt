@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [-Fx-][-GC-] WebExtension Manifest v3 現況 - 看板 Browsers - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="這裡有更多資訊：
+https://github.com/w3c/webextensions/issues/51
+看來 background page 強制改 service worker 的問題比想像中大得多：
+* service worker 在閒置時會自動卸載，而一但卸載，將無法持續監聽網路或事件。
+  比如 WebSocket 會廢掉，本地程式的訊息在卸載時也無法接收。
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [-Fx-][-GC-] WebExtension Manifest v3 現況">
+<meta property="og:description" content="這裡有更多資訊：
+https://github.com/w3c/webextensions/issues/51
+看來 background page 強制改 service worker 的問題比想像中大得多：
+* service worker 在閒置時會自動卸載，而一但卸載，將無法持續監聽網路或事件。
+  比如 WebSocket 會廢掉，本地程式的訊息在卸載時也無法接收。
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Browsers/M.1643476052.A.4F6.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Browsers/index.html"><span class="board-label">看板 </span>Browsers</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Browsers/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">danny0838 (道可道非常道)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Browsers</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [-Fx-][-GC-] WebExtension Manifest v3 現況</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Sun Jan 30 01:07:28 2022</span></div>
+<span class="f2">※ 引述《danny0838 (道可道非常道)》之銘言：</span>
+<span class="f6">: ※ 引述《ettoolong (ettoolong)》之銘言：</span>
+<span class="f6">: : 2022 一月 17 日開始</span>
+<span class="f6">: :   開發者無法再上傳新的 v2 版套件(非公開套件除外)</span>
+<span class="f6">: :   開發者仍可更新現有的 v2 版套件</span>
+
+<span class="f6">: : 使用 background service workers 替代 Background pages,</span>
+<span class="f6">: : 大部份的套件的 background script 需重寫. Firefox 將跟進此變動.</span>
+<span class="f6">: 比較麻煩的是 service worker 無法執行 DOM 運算，</span>
+<span class="f6">: 可能要自己做一個虛擬 DOM libraray...</span>
+
+這裡有更多資訊：
+<a href="https://github.com/w3c/webextensions/issues/51" target="_blank" rel="noreferrer noopener nofollow">https://github.com/w3c/webextensions/issues/51</a>
+
+看來 background page 強制改 service worker 的問題比想像中大得多：
+
+* service worker 在閒置時會自動卸載，而一但卸載，將無法持續監聽網路或事件。
+  比如 WebSocket 會廢掉，本地程式的訊息在卸載時也無法接收。
+  本來載入到記憶體的資料不斷卸載再重新加載也會更耗運算資源。
+
+* 再來就是一大堆 API 不能用，比如 DOMParser、XMLHttpRequest、
+  URL.createObjectURL、剪貼簿等等。
+
+而改成 service worker 帶來的效益有什麼？幾乎看不出來......
+
+
+
+Google 現在正在做一件比 Firefox 57 更極端、更殘暴的事，
+Firefox 57 至少是在 WebExtension API 已相當完善，
+大部分重要套件技術上可移植的情況下才停止支援舊版套件系統。
+而 Google 現在是在 MV3 還一堆爭議、API 還一堆未修 bug 的情況硬上，
+逼開發者和使用者吞下去（其實根本吞不下去，功能沒有就是沒有...），
+就等著看看 Fx 56 =&gt; 57 和 GC MV2 =&gt; MV3 何者流失的使用者多吧...。
+
+--
+<span class="f3 hl">《終結內容農場》瀏覽器套件</span>
+<span class="f2 hl">Chrome</span>: <a href="https://bit.ly/CFTGC" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTGC</a> <span class="f6 hl">(桌機 &amp; Kiwi Browser on Android)</span>
+<span class="f2 hl">Firefox</span>: <a href="https://bit.ly/CFTFx" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTFx</a> <span class="f6 hl">(桌機 &amp; Firefox for Android)</span>
+真相：<a href="https://bit.ly/CFTss1" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTss1</a>、<a href="https://bit.ly/CFTss2" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTss2</a>
+詳細介紹：<a href="https://bit.ly/CFTinfo" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTinfo</a>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 59.115.37.75 (臺灣)</span>
+<span class="f2">※ 文章網址: </span><a href="https://www.ptt.cc/bbs/Browsers/M.1643476052.A.4F6.html" target="_blank" rel="noreferrer noopener nofollow"><span class="f2">https://www.ptt.cc/bbs/Browsers/M.1643476052.A.4F6.html</span></a>
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 不可能流失啊 這個MV3是全都有獎的</span><span class="push-ipdatetime">01/30 02:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">rockmanx52</span><span class="f3 push-content">: 躲得過的頂多Safari吧 可是這家擴充套件更嚴格</span><span class="push-ipdatetime">01/30 02:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sam613</span><span class="f3 push-content">: 流失想太多,google球員兼裁判怎麼輸</span><span class="push-ipdatetime">01/30 02:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BDrip</span><span class="f3 push-content">: 能流失到哪家去?</span><span class="push-ipdatetime">01/30 02:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dosiris</span><span class="f3 push-content">: 本來死守FX28 結果Google Drive不支援才升級</span><span class="push-ipdatetime">01/30 08:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dosiris</span><span class="f3 push-content">: 這次不知道能撐多久</span><span class="push-ipdatetime">01/30 08:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alchemy123</span><span class="f3 push-content">: 就是要把你教育成裸奔user</span><span class="push-ipdatetime">01/30 10:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zhtw</span><span class="f3 push-content">: 能流失去哪？ Fx掉使用者主因也不是改套件啊</span><span class="push-ipdatetime">01/30 10:43
+</span></div>
+目前就只能指望 Fx 了。
+Fx 是有說預計要跟進，但也要 MV3 能穩定使用才會停止支援 MV2，
+如果 MV3 bug 太多修不好，使用者和開發者有持續「溝通」，
+我認為 Fx 有機會妥協，
+前例是 Fx 有說會保留 webRequestBlocking，
+光這點就有機會讓擋廣告套件的使用者跳槽到 Fx。
+
+Fx 57 會堅持要上是因為舊套件架構帶來的相容問題和安全風險太大，
+且大部分不涉及風險的套件都能改寫，
+甚至舊套件還有機會寫成 userChrome JS。
+相較之下，改 service worker 並沒有那麼明顯的效益，
+Fx 在 MV2 的 background page 一直未支援 non-persistent mode，
+Fx 套件也一直不支援 service worker，
+所以就算跟進還是有可能維持支援 MV2 的 persistent background page。
+
+<span class="f2">※ 編輯: danny0838 (59.115.37.75 臺灣), 01/30/2022 12:10:11
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kawasakiZII</span><span class="f3 push-content">: 擋廣告可能是跳槽的誘因+1 不過還是看後續發展了</span><span class="push-ipdatetime"> 01/30 14:33
+</span></div><span class="f2">※ 編輯: danny0838 (59.115.37.75 臺灣), 01/30/2022 15:18:47
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">BDrip</span><span class="f3 push-content">: 會不會以後都得mitm解開 讓別的程式來處理</span><span class="push-ipdatetime"> 01/30 15:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 哈，其實我一直都覺得瀏覽器廠商改了什麼架構然後就會讓</span><span class="push-ipdatetime"> 01/30 16:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 使用者大跳槽的現象根本不存在。九成的使用者可能都沒有在</span><span class="push-ipdatetime"> 01/30 16:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 用套件。所以 Chrome 還是一樣真香，一堆人用，優勢地位</span><span class="push-ipdatetime"> 01/30 16:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 不會受影響。</span><span class="push-ipdatetime"> 01/30 16:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 但是這波 MV3 的改動真的很幹，到時候勢必得花時間改寫</span><span class="push-ipdatetime"> 01/30 16:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 開原開發者沒錢賺已經很慘了，還要整天被 Google 搞</span><span class="push-ipdatetime"> 01/30 16:59
+</span></div>
+Firefox 57 還是有不少人跳槽吧？不過這可能要統計就是了。
+選擇不跳槽的還有不少是因為重要套件可移植，
+而且 Firefox 不像 Chrome 會強制升級，
+當時還有不少人守在 56 或 52 ESR 等待套件移植。
+
+什麼是重要套件呢？
+擋廣告絕對是其中之一，砍這個絕對是和使用者作對；
+其他我有看過的主要是 ScrapBook 和 tab 類。
+
+順帶一提，Brave, Opera, Vilvadi 作者曾說過不打算跟進：
+<a href="https://zd.net/34lzwUl" target="_blank" rel="noreferrer noopener nofollow">https://zd.net/34lzwUl</a>
+
+Edge 好像還沒明確表態...
+
+Fx 57 雖然也要大改寫，但畢竟有提高相容性，改寫後可以支援更多瀏覽器，
+而且 WebExtension API 的確比舊套件好寫許多，寫起來至少甘願點。
+MV3 幾乎沒帶來任何好處或新功能，
+就只是破壞相容性和製造額外負擔，讓開發者做白工，
+真的欠幹。
+<span class="f2">※ 編輯: danny0838 (59.115.37.75 臺灣), 01/30/2022 17:39:10
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kawasakiZII</span><span class="f3 push-content">: edge會跟MV3唷： <a href="https://bit.ly/3gb4vVS" target="_blank" rel="noreferrer noopener nofollow">https://bit.ly/3gb4vVS</a></span><span class="push-ipdatetime"> 01/30 17:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kawasakiZII</span><span class="f3 push-content">: 是說chromium系的如果是靠chrome store來裝套件，沒</span><span class="push-ipdatetime"> 01/30 17:59
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kawasakiZII</span><span class="f3 push-content">: 有自己的套件store，就算不跟MV3應該也會受影響吧?</span><span class="push-ipdatetime"> 01/30 18:00
+</span></div>
+的確是，如果沒有自己的 web store，就讓給 Firefox 吧。XD
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Lukesky</span><span class="f3 push-content">: 我認識有在用chrome的人 幾乎沒有在用套件的</span><span class="push-ipdatetime"> 01/30 19:29
+</span></div>
+很多使用者都不知道套件的好用啊XD
+倒是有幾個人，教他們裝 uBO 以後看 YouTube 不會有廣告，
+就回不去了，科科。
+<span class="f2">※ 編輯: danny0838 (59.115.37.75 臺灣), 01/30/2022 22:21:58
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 很多是看你用什麼當作比較對象，如果是跟整個網路的使用者</span><span class="push-ipdatetime"> 01/31 00:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 來比較，會因為套件就跳槽的簡直就是九牛一毛甚至百牛一毛</span><span class="push-ipdatetime"> 01/31 00:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 就像 Lukesky 說的，他觀察到的現象才是常態，絕大多數人</span><span class="push-ipdatetime"> 01/31 00:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 真的不會知道套件是什麼。</span><span class="push-ipdatetime"> 01/31 00:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: WebExt 我也是非常支持的，不管是我是開發者還是使用者</span><span class="push-ipdatetime"> 01/31 00:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 而且我也可以看到 FX 已經在 Google 很鴨霸的情況下堅守</span><span class="push-ipdatetime"> 01/31 00:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 很多東西（雖然你還是可以看到板上時不時有人出來說 FX 都</span><span class="push-ipdatetime"> 01/31 00:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 跟著 chrome 走），只能說有些東西是逼不得已，但是 MOZ</span><span class="push-ipdatetime"> 01/31 00:28
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 多少有讓你感覺到他在努力</span><span class="push-ipdatetime"> 01/31 00:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tck01</span><span class="f3 push-content">: 請問SW的改動具體來說會影響到哪類套件? 有沒有例子?</span><span class="push-ipdatetime"> 01/31 04:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tck01</span><span class="f3 push-content">: 那種在背景默默執行，跟當下網頁無關的套件都會出事嗎?</span><span class="push-ipdatetime"> 01/31 04:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">tck01</span><span class="f3 push-content">: 不知道給這些套件固定分頁的話可不可以繞過...</span><span class="push-ipdatetime"> 01/31 04:09
+</span></div>
+基本上只要是 manifest v2 使用 persistent background page 的套件都可能受影響，
+有些只是效能稍微變差（背景頁變數快取被清掉，但暫存資料重建就好），
+有些則是原來的功能會掛掉（背景頁變數記錄了需要延續的資料），
+有些可以改寫（例如把變數存的東西移到 storage），
+有些則很難（例如 websocket 斷掉或 native app message 收不到）。
+
+這個和套件固定分頁沒什麼關係，
+不過 v3 如果有套件的程序在背景 service worker 跑會出問題，
+作者可能被迫要把相關程序寫在套件頁面，
+讓使用者把它開在一個分頁不能關掉。XD
+<span class="f2">※ 編輯: danny0838 (220.137.15.240 臺灣), 02/01/2022 13:40:13
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 其實 bg script 跟 bg worker 應該是兩種可以選擇的情境</span><span class="push-ipdatetime"> 02/01 16:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 讓開發者視需求來選擇合適的，但現在只有強迫...</span><span class="push-ipdatetime"> 02/01 16:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: 但從目前的分析來看， bg worker 真的看不到什麼好處</span><span class="push-ipdatetime"> 02/01 16:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abramtw</span><span class="f3 push-content">: 除了套件 想不到一般用戶有其他理由選擇火狐</span><span class="push-ipdatetime"> 02/02 05:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">abramtw</span><span class="f3 push-content">: 而不選Chrome</span><span class="push-ipdatetime"> 02/02 05:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">art1</span><span class="f3 push-content">: Chrome 有啥特別好的地方值得用嗎？ XD</span><span class="push-ipdatetime"> 02/03 08:05
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MK47</span><span class="f3 push-content">: 好在google服務不會刻意搞 XD</span><span class="push-ipdatetime"> 02/03 09:36
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Arbin</span><span class="f3 push-content">: 值得用chrome的理由，就...Google服務很順</span><span class="push-ipdatetime"> 02/03 13:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sdbb</span><span class="f3 push-content">: 避免netscape opera悲劇</span><span class="push-ipdatetime"> 02/03 13:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sdbb</span><span class="f3 push-content">: 或者轉safari</span><span class="push-ipdatetime"> 02/03 13:13
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Browsers/M.1643476052.A.4F6.html?cacheKey=2148-408884244&amp;offset=8388&amp;offset-sig=8458bf4bc5c400d63b741adbc28aca24bab86847" data-longpollurl="/v1/longpoll?id=574ef54224a2216afc4dae37cd1d9cbff91ac62e" data-offset="8388"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>

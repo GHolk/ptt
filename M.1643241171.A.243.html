@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[情報] 2023年一月將無法使用油猴類套件 - 看板 Browsers - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="相關的資料在 #1XiiUezf (Browsers) 等 Manifest V3 的相關帖子都有提到，
+只是非開發者可能不會留意，所以換個比較能引起注意的標題。XD
+2023 年一月開始 Chromium 將無法執行 Manifest V2 套件，
+而 Manifest V3 套件禁止執行遠端腳本，
+（所謂遠端腳本就是一切套件可以主動從遠端抓來的 JS 程式碼）
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[情報] 2023年一月將無法使用油猴類套件">
+<meta property="og:description" content="相關的資料在 #1XiiUezf (Browsers) 等 Manifest V3 的相關帖子都有提到，
+只是非開發者可能不會留意，所以換個比較能引起注意的標題。XD
+2023 年一月開始 Chromium 將無法執行 Manifest V2 套件，
+而 Manifest V3 套件禁止執行遠端腳本，
+（所謂遠端腳本就是一切套件可以主動從遠端抓來的 JS 程式碼）
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Browsers/M.1643241171.A.243.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Browsers/index.html"><span class="board-label">看板 </span>Browsers</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Browsers/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">danny0838 (道可道非常道)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Browsers</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[情報] 2023年一月將無法使用油猴類套件</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Jan 27 07:52:48 2022</span></div>
+相關的資料在 <a href="http://www.ptt.cc/bbs/Browsers/M.1639106472.A.F69.html" target="_blank" rel="noreferrer noopener nofollow">#1XiiUezf (Browsers)</a> 等 Manifest V3 的相關帖子都有提到，
+只是非開發者可能不會留意，所以換個比較能引起注意的標題。XD
+
+2023 年一月開始 Chromium 將無法執行 Manifest V2 套件，
+而 Manifest V3 套件禁止執行遠端腳本，
+（所謂遠端腳本就是一切套件可以主動從遠端抓來的 JS 程式碼）
+換言之<span class="f3 hl">所有油猴類自訂腳本的套件都會死掉</span>，
+包括 <span class="f2 hl">Greasemonkey、Violentmonkey、Tampermonkey</span> 等等。
+
+
+
+Google 對 MV3 套件有明確額外規範：
+
+  Additional requirements for Manifest V3
+
+  Extensions using Manifest V3 must meet additional requirements
+  related to the extension&#39;s code. Specifically, the full functionality
+  of an extension must be easily discernible from its submitted code.
+  This means that the logic of how each extension operates should be
+  self contained. The extension may reference and load data and other
+  information sources that are external to the extension, but these
+  external resources must not contain any logic.
+
+  Some common violations include:
+
+  * Including a &lt;script&gt; tag that points to a resource that is not
+    within the extension&#39;s package
+  * Using JavaScript&#39;s eval() method or other mechanisms to execute a
+    string fetched from a remote source
+  * Building an interpreter to run complex commands fetched from a
+    remote source, even if those commands are fetched as data
+
+換言之，有些人想過的用 evaljs 或 WASM 等繞道方式，都會被視為違規。
+
+
+
+Chromium 系列如此，那 Firefox 呢？
+根據情報，Firefox 的 Manifest V3 也會跟進 Choromium 做法。
+雖然 Firefox 目前還不支援 Manifest V3，
+也尚未提出明確開始支援 MV3 和停止支援 MV2 的時程，
+但長遠來看，結果一樣。
+
+Firefox 和 Chromium 有個差別是 Firefox 本來就支援 user chrome JS，
+但無法使用一般套件 API，
+只能使用舊套件的類 XUL/XPCOM 技術，寫起來比較麻煩，且可能升級就不相容。
+
+
+
+油猴類套件廢掉，短期內衝擊可能不小，
+但長遠來看，我個人對此政策沒有太大意見。
+
+禁止遠端腳本的理由很明顯，就是有被濫用的風險，
+今天某套件可以下載一段遠端的腳本執行，
+明天就會有攻擊者架設有惡意腳本的遠端網站，
+且任何套件都有可能主動抓惡意腳本搞恐怖攻擊，
+這對瀏覽器使用者的數位安全非常沒有保障。
+
+技術上來說，所有油猴類腳本都可以改寫成套件，
+而套件起碼會通過 Google、Firefox 站方審核和監管，
+安全性比較有保障。
+
+雖然說套件和油猴腳本相比，
+開發上的確麻煩一點，效能也可能差一點，
+但這就是未來的趨勢，除非有能力自己寫個全新瀏覽器來反壟斷。
+開發者倒是可以抓緊時機，搶先把各種實用油猴腳本改寫成套件，
+早發表早卡位早得流量。XD
+
+除此之外，一些比較簡單的腳本，其實可以寫成書籤小工具。
+或許未來會有人寫個簡單的書籤小工具管理套件。XD
+
+順便在以下開放大家分享常用、實用的使用者腳本，
+及可以替代的套件或書籤小工具（如果能找到），
+也許可以得到使用者和一些開發者的關切:)
+
+
+
+相關資料：
+
+Violent monkey 的 issue:
+<a href="https://github.com/violentmonkey/violentmonkey/issues/505" target="_blank" rel="noreferrer noopener nofollow">https://github.com/violentmonkey/violentmonkey/issues/505</a>
+
+Tampermonkey 的 issue:
+<a href="https://github.com/Tampermonkey/tampermonkey/issues/644" target="_blank" rel="noreferrer noopener nofollow">https://github.com/Tampermonkey/tampermonkey/issues/644</a>
+
+裡面有提到 Google 有計畫讓 power user 設定 user script 或 CSS，
+但目前八字沒有一撇，也沒看到相關的 API 和文件。
+
+其他討論：
+<a href="https://groups.google.com/a/chromium.org/g/chromium-extensions/c/hQeJzPbG-js" target="_blank" rel="noreferrer noopener nofollow">https://groups.google.com/a/chromium.org/g/chromium-extensions/c/hQeJzPbG-js</a>
+
+各種使用者抱怨XD
+
+--
+<span class="f3 hl">《終結內容農場》瀏覽器套件</span>
+<span class="f2 hl">Chrome</span>: <a href="https://bit.ly/CFTGC" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTGC</a> <span class="f6 hl">(桌機 &amp; Kiwi Browser on Android)</span>
+<span class="f2 hl">Firefox</span>: <a href="https://bit.ly/CFTFx" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTFx</a> <span class="f6 hl">(桌機 &amp; Firefox for Android)</span>
+真相：<a href="https://bit.ly/CFTss1" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTss1</a>、<a href="https://bit.ly/CFTss2" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTss2</a>
+詳細介紹：<a href="https://bit.ly/CFTinfo" target="_blank" rel="noreferrer noopener nofollow">http://bit.ly/CFTinfo</a>
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 59.115.60.81 (臺灣)</span>
+<span class="f2">※ 文章網址: </span><a href="https://www.ptt.cc/bbs/Browsers/M.1643241171.A.243.html" target="_blank" rel="noreferrer noopener nofollow"><span class="f2">https://www.ptt.cc/bbs/Browsers/M.1643241171.A.243.html</span></a>
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PRODIGALEX</span><span class="f3 push-content">: 推說明！</span><span class="push-ipdatetime">01/27 08:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">topcdmouse</span><span class="f3 push-content">: 推說明，希望能找到共存的道路。畢竟用stylus寫了一些</span><span class="push-ipdatetime">01/27 08:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">topcdmouse</span><span class="f3 push-content">: 擋廣告or礙眼項目的內容</span><span class="push-ipdatetime">01/27 08:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">abc0922001</span><span class="f3 push-content">: Stylus 也不能喔，哭阿</span><span class="push-ipdatetime">01/27 08:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abc0922001</span><span class="f3 push-content">: 我只想改掉 Chrome Windows 上難看的字體</span><span class="push-ipdatetime">01/27 08:54
+</span></div>更新資訊，
+Manifest V3 有新 API 支援 inject/remove CSS：
+<a href="https://developer.chrome.com/docs/extensions/reference/scripting/" target="_blank" rel="noreferrer noopener nofollow">https://developer.chrome.com/docs/extensions/reference/scripting/</a>
+
+所以 user CSS 類套件還是可以使用。
+<span class="f2">※ 編輯: danny0838 (59.115.60.81 臺灣), 01/27/2022 09:30:03</span>
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">t7yang</span><span class="f3 push-content">: CSS 可以用就好，script 我自己是很少用</span><span class="push-ipdatetime">01/27 09:35
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vul81320</span><span class="f3 push-content">: 推详细</span><span class="push-ipdatetime">01/27 09:35
+</span></div><span class="f2">※ 編輯: danny0838 (59.115.60.81 臺灣), 01/27/2022 10:14:39</span>
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sicao</span><span class="f3 push-content">: 晴天霹靂</span><span class="push-ipdatetime">01/27 10:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kyrc</span><span class="f3 push-content">: 禁止執行遠端腳本 = 所有油猴類自訂腳本的套件都會死掉</span><span class="push-ipdatetime">01/27 10:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">kyrc</span><span class="f3 push-content">: 怎麼推導出來的阿？</span><span class="push-ipdatetime">01/27 10:54
+</span></div>
+這類套件的主要功能就是從第三方網站下載腳本執行，
+這就是所謂的執行遠端腳本啊，
+有很難理解嗎？XD
+
+更多資訊請爬本版 MV3 相關討論，
+本文貼的幾篇 ref 也都有提到。
+<span class="f2">※ 編輯: danny0838 (223.140.102.60 臺灣), 01/27/2022 12:03:10</span>
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">xvid</span><span class="f3 push-content">: Userscript 可以本地執行啊 未必需要遠端</span><span class="push-ipdatetime"> 01/27 12:50
+</span></div>
+以套件的角度來說，
+所有不是一開始包在套件裡的程式碼都在 MV3 禁止之列，
+如果覺得「遠端」不精準，改成「外部」、「第三方」也可以，
+問題的本質不會因此改變。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: Google Darkest Fusion, 巴哈深色主題, FaviconizeGoogle</span><span class="push-ipdatetime">01/27 13:11
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: PTT Imgur Fix, PTT Push Count,</span><span class="push-ipdatetime">01/27 13:12
+</span></div>
+Imgur fix 現在還有需要嗎？
+push count 應該前面討論的 PTT web enhanced 就有提供。
+
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: XXXBG - XXX and magnet links,</span><span class="push-ipdatetime">01/27 13:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: Reddit expand media and comments, 百度簡易下載助手</span><span class="push-ipdatetime">01/27 13:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: 有些簡易的小腳本要寫成套件反而會變困擾吧？</span><span class="push-ipdatetime">01/27 13:13
+</span></div>
+其實還好，簡單腳本就是個 content script，加個制式 manifest 就好。
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: Google確實有人手和資源可以搞定這些，FF應該會再緩緩？</span><span class="push-ipdatetime">01/27 13:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: 我無法想像沒有Greasyfork的那一天…</span><span class="push-ipdatetime">01/27 13:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NiGHTsC</span><span class="f3 push-content">: 至於userstyles…嘛…網頁卡到爆這問題幾年來都沒進展…</span><span class="push-ipdatetime">01/27 13:19
+</span></div><span class="f2">※ 編輯: danny0838 (223.140.102.60 臺灣), 01/27/2022 13:32:54</span>
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zhtw</span><span class="f3 push-content">: 強制 Script 都要弄成套件 開發者帳號開通要 5 美元</span><span class="push-ipdatetime">01/27 13:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">zhtw</span><span class="f3 push-content">: 如果整站的 Script 都弄成套件 google 賺翻嚕</span><span class="push-ipdatetime">01/27 13:57
+</span></div>
+我倒是沒想到這點，哈哈。
+不然大家一起抵制 Google，只上架 Fx、Edge、Opera 吧XD
+
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">rgbff</span><span class="f3 push-content">: Youtube聊天室顯示PTT推文要死去了嗎</span><span class="push-ipdatetime">01/27 14:15
+</span></div><span class="f2">※ 編輯: danny0838 (223.140.102.60 臺灣), 01/27/2022 14:43:46</span>
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abc0922001</span><span class="f3 push-content">: 那就好，感謝</span><span class="push-ipdatetime">01/27 14:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alchemy123</span><span class="f3 push-content">: 腳本套件發展歷史跟延伸套件差不多了吧 有出過什麼安</span><span class="push-ipdatetime">01/27 14:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alchemy123</span><span class="f3 push-content">: 全性大事嗎 不如說這東西不都完全開源的 商業考量還差</span><span class="push-ipdatetime">01/27 14:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alchemy123</span><span class="f3 push-content">: 不多吧</span><span class="push-ipdatetime">01/27 14:49
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alchemy123</span><span class="f3 push-content">: 反倒是套件漏洞的新聞看到不少喔 真棒</span><span class="push-ipdatetime">01/27 14:54
+</span></div>
+這問題不是這樣看的，
+我們當然都知道 monkey 類套件有不錯的開放審核機制，
+問題在於，只要套件 API 允許執行外部腳本，
+就有可能被惡意套件濫用，
+而且好套件壞套件要的都是同樣的「存取所有網站」權限，防不勝防，
+而相關的 case 都會算在「套件漏洞」的鍋上，不是算在 user scripts 的鍋。
+
+<span class="f2">※ 編輯: danny0838 (223.140.102.60 臺灣), 01/27/2022 16:24:01
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: 個人目前用 userscript 的一大原因是不需要走簽署流程，</span><span class="push-ipdatetime"> 01/27 22:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: 對於上一些私人甚至是臨時用的自製腳本很方便。</span><span class="push-ipdatetime"> 01/27 22:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: 希望到時候會留選項給進階使用者來規避這些限制。如果</span><span class="push-ipdatetime"> 01/27 22:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">stucode</span><span class="f3 push-content">: userscript 真的全面死去，就只能轉戰 unbranded 版了。</span><span class="push-ipdatetime"> 01/27 22:51
+</span></div>
+目前看到的是 API 拿掉，並不存在保留的一手。
+
+Chromium 方面，除非 Google 未來有增加新 API，
+有可能會像 webRequestBlocking 一樣必須用管理員設定登錄檔的方式才能安裝使用。
+但是這條路超麻煩，也只能安裝發布在 Chrome 商店的套件。
+
+Firefox 方面沒有類似先例（Fx 在 MV3 會保留 webRequestBlocking），
+如果要我提議，
+可以比照 Chromium 加入新 API 但必須在 manifest.json 加入特殊的設定值，
+而該設定值一律不會在審核套件時給過，也就是只能用在未簽署套件的意思。
+如果沒有，另一個選擇是走 userChrome JS 路線。
+（如果只用到 content script 而不涉及套件 API，應該不會太複雜）
+
+再不然，就是寫成私人套件。
+這方面 Chromium 大概比較方便，用開發模式載入未打包套件就可以一直用；
+還有一個我不曉得是不是 bug 的方式是，把套件拖放到管理頁面就能安裝。
+Firefox 如果用開發模式載入未打包套件，瀏覽器重啟後會全部消失，
+若要持續使用，
+要嘛到 AMO 發布成非公開套件（現在沒太大疑慮的都是機器審核，速度很快），
+要嘛包成未簽署的套件用 Beta/Developer/Nightly/ESR/Unbranded 發行版安裝。
+<span class="f2">※ 編輯: danny0838 (59.115.60.81 臺灣), 01/28/2022 00:23:51
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">g8y</span><span class="f3 push-content">: 百度盤沒得白嫖囉</span><span class="push-ipdatetime"> 01/28 02:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hsparrot</span><span class="f3 push-content">: 我有百來個自己寫的小script，這對我來說超困擾，雖然可</span><span class="push-ipdatetime"> 01/28 14:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hsparrot</span><span class="f3 push-content">: 以轉移到AdGuard上，不過編修起來比較麻煩，有些GM函式</span><span class="push-ipdatetime"> 01/28 14:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hsparrot</span><span class="f3 push-content">: 和metadata也不支援</span><span class="push-ipdatetime"> 01/28 14:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hsparrot</span><span class="f3 push-content">: 然後Fx果然又要跟哦... 你們要不要乾脆像MS說的改用</span><span class="push-ipdatetime"> 01/28 14:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hsparrot</span><span class="f3 push-content">: Chromium核算了? 然後專心搞搞UI、開開一些3年後會中止</span><span class="push-ipdatetime"> 01/28 14:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hsparrot</span><span class="f3 push-content">: 的專案或服務</span><span class="push-ipdatetime"> 01/28 14:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">legnaleurc</span><span class="f3 push-content">: 自己包就要弄開發環境, 沒像userscript那麼方便</span><span class="push-ipdatetime"> 01/28 17:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tck01</span><span class="f3 push-content">: 好用的東西一點一點的被改被拔掉 限制越來越多 又沒替代品</span><span class="push-ipdatetime"> 01/28 19:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">tck01</span><span class="f3 push-content">: 搞到我對瀏覽器的未來好悲觀= =</span><span class="push-ipdatetime"> 01/28 19:38
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">th</span><span class="f3 push-content">: FF要變成GC的形狀了，唉…</span><span class="push-ipdatetime"> 01/29 03:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Kagero</span><span class="f3 push-content">: 火狐早就是chromium的形狀了</span><span class="push-ipdatetime"> 01/29 16:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Kagero</span><span class="f3 push-content">: 除了核心外基本上差沒多少</span><span class="push-ipdatetime"> 01/29 16:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MK47</span><span class="f3 push-content">: Chromium舔狗</span><span class="push-ipdatetime"> 01/29 23:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dosiris</span><span class="f3 push-content">: FX也跟 到底如何跟Chromium區別化</span><span class="push-ipdatetime"> 01/31 05:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">olduck</span><span class="f3 push-content">: 未來某天大概心死用edge算了</span><span class="push-ipdatetime"> 01/31 23:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">romber</span><span class="f3 push-content">: …這真的影響很大啊，大多自用的script都只是一時需要寫的</span><span class="push-ipdatetime"> 02/03 02:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">romber</span><span class="f3 push-content">: ，根本不適合上架，真的要砍我只能跳槽到不砍的瀏覽器了，</span><span class="push-ipdatetime"> 02/03 02:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">romber</span><span class="f3 push-content">: 再不然…改用 Selenium?</span><span class="push-ipdatetime"> 02/03 02:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dx90c</span><span class="f3 push-content">: Script可以放到AdGuard裡面嗎，難怪我現在下載油猴腳本都</span><span class="push-ipdatetime"> 02/03 04:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">dx90c</span><span class="f3 push-content">: 會被跳轉引導到AdGuard</span><span class="push-ipdatetime"> 02/03 04:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MK47</span><span class="f3 push-content">: 有選項可以讓adguard選擇要不要接手script</span><span class="push-ipdatetime"> 02/03 09:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">MK47</span><span class="f3 push-content">: <a href="https://i.imgur.com/8ci3BhL.png" target="_blank" rel="noreferrer noopener nofollow">https://i.imgur.com/8ci3BhL.png</a></span><span class="push-ipdatetime"> 02/03 09:39
+</span></div><div class="richcontent"><img src="https://cache.ptt.cc/c/https/i.imgur.com/8ci3BhLl.png?e=1645622169&amp;s=QDco669hic46tnlxqjFNAQ" alt="" loading="lazy" /></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ajang</span><span class="f3 push-content">: 吐血了，我一堆論壇都自動簽到打卡的。</span><span class="push-ipdatetime"> 02/03 15:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">SigmundFreud</span><span class="f3 push-content">: 最重要的只有ytber block，要開始找替代了</span><span class="push-ipdatetime"> 02/04 17:23
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">SigmundFreud</span><span class="f3 push-content">: 不然到時候一堆低能推薦</span><span class="push-ipdatetime"> 02/04 17:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">dx90c</span><span class="f3 push-content">: @MK47 感謝教學</span><span class="push-ipdatetime"> 02/07 10:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">hn9480412</span><span class="f3 push-content">: 看來以後Mac只能用Safari和Edge了</span><span class="push-ipdatetime"> 02/10 20:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MK47</span><span class="f3 push-content">: 不客氣～</span><span class="push-ipdatetime"> 02/10 22:28
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Gold740716</span><span class="f3 push-content">: 主要就是方便，套件要另外寫、打包、安裝，流程複雜</span><span class="push-ipdatetime"> 02/20 15:52
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Gold740716</span><span class="f3 push-content">: 小書籤某些場合還行，但每次都要手動點就很麻煩</span><span class="push-ipdatetime"> 02/20 15:53
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Browsers/M.1643241171.A.243.html?cacheKey=2148-409891300&amp;offset=12310&amp;offset-sig=b27044b2b5110e937b3d7a58f27ade6e3a259dc2" data-longpollurl="/v1/longpoll?id=3c6c5f2c3bbeec9b3dfde9b1e48b1abdfbe19e25" data-offset="12310"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
