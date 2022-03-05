@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Re: [討論] 對岸的軟體工程師 - 看板 Tech_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="分享一下現在中國公司工作的狀況好了，
+程式碼 build 都沒過，是絕對不能回家的，你會害很多人被扣錢。
+首先程式碼 commit到分支前，都要設定好jenkins
+使用 git push 程式碼到 repository 的分支時，
+會觸發CICD流程，大致會執行以下流程:
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="Re: [討論] 對岸的軟體工程師">
+<meta property="og:description" content="分享一下現在中國公司工作的狀況好了，
+程式碼 build 都沒過，是絕對不能回家的，你會害很多人被扣錢。
+首先程式碼 commit到分支前，都要設定好jenkins
+使用 git push 程式碼到 repository 的分支時，
+會觸發CICD流程，大致會執行以下流程:
+">
+<link rel="canonical" href="https://www.ptt.cc/bbs/Tech_Job/M.1604675099.A.0B8.html">
+
+<link rel="stylesheet" type="text/css" href="bbs-common.css">
+<link rel="stylesheet" type="text/css" href="bbs-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-custom.css">
+<link rel="stylesheet" type="text/css" href="pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="bbs-print.css" media="print">
+
+
+
+
+	</head>
+    <body>
+		
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="http://www.ptt.cc/bbs/">批踢踢實業坊</a>
+		<span>&rsaquo;</span>
+		<a class="board" href="http://www.ptt.cc/bbs/Tech_Job/index.html"><span class="board-label">看板 </span>Tech_Job</a>
+		<a class="right small" href="http://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="http://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="http://www.ptt.cc/bbs/Tech_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">DrTech (竹科管理處網軍研發人員)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Tech_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">Re: [討論] 對岸的軟體工程師</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Fri Nov  6 23:04:57 2020</span></div>
+<span class="f2">※ 引述《Ferrara (紅燒冰淇淋)》之銘言：
+</span><span class="f6">: 本ID在台北一家陸商待過一個月
+</span><span class="f6">: 發現對岸SW RD的整code習慣是這樣
+</span><span class="f6">: 覺得自己寫好了，就commit了
+</span><span class="f6">: commit之前不做驗證，不初步抓一下bug
+</span><span class="f6">: 連local build pass都沒有
+</span><span class="f6">: 負責管respitory 的人得一條條幫他們檢查
+</span><span class="f6">: 最近被一家台陸合資的公司找去面試
+</span><span class="f6">: 主管說他在管理gerrit的時候很難整合daily build
+</span><span class="f6">: 因為對岸的工程師丟上來的東西常常build不過
+</span><span class="f6">: 請問各位鄉民
+</span><span class="f6">: 你們共事過的對岸工程師也會這樣嗎
+</span>
+分享一下現在中國公司工作的狀況好了，
+程式碼 build 都沒過，是絕對不能回家的，你會害很多人被扣錢。
+
+首先程式碼 commit到分支前，都要設定好jenkins
+使用 git push 程式碼到 repository 的分支時，
+會觸發CICD流程，大致會執行以下流程:
+
+編譯 build --&gt; 弱點掃描 --&gt; 程式碼取名規則檢查 --&gt; UT Test
+
+除了程式沒有語法上的bug 可以build
+如果程式碼的變數，函數名稱不符合規範，
+或程式碼有常見弱點，或缺陷defect CICD是不會通過的。
+UT Test 除了測功能外，還要滿足測試程式碼的覆蓋率 Coverage。
+如果 UT 的 Test Case 亂寫，或是Test Case 沒有覆蓋到75%的程式碼，CICD也不會過。
+
+
+功能正常還是不夠的，
+現在幾千萬人使用，7x24 的系統，非常追求程式碼的穩定，效率，可維護，透明。
+我們公司一出現停機的Bug，一堆人都要扣幾千塊人民幣的。
+我們也在意機器查不到的業務邏輯 Bug。
+還要在意可維護性，也要避免有寫作弊程式碼，不可維護的黑箱，神秘的隱藏程式碼。
+所以程式碼能跑，還不夠，要靠人去提高程式碼的品質。
+
+接下來就是透過 gerrit，去找人 review程式碼。
+review的人，有不同的權限，至少要有權限高的人+2 才能將程式碼merge到分支。
+這時候，問題就來了，那麼review的人偷懶不就好了? 大家省事。
+當初我也是這樣想的。
+
+你的同事或資深工程師Review完的Comment，
+每周會有更資深的工程師或部長，再檢查這些人的review是否合理。
+程式碼出了事情，停機了，這些資深工程師都是要扣薪水的。幾千幾千人民幣的扣。
+所以除非你是老闆兒子，不然你討好同層，或討好主管根本沒用。
+
+另外，一次交大量的程式碼，減少review次數，也是不行的。
+超過300行程式碼的commit 都會要有資深工程師或主管審核，才能夠merge程式碼，
+而且每日自動檢查會通報一次性review超過300行程式碼的行為。
+
+沒有Bug，CICD過了，review過了，程式碼merge到分支，總沒事了吧。
+我剛來公司時也是這樣天真的。
+
+結果合併到分支的程式碼，每天定期都會自動跑CICD，
+而且UT會因為網路不穩連接時間太長失敗。
+網路不穩，怪軟體工程師囉? 對，就是那麼坑。
+
+晚上12點CICD沒過，不管是不是程式碼本身的問題，
+你和你的主管都要扣本月績效分數，影響本月薪水。
+所以沒人敢讓每日定期檢查的CICD不過。
+所以程式碼的Test Case又要很聰明的，知道何時使用mock測試，
+避免各種網路連線不穩定的UT測試失敗。
+
+哇靠，那麼麻煩，我乾脆不寫程式碼或少寫好了，寫越多事情越多。
+不行喔，每周/每月，都會統計程式碼行數，
+然後大家比較一番，然後落後的人給點壓力。
+
+
+以上只是每日的開發工作，
+每周還有Coverity的靜態程式碼掃描，不過就通報。
+軟體發新版本時，測試工程師從分支拉取程式碼，
+Coverity的靜態程式碼掃描不過，也進不了發版本的測試階段。
+當然Coverity的掃瞄常常誤報，即使誤報也要走流程，然後安全專家同意去取消。
+
+其他懶得說了，反正一堆為了提高軟體品質的規定，走火入魔的規定比較常見。
+有空再交流。
+
+--------------
+
+
+當然不是每家中國軟體公司都這樣搞人的。
+但是，真的沒聽過 build 不過，還可以正常混到薪水的。
+有的這種公司話，請站內信推薦，真的。一定一堆人搶著去爽。
+
+
+<span class="f2">※ 編輯: DrTech (116.77.73.243 中國), 11/06/2020 23:08:12
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">TokyoHard</span><span class="f3 push-content">: 親!信你了!</span><span class="push-ipdatetime"> 11/06 23:07
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s06yji3</span><span class="f3 push-content">: 人力成本超高...，方便問sprint和release週期嗎？</span><span class="push-ipdatetime"> 11/06 23:17
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 發版的周期是，每個月發兩個release版本。長假前後凍結。</span><span class="push-ipdatetime"> 11/06 23:19
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">DCTmaybe</span><span class="f3 push-content">: 也太硬...突然覺得現在過好爽</span><span class="push-ipdatetime"> 11/06 23:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 人力成本其實不高，風氣就是晚上8點算早下班。</span><span class="push-ipdatetime"> 11/06 23:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 加班根本不給薪水，是福報阿。真心羨慕原文那種隨意公司。</span><span class="push-ipdatetime"> 11/06 23:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">devilkool</span><span class="f3 push-content">: 好猛，除了很硬，扣薪也太可怕</span><span class="push-ipdatetime"> 11/06 23:27
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">POCARI5566</span><span class="f3 push-content">: 親  你好猛</span><span class="push-ipdatetime"> 11/06 23:30
+</span></div><span class="f2">※ 編輯: DrTech (116.77.73.243 中國), 11/06/2020 23:36:57
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s37166117</span><span class="f3 push-content">: 還好我一行都拆好幾行寫0..0</span><span class="push-ipdatetime"> 11/06 23:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">amego2017</span><span class="f3 push-content">: 扎心了 老鐵</span><span class="push-ipdatetime"> 11/06 23:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">hb0922</span><span class="f3 push-content">: 這篇可信度高</span><span class="push-ipdatetime"> 11/06 23:52
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">loloman</span><span class="f3 push-content">: 規模大了就變法治，有些地方就踩很硬</span><span class="push-ipdatetime"> 11/06 23:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">furnaceh</span><span class="f3 push-content">: 沒想到寫程式也跟學音樂ㄧ樣，練習不夠，隨便亂寫，都有</span><span class="push-ipdatetime"> 11/07 00:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">furnaceh</span><span class="f3 push-content">: 人知道</span><span class="push-ipdatetime"> 11/07 00:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">zmcx16</span><span class="f3 push-content">: 我決定開始點炸雞排的技能樹了...</span><span class="push-ipdatetime"> 11/07 00:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">clamperni</span><span class="f3 push-content">: 原po大神</span><span class="push-ipdatetime"> 11/07 00:20
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ppc</span><span class="f3 push-content">: 好恐怖</span><span class="push-ipdatetime"> 11/07 00:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">abccbaandy</span><span class="f3 push-content">: 這麼肝是給多少啊...</span><span class="push-ipdatetime"> 11/07 00:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 我以為只有 google 會注意軟體品質</span><span class="push-ipdatetime"> 11/07 00:24
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">A0091127</span><span class="f3 push-content">: 哥 您年薪？</span><span class="push-ipdatetime"> 11/07 00:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 這跟年薪與能力無關吧。剛畢業的大學生也是這樣管理。</span><span class="push-ipdatetime"> 11/07 00:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">s06yji3</span><span class="f3 push-content">: 一個code review這麼多遍人力成本當然高。有沒有加班費是</span><span class="push-ipdatetime"> 11/07 00:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s06yji3</span><span class="f3 push-content">: 另一件事情。</span><span class="push-ipdatetime"> 11/07 00:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 只能說有經驗的公司，早就把人性看得很透了，所以訂一堆</span><span class="push-ipdatetime"> 11/07 00:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 規則防止人偷懶或失誤。</span><span class="push-ipdatetime"> 11/07 00:33
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">holydon</span><span class="f3 push-content">: 沒想到大陸也有公司走這套了,直接扣幾千人民幣真的會怕XD</span><span class="push-ipdatetime"> 11/07 00:33
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">da5n299o</span><span class="f3 push-content">: 之前請上面code review還要一直寄信跪求QQ</span><span class="push-ipdatetime"> 11/07 00:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Ferrara</span><span class="f3 push-content">: 原po這間都是local pay再加一點點 XDDD</span><span class="push-ipdatetime"> 11/07 00:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Ferrara</span><span class="f3 push-content">: 所以一個月就閃了</span><span class="push-ipdatetime"> 11/07 00:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">nitero</span><span class="f3 push-content">: 一個月兩次 release 有點少,通常我們都一個禮拜四次</span><span class="push-ipdatetime"> 11/07 00:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nitero</span><span class="f3 push-content">: 盡量發布小的 commit, 有問題都可以很快 trace</span><span class="push-ipdatetime"> 11/07 00:55
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">nitero</span><span class="f3 push-content">: 原 po 公司可能是金融相關的？才會用這麼嚴謹的方式上版？</span><span class="push-ipdatetime"> 11/07 00:56
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">saladim</span><span class="f3 push-content">: 突然想到 每個月生這麼多程式碼 改這麼多碼 修這麼多bug</span><span class="push-ipdatetime"> 11/07 00:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Smile365Day</span><span class="f3 push-content">: H</span><span class="push-ipdatetime"> 11/07 00:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">saladim</span><span class="f3 push-content">: 最後這系統到底會變成什麼 這麼多人才生出來的東西 肯定</span><span class="push-ipdatetime"> 11/07 00:57
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">saladim</span><span class="f3 push-content">: 很強很潮吧 若不是這樣就很無奈了...釘不完的釘子阿....</span><span class="push-ipdatetime"> 11/07 00:58
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">saladim</span><span class="f3 push-content">: 一個禮拜四次release? 這好像有點屌.....</span><span class="push-ipdatetime"> 11/07 01:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 我現在是做多媒體串流平台的後台，現在用戶多的軟體出問題</span><span class="push-ipdatetime"> 11/07 01:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Csongs</span><span class="f3 push-content">: 扣薪水也太硬</span><span class="push-ipdatetime"> 11/07 01:03
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 一定會被對手炒作，市場蠻競爭的，要對Bug充滿敬畏之心。</span><span class="push-ipdatetime"> 11/07 01:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">modelfucker</span><span class="f3 push-content">: 幹這太可怕了吧…</span><span class="push-ipdatetime"> 11/07 01:05
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">havochuman</span><span class="f3 push-content">: 反正台灣科技仔都覺得阿共都很弱 ㄎㄎ</span><span class="push-ipdatetime"> 11/07 01:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">knme</span><span class="f3 push-content">: 好嚴格... 只能仰望了</span><span class="push-ipdatetime"> 11/07 01:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">unima</span><span class="f3 push-content">: 看台灣那些兩光的網銀系統就知道台灣的IT太混!</span><span class="push-ipdatetime"> 11/07 01:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lastpost</span><span class="f3 push-content">: 大陸現在很流行扣薪水的感覺</span><span class="push-ipdatetime"> 11/07 01:49
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 不會管理寫程式才需要這樣搞</span><span class="push-ipdatetime"> 11/07 01:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">otto2</span><span class="f3 push-content">: 除了扣錢之外，真像mtk modem team QQ</span><span class="push-ipdatetime"> 11/07 01:57
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">EKman</span><span class="f3 push-content">: 華人就是乖乖奴阿，很多人喜歡這種狼性，好棒喔</span><span class="push-ipdatetime"> 11/07 02:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">qekezfeed</span><span class="f3 push-content">: 只會扣錢....</span><span class="push-ipdatetime"> 11/07 02:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">NeedMyMonkey</span><span class="f3 push-content">: @havochuman 以偏概全不就好棒棒? 活在自己世界?</span><span class="push-ipdatetime"> 11/07 02:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Hateson</span><span class="f3 push-content">: 不會管理寫程式才需要這樣搞+1</span><span class="push-ipdatetime"> 11/07 02:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">matyih</span><span class="f3 push-content">: 然後繼續酸亞麻血汗工廠..雖然沒錯xd</span><span class="push-ipdatetime"> 11/07 03:32
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">homer00</span><span class="f3 push-content">: 敬畏之心…怎麼很像習領導的話</span><span class="push-ipdatetime"> 11/07 04:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pornstar</span><span class="f3 push-content">: 美國亞麻的血汗是跟養老Google比較出來的, 跟中國/亞洲</span><span class="push-ipdatetime"> 11/07 04:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pornstar</span><span class="f3 push-content">: 公司比工時應該一半都不到</span><span class="push-ipdatetime"> 11/07 04:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 我們歐洲公司也是這樣差不多，不會扣錢。不是互聯網公司</span><span class="push-ipdatetime"> 11/07 06:53
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 壓力比較小</span><span class="push-ipdatetime"> 11/07 06:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lpoijk</span><span class="f3 push-content">: 推文一堆沒見過市面？？ 這正常流程而已吧？</span><span class="push-ipdatetime"> 11/07 07:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MAGICMCGRADY</span><span class="f3 push-content">: google你想趕快promote也可以超累阿...</span><span class="push-ipdatetime"> 11/07 07:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">MAGICMCGRADY</span><span class="f3 push-content">: 而且美國公司也沒再給加班費的</span><span class="push-ipdatetime"> 11/07 07:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">boss0405</span><span class="f3 push-content">: 看程式碼行數XD，一推爛code寫的都超級長的</span><span class="push-ipdatetime"> 11/07 07:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">snac</span><span class="f3 push-content">: 能好奇做到那麼硬年薪大概多少嗎，不被扣的情況</span><span class="push-ipdatetime"> 11/07 07:59
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">pponywong</span><span class="f3 push-content">: 其實外商都這麼做...</span><span class="push-ipdatetime"> 11/07 08:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pponywong</span><span class="f3 push-content">: 還有merge也是有準則的 請看git的文件</span><span class="push-ipdatetime"> 11/07 08:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">pponywong</span><span class="f3 push-content">: CICD後來越做越瘋 連format跟註解都會檢查才給你過</span><span class="push-ipdatetime"> 11/07 08:29
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wulouise</span><span class="f3 push-content">: 統計行數...意義不是很大吧，有impact的可能只有一行</span><span class="push-ipdatetime"> 11/07 08:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 統計行數有意義啦。有用clang format限定格式你就不能隨</span><span class="push-ipdatetime"> 11/07 08:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 便換行，formatter會自動換行，然後空行和註解不會算行</span><span class="push-ipdatetime"> 11/07 08:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 數</span><span class="push-ipdatetime"> 11/07 08:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 而且reviewer也不是白癡，你想偷行數大家都看得出來會叫</span><span class="push-ipdatetime"> 11/07 08:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 你改</span><span class="push-ipdatetime"> 11/07 08:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">maypcc</span><span class="f3 push-content">: 還是有差 用?:;和if else就差四行了</span><span class="push-ipdatetime"> 11/07 08:51
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ipojay</span><span class="f3 push-content">: 扣薪比較可怕 其它還好</span><span class="push-ipdatetime"> 11/07 08:54
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ipojay</span><span class="f3 push-content">: 通常數十人上百人在寫的程式都要這樣管理</span><span class="push-ipdatetime"> 11/07 08:55
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 其實在這種環境你才會成長，兩種公司我都待過，現在覺得</span><span class="push-ipdatetime"> 11/07 09:00
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 待那種亂commit的小公司根本浪費寶貴的青春。</span><span class="push-ipdatetime"> 11/07 09:00
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ipojay</span><span class="f3 push-content">: 很多程式是要交付給客戶的 所以書寫風格也要統一</span><span class="push-ipdatetime"> 11/07 09:03
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 人是會成長的，一開始壓力會大一點，但等你程度跟上之後</span><span class="push-ipdatetime"> 11/07 09:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 就會變輕鬆一些</span><span class="push-ipdatetime"> 11/07 09:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 我們公司的程式碼規範，是要刪除空白行的喔，投機故意增加</span><span class="push-ipdatetime"> 11/07 09:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 數，revier 時會被要求修改。</span><span class="push-ipdatetime"> 11/07 09:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 我也覺得做這些意義不大，浪費時間，但是其實習慣了以後，</span><span class="push-ipdatetime"> 11/07 09:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 搞這些流程時間不會增加太多，但是程式碼會變得很專業好維</span><span class="push-ipdatetime"> 11/07 09:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 護。</span><span class="push-ipdatetime"> 11/07 09:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 現在我自己反而比較習慣看，緊湊乾淨，的程式碼風格。</span><span class="push-ipdatetime"> 11/07 09:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 全部都很正常，除了扣薪</span><span class="push-ipdatetime"> 11/07 09:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">G8AJ</span><span class="f3 push-content">: 你這樣會讓蛙蛙崩潰</span><span class="push-ipdatetime"> 11/07 09:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 另外，版友說的很對，不會管理才這樣搞。中國風格就是，懶</span><span class="push-ipdatetime"> 11/07 09:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">DrTech</span><span class="f3 push-content">: 得管理就禁止你做，不知道怎麼改善就用罰錢。</span><span class="push-ipdatetime"> 11/07 09:44
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ChoDino</span><span class="f3 push-content">: 這篇很值得參考！</span><span class="push-ipdatetime"> 11/07 10:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">egnaro123</span><span class="f3 push-content">: 優文</span><span class="push-ipdatetime"> 11/07 10:12
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">askaleroux</span><span class="f3 push-content">: 中國公司就強的很猛 爛的糞爆 後者比前者多</span><span class="push-ipdatetime"> 11/07 10:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">imreader</span><span class="f3 push-content">: 人夠多就應該朝這個方向弄</span><span class="push-ipdatetime"> 11/07 10:21
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 一堆沒見過世面的,人越多越不需要這樣搞,會這樣搞代表管</span><span class="push-ipdatetime"> 11/07 10:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">vivijacky</span><span class="f3 push-content">: 百人專案幾十萬行的code一定要用CICD人工管理太不靠譜</span><span class="push-ipdatetime"> 11/07 10:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 理程度低落,程式能力差,人一多就handle不了</span><span class="push-ipdatetime"> 11/07 10:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 幾百人的專案代表每個人的loading越輕,搞成每個人loading</span><span class="push-ipdatetime"> 11/07 10:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 變重,程度奇差無比</span><span class="push-ipdatetime"> 11/07 10:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 看不出這樣有搞問題的還一直推崇的,程度也是相當低落</span><span class="push-ipdatetime"> 11/07 11:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 所以樓上意思是要去待亂commit的小公司？</span><span class="push-ipdatetime"> 11/07 11:23
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Archier</span><span class="f3 push-content">: 覺得被搞扣薪水才是公司主要獲利來源吧？</span><span class="push-ipdatetime"> 11/07 11:26
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bluemkevin</span><span class="f3 push-content">: 人越多做的東西也可能越多</span><span class="push-ipdatetime"> 11/07 11:39
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: CICD不一定是最佳解，但是要找到不用CICD同時也能夠維護</span><span class="push-ipdatetime"> 11/07 11:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">yamakazi</span><span class="f3 push-content">: 程式品質的公司實在太稀有，比日本製壓縮機還稀少。</span><span class="push-ipdatetime"> 11/07 11:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">orange0319</span><span class="f3 push-content">: 好猛，但是真的嚴謹適合超大專案的維護</span><span class="push-ipdatetime"> 11/07 11:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bluemkevin</span><span class="f3 push-content">: 規模大的公司只要是跟Coding有關的多多少少都有CICD機</span><span class="push-ipdatetime"> 11/07 11:48
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bluemkevin</span><span class="f3 push-content">: 制</span><span class="push-ipdatetime"> 11/07 11:48
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">as6633208</span><span class="f3 push-content">: 屌欸，不過也正常中國程式都給幾千萬人用，爛code的影</span><span class="push-ipdatetime"> 11/07 12:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">as6633208</span><span class="f3 push-content">: 響太巨大</span><span class="push-ipdatetime"> 11/07 12:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">d58974</span><span class="f3 push-content">: 挖靠....拿程式碼commit行數當kpi也太鳥了吧...</span><span class="push-ipdatetime"> 11/07 12:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sc1</span><span class="f3 push-content">: 以後統一了台咖就是oncall debugger啦對大陸主管負責</span><span class="push-ipdatetime"> 11/07 12:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">UpMe</span><span class="f3 push-content">: 用扣薪真的很恐怖。既然如此高壓 那給薪肯定高吧？</span><span class="push-ipdatetime"> 11/07 12:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">freef1y3</span><span class="f3 push-content">: 那請問幫人review有加錢嗎 不然出事扣錢沒出事也沒加錢</span><span class="push-ipdatetime"> 11/07 12:47
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">freef1y3</span><span class="f3 push-content">:  誰要幫別人review</span><span class="push-ipdatetime"> 11/07 12:47
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">loveyourself</span><span class="f3 push-content">: 這種不會變成每天review code就飽了？</span><span class="push-ipdatetime"> 11/07 12:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">XoPXoP</span><span class="f3 push-content">: Dr tech必推</span><span class="push-ipdatetime"> 11/07 13:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: errr 花很多時間看 PR 在大型軟體超常見好嗎...</span><span class="push-ipdatetime"> 11/07 13:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 該改的是背鍋文化吧</span><span class="push-ipdatetime"> 11/07 13:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 外商都是發 PR 給 approval 滿標者才 merge 咩</span><span class="push-ipdatetime"> 11/07 13:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: MR 發出去自動跑 jenkins pipline 或 gitlab  pipline</span><span class="push-ipdatetime"> 11/07 13:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 做基本檢察和測試</span><span class="push-ipdatetime"> 11/07 13:40
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 我們公司每半年才 release 一個主版本，release 前除了基</span><span class="push-ipdatetime"> 11/07 13:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 本 CICD 要跑得過以外，還寫了規模不小的整合測試框架</span><span class="push-ipdatetime"> 11/07 13:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 跑完框架也都是 24h 以上的時間，release 前還要由不同人</span><span class="push-ipdatetime"> 11/07 13:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: 去手動測，再加上還要跑 perf test 和 long run test 才可</span><span class="push-ipdatetime"> 11/07 13:43
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">alihue</span><span class="f3 push-content">: release.</span><span class="push-ipdatetime"> 11/07 13:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">wcre</span><span class="f3 push-content">: 有bug扣薪合理，但是年薪低應該找不到員工吧</span><span class="push-ipdatetime"> 11/07 13:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 給太少 臺灣人還會做飛機去中國打工嗎?</span><span class="push-ipdatetime"> 11/07 13:52
+</span></div><div class="push"><span class="f1 hl push-tag">噓 </span><span class="f3 hl push-userid">fewhy</span><span class="f3 push-content">: 是給你多少錢 一直扣好幾千還幹的下去喔</span><span class="push-ipdatetime"> 11/07 14:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Morigan</span><span class="f3 push-content">: 一看就知道是大公司</span><span class="push-ipdatetime"> 11/07 14:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">easton7</span><span class="f3 push-content">: 很多外商也都這樣了吧，但還是有辦法產出一堆垃圾</span><span class="push-ipdatetime"> 11/07 15:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bkcat2</span><span class="f3 push-content">: 遇過某中國手機致敬王者公司bsp rd build img後boot會死</span><span class="push-ipdatetime"> 11/07 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bkcat2</span><span class="f3 push-content">: 機 問是不是我們改了什麼 我滿頭問號 從沒release新bin</span><span class="push-ipdatetime"> 11/07 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bkcat2</span><span class="f3 push-content">: 反問他們有改什麼 兩個rd一個說checkout有問題 所以退回</span><span class="push-ipdatetime"> 11/07 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bkcat2</span><span class="f3 push-content">: 前一版ok 另一說直接用最新checkout然後這樣了 然後他們</span><span class="push-ipdatetime"> 11/07 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bkcat2</span><span class="f3 push-content">: 兩吵了起來...就算build也是需要整體性驗證...更何況不能</span><span class="push-ipdatetime"> 11/07 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bkcat2</span><span class="f3 push-content">: build還上code...</span><span class="push-ipdatetime"> 11/07 16:16
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">PTThotspring</span><span class="f3 push-content">: 看行數比較我笑了</span><span class="push-ipdatetime"> 11/07 16:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Kayusumi</span><span class="f3 push-content">: 目前我明明是寫韌體的，卻還要去檢查ui的bug 坑</span><span class="push-ipdatetime"> 11/07 16:31
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">revorea</span><span class="f3 push-content">: 這真的是有經驗的才知道XD</span><span class="push-ipdatetime"> 11/07 18:11
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xiao2chen</span><span class="f3 push-content">: 聽起來是真碼農</span><span class="push-ipdatetime"> 11/07 18:56
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ayler88</span><span class="f3 push-content">: 這一定是給高薪的大公司了</span><span class="push-ipdatetime"> 11/07 19:43
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">black82465</span><span class="f3 push-content">: 牛</span><span class="push-ipdatetime"> 11/07 19:45
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ayler88</span><span class="f3 push-content">: 台灣二線公司, 花錢買coverity授權都...</span><span class="push-ipdatetime"> 11/07 19:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayler88</span><span class="f3 push-content">: 小公司就更別談了</span><span class="push-ipdatetime"> 11/07 19:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ayler88</span><span class="f3 push-content">: 如果這樣搞法,公司還不願意花錢請頂級人才</span><span class="push-ipdatetime"> 11/07 19:50
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ayler88</span><span class="f3 push-content">: 一堆測試問題就把錢都給扣光光了</span><span class="push-ipdatetime"> 11/07 19:50
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">ayler88</span><span class="f3 push-content">: 用過國際第一流大廠(非台商)的SDK, 問題都一卡車了...</span><span class="push-ipdatetime"> 11/07 20:04
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 其實扣薪水都不是什麼大錢，有些公司就是 fail build 請</span><span class="push-ipdatetime"> 11/07 21:41
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 全公司飲料咩，群暉以前也有這樣做</span><span class="push-ipdatetime"> 11/07 21:42
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">s860134</span><span class="f3 push-content">: 一般 &#34;有制度&#34; 的 &#34;大&#34; 公司流程都是這樣</span><span class="push-ipdatetime"> 11/07 21:42
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">stosto</span><span class="f3 push-content">: 還有在比行數??</span><span class="push-ipdatetime"> 11/07 22:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">WarIII</span><span class="f3 push-content">: 聽完我想去賣雞排了 有夠硬</span><span class="push-ipdatetime"> 11/07 23:08
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">boss0405</span><span class="f3 push-content">: gerrit code review、Jenkins、coverity都算有意義，可</span><span class="push-ipdatetime"> 11/07 23:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">boss0405</span><span class="f3 push-content">: 以增加軟體品質。不過算行數真的很好笑，依LinkedList</span><span class="push-ipdatetime"> 11/07 23:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">boss0405</span><span class="f3 push-content">: 為例，Datapath寫的漂亮的和爛的，總行數可能差到三倍以</span><span class="push-ipdatetime"> 11/07 23:13
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">boss0405</span><span class="f3 push-content">: 上。</span><span class="push-ipdatetime"> 11/07 23:13
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xru03</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 11/08 01:18
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">leo1217000</span><span class="f3 push-content">: 看起來就是正經在做事情的公司，而且有一定規模</span><span class="push-ipdatetime"> 11/08 03:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">OhNo386</span><span class="f3 push-content">: 行數 只是為了比較 讓你感到羞恥而已</span><span class="push-ipdatetime"> 11/08 05:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">OhNo386</span><span class="f3 push-content">: 這點不是很人性就是了 會因爲這點而做不下去</span><span class="push-ipdatetime"> 11/08 05:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">davian0118</span><span class="f3 push-content">: 這麼多毛的公司我pass</span><span class="push-ipdatetime"> 11/08 09:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">bluemkevin</span><span class="f3 push-content">: 扣除行數要求，這些要求都還好吧？</span><span class="push-ipdatetime"> 11/08 09:41
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">APTON</span><span class="f3 push-content">: 好想去開眼界啊...</span><span class="push-ipdatetime"> 11/08 12:51
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Riruna</span><span class="f3 push-content">: 比行數真的不知道能幹嘛..程式重點不是演算法嗎？好的演</span><span class="push-ipdatetime"> 11/08 13:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Riruna</span><span class="f3 push-content">: 算法比寫一堆垃圾code去拼出功能好多了</span><span class="push-ipdatetime"> 11/08 13:06
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">mushroom5566</span><span class="f3 push-content">: 這看起來很正常吧...</span><span class="push-ipdatetime"> 11/08 16:58
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 嗯,的確很正常,很多大公司軟體程度就是這麼低落,這樣的</span><span class="push-ipdatetime"> 11/08 18:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: CICD若對提高品質有效的話,馬上就不需要commit程式碼了,</span><span class="push-ipdatetime"> 11/08 18:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">sunsamy</span><span class="f3 push-content">: 還一直要求commit程式碼,邏輯錯亂的一堆</span><span class="push-ipdatetime"> 11/08 18:35
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">GABA</span><span class="f3 push-content">: 跟產線的良率當KPI 87%像 有的血汗公司產線良率還會採連坐</span><span class="push-ipdatetime"> 11/08 18:37
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">GABA</span><span class="f3 push-content">: 法 科科</span><span class="push-ipdatetime"> 11/08 18:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Baternest</span><span class="f3 push-content">: 除了扣錢 其它都蠻合理的</span><span class="push-ipdatetime"> 11/09 11:04
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">LoveCheer</span><span class="f3 push-content">: 這種公司能永續發展才奇怪 動不動就罰錢</span><span class="push-ipdatetime"> 11/09 12:20
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">bluemkevin</span><span class="f3 push-content">: 小公司的爛才是突破天際</span><span class="push-ipdatetime"> 11/09 12:29
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mike0327</span><span class="f3 push-content">: 行數當kpi到底是什麼爛管理腦= =</span><span class="push-ipdatetime"> 11/09 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">mike0327</span><span class="f3 push-content">: 除了行數kpi還有扣錢以外，以軟體開發來說剛剛好而已</span><span class="push-ipdatetime"> 11/09 13:25
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">a810086</span><span class="f3 push-content">: 推</span><span class="push-ipdatetime"> 11/09 15:14
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">jakert123</span><span class="f3 push-content">: 扣錢XD</span><span class="push-ipdatetime"> 11/09 21:16
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">Sunal</span><span class="f3 push-content">: UT是啥 unittest？？？這也要簡稱？</span><span class="push-ipdatetime"> 11/10 00:15
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">Sunal</span><span class="f3 push-content">: 以軟體開發來說這就是大公司做法啊 除了扣錢</span><span class="push-ipdatetime"> 11/10 00:15
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">PeacockLiu</span><span class="f3 push-content">: 仔細看敘述，行數不是KPI</span><span class="push-ipdatetime"> 11/10 01:53
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">charlie2010</span><span class="f3 push-content">: 比行數，真的笑了</span><span class="push-ipdatetime"> 11/10 10:02
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">lplpkkk</span><span class="f3 push-content">: 除了扣薪其他和M相似</span><span class="push-ipdatetime"> 02/23 22:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">vatog       </span><span class="f3 push-content">: 除了扣薪和算行數 其他算常見的作法</span><span class="push-ipdatetime"> 07/31 13:45
+</span></div></div>
+    
+    <div id="article-polling" data-pollurl="http://www.ptt.cc/poll/Tech_Job/M.1604675099.A.0B8.html?cacheKey=2149-72620602&amp;offset=22108&amp;offset-sig=566d73a2101f8fd92faa1a0ab115c24025da16f0" data-longpollurl="/v1/longpoll?id=6e6f3bbbae6fcf0e787f8bb3e16bfbd241885fce" data-offset="22108"></div>
+    
+
+    
+</div>
+
+		
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32365737-1', {
+    cookieDomain: 'ptt.cc',
+    legacyCookieDomain: 'ptt.cc'
+  });
+  ga('send', 'pageview');
+</script>
+
+
+		
+<script src="jquery.min.js"></script>
+<script src="script>
+
+    </body>
+</html>
