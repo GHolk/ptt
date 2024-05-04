@@ -10,3 +10,8 @@ https://www.ptt.cc/bbs/C_Chat/M.1647697052.A.67C.html 2022-03-26T23:10:23+08:00
 https://www.ptt.cc/bbs/C_Chat/M.1648308691.A.38D.html 2022-03-26T23:59:21+08:00
 https://www.ptt.cc/bbs/Gossiping/M.1648481034.A.9A0.html 2022-03-29T00:42:13+08:00
 https://www.ptt.cc/bbs/Military/M.1648693948.A.710.html 2022-03-31T22:20:13+08:00
+https://www.gnu.org/software/coreutils/du 2022-05-20T11:22:51+08:00
+https://www.ptt.cc/bbs/AC_In/M.1658857988.A.284.html 2022-07-28T01:33:03+08:00
+https://www.ptt.cc/bbs/C_Chat/M.1659710505.A.660.html 2022-08-06T00:33:28+08:00
+https://www.ptt.cc/bbs/C_Chat/M.1622183865.A.FD3.html 2022-08-08T00:03:57+08:00
+https://yarnpkg.com/en/docs/cli/ 2022-08-31T21:05:20+08:00
